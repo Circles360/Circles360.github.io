@@ -56,7 +56,7 @@ def get_bachelor_degrees():
 
         bachelor_degrees.append(link)
 
-    return bachelor_degrees
+    return bachelor_degrees + get_manual_fixes(multi=False)
 
 def get_double_degrees():
     html = get_html(DOUBLE_DEGREES)
@@ -79,17 +79,15 @@ def get_double_degrees():
 
             double_degrees.append(link)
 
-    return double_degrees
+    return double_degrees + get_manual_fixes(multi=True)
 
-def get_manual_fixes():
+def get_manual_fixes(multi):
     links = []
     for fix in manual_fixes.ENGINEERING:
-        links.append(fix["link"])
+        if fix["multi"] == multi:
+            links.append(fix["link"])
 
     return links
 
-bachelor_degrees = get_bachelor_degrees()
-double_degrees = get_double_degrees()
-more_degrees = get_manual_fixes()
-
-DEGREES = bachelor_degrees + double_degrees + more_degrees
+BACHELOR_DEGREES = get_bachelor_degrees()
+DOUBLE_DEGREES = get_double_degrees()
