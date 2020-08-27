@@ -19,5 +19,5 @@ for code in engineering_degrees:
                 "link": course_link
             }
 
-with open("courses.json", "w") as write_file:
+with open("list_of_courses.json", "w") as write_file:
     json.dump(ENGINEERING_COURSES, write_file)

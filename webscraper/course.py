@@ -2,6 +2,7 @@
 from bs4 import BeautifulSoup
 import requests
 import scrape
+import time
 import json
 import os
 
@@ -74,13 +75,16 @@ def get_course_equivalents(handbook_html):
 
 
 ENGINEERING_COURSES = {}
-with open("courses.json", "r") as read_file:
+with open("list_of_courses.json", "r") as read_file:
     list_of_courses = json.load(read_file)
 
 total = len(list_of_courses.keys())
 
 for idx, code in enumerate(list_of_courses):
     print(f"{idx}/{total}", end="")
+
+    time.sleep(2)
+
     link = list_of_courses[code]["link"]
     if "/search?" in link:
         continue
