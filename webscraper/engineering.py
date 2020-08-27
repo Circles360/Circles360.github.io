@@ -24,6 +24,7 @@ def get_handbook_url_from_engineering(url):
     html = get_html(url)
     if html == None:
         return ""
+
     link = html.find("img", title="See the latest handbook").find_parent("a")["href"]
 
     if "degrees.unsw.edu.au" in link:
@@ -45,7 +46,7 @@ def get_bachelor_degrees():
     if html == None:
         exit(1)
 
-    degree_tiles = html.find("ul", class_="links tile-small").find_all("a")
+    degree_tiles = html.find("ul", class_="links tile-large").find_all("a")
 
     bachelor_degrees = []
     for tile in degree_tiles:
@@ -67,7 +68,7 @@ def get_double_degrees():
 
     double_degrees = []
     for idx, s in enumerate(degree_tile_sets):
-        if idx > 1:
+        if idx > 1: # There are 3 sections: Engineering, Comp Sci and Application Info. We don't want Application Info.
             break
 
         degree_tiles = s.find_all("a")
@@ -89,5 +90,13 @@ def get_manual_fixes(multi):
 
     return links
 
-BACHELOR_DEGREES = get_bachelor_degrees()
-DOUBLE_DEGREES = get_double_degrees()
+BACHELOR_DEGREE_LINKS = get_bachelor_degrees()
+DOUBLE_DEGREE_LINKS = get_double_degrees()
+
+print("Bachelor Degrees")
+for d in BACHELOR_DEGREE_LINKS:
+    print(d)
+
+print("\nDouble Degrees")
+for d in DOUBLE_DEGREE_LINKS:
+    print(d)
