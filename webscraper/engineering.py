@@ -1,27 +1,25 @@
 from bs4 import BeautifulSoup
-import requests
 import manual_fixes
+import requests
+import scrape
+import json
+import os
 
 BACHELOR_DEGREES = "https://www.engineering.unsw.edu.au/study-with-us/undergraduate/bachelor-degrees"
 DOUBLE_DEGREES = "https://www.engineering.unsw.edu.au/study-with-us/undergraduate/double-degrees"
+QUERY = "?browseByFaculty=FacultyOfEngineering&"
 
-def get_html(url):
-    response = requests.get(url)
-    if not response.ok:
-        print(f"ERROR get_html for {url}: status code {response.status_code}")
-        return None
-
-    return BeautifulSoup(response.content, "html.parser")
+CACHE_FILE = "engineering_cache.json"
 
 def get_handbook_url_from_degrees(url):
-    html = get_html(url)
+    html = scrape.get_html(url)
     if html == None:
         return ""
 
     return html.find("a", class_="button button--secondary")["href"]
 
 def get_handbook_url_from_engineering(url):
-    html = get_html(url)
+    html = scrape.get_html(url)
     if html == None:
         return ""
 
@@ -42,7 +40,7 @@ def get_handbook_url(url):
     return get_handbook_url_from_engineering(url)
 
 def get_bachelor_degrees():
-    html = get_html(BACHELOR_DEGREES)
+    html = scrape.get_html(BACHELOR_DEGREES)
     if html == None:
         exit(1)
 
@@ -52,7 +50,7 @@ def get_bachelor_degrees():
     for tile in degree_tiles:
         link = get_handbook_url(tile["href"])
 
-        if link == "http://www.handbook.unsw.edu.au/" or link == "":
+        if link == "http://www.handbook.unsw.edu.au/ " or link == "":
             continue
 
         bachelor_degrees.append(link)
@@ -60,7 +58,7 @@ def get_bachelor_degrees():
     return bachelor_degrees + get_manual_fixes(multi=False)
 
 def get_double_degrees():
-    html = get_html(DOUBLE_DEGREES)
+    html = scrape.get_html(DOUBLE_DEGREES)
     if html == None:
         exit(1)
 
@@ -75,7 +73,7 @@ def get_double_degrees():
         for tile in degree_tiles:
             link = get_handbook_url(tile["href"])
 
-            if link == "http://www.handbook.unsw.edu.au/" or link == "":
+            if link == "http://www.handbook.unsw.edu.au/ " or link == "":
                 continue
 
             double_degrees.append(link)
@@ -90,13 +88,20 @@ def get_manual_fixes(multi):
 
     return links
 
-BACHELOR_DEGREE_LINKS = get_bachelor_degrees()
-DOUBLE_DEGREE_LINKS = get_double_degrees()
+if os.path.isfile(CACHE_FILE):
+    with open(CACHE_FILE, "r") as read_file:
+        data = json.load(read_file)
 
-print("Bachelor Degrees")
-for d in BACHELOR_DEGREE_LINKS:
-    print(d)
+        BACHELOR_DEGREE_LINKS = data["bachelor_degree_links"]
+        DOUBLE_DEGREE_LINKS = data["double_degree_links"]
+else:
+    BACHELOR_DEGREE_LINKS = get_bachelor_degrees()
+    DOUBLE_DEGREE_LINKS = get_double_degrees()
 
-print("\nDouble Degrees")
-for d in DOUBLE_DEGREE_LINKS:
-    print(d)
+    print("writing to cache...")
+    data = {}
+    data["bachelor_degree_links"] = BACHELOR_DEGREE_LINKS
+    data["double_degree_links"] = DOUBLE_DEGREE_LINKS
+
+    with open(CACHE_FILE, "w") as write_file:
+        json.dump(data, write_file)
