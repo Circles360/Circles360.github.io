@@ -1,5 +1,6 @@
 # from selenium import webdriver
 from bs4 import BeautifulSoup
+import numpy as np
 import requests
 import scrape
 import time
@@ -11,6 +12,20 @@ import engineering
 
 COURSE_CODE_REGEX = "[A-Z]{4}[0-9]{4}"
 
+def flatten_array(arr):
+    flattened_arr = np.array(arr).flatten().tolist()
+
+    if isinstance(flattened_arr[0], list):
+        flattened_arr = [x for y in flattened_arr for x in y]
+
+    # ERROR CHECKING
+    for x in flattened_arr:
+        if len(x) == 1:
+            print(flattened_arr)
+            exit(1)
+
+    return flattened_arr
+
 def get_course_name(handbook_html):
     return handbook_html.find("h1", class_="o-ai-overview__h1").find("span").text
 
@@ -18,7 +33,7 @@ def get_course_code(handbook_html):
     return handbook_html.find("div", class_="m-ai-overview-details__cell code p-left-0").find("strong").text
 
 def get_course_units(handbook_html):
-    return handbook_html.find("div", class_="m-ai-overview-details__cell code").find("span").find("strong").text.split()[0]
+    return int(handbook_html.find("div", class_="m-ai-overview-details__cell code").find("span").find("strong").text.split()[0])
 
 def get_course_desc(handbook_html):
     desc = handbook_html.find("div", class_="readmore__wrapper").text.strip()
@@ -166,32 +181,31 @@ def get_course_equivalents(handbook_html):
 
     equivalent_courses = []
     for tile in course_tiles:
-        link = scrape.HANDBOOK_URL + tile.find("a")["href"]
-        link = link.replace("\n", "") # remove trailing new lines
+        # link = scrape.HANDBOOK_URL + tile.find("a")["href"]
+        # link = link.replace("\n", "") # remove trailing new lines
 
         code = tile.find("div", class_="m-single-course-top-row").find("span").text
-        name = tile.find("div", class_="m-single-course-bottom-row").find("p").text
+        # name = tile.find("div", class_="m-single-course-bottom-row").find("p").text
 
-        equivalent_courses.append({
-            "code": code,
-            "name": name,
-            "link": link
-        })
+        equivalent_courses.append(code)
 
     return equivalent_courses
 
 
 ENGINEERING_COURSES = {}
+BUILDS_INTO = {}
 with open("list_of_courses.json", "r") as read_file:
     list_of_courses = json.load(read_file)
 
 total = len(list_of_courses.keys())
 
 for idx, code in enumerate(list_of_courses):
+    # if idx > 10:
+    #     break
 
-    print(f"{idx}/{total}", end="")
+    print(f"{idx + 1}/{total}", end="")
 
-    # time.sleep(2)
+    time.sleep(2)
 
     link = list_of_courses[code]["link"]
     if "/search?" in link:
@@ -200,25 +214,57 @@ for idx, code in enumerate(list_of_courses):
     html = scrape.get_html(link)
 
     if html == None:
-        (name, code, units, terms, desc, conditions, equivalents) = None, None, None, None, None, None, None
-    else:
-        name = get_course_name(html)
-        code = get_course_code(html)
-        units = get_course_units(html)
-        terms = get_course_terms(html)
-        desc = get_course_desc(html)
-        conditions = get_course_conditions(html)
-        equivalents = get_course_equivalents(html)
+        continue
+
+    name = get_course_name(html)
+    code = get_course_code(html)
+    level = int(code[4])
+    units = get_course_units(html)
+    terms = get_course_terms(html)
+    desc = get_course_desc(html)
+    conditions = get_course_conditions(html)
+    equivalents = get_course_equivalents(html)
 
     ENGINEERING_COURSES[code] = {
-        "name": name,
-        "code": code,
+        "course_name": name,
+        "course_code": code,
+        "course_level": level,
         "units": units,
         "terms": terms,
         "desc": desc,
         "conditions": conditions,
-        "equivalents": equivalents
+        "equivalents": equivalents,
+        "builds_into": None
     }
+
+    # Update dependencies
+    if conditions == None:
+        continue
+
+    if conditions["prerequisites"] == None:
+        continue
+
+    flattened = flatten_array(conditions["prerequisites"])
+
+    for course in flattened:
+        if course not in BUILDS_INTO:
+            BUILDS_INTO[course] = []
+
+        BUILDS_INTO[course].append(code)
+
+
+for course in BUILDS_INTO:
+    if course not in ENGINEERING_COURSES:
+        continue
+
+    if ENGINEERING_COURSES[course] == None:
+        continue
+
+    if ENGINEERING_COURSES[course]["builds_into"] == None:
+        ENGINEERING_COURSES[course]["builds_into"] = BUILDS_INTO[course]
+    else:
+        for c in BUILDS_INTO[course]:
+            ENGINEERING_COURSES[course]["builds_into"].append(c)
 
 with open("courses.json", "w") as write_file:
         json.dump(ENGINEERING_COURSES, write_file)

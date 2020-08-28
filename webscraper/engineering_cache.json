@@ -594,69 +594,6 @@
                 ]
             }
         },
-        "3768": {
-            "degree_name": "Engineering (Honours)/Biomedical Engineering",
-            "degree_code": "3768",
-            "degree_units": "240",
-            "core_courses": {
-                "Biomedical Engineering Specialisation Requirements": [
-                    {
-                        "code": "BIOMDS",
-                        "name": "Biomedical Engineering (Dual Mode)",
-                        "link": "https://www.handbook.unsw.edu.au/postgraduate/specialisations/2020/BIOMDS"
-                    }
-                ],
-                "Engineering (Honours) Specialisation Requirements": [
-                    {
-                        "code": "BINFAH",
-                        "name": "Bioinformatics Engineering",
-                        "link": "https://www.handbook.unsw.edu.au/undergraduate/specialisations/2020/BINFAH"
-                    },
-                    {
-                        "code": "CEICAH",
-                        "name": "Chemical Engineering",
-                        "link": "https://www.handbook.unsw.edu.au/undergraduate/specialisations/2020/CEICAH"
-                    },
-                    {
-                        "code": "COMPBH",
-                        "name": "Computer Engineering",
-                        "link": "https://www.handbook.unsw.edu.au/undergraduate/specialisations/2020/COMPBH"
-                    },
-                    {
-                        "code": "ELECAH",
-                        "name": "Electrical Engineering",
-                        "link": "https://www.handbook.unsw.edu.au/undergraduate/specialisations/2020/ELECAH"
-                    },
-                    {
-                        "code": "MECHAH",
-                        "name": "Mechanical Engineering",
-                        "link": "https://www.handbook.unsw.edu.au/undergraduate/specialisations/2020/MECHAH"
-                    },
-                    {
-                        "code": "MTRNAH",
-                        "name": "Mechatronic Engineering",
-                        "link": "https://www.handbook.unsw.edu.au/undergraduate/specialisations/2020/MTRNAH"
-                    },
-                    {
-                        "code": "SENGAH",
-                        "name": "Software Engineering",
-                        "link": "https://www.handbook.unsw.edu.au/undergraduate/specialisations/2020/SENGAH"
-                    },
-                    {
-                        "code": "TELEAH",
-                        "name": "Telecommunications",
-                        "link": "https://www.handbook.unsw.edu.au/undergraduate/specialisations/2020/TELEAH"
-                    }
-                ],
-                "General Education": [
-                    {
-                        "code": null,
-                        "name": "any General Education course",
-                        "link": "https://www.handbook.unsw.edu.au/search?study_level=ugrd&year=2020&faculty=-5fa56ceb4f0093004aa6eb4f0310c7af&tags=e5a5a8004fb11700eeb3eb4f0310c716&appliedFilters=eyJwYXJhbXMiOnsiY3QiOiJzdWJqZWN0IiwicngiOiIuKiJ9LCAiZGVzY3JpcHRpb24iOiAiYW55IEdlbmVyYWwgRWR1Y2F0aW9uIGNvdXJzZSJ9"
-                    }
-                ]
-            }
-        },
         "AEROAH": {
             "degree_name": "Aerospace Engineering",
             "degree_code": "AEROAH",
