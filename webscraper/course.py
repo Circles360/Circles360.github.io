@@ -68,16 +68,16 @@ def get_course_conditions(handbook_html):
 
     raw = course_conditions.find("div", class_="a-card-text m-toggle-text has-focus").text.strip()
 
-    if raw == "None":
+    if raw == None or raw == "None":
         return None
 
-    conditions = conditions.split("\n")[0].upper()
+    conditions = raw.split("\n")[0].upper()
 
     if "PLEASE REFER TO THE COURSE OVERVIEW SECTION FOR INFORMATION ON PREREQUISITE REQUIREMENTS" in conditions:
         # Treat as NULL
         return None
 
-    if "EXCL" in conditions:
+    if "EXCL" in raw:
         # Remove everything after "EXCL". If EXCL still in string (only condition), then skip
         conditions = conditions.split("EXCL", 1)[0].strip()
         if "EXCL" in conditions:
@@ -188,9 +188,10 @@ with open("list_of_courses.json", "r") as read_file:
 total = len(list_of_courses.keys())
 
 for idx, code in enumerate(list_of_courses):
+
     print(f"{idx}/{total}", end="")
 
-    time.sleep(2)
+    # time.sleep(2)
 
     link = list_of_courses[code]["link"]
     if "/search?" in link:
