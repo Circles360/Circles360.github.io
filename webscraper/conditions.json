@@ -1,0 +1,3511 @@
+{
+    "ELEC2141": {
+        "prerequisites": [
+            [
+                "ELEC1111",
+                "DPST1081",
+                "ELEC1112"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "PHYS1131": {
+        "prerequisites": null,
+        "corequisites": [
+            [
+                "MATH1131",
+                "DPST1013",
+                "MATH1141",
+                "MATH1151",
+                "MATH1011"
+            ]
+        ],
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "PHYS1231": {
+        "prerequisites": [
+            [
+                "PHYS1131",
+                "DPST1023",
+                "PHYS1141",
+                "PHYS1121"
+            ]
+        ],
+        "corequisites": [
+            [
+                "MATH1231",
+                "DPST1014",
+                "MATH1241",
+                "MATH1251"
+            ]
+        ],
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "MATH1231": {
+        "prerequisites": [
+            [
+                "MATH1131",
+                "DPST1013",
+                "MATH1141"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "MATH1241": {
+        "prerequisites": [
+            [
+                "MATH1131",
+                "MATH1141",
+                "DPST1013"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "ELEC2117": {
+        "prerequisites": [
+            [
+                "ELEC1111",
+                "DPST1081",
+                "ELEC1112"
+            ],
+            [
+                "ELEC2141",
+                "ELEC1041"
+            ],
+            [
+                "COMP1511",
+                "DPST1091",
+                "COMP1911",
+                "COMP1917"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "ELEC2133": {
+        "prerequisites": [
+            [
+                "ELEC2134"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "ELEC2134": {
+        "prerequisites": null,
+        "corequisites": [
+            [
+                "ELEC1111",
+                "DPST1081",
+                "ELEC1112"
+            ]
+        ],
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "ELEC2142": {
+        "prerequisites": [
+            [
+                "ELEC2141"
+            ],
+            [
+                "COMP1511",
+                "COMP1521",
+                "DPST1092"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "ELEC3104": {
+        "prerequisites": [
+            [
+                "ELEC2134"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "ELEC3105": {
+        "prerequisites": [
+            [
+                "ELEC2134"
+            ],
+            [
+                "ELEC3115"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "ELEC3114": {
+        "prerequisites": [
+            [
+                "ELEC2134"
+            ],
+            [
+                "MATH2099"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "ELEC3115": {
+        "prerequisites": [
+            [
+                "MATH2069"
+            ],
+            [
+                "DPST1024"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "ELEC3117": {
+        "prerequisites": [
+            [
+                "ELEC2133"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "ELEC4122": {
+        "prerequisites": null,
+        "corequisites": null,
+        "units_required": "120",
+        "year": null,
+        "other": null
+    },
+    "ELEC4951": {
+        "prerequisites": null,
+        "corequisites": null,
+        "units_required": "126",
+        "year": "3",
+        "other": null
+    },
+    "ELEC4952": {
+        "prerequisites": [
+            "ELEC4951"
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "ELEC4953": {
+        "prerequisites": [
+            "ELEC4952"
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "ELEC9452": {
+        "prerequisites": [
+            "ELEC9451"
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "ELEC9453": {
+        "prerequisites": [
+            "ELEC9452"
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "COMP2041": {
+        "prerequisites": [
+            [
+                "COMP1511",
+                "DPST1091",
+                "COMP1917",
+                "COMP1921"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "COMP3211": {
+        "prerequisites": [
+            [
+                "COMP3222",
+                "ELEC2141"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "COMP3231": {
+        "prerequisites": [
+            [
+                "COMP1521",
+                "DPST1092",
+                "COMP2121",
+                "ELEC2142"
+            ],
+            [
+                "COMP2521",
+                "COMP1927"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "ELEC2146": {
+        "prerequisites": [
+            [
+                "COMP1911",
+                "COMP1917"
+            ],
+            [
+                "ELEC2134"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "ELEC3106": {
+        "prerequisites": [
+            [
+                "ELEC2133"
+            ],
+            [
+                "ELEC2141"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "MATH3101": {
+        "prerequisites": [
+            [
+                "MATH2011",
+                "MATH2111"
+            ],
+            [
+                "MATH2120",
+                "MATH2130",
+                "MATH2121",
+                "MATH2221",
+                "MATH2019"
+            ],
+            [
+                "MATH2089",
+                "MATH2069"
+            ],
+            [
+                "MATH2099"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "MATH3121": {
+        "prerequisites": [
+            [
+                "MATH2011",
+                "MATH2111"
+            ],
+            [
+                "MATH2120",
+                "MATH2130",
+                "MATH2121",
+                "MATH2221",
+                "MATH2019"
+            ],
+            [
+                "MATH2089",
+                "MATH2069"
+            ],
+            [
+                "MATH2099"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "MATH3161": {
+        "prerequisites": [
+            [
+                "MATH2011",
+                "MATH2111",
+                "MATH2510"
+            ],
+            [
+                "MATH2501",
+                "MATH2601",
+                "MATH2019"
+            ],
+            [
+                "MATH2089",
+                "MATH2069"
+            ],
+            [
+                "MATH2099"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "MATH3201": {
+        "prerequisites": [
+            [
+                "MATH2120",
+                "MATH2130",
+                "MATH2121",
+                "MATH2221"
+            ],
+            [
+                "MATH2501",
+                "MATH2601",
+                "MATH2019"
+            ],
+            [
+                "MATH2089",
+                "MATH2069"
+            ],
+            [
+                "MATH2099"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "MATH3261": {
+        "prerequisites": [
+            [
+                "MATH2011",
+                "MATH2111"
+            ],
+            [
+                "MATH2120",
+                "MATH2130",
+                "MATH2121",
+                "MATH2221",
+                "MATH2019"
+            ],
+            [
+                "MATH2089",
+                "MATH2069"
+            ],
+            [
+                "MATH2099"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "MATH3411": {
+        "prerequisites": [
+            [
+                "MATH1081",
+                "MATH1231",
+                "DPST1014",
+                "MATH1241",
+                "MATH1251",
+                "MATH2099"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "TELE3113": {
+        "prerequisites": [
+            [
+                "ELEC2134"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "TELE3118": {
+        "prerequisites": [
+            [
+                "ELEC2142",
+                "COMP2121"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "TELE3119": {
+        "prerequisites": [
+            [
+                "TELE3118"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "ELEC4445": {
+        "prerequisites": null,
+        "corequisites": null,
+        "units_required": "132",
+        "year": null,
+        "other": null
+    },
+    "ELEC4601": {
+        "prerequisites": [
+            [
+                "ELEC3106"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "ELEC4602": {
+        "prerequisites": [
+            [
+                "ELEC3106"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "ELEC4603": {
+        "prerequisites": [
+            [
+                "ELEC2133"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "ELEC4604": {
+        "prerequisites": [
+            [
+                "ELEC3106"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "ELEC4611": {
+        "prerequisites": [
+            [
+                "ELEC3105"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "ELEC4612": {
+        "prerequisites": [
+            [
+                "ELEC3105"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "ELEC4613": {
+        "prerequisites": [
+            [
+                "ELEC3105"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "ELEC4614": {
+        "prerequisites": [
+            [
+                "ELEC2133"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "ELEC4621": {
+        "prerequisites": [
+            [
+                "ELEC3104"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "ELEC4622": {
+        "prerequisites": [
+            [
+                "ELEC3104"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "ELEC4623": {
+        "prerequisites": [
+            [
+                "ELEC3104"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "ELEC4631": {
+        "prerequisites": [
+            [
+                "ELEC3114"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "ELEC4632": {
+        "prerequisites": [
+            [
+                "ELEC3114"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "ELEC4633": {
+        "prerequisites": [
+            [
+                "ELEC3114"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "PHTN4661": {
+        "prerequisites": [
+            [
+                "ELEC3115"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "PHTN4662": {
+        "prerequisites": [
+            [
+                "TELE3113",
+                "ELEC3115"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "TELE4642": {
+        "prerequisites": [
+            [
+                "TELE3118"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "TELE4651": {
+        "prerequisites": [
+            [
+                "TELE3113"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "TELE4652": {
+        "prerequisites": [
+            [
+                "TELE3113"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "TELE4653": {
+        "prerequisites": [
+            [
+                "TELE3113"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "ENGG1300": {
+        "prerequisites": [
+            [
+                "MATH1131",
+                "DPST1013",
+                "MATH1141"
+            ],
+            [
+                "PHYS1121",
+                "PHYS1131",
+                "PHYS1141",
+                "DPST1023"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "PHYS1121": {
+        "prerequisites": null,
+        "corequisites": [
+            [
+                "MATH1131",
+                "DPST1013",
+                "MATH1141",
+                "MATH1151",
+                "MATH1011"
+            ]
+        ],
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "COMP1911": {
+        "prerequisites": null,
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": [
+            "PREREQUISITE: ENROLMENT IN A NON-CSE MAJOR (NO BINF, COMP, OR SENG)"
+        ]
+    },
+    "ENGG1811": {
+        "prerequisites": null,
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": [
+            "PREREQUISITE: ENROLMENT IN A NON-CSE MAJOR (NO BINF, COMP, OR SENG)"
+        ]
+    },
+    "ENGG2400": {
+        "prerequisites": [
+            [
+                "ENGG1300",
+                "DPST1072",
+                "CVEN1300",
+                "MMAN1300"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "ENGG2500": {
+        "prerequisites": [
+            [
+                "MATH1131",
+                "DPST1013",
+                "MATH1141"
+            ],
+            [
+                "PHYS1121",
+                "PHYS1131",
+                "PHYS1141",
+                "DPST1023"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "MATH2019": {
+        "prerequisites": [
+            [
+                "MATH1231",
+                "DPST1014",
+                "MATH1241",
+                "MATH1251"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "MMAN2700": {
+        "prerequisites": [
+            [
+                "MATH1131",
+                "DPST1013",
+                "MATH1141"
+            ],
+            [
+                "PHYS1121",
+                "PHYS1131",
+                "DPST1023",
+                "PHYS1141"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "AERO3110": {
+        "prerequisites": [
+            [
+                "MMAN2100"
+            ],
+            [
+                "ENGG2400",
+                "MMAN2400"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "AERO3410": {
+        "prerequisites": [
+            [
+                "ENGG2400",
+                "MMAN2400",
+                "CVEN2301"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "AERO3630": {
+        "prerequisites": [
+            [
+                "MMAN2600",
+                "ENGG2500"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "AERO3660": {
+        "prerequisites": [
+            [
+                "MMAN1300",
+                "ENGG1300",
+                "DPST1072",
+                "CVEN1300"
+            ],
+            [
+                "MMAN2600",
+                "ENGG2500"
+            ],
+            [
+                "MMAN2700"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "AERO4110": {
+        "prerequisites": [
+            [
+                "AERO3110"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "AERO4620": {
+        "prerequisites": [
+            [
+                "AERO3660"
+            ],
+            [
+                "MMAN3200"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "MMAN4010": {
+        "prerequisites": null,
+        "corequisites": null,
+        "units_required": "132",
+        "year": null,
+        "other": null
+    },
+    "MMAN4020": {
+        "prerequisites": [
+            [
+                "MMAN4010"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "MMAN4951": {
+        "prerequisites": null,
+        "corequisites": null,
+        "units_required": "126",
+        "year": "3",
+        "other": null
+    },
+    "MMAN4952": {
+        "prerequisites": [
+            "MMAN4951"
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "MMAN4953": {
+        "prerequisites": [
+            "MMAN4952"
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "MECH4305": {
+        "prerequisites": [
+            [
+                "MATH2019",
+                "MATH2018"
+            ],
+            [
+                "MMAN3300",
+                "MMAN2300"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "MECH4320": {
+        "prerequisites": [
+            [
+                "MATH2019",
+                "MATH2018"
+            ],
+            [
+                "MMAN3300",
+                "MMAN2300"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "MECH4620": {
+        "prerequisites": [
+            [
+                "ENGG2500",
+                "MMAN2600"
+            ],
+            [
+                "MMAN2700"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "MECH4900": {
+        "prerequisites": [
+            [
+                "MECH3400",
+                "MMAN3400"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "MECH9420": {
+        "prerequisites": [
+            [
+                "ENGG2400",
+                "MMAN2400",
+                "CVEN2301"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "MMAN4410": {
+        "prerequisites": [
+            [
+                "MMAN2400"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "COMP3141": {
+        "prerequisites": [
+            [
+                "COMP1927",
+                "COMP2521"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "COMP3331": {
+        "prerequisites": [
+            [
+                "COMP1927",
+                "COMP2521",
+                "MTRN3500"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "ENGG3060": {
+        "prerequisites": null,
+        "corequisites": null,
+        "units_required": "66",
+        "year": null,
+        "other": null
+    },
+    "MANF4100": {
+        "prerequisites": [
+            [
+                "MANF3100",
+                "MANF3510"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "MANF4430": {
+        "prerequisites": [
+            [
+                "MATH2089"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "MANF4611": {
+        "prerequisites": [
+            [
+                "MATH2089"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "MECH4100": {
+        "prerequisites": [
+            [
+                "MECH3110"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "MECH4880": {
+        "prerequisites": [
+            [
+                "ENGG2500",
+                "MMAN2600"
+            ],
+            [
+                "MMAN2700"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "MECH9650": {
+        "prerequisites": [
+            [
+                "MMAN2600",
+                "ENGG2500"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "MECH9720": {
+        "prerequisites": [
+            [
+                "ENGG2500",
+                "MMAN2600"
+            ],
+            [
+                "MMAN2700"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "MTRN4030": {
+        "prerequisites": [
+            [
+                "MATH2089"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "MTRN9400": {
+        "prerequisites": [
+            [
+                "MMAN3200",
+                "ELEC3114",
+                "ELEC4631"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "CHEM1021": {
+        "prerequisites": [
+            [
+                "CHEM1011",
+                "CHEM1031"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "CHEM1031": {
+        "prerequisites": null,
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": [
+            "PREREQUISITE: MUST BE ENROLLED IN A PROGRAM WITH THE OPTION OF A CHEM MAJOR"
+        ]
+    },
+    "CHEM1041": {
+        "prerequisites": [
+            [
+                "CHEM1031",
+                "CHEM1011"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "COMP1521": {
+        "prerequisites": [
+            [
+                "COMP1511",
+                "DPST1091",
+                "COMP1911",
+                "COMP1917"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "COMP1531": {
+        "prerequisites": [
+            [
+                "COMP1511",
+                "DPST1091",
+                "COMP1917",
+                "COMP1921"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "MATH1081": {
+        "prerequisites": null,
+        "corequisites": [
+            [
+                "MATH1131",
+                "DPST1013",
+                "MATH1141",
+                "MATH1151"
+            ]
+        ],
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "BINF2010": {
+        "prerequisites": [
+            [
+                "BABS1201",
+                "DPST1051"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "BIOC2201": {
+        "prerequisites": [
+            [
+                "BABS1201",
+                "DPST1051"
+            ],
+            [
+                "CHEM1011",
+                "DPST1031",
+                "CHEM1031",
+                "CHEM1051",
+                "CHEM1811"
+            ],
+            [
+                "CHEM1021",
+                "DPST1032",
+                "CHEM1041",
+                "CHEM1061",
+                "CHEM1821"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "COMP2511": {
+        "prerequisites": [
+            [
+                "COMP1531"
+            ],
+            [
+                "COMP2521",
+                "COMP1927"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "COMP2521": {
+        "prerequisites": [
+            [
+                "COMP1511",
+                "DPST1091",
+                "COMP1917",
+                "COMP1921"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "BABS2202": {
+        "prerequisites": [
+            [
+                "BABS1201",
+                "DPST1051"
+            ],
+            [
+                "CHEM1011",
+                "CHEM1031",
+                "DPST1031"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "BABS2204": {
+        "prerequisites": [
+            [
+                "BABS1201",
+                "DPST1051"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "BABS2264": {
+        "prerequisites": [
+            [
+                "BABS1201",
+                "DPST1051"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "BIOC2101": {
+        "prerequisites": [
+            [
+                "BABS1201",
+                "DPST1051"
+            ],
+            [
+                "CHEM1011",
+                "DPST1031",
+                "CHEM1031",
+                "CHEM1051",
+                "CHEM1811"
+            ],
+            [
+                "CHEM1021",
+                "DPST1032",
+                "CHEM1041",
+                "CHEM1061",
+                "CHEM1821"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "MICR2011": {
+        "prerequisites": [
+            [
+                "BABS1201",
+                "DPST1051"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "BABS3121": {
+        "prerequisites": [
+            [
+                "BIOC2201",
+                "BIOC2101",
+                "BABS2204",
+                "BABS2264",
+                "BABS2202",
+                "MICR2011"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "BINF3010": {
+        "prerequisites": [
+            [
+                "BABS2204",
+                "BABS2264",
+                "BIOC2201"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "COMP3121": {
+        "prerequisites": [
+            [
+                "COMP1927",
+                "COMP2521"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "COMP3311": {
+        "prerequisites": [
+            [
+                "COMP2521",
+                "COMP1927"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "BINF6112": {
+        "prerequisites": [
+            [
+                "COMP1531",
+                "COMP2041"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "COMP4920": {
+        "prerequisites": [
+            [
+                "COMP2511",
+                "COMP2911"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": "96",
+        "year": null,
+        "other": null
+    },
+    "COMP4951": {
+        "prerequisites": null,
+        "corequisites": null,
+        "units_required": "126",
+        "year": "3",
+        "other": null
+    },
+    "COMP4952": {
+        "prerequisites": [
+            "COMP4951"
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "COMP4953": {
+        "prerequisites": [
+            "COMP4952"
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "CEIC2000": {
+        "prerequisites": [
+            [
+                "PHYS1121"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "CEIC2001": {
+        "prerequisites": [
+            [
+                "PHYS1121"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "CEIC2002": {
+        "prerequisites": [
+            [
+                "CEIC2001"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "CEIC2005": {
+        "prerequisites": [
+            [
+                "CEIC2000"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "MATH2018": {
+        "prerequisites": [
+            [
+                "MATH1231",
+                "DPST1014",
+                "MATH1241",
+                "MATH1251"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "CEIC3000": {
+        "prerequisites": [
+            [
+                "CEIC2002"
+            ],
+            [
+                "CEIC2005"
+            ],
+            [
+                "MATH2089"
+            ],
+            [
+                "MATH2019",
+                "MATH2018"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "CEIC3001": {
+        "prerequisites": [
+            [
+                "CEIC2000",
+                "CEIC2001",
+                "CEIC2002",
+                "CEIC2005"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "CEIC3004": {
+        "prerequisites": [
+            [
+                "CEIC2000",
+                "CEIC2001",
+                "CEIC2002",
+                "CEIC3001"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "CEIC3005": {
+        "prerequisites": [
+            [
+                "CEIC2000",
+                "CEIC2001",
+                "CEIC2002"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "CEIC3006": {
+        "prerequisites": [
+            [
+                "CEIC2000",
+                "MATH2018",
+                "MATH2019",
+                "MATH2089"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "CEIC4001": {
+        "prerequisites": [
+            [
+                "CEIC3004"
+            ],
+            [
+                "CEIC3005",
+                "CEIC3005"
+            ],
+            [
+                "CEIC3006",
+                "CEIC3006"
+            ],
+            [
+                "CEIC3004"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "CEIC4951": {
+        "prerequisites": null,
+        "corequisites": null,
+        "units_required": "126",
+        "year": "3",
+        "other": null
+    },
+    "CEIC4952": {
+        "prerequisites": [
+            "CEIC4951"
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "CEIC4953": {
+        "prerequisites": [
+            "CEIC4952"
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "CEIC6004": {
+        "prerequisites": [
+            [
+                "POLY3000"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "CEIC8102": {
+        "prerequisites": [
+            [
+                "CEIC3006"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "CHEN6706": {
+        "prerequisites": [
+            [
+                "CEIC2001",
+                "CEIC2002",
+                "MATH2019",
+                "CEIC3000"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "CEIC6005": {
+        "prerequisites": [
+            [
+                "MATS1101",
+                "CHEM1011",
+                "DPST1031",
+                "CHEM1021",
+                "DPST1032"
+            ],
+            [
+                "CEIC2000"
+            ],
+            [
+                "CEIC2002"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "CEIC8341": {
+        "prerequisites": [
+            [
+                "CEIC2001",
+                "CEIC2002"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "CHEM2041": {
+        "prerequisites": [
+            [
+                "CHEM1011",
+                "CHEM1031",
+                "CHEM1051",
+                "CHEM1811",
+                "DPST1031"
+            ],
+            [
+                "CHEM1021",
+                "CHEM1041",
+                "CHEM1061",
+                "CHEM1821",
+                "DPST1032"
+            ],
+            [
+                "MATH1031",
+                "MATH1041",
+                "MATH1131",
+                "MATH1141",
+                "MATH1151",
+                "MATH1231",
+                "MATH1241",
+                "MATH1251",
+                "DPST1013",
+                "DPST1014"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "ENGG3001": {
+        "prerequisites": null,
+        "corequisites": null,
+        "units_required": "96",
+        "year": null,
+        "other": null
+    },
+    "FOOD3010": {
+        "prerequisites": [
+            [
+                "FOOD1120",
+                "FOOD2320",
+                "CHEM2921"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "POLY3000": {
+        "prerequisites": [
+            [
+                "CHEM2021",
+                "CEIC2004"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "ENGG4060": {
+        "prerequisites": null,
+        "corequisites": null,
+        "units_required": "96",
+        "year": null,
+        "other": null
+    },
+    "ENGG4102": {
+        "prerequisites": [
+            [
+                "ENGG3001"
+            ],
+            [
+                "ARTS2755",
+                "ARTS2248",
+                "ARTS2751",
+                "ARTS2752"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "CHEM2021": {
+        "prerequisites": [
+            [
+                "CHEM2041"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "CHEM3021": {
+        "prerequisites": [
+            [
+                "CHEM2021"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "CEIC8105": {
+        "prerequisites": [
+            [
+                "CEIC8104",
+                "POLY3000"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "ELEC3111": {
+        "prerequisites": [
+            [
+                "ELEC2134"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "ELEC3145": {
+        "prerequisites": [
+            [
+                "COMP1911",
+                "COMP1917"
+            ],
+            [
+                "ELEC2141",
+                "MTRN3200",
+                "COMP3222"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "ELEC3705": {
+        "prerequisites": [
+            [
+                "MATH2099"
+            ],
+            [
+                "PHYS1231",
+                "DPST1024",
+                "PHYS1221"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "ELEC4605": {
+        "prerequisites": [
+            [
+                "ELEC3705"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "ELEC4617": {
+        "prerequisites": [
+            [
+                "ELEC4612"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "MECH3110": {
+        "prerequisites": [
+            [
+                "MMAN2400",
+                "ENGG2400"
+            ],
+            [
+                "MMAN2100"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "MECH3610": {
+        "prerequisites": [
+            [
+                "ENGG2500",
+                "MMAN2600"
+            ],
+            [
+                "MMAN2700"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "MMAN3400": {
+        "prerequisites": [
+            [
+                "MATH2019",
+                "MATH2018"
+            ],
+            [
+                "ENGG2400",
+                "MMAN2400"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "CVEN2002": {
+        "prerequisites": [
+            [
+                "MATH1231",
+                "DPST1014",
+                "MATH1241"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "CVEN2303": {
+        "prerequisites": [
+            [
+                "ENGG1300"
+            ],
+            [
+                "ENGG2400",
+                "CVEN1300"
+            ],
+            [
+                "CVEN2301"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "CVEN3203": {
+        "prerequisites": [
+            [
+                "CVEN2201",
+                "CVEN3202"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "CVEN3303": {
+        "prerequisites": [
+            [
+                "ENGG1300"
+            ],
+            [
+                "ENGG2400",
+                "CVEN1300"
+            ],
+            [
+                "CVEN2301"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "CVEN3304": {
+        "prerequisites": [
+            [
+                "ENGG1300"
+            ],
+            [
+                "ENGG2400",
+                "CVEN1300"
+            ],
+            [
+                "CVEN2301"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "CVEN3502": {
+        "prerequisites": [
+            [
+                "ENGG2500",
+                "CVEN2501"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "CVEN4032": {
+        "prerequisites": null,
+        "corequisites": null,
+        "units_required": "132",
+        "year": null,
+        "other": null
+    },
+    "CVEN4033": {
+        "prerequisites": [
+            [
+                "CVEN4032"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "CVEN4050": {
+        "prerequisites": null,
+        "corequisites": null,
+        "units_required": "132",
+        "year": null,
+        "other": [
+            "BE HONS PROGRAMS ONLY"
+        ]
+    },
+    "CVEN4051": {
+        "prerequisites": [
+            [
+                "CVEN4050"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "CVEN4951": {
+        "prerequisites": null,
+        "corequisites": null,
+        "units_required": "126",
+        "year": "3",
+        "other": null
+    },
+    "CVEN4952": {
+        "prerequisites": [
+            [
+                "CVEN4951"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "CVEN4953": {
+        "prerequisites": [
+            [
+                "CVEN4952"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "CVEN4002": {
+        "prerequisites": null,
+        "corequisites": null,
+        "units_required": "132",
+        "year": null,
+        "other": null
+    },
+    "CVEN4003": {
+        "prerequisites": null,
+        "corequisites": null,
+        "units_required": "132",
+        "year": null,
+        "other": null
+    },
+    "CVEN4101": {
+        "prerequisites": [
+            [
+                "CVEN3101"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "CVEN4102": {
+        "prerequisites": [
+            [
+                "CVEN3101"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "CVEN4103": {
+        "prerequisites": [
+            [
+                "CVEN3101"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "CVEN4104": {
+        "prerequisites": [
+            [
+                "CVEN3101"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "CVEN4201": {
+        "prerequisites": [
+            [
+                "CVEN2201",
+                "CVEN3202",
+                "CVEN3201",
+                "CVEN3203"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "CVEN4202": {
+        "prerequisites": [
+            [
+                "CVEN2201",
+                "CVEN3202",
+                "CVEN3201",
+                "CVEN3203"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "CVEN4204": {
+        "prerequisites": [
+            [
+                "CVEN2201",
+                "CVEN3202",
+                "CVEN3201",
+                "CVEN3203"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "CVEN4300": {
+        "prerequisites": [
+            "CVEN2303",
+            "CVEN3303",
+            "CVEN3304"
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "CVEN4301": {
+        "prerequisites": [
+            [
+                "CVEN3301",
+                "CVEN2303"
+            ],
+            [
+                "CVEN3302",
+                "CVEN3304"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "CVEN4308": {
+        "prerequisites": [
+            [
+                "CVEN3301",
+                "CVEN2303"
+            ],
+            [
+                "CVEN2002"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "CVEN4309": {
+        "prerequisites": [
+            [
+                "CVEN2301",
+                "CVEN2303"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "CVEN4310": {
+        "prerequisites": [
+            [
+                "GMAT1110"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "CVEN4402": {
+        "prerequisites": [
+            [
+                "CVEN2401",
+                "CVEN3401",
+                "CVEN2402",
+                "CVEN3402"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "CVEN4404": {
+        "prerequisites": [
+            [
+                "CVEN2401",
+                "CVEN3401",
+                "CVEN2402",
+                "CVEN3402"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "CVEN4503": {
+        "prerequisites": [
+            [
+                "CVEN3501"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "CVEN4504": {
+        "prerequisites": [
+            [
+                "CVEN3502"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "CVEN4703": {
+        "prerequisites": [
+            [
+                "CVEN3502"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "CVEN9809": {
+        "prerequisites": [
+            [
+                "CVEN3304"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "CVEN9826": {
+        "prerequisites": null,
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "GMAT3220": {
+        "prerequisites": [
+            [
+                "GMAT1110"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "CVEN2701": {
+        "prerequisites": [
+            [
+                "CHEM1011",
+                "CHEM1031",
+                "CHEM1811"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "CVEN3701": {
+        "prerequisites": [
+            [
+                "CVEN1701"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "CVEN4507": {
+        "prerequisites": [
+            [
+                "CVEN2501",
+                "CVEN3501",
+                "CVEN3502"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "COMP2121": {
+        "prerequisites": [
+            [
+                "COMP1917",
+                "COMP1921",
+                "COMP1511",
+                "DPST1091",
+                "COMP1521",
+                "DPST1092",
+                "COMP1911"
+            ],
+            [
+                "MTRN2500"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "MTRN2500": {
+        "prerequisites": [
+            [
+                "COMP1917",
+                "COMP1511",
+                "DPST1091",
+                "COMP1911"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "MTRN3020": {
+        "prerequisites": [
+            [
+                "MMAN3200",
+                "ELEC3114"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "MTRN3500": {
+        "prerequisites": [
+            [
+                "MTRN2500"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "MTRN4010": {
+        "prerequisites": [
+            [
+                "MATH2089"
+            ],
+            [
+                "MTRN2500"
+            ],
+            [
+                "MMAN3200",
+                "ELEC3114"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "MTRN4110": {
+        "prerequisites": [
+            [
+                "ELEC1111",
+                "DPST1081",
+                "ELEC1112"
+            ],
+            [
+                "MTRN2500"
+            ],
+            [
+                "MMAN3200"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "MTRN4230": {
+        "prerequisites": [
+            [
+                "MMAN2300",
+                "MMAN3300",
+                "MTRN2500"
+            ],
+            [
+                "MTRN3020"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "MINE2010": {
+        "prerequisites": [
+            [
+                "MINE1010"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "MINE2810": {
+        "prerequisites": [
+            [
+                "PHYS1131",
+                "MATS1101"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "MINE3220": {
+        "prerequisites": [
+            [
+                "MINE2010",
+                "CVEN3201"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "MINE3230": {
+        "prerequisites": [
+            [
+                "MINE3220"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "MINE3310": {
+        "prerequisites": [
+            [
+                "ENGG2400",
+                "CVEN2301",
+                "MINE2310"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "MINE3430": {
+        "prerequisites": [
+            [
+                "MINE2010",
+                "CVEN3031"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "MINE3510": {
+        "prerequisites": [
+            [
+                "ENGG2500",
+                "MINE2500",
+                "CVEN2501",
+                "MATS2005"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "MINE3630": {
+        "prerequisites": [
+            [
+                "MINE3430"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "MINE4250": {
+        "prerequisites": [
+            [
+                "MINE3230"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "MINE4260": {
+        "prerequisites": [
+            [
+                "MINE4250"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "MINE4310": {
+        "prerequisites": [
+            [
+                "MINE3310"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "MINE4710": {
+        "prerequisites": [
+            [
+                "MINE3430"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "MINE4951": {
+        "prerequisites": null,
+        "corequisites": null,
+        "units_required": "126",
+        "year": "3",
+        "other": null
+    },
+    "MINE4952": {
+        "prerequisites": [
+            "MINE4951"
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "MINE4953": {
+        "prerequisites": [
+            "MINE4952"
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "MANF3510": {
+        "prerequisites": [
+            [
+                "MMAN1130",
+                "MMAN2130"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "PHYS1221": {
+        "prerequisites": [
+            [
+                "PHYS1121",
+                "PHYS1131",
+                "DPST1023",
+                "PHYS1141"
+            ]
+        ],
+        "corequisites": [
+            [
+                "MATH1231",
+                "DPST1014",
+                "MATH1241",
+                "MATH1251"
+            ]
+        ],
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "COMP3222": {
+        "prerequisites": [
+            [
+                "COMP2121",
+                "COMP1521",
+                "DPST1092"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "COMP3601": {
+        "prerequisites": [
+            [
+                "COMP2121",
+                "DESN2000"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "COMP4601": {
+        "prerequisites": [
+            [
+                "COMP3211"
+            ],
+            [
+                "COMP3601"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "SOLA2540": {
+        "prerequisites": null,
+        "corequisites": null,
+        "units_required": "48",
+        "year": null,
+        "other": null
+    },
+    "SOLA3020": {
+        "prerequisites": [
+            [
+                "SOLA2540"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "SOLA3507": {
+        "prerequisites": [
+            [
+                "SOLA2060",
+                "SOLA2540"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "SOLA4012": {
+        "prerequisites": [
+            [
+                "SOLA2540"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "SOLA4951": {
+        "prerequisites": null,
+        "corequisites": null,
+        "units_required": "126",
+        "year": "3",
+        "other": null
+    },
+    "SOLA4952": {
+        "prerequisites": [
+            "SOLA4951"
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "SOLA4953": {
+        "prerequisites": [
+            "SOLA4952"
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "ARCH1361": {
+        "prerequisites": [
+            [
+                "ARCH1161"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "BENV1072": {
+        "prerequisites": null,
+        "corequisites": null,
+        "units_required": "72",
+        "year": null,
+        "other": null
+    },
+    "MATH2121": {
+        "prerequisites": [
+            [
+                "MATH1231",
+                "DPST1014",
+                "MATH1241",
+                "MATH1251"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "MATH3041": {
+        "prerequisites": null,
+        "corequisites": null,
+        "units_required": "12",
+        "year": null,
+        "other": null
+    },
+    "MMAN2600": {
+        "prerequisites": [
+            [
+                "MATH1131",
+                "DPST1013",
+                "MATH1141"
+            ],
+            [
+                "PHYS1121",
+                "PHYS1131",
+                "DPST1023",
+                "PHYS1141"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "PHYS2111": {
+        "prerequisites": [
+            [
+                "PHYS1221",
+                "PHYS1231",
+                "DPST1024",
+                "PHYS1241"
+            ],
+            [
+                "MATH1231",
+                "DPST1014",
+                "MATH1241"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "PHYS3111": {
+        "prerequisites": [
+            [
+                "MATH2069",
+                "MATH2521",
+                "MATH2621"
+            ],
+            [
+                "PHYS2111",
+                "PHYS2110"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "SOLA5050": {
+        "prerequisites": null,
+        "corequisites": null,
+        "units_required": "96",
+        "year": null,
+        "other": null
+    },
+    "GMAT2120": {
+        "prerequisites": [
+            [
+                "GMAT2500"
+            ],
+            [
+                "GMAT2700"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "GMAT2500": {
+        "prerequisites": [
+            [
+                "GMAT1110"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "GMAT2550": {
+        "prerequisites": [
+            [
+                "MATH1231",
+                "DPST1014",
+                "MATH1241"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "GMAT2700": {
+        "prerequisites": [
+            [
+                "GMAT1110"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "GMAT3100": {
+        "prerequisites": [
+            [
+                "GMAT2120"
+            ],
+            [
+                "GMAT2550"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "GMAT3150": {
+        "prerequisites": [
+            [
+                "GMAT2500"
+            ],
+            [
+                "GMAT2550"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "GMAT3420": {
+        "prerequisites": [
+            [
+                "GMAT2500"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "GMAT3700": {
+        "prerequisites": [
+            [
+                "GMAT2700"
+            ],
+            [
+                "GMAT2550"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "GMAT4150": {
+        "prerequisites": [
+            [
+                "GMAT3150"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "GMAT4220": {
+        "prerequisites": [
+            [
+                "GMAT3220"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "GMAT4400": {
+        "prerequisites": [
+            [
+                "GMAT2500"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "PTRL2019": {
+        "prerequisites": [
+            [
+                "MATH1231",
+                "DPST1014",
+                "MATH1241"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "PTRL3001": {
+        "prerequisites": [
+            [
+                "PTRL2019"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "PTRL3022": {
+        "prerequisites": [
+            [
+                "CEIC2001"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "PTRL3040": {
+        "prerequisites": [
+            [
+                "PTRL3001"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "PTRL3050": {
+        "prerequisites": [
+            [
+                "PTRL2019"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "PTRL4012": {
+        "prerequisites": [
+            [
+                "PTRL3040"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "PTRL4017": {
+        "prerequisites": [
+            [
+                "PTRL3015"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "PTRL4020": {
+        "prerequisites": [
+            [
+                "PTRL2019"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "PTRL4021": {
+        "prerequisites": [
+            [
+                "PTRL3001"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "PTRL4010": {
+        "prerequisites": [
+            [
+                "PTRL2114"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "PTRL4011": {
+        "prerequisites": [
+            [
+                "PTRL3025"
+            ],
+            [
+                "PTRL4010"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "PTRL4951": {
+        "prerequisites": null,
+        "corequisites": null,
+        "units_required": "126",
+        "year": "3",
+        "other": null
+    },
+    "PTRL4952": {
+        "prerequisites": [
+            "PTRL4951"
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "PTRL4953": {
+        "prerequisites": [
+            "PTRL4952"
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "CEIC2004": {
+        "prerequisites": [
+            [
+                "CHEM1821",
+                "CHEM1021",
+                "DPST1032",
+                "CHEM1041"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "CHEM2011": {
+        "prerequisites": [
+            [
+                "CHEM2041"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "COMP1927": {
+        "prerequisites": [
+            [
+                "COMP1511",
+                "DPST1091",
+                "COMP1917",
+                "COMP1921"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "ECON1102": {
+        "prerequisites": [
+            [
+                "ECON1101"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "GEOS2711": {
+        "prerequisites": [
+            [
+                "GEOS1701"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "GEOS2721": {
+        "prerequisites": [
+            [
+                "GEOS1701"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "GEOS3141": {
+        "prerequisites": [
+            [
+                "GEOL1111",
+                "GEOS1111",
+                "GEOL1211",
+                "GEOS1211",
+                "GEOS1701",
+                "GEOL5321",
+                "GEOL5200"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "MATS2001": {
+        "prerequisites": [
+            [
+                "MATH1131",
+                "DPST1013",
+                "MATH1141"
+            ],
+            [
+                "MATH1231",
+                "DPST1014",
+                "MATH1241"
+            ],
+            [
+                "PHYS1121",
+                "PHYS1131",
+                "DPST1023"
+            ],
+            [
+                "CHEM1011",
+                "CHEM1031",
+                "DPST1031",
+                "CHEM1811"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "MATS2008": {
+        "prerequisites": [
+            [
+                "CHEM1011",
+                "CHEM1031",
+                "CHEM1811",
+                "MATS1101",
+                "DPST1031"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "PTRL4024": {
+        "prerequisites": [
+            [
+                "PTRL3003",
+                "PTRL3015"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "PTRL5100": {
+        "prerequisites": [
+            [
+                "PTRL2019",
+                "PTRL5019"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "PTRL5101": {
+        "prerequisites": [
+            [
+                "PTRL5100"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "MATH2400": {
+        "prerequisites": [
+            [
+                "MATH1081",
+                "MATH1231",
+                "DPST1014",
+                "MATH1241",
+                "MATH1251"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "SENG2011": {
+        "prerequisites": [
+            [
+                "MATH1081"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "SENG2021": {
+        "prerequisites": [
+            [
+                "SENG1031",
+                "COMP1531"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": [
+            "ENROLMENT IN A BE OR BE(HONS) SOFTWARE ENGINEERING MAJOR."
+        ]
+    },
+    "SENG3011": {
+        "prerequisites": [
+            [
+                "SENG2021"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": null,
+        "year": null,
+        "other": null
+    },
+    "ENGG3600": {
+        "prerequisites": [
+            [
+                "ENGG1000"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": "90",
+        "year": null,
+        "other": [
+            "ENROLLED IN A PROGRAM OFFERED BY THE FACULTY OF ENGINEERING"
+        ]
+    },
+    "ENGG4600": {
+        "prerequisites": [
+            [
+                "ENGG1000"
+            ]
+        ],
+        "corequisites": null,
+        "units_required": "136",
+        "year": null,
+        "other": [
+            "ENROLLED IN A PROGRAM OFFERED BY THE FACULTY OF ENGINEERING"
+        ]
+    }
+}

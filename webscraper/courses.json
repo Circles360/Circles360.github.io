@@ -9,7 +9,7 @@
             "Term 3"
         ],
         "desc": "An introduction to problem-solving via programming, which aims to have students develop proficiency in using a high level programming language.",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": [
             {
                 "code": "COMP1917",
@@ -33,7 +33,7 @@
             "Term 3"
         ],
         "desc": "An introduction to the art and science of Electrical Engineering and Telecommunications, and the systems approach to engineering design.",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": [
             {
                 "code": "DPST1081",
@@ -51,7 +51,7 @@
             "Term 2"
         ],
         "desc": "Introduction to modern digital logic design, combinational logic, switch logic and basic gates, Boolean algebra, two-level logic, regular logic structures, multi-level networks and transformations, programmable logic devices, time response.",
-        "prerequisites": "Pre-Requisite: ELEC1111 OR DPST1081 OR ELEC1112",
+        "conditions": "Pre-Requisite: ELEC1111 OR DPST1081 OR ELEC1112",
         "equivalents": null
     },
     "ENGG1000": {
@@ -63,7 +63,7 @@
             "Term 3"
         ],
         "desc": "In this course, students will experience first hand one of the major things that engineers do: designing and building creative solutions to problems.",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": [
             {
                 "code": "DPST1071",
@@ -82,7 +82,7 @@
             "Term 3"
         ],
         "desc": "This course provides an introduction to Physics.",
-        "prerequisites": "Corequisite: MATH1131 or DPST1013 or MATH1141 or MATH1151 or MATH1011",
+        "conditions": "Corequisite: MATH1131 or DPST1013 or MATH1141 or MATH1151 or MATH1011",
         "equivalents": [
             {
                 "code": "DPST1023",
@@ -100,7 +100,7 @@
             "Term 3"
         ],
         "desc": "This is the second of the two introductory courses in Physics.",
-        "prerequisites": "Prerequisite: PHYS1131 or DPST1023 or PHYS1141 or a mark of 65 or above in PHYS1121; Corequisite: MATH1231 or DPST1014 or MATH1241 or MATH1251",
+        "conditions": "Prerequisite: PHYS1131 or DPST1023 or PHYS1141 or a mark of 65 or above in PHYS1121; Corequisite: MATH1231 or DPST1014 or MATH1241 or MATH1251",
         "equivalents": [
             {
                 "code": "DPST1024",
@@ -119,7 +119,7 @@
             "Term 3"
         ],
         "desc": "Complex numbers, vectors and vector geometry, linear equations, matrices and matrix algebra, determinants.",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": [
             {
                 "code": "DPST1013",
@@ -137,7 +137,7 @@
             "Term 3"
         ],
         "desc": "As for MATH1131 but in greater depth.",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": null
     },
     "MATH1231": {
@@ -150,7 +150,7 @@
             "Term 3"
         ],
         "desc": "Vector spaces, linear transformations, eigenvalues and eigenvectors.",
-        "prerequisites": "Prerequisite: MATH1131 or DPST1013 or MATH1141",
+        "conditions": "Prerequisite: MATH1131 or DPST1013 or MATH1141",
         "equivalents": [
             {
                 "code": "DPST1014",
@@ -168,7 +168,7 @@
             "Term 2"
         ],
         "desc": "Vector spaces, linear transformations, eigenvalues and eigenvectors.",
-        "prerequisites": "Prerequisite: MATH1131 (CR) or MATH1141 (CR) or DPST1013 (CR)",
+        "conditions": "Prerequisite: MATH1131 (CR) or MATH1141 (CR) or DPST1013 (CR)",
         "equivalents": null
     },
     "ELEC2117": {
@@ -179,7 +179,7 @@
             "Term 1"
         ],
         "desc": "This second year design course complements the design thread in the School, drawing from knowledge gained in first year courses on electronic circuits, programming, and digital circuits.",
-        "prerequisites": "Pre-Requisite:(ELEC1111 OR DPST1081 OR ELEC1112) AND (ELEC2141 OR ELEC1041) AND (COMP1511 OR DPST1091 OR COMP1911 OR COMP1917)",
+        "conditions": "Pre-Requisite:(ELEC1111 OR DPST1081 OR ELEC1112) AND (ELEC2141 OR ELEC1041) AND (COMP1511 OR DPST1091 OR COMP1911 OR COMP1917)",
         "equivalents": null
     },
     "ELEC2133": {
@@ -190,7 +190,7 @@
             "Term 2"
         ],
         "desc": "Device physics of diodes, BJTs and MOSFETs.",
-        "prerequisites": "Prerequisite: ELEC2134",
+        "conditions": "Prerequisite: ELEC2134",
         "equivalents": null
     },
     "ELEC2134": {
@@ -202,7 +202,7 @@
             "Term 3"
         ],
         "desc": "Circuit elements - energy storage and dynamics.",
-        "prerequisites": "Co-Requisite: ELEC1111 OR DPST1081 OR ELEC1112",
+        "conditions": "Co-Requisite: ELEC1111 OR DPST1081 OR ELEC1112",
         "equivalents": null
     },
     "ELEC2142": {
@@ -211,7 +211,7 @@
         "units": "6",
         "terms": null,
         "desc": "An introduction to programmer model of computer organisation using assembly and machine language.",
-        "prerequisites": "Prerequisite: ELEC2141 AND (COMP1511 OR COMP1521 OR DPST1092)",
+        "conditions": "Prerequisite: ELEC2141 AND (COMP1511 OR COMP1521 OR DPST1092)",
         "equivalents": [
             {
                 "code": "MMAN2100",
@@ -243,7 +243,7 @@
             "Term 3"
         ],
         "desc": "Several Variable Calculus:Vectors, differential calculus of curves in R3 and  surfaces, Taylor series for functions of two variables, critical points, local maxima and minima.",
-        "prerequisites": "Prerequisite: MATH1231 or DPST1014 or MATH1241 or MATH1251; Exclusion: MATH2011, MATH2111, MATH2510, MATH2610, MATH2520 & MATH2620",
+        "conditions": "Prerequisite: MATH1231 or DPST1014 or MATH1241 or MATH1251; Exclusion: MATH2011, MATH2111, MATH2510, MATH2610, MATH2520 & MATH2620",
         "equivalents": null
     },
     "MATH2099": {
@@ -254,7 +254,7 @@
             "Term 2"
         ],
         "desc": "Linear algebra: Vector spaces, linear transformations, change of basis, inner products, orthogonalization, least squares approximation, QR factorization, determinants, eigenvalues and eigenvectors, diagonalization, Jordan forms, matrix exponentials and applications to systems of differential equations, other applications of linear algebra.",
-        "prerequisites": "Prerequisite: MATH1231 or DPST1014 or MATH1241 or MATH1251 Exclusion: MATH2501 and MATH2601",
+        "conditions": "Prerequisite: MATH1231 or DPST1014 or MATH1241 or MATH1251 Exclusion: MATH2501 and MATH2601",
         "equivalents": null
     },
     "ELEC3104": {
@@ -266,7 +266,7 @@
             "Term 3"
         ],
         "desc": "Processing and analysis of continuous (analogue) and discrete-time (digital) signals.",
-        "prerequisites": "Prerequisite: ELEC2134",
+        "conditions": "Prerequisite: ELEC2134",
         "equivalents": [
             {
                 "code": "ELEC3004",
@@ -283,7 +283,7 @@
             "Term 2"
         ],
         "desc": "Electrical energy supply systems: transmission and distribution systems; Basic aspects of both the supply and utilization of electrical energy, with some emphasis on contemporary aspects of energy utilization including modern developments, energy efficiency and environmental aspects.",
-        "prerequisites": "Prerequisite/s: ELEC2134 and ELEC3115",
+        "conditions": "Prerequisite/s: ELEC2134 and ELEC3115",
         "equivalents": [
             {
                 "code": "ELEC3005",
@@ -300,7 +300,7 @@
             "Term 2"
         ],
         "desc": "Recognition of what a control system is, and the distinction between simple and complex control systems.",
-        "prerequisites": "Prerequisite: ELEC2134 and MATH2099",
+        "conditions": "Prerequisite: ELEC2134 and MATH2099",
         "equivalents": [
             {
                 "code": "ELEC3014",
@@ -317,7 +317,7 @@
             "Term 1"
         ],
         "desc": "Review of vector calculus, Electric Fields: Coulomb's and Gauss's laws and Maxwell's equations, Electric potential, Laplace's and Poisson's  equations; Magnetic Fields: Biot-Savart law, Vector potential and  Ampere's law and Maxwell's equations;Application of Gauss's law;  Solution of Poisson's and Laplace's equations for electric field;  Boundary value problems and method of images; Dielectric materials, capacitance, electrostatic energy and forces, losses; Field and current density, conductance; Application of Ampere's law; Magnetic materials, inductance, coupling in magnetic circuits; Magnetic energy and forces.",
-        "prerequisites": "Pre-requisite: MATH2069 AND (PHY1231 OR DPST1024)",
+        "conditions": "Pre-requisite: MATH2069 AND (PHY1231 OR DPST1024)",
         "equivalents": [
             {
                 "code": "ELEC2015",
@@ -334,7 +334,7 @@
             "Term 3"
         ],
         "desc": "Design Project Management: Introduction to scheduling, costing, marketing, standards, patents, quality, safety, (electronic) manufacturing methods, engineering innovation, Report Writing and Oral Presentations.",
-        "prerequisites": "Prereq: ELEC2133",
+        "conditions": "Prereq: ELEC2133",
         "equivalents": [
             {
                 "code": "PHTN3117",
@@ -361,7 +361,7 @@
             "Term 1"
         ],
         "desc": "Theories of leadership; leadership of teams.",
-        "prerequisites": "Prerequisite: 120 units of credit",
+        "conditions": "Prerequisite: 120 units of credit",
         "equivalents": [
             {
                 "code": "ELEC4011",
@@ -379,7 +379,7 @@
             "Term 3"
         ],
         "desc": "The course involves four competency components, as follows:Electronic Circuit Design: Devices, amplifiers, tuned circuits, opamp circuits, etc.",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": null
     },
     "ELEC4951": {
@@ -392,7 +392,7 @@
             "Term 3"
         ],
         "desc": "The thesis provides an opportunity for you to bring together engineering principles learned over your previous years of study and apply these principles to innovatively solve problems such as the development of a specific design, process and/or the investigation of a hypothesis.",
-        "prerequisites": "Prerequisite: Completion of 126 UOC and completion of 3rd year core",
+        "conditions": "Prerequisite: Completion of 126 UOC and completion of 3rd year core",
         "equivalents": null
     },
     "ELEC4952": {
@@ -405,7 +405,7 @@
             "Term 3"
         ],
         "desc": "The thesis provides an opportunity for you to bring together engineering principles learned over your previous years of study and apply these principles to innovatively solve problems such as the development of a specific design, process and/or the investigation of a hypothesis.",
-        "prerequisites": "Prerequisite: Completion of Research Thesis A (4951)",
+        "conditions": "Prerequisite: Completion of Research Thesis A (4951)",
         "equivalents": null
     },
     "ELEC4953": {
@@ -418,7 +418,7 @@
             "Term 3"
         ],
         "desc": "The thesis provides an opportunity for you to bring together engineering principles learned over your previous years of study and apply these principles to innovatively solve problems such as the development of a specific design, process and/or the investigation of a hypothesis.",
-        "prerequisites": "Prerequisite: Completion of Research Thesis B (4952)",
+        "conditions": "Prerequisite: Completion of Research Thesis B (4952)",
         "equivalents": null
     },
     "ELEC9451": {
@@ -431,7 +431,7 @@
             "Term 3"
         ],
         "desc": "The project provides an opportunity for you to bring together engineering principles learned over your previous years of study and apply these principles to innovatively solve problems such as the development of a specific design, process and/or the investigation of a hypothesis.",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": null
     },
     "ELEC9452": {
@@ -444,7 +444,7 @@
             "Term 3"
         ],
         "desc": "The project provides an opportunity for you to bring together engineering principles learned over your previous years of study and apply these principles to innovatively solve problems such as the development of a specific design, process and/or the investigation of a hypothesis.",
-        "prerequisites": "Prerequisite: Masters Project A (9451)",
+        "conditions": "Prerequisite: Masters Project A (9451)",
         "equivalents": null
     },
     "ELEC9453": {
@@ -457,7 +457,7 @@
             "Term 3"
         ],
         "desc": "The project provides an opportunity for you to bring together engineering principles learned over your previous years of study and apply these principles to innovatively solve problems such as the development of a specific design, process and/or the investigation of a hypothesis.",
-        "prerequisites": "Prerequisite: Masters Project B (9452)",
+        "conditions": "Prerequisite: Masters Project B (9452)",
         "equivalents": null
     },
     "GSOE9210": {
@@ -468,7 +468,7 @@
             "Term 3"
         ],
         "desc": "In this course stduents will learn how to apply a range of analytical decision-making methodologies to help them be better decision-makers.",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": null
     },
     "GSOE9445": {
@@ -479,7 +479,7 @@
             "Term 3"
         ],
         "desc": "Course introduction: the entrepreneurial revolution; the entrepreneurial process; opportunities recognizing and screening; entrepreneur and the internet; entrepreneur, manager and team; obtaining venture and growth capital; resource requirements; business plan; introduction to entrepreneurial finance; rapid growth and troubled times; ethics and the entrepreneur; harvesting the wealth.",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": null
     },
     "GSOE9820": {
@@ -491,7 +491,7 @@
             "Term 2"
         ],
         "desc": "This course will introduce to you the fundamental principles of project management in an engineering context, enabling you to become a successful project manager.",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": [
             {
                 "code": "CVEN8731",
@@ -514,7 +514,7 @@
             "Term 3"
         ],
         "desc": "Project initiation and development, review of practical decision-making problems and relevant techniques, benefit/cost analysis, time value of money, Nominal and effective interest rate, calculation involving multiple interest formulae, internal rate of return, payback period method, comparisons of alternative investments, depreciation methods, income tax consideration, inflation, replacement analysis, sensitivity analysis, life-cycle costing, economic analysis of projects.",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": null
     },
     "COMP2041": {
@@ -525,7 +525,7 @@
             "Term 2"
         ],
         "desc": "Software system decomposition and design.",
-        "prerequisites": "Prerequisite: COMP1511 OR DPST1091 OR COMP1917 OR COMP1921",
+        "conditions": "Prerequisite: COMP1511 OR DPST1091 OR COMP1917 OR COMP1921",
         "equivalents": [
             {
                 "code": "COMP9044",
@@ -542,7 +542,7 @@
             "Term 1"
         ],
         "desc": "Study the architecture & organisation of modern processors, and influences upon these, with emphasis on pipelined RISC machines; gain understanding of the design of the memory subsystem, I/O, and system level interconnect; become proficient in the use of tools such as VHDL and SimpleScalar for the description, simulation, and verification of architectural designs; complete a series of assignments leading to the design, implementation, validatation and assessment of a RISC system.",
-        "prerequisites": "Prerequisite: COMP3222 or ELEC2141.",
+        "conditions": "Prerequisite: COMP3222 or ELEC2141.",
         "equivalents": [
             {
                 "code": "COMP9211",
@@ -560,7 +560,7 @@
             "Term 2"
         ],
         "desc": "Operating System Organisation and services.",
-        "prerequisites": "Prerequisite: (COMP1521 or DPST1092 or COMP2121 or ELEC2142) and (COMP2521 or COMP1927)",
+        "conditions": "Prerequisite: (COMP1521 or DPST1092 or COMP2121 or ELEC2142) and (COMP2521 or COMP1927)",
         "equivalents": [
             {
                 "code": "COMP9283",
@@ -585,7 +585,7 @@
         "units": "6",
         "terms": null,
         "desc": "Electrical Engineering Modelling and Simulation surveys the basic techniques required for computer modelling of a range of electrical engineering systems.",
-        "prerequisites": "Prerequisite: (COMP1911 or COMP1917) and ELEC2134",
+        "conditions": "Prerequisite: (COMP1911 or COMP1917) and ELEC2134",
         "equivalents": null
     },
     "ELEC3106": {
@@ -596,7 +596,7 @@
             "Term 1"
         ],
         "desc": "Non-ideal effects in electronic circuits and systems: Noise; device noise, external noise, CMRR, PSRR, mixed A/D.",
-        "prerequisites": "Prerequisite/s: ELEC2133 and ELEC2141",
+        "conditions": "Prerequisite/s: ELEC2133 and ELEC2141",
         "equivalents": [
             {
                 "code": "ELEC3006",
@@ -613,7 +613,7 @@
             "Term 3"
         ],
         "desc": "Partial differential equations (PDEs) provide a natural mathematical description for many phenomena of interest in science and engineering.",
-        "prerequisites": "Prerequisite: 12 units of credit in Level 2 Math courses including (MATH2011 or MATH2111 and MATH2120 or MATH2130 or MATH2121 or MATH2221), or (both MATH2019 (DN) and MATH2089), or (both MATH2069 (CR) and MATH2099)",
+        "conditions": "Prerequisite: 12 units of credit in Level 2 Math courses including (MATH2011 or MATH2111 and MATH2120 or MATH2130 or MATH2121 or MATH2221), or (both MATH2019 (DN) and MATH2089), or (both MATH2069 (CR) and MATH2099)",
         "equivalents": null
     },
     "MATH3121": {
@@ -624,7 +624,7 @@
             "Term 1"
         ],
         "desc": "This course builds on MATH2120 Mathematical Methods for Differential Equations in that it is concerned with ways of solving the (usually partial) differential equations that arise mainly in physical, biological and engineering applications.",
-        "prerequisites": "Prerequisite: 12 units of credit in Level 2 Math courses including (MATH2011 or MATH2111) and (MATH2120 or MATH2130 or MATH2121 or MATH2221), or (both MATH2019 (DN) and MATH2089), or (both MATH2069 (DN) and MATH2099)",
+        "conditions": "Prerequisite: 12 units of credit in Level 2 Math courses including (MATH2011 or MATH2111) and (MATH2120 or MATH2130 or MATH2121 or MATH2221), or (both MATH2019 (DN) and MATH2089), or (both MATH2069 (DN) and MATH2099)",
         "equivalents": null
     },
     "MATH3161": {
@@ -635,7 +635,7 @@
             "Term 1"
         ],
         "desc": "Optimization problems, in which one wants to find the values of variables to maximize or minimize an objective function subject to constraints on which variables are allowed, are common throughout the physical and biological sciences, economics, finance and engineering.",
-        "prerequisites": "Prerequisite: 12 units of credit in Level 2 Mathematics courses including MATH2011 or MATH2111 or MATH2510, and MATH2501 or MATH2601, or both MATH2019(DN) and MATH2089, or both MATH2069(CR) and MATH2099.",
+        "conditions": "Prerequisite: 12 units of credit in Level 2 Mathematics courses including MATH2011 or MATH2111 or MATH2510, and MATH2501 or MATH2601, or both MATH2019(DN) and MATH2089, or both MATH2069(CR) and MATH2099.",
         "equivalents": null
     },
     "MATH3201": {
@@ -646,7 +646,7 @@
             "Term 3"
         ],
         "desc": "A dynamical system is any system whose state changes as a function of time.",
-        "prerequisites": "Prerequisite: 12 units of credit in Level 2 Mathematics courses including (MATH2120 or MATH2130 or MATH2121 or MATH2221) and (MATH2501 or MATH2601), or (both MATH2019 (DN) and MATH2089), or (both MATH2069 (CR) and MATH2099)",
+        "conditions": "Prerequisite: 12 units of credit in Level 2 Mathematics courses including (MATH2120 or MATH2130 or MATH2121 or MATH2221) and (MATH2501 or MATH2601), or (both MATH2019 (DN) and MATH2089), or (both MATH2069 (CR) and MATH2099)",
         "equivalents": null
     },
     "MATH3261": {
@@ -657,7 +657,7 @@
             "Term 1"
         ],
         "desc": "The mathematical modelling and theory of problems arising in the flow of fluids, the oceans and the global climate; Cartesian tensors, kinematics, mass conservation, vorticity, Navier-Stokes equation; topics from inviscid and viscous fluid flow, gas dynamics, sound waves, water waves.",
-        "prerequisites": "Prerequisite: 12 units of credit in Level 2 Math courses including (MATH2011 or MATH2111) and (MATH2120 or MATH2130 or MATH2121 or MATH2221), or (both MATH2019 (DN) and MATH2089), or (both MATH2069 (DN) and MATH2099)",
+        "conditions": "Prerequisite: 12 units of credit in Level 2 Math courses including (MATH2011 or MATH2111) and (MATH2120 or MATH2130 or MATH2121 or MATH2221), or (both MATH2019 (DN) and MATH2089), or (both MATH2069 (DN) and MATH2099)",
         "equivalents": null
     },
     "MATH3411": {
@@ -668,7 +668,7 @@
             "Term 3"
         ],
         "desc": "Discrete communication channels: information theory, compresssion and error control coding, cryptography.",
-        "prerequisites": "Prerequisites: MATH1081 or MATH1231(CR) or DPST1014 (CR) or MATH1241(CR) or MATH1251(CR) or MATH2099.",
+        "conditions": "Prerequisites: MATH1081 or MATH1231(CR) or DPST1014 (CR) or MATH1241(CR) or MATH1251(CR) or MATH2099.",
         "equivalents": null
     },
     "TELE3113": {
@@ -680,7 +680,7 @@
             "Term 2"
         ],
         "desc": "Telecommunication Fundamentals: Free space propagation characteristics, phasors, fourier transform, spectrum analysis, random signals.",
-        "prerequisites": "Prereq: ELEC2134",
+        "conditions": "Prereq: ELEC2134",
         "equivalents": [
             {
                 "code": "TELE3013",
@@ -697,7 +697,7 @@
             "Term 3"
         ],
         "desc": "Network architectures in terms of topology, role (client/server, peer-to-peer), and layered specification.",
-        "prerequisites": "Pre-requisite: ELEC2142 OR COMP2121",
+        "conditions": "Pre-requisite: ELEC2142 OR COMP2121",
         "equivalents": null
     },
     "TELE3119": {
@@ -708,7 +708,7 @@
             "Term 1"
         ],
         "desc": "CRYPTOGRAPHY: (i) Symmetric Encryption and Message Confidentiality, (ii) Public-Key Cryptography and Message Authentication, (iii) Key Distribution, (iv) Mathematical Principles of Cryptography.",
-        "prerequisites": "Prereq: TELE3118",
+        "conditions": "Prereq: TELE3118",
         "equivalents": null
     },
     "ELEC4445": {
@@ -719,7 +719,7 @@
             "Term 3"
         ],
         "desc": "Course introduction: the entrepreneurial revolution; the entrepreneurial process; opportunities recognizing and screening; entrepreneur and the internet; entrepreneur, manager and team; obtaining venture and growth capital; resource requirements; business plan; introduction to entrepreneurial finance; rapid growth and troubled times; eithics and the entrepreneur; harvesting the wealth.",
-        "prerequisites": "Prerequisite: 132 units of credit.",
+        "conditions": "Prerequisite: 132 units of credit.",
         "equivalents": [
             {
                 "code": "ELEC4444",
@@ -734,7 +734,7 @@
         "units": "6",
         "terms": null,
         "desc": "Topics include; introduction to custom digital processors including DSP hardware, high-speed digital design techniques, modern chip design methodologies, hardware and software co-design, advanced programming paradigms including state machines and concurrent processes, real-time programming and operating systems.",
-        "prerequisites": "Prereq: ELEC3106",
+        "conditions": "Prereq: ELEC3106",
         "equivalents": null
     },
     "ELEC4602": {
@@ -745,7 +745,7 @@
             "Term 3"
         ],
         "desc": "Basic IC processing technology: lithography, oxidation, diffusion, implantation, film deposition, etching, metalisation.",
-        "prerequisites": "Prereq: ELEC3106",
+        "conditions": "Prereq: ELEC3106",
         "equivalents": [
             {
                 "code": "ELEC4522",
@@ -762,7 +762,7 @@
             "Term 3"
         ],
         "desc": "Band-structure and doping of semiconductors.",
-        "prerequisites": "Prereq: ELEC2133",
+        "conditions": "Prereq: ELEC2133",
         "equivalents": [
             {
                 "code": "ELEC3016",
@@ -779,7 +779,7 @@
             "Term 1"
         ],
         "desc": "Review of transceiver architectures.",
-        "prerequisites": "Prereq: ELEC3106",
+        "conditions": "Prereq: ELEC3106",
         "equivalents": null
     },
     "ELEC4611": {
@@ -790,7 +790,7 @@
             "Term 1"
         ],
         "desc": "Power transformers, instrument transformers, rotating machines, cables and overhead lines, circuit interrupters (fuses, surge arresters, circuit breakers).",
-        "prerequisites": "Prereq: ELEC3105",
+        "conditions": "Prereq: ELEC3105",
         "equivalents": null
     },
     "ELEC4612": {
@@ -801,7 +801,7 @@
             "Term 1"
         ],
         "desc": "An overview of modern power systems.",
-        "prerequisites": "Prereq: ELEC3105",
+        "conditions": "Prereq: ELEC3105",
         "equivalents": null
     },
     "ELEC4613": {
@@ -812,7 +812,7 @@
             "Term 2"
         ],
         "desc": "Introduction to Electrical Drive Systems.",
-        "prerequisites": "Prereq: ELEC3105",
+        "conditions": "Prereq: ELEC3105",
         "equivalents": [
             {
                 "code": "ELEC4216",
@@ -829,7 +829,7 @@
             "Term 1"
         ],
         "desc": "Power semiconductor switching devices and their limitations; Switching characteristics, protection and limitations of various types of power semiconductor switches; Elementary concepts in power electronics; Application of power electronic converters in energy conversion, utility applications and power supplies and utilizations; Diode rectifier circuits, multi-pulse rectifiers, input and output waveform characterization, filter design.",
-        "prerequisites": "Prereq: ELEC2133",
+        "conditions": "Prereq: ELEC2133",
         "equivalents": [
             {
                 "code": "ELEC4240",
@@ -846,7 +846,7 @@
             "Term 1"
         ],
         "desc": "FIR Lattice filters, All-pole IIR Lattice filters and their implementation; Fixed Point or finite word length implementations and effects; Random Processes, Auto-correlation,cross-correlation, and power spectrum estimation techniques;   Leastsquare filter design, Adaptive filters, Wiener filters,  adaptive noise cancellation; Linear prediction, statistical and deterministic formulation.",
-        "prerequisites": "Prereq: ELEC3104",
+        "conditions": "Prereq: ELEC3104",
         "equivalents": [
             {
                 "code": "ELEC4042",
@@ -868,7 +868,7 @@
             "Term 2"
         ],
         "desc": "Signal acquisition, sampling and interpolation for signals in 1, 2 and 3 dimensions.",
-        "prerequisites": "Prereq: ELEC3104",
+        "conditions": "Prereq: ELEC3104",
         "equivalents": null
     },
     "ELEC4623": {
@@ -877,7 +877,7 @@
         "units": "6",
         "terms": null,
         "desc": "Introduction to Biomedical Instrumentation and Physiological Measurement.",
-        "prerequisites": "Prereq: ELEC3104",
+        "conditions": "Prereq: ELEC3104",
         "equivalents": [
             {
                 "code": "ELEC4483",
@@ -894,7 +894,7 @@
             "Term 2"
         ],
         "desc": "Overview of systems and control engineering with emphasis on modern and post-modern developments.",
-        "prerequisites": "Prereq: ELEC3114",
+        "conditions": "Prereq: ELEC3114",
         "equivalents": [
             {
                 "code": "ELEC4412",
@@ -911,7 +911,7 @@
             "Term 3"
         ],
         "desc": "Examples of digital control systems, differences and similarities between digital and analog control systems, discrete-time systems, stability analysis, observability and Controllability, state space models, digital PID controllers, pole placement design, digital control systems characteristics, nonlinear discrete-time systems, optimal control design methods, discrete Kalman filter, identification, case studies.",
-        "prerequisites": "Prereq: ELEC3114",
+        "conditions": "Prereq: ELEC3114",
         "equivalents": null
     },
     "ELEC4633": {
@@ -922,7 +922,7 @@
             "Term 1"
         ],
         "desc": "Real-time operating systems and processes: Concurrent processes.",
-        "prerequisites": "Prereq: ELEC3114",
+        "conditions": "Prereq: ELEC3114",
         "equivalents": null
     },
     "PHTN4661": {
@@ -933,7 +933,7 @@
             "Term 1"
         ],
         "desc": "Types and applications of optical fibers; ray analysis of multimode fibres; characteristics of single-mode fibres including experiments; losses and dispersion in fibres; fibre fabrication; cabling and handling fibres.",
-        "prerequisites": "Prereq: ELEC3115",
+        "conditions": "Prereq: ELEC3115",
         "equivalents": null
     },
     "PHTN4662": {
@@ -944,7 +944,7 @@
             "Term 2"
         ],
         "desc": "All-optical & hybrid networks, topologies; WDM; optical switching & routing, SONET; dispersion management, BER & sources of noise, power budgets; phase modulation effects & nonlinear scattering in optical links; safety, regulations & standards.",
-        "prerequisites": "Prereq: TELE3113 or ELEC3115",
+        "conditions": "Prereq: TELE3113 or ELEC3115",
         "equivalents": null
     },
     "TELE4642": {
@@ -955,7 +955,7 @@
             "Term 2"
         ],
         "desc": "This course aims to develop an understanding of the tools and technologies for understanding and improving the performance of communication networks such as the Internet.",
-        "prerequisites": "Prereq: TELE3118",
+        "conditions": "Prereq: TELE3118",
         "equivalents": null
     },
     "TELE4651": {
@@ -966,7 +966,7 @@
             "Term 3"
         ],
         "desc": "Wireless Communications Channels: time-variant multipath fading, Doppler shift, fade rate, shadowing effect, time selective channel, frequency selective channel, the effects of fading on wireless transmission, performance analysis.",
-        "prerequisites": "Prereq: TELE3113",
+        "conditions": "Prereq: TELE3113",
         "equivalents": [
             {
                 "code": "TELE4333",
@@ -983,7 +983,7 @@
             "Term 2"
         ],
         "desc": "Introduction to Mobile Communications: historical development of mobile telephony.",
-        "prerequisites": "Prereq: TELE3113",
+        "conditions": "Prereq: TELE3113",
         "equivalents": [
             {
                 "code": "TELE4353",
@@ -1000,7 +1000,7 @@
             "Term 1"
         ],
         "desc": "Communication concepts: Fourier transforms, random signals, Transmitter and receiver filters, matched filter, Nyquist criterion.",
-        "prerequisites": "Prereq: TELE3113",
+        "conditions": "Prereq: TELE3113",
         "equivalents": [
             {
                 "code": "TELE4323",
@@ -1017,7 +1017,7 @@
             "Term 3"
         ],
         "desc": "The aim of the course is to enable the student to design advanced analogue, digital and mixed signal microelectronic circuits and to enable self-guided continuing learning in the advancing field of microelectronics.",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": null
     },
     "ELEC9702": {
@@ -1026,7 +1026,7 @@
         "units": "6",
         "terms": null,
         "desc": "The objective of this course is to provide postgraduate students with an advanced understanding of designing RF integrated circuits in state-of-the-art CMOS technology with the ultimate purpose of integrating the entire transceiver on an IC chip.",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": null
     },
     "ELEC9703": {
@@ -1037,7 +1037,7 @@
             "Term 1"
         ],
         "desc": "Interdisciplinary overview of MST (MicroElectroMechanical Systems - MEMS).",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": null
     },
     "ELEC9704": {
@@ -1046,7 +1046,7 @@
         "units": "6",
         "terms": null,
         "desc": "Introduction to silicon VLSI technology.",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": null
     },
     "ELEC9705": {
@@ -1055,7 +1055,7 @@
         "units": "6",
         "terms": null,
         "desc": "The course on Quantum Devices provides a rigorous but accessible introduction to the working principles and the uncommon properties of nano-engineered electronic devices, whose dynamics no longer obeys the laws of classical physics.",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": null
     },
     "ELEC9711": {
@@ -1066,7 +1066,7 @@
             "Term 3"
         ],
         "desc": "The topics to be covered in this course will include: Grid integration of electrical power from renewable sources; Current and voltage control; Advanced topics in DC-DC converters, inverters, AC-DC converters and AC-AC converters for use in utility interfacing; resonant converters for DC-DC conversion; dynamic representation of DC-DC converters, control loops design; converter circuit and system modelling using LTSpice or other platforms, device selection and their modeling, thermal design, gate drive circuit design, magnetic core and other component selection and design, and case studies of converter system designs.",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": null
     },
     "ELEC9712": {
@@ -1077,7 +1077,7 @@
             "Term 3"
         ],
         "desc": "High voltage engineering and technology form an important area in power engineering.",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": null
     },
     "ELEC9713": {
@@ -1088,7 +1088,7 @@
             "Term 1"
         ],
         "desc": "The aim of the course is to provide practical knowledge on the design and operation of electrical distribution systems in large commercial buildings or industrial sites.",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": null
     },
     "ELEC9714": {
@@ -1099,7 +1099,7 @@
             "Term 2"
         ],
         "desc": "The nature of the electricity & gas industries; climate change and the electricity industry; objectives & options for restructuring; insights from electricity pricing theory; wholesale electricity market design; Australia's restructured electricity industry; National Electricity Market design & performance; the role of electricity networks in a restructured electricity industry including market representation, network pricing and network regulation; ancillary services; design & implementation of retail electricity markets; electricity industry regulation.",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": null
     },
     "ELEC9715": {
@@ -1110,7 +1110,7 @@
             "Term 1"
         ],
         "desc": "Induction to the evolving electricity industry drivers of restructuring, technological developments and environmental concerns, and their impact on power system operation.",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": null
     },
     "ELEC9716": {
@@ -1121,7 +1121,7 @@
             "Term 2"
         ],
         "desc": "This course covers the very broad and important area of electrical safety in domestic and industrial installations.",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": null
     },
     "ELEC9721": {
@@ -1132,7 +1132,7 @@
             "Term 2"
         ],
         "desc": "Least squares digital filter design and realisation, finite word length effects, random processes, adaptive filters, linear prediction, multi-rate signal processing, time-frequency analysis, sub-band transforms and wavelets.",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": null
     },
     "ELEC9722": {
@@ -1141,7 +1141,7 @@
         "units": "6",
         "terms": null,
         "desc": "The fundamentals of digital image processing with topics selected from the following: image models and physical imaging systems; visual perception; rendering systems; linear filtering; linear transforms; mathematical morphology; compression; tomographic image reconstruction; inverse problems in imaging; image enhancement; edge detection; feature extraction; and geometric diffusion.",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": null
     },
     "ELEC9723": {
@@ -1150,7 +1150,7 @@
         "units": "6",
         "terms": null,
         "desc": "Fundamentals of speech production, speech analysis: pitch and period extraction, formant estimation, voiced - unvoiced decision.",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": null
     },
     "ELEC9725": {
@@ -1161,7 +1161,7 @@
             "Term 1"
         ],
         "desc": "This course introduces the electronic and signal processing aspects of Global Positioning System (GPS) and other satellite navigation systems e.",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": null
     },
     "ELEC9731": {
@@ -1172,7 +1172,7 @@
             "Term 1"
         ],
         "desc": "Rationale for the study of linear methods.",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": null
     },
     "ELEC9732": {
@@ -1183,7 +1183,7 @@
             "Term 3"
         ],
         "desc": "The course is taught in two halves.",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": null
     },
     "ELEC9733": {
@@ -1192,7 +1192,7 @@
         "units": "6",
         "terms": null,
         "desc": "Examines the implementation of modern control techniques and associated instrumentation using distributed computers.",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": null
     },
     "null": {
@@ -1201,7 +1201,7 @@
         "units": null,
         "terms": null,
         "desc": null,
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": null
     },
     "GMAT9200": {
@@ -1210,7 +1210,7 @@
         "units": "6",
         "terms": null,
         "desc": "This course will introduce the student to reference coordinate systems and time systems, satellite orbital motion, signal propagation and satellite tracking observables.",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": null
     },
     "GSOE9758": {
@@ -1221,7 +1221,7 @@
             "Term 1"
         ],
         "desc": "Pre-requisites: Background in data networks, e.",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": null
     },
     "TELE9751": {
@@ -1232,7 +1232,7 @@
             "Term 2"
         ],
         "desc": "This course provides detailed knowledge of the design of equipment and protocols used to build communication networks such as the Internet.",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": null
     },
     "TELE9752": {
@@ -1243,7 +1243,7 @@
             "Term 3"
         ],
         "desc": "This course introduces the principles, techniques, and tools used for the management of modern communication networks such as the Internet.",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": null
     },
     "TELE9753": {
@@ -1254,7 +1254,7 @@
             "Term 1"
         ],
         "desc": "This course provides advanced knowledge of wideband wireless communication techniques to enable the students to design advanced wireless communication systems.",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": null
     },
     "TELE9754": {
@@ -1265,7 +1265,7 @@
             "Term 3"
         ],
         "desc": "This course provides advanced knowledge of error control coding technique and theories of information transmission mainly at the physical layer.",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": null
     },
     "TELE9755": {
@@ -1276,7 +1276,7 @@
             "Term 2"
         ],
         "desc": "The general flow of the course is Applications, Systems, Components.",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": null
     },
     "TELE9756": {
@@ -1287,7 +1287,7 @@
             "Term 3"
         ],
         "desc": "This course provides advanced knowledge of telecommunication networks currently being deployed or likely to be deployed in the future.",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": null
     },
     "TELE9757": {
@@ -1298,7 +1298,7 @@
             "Term 1"
         ],
         "desc": "This course is aimed at Graduate Engineers and Physicists wishing to understand the exciting new world of Quantum Communications.",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": null
     },
     "TELE9782": {
@@ -1311,7 +1311,7 @@
             "Term 3"
         ],
         "desc": ".",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": null
     },
     "BIOMDS": {
@@ -1320,7 +1320,7 @@
         "units": "72",
         "terms": null,
         "desc": "The stream is designed for students who are completing the Masters of Biomedical Engineering program as part of a dual-award program with a Bachelor of Engineering (Honours) in the following specialisations only:\nBioinformatics EngineeringChemical EngineeringComputer EngineeringElectrical EngineeringMaterials Science and EngineeringMechanical EngineeringMechatronic EngineeringSoftware EngineeringTelecommunications\nStudents are required to complete 72 units of credit, 48 of which must be at postgraduate level and a minimum of 48 units must be from the courses listed below.",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": null
     },
     "BINFAH": {
@@ -1329,7 +1329,7 @@
         "units": "168",
         "terms": null,
         "desc": "Bioinformatics Engineering is studied as a major stream in the BE (Hons).",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": null
     },
     "CEICAH": {
@@ -1338,7 +1338,7 @@
         "units": "168",
         "terms": null,
         "desc": "Chemical Engineering involves researching, developing and improving properties of products we use every day through the selection of raw materials, the design of chemical processes, and improving the conditions for production.",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": null
     },
     "COMPBH": {
@@ -1347,7 +1347,7 @@
         "units": "168",
         "terms": null,
         "desc": "Computer Engineering encompasses the structured and integrated design of the hardware and software components of computerised systems.",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": null
     },
     "ELECAH": {
@@ -1356,7 +1356,7 @@
         "units": "168",
         "terms": null,
         "desc": "The School of Electrical Engineering & Telecommunications offers a wide range of undergraduate and postgraduate study in all areas of the professions of Electrical Engineering and Telecommunications.",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": null
     },
     "MECHAH": {
@@ -1365,7 +1365,7 @@
         "units": "168",
         "terms": null,
         "desc": "The Mechanical Engineering stream provides a versatile, comprehensive coverage of areas involving the conception and design of machinery and mechanical plant, the supervision of its construction, operation and maintenance, the planning and supervision of large engineering projects, and general engineering management.",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": null
     },
     "MTRNAH": {
@@ -1374,7 +1374,7 @@
         "units": "168",
         "terms": null,
         "desc": "The Mechatronic Engineering stream provides the student with the ability to acquire a hybrid range of skills based on mechanics, electronics and computing.",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": null
     },
     "SENGAH": {
@@ -1383,7 +1383,7 @@
         "units": "168",
         "terms": null,
         "desc": "Software Engineering is an Engineering profession concerned with the processes, methods, and tools for the design and development of high quality, reliable software systems.",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": null
     },
     "TELEAH": {
@@ -1392,7 +1392,7 @@
         "units": "168",
         "terms": null,
         "desc": "Telecommunications engineering is the most rapidly developing and dynamic field of Engineering.",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": null
     },
     "ENGG1300": {
@@ -1405,7 +1405,7 @@
             "Term 3"
         ],
         "desc": "This is the  foundational mechanics course for students in Aerospace, Civil, Environmental, Manufacturing, Mechanical, Mechatronics and Mining Engineering, with content as follows: Revision of vectors, resultants and components, moments; The free body diagram; Equilibrium of planar rigid objects; Equilibrium of systems of co-planar multi-force members and planar trusses; Frames and Machines; Springs; Friction; Mass centre, centroids, distributed forces; Internal forces in beams; Introduction to 3-dimensional statics; Plane particle kinematics, including curvilinear and relative motion; Plane particle kinetics, including equations of motion, work-energy-power, friction, impulse-momentum, impact; Kinetics of systems of particles; Introduction to plane kinematics of rigid bodies, types of rigid body motion (translation, rotation about a fixed axis); Mass moment of inertia, parallel axis theorem, moment of inertia for various shapes, Introduction to plane kinetics of rigid bodies, rigid body in plane motion, equations of motion, work-energy for a rigid body.",
-        "prerequisites": "Pre-requisite: (MATH1131 OR DPST1013 OR MATH1141) AND (PHYS1121 OR PHYS1131 OR PHYS1141 OR DPST1023)",
+        "conditions": "Pre-requisite: (MATH1131 OR DPST1013 OR MATH1141) AND (PHYS1121 OR PHYS1131 OR PHYS1141 OR DPST1023)",
         "equivalents": [
             {
                 "code": "MINE1300",
@@ -1449,7 +1449,7 @@
             "Term 3"
         ],
         "desc": "This course provides an introduction to Physics.",
-        "prerequisites": "Corequisite: MATH1131 or DPST1013 or MATH1141 or MATH1151 or MATH1011",
+        "conditions": "Corequisite: MATH1131 or DPST1013 or MATH1141 or MATH1151 or MATH1011",
         "equivalents": null
     },
     "COMP1911": {
@@ -1460,7 +1460,7 @@
             "Term 2"
         ],
         "desc": "This course introduces students to the basics of programming.",
-        "prerequisites": "Prerequisite: Enrolment in a non-CSE major (no BINF, COMP, or SENG)",
+        "conditions": "Prerequisite: Enrolment in a non-CSE major (no BINF, COMP, or SENG)",
         "equivalents": null
     },
     "ENGG1811": {
@@ -1473,7 +1473,7 @@
             "Term 3"
         ],
         "desc": "The objective of this course is for students to acquire computing skills for solving problems in engineering.",
-        "prerequisites": "Prerequisite: Enrolment in a non-CSE major (no BINF, COMP, or SENG)",
+        "conditions": "Prerequisite: Enrolment in a non-CSE major (no BINF, COMP, or SENG)",
         "equivalents": null
     },
     "DESN2000": {
@@ -1485,7 +1485,7 @@
             "Term 3"
         ],
         "desc": "Design is one of the critical foundations of engineering and a main component in creating value.",
-        "prerequisites": "Please refer to the course overview section for information on prerequisite requirements.",
+        "conditions": "Please refer to the course overview section for information on prerequisite requirements.",
         "equivalents": [
             {
                 "code": "ELEC2142",
@@ -1518,7 +1518,7 @@
             "Term 2"
         ],
         "desc": "This course provides an introduction to the fundamentals to the mechanics of solids.",
-        "prerequisites": "Prerequisite: ENGG1300 OR DPST1072 OR CVEN1300 OR MMAN1300",
+        "conditions": "Prerequisite: ENGG1300 OR DPST1072 OR CVEN1300 OR MMAN1300",
         "equivalents": [
             {
                 "code": "CVEN2301",
@@ -1542,7 +1542,7 @@
             "Term 3"
         ],
         "desc": "The objective of ENGG2500 is to introduce engineering students to the principles of fluid mechanics.",
-        "prerequisites": "Pre-requisite: (MATH1131 OR DPST1013 OR MATH1141) AND (PHYS1121 OR PHYS1131 OR PHYS1141 OR DPST1023)",
+        "conditions": "Pre-requisite: (MATH1131 OR DPST1013 OR MATH1141) AND (PHYS1121 OR PHYS1131 OR PHYS1141 OR DPST1023)",
         "equivalents": [
             {
                 "code": "CVEN2501",
@@ -1569,7 +1569,7 @@
             "Term 1"
         ],
         "desc": "Partial differentiation and applications, vector algebra, double integrals, ordinary differential equations, introduction to vector field theory, extrema of functions of 2 variables, matrices and their applications, Laplace transforms, Fourier series, partial differential equations and their solution for selected physical problems.",
-        "prerequisites": "Prerequisite: MATH1231 or DPST1014 or MATH1241 or MATH1251",
+        "conditions": "Prerequisite: MATH1231 or DPST1014 or MATH1241 or MATH1251",
         "equivalents": [
             {
                 "code": "MATH2018",
@@ -1587,7 +1587,7 @@
             "Term 2"
         ],
         "desc": "This course gives an introduction to numerical methods and statistics essential in a wide range of engineering disciplines.",
-        "prerequisites": "Prerequisite: MATH1231 or DPST1014 or MATH1241 or MATH1251. Exclusion: CVEN2002, CVEN2025, CVEN2702,ECON3209, MATH2049, MATH2829, MATH2839, MATH2899, and MINE2700",
+        "conditions": "Prerequisite: MATH1231 or DPST1014 or MATH1241 or MATH1251. Exclusion: CVEN2002, CVEN2025, CVEN2702,ECON3209, MATH2049, MATH2829, MATH2839, MATH2899, and MINE2700",
         "equivalents": null
     },
     "MMAN2130": {
@@ -1599,7 +1599,7 @@
             "Term 3"
         ],
         "desc": "This course introduces basic aspects of design and manufacturing, process selection, manufacturing processes, material selection based on material and physical properties and the use of computers in the design process.",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": null
     },
     "MMAN2300": {
@@ -1610,7 +1610,7 @@
             "Term 2"
         ],
         "desc": "This course covers the practical application of engineering mechanics and mechanical vibrations.",
-        "prerequisites": "Prerequisite: (CVEN1300 or MINE1300 or MMAN1300 or ENGG1300 or DPST1072) AND MATH2019 or MATH2018 or MATH2111 and MATH2221 or MATH2011 and MATH2121 or MATH2069 and MATH2121; Exclusion: MECH2300, MECH3300",
+        "conditions": "Prerequisite: (CVEN1300 or MINE1300 or MMAN1300 or ENGG1300 or DPST1072) AND MATH2019 or MATH2018 or MATH2111 and MATH2221 or MATH2011 and MATH2121 or MATH2069 and MATH2121; Exclusion: MECH2300, MECH3300",
         "equivalents": null
     },
     "MMAN2700": {
@@ -1621,7 +1621,7 @@
             "Term 1"
         ],
         "desc": "Thermodynamic concepts, systems, property, state, path, process.",
-        "prerequisites": "Prerequisite: (MATH1131 or DPST1013 or MATH1141) and (PHYS1121 or PHYS1131 or DPST1023 or PHYS1141)",
+        "conditions": "Prerequisite: (MATH1131 or DPST1013 or MATH1141) and (PHYS1121 or PHYS1131 or DPST1023 or PHYS1141)",
         "equivalents": [
             {
                 "code": "MECH2712",
@@ -1638,7 +1638,7 @@
             "Term 3"
         ],
         "desc": "This course aims to provide students with a grounding in aerospace design, in terms of both structural design and systems design.",
-        "prerequisites": "Prerequisite: MMAN2100 AND (ENGG2400 OR MMAN2400)",
+        "conditions": "Prerequisite: MMAN2100 AND (ENGG2400 OR MMAN2400)",
         "equivalents": null
     },
     "AERO3410": {
@@ -1649,7 +1649,7 @@
             "Term 1"
         ],
         "desc": "This course covers introductory and intermediate topics related to analysis and design of airframes:Aerospace Materials and their PropertiesLightweight Materials - Alloys and CompositesTensors - Stress, Strain, InvariantsFailure PredictionMaterial Degradation - Fatigue, Corrosion, WearAnalysis of Composite MaterialsClassical Airframe AnalysisAirframe LoadsStressed Skin Design PhilosophyRole of Airframe ComponentsThin-walled ApproximationStructural IdealisationAnalysis of Indeterminate TrussesBending, Shear and Torsion of Complex BeamsDetailed Stressing - Joints and Cut-outsStructural Instability and AeroelasticityBuckling of Columns and PlatesStiffened Panel Analysis and DesignAeroelasticity - Divergence, Control Reversal and Flutter.",
-        "prerequisites": "Prerequisite: ENGG2400 OR MMAN2400 OR CVEN2301",
+        "conditions": "Prerequisite: ENGG2400 OR MMAN2400 OR CVEN2301",
         "equivalents": null
     },
     "AERO3630": {
@@ -1660,7 +1660,7 @@
             "Term 1"
         ],
         "desc": "The overall aim of this course is to introduce students to the art and science of aerodynamics: how fluid motion generates the forces and moments on air vehicles required for flight.",
-        "prerequisites": "Prerequisite: MMAN2600 or ENGG2500",
+        "conditions": "Prerequisite: MMAN2600 or ENGG2500",
         "equivalents": null
     },
     "AERO3660": {
@@ -1672,7 +1672,7 @@
             "Term 3"
         ],
         "desc": "Atmospheric environment.",
-        "prerequisites": "Prerequisite: (MMAN1300 or ENGG1300 or DPST1072 or CVEN1300 ) AND (MMAN2600 or ENGG2500) AND MMAN2700",
+        "conditions": "Prerequisite: (MMAN1300 or ENGG1300 or DPST1072 or CVEN1300 ) AND (MMAN2600 or ENGG2500) AND MMAN2700",
         "equivalents": null
     },
     "MMAN3000": {
@@ -1683,7 +1683,7 @@
             "Term 2"
         ],
         "desc": "Professional Engineering and Communication is a subject designed to expose and involve students in a wide variety of topics and tasks which will be of lasting use going into Industrial Training, the final year thesis, and beyond that, a career in engineering.",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": null
     },
     "MMAN3200": {
@@ -1695,7 +1695,7 @@
             "Term 2"
         ],
         "desc": "Models of physical systems: differential equations for physical systems including mechanical, electrical, hydraulic, thermal and pneumatic systems; linearisation.",
-        "prerequisites": "Prerequisite: MATH2019 or MATH2018 AND (MMAN1300 or CVEN1300 or ENGG1300 or DPST1072)  Exclusion: MECH3211, MTRN3212",
+        "conditions": "Prerequisite: MATH2019 or MATH2018 AND (MMAN1300 or CVEN1300 or ENGG1300 or DPST1072)  Exclusion: MECH3211, MTRN3212",
         "equivalents": null
     },
     "AERO4110": {
@@ -1706,7 +1706,7 @@
             "Term 2"
         ],
         "desc": "This course is a capstone aerospace design project.",
-        "prerequisites": "Prerequisite: AERO3110",
+        "conditions": "Prerequisite: AERO3110",
         "equivalents": null
     },
     "AERO4620": {
@@ -1717,7 +1717,7 @@
             "Term 1"
         ],
         "desc": "Power, mass and information transfer.",
-        "prerequisites": "Prerequisite: AERO3660 and MMAN3200",
+        "conditions": "Prerequisite: AERO3660 and MMAN3200",
         "equivalents": null
     },
     "MMAN4010": {
@@ -1730,7 +1730,7 @@
             "Term 3"
         ],
         "desc": "This course is the first of two parts and is undertaken before MMAN4020 Thesis B.",
-        "prerequisites": "Prerequisite: 132 Units of Credits",
+        "conditions": "Prerequisite: 132 Units of Credits",
         "equivalents": null
     },
     "MMAN4020": {
@@ -1743,7 +1743,7 @@
             "Term 3"
         ],
         "desc": "To be taken in the last semester required for the completion of all requirements for the award of the degree, i.",
-        "prerequisites": "Prerequisite: MMAN4010",
+        "conditions": "Prerequisite: MMAN4010",
         "equivalents": null
     },
     "MMAN4951": {
@@ -1756,7 +1756,7 @@
             "Term 3"
         ],
         "desc": "The thesis provides an opportunity for you to bring together engineering principles learned over your previous years of study and apply these principles to innovatively solve problems such as the development of a specific design, process and/or the investigation of a hypothesis.",
-        "prerequisites": "Prerequisite: Completion of 126 UOC and completion of 3rd year core",
+        "conditions": "Prerequisite: Completion of 126 UOC and completion of 3rd year core",
         "equivalents": null
     },
     "MMAN4952": {
@@ -1769,7 +1769,7 @@
             "Term 3"
         ],
         "desc": "The thesis provides an opportunity for you to bring together engineering principles learned over your previous years of study and apply these principles to innovatively solve problems such as the development of a specific design, process and/or the investigation of a hypothesis.",
-        "prerequisites": "Prerequisite: Completion of Research Thesis A (4951)",
+        "conditions": "Prerequisite: Completion of Research Thesis A (4951)",
         "equivalents": null
     },
     "MMAN4953": {
@@ -1782,7 +1782,7 @@
             "Term 3"
         ],
         "desc": "The thesis provides an opportunity for you to bring together engineering principles learned over your previous years of study and apply these principles to innovatively solve problems such as the development of a specific design, process and/or the investigation of a hypothesis.",
-        "prerequisites": "Prerequisite: Completion of Research Thesis B (4952)",
+        "conditions": "Prerequisite: Completion of Research Thesis B (4952)",
         "equivalents": null
     },
     "AERO9500": {
@@ -1793,7 +1793,7 @@
             "Term 3"
         ],
         "desc": "This course paints the overall picture of what a satellite system is.",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": null
     },
     "AERO9610": {
@@ -1804,7 +1804,7 @@
             "Term 1"
         ],
         "desc": "This course gives the students a basis in the design issues involved in the engineering of the space segment in order to enable to fulfil the mission.",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": null
     },
     "AERO9660": {
@@ -1815,7 +1815,7 @@
             "Term 3"
         ],
         "desc": "This course aims to enable you to:\ngain a deeper appreciation of gas turbine operation and to make high-level predictions of gas turbine behavior in various flight scenarios.",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": null
     },
     "MECH4305": {
@@ -1826,7 +1826,7 @@
             "Term 3"
         ],
         "desc": "The following assumed knowledge is expected for postgraduate students undertaking this course: MATH2019 and (MMAN2300).",
-        "prerequisites": "Prerequisite: (MATH2019 OR MATH2018) AND (MMAN3300 or MMAN2300)",
+        "conditions": "Prerequisite: (MATH2019 OR MATH2018) AND (MMAN3300 or MMAN2300)",
         "equivalents": null
     },
     "MECH4320": {
@@ -1835,7 +1835,7 @@
         "units": "6",
         "terms": null,
         "desc": "The following assumed knowledge is expected for postgraduate students undertaking this course: MATH2019 and (MMAN2300).",
-        "prerequisites": "Prerequisite: (MATH2019 OR MATH2018) AND (MMAN3300 or MMAN2300)",
+        "conditions": "Prerequisite: (MATH2019 OR MATH2018) AND (MMAN3300 or MMAN2300)",
         "equivalents": null
     },
     "MECH4620": {
@@ -1847,7 +1847,7 @@
             "Term 3"
         ],
         "desc": "This course will focus on the terminology, principles and methods of CFD – Computational Fluid Dynamics.",
-        "prerequisites": "Prerequisite: (ENGG2500 OR MMAN2600) AND MMAN2700",
+        "conditions": "Prerequisite: (ENGG2500 OR MMAN2600) AND MMAN2700",
         "equivalents": null
     },
     "MECH4900": {
@@ -1858,7 +1858,7 @@
             "Term 3"
         ],
         "desc": "Topics\nTheories of fracture; failure modes.",
-        "prerequisites": "Prerequisite: MECH3400 or MMAN3400",
+        "conditions": "Prerequisite: MECH3400 or MMAN3400",
         "equivalents": null
     },
     "MECH9420": {
@@ -1869,7 +1869,7 @@
             "Term 1"
         ],
         "desc": "Using a unified and integrated approach, this course will give you a solid grounding in:\n The properties of composite materials; Processing and manufacturing methods; Micromechanics and lamination theory;The analysis and manufacture of light weight composite structures; The design of a composite structures; Test methods to confirm mechanical properties.",
-        "prerequisites": "Prerequisite: ENGG2400 OR MMAN2400 OR CVEN2301",
+        "conditions": "Prerequisite: ENGG2400 OR MMAN2400 OR CVEN2301",
         "equivalents": null
     },
     "MMAN4200": {
@@ -1880,7 +1880,7 @@
             "Term 2"
         ],
         "desc": "Additive manufacturing, also known as 3D printing, is an emerging advanced manufacturing technique which has enjoyed a rapid growth in recent years.",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": null
     },
     "MMAN4400": {
@@ -1891,7 +1891,7 @@
             "Term 3"
         ],
         "desc": "Manufacturing operations and competitiveness, concurrent product and process design, manufacturing processes and technologies, global supply chain, E-manufacturing, Just-in-time and lean manufacturing, enterprise resource planning, production and materials planning, statistical process control techniques, quality and project management.",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": null
     },
     "MMAN4410": {
@@ -1903,7 +1903,7 @@
             "Term 3"
         ],
         "desc": "The following assumed knowledge is expected for postgraduate students undertaking this course: MMAN2400.",
-        "prerequisites": "pre-requisite MMAN2400",
+        "conditions": "pre-requisite MMAN2400",
         "equivalents": null
     },
     "COMP3141": {
@@ -1914,7 +1914,7 @@
             "Term 2"
         ],
         "desc": "This course will present rigorous and formal methods for the design and implementation phases of software system development.",
-        "prerequisites": "Prerequisite: COMP1927 or COMP2521",
+        "conditions": "Prerequisite: COMP1927 or COMP2521",
         "equivalents": null
     },
     "COMP3331": {
@@ -1927,7 +1927,7 @@
             "Term 3"
         ],
         "desc": "Networking technology overview.",
-        "prerequisites": "Prerequisite: COMP1927 or COMP2521 or MTRN3500",
+        "conditions": "Prerequisite: COMP1927 or COMP2521 or MTRN3500",
         "equivalents": [
             {
                 "code": "COMP9331",
@@ -1945,7 +1945,7 @@
             "Term 3"
         ],
         "desc": "Under the guidance of academic mentors and industry mentors, this course provides a vehicle for guided but independent group project work on an industry-provided brief.",
-        "prerequisites": "Pre-requisite: Completion of 66 UOC from an engineering degree",
+        "conditions": "Pre-requisite: Completion of 66 UOC from an engineering degree",
         "equivalents": null
     },
     "MANF4100": {
@@ -1956,7 +1956,7 @@
             "Term 1"
         ],
         "desc": "The following assumed knowledge is expected for postgraduate students undertaking this course: MANF3100 and MANF3510.",
-        "prerequisites": "pre-req MANF3100 MANF3510",
+        "conditions": "pre-req MANF3100 MANF3510",
         "equivalents": [
             {
                 "code": "MANF4300",
@@ -1973,7 +1973,7 @@
             "Term 1"
         ],
         "desc": "The course will introduce statistics, mathematics and associated techniques for analyzing an industrial process for the purpose of maintaining and improving it.",
-        "prerequisites": "pre-requisite MATH2089",
+        "conditions": "pre-requisite MATH2089",
         "equivalents": [
             {
                 "code": "GSOE9840",
@@ -1990,7 +1990,7 @@
             "Term 2"
         ],
         "desc": "The following assumed knowledge is expected for postgraduate students undertaking this course: MATH2089.",
-        "prerequisites": "Prerequisite: MATH2089",
+        "conditions": "Prerequisite: MATH2089",
         "equivalents": null
     },
     "MANF6860": {
@@ -2001,7 +2001,7 @@
             "Term 1"
         ],
         "desc": "This course focuses on the links between both  manufacturing strategies as well as operational performance  and  effective supply chain strategies for companies that operate globally with emphasis on how to plan and integrate supply chain components into a coordinated system.",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": null
     },
     "MANF9400": {
@@ -2012,7 +2012,7 @@
             "Term 2"
         ],
         "desc": "Evolution of management thought, the planning process; nature of managerial decision making, organisational structures; managing organisational change, motivation, performance, satisfaction, interpersonal and organisational communication, use of management information systems.",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": null
     },
     "MANF9420": {
@@ -2023,7 +2023,7 @@
             "Term 3"
         ],
         "desc": "Design, control, operation and management of supply chain systems; supply chain strategies; supply chain drivers and metrics, network design in supply chain; global supply chain networks; demand forecasting and aggregate planning in supply chain, economies of scale in supply chain; managing uncertainty in supply chain; transportation in a supply chain; sourcing decision in a supply chain, procurement and outsourcing strategies, price and revenue management in supply chain; information technology in a supply chain; sustainability in supply chain.",
-        "prerequisites": "None",
+        "conditions": "None",
         "equivalents": [
             {
                 "code": "MANF8420",
@@ -2040,7 +2040,7 @@
             "Term 2"
         ],
         "desc": "Industry dynamics; Porters Model; bases for competition and implications for Production Planning and Control.",
-        "prerequisites": "None",
+        "conditions": "None",
         "equivalents": [
             {
                 "code": "MANF8472",
@@ -2057,7 +2057,7 @@
             "Term 2"
         ],
         "desc": "The following assumed knowledge is expected for postgraduate students undertaking this course: MECH3110 and MMAN2300.",
-        "prerequisites": "Prerequisite: MECH3110",
+        "conditions": "Prerequisite: MECH3110",
         "equivalents": null
     },
     "MECH4880": {
@@ -2068,7 +2068,7 @@
             "Term 3"
         ],
         "desc": "The following assumed knowledge is expected for postgraduate students undertaking this course: MMAN2600 and MMAN2700.",
-        "prerequisites": "Prerequisite: (ENGG2500 OR MMAN2600) AND MMAN2700",
+        "conditions": "Prerequisite: (ENGG2500 OR MMAN2600) AND MMAN2700",
         "equivalents": null
     },
     "MECH9325": {
@@ -2079,7 +2079,7 @@
             "Term 2"
         ],
         "desc": "Development of the acoustic plane wave equation, introduction of concepts of acoustic impedance, characteristic impedance, acoustic energy density, acoustic intensity and acoustic power.",
-        "prerequisites": "None",
+        "conditions": "None",
         "equivalents": [
             {
                 "code": "MECH8325",
@@ -2096,7 +2096,7 @@
             "Term 2"
         ],
         "desc": "This course introduces the fundamentals of biofluids.",
-        "prerequisites": "Prerequisite: MMAN2600 or ENGG2500",
+        "conditions": "Prerequisite: MMAN2600 or ENGG2500",
         "equivalents": null
     },
     "MECH9660": {
@@ -2105,7 +2105,7 @@
         "units": "6",
         "terms": null,
         "desc": "Engineers are increasingly working alongside clinical colleagues to solve complex health related problems.",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": null
     },
     "MECH9720": {
@@ -2116,7 +2116,7 @@
             "Term 2"
         ],
         "desc": "The following assumed knowledge is expected for postgraduate students undertaking this course: MMAN2600 and MMAN2700.",
-        "prerequisites": "Prerequisite: (ENGG2500 OR MMAN2600) AND MMAN2700",
+        "conditions": "Prerequisite: (ENGG2500 OR MMAN2600) AND MMAN2700",
         "equivalents": [
             {
                 "code": "MECH4720",
@@ -2133,7 +2133,7 @@
             "Term 3"
         ],
         "desc": "This course introduces the fundamentals of how the design and operation of automobile engines affect the performance and emissions.",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": null
     },
     "MTRN4030": {
@@ -2144,7 +2144,7 @@
             "Term 3"
         ],
         "desc": "This course will enable students to acquire an understanding of optimization concepts in engineering system designs and the application of optimization algorithms in mechanical, manufacturing, and mechatronic systems.",
-        "prerequisites": "Prerequisite: MATH2089",
+        "conditions": "Prerequisite: MATH2089",
         "equivalents": null
     },
     "MTRN9400": {
@@ -2155,7 +2155,7 @@
             "Term 3"
         ],
         "desc": "This course provides a mathematical introduction to the mechanics and control of robotic systems including robot manipulators, mobile ground robots and quadrotors.",
-        "prerequisites": "Pre-requisite: MMAN3200 OR ELEC3114 OR ELEC4631",
+        "conditions": "Pre-requisite: MMAN3200 OR ELEC3114 OR ELEC4631",
         "equivalents": null
     },
     "SOLA5052": {
@@ -2166,7 +2166,7 @@
             "Term 3"
         ],
         "desc": "This course will introduce a range of biomass energy sources, including forestry, wastes and crops, as well as various technologies for their conversion into useful fuels or power.",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": null
     },
     "SOLA5053": {
@@ -2177,7 +2177,7 @@
             "Term 1"
         ],
         "desc": "This course will cover the principles of wind energy and wind power, as well as the design and operation of different types of wind energy converters.",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": null
     },
     "SOLA5056": {
@@ -2188,7 +2188,7 @@
             "Term 3"
         ],
         "desc": "This course covers many of the technical and non-technical issues relating to introducing photovoltaics and renewable energy systems and technology in developing countries.",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": null
     },
     "SOLA5057": {
@@ -2199,7 +2199,7 @@
             "Term 1"
         ],
         "desc": "If Australia and the world are to reduce emissions of greenhouse gases, both renewable energy and more efficient use of that energy will be required.",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": null
     },
     "BABS1201": {
@@ -2211,7 +2211,7 @@
             "Term 3"
         ],
         "desc": "The course is concerned with the basic characteristics of all life.",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": [
             {
                 "code": "BIOS1201",
@@ -2233,7 +2233,7 @@
             "Term 2"
         ],
         "desc": "This course introduces the field of biomedical engineering where the principles of engineering are used to solve problems in medicine and biology.",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": null
     },
     "BIOS1301": {
@@ -2244,7 +2244,7 @@
             "Term 1"
         ],
         "desc": "This course provides an introduction to ecology, sustainability and environmental science, introducing a range of biological topics and how scientists approach these topics to solve problems.",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": null
     },
     "CEIC1000": {
@@ -2255,7 +2255,7 @@
             "Term 3"
         ],
         "desc": "This course is an introduction to process/product engineering and design in which the technical, environmental, social, economic and marketing aspects involved in the manufacture of products ranging from everyday consumer goods (food, pharmaceuticals, etc.",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": null
     },
     "CHEM1011": {
@@ -2268,7 +2268,7 @@
             "Term 3"
         ],
         "desc": "This course builds on an elementary knowledge of chemistry (equivalent to one year of high school chemistry, such as Year 11 chemistry, or CHEM1001 at UNSW) to explore the quantum mechanical structure of atoms leading to an understanding of the periodic trends in the properties of the elements.",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": [
             {
                 "code": "DPST1031",
@@ -2302,7 +2302,7 @@
             "Term 3"
         ],
         "desc": "CHEM1021 deals with a range of fundamental concepts that can be used to explain various phenomena in chemistry, biology and material science.",
-        "prerequisites": "Prerequisite: CHEM1011 or CHEM1031.",
+        "conditions": "Prerequisite: CHEM1011 or CHEM1031.",
         "equivalents": [
             {
                 "code": "DPST1032",
@@ -2319,7 +2319,7 @@
             "Term 1"
         ],
         "desc": "This course builds on an elementary knowledge of chemistry (equivalent to two years of high school chemistry, such as Year 12 chemistry, or CHEM1001 at UNSW) to explore the quantum mechanical structure of atoms leading to an understanding of the periodic trends in the properties of the elements.",
-        "prerequisites": "Prerequisite: Must be enrolled in a program with the option of a CHEM major",
+        "conditions": "Prerequisite: Must be enrolled in a program with the option of a CHEM major",
         "equivalents": [
             {
                 "code": "CHEM1831",
@@ -2351,7 +2351,7 @@
             "Term 2"
         ],
         "desc": "CHEM1041 deals with a range of fundamental concepts that can be used to explain various phenomena in chemistry, biology and material science.",
-        "prerequisites": "Prerequisite: CHEM1031, or CHEM1011 with a credit or above.",
+        "conditions": "Prerequisite: CHEM1031, or CHEM1011 with a credit or above.",
         "equivalents": null
     },
     "CHEM1811": {
@@ -2362,7 +2362,7 @@
             "Term 1"
         ],
         "desc": "This course builds on an introductory knowledge of chemistry (equivalent to two years of high school chemistry, such as Year 11 and 12 chemistry) to explore the engineering aspects of chemistry.",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": null
     },
     "CHEM1821": {
@@ -2373,7 +2373,7 @@
             "Term 2"
         ],
         "desc": "This course further develops the introduction to the engineering aspects of chemistry started in CHEM1811.",
-        "prerequisites": "Prerequisite: CHEM1811 Exclusion: CHEM1021 or DPST1032 and CHEM1041 and CHEM1061 and CEIC1001 and MATS1101",
+        "conditions": "Prerequisite: CHEM1811 Exclusion: CHEM1021 or DPST1032 and CHEM1041 and CHEM1061 and CEIC1001 and MATS1101",
         "equivalents": null
     },
     "COMP1521": {
@@ -2385,7 +2385,7 @@
             "Term 3"
         ],
         "desc": "This course provides a programmer's view on how a computer system executes programs, manipulates data and communicates.",
-        "prerequisites": "Prerequisite: COMP1511 or DPST1091 or COMP1911 or COMP1917",
+        "conditions": "Prerequisite: COMP1511 or DPST1091 or COMP1911 or COMP1917",
         "equivalents": [
             {
                 "code": "DPST1092",
@@ -2403,7 +2403,7 @@
             "Term 3"
         ],
         "desc": "This course provides an introduction to software engineering principles: basic software lifecycle concepts, modern development methodologies, conceptual modeling and how these activities relate to programming.",
-        "prerequisites": "Prerequisite: COMP1511 or DPST1091 or COMP1917 or COMP1921",
+        "conditions": "Prerequisite: COMP1511 or DPST1091 or COMP1917 or COMP1921",
         "equivalents": null
     },
     "CVEN1701": {
@@ -2414,7 +2414,7 @@
             "Term 3"
         ],
         "desc": "This is an introductory course in techniques to analyse the environmental impact of corporations and economies in regions, using operations research, environmental material accounting and environmental risk assessment.",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": null
     },
     "ENGG1100": {
@@ -2425,7 +2425,7 @@
             "Term 1"
         ],
         "desc": "These special projects are designed for highly motivated undergraduates seeking the opportunity to integrate specific curricular and co-curricular components into their undergraduate program, to provide them with superior preparation and experience in a project area.",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": null
     },
     "ENGG1200": {
@@ -2438,7 +2438,7 @@
             "Term 3"
         ],
         "desc": "These special projects are designed for highly motivated undergraduates seeking the opportunity to integrate specific curricular and co-curricular components into their undergraduate program, to provide them with superior preparation and experience in a project area.",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": null
     },
     "ENGG1400": {
@@ -2449,7 +2449,7 @@
             "Term 2"
         ],
         "desc": "A course in optimization and modelling for first year engineering students who desire a higher capability in the application of the modelling of engineering systems, and seek to acquire a set of optimization tools that can be applied to various engineering applications.",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": null
     },
     "GEOS1111": {
@@ -2460,7 +2460,7 @@
             "Term 3"
         ],
         "desc": "This course provides a sound basis in Geology to those wishing to pursue professional careers as geologists, mining and petroleum engineers and environmental earth scientists.",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": null
     },
     "GMAT1110": {
@@ -2471,7 +2471,7 @@
             "Term 2"
         ],
         "desc": "Surveying and Geospatial Engineering deals with the science of determining relative positions of features above, on or below the surface of the Earth for a range of mapping, engineering and construction operations.",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": null
     },
     "MATH1081": {
@@ -2484,7 +2484,7 @@
             "Term 3"
         ],
         "desc": "Role of proof in mathematics, logical reasoning and implication, different types of proofs.",
-        "prerequisites": "Corequisite: MATH1131 or DPST1013 or MATH1141 or MATH1151",
+        "conditions": "Corequisite: MATH1131 or DPST1013 or MATH1141 or MATH1151",
         "equivalents": null
     },
     "MATS1101": {
@@ -2496,7 +2496,7 @@
             "Term 3"
         ],
         "desc": "Materials Strand: Structure-property relationships of the main types of engineering materials (metals, ceramics, polymers and composites).",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": null
     },
     "MATS1110": {
@@ -2505,7 +2505,7 @@
         "units": "6",
         "terms": null,
         "desc": "This course introduces Engineering students to the field of Materials Science and Engineering.",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": null
     },
     "MINE1010": {
@@ -2517,7 +2517,7 @@
             "Term 3"
         ],
         "desc": "This course includes an overview of the Australian minerals industry and the presence and development of mineral resources in Australia; the role of the mining engineer and career path options; awareness of major mineral types and distribution in Australia; basic mining concepts and systems, operations, equipment & services; an introduction to risk management and general issues of safety, health and wellbeing, including important issues for the safety of persons visiting or working at mining operations in remote or bushland areas.",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": null
     },
     "PSYC1001": {
@@ -2529,7 +2529,7 @@
             "Term 2"
         ],
         "desc": "This course introduces key conceptual, theoretical and methodological underpinnings of psychology as a basic science, with emphasis on the social bases of behaviour.",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": [
             {
                 "code": "PSYC5001",
@@ -2546,7 +2546,7 @@
             "Term 3"
         ],
         "desc": "Students will be introduced to the central concepts of energy and sustainability with a particular focus on sustainable energy systems through their use of the multiplayer PlayEnergy online simulation/game.",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": null
     },
     "PHYS1111": {
@@ -2558,7 +2558,7 @@
             "Term 3"
         ],
         "desc": "This is an introductory level course in physics for students from all disciplines.",
-        "prerequisites": "Exclusion: PHYS0001, PHYS1121, PHYS1131 or DPST1023, PHYS1141, PHYS1149",
+        "conditions": "Exclusion: PHYS0001, PHYS1121, PHYS1131 or DPST1023, PHYS1141, PHYS1149",
         "equivalents": [
             {
                 "code": "PHYS1149",
@@ -2585,7 +2585,7 @@
             "Term 3"
         ],
         "desc": "The course surveys the major areas of bioinformatics, exploring the history of bioinformatics in relation to advances in computing hardware and software; the biological problems currently being addressed using bioinformatics; and future applications of bioinformatics.",
-        "prerequisites": "Prerequisite: BABS1201 OR DPST1051",
+        "conditions": "Prerequisite: BABS1201 OR DPST1051",
         "equivalents": null
     },
     "BIOC2201": {
@@ -2596,7 +2596,7 @@
             "Term 3"
         ],
         "desc": "Provides an introduction to modern molecular biology and covers the molecular mechanisms of gene expression and fundamental aspects of recombinant DNA technology.",
-        "prerequisites": "Prerequisite: BABS1201 or DPST1051 and CHEM1011 or DPST1031 or CHEM1031 or CHEM1051 or CHEM1811 and CHEM1021 or DPST1032 or CHEM1041 or CHEM1061 or CHEM1821",
+        "conditions": "Prerequisite: BABS1201 or DPST1051 and CHEM1011 or DPST1031 or CHEM1031 or CHEM1051 or CHEM1811 and CHEM1021 or DPST1032 or CHEM1041 or CHEM1061 or CHEM1821",
         "equivalents": null
     },
     "COMP2511": {
@@ -2608,7 +2608,7 @@
             "Term 3"
         ],
         "desc": "This course aims to introduce students to the principles of object-oriented design and to fundamental techniques in object-oriented programming.",
-        "prerequisites": "Prerequisite: COMP1531 AND (COMP2521 OR COMP1927)",
+        "conditions": "Prerequisite: COMP1531 AND (COMP2521 OR COMP1927)",
         "equivalents": null
     },
     "COMP2521": {
@@ -2621,7 +2621,7 @@
             "Term 3"
         ],
         "desc": "The goal of this course is to deepen students' understanding of data structures and algorithms and how these can be employed effectively in the design of software systems.",
-        "prerequisites": "Prerequisite: COMP1511 or DPST1091 or COMP1917 or COMP1921",
+        "conditions": "Prerequisite: COMP1511 or DPST1091 or COMP1917 or COMP1921",
         "equivalents": null
     },
     "MATH2801": {
@@ -2632,7 +2632,7 @@
             "Term 2"
         ],
         "desc": "Probability, random variables, standard distributions, bivariate distributions, transformations, central limit theorem, sampling distributions, point estimation, interval estimation, hypothesis testing.",
-        "prerequisites": "Prerequisite: MATH1231 or MATH1241 or MATH1251 or DPST1014; Exclusion: MATH2089; MATH2099; MATH2801; MATH2901; BEES2041; BIOS2041;CVEN2002.",
+        "conditions": "Prerequisite: MATH1231 or MATH1241 or MATH1251 or DPST1014; Exclusion: MATH2089; MATH2099; MATH2801; MATH2901; BEES2041; BIOS2041;CVEN2002.",
         "equivalents": null
     },
     "MATH2901": {
@@ -2643,7 +2643,7 @@
             "Term 2"
         ],
         "desc": "As for MATH2801 but in greater depth:This course provides an introduction to the theoretical underpinning of statistics; it covers fundamental results from probability and distribution theory and shows how to apply the theory to the analysis of data.",
-        "prerequisites": "Prerequisite: MATH1231 or MATH1241 or MATH1251 or DPST1014; Exclusion: MATH2089; MATH2099; MATH2801; MATH2901; BEES2041; BIOS2041;CVEN2002.",
+        "conditions": "Prerequisite: MATH1231 or MATH1241 or MATH1251 or DPST1014; Exclusion: MATH2089; MATH2099; MATH2801; MATH2901; BEES2041; BIOS2041;CVEN2002.",
         "equivalents": null
     },
     "BABS2202": {
@@ -2654,7 +2654,7 @@
             "Term 2"
         ],
         "desc": "Cells are not only the basic building blocks of all organisms they are also the source of the vast diversity that characterizes life on earth.",
-        "prerequisites": "Pre-requisite: BABS1201 or DPST1051 and CHEM1011 or CHEM1031 or DPST1031",
+        "conditions": "Pre-requisite: BABS1201 or DPST1051 and CHEM1011 or CHEM1031 or DPST1031",
         "equivalents": null
     },
     "BABS2204": {
@@ -2665,7 +2665,7 @@
             "Term 3"
         ],
         "desc": "Genetics is the study of inheritance and is an exciting and rapidly expanding discipline with applications in medicine, biotechnology, agriculture and many other fields.",
-        "prerequisites": "Prerequisite: BABS1201 or DPST1051",
+        "conditions": "Prerequisite: BABS1201 or DPST1051",
         "equivalents": null
     },
     "BABS2264": {
@@ -2676,7 +2676,7 @@
             "Term 3"
         ],
         "desc": "Genetics is the study of inheritance and is an exciting and rapidly expanding discipline with applications in medicine, biotechnology, agriculture and many other fields.",
-        "prerequisites": "Prerequisite: BABS1201 or DPST1051",
+        "conditions": "Prerequisite: BABS1201 or DPST1051",
         "equivalents": null
     },
     "BIOC2101": {
@@ -2687,7 +2687,7 @@
             "Term 2"
         ],
         "desc": "BIOC2101 introduces modern biochemistry, covers fundamental aspects of the structure-function relationships of proteins and an overall coverage of intermediary metabolism.",
-        "prerequisites": "Prerequisite: BABS1201 or DPST1051 and CHEM1011 or DPST1031 or CHEM1031 or CHEM1051 or CHEM1811 and CHEM1021 or DPST1032 or CHEM1041 or CHEM1061 or CHEM1821",
+        "conditions": "Prerequisite: BABS1201 or DPST1051 and CHEM1011 or DPST1031 or CHEM1031 or CHEM1051 or CHEM1811 and CHEM1021 or DPST1032 or CHEM1041 or CHEM1061 or CHEM1821",
         "equivalents": null
     },
     "MICR2011": {
@@ -2698,7 +2698,7 @@
             "Term 1"
         ],
         "desc": "Microscopic life pervades every aspect of our lives, influencing our health, diet, and environment.",
-        "prerequisites": "Prerequisite: BABS1201 or DPST1051",
+        "conditions": "Prerequisite: BABS1201 or DPST1051",
         "equivalents": null
     },
     "BABS3121": {
@@ -2709,7 +2709,7 @@
             "Term 1"
         ],
         "desc": "The syllabus comprises a detailed analysis of gene structure and function which includes: structure and properties of polynucleotides such as DNA and RNA; structure of chromatin; mechanisms and regulation of gene replication, transcription and translation, DNA repair and the molecular biology of cancer induction; recombinant DNA technology; nulceic acid sequencing, ecombinant DNA technology, application of genomics and proteomics, microarray analyses; protein production using recombinant DNA systems.",
-        "prerequisites": "Prerequisite: BIOC2201, BIOC2101 or BABS2204 or BABS2264 or BABS2202 or MICR2011",
+        "conditions": "Prerequisite: BIOC2201, BIOC2101 or BABS2204 or BABS2264 or BABS2202 or MICR2011",
         "equivalents": null
     },
     "BINF3010": {
@@ -2720,7 +2720,7 @@
             "Term 2"
         ],
         "desc": "Bioinformatics (the use of computing methods for the management and analysis of molecular biology data) has become an integral component of biomolecular sciences, especially genomics and proteomics.",
-        "prerequisites": "Prerequisite: BABS2204 OR BABS2264 OR BIOC2201.",
+        "conditions": "Prerequisite: BABS2204 OR BABS2264 OR BIOC2201.",
         "equivalents": null
     },
     "COMP3121": {
@@ -2731,7 +2731,7 @@
             "Term 2"
         ],
         "desc": "Correctness and efficiency of algorithms.",
-        "prerequisites": "Prerequisite: COMP1927 or COMP2521",
+        "conditions": "Prerequisite: COMP1927 or COMP2521",
         "equivalents": [
             {
                 "code": "COMP3821",
@@ -2754,7 +2754,7 @@
             "Term 3"
         ],
         "desc": "Data models: entity-relationship, relational, object-oriented.",
-        "prerequisites": "Prerequisite: COMP2521 or COMP1927",
+        "conditions": "Prerequisite: COMP2521 or COMP1927",
         "equivalents": null
     },
     "BINF6112": {
@@ -2765,7 +2765,7 @@
             "Term 3"
         ],
         "desc": "Through a practical software project and targeted lectures this course examines various issues in the design and implementation of software systems for the analysis of large complex biological datasets and the application of mathematical and statistical methods to problems in modern life science.",
-        "prerequisites": "Prerequisite: COMP1531 or COMP2041",
+        "conditions": "Prerequisite: COMP1531 or COMP2041",
         "equivalents": null
     },
     "COMP4920": {
@@ -2776,7 +2776,7 @@
             "Term 3"
         ],
         "desc": "This course will develop a framework on which management and ethical issues can be developed.",
-        "prerequisites": "Prerequisite: (COMP2511 or COMP2911) and completion of 96 UOC in Computer Science.",
+        "conditions": "Prerequisite: (COMP2511 or COMP2911) and completion of 96 UOC in Computer Science.",
         "equivalents": null
     },
     "COMP4951": {
@@ -2789,7 +2789,7 @@
             "Term 3"
         ],
         "desc": "The thesis provides an opportunity for you to bring together engineering principles learned over your previous years of study and apply these principles to innovatively solve problems such as the development of a specific design, process and/or the investigation of a hypothesis.",
-        "prerequisites": "Prerequisite: Enrolled in a CSE BE (Hons) programs, completion of 126 UOC and completion of 3rd year core.",
+        "conditions": "Prerequisite: Enrolled in a CSE BE (Hons) programs, completion of 126 UOC and completion of 3rd year core.",
         "equivalents": null
     },
     "COMP4952": {
@@ -2802,7 +2802,7 @@
             "Term 3"
         ],
         "desc": "The thesis provides an opportunity for you to bring together engineering principles learned over your previous years of study and apply these principles to innovatively solve problems such as the development of a specific design, process and/or the investigation of a hypothesis.",
-        "prerequisites": "Prerequisite: Completion of Research Thesis A (4951)",
+        "conditions": "Prerequisite: Completion of Research Thesis A (4951)",
         "equivalents": null
     },
     "COMP4953": {
@@ -2815,7 +2815,7 @@
             "Term 3"
         ],
         "desc": "The thesis provides an opportunity for you to bring together engineering principles learned over your previous years of study and apply these principles to innovatively solve problems such as the development of a specific design, process and/or the investigation of a hypothesis.",
-        "prerequisites": "Prerequisite: Completion of Research Thesis B (4952)",
+        "conditions": "Prerequisite: Completion of Research Thesis B (4952)",
         "equivalents": null
     },
     "CEIC2000": {
@@ -2827,7 +2827,7 @@
             "Term 2"
         ],
         "desc": "In this course students will learn sufficient thermodynamics and problem solution strategies to be able to apply thermodynamic concepts with material and energy balances to chemical process problems involving several unit operations and involving chemical reactions.",
-        "prerequisites": "Pre-requisites:  PHYS1121 or PHY1131",
+        "conditions": "Pre-requisites:  PHYS1121 or PHY1131",
         "equivalents": null
     },
     "CEIC2001": {
@@ -2839,7 +2839,7 @@
             "Term 3"
         ],
         "desc": "Fluid Flow and Particle Technology.",
-        "prerequisites": "Pre-requisites:  PHYS1121 or PHY1131",
+        "conditions": "Pre-requisites:  PHYS1121 or PHY1131",
         "equivalents": null
     },
     "CEIC2002": {
@@ -2850,7 +2850,7 @@
             "Term 2"
         ],
         "desc": "In this course, the principles of transport phenomena introduced previously in fluid flow are extended to heat and mass transport.",
-        "prerequisites": "Prerequisite:CEIC2001",
+        "conditions": "Prerequisite:CEIC2001",
         "equivalents": null
     },
     "CEIC2005": {
@@ -2862,7 +2862,7 @@
             "Term 2"
         ],
         "desc": "Applied physical chemistry, kinetics and reaction engineering.",
-        "prerequisites": "Prerequisite: CEIC2000\nCo-requisite: MATH2089 or MATH2301",
+        "conditions": "Prerequisite: CEIC2000\nCo-requisite: MATH2089 or MATH2301",
         "equivalents": null
     },
     "CEIC2007": {
@@ -2873,7 +2873,7 @@
             "Term 3"
         ],
         "desc": "This course is designed to consolidate your understanding of basic principles in chemical engineering and develop your skills in planning, experimental technique including data acquisition, and analysis.",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": null
     },
     "MATH2018": {
@@ -2886,7 +2886,7 @@
             "Term 3"
         ],
         "desc": "Partial differentiation and applications, vector algebra, double integrals, ordinary differential equations, introduction to vector field theory, extrema of functions of 2 variables, matrices and their applications, Laplace transforms, Fourier series, partial differential equations and their solution for selected physical problems.",
-        "prerequisites": "Prerequisite: MATH1231 or DPST1014 or MATH1241 or MATH1251",
+        "conditions": "Prerequisite: MATH1231 or DPST1014 or MATH1241 or MATH1251",
         "equivalents": [
             {
                 "code": "MATH2019",
@@ -2904,7 +2904,7 @@
             "Term 3"
         ],
         "desc": "The previous course name was Chem Eng Fundamentals 3.",
-        "prerequisites": "Prerequisite: CEIC2002 and CEIC2005 and MATH2089 and (MATH2019 or MATH2018)",
+        "conditions": "Prerequisite: CEIC2002 and CEIC2005 and MATH2089 and (MATH2019 or MATH2018)",
         "equivalents": null
     },
     "CEIC3001": {
@@ -2916,7 +2916,7 @@
             "Term 3"
         ],
         "desc": "In this course, the student will learn to apply his or her fundamental knowledge of transport phenomena with concepts in thermodynamics to develop models for industrial separation operations, in conjunction with additional study of thermodynamics of phase equilibria for multi-component systems.",
-        "prerequisites": "Pre-requisites: CEIC2000, CEIC2001, CEIC2002, CEIC2005",
+        "conditions": "Pre-requisites: CEIC2000, CEIC2001, CEIC2002, CEIC2005",
         "equivalents": null
     },
     "CEIC3004": {
@@ -2927,7 +2927,7 @@
             "Term 2"
         ],
         "desc": "This course teaches the student about selection and design of chemical process equipment and the use of simulation software as an aid to equipment design.",
-        "prerequisites": "Pre-requisites: CEIC2000, CEIC2001, CEIC2002, CEIC3001",
+        "conditions": "Pre-requisites: CEIC2000, CEIC2001, CEIC2002, CEIC3001",
         "equivalents": null
     },
     "CEIC3005": {
@@ -2939,7 +2939,7 @@
             "Term 3"
         ],
         "desc": "The previous course name was Chem Eng Design 3B.",
-        "prerequisites": "Pre-requisites: CEIC2000, CEIC2001, CEIC2002",
+        "conditions": "Pre-requisites: CEIC2000, CEIC2001, CEIC2002",
         "equivalents": null
     },
     "CEIC3006": {
@@ -2950,7 +2950,7 @@
             "Term 2"
         ],
         "desc": "The previous course name was Chem Eng Design 3C.",
-        "prerequisites": "Pre-requisites: CEIC2000, MATH2018 or MATH2019, MATH2089",
+        "conditions": "Pre-requisites: CEIC2000, MATH2018 or MATH2019, MATH2089",
         "equivalents": null
     },
     "CEIC3007": {
@@ -2959,7 +2959,7 @@
         "units": "6",
         "terms": null,
         "desc": "This course is designed to develop and extend your skills in designing and executing experimental investigation of chemical engineering problems.",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": null
     },
     "CEIC4000": {
@@ -2971,7 +2971,7 @@
             "Term 2"
         ],
         "desc": "This course aims to develop a profound understanding of concepts of environmental and social responsibility and professional ethics, both in the wider sense and as they relate to the specific context of chemical engineering and industrial chemistry.",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": null
     },
     "CEIC4001": {
@@ -2982,7 +2982,7 @@
             "Term 1"
         ],
         "desc": "Please Note: Pre-requisites: at least 144 UOC taken in Industrial Chemistry or Chemical Engineering programs.",
-        "prerequisites": "Prerequisite: (CEIC3004 and CEIC3005) or (CEIC3005 and CEIC3006) or (CEIC3006 and CEIC3004)",
+        "conditions": "Prerequisite: (CEIC3004 and CEIC3005) or (CEIC3005 and CEIC3006) or (CEIC3006 and CEIC3004)",
         "equivalents": null
     },
     "CEIC4951": {
@@ -2996,7 +2996,7 @@
             "Term 3"
         ],
         "desc": "Research Thesis is an inquiry-based learning course that provides an opportunity for students to bring together engineering principles learned through academic study.",
-        "prerequisites": "Prerequisite: Completion of 126 UOC and completion of 3rd year core",
+        "conditions": "Prerequisite: Completion of 126 UOC and completion of 3rd year core",
         "equivalents": null
     },
     "CEIC4952": {
@@ -3010,7 +3010,7 @@
             "Term 3"
         ],
         "desc": "Research Thesis s an inquiry-based learning course that provides an opportunity for students to bring together engineering principles learned through academic study.",
-        "prerequisites": "Prerequisite: Completion of Research Thesis A (4951)",
+        "conditions": "Prerequisite: Completion of Research Thesis A (4951)",
         "equivalents": null
     },
     "CEIC4953": {
@@ -3023,7 +3023,7 @@
             "Term 3"
         ],
         "desc": "Research Thesis is an inquiry-based learning course that provides an opportunity for students to bring together engineering principles learned through academic study.",
-        "prerequisites": "Prerequisite: Completion of Research Thesis B (4952)",
+        "conditions": "Prerequisite: Completion of Research Thesis B (4952)",
         "equivalents": null
     },
     "CEIC6004": {
@@ -3032,7 +3032,7 @@
         "units": "6",
         "terms": null,
         "desc": "We will explore exciting macromolecular chemistry in a range of selected cutting edge research fields.",
-        "prerequisites": "Prerequisite: POLY3000",
+        "conditions": "Prerequisite: POLY3000",
         "equivalents": null
     },
     "CEIC6711": {
@@ -3043,7 +3043,7 @@
             "Term 1"
         ],
         "desc": "The link between molecules and the macroscopic properties we measure depends on the microscale and mesoscale structures the molecules form in complex fluids like emulsions, foams, aerosols, and particle dispersions.",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": null
     },
     "CEIC6789": {
@@ -3054,7 +3054,7 @@
             "Term 2"
         ],
         "desc": "The recent surge in the volume of data collected owing to technological advances provides opportunities to improve processes and take better decisions across various industries.",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": null
     },
     "CEIC8102": {
@@ -3065,7 +3065,7 @@
             "Term 3"
         ],
         "desc": "Concepts of linear Multi-Input Multi-Output (MIMO) systems, state-space representation of process systems, linear spaces and linear operators, controllability and observability analysis, Lyapunov stability analysis, stability of interconnected systems, linear optimal control, frequency-domain analysis and controller synthesis for MIMO process systems.",
-        "prerequisites": "pre-requisites: CEIC3006",
+        "conditions": "pre-requisites: CEIC3006",
         "equivalents": null
     },
     "CHEN6701": {
@@ -3076,7 +3076,7 @@
             "Term 3"
         ],
         "desc": "This subject is geared towards senior undergraduate students with interests in the design and optimization of process reaction vessels in the chemicals/petrochemicals, biological/food as well as materials/minerals processing industries.",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": null
     },
     "CHEN6703": {
@@ -3087,7 +3087,7 @@
             "Term 2"
         ],
         "desc": "The course covers lectures and demonstrations on: Particle characterisation and preparation using the latest techniques, floc characterisation and its relevance in separation techniques.",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": null
     },
     "CHEN6706": {
@@ -3098,7 +3098,7 @@
             "Term 1"
         ],
         "desc": "This course presents a unified and advanced approach to the study of transport phenomena, which unifies the topics of mass, momentum and heat transport.",
-        "prerequisites": "Pre-requisites: CEIC2001, CEIC2002, MATH2019, CEIC3000",
+        "conditions": "Pre-requisites: CEIC2001, CEIC2002, MATH2019, CEIC3000",
         "equivalents": null
     },
     "CEIC6005": {
@@ -3109,7 +3109,7 @@
             "Term 1"
         ],
         "desc": "Current energy resources and alternatives for the future.",
-        "prerequisites": "Prerequisites: (MATS1101 OR CHEM1011 OR DPST1031 OR CHEM1021 OR DPST1032) AND CEIC2000 AND CEIC2002",
+        "conditions": "Prerequisites: (MATS1101 OR CHEM1011 OR DPST1031 OR CHEM1021 OR DPST1032) AND CEIC2000 AND CEIC2002",
         "equivalents": null
     },
     "CEIC6712": {
@@ -3120,7 +3120,7 @@
             "Term 2"
         ],
         "desc": "Students will learn how to design, develop and evaluate pharmaceutical and nutraceutical agents in line with research and industry methods, where chemical engineers, nutritionists and medical researchers work together to transform raw materials and small molecular agents to valuable pharma products.",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": null
     },
     "CEIC8204": {
@@ -3131,7 +3131,7 @@
             "Term 2"
         ],
         "desc": "The aims of this course are to introduce issues which affect business  decisions encountered by management in the chemical industry.",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": null
     },
     "CEIC8330": {
@@ -3142,7 +3142,7 @@
             "Term 3"
         ],
         "desc": "1.",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": null
     },
     "CEIC8341": {
@@ -3153,7 +3153,7 @@
             "Term 3"
         ],
         "desc": "Please note that CEIC2001 (Fluid and particle mechanics) and CEIC2002 (heat and mass transfer) are prerequisites to enrol in CEIC8341.",
-        "prerequisites": "Prerequisites: CEIC2001, CEIC2002",
+        "conditions": "Prerequisites: CEIC2001, CEIC2002",
         "equivalents": null
     },
     "CHEM2041": {
@@ -3165,7 +3165,7 @@
             "Term 3"
         ],
         "desc": "This course teaches the essential methods in analytical chemistry applicable to chemists, biologists, and most other disciplines of science.",
-        "prerequisites": "Prerequisite: CHEM1011 or CHEM1031 or CHEM1051 or CHEM1811 or DPST1031 and CHEM1021 or CHEM1041 or CHEM1061 or CHEM1821 or DPST1032 and MATH1031 or MATH1041 or MATH1131 or MATH1141 or MATH1151 or MATH1231 or MATH1241 or MATH1251 or DPST1013 or DPST1014",
+        "conditions": "Prerequisite: CHEM1011 or CHEM1031 or CHEM1051 or CHEM1811 or DPST1031 and CHEM1021 or CHEM1041 or CHEM1061 or CHEM1821 or DPST1032 and MATH1031 or MATH1041 or MATH1131 or MATH1141 or MATH1151 or MATH1231 or MATH1241 or MATH1251 or DPST1013 or DPST1014",
         "equivalents": null
     },
     "ENGG3001": {
@@ -3176,7 +3176,7 @@
             "Term 2"
         ],
         "desc": "This course enables engineers to analyse and design infrastructure and appropriate technology to support the well-being and welfare of individuals and communities in disadvantaged circumstances.",
-        "prerequisites": "Prerequisite: Completion of 96UOC",
+        "conditions": "Prerequisite: Completion of 96UOC",
         "equivalents": null
     },
     "FOOD3010": {
@@ -3188,7 +3188,7 @@
             "Term 2"
         ],
         "desc": "The basis of food science is presented in a series of lectures covering traditional and novel methods of preserving foods for distribution and storage.",
-        "prerequisites": "Pre-requisites:FOOD1120,FOOD2320,CHEM2921",
+        "conditions": "Pre-requisites:FOOD1120,FOOD2320,CHEM2921",
         "equivalents": null
     },
     "FOOD8450": {
@@ -3199,7 +3199,7 @@
             "Term 3"
         ],
         "desc": "This course consists of lectures and discussion groups covering advanced aspects of modern food processing and preservation.",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": null
     },
     "GSOE9111": {
@@ -3210,7 +3210,7 @@
             "Term 3"
         ],
         "desc": "This course course provides training on energy issues covering techniques for energy storage, their capabilities, limitations and issues with their use.",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": null
     },
     "POLY3000": {
@@ -3221,7 +3221,7 @@
             "Term 2"
         ],
         "desc": "Polymer and their manufacture play a very important part in our daily lives and the technologies that we use.",
-        "prerequisites": "Pre-requisites:  CHEM2021 or CEIC2004",
+        "conditions": "Pre-requisites:  CHEM2021 or CEIC2004",
         "equivalents": null
     },
     "CEIC4954": {
@@ -3233,7 +3233,7 @@
             "Term 3"
         ],
         "desc": "This course will provide students with an opportunity to go extend their thesis project by exploring their research problem in more breadth &/or depth.",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": null
     },
     "ENGG4060": {
@@ -3242,7 +3242,7 @@
         "units": "6",
         "terms": null,
         "desc": "This fourth year elective course allows students to deliver a project, of their design, that engages the strength of cross-disciplinary student teams.",
-        "prerequisites": "Prerequisite 96 UOC",
+        "conditions": "Prerequisite 96 UOC",
         "equivalents": null
     },
     "ENGG4102": {
@@ -3253,7 +3253,7 @@
             "Term 3"
         ],
         "desc": "This course provides students with the opportunity to undertake a design project related to Humanitarian Engineering.",
-        "prerequisites": "Pre-requisite: ENGG3001 and (ARTS2755 or ARTS2248 or ARTS2751 or ARTS2752)",
+        "conditions": "Pre-requisite: ENGG3001 and (ARTS2755 or ARTS2248 or ARTS2751 or ARTS2752)",
         "equivalents": null
     },
     "CHEM2021": {
@@ -3264,7 +3264,7 @@
             "Term 2"
         ],
         "desc": "Organic molecules are at the heart of the chemistry of life and industry.",
-        "prerequisites": "Prerequisite: CHEM2041",
+        "conditions": "Prerequisite: CHEM2041",
         "equivalents": null
     },
     "CHEM2031": {
@@ -3275,7 +3275,7 @@
             "Term 3"
         ],
         "desc": "This course provides a general introduction to both theoretical and practical aspects of advanced inorganic chemistry.",
-        "prerequisites": "Prerequisite: CHEM2041 Exclusion: CHEM2828, CHEM2839",
+        "conditions": "Prerequisite: CHEM2041 Exclusion: CHEM2828, CHEM2839",
         "equivalents": null
     },
     "CHEM3021": {
@@ -3286,7 +3286,7 @@
             "Term 1"
         ],
         "desc": "The need for new functional molecules is greater than ever, with ever-growing demand for new therapeutics and materials for the future.",
-        "prerequisites": "Prerequisite: CHEM2021",
+        "conditions": "Prerequisite: CHEM2021",
         "equivalents": null
     },
     "CEIC4007": {
@@ -3297,7 +3297,7 @@
             "Term 1"
         ],
         "desc": "Design and creative development is the engine of growth for economies and industry product portfolios.",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": null
     },
     "CEIC4008": {
@@ -3308,7 +3308,7 @@
             "Term 2"
         ],
         "desc": "Design and creative development is the engine of growth for economies and industry product portfolios.",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": null
     },
     "CEIC8105": {
@@ -3319,7 +3319,7 @@
             "Term 1"
         ],
         "desc": "This course will explore exciting macomolecular chemistry in a range of selected cutting edge research fields.",
-        "prerequisites": "Pre: CEIC8104 or POLY3000",
+        "conditions": "Pre: CEIC8104 or POLY3000",
         "equivalents": null
     },
     "ELEC3111": {
@@ -3330,7 +3330,7 @@
             "Term 3"
         ],
         "desc": "Distributed energy generation is developing into a significant market in the generation, distribution and utilisation of electrical energy.",
-        "prerequisites": "Prerequisite: ELEC2134",
+        "conditions": "Prerequisite: ELEC2134",
         "equivalents": null
     },
     "ELEC3145": {
@@ -3341,7 +3341,7 @@
             "Term 2"
         ],
         "desc": "Real Time Instrumentation aims to equip students with the necessary and additional computing and hardware skills to be able to work with, and design real time computer systems which are connected as instrumentation and control devices to other electrical and mechanical circuits.",
-        "prerequisites": "Pre-req:(comp1911 or comp1917) and (elec2141 or mtrn3200 or comp3222)",
+        "conditions": "Pre-req:(comp1911 or comp1917) and (elec2141 or mtrn3200 or comp3222)",
         "equivalents": null
     },
     "ELEC3705": {
@@ -3352,7 +3352,7 @@
             "Term 3"
         ],
         "desc": "The progress of nanotechnology allows the fabrication of devices whose physical dimensions are approaching the atomic scale.",
-        "prerequisites": "Pre-requisite : MATH2099 AND (PHYS1231 OR DPST1024 OR PHYS1221)",
+        "conditions": "Pre-requisite : MATH2099 AND (PHYS1231 OR DPST1024 OR PHYS1221)",
         "equivalents": null
     },
     "ELEC4605": {
@@ -3363,7 +3363,7 @@
             "Term 3"
         ],
         "desc": "Quantum Engineering is concerned with the design and production of devices that exploit the laws of Quantum Mechanics, unlocking novel functionalities and improved performance.",
-        "prerequisites": "Pre-Requisite: Elec3705",
+        "conditions": "Pre-Requisite: Elec3705",
         "equivalents": null
     },
     "ELEC4617": {
@@ -3374,7 +3374,7 @@
             "Term 2"
         ],
         "desc": "This course is ideally suited to electrical engineering students planning to pursue a career in Power Engineering.",
-        "prerequisites": "Pre-Requisite: elec4612",
+        "conditions": "Pre-Requisite: elec4612",
         "equivalents": null
     },
     "MECH3110": {
@@ -3385,7 +3385,7 @@
             "Term 1"
         ],
         "desc": "This course will continue the development of a systematic approach to problem solving and design that commenced in earlier courses.",
-        "prerequisites": "Pre: (MMAN2400 or ENGG2400) and MMAN2100",
+        "conditions": "Pre: (MMAN2400 or ENGG2400) and MMAN2100",
         "equivalents": null
     },
     "MECH3610": {
@@ -3396,7 +3396,7 @@
             "Term 2"
         ],
         "desc": "Basic concepts of heat transfer, units, dimensions, exchange mechanism.",
-        "prerequisites": "Prerequisite: (ENGG2500 OR MMAN2600) AND MMAN2700",
+        "conditions": "Prerequisite: (ENGG2500 OR MMAN2600) AND MMAN2700",
         "equivalents": null
     },
     "MMAN3400": {
@@ -3407,7 +3407,7 @@
             "Term 1"
         ],
         "desc": "Membrane stresses in axisymmetric shells, simple bending, bending of composite and reinforced concrete beams, principal and cross moments of area, unsymmetrical bending, transverse shear stresses in beams, shear centre, column buckling, theory of elasticity: compatibility - equilibrium - constitutive equations - plane stress/strain, st Venant's principal, application of theory of elasticity to axisymmetric problems, torsion of prismatic bars, Prandtl's membrane analogy, torsion of multiply connected thin-walled sections, deflection analysis based on the principle of virtual work, various modes of fracture, crack-tip stresses, stress intensity factor, fracture toughness, crack growth due to fatigue.",
-        "prerequisites": "Prerequisite: (MATH2019 OR MATH2018) AND (ENGG2400 OR MMAN2400)",
+        "conditions": "Prerequisite: (MATH2019 OR MATH2018) AND (ENGG2400 OR MMAN2400)",
         "equivalents": [
             {
                 "code": "MECH3400",
@@ -3424,7 +3424,7 @@
             "Term 2"
         ],
         "desc": "An introduction to the application of advanced analytical, statistical and numerical techniques to the solution of engineering problems relevant to civil and environmental engineers and surveyors.",
-        "prerequisites": "Prerequisite: MATH1231 OR DPST1014 OR MATH1241",
+        "conditions": "Prerequisite: MATH1231 OR DPST1014 OR MATH1241",
         "equivalents": null
     },
     "CVEN2101": {
@@ -3435,7 +3435,7 @@
             "Term 3"
         ],
         "desc": "An introduction to construction systems and processes.",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": null
     },
     "CVEN2303": {
@@ -3447,7 +3447,7 @@
             "Term 2"
         ],
         "desc": "This course introduces students to structural analysis and computer modelling of structures.",
-        "prerequisites": "Prerequisites: (ENGG1300 AND ENGG2400) OR (CVEN1300 AND CVEN2301)\n(Pre-requisite only applicable to UG cohort taking this course).",
+        "conditions": "Prerequisites: (ENGG1300 AND ENGG2400) OR (CVEN1300 AND CVEN2301)\n(Pre-requisite only applicable to UG cohort taking this course).",
         "equivalents": [
             {
                 "code": "CVEN3301",
@@ -3464,7 +3464,7 @@
             "Term 2"
         ],
         "desc": "The course is presented as 2 strands.",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": [
             {
                 "code": "CVEN3401",
@@ -3481,7 +3481,7 @@
             "Term 3"
         ],
         "desc": "This subject is an introduction to the general principles of the organisation and control of engineering operations.",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": null
     },
     "CVEN3202": {
@@ -3492,7 +3492,7 @@
             "Term 3"
         ],
         "desc": "An introductory course to fundamentals of soil mechanics.",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": [
             {
                 "code": "CVEN2201",
@@ -3509,7 +3509,7 @@
             "Term 1"
         ],
         "desc": "This course covers two important areas of geotechnical engineering: geology and applied geotechnics.",
-        "prerequisites": "Prerequisite:CVEN2201 or CVEN3202",
+        "conditions": "Prerequisite:CVEN2201 or CVEN3202",
         "equivalents": [
             {
                 "code": "CVEN3201",
@@ -3526,7 +3526,7 @@
             "Term 1"
         ],
         "desc": "A course on the design concepts and design of structural elements subject to bending, shear and combined bending and axial compression.",
-        "prerequisites": "Prerequisites: (ENGG1300 AND ENGG2400) OR (CVEN1300 AND CVEN2301)\n(Pre-requisite only applicable to UG cohort taking this course).",
+        "conditions": "Prerequisites: (ENGG1300 AND ENGG2400) OR (CVEN1300 AND CVEN2301)\n(Pre-requisite only applicable to UG cohort taking this course).",
         "equivalents": [
             {
                 "code": "CVEN2302",
@@ -3543,7 +3543,7 @@
             "Term 2"
         ],
         "desc": "A course on concrete materials and the design of reinforced concrete structural elements subject to bending, shear and combined bending and axial compression.",
-        "prerequisites": "Prerequisites: (ENGG1300 AND ENGG2400) OR (CVEN1300 AND CVEN2301)\n(Pre-requisite only applicable to UG cohort taking this course).",
+        "conditions": "Prerequisites: (ENGG1300 AND ENGG2400) OR (CVEN1300 AND CVEN2301)\n(Pre-requisite only applicable to UG cohort taking this course).",
         "equivalents": [
             {
                 "code": "CVEN3302",
@@ -3560,7 +3560,7 @@
             "Term 1"
         ],
         "desc": "The object of CVEN3501 is to introduce engineering hydrology and its application in water resources management and flood estimation.",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": null
     },
     "CVEN3502": {
@@ -3571,7 +3571,7 @@
             "Term 2"
         ],
         "desc": "Assumed Knowledge: MATS1101To introduce students to the principles of public health engineering, water and wastewater treatment, water supply systems, wastewater disposal systems, stormwater systems, biosolids treatment and management, and water quality and contamination indicators.",
-        "prerequisites": "Prerequisite: ENGG2500 OR CVEN2501",
+        "conditions": "Prerequisite: ENGG2500 OR CVEN2501",
         "equivalents": null
     },
     "CVEN4032": {
@@ -3582,7 +3582,7 @@
             "Term 1"
         ],
         "desc": "This course is the first of two parts and is undertaken prior to CVEN4033 Higher Honours Thesis B.",
-        "prerequisites": "Pre: 132UOC and Minimum WAM of 80",
+        "conditions": "Pre: 132UOC and Minimum WAM of 80",
         "equivalents": null
     },
     "CVEN4033": {
@@ -3593,7 +3593,7 @@
             "Term 3"
         ],
         "desc": "This course is the second of two parts and is undertaken after to CVEN4032 Higher Honours Thesis A.",
-        "prerequisites": "Prerequisite: CVEN4032.",
+        "conditions": "Prerequisite: CVEN4032.",
         "equivalents": null
     },
     "CVEN4050": {
@@ -3606,7 +3606,7 @@
             "Term 3"
         ],
         "desc": "This course is the first of two parts and is undertaken before CVEN4051 Thesis B, usually in the proceeding semester.",
-        "prerequisites": "Prerequisite: 132 UOCs needed to enrol into this course and BE Hons Programs only",
+        "conditions": "Prerequisite: 132 UOCs needed to enrol into this course and BE Hons Programs only",
         "equivalents": null
     },
     "CVEN4051": {
@@ -3619,7 +3619,7 @@
             "Term 3"
         ],
         "desc": "This course is the second of two parts and is undertaken after the completion of CVEN4050 Thesis A, usually in the proceeding semester.",
-        "prerequisites": "Prerequisite CVEN4050",
+        "conditions": "Prerequisite CVEN4050",
         "equivalents": null
     },
     "CVEN4951": {
@@ -3632,7 +3632,7 @@
             "Term 3"
         ],
         "desc": "The thesis provides an opportunity for you to bring together engineering principles learned over your previous years of study and apply these principles to innovatively solve problems such as the development of a specific design, process and/or the investigation of a hypothesis.",
-        "prerequisites": "Prerequisite: completion of 126 UOC and 70WAM and completion of 3rd year core",
+        "conditions": "Prerequisite: completion of 126 UOC and 70WAM and completion of 3rd year core",
         "equivalents": null
     },
     "CVEN4952": {
@@ -3645,7 +3645,7 @@
             "Term 3"
         ],
         "desc": "The thesis provides an opportunity for you to bring together engineering principles learned over your previous years of study and apply these principles to innovatively solve problems such as the development of a specific design, process and/or the investigation of a hypothesis.",
-        "prerequisites": "Pre-req: CVEN4951",
+        "conditions": "Pre-req: CVEN4951",
         "equivalents": null
     },
     "CVEN4953": {
@@ -3658,7 +3658,7 @@
             "Term 3"
         ],
         "desc": "The thesis provides an opportunity for you to bring together engineering principles learned over your previous years of study and apply these principles to innovatively solve problems such as the development of a specific design, process and/or the investigation of a hypothesis.",
-        "prerequisites": "Pre-req: CVEN4952",
+        "conditions": "Pre-req: CVEN4952",
         "equivalents": null
     },
     "BENV1012": {
@@ -3669,7 +3669,7 @@
             "Term 1"
         ],
         "desc": "This course introduces students to Parametric Design and Digital Fabrication, with emphasis on the direct\nrelationship between Mathematics and Geometry, and how these two fields constitute the foundations of\nany parametric design process.",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": null
     },
     "CODE2170": {
@@ -3680,7 +3680,7 @@
             "Term 3"
         ],
         "desc": "'The Building Information Modelling course introduces students to identify and explain concepts and methods of Building Information Management (BIM), BIM standards, and BIM in an urban context.",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": [
             {
                 "code": "BENV1242",
@@ -3702,7 +3702,7 @@
             "Term 1"
         ],
         "desc": "This is a project-based course where, working in groups of four, students undertake a major multi-disciplinary design project.",
-        "prerequisites": "Pre Req: 132UOC",
+        "conditions": "Pre Req: 132UOC",
         "equivalents": null
     },
     "CVEN4003": {
@@ -3713,7 +3713,7 @@
             "Term 2"
         ],
         "desc": "A second project-based course where, working in groups of four, students undertake a major multi-disciplinary design project involving discipline areas that are different from those dealt with in CVEN4002 Design Practice A.",
-        "prerequisites": "Pre Req: 132UOC",
+        "conditions": "Pre Req: 132UOC",
         "equivalents": null
     },
     "CVEN4101": {
@@ -3722,7 +3722,7 @@
         "units": "6",
         "terms": null,
         "desc": "Engineers are characterized as being problem solvers.",
-        "prerequisites": "Prerequisite: CVEN3101.",
+        "conditions": "Prerequisite: CVEN3101.",
         "equivalents": null
     },
     "CVEN4102": {
@@ -3733,7 +3733,7 @@
             "Term 1"
         ],
         "desc": "Most engineering work fits within what is broadly referred to as operations and projects.",
-        "prerequisites": "Prerequisite: CVEN3101.",
+        "conditions": "Prerequisite: CVEN3101.",
         "equivalents": null
     },
     "CVEN4103": {
@@ -3744,7 +3744,7 @@
             "Term 3"
         ],
         "desc": "The majority of engineering work is procured through contracts, within an array of delivery methods.",
-        "prerequisites": "Prerequisite: CVEN3101.",
+        "conditions": "Prerequisite: CVEN3101.",
         "equivalents": null
     },
     "CVEN4104": {
@@ -3755,7 +3755,7 @@
             "Term 2"
         ],
         "desc": "This course will provide fundamental knowledge and hands-on experience for practising sustainability in construction.",
-        "prerequisites": "Prerequisite: CVEN3101.",
+        "conditions": "Prerequisite: CVEN3101.",
         "equivalents": null
     },
     "CVEN4201": {
@@ -3766,7 +3766,7 @@
             "Term 1"
         ],
         "desc": "Description of rock mass and discontinuities; rock strength and failure criteria.",
-        "prerequisites": "Prerequisite/s: CVEN2201 OR CVEN3202 & CVEN3201 OR CVEN3203",
+        "conditions": "Prerequisite/s: CVEN2201 OR CVEN3202 & CVEN3201 OR CVEN3203",
         "equivalents": null
     },
     "CVEN4202": {
@@ -3777,7 +3777,7 @@
             "Term 2"
         ],
         "desc": "Topic 1: Application of computer simulation techniques to geotechnical engineering problems.",
-        "prerequisites": "Prerequisite/s: CVEN2201 OR CVEN3202 & CVEN3201 OR CVEN3203",
+        "conditions": "Prerequisite/s: CVEN2201 OR CVEN3202 & CVEN3201 OR CVEN3203",
         "equivalents": null
     },
     "CVEN4204": {
@@ -3788,7 +3788,7 @@
             "Term 3"
         ],
         "desc": "Prerequisites: CVEN2201, CVEN3201 or equivalentAssessment of the suitability and design of stabilisation techniques for difficult foundation soils including instrumentation and application observational techniques to geotechnical engineering.",
-        "prerequisites": "Prerequisite/s: CVEN2201 OR CVEN3202 & CVEN3201 OR CVEN3203",
+        "conditions": "Prerequisite/s: CVEN2201 OR CVEN3202 & CVEN3201 OR CVEN3203",
         "equivalents": null
     },
     "CVEN4300": {
@@ -3799,7 +3799,7 @@
             "Term 2"
         ],
         "desc": "A practical course that involves both advanced analysis and design of an engineered structure to solve a given problem.",
-        "prerequisites": "Pre-requisite: 2303, 3303 & 3304",
+        "conditions": "Pre-requisite: 2303, 3303 & 3304",
         "equivalents": null
     },
     "CVEN4301": {
@@ -3810,7 +3810,7 @@
             "Term 2"
         ],
         "desc": "A course on the advanced analysis and design of concrete structures for students looking towards a career in Structural Engineering.",
-        "prerequisites": "Prerequisite/s: CVEN3301 OR CVEN2303 AND CVEN3302 OR CVEN3304.",
+        "conditions": "Prerequisite/s: CVEN3301 OR CVEN2303 AND CVEN3302 OR CVEN3304.",
         "equivalents": null
     },
     "CVEN4308": {
@@ -3821,7 +3821,7 @@
             "Term 3"
         ],
         "desc": "Fundamentals of structural dynamic analysis for discrete and continuous structures; free and forced vibration of single and multiple degrees of freedom systems; normal modal analysis; transient dynamic analysis by numerical integration; response spectrum; introduction to nonlinear dynamic analysis of structures; wind, earthquake, human-induced vibration and wave loads: definitions and effects on structures; design of structures to resist dynamic loads.",
-        "prerequisites": "Prerequisites: CVEN3301 OR CVEN2303 and CVEN2002 (or equivalent).",
+        "conditions": "Prerequisites: CVEN3301 OR CVEN2303 and CVEN2002 (or equivalent).",
         "equivalents": null
     },
     "CVEN4309": {
@@ -3832,7 +3832,7 @@
             "Term 1"
         ],
         "desc": "Structural and Construction Engineers may be responsible for the design and construction of timber structures; from timber frame housing to high rise engineered timber structures.",
-        "prerequisites": "Pre: CVEN2301 & CVEN2303",
+        "conditions": "Pre: CVEN2301 & CVEN2303",
         "equivalents": null
     },
     "CVEN4310": {
@@ -3841,7 +3841,7 @@
         "units": "6",
         "terms": null,
         "desc": "This course introduces the concepts, principles and techniques used for deformation monitoring to civil engineering students with an interest in structures or geotechnical.",
-        "prerequisites": "Prerequisites: GMAT1110",
+        "conditions": "Prerequisites: GMAT1110",
         "equivalents": null
     },
     "CVEN4402": {
@@ -3852,7 +3852,7 @@
             "Term 2"
         ],
         "desc": "Definition of basic traffic elements, zero flow travel time, capacity, impedance flow relationship.",
-        "prerequisites": "Prerequisite/s: CVEN2401 OR CVEN3401 OR CVEN2402 OR CVEN3402.",
+        "conditions": "Prerequisite/s: CVEN2401 OR CVEN3401 OR CVEN2402 OR CVEN3402.",
         "equivalents": null
     },
     "CVEN4404": {
@@ -3863,7 +3863,7 @@
             "Term 1"
         ],
         "desc": "CVEN4404: Fundamentals of Traffic Engineering aims to provide undergraduate students the knowledge and skills necessary to contribute as a practicing Traffic Engineer.",
-        "prerequisites": "Prerequisite/s: CVEN2401 OR CVEN3401 OR CVEN2402 OR CVEN3402.",
+        "conditions": "Prerequisite/s: CVEN2401 OR CVEN3401 OR CVEN2402 OR CVEN3402.",
         "equivalents": null
     },
     "CVEN4405": {
@@ -3874,7 +3874,7 @@
             "Term 3"
         ],
         "desc": "Human factors is the scientific discipline concerned with the understanding of interactions between humans and other elements of a system.",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": null
     },
     "CVEN4503": {
@@ -3885,7 +3885,7 @@
             "Term 1"
         ],
         "desc": "Review of groundwater occurrence in Australia.",
-        "prerequisites": "Prerequisite: CVEN3501.",
+        "conditions": "Prerequisite: CVEN3501.",
         "equivalents": null
     },
     "CVEN4504": {
@@ -3896,7 +3896,7 @@
             "Term 3"
         ],
         "desc": "Detailed examination of unit processes used in water and wastewater treatment including chemical selection, dosing and mixing, coagulation, flocculation, clarification, filtration and disinfection technology in water treatment and sedimentation and aerobic and anaerobic biological processes in wastewater treatment.",
-        "prerequisites": "Prerequisite: CVEN3502",
+        "conditions": "Prerequisite: CVEN3502",
         "equivalents": null
     },
     "CVEN4701": {
@@ -3908,7 +3908,7 @@
             "Term 3"
         ],
         "desc": "The course enables engineers to analyse and design sustainable infrastructure to support the needs of regional economies and populations.",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": null
     },
     "CVEN4703": {
@@ -3919,7 +3919,7 @@
             "Term 2"
         ],
         "desc": "Fundamental aspects of the chemistry and biology of aquatic environments are reviewed and extended enabling analysis and interpretation of processes occurring in surface and ground waters as well as water and wastewater treatment systems.",
-        "prerequisites": "Prerequisite: CVEN3502",
+        "conditions": "Prerequisite: CVEN3502",
         "equivalents": null
     },
     "CVEN4705": {
@@ -3931,7 +3931,7 @@
             "Term 3"
         ],
         "desc": "An introduction to sustainable engineering principles and the social, economic and political context in which they have arisen, and in which they are implemented.",
-        "prerequisites": "Exclusion: CVEN9888",
+        "conditions": "Exclusion: CVEN9888",
         "equivalents": null
     },
     "CVEN4800": {
@@ -3942,7 +3942,7 @@
             "Term 1"
         ],
         "desc": "This course introduces the concepts, principles and techniques used for satellite remote sensing to civil and environmental engineering students.",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": null
     },
     "CVEN9405": {
@@ -3953,7 +3953,7 @@
             "Term 3"
         ],
         "desc": "Analytical techniques for urban land use/transport planning practice.",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": null
     },
     "CVEN9415": {
@@ -3964,7 +3964,7 @@
             "Term 2"
         ],
         "desc": "Historical introduction to transport systems and development of various transport modes, road (vehicles, pedestrians, cycles), conveyor, rail, sea and air.",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": [
             {
                 "code": "CVEN8415",
@@ -3981,7 +3981,7 @@
             "Term 3"
         ],
         "desc": "Processes, generation and modelling of catchment surface runoff quantity and quality; a broad range of surface runoff and water quality models ranging from simple to process based will be considered; selection, calibration, validation and reliability of the various models is presented; water resources data, analysis and modelling including considerations of data sources, errors, time series analysis, stochastic models and extension of hydrological records; stochastic reservoir analysis; optimisation in water resources.",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": null
     },
     "CVEN9620": {
@@ -3992,7 +3992,7 @@
             "Term 3"
         ],
         "desc": "Models for routing of flows along channels and rivers will be presented including model theory, selection, calibration, validation and reliability; models will include Muskingham, kinematic wave, non-inertial and diffusion and dynamic wave; sediment and pollutant transport water quality methods and models will also be presented including plug-flow and advection-dispersion in both coupled and uncoupled applications; estuarine classification and density structure; tides, water level response, mixing processes and flushing of estuaries; estuarine difference models including hydrodynamic stratification and algal dynamics; random walk and box models; biochemical processes in estuaries.",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": null
     },
     "CVEN9640": {
@@ -4003,7 +4003,7 @@
             "Term 1"
         ],
         "desc": "Waves in coastal waters including theory, measurement, analysis, forecasting, growth, refraction, diffraction, shoaling and breaking processes; coastal and beach processes including tides, storms, currents, elevated water levels, morphology, sediment transport mechanisms, beach erosion and nourishment, longshore transport, prediction and modelling of shoreline change; wave forces on coastal and ocean structures with application to engineering design of harbours, breakwaters, seawalls, piles, decks, marinas, pipelines and outfalls.",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": null
     },
     "CVEN9809": {
@@ -4014,7 +4014,7 @@
             "Term 1"
         ],
         "desc": "A dynamic course in the design of reinforced concrete structures to AS3600-2009 and international standards using advanced methods of analysis and design.",
-        "prerequisites": "Prerequisite: CVEN3304",
+        "conditions": "Prerequisite: CVEN3304",
         "equivalents": null
     },
     "CVEN9818": {
@@ -4023,7 +4023,7 @@
         "units": "6",
         "terms": null,
         "desc": "Introduction to bridge engineering; site selection, type selection, bridge hydraulics, design philosophies.",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": null
     },
     "CVEN9820": {
@@ -4034,7 +4034,7 @@
             "Term 3"
         ],
         "desc": "Stiffness analysis of structures.",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": null
     },
     "CVEN9822": {
@@ -4045,7 +4045,7 @@
             "Term 2"
         ],
         "desc": "A course on the advanced analysis and design of structural elements for students looking towards a career in Structural Engineering.",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": null
     },
     "CVEN9824": {
@@ -4056,7 +4056,7 @@
             "Term 2"
         ],
         "desc": "Concrete: high performance concrete; new methods of workability measurement; methods of placing-pumping, spraying; mix design methods; special concrete mixes.",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": null
     },
     "CVEN9826": {
@@ -4067,7 +4067,7 @@
             "Term 2"
         ],
         "desc": "A course in advanced mechanics of structures and materials for higher degree research students, and graduate students that require, or desire, a higher capability in the application of elasticity, plasticity and fracture to analysis of structures and structural materials.",
-        "prerequisites": ">74 WAM UG students",
+        "conditions": ">74 WAM UG students",
         "equivalents": null
     },
     "CVEN9881": {
@@ -4078,7 +4078,7 @@
             "Term 2"
         ],
         "desc": "Waste audits and characterisation of hazardous wastes in regions and industries; control of generation and transport of hazardous waste, manifest systems; waste minimisation; on-site treatment methods; integrated off-site treatment facilities; management of residues from treatment facilities; introduction to planning of regional hazardous waste management systems.",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": [
             {
                 "code": "CVEN8881",
@@ -4096,7 +4096,7 @@
             "Term 3"
         ],
         "desc": "Application of chemical principles to aqueous systems; pH and alkalinity, solubility and precipitation, complexation, redox and surface chemistry.",
-        "prerequisites": "Exclusion: BIOS1301",
+        "conditions": "Exclusion: BIOS1301",
         "equivalents": null
     },
     "GMAT3220": {
@@ -4107,7 +4107,7 @@
             "Term 1"
         ],
         "desc": "An overview of the components of Geographic Information Systems (GIS).",
-        "prerequisites": "Prerequisites: GMAT1110",
+        "conditions": "Prerequisites: GMAT1110",
         "equivalents": null
     },
     "GSOE9740": {
@@ -4118,7 +4118,7 @@
             "Term 3"
         ],
         "desc": "Sustainability means living well within the limits of a finite planet.",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": null
     },
     "CEIC2009": {
@@ -4129,7 +4129,7 @@
             "Term 3"
         ],
         "desc": "In this course, the relationships between the integration of thermodynamics and mass and energy balance in chemical plants are elucidated.",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": null
     },
     "CVEN2402": {
@@ -4140,7 +4140,7 @@
             "Term 2"
         ],
         "desc": "The course is presented as 2 strands.",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": [
             {
                 "code": "CVEN3402",
@@ -4157,7 +4157,7 @@
             "Term 2"
         ],
         "desc": "This course aims to provide an introduction to water chemistry and atmospheric chemistry, as a foundation for understanding both the natural processes in these environments and the effects of pollution on them.",
-        "prerequisites": "Prerequisite: CHEM1011 or CHEM1031 or CHEM1811",
+        "conditions": "Prerequisite: CHEM1011 or CHEM1031 or CHEM1811",
         "equivalents": null
     },
     "CVEN3701": {
@@ -4168,7 +4168,7 @@
             "Term 1"
         ],
         "desc": "ASSUMED KNOWLEDGE CVEN1701This course builds on the introduction to EISs in CVEN1701 to provide details of EIS methods, and the ISO14001 Environmental Management System framework.",
-        "prerequisites": "Prerequisite: CVEN1701",
+        "conditions": "Prerequisite: CVEN1701",
         "equivalents": null
     },
     "CVEN3702": {
@@ -4179,7 +4179,7 @@
             "Term 3"
         ],
         "desc": "An introduction to waste management systems, from generation to treatment and disposal; including waste characterisation, waste minimisation, transfer stations, recycling facilities, composting and landfill design.",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": null
     },
     "CVEN4507": {
@@ -4190,7 +4190,7 @@
             "Term 2"
         ],
         "desc": "Advanced closed conduit and open channel hydraulic design, designing for peak pump efficiency, sedimentation engineering, reservoir behaviour and design, estimation of large and extreme floods, advanced topics in hydrological design.",
-        "prerequisites": "Prerequisites: CVEN2501, CVEN3501, CVEN3502",
+        "conditions": "Prerequisites: CVEN2501, CVEN3501, CVEN3502",
         "equivalents": null
     },
     "GMAT9600": {
@@ -4201,7 +4201,7 @@
             "Term 3"
         ],
         "desc": "Remote sensing techniques are powerful tools for spatial data acquisition and this course will describe the history, challenges and developments in remote sensing.",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": null
     },
     "GMAT9606": {
@@ -4212,7 +4212,7 @@
             "Term 3"
         ],
         "desc": "Use of passive and active (radar) microwave techniques in remote sensing of earth resources.",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": null
     },
     "COMP2121": {
@@ -4223,7 +4223,7 @@
             "Term 1"
         ],
         "desc": "Instruction Set Architecture (ISA), Floating point number representation, computer arithmetic, assembly and machine language programming, machine language fundamentals; addressing modes; instruction repertoire, assembly language programming methodology, interrupts and I/O interfacing (hardware and software), serial communication, timers, analog input and output, converting analog signals to digital signals (data acquisition), taking input from a variety of sensors and driving actuators, buses and memory system, low level device drivers.",
-        "prerequisites": "Prerequisite: COMP1917 OR COMP1921 OR COMP1511 OR DPST1091 OR COMP1521 OR DPST1092 OR (COMP1911 AND MTRN2500)",
+        "conditions": "Prerequisite: COMP1917 OR COMP1921 OR COMP1511 OR DPST1091 OR COMP1521 OR DPST1092 OR (COMP1911 AND MTRN2500)",
         "equivalents": null
     },
     "MTRN2500": {
@@ -4234,7 +4234,7 @@
             "Term 3"
         ],
         "desc": "This course will use Matlab as the primary computational engine for teaching the students to carry out fundamental computations as well as developing simulations through the use of object oriented concepts implemented in Matlab environment.",
-        "prerequisites": "Prerequisite: COMP1917 or COMP1511 or DPST1091 or COMP1911",
+        "conditions": "Prerequisite: COMP1917 or COMP1511 or DPST1091 or COMP1911",
         "equivalents": null
     },
     "MTRN3020": {
@@ -4246,7 +4246,7 @@
             "Term 2"
         ],
         "desc": "This subject teaches the student how to design and develop a control system in discrete-time domain to be used in motion control systems.",
-        "prerequisites": "Prerequisite: MMAN3200 or ELEC3114",
+        "conditions": "Prerequisite: MMAN3200 or ELEC3114",
         "equivalents": null
     },
     "MTRN3500": {
@@ -4257,7 +4257,7 @@
             "Term 3"
         ],
         "desc": "The aim of this course is to implement software for vehicle simulation and control.",
-        "prerequisites": "pre-requisite MTRN2500",
+        "conditions": "pre-requisite MTRN2500",
         "equivalents": null
     },
     "MTRN4010": {
@@ -4268,7 +4268,7 @@
             "Term 1"
         ],
         "desc": "The following assumed knowledge is expected for postgraduate students undertaking this course: MMAN3200 and MATH2089 and MTRN2500.",
-        "prerequisites": "Prerequisite: MATH2089 and MTRN2500 and (MMAN3200 or ELEC3114)",
+        "conditions": "Prerequisite: MATH2089 and MTRN2500 and (MMAN3200 or ELEC3114)",
         "equivalents": null
     },
     "MTRN4110": {
@@ -4279,7 +4279,7 @@
             "Term 2"
         ],
         "desc": "The course is aimed at developing skills on how to design and implement the capabilities of a robotic platform.",
-        "prerequisites": "prerequisites: ELEC1111 OR DPST1081 OR ELEC1112 AND MTRN2500 AND MMAN3200",
+        "conditions": "prerequisites: ELEC1111 OR DPST1081 OR ELEC1112 AND MTRN2500 AND MMAN3200",
         "equivalents": null
     },
     "MTRN4230": {
@@ -4290,7 +4290,7 @@
             "Term 2"
         ],
         "desc": "The course introduces students to the analysis and use of robot manipulators, by exposing them to the theoretical basis of robotics as well as their practical implementation.",
-        "prerequisites": "prereq: (MMAN2300 or MMAN3300)and(MTRN2500 and MTRN3020)",
+        "conditions": "prereq: (MMAN2300 or MMAN3300)and(MTRN2500 and MTRN3020)",
         "equivalents": null
     },
     "MATS2005": {
@@ -4301,7 +4301,7 @@
             "Term 2"
         ],
         "desc": "Fluid properties, Newtonian and non-Newtonian fluids; principles of fluid motion, mass and momentum balances; turbulent flow, dimensional analysis; mechanical energy balance, Bernoulli's equation; conduction and Fourier's law, steady-state conduction; forced and natural convection heat transfer; radiation, single body radiation, radiation exchange between objects.",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": null
     },
     "MINE2010": {
@@ -4312,7 +4312,7 @@
             "Term 2"
         ],
         "desc": "The course covers the life cycle of a mining project including the  various processes involved with the development and operation of a  mining project including exploration & geology, mine planning, mine  operations, minerals beneficiation and marketing.",
-        "prerequisites": "Prerequsite: MINE1010",
+        "conditions": "Prerequsite: MINE1010",
         "equivalents": null
     },
     "MINE2610": {
@@ -4323,7 +4323,7 @@
             "Term 2"
         ],
         "desc": "The aim of this course is two fold:The first half of the course aims to provide a broad overview of the surveying and spatial industry.",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": null
     },
     "MINE2810": {
@@ -4334,7 +4334,7 @@
             "Term 3"
         ],
         "desc": "This is an introductory course in metallurgical processing, designed for students with no prior training in this area.",
-        "prerequisites": "Prerequsite: PHYS1131 OR MATS1101 OR GEOS111",
+        "conditions": "Prerequsite: PHYS1131 OR MATS1101 OR GEOS111",
         "equivalents": null
     },
     "MINE3220": {
@@ -4345,7 +4345,7 @@
             "Term 1"
         ],
         "desc": "Resource and reserve estimation of coal and metalliferous deposits.",
-        "prerequisites": "Prerequsite: MINE2010 or CVEN3201",
+        "conditions": "Prerequsite: MINE2010 or CVEN3201",
         "equivalents": null
     },
     "MINE3230": {
@@ -4356,7 +4356,7 @@
             "Term 2"
         ],
         "desc": "This course deals with the theoretical principles and practical methodologies associated with mine planning and project evaluation techniques.",
-        "prerequisites": "Prerequsite: MINE3220",
+        "conditions": "Prerequsite: MINE3220",
         "equivalents": null
     },
     "MINE3310": {
@@ -4367,7 +4367,7 @@
             "Term 1"
         ],
         "desc": "This course aims to provide students with the basic knowledge required to undertake geotechnical investigations.",
-        "prerequisites": "Prerequisite: ENGG2400 OR CVEN2301 OR MINE2310",
+        "conditions": "Prerequisite: ENGG2400 OR CVEN2301 OR MINE2310",
         "equivalents": null
     },
     "MINE3430": {
@@ -4378,7 +4378,7 @@
             "Term 1"
         ],
         "desc": "This course presents a systems approach to the principles, design and application of the major surface and underground mining methods together with the associated equipment, services and infrastructure.",
-        "prerequisites": "Prerequisite: MINE2010 or CVEN3031",
+        "conditions": "Prerequisite: MINE2010 or CVEN3031",
         "equivalents": null
     },
     "MINE3510": {
@@ -4389,7 +4389,7 @@
             "Term 3"
         ],
         "desc": "This course details the attributes, knowledge, and techniques that are required to provide a safe underground working environment through sound ventilation practice.",
-        "prerequisites": "Prerequisite: ENGG2500 OR MINE2500 OR CVEN2501 OR MATS2005",
+        "conditions": "Prerequisite: ENGG2500 OR MINE2500 OR CVEN2501 OR MATS2005",
         "equivalents": null
     },
     "MINE3630": {
@@ -4400,7 +4400,7 @@
             "Term 3"
         ],
         "desc": "This course covers the principal methods of rock breakage used in mining including machine mining, drilling and blasting.",
-        "prerequisites": "Prerequsite: MINE3430",
+        "conditions": "Prerequsite: MINE3430",
         "equivalents": null
     },
     "MINE3910": {
@@ -4411,7 +4411,7 @@
             "Term 2"
         ],
         "desc": "This course provides a comprehensive and practical understanding of the impacts both positive and negative that mining may have on society and the environment.",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": null
     },
     "MINE4250": {
@@ -4422,7 +4422,7 @@
             "Term 1"
         ],
         "desc": "Development of a pre-feasibility study for a metalliferous mining project.",
-        "prerequisites": "Prerequisite: MINE3230",
+        "conditions": "Prerequisite: MINE3230",
         "equivalents": null
     },
     "MINE4260": {
@@ -4433,7 +4433,7 @@
             "Term 2"
         ],
         "desc": "In this course a potential coal project will be evaluated from the prospective of open cut and underground mining.",
-        "prerequisites": "Prerequisite: MINE4250",
+        "conditions": "Prerequisite: MINE4250",
         "equivalents": null
     },
     "MINE4310": {
@@ -4444,7 +4444,7 @@
             "Term 1"
         ],
         "desc": "This course aims to provide students with the ability to apply soil and rock mechanics to the design of underground and surface mine excavations and associated infrastructure.",
-        "prerequisites": "Prerequisite: MINE3310",
+        "conditions": "Prerequisite: MINE3310",
         "equivalents": null
     },
     "MINE4710": {
@@ -4455,7 +4455,7 @@
             "Term 2"
         ],
         "desc": "The course provides an appreciation of management principles and practices vital to a mine manager's successful running of a mining business.",
-        "prerequisites": "Prerequsite: MINE3430",
+        "conditions": "Prerequsite: MINE3430",
         "equivalents": null
     },
     "MINE4951": {
@@ -4468,7 +4468,7 @@
             "Term 3"
         ],
         "desc": "The thesis provides an opportunity for you to bring together engineering principles learned over your previous years of study and apply these principles to innovatively solve problems such as the development of a specific design, process and/or the investigation of a hypothesis.",
-        "prerequisites": "Prerequisite: Completion of 126 UOC and completion of 3rd year core",
+        "conditions": "Prerequisite: Completion of 126 UOC and completion of 3rd year core",
         "equivalents": null
     },
     "MINE4952": {
@@ -4481,7 +4481,7 @@
             "Term 3"
         ],
         "desc": "The thesis provides an opportunity for you to bring together engineering principles learned over your previous years of study and apply these principles to innovatively solve problems such as the development of a specific design, process and/or the investigation of a hypothesis.",
-        "prerequisites": "Prerequisite: Completion of Research Thesis A (4951)",
+        "conditions": "Prerequisite: Completion of Research Thesis A (4951)",
         "equivalents": null
     },
     "MINE4953": {
@@ -4494,7 +4494,7 @@
             "Term 3"
         ],
         "desc": "The thesis provides an opportunity for you to bring together engineering principles learned over your previous years of study and apply these principles to innovatively solve problems such as the development of a specific design, process and/or the investigation of a hypothesis.",
-        "prerequisites": "Prerequisite: Completion of Research Thesis B (4952)",
+        "conditions": "Prerequisite: Completion of Research Thesis B (4952)",
         "equivalents": null
     },
     "MANF3100": {
@@ -4503,7 +4503,7 @@
         "units": "6",
         "terms": null,
         "desc": "This course focuses on making certain that a design, whether mechanical, mechatronic or aerospace, can also be successfully manufactured, from a quality as well as cost perspective.",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": null
     },
     "MANF3510": {
@@ -4514,7 +4514,7 @@
             "Term 3"
         ],
         "desc": "This course focuses on manufacturing technology, including material removal, joining, additive and finishing processes and their characteristics, as well as the main building blocks of industrial automation including materials handling technologies and actuation technologies such as pneumatics, electric motors, solenoids, switches, programmable logic controllers, CNC technology and industrial robotics.",
-        "prerequisites": "Prerequisite: MMAN1130 or MMAN2130",
+        "conditions": "Prerequisite: MMAN1130 or MMAN2130",
         "equivalents": null
     },
     "PHYS1221": {
@@ -4526,7 +4526,7 @@
             "Term 3"
         ],
         "desc": "This is the second of the two introductory courses in Physics.",
-        "prerequisites": "Prerequisite: PHYS1121 or PHYS1131 or DPST1023 or PHYS1141; Corequisite: MATH1231 or DPST1014 or MATH1241 or MATH1251",
+        "conditions": "Prerequisite: PHYS1121 or PHYS1131 or DPST1023 or PHYS1141; Corequisite: MATH1231 or DPST1014 or MATH1241 or MATH1251",
         "equivalents": null
     },
     "COMP3222": {
@@ -4537,7 +4537,7 @@
             "Term 3"
         ],
         "desc": "This course aims to provide students with a knowledge of problem solving with digital systems (computer systems and digital circuits).",
-        "prerequisites": "Prerequisite: COMP2121 OR COMP1521 OR DPST1092",
+        "conditions": "Prerequisite: COMP2121 OR COMP1521 OR DPST1092",
         "equivalents": [
             {
                 "code": "COMP9222",
@@ -4564,7 +4564,7 @@
             "Term 3"
         ],
         "desc": "Embedded system design team projects.",
-        "prerequisites": "Prerequisite: COMP2121 OR DESN2000",
+        "conditions": "Prerequisite: COMP2121 OR DESN2000",
         "equivalents": null
     },
     "COMP4601": {
@@ -4575,7 +4575,7 @@
             "Term 1"
         ],
         "desc": "Hardware design and systems prototyping using field-programmable gate  arrays.",
-        "prerequisites": "Prerequisite: COMP3211 and COMP3601.",
+        "conditions": "Prerequisite: COMP3211 and COMP3601.",
         "equivalents": null
     },
     "SOLA2051": {
@@ -4586,7 +4586,7 @@
             "Term 2"
         ],
         "desc": "SOLA2051 is the first of two sequential courses that comprise the second year group project.",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": null
     },
     "SOLA2060": {
@@ -4597,7 +4597,7 @@
             "Term 1"
         ],
         "desc": "Fundamentals of the operation and applications of a range of important semiconductor devices.",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": null
     },
     "SOLA2540": {
@@ -4609,7 +4609,7 @@
             "Term 3"
         ],
         "desc": "Can we continue to use fossil fuels for electricity? Think about climate change, global warming, and sustainable economy! Photovoltaic (PV) devices convert sunlight directly to electricity with low levels of greenhouse gas emissions per unit of electricity produced.",
-        "prerequisites": "Prerequisite 48 UOC",
+        "conditions": "Prerequisite 48 UOC",
         "equivalents": null
     },
     "SOLA3010": {
@@ -4620,7 +4620,7 @@
             "Term 2"
         ],
         "desc": "There is currently significant interest in reducing energy use and greenhouse gas production in buildings by designing buildings that are climate-appropriate, implementing energy efficiency measures and producing energy from renewable sources.",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": null
     },
     "SOLA3020": {
@@ -4631,7 +4631,7 @@
             "Term 2"
         ],
         "desc": "Sufficient theory relating to the operating principles of solar cells is covered to give an appreciation of the strengths and weaknesses of the dominant commercial cell technologies.",
-        "prerequisites": "Prerequisite: SOLA2540",
+        "conditions": "Prerequisite: SOLA2540",
         "equivalents": null
     },
     "SOLA3507": {
@@ -4642,7 +4642,7 @@
             "Term 1"
         ],
         "desc": "In this course, students will gain both a fundamental and practical understanding of the design and operation of solar cells.",
-        "prerequisites": "Prerequisite SOLA2060 or SOLA2540",
+        "conditions": "Prerequisite SOLA2060 or SOLA2540",
         "equivalents": null
     },
     "SOLA4012": {
@@ -4653,7 +4653,7 @@
             "Term 2"
         ],
         "desc": "There is increasing need in generating electricity from renewable energy sources and reducing greenhouse gas emissions.",
-        "prerequisites": "Prerequisite: SOLA2540",
+        "conditions": "Prerequisite: SOLA2540",
         "equivalents": null
     },
     "SOLA4951": {
@@ -4666,7 +4666,7 @@
             "Term 3"
         ],
         "desc": "The thesis provides an opportunity for you to bring together engineering principles learned over your previous years of study and apply these principles to innovatively solve problems such as the development of a specific design, process and/or the investigation of a hypothesis.",
-        "prerequisites": "Prerequisite: Completion of 126 UOC and completion of 3rd year core",
+        "conditions": "Prerequisite: Completion of 126 UOC and completion of 3rd year core",
         "equivalents": null
     },
     "SOLA4952": {
@@ -4679,7 +4679,7 @@
             "Term 3"
         ],
         "desc": "The thesis provides an opportunity for you to bring together engineering principles learned over your previous years of study and apply these principles to innovatively solve problems such as the development of a specific design, process and/or the investigation of a hypothesis.",
-        "prerequisites": "Prerequisite: Completion of Research Thesis A (4951)",
+        "conditions": "Prerequisite: Completion of Research Thesis A (4951)",
         "equivalents": null
     },
     "SOLA4953": {
@@ -4692,7 +4692,7 @@
             "Term 3"
         ],
         "desc": "The thesis provides an opportunity for you to bring together engineering principles learned over your previous years of study and apply these principles to innovatively solve problems such as the development of a specific design, process and/or the investigation of a hypothesis.",
-        "prerequisites": "Prerequisite: Completion of Research Thesis B (4952)",
+        "conditions": "Prerequisite: Completion of Research Thesis B (4952)",
         "equivalents": null
     },
     "ARCH1361": {
@@ -4703,7 +4703,7 @@
             "Term 2"
         ],
         "desc": "This course builds on student’s prior knowledge of architectural science and building environment with a focus on the principles and application of acoustics, lighting and comfort to achieve indoor environmental quality (IEQ) and enhanced environmental performance.",
-        "prerequisites": "Prerequisite: ARCH1161.",
+        "conditions": "Prerequisite: ARCH1161.",
         "equivalents": null
     },
     "BENV1072": {
@@ -4714,7 +4714,7 @@
             "Term 2"
         ],
         "desc": "This course develops an understanding of solar efficient architecture and builds on this to develop skills in energy performance simulation.",
-        "prerequisites": "Prerequisite: 72 units of credit",
+        "conditions": "Prerequisite: 72 units of credit",
         "equivalents": null
     },
     "MATH2011": {
@@ -4726,7 +4726,7 @@
             "Term 3"
         ],
         "desc": "Functions of several variables, limits and continuity, differentiability, gradients, surfaces, maxima and minima, Taylor series, Lagrange multipliers, chain rules, inverse function theorem, Jacobian derivatives.",
-        "prerequisites": "Prerequisite: MATH1231 or DPST1014 or MATH1241 or MATH1251 Exclusion: MATH2019, MATH2049, MATH2069, MATH2100, MATH2110",
+        "conditions": "Prerequisite: MATH1231 or DPST1014 or MATH1241 or MATH1251 Exclusion: MATH2019, MATH2049, MATH2069, MATH2100, MATH2110",
         "equivalents": null
     },
     "MATH2121": {
@@ -4737,7 +4737,7 @@
             "Term 2"
         ],
         "desc": "The following topics are treated both theoretically and with illustrative applications in physics, engineering and biology.",
-        "prerequisites": "Prerequisite: MATH1231 or DPST1014 or MATH1241 or MATH1251",
+        "conditions": "Prerequisite: MATH1231 or DPST1014 or MATH1241 or MATH1251",
         "equivalents": null
     },
     "MATH3041": {
@@ -4748,7 +4748,7 @@
             "Term 2"
         ],
         "desc": "Why are no two snowfakes alike? When will the next major stock market collapse occur? Which is the greatest sporting nation on earth? Addressing real world problems involves the steps of formulating a mathematical description of the problem, solving the mathematical model, interpreting the mathematical solution and critically evaluating the model.",
-        "prerequisites": "Prerequisite: 12 units of credit in Level 2 Maths courses.",
+        "conditions": "Prerequisite: 12 units of credit in Level 2 Maths courses.",
         "equivalents": null
     },
     "MMAN2600": {
@@ -4757,7 +4757,7 @@
         "units": "6",
         "terms": null,
         "desc": "Fluid properties.",
-        "prerequisites": "Prerequisite: (MATH1131 or DPST1013 or MATH1141) and (PHYS1121 or PHYS1131 or DPST1023 or PHYS1141)",
+        "conditions": "Prerequisite: (MATH1131 or DPST1013 or MATH1141) and (PHYS1121 or PHYS1131 or DPST1023 or PHYS1141)",
         "equivalents": [
             {
                 "code": "CVEN2501",
@@ -4784,7 +4784,7 @@
             "Term 1"
         ],
         "desc": "Quantum mechanics is cornerstone of modern physics, and deals with physical phenomena on microscopic scales.",
-        "prerequisites": "Prerequisite: PHYS1221 or PHYS1231 or DPST1024 or PHYS1241 and MATH1231 or DPST1014 or MATH1241",
+        "conditions": "Prerequisite: PHYS1221 or PHYS1231 or DPST1024 or PHYS1241 and MATH1231 or DPST1014 or MATH1241",
         "equivalents": null
     },
     "PHYS3111": {
@@ -4795,7 +4795,7 @@
             "Term 2"
         ],
         "desc": "Quantum mechanics is a cornerstone of modern physics, and deals with physical phenomena on microscopic scales.",
-        "prerequisites": "Prerequisite: (MATH2069 or MATH2521 or MATH2621) and (PHYS2111 or PHYS2110)",
+        "conditions": "Prerequisite: (MATH2069 or MATH2521 or MATH2621) and (PHYS2111 or PHYS2110)",
         "equivalents": null
     },
     "PHYS3113": {
@@ -4806,7 +4806,7 @@
             "Term 1"
         ],
         "desc": "Thermal physics and statistical mechanics is concerned with the study of macroscopic and mesoscopic systems.",
-        "prerequisites": "Prerequisite: PHYS2111 or PHYS2110 Exclusion: PHYS2210, PHYS3021",
+        "conditions": "Prerequisite: PHYS2111 or PHYS2110 Exclusion: PHYS2210, PHYS3021",
         "equivalents": null
     },
     "PHYS3118": {
@@ -4817,7 +4817,7 @@
             "Term 2"
         ],
         "desc": "Quantum mechanics plays an important role in the properties of solids, and will be central to new generations of electronic devices across the coming decades, e.",
-        "prerequisites": "Prerequisite: (PHYS2111 or PHYS2110) and PHYS3113. Exclusions: PHYS3021, PHYS3310",
+        "conditions": "Prerequisite: (PHYS2111 or PHYS2110) and PHYS3113. Exclusions: PHYS3021, PHYS3310",
         "equivalents": null
     },
     "SOLA5051": {
@@ -4828,7 +4828,7 @@
             "Term 3"
         ],
         "desc": "This course will deal with life cycle analysis and its use for life cycle assessment of energy systems.",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": null
     },
     "SOLA5050": {
@@ -4839,7 +4839,7 @@
             "Term 1"
         ],
         "desc": "This course will review objectives and strategies of renewable energy policy, focussing on sustainable energy transitions, and the integration of renewable energy into electricity markets.",
-        "prerequisites": "Prerequisite 96 UOC",
+        "conditions": "Prerequisite 96 UOC",
         "equivalents": null
     },
     "GMAT2120": {
@@ -4850,7 +4850,7 @@
             "Term 3"
         ],
         "desc": "This course will cover some contemporary terrestrial surveying instruments and their use.",
-        "prerequisites": "Pre-requisite: GMAT2500 AND GMAT2700",
+        "conditions": "Pre-requisite: GMAT2500 AND GMAT2700",
         "equivalents": null
     },
     "GMAT2500": {
@@ -4861,7 +4861,7 @@
             "Term 2"
         ],
         "desc": "Principles of survey calculations.",
-        "prerequisites": "Prerequisites: GMAT1110",
+        "conditions": "Prerequisites: GMAT1110",
         "equivalents": null
     },
     "GMAT2550": {
@@ -4872,7 +4872,7 @@
             "Term 3"
         ],
         "desc": "Least Squares measurement adjustment principles and concepts, with particular reference to surveying observations of distance, height difference, angular directions, GPS solutions.",
-        "prerequisites": "Prerequisite: MATH1231 OR DPST1014 OR MATH1241",
+        "conditions": "Prerequisite: MATH1231 OR DPST1014 OR MATH1241",
         "equivalents": null
     },
     "GMAT2700": {
@@ -4883,7 +4883,7 @@
             "Term 1"
         ],
         "desc": "Cartesian coordinate systems, applications of Cartesian coordinate transformations in surveying.",
-        "prerequisites": "Prerequisites: GMAT1110",
+        "conditions": "Prerequisites: GMAT1110",
         "equivalents": null
     },
     "GMAT3100": {
@@ -4894,7 +4894,7 @@
             "Term 1"
         ],
         "desc": "This course introduces the student to a wide variety of surveying applications undertaken as part of engineering projects.",
-        "prerequisites": "Pre: GMAT2120 AND GMAT2550",
+        "conditions": "Pre: GMAT2120 AND GMAT2550",
         "equivalents": null
     },
     "GMAT3150": {
@@ -4905,7 +4905,7 @@
             "Term 1"
         ],
         "desc": "An off campus survey camp, where survey projects of substantial extent are carried out involving control survey design and implementation, detail surveys, contour surveys, the setting-out of a rural road, and other selected projects.",
-        "prerequisites": "Pre: GMAT2500 AND GMAT2550",
+        "conditions": "Pre: GMAT2500 AND GMAT2550",
         "equivalents": null
     },
     "GMAT3420": {
@@ -4916,7 +4916,7 @@
             "Term 3"
         ],
         "desc": "Introduction to the legal system in Australia and NSW.",
-        "prerequisites": "Pre: GMAT2500",
+        "conditions": "Pre: GMAT2500",
         "equivalents": null
     },
     "GMAT3500": {
@@ -4927,7 +4927,7 @@
             "Term 3"
         ],
         "desc": "Introduction to the geometric and spectral properties of remotely sensed (satellite, aerial or terrestrial) images of the Earth's surface or objects.",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": null
     },
     "GMAT3700": {
@@ -4938,7 +4938,7 @@
             "Term 2"
         ],
         "desc": "Concepts of geodetic positioning using GPS/GNSS.",
-        "prerequisites": "Pre:GMAT2700 AND GMAT2550",
+        "conditions": "Pre:GMAT2700 AND GMAT2550",
         "equivalents": null
     },
     "GMAT4150": {
@@ -4950,7 +4950,7 @@
             "Term 3"
         ],
         "desc": "Projects will involve small groups of students working as a team to complete the design and execution of selected tasks in Surveying and Spatial Information Systems.",
-        "prerequisites": "Prerequisite: GMAT3150",
+        "conditions": "Prerequisite: GMAT3150",
         "equivalents": null
     },
     "GEOS3911": {
@@ -4961,7 +4961,7 @@
             "Term 1"
         ],
         "desc": "Environmental Impact Assessment (EIA) is an important part of environmental decision making throughout the world.",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": [
             {
                 "code": "AUST2032",
@@ -4978,7 +4978,7 @@
             "Term 2"
         ],
         "desc": "Analysis of geospatial problems including components of data acquisition and database development, spatial analysis and display, and customising and performing advanced analysis using macro languages and integrating with other software.",
-        "prerequisites": "Pre:GMAT3220",
+        "conditions": "Pre:GMAT3220",
         "equivalents": null
     },
     "GMAT4400": {
@@ -4989,7 +4989,7 @@
             "Term 1"
         ],
         "desc": "Design and studio project for a residential neighbourhood development, taking into account a range of issues including: (a) constraint and site analysis:  preparation of maps of land use, vegetation, surface and soils, drainage and terrain, slopes, climate and aspect; composite overlay maps; (b) structure plan design: infill subdivisions, residential precincts, schools, commercial areas, industrial areas, active and passive recreation, pedestrian ways and road hierarchy; (c) plan of detailed lot layout: shadow diagrams, consideration of access, grades, drainage reserves, parks and pedestrian ways; (d) engineering design and plans: catchment details, road longitudinal and cross-sections, drainage layout, flow schedule, hydraulic grade line calculations, longitudinal sections of kerb profiles, driveway designs.",
-        "prerequisites": "Pre: GMAT2500",
+        "conditions": "Pre: GMAT2500",
         "equivalents": null
     },
     "GMAT4450": {
@@ -4998,7 +4998,7 @@
         "units": "6",
         "terms": null,
         "desc": "Engineering design and plans: catchment details, road longitudinal and cross-sections, drainage layout, flow schedule, hydraulic grade line calculations, longitudinal sections of kerb profiles.",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": null
     },
     "GMAT4900": {
@@ -5007,7 +5007,7 @@
         "units": "6",
         "terms": null,
         "desc": "This course will introduce the student to reference coordinate systems and time systems, satellite orbital motion, signal propagation and satellite tracking observables.",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": null
     },
     "PTRL2010": {
@@ -5018,7 +5018,7 @@
             "Term 3"
         ],
         "desc": "Communication skills: Background research for interviews and guidelines for conduct during interviews.",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": null
     },
     "PTRL2019": {
@@ -5030,7 +5030,7 @@
             "Term 3"
         ],
         "desc": "Introduction to Reservoir Engineering.",
-        "prerequisites": "Prerequisite: MATH1231 OR DPST1014 OR MATH1241",
+        "conditions": "Prerequisite: MATH1231 OR DPST1014 OR MATH1241",
         "equivalents": null
     },
     "PTRL2020": {
@@ -5041,7 +5041,7 @@
             "Term 2"
         ],
         "desc": "The course will teach the fundamentals of well logging and log interpretation which will be encountered almost in every stage of oil and gas project developments.",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": null
     },
     "PTRL2030": {
@@ -5052,7 +5052,7 @@
             "Term 2"
         ],
         "desc": "The course focuses on the impact of the sedimentary environment, burial history and associated diagenesis on source rock potential, maturation and migration.",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": null
     },
     "PTRL2114": {
@@ -5063,7 +5063,7 @@
             "Term 2"
         ],
         "desc": "In this course, you will engage in activities that align with what would be expected of petroleum geophysicist in industry.",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": null
     },
     "PTRL3001": {
@@ -5074,7 +5074,7 @@
             "Term 2"
         ],
         "desc": "Recovery factors, mobilisation, displacement and sweep efficiencies.",
-        "prerequisites": "Prerequisite:PTRL2019",
+        "conditions": "Prerequisite:PTRL2019",
         "equivalents": null
     },
     "PTRL3015": {
@@ -5085,7 +5085,7 @@
             "Term 1"
         ],
         "desc": "The course comprises of 3 units of Lecture and Tutorial and 3 units of Laboratory work.",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": null
     },
     "PTRL3022": {
@@ -5096,7 +5096,7 @@
             "Term 3"
         ],
         "desc": "This course covers front-end engineering design of new production facilities for a potentially viable oil/gas field.",
-        "prerequisites": "Prerequisite:CEIC2001",
+        "conditions": "Prerequisite:CEIC2001",
         "equivalents": null
     },
     "PTRL3025": {
@@ -5107,7 +5107,7 @@
             "Term 1"
         ],
         "desc": "Cash flow analysis in the petroleum industry (definition of cash flow, deriving net cash flow under tax/royalty systems and production sharing contracts, depreciation methods, inflation, sunk costs).",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": null
     },
     "PTRL3030": {
@@ -5118,7 +5118,7 @@
             "Term 2"
         ],
         "desc": "The course will introduce the student to the background knowledge in reservoir characterisation and modelling and guide the student in integrating extra-ordinarily sparse data spatially, across properties, and scales by application of geostatistical techniques.",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": null
     },
     "PTRL3040": {
@@ -5129,7 +5129,7 @@
             "Term 3"
         ],
         "desc": "This course aims to introduce the student to the background knowledge in numerical reservoir simulation which is a widely used tool in petroleum industry and research and guide the student to learn how to solve reservoir engineering problems through the professional use of numerical reservoir simulation.",
-        "prerequisites": "Prerequisite:PTRL3001",
+        "conditions": "Prerequisite:PTRL3001",
         "equivalents": null
     },
     "PTRL3050": {
@@ -5140,7 +5140,7 @@
             "Term 3"
         ],
         "desc": "This course will cover the analytical and numerical methods to interpret well pressure tests.",
-        "prerequisites": "Pre-requisite: PTRL2019",
+        "conditions": "Pre-requisite: PTRL2019",
         "equivalents": null
     },
     "PTRL4012": {
@@ -5151,7 +5151,7 @@
             "Term 1"
         ],
         "desc": "Defining enhanced oil recovery (EOR), enhanced gas recovery (EGR) and enhanced coalbed methane recovery (ECBM).",
-        "prerequisites": "Pre-requisite: PTRL3040",
+        "conditions": "Pre-requisite: PTRL3040",
         "equivalents": null
     },
     "PTRL4017": {
@@ -5162,7 +5162,7 @@
             "Term 2"
         ],
         "desc": "Unit A - Well Design: Prediction of formation pore pressure and stress gradients.",
-        "prerequisites": "Prerequisite:PTRL3015",
+        "conditions": "Prerequisite:PTRL3015",
         "equivalents": null
     },
     "PTRL4020": {
@@ -5173,7 +5173,7 @@
             "Term 1"
         ],
         "desc": "Properties of natural gases: typical compositions.",
-        "prerequisites": "Pre-requisite: PTRL2019",
+        "conditions": "Pre-requisite: PTRL2019",
         "equivalents": null
     },
     "PTRL4021": {
@@ -5184,7 +5184,7 @@
             "Term 2"
         ],
         "desc": "Components of the petroleum production systems.",
-        "prerequisites": "Prerequisite:PTRL3001",
+        "conditions": "Prerequisite:PTRL3001",
         "equivalents": null
     },
     "PTRL4010": {
@@ -5195,7 +5195,7 @@
             "Term 1"
         ],
         "desc": "This course is the first of two parts and is undertaken prior to PTRL4041 Research Thesis B.",
-        "prerequisites": "Pre-requisite: PTRL2114",
+        "conditions": "Pre-requisite: PTRL2114",
         "equivalents": [
             {
                 "code": "PTRL4040",
@@ -5212,7 +5212,7 @@
             "Term 2"
         ],
         "desc": "The students gain hand-on experience of the complete evaluation of an actual field offshore Australia.",
-        "prerequisites": "Pre-requisite: PTRL3025 AND PTRL4010",
+        "conditions": "Pre-requisite: PTRL3025 AND PTRL4010",
         "equivalents": [
             {
                 "code": "PTRL4041",
@@ -5231,7 +5231,7 @@
             "Term 3"
         ],
         "desc": "The thesis provides an opportunity for you to bring together engineering principles learned over your previous years of study and apply these principles to innovatively solve problems such as the development of a specific design, process and/or the investigation of a hypothesis.",
-        "prerequisites": "Prerequisite: completion of 126 UOC and 85 WAM and completion of 3rd year core",
+        "conditions": "Prerequisite: completion of 126 UOC and 85 WAM and completion of 3rd year core",
         "equivalents": null
     },
     "PTRL4952": {
@@ -5244,7 +5244,7 @@
             "Term 3"
         ],
         "desc": "The thesis provides an opportunity for you to bring together engineering principles learned over your previous years of study and apply these principles to innovatively solve problems such as the development of a specific design, process and/or the investigation of a hypothesis.",
-        "prerequisites": "Prerequisite: Completion of Research Thesis A (4951)",
+        "conditions": "Prerequisite: Completion of Research Thesis A (4951)",
         "equivalents": null
     },
     "PTRL4953": {
@@ -5257,7 +5257,7 @@
             "Term 3"
         ],
         "desc": "The thesis provides an opportunity for you to bring together engineering principles learned over your previous years of study and apply these principles to innovatively solve problems such as the development of a specific design, process and/or the investigation of a hypothesis.",
-        "prerequisites": "Prerequisite: Completion of Research Thesis B (4952)",
+        "conditions": "Prerequisite: Completion of Research Thesis B (4952)",
         "equivalents": null
     },
     "AVIA3013": {
@@ -5269,7 +5269,7 @@
             "Term 3"
         ],
         "desc": "The ways in which work can affect people's health, safety and well-being is an important consideration for all organisations.",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": null
     },
     "CEIC2004": {
@@ -5278,7 +5278,7 @@
         "units": "6",
         "terms": null,
         "desc": "This course covers the main aspects of applied chemistry in a context especially designed for chemical engineers.",
-        "prerequisites": "Pre-requisites: CHEM1821 or CHEM1021 or DPST1032 or CHEM1041",
+        "conditions": "Pre-requisites: CHEM1821 or CHEM1021 or DPST1032 or CHEM1041",
         "equivalents": null
     },
     "CHEM2011": {
@@ -5289,7 +5289,7 @@
             "Term 2"
         ],
         "desc": "Physical Chemistry seeks to explain chemical processes in terms of energy changes and the molecular nature of matter.",
-        "prerequisites": "Prerequisite: CHEM2041",
+        "conditions": "Prerequisite: CHEM2041",
         "equivalents": null
     },
     "COMP1927": {
@@ -5298,7 +5298,7 @@
         "units": "6",
         "terms": null,
         "desc": "Programming in the large, abstraction and ADTs, interfaces, complexity.",
-        "prerequisites": "Prerequisite: COMP1511 OR DPST1091 OR COMP1917 OR COMP1921",
+        "conditions": "Prerequisite: COMP1511 OR DPST1091 OR COMP1917 OR COMP1921",
         "equivalents": null
     },
     "CVEN2501": {
@@ -5307,7 +5307,7 @@
         "units": "6",
         "terms": null,
         "desc": "Assumed Knowledge: CVEN1300 or equivalent\nThe object of CVEN2501 is to introduce students to the practice of water engineering.",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": [
             {
                 "code": "MECH2612",
@@ -5337,7 +5337,7 @@
             "Term 3"
         ],
         "desc": "Economics is a social science which studies the ways in which people interact with one another and make decisions in a world with limited resources.",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": null
     },
     "ECON1102": {
@@ -5350,7 +5350,7 @@
             "Term 2"
         ],
         "desc": "Macroeconomics studies the aggregate behaviour of the economy.",
-        "prerequisites": "Prerequisite: ECON1101",
+        "conditions": "Prerequisite: ECON1101",
         "equivalents": null
     },
     "ECON1107": {
@@ -5361,7 +5361,7 @@
             "Term 1"
         ],
         "desc": "This course provides an introduction to markets and market failure in the context of the environment.",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": null
     },
     "FINS1613": {
@@ -5375,7 +5375,7 @@
             "Term 3"
         ],
         "desc": "This is a first level corporate finance course that looks at the essential aspects of financial decision-making.",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": null
     },
     "GEOS1701": {
@@ -5386,7 +5386,7 @@
             "Term 2"
         ],
         "desc": "Are you interested in the natural environment and how humans interact with it? Understanding how different environmental processes influence atmospheric, physical and biosphere systems is crucial for understanding many environmental issues and is essential knowledge for careers in environmental science and related fields.",
-        "prerequisites": "None",
+        "conditions": "None",
         "equivalents": null
     },
     "GEOS2241": {
@@ -5397,7 +5397,7 @@
             "Term 3"
         ],
         "desc": "Why are Australians among the world's worst per capita greenhouse gas polluters? What has Australia done to reduce its contribution to global climate change compared to other nations, such as the US, UK and Germany? What are the major obstacles to be overcome before Australia can make deep cuts in greenhouse emissions, particularly from energy generation?\nExploring these and other key issues, Peak Carbon will give students a greater insight into one of the most important policy challenges confronting Australia and the world today.",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": null
     },
     "GEOS2711": {
@@ -5408,7 +5408,7 @@
             "Term 2"
         ],
         "desc": "Contemporary climatic patterns and controls in Australia.",
-        "prerequisites": "Prerequisite: GEOS1701",
+        "conditions": "Prerequisite: GEOS1701",
         "equivalents": null
     },
     "GEOS2721": {
@@ -5419,7 +5419,7 @@
             "Term 3"
         ],
         "desc": "The study of surface processes and landforms; especially those formed by river systems and coastal environments.",
-        "prerequisites": "Prerequisite: GEOS1701",
+        "conditions": "Prerequisite: GEOS1701",
         "equivalents": [
             {
                 "code": "GEOS2101",
@@ -5436,7 +5436,7 @@
             "Term 2"
         ],
         "desc": "There has been a rapid growth in the use of digital spatial data in many areas of resource management and the environmental sciences.",
-        "prerequisites": "Excl: GEOG2821, GEOS2811",
+        "conditions": "Excl: GEOG2821, GEOS2811",
         "equivalents": null
     },
     "GEOS3141": {
@@ -5447,7 +5447,7 @@
             "Term 3"
         ],
         "desc": "The course provides an introduction to the nature and formation of mineral and energy resources.",
-        "prerequisites": "Pre-requisite: GEOL1111/GEOS1111 or GEOL1211/GEOS1211 or GEOS1701 or GEOL5321 or GEOL5200.",
+        "conditions": "Pre-requisite: GEOL1111/GEOS1111 or GEOL1211/GEOS1211 or GEOS1701 or GEOL5321 or GEOL5200.",
         "equivalents": null
     },
     "GEOS3733": {
@@ -5456,7 +5456,7 @@
         "units": "6",
         "terms": null,
         "desc": "This is a 5-day field course run at various locations within Australia.",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": null
     },
     "GEOS3761": {
@@ -5467,7 +5467,7 @@
             "Term 2"
         ],
         "desc": "Imagine a world of wildly escalating temperatures, apocalyptic flooding, devastating storms and catastrophic sea level rise.",
-        "prerequisites": "None",
+        "conditions": "None",
         "equivalents": null
     },
     "GSOE9712": {
@@ -5478,7 +5478,7 @@
             "Term 1"
         ],
         "desc": "This course covers fundamental statistics, design of experiment (DOE), and development of process improvement strategy.",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": null
     },
     "MARK1012": {
@@ -5492,7 +5492,7 @@
             "Term 3"
         ],
         "desc": "In today's business world, marketing is viewed as central to creating and delivering value both to the organisation and to the customer.",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": null
     },
     "MATH2301": {
@@ -5503,7 +5503,7 @@
             "Term 1"
         ],
         "desc": "An introduction to mathematical computing, programming and visualization using Matlab, with a focus on mathematical modelling and simulation.",
-        "prerequisites": "Prerequisite: MATH1031 (CR) or MATH1231 or or DPST1014 or MATH1241 or MATH1251. Exclusions: MATH2089, CVEN2002, and CVEN2702",
+        "conditions": "Prerequisite: MATH1031 (CR) or MATH1231 or or DPST1014 or MATH1241 or MATH1251. Exclusions: MATH2089, CVEN2002, and CVEN2702",
         "equivalents": null
     },
     "MATS2001": {
@@ -5515,7 +5515,7 @@
             "Term 2"
         ],
         "desc": "-Modern atomic theory: shortfall of classical physics and an introduction to wave mechanics; many-electron atoms and the Pauli exclusion principle; zone and band theories.",
-        "prerequisites": "Prerequisite: MATH1131 or DPST1013 or MATH1141 and MATH1231 or DPST1014 or MATH1241 and PHYS1121 or PHYS1131 or DPST1023 and CHEM1011 or CHEM1031 or DPST1031 or CHEM1811",
+        "conditions": "Prerequisite: MATH1131 or DPST1013 or MATH1141 and MATH1231 or DPST1014 or MATH1241 and PHYS1121 or PHYS1131 or DPST1023 and CHEM1011 or CHEM1031 or DPST1031 or CHEM1811",
         "equivalents": null
     },
     "MATS2008": {
@@ -5526,7 +5526,7 @@
             "Term 2"
         ],
         "desc": "Thermodynamic functions and properties of materials (chemical, mechanical and magnetic systems); thermodynamic laws and their application to materials: chemical equilibrium, gas-solid equilibria, Ellingham diagrams; electrochemistry: Porbaix diagrams; thermodynamics of solutions; construction and interpretation of 2 component phase diagrams.",
-        "prerequisites": "Prerequisite: CHEM1011 or CHEM1031 or CHEM1811 or MATS1101 or DPST1031",
+        "conditions": "Prerequisite: CHEM1011 or CHEM1031 or CHEM1811 or MATS1101 or DPST1031",
         "equivalents": null
     },
     "MGMT1001": {
@@ -5540,7 +5540,7 @@
             "Term 3"
         ],
         "desc": "Managing Organisations and People is a foundational core course offered in the main bachelor degree programs.",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": null
     },
     "MGMT2724": {
@@ -5549,7 +5549,7 @@
         "units": "6",
         "terms": null,
         "desc": "The overall aim of this course is to introduce you to the field of occupational health and safety (OHS) and to related management practices.",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": null
     },
     "MMAN2100": {
@@ -5558,7 +5558,7 @@
         "units": "6",
         "terms": null,
         "desc": "This course focuses on the subject of engineering design, which plays the role in guiding an engineer or a team of engineers to think like a designer along a systemic, rational, and creative pathway, towards breakthrough innovations of new product/service.",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": null
     },
     "PTRL4024": {
@@ -5569,7 +5569,7 @@
             "Term 3"
         ],
         "desc": "The course comprises of Unit A and Unit B:\nUnit A: Introduction to the basic functions and properties of drilling fluids and cement slurries.",
-        "prerequisites": "Prerequisite:PTRL3003,PTRL3015",
+        "conditions": "Prerequisite:PTRL3003,PTRL3015",
         "equivalents": null
     },
     "PTRL5100": {
@@ -5578,7 +5578,7 @@
         "units": "6",
         "terms": null,
         "desc": "This course introduces the fundamental aspects of geomechanics for petroleum engineers.",
-        "prerequisites": "Prerequisites: PTRL2019 OR PTRL5019",
+        "conditions": "Prerequisites: PTRL2019 OR PTRL5019",
         "equivalents": null
     },
     "PTRL5101": {
@@ -5587,7 +5587,7 @@
         "units": "6",
         "terms": null,
         "desc": "This course advances the topics of Petroleum Geomechanics A and provides advanced aspects of geomechanics for petroleum engineers.",
-        "prerequisites": "Prerequisite: PTRL5100",
+        "conditions": "Prerequisite: PTRL5100",
         "equivalents": null
     },
     "PTRL5102": {
@@ -5598,7 +5598,7 @@
             "Term 3"
         ],
         "desc": "This course introduces concepts of digital core analysis and provides petroleum engineers the knowledge to define the objectives of and execute a digital core analysis acquisition program.",
-        "prerequisites": null,
+        "conditions": null,
         "equivalents": null
     },
     "MATH2400": {
@@ -5609,7 +5609,7 @@
             "Term 2"
         ],
         "desc": "This is an introduction to those areas of Mathematics which underpin parts of computing.",
-        "prerequisites": "Prerequisite: MATH1081 or MATH1231 or DPST1014 or MATH1241 or MATH1251",
+        "conditions": "Prerequisite: MATH1081 or MATH1231 or DPST1014 or MATH1241 or MATH1251",
         "equivalents": null
     },
     "MATH2859": {
@@ -5620,7 +5620,7 @@
             "Term 2"
         ],
         "desc": "Sample spaces, probability, random variables and probability distributions; examples of discrete and continuous distributions; Central Limit Theorem; statistical inference, confidence intervals and hypothesis testing; bivariate normal distribution, optimal mean square estimation, introduction to the multivariate normal distribution; linear regression and least squares estimation; inference in the linear model; on-line and off-line estimation; statistical quality control; models, applications and statistical algorithms relevant to the fields of computer, electrical, software and telecommunications engineering.",
-        "prerequisites": "Prerequisite: MATH1231 or MATH1241 or MATH1251 or DPST1014; Exclusion: MATH2089; MATH2099; MATH2801; MATH2901; BEES2041; BIOS2041;CVEN2002.",
+        "conditions": "Prerequisite: MATH1231 or MATH1241 or MATH1251 or DPST1014; Exclusion: MATH2089; MATH2099; MATH2801; MATH2901; BEES2041; BIOS2041;CVEN2002.",
         "equivalents": null
     },
     "SENG2011": {
@@ -5631,7 +5631,7 @@
             "Term 3"
         ],
         "desc": "This is a workshop course aimed at developing the skills of writing precise specifications of programs and translating these specifications into correct implementations.",
-        "prerequisites": "Pre-requisite: MATH1081",
+        "conditions": "Pre-requisite: MATH1081",
         "equivalents": null
     },
     "SENG2021": {
@@ -5642,7 +5642,7 @@
             "Term 1"
         ],
         "desc": "This course is part the series of software engineering workshops designed to teach students to work in teams and apply their knowledge to solve real-life problems.",
-        "prerequisites": "Prerequisite:  SENG1031 or COMP1531, and enrolment in a BE or BE(Hons) Software Engineering major.",
+        "conditions": "Prerequisite:  SENG1031 or COMP1531, and enrolment in a BE or BE(Hons) Software Engineering major.",
         "equivalents": null
     },
     "SENG3011": {
@@ -5653,7 +5653,7 @@
             "Term 1"
         ],
         "desc": "Following the first three Software Engineering Workshop courses (SENG1031, SENG2011 and SENG2021) this course involves teams (or groups) in the design, implementation and testing of a system, or subsystem, that satisfies a given set of requirements.",
-        "prerequisites": "Prerequisite: SENG2021",
+        "conditions": "Prerequisite: SENG2021",
         "equivalents": null
     },
     "ENGG2600": {
@@ -5666,7 +5666,7 @@
             "Term 3"
         ],
         "desc": "This course is designed for highly motivated undergraduates seeking the opportunity to integrate specific curricular and co-curricular components into their undergraduate program, to provide them with enhanced preparation and experience in the areas of Leadership and Project Management as it relates to engineering research and/or design, and thus giving them a headstart when seeking employment.",
-        "prerequisites": "Please refer to the course overview section for information on prerequisite requirements.",
+        "conditions": "Please refer to the course overview section for information on prerequisite requirements.",
         "equivalents": null
     },
     "ENGG3600": {
@@ -5679,7 +5679,7 @@
             "Term 3"
         ],
         "desc": "This course is designed for highly motivated undergraduates seeking the opportunity to integrate specific curricular and co-curricular components into their undergraduate program, to provide them with superior preparation and experience in the areas of Leadership and Project Management thus giving them a headstart when seeking employment.",
-        "prerequisites": "Pre-requisite :ENGG1000 AND completion of at least 90 UOC AND enrolled in a program offered by the Faculty of Engineering",
+        "conditions": "Pre-requisite :ENGG1000 AND completion of at least 90 UOC AND enrolled in a program offered by the Faculty of Engineering",
         "equivalents": null
     },
     "ENGG4600": {
@@ -5692,7 +5692,7 @@
             "Term 3"
         ],
         "desc": "This course is designed for highly motivated undergraduates seeking the opportunity to integrate specific curricular and co-curricular components into their undergraduate program, to provide them with superior preparation and experience in the areas of Leadership and Project Management thus giving them a headstart when seeking employment.",
-        "prerequisites": "Pre-requisite :ENGG1000 AND completion of at least 136 UOC AND enrolled in a program offered by the Faculty of Engineering",
+        "conditions": "Pre-requisite :ENGG1000 AND completion of at least 136 UOC AND enrolled in a program offered by the Faculty of Engineering",
         "equivalents": null
     }
 }

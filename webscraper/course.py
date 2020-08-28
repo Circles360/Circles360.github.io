@@ -31,12 +31,12 @@ def get_course_terms(handbook_html):
     offering_terms = element.find_parent("div").find("p").text.split(", ")
     return offering_terms
 
-def get_course_prerequisites(handbook_html):
-    course_prerequisites = handbook_html.find(id="readMoreSubjectConditions")
-    if course_prerequisites == None:
+def get_course_conditions(handbook_html):
+    course_conditions = handbook_html.find(id="readMoreSubjectConditions")
+    if course_conditions == None:
         return None
 
-    return course_prerequisites.find("div", class_="a-card-text m-toggle-text has-focus").text.strip()
+    return course_conditions.find("div", class_="a-card-text m-toggle-text has-focus").text.strip()
 
 def get_course_equivalents(handbook_html):
     equivalence_rules = handbook_html.find(id="equivalence-rules")
@@ -61,18 +61,6 @@ def get_course_equivalents(handbook_html):
 
     return equivalent_courses
 
-# test = scrape.get_html("https://www.handbook.unsw.edu.au/undergraduate/courses/2020/ELEC2134/")
-# test = scrape.get_html("https://www.handbook.unsw.edu.au/undergraduate/courses/2020/MATH1241/")
-# test = scrape.get_html("https://www.handbook.unsw.edu.au/undergraduate/courses/2020/ELEC1111/")
-
-# print("name", get_course_name(test))
-# print("code", get_course_code(test))
-# print("units", get_course_units(test))
-# print("desc", get_course_desc(test))
-# print("prerequisites", get_course_prerequisites(test))
-# print("equivalents", get_course_equivalents(test))
-# print("offering terms", get_course_terms(test))
-
 
 ENGINEERING_COURSES = {}
 with open("list_of_courses.json", "r") as read_file:
@@ -92,14 +80,14 @@ for idx, code in enumerate(list_of_courses):
     html = scrape.get_html(link)
 
     if html == None:
-        (name, code, units, terms, desc, prerequisites, equivalents) = None, None, None, None, None, None, None
+        (name, code, units, terms, desc, conditions, equivalents) = None, None, None, None, None, None, None
     else:
         name = get_course_name(html)
         code = get_course_code(html)
         units = get_course_units(html)
         terms = get_course_terms(html)
         desc = get_course_desc(html)
-        prerequisites = get_course_prerequisites(html)
+        conditions = get_course_conditions(html)
         equivalents = get_course_equivalents(html)
 
     ENGINEERING_COURSES[code] = {
@@ -108,7 +96,7 @@ for idx, code in enumerate(list_of_courses):
         "units": units,
         "terms": terms,
         "desc": desc,
-        "prerequisites": prerequisites,
+        "conditions": conditions,
         "equivalents": equivalents
     }
 
