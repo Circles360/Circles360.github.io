@@ -1,107 +1,56 @@
+from selenium import webdriver
 from bs4 import BeautifulSoup
 import manual_fixes
-import requests
 import scrape
 import json
 import os
 
-BACHELOR_DEGREES = "https://www.engineering.unsw.edu.au/study-with-us/undergraduate/bachelor-degrees"
-DOUBLE_DEGREES = "https://www.engineering.unsw.edu.au/study-with-us/undergraduate/double-degrees"
-QUERY = "?browseByFaculty=FacultyOfEngineering&"
+FACULTY_OF_ENGINEERING = "https://www.handbook.unsw.edu.au/FacultyOfEngineering/browse?id=5fa56ceb4f0093004aa6eb4f0310c7af"
+SPECIALISATIONS = []
 
-CACHE_FILE = "engineering_cache.json"
+def get_links(browser, id):
+    html = BeautifulSoup(browser.page_source, "html.parser")
 
-def get_handbook_url_from_degrees(url):
-    html = scrape.get_html(url)
-    if html == None:
-        return ""
+    specialisation_tiles = html.find(id=id).find_all("a")
 
-    return html.find("a", class_="button button--secondary")["href"]
+    specialisation_links = []
 
-def get_handbook_url_from_engineering(url):
-    html = scrape.get_html(url)
-    if html == None:
-        return ""
+    for a in specialisation_tiles:
+        link = a["href"].replace("\n", "").strip()
 
-    link = html.find("img", title="See the latest handbook").find_parent("a")["href"]
-
-    if "degrees.unsw.edu.au" in link:
-        return get_handbook_url_from_degrees(link)
-
-    return link
-
-def get_handbook_url(url):
-    if "handbook.unsw.edu.au" in url:
-        return url
-
-    if ("degrees.unsw.edu.au" in url):
-        return get_handbook_url_from_degrees(url)
-
-    return get_handbook_url_from_engineering(url)
-
-def get_bachelor_degrees():
-    html = scrape.get_html(BACHELOR_DEGREES)
-    if html == None:
-        exit(1)
-
-    degree_tiles = html.find("ul", class_="links tile-large").find_all("a")
-
-    bachelor_degrees = []
-    for tile in degree_tiles:
-        link = get_handbook_url(tile["href"])
-
-        if link == "http://www.handbook.unsw.edu.au/ " or link == "":
+        if "/search" in link:
             continue
 
-        bachelor_degrees.append(link)
+        specialisation_links.append(link)
+        print(link)
 
-    return bachelor_degrees + get_manual_fixes(multi=False)
+    return specialisation_links
 
-def get_double_degrees():
-    html = scrape.get_html(DOUBLE_DEGREES)
-    if html == None:
-        exit(1)
+# Open browser
+browser = webdriver.Chrome("./chromedriver") # NEED TO BE CHROME VERSION 85
+browser.get(FACULTY_OF_ENGINEERING)
 
-    degree_tile_sets = html.find_all("ul", class_="links tile-small")
+# Click show more button
+see_more = browser.find_elements_by_xpath("//*[@id='aosUndergraduate1']/div/button")[0]
+see_more.click()
 
-    double_degrees = []
-    for idx, s in enumerate(degree_tile_sets):
-        if idx > 1: # There are 3 sections: Engineering, Comp Sci and Application Info. We don't want Application Info.
-            break
+# Scrape all specialisation majors
+specialisation_majors = get_links(browser, "aosUndergraduate1")
 
-        degree_tiles = s.find_all("a")
-        for tile in degree_tiles:
-            link = get_handbook_url(tile["href"])
+# Click Honours button
+honours_button = browser.find_elements_by_xpath("//*[@id='3Control']/button")[0]
+honours_button.click()
 
-            if link == "http://www.handbook.unsw.edu.au/ " or link == "":
-                continue
+# Click show more button
+see_more = browser.find_elements_by_xpath("//*[@id='aosUndergraduate2']/div/button")[0]
+see_more.click()
 
-            double_degrees.append(link)
+# Scrape all specialisation honours
+specialisation_honours = get_links(browser, "aosUndergraduate2")
 
-    return double_degrees + get_manual_fixes(multi=True)
+# Close browser
+browser.quit()
 
-def get_manual_fixes(multi):
-    links = []
-    for fix in manual_fixes.ENGINEERING:
-        if fix["multi"] == multi:
-            links.append(fix["link"])
+SPECIALISATIONS = specialisation_majors + specialisation_honours
 
-    return links
-
-if os.path.isfile(CACHE_FILE):
-    with open(CACHE_FILE, "r") as read_file:
-        data = json.load(read_file)
-
-        BACHELOR_DEGREE_LINKS = data["bachelor_degree_links"]
-        DOUBLE_DEGREE_LINKS = data["double_degree_links"]
-else:
-    BACHELOR_DEGREE_LINKS = get_bachelor_degrees()
-    DOUBLE_DEGREE_LINKS = get_double_degrees()
-
-    print("writing to cache...")
-    data = {}
-    data["bachelor_degree_links"] = BACHELOR_DEGREE_LINKS
-    data["double_degree_links"] = DOUBLE_DEGREE_LINKS
-
-    with open(CACHE_FILE, "w") as write_file:
-        json.dump(data, write_file)
+print(SPECIALISATIONS)

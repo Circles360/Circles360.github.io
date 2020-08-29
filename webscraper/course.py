@@ -1,14 +1,13 @@
 # from selenium import webdriver
 from bs4 import BeautifulSoup
 import numpy as np
-import requests
 import scrape
 import time
 import json
 import re
 import os
 
-import engineering
+import OLD_engineering
 
 COURSE_CODE_REGEX = "[A-Z]{4}[0-9]{4}"
 
