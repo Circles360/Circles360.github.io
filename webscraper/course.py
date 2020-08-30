@@ -1,29 +1,23 @@
 # from selenium import webdriver
 from bs4 import BeautifulSoup
-import numpy as np
 import scrape
 import time
 import json
 import re
 import os
 
-import OLD_engineering
-
 COURSE_CODE_REGEX = "[A-Z]{4}[0-9]{4}"
 
 def flatten_array(arr):
-    flattened_arr = np.array(arr).flatten().tolist()
+    flattened = []
 
-    if isinstance(flattened_arr[0], list):
-        flattened_arr = [x for y in flattened_arr for x in y]
+    for a in arr:
+        if isinstance(a, list):
+            flattened.extend(flatten_array(a))
+        else:
+            flattened.append(a)
 
-    # ERROR CHECKING
-    for x in flattened_arr:
-        if len(x) == 1:
-            print(flattened_arr)
-            exit(1)
-
-    return flattened_arr
+    return flattened
 
 def get_course_name(handbook_html):
     return handbook_html.find("h1", class_="o-ai-overview__h1").find("span").text
@@ -123,13 +117,16 @@ def get_course_conditions(handbook_html):
     other = []
 
     for cond in split_conditions(conditions):
+        if "ENROLMENT IN" in cond:
+            continue
+
         if re.search("CO-?REQ", cond):
             corequisites.append(re.findall(COURSE_CODE_REGEX, cond))
 
         elif re.search(COURSE_CODE_REGEX, cond):
             prerequisites.append(re.findall(COURSE_CODE_REGEX, cond))
 
-        elif re.search("[0-9]{4}", cond):
+        elif re.search("COMPLETION OF.*[0-9]{4}", cond):
             # COURSE NUMBER ONLY
             all_code_numbers = re.findall("[0-9]{4}", cond)
             for code_number in all_code_numbers:
@@ -191,24 +188,22 @@ def get_course_equivalents(handbook_html):
     return equivalent_courses
 
 
-ENGINEERING_COURSES = {}
+COURSES = {}
 BUILDS_INTO = {}
-with open("list_of_courses.json", "r") as read_file:
-    list_of_courses = json.load(read_file)
+ERRORS = []
 
-total = len(list_of_courses.keys())
+with open("course_links.json", "r") as read_file:
+    course_links = json.load(read_file)
 
-for idx, code in enumerate(list_of_courses):
-    # if idx > 10:
+total = len(course_links)
+
+for idx, link in enumerate(course_links):
+    # if idx > 100:
     #     break
 
     print(f"{idx + 1}/{total}", end="")
 
     time.sleep(2)
-
-    link = list_of_courses[code]["link"]
-    if "/search?" in link:
-        continue
 
     html = scrape.get_html(link)
 
@@ -221,10 +216,16 @@ for idx, code in enumerate(list_of_courses):
     units = get_course_units(html)
     terms = get_course_terms(html)
     desc = get_course_desc(html)
-    conditions = get_course_conditions(html)
+    try:
+        conditions = get_course_conditions(html)
+    except:
+        conditions = "ERROR"
+        ERRORS.append((code, "error found getting conditions"))
+        print("    >>> error found getting conditions :(")
+
     equivalents = get_course_equivalents(html)
 
-    ENGINEERING_COURSES[code] = {
+    COURSES[code] = {
         "course_name": name,
         "course_code": code,
         "course_level": level,
@@ -240,10 +241,20 @@ for idx, code in enumerate(list_of_courses):
     if conditions == None:
         continue
 
-    if conditions["prerequisites"] == None:
+    try:
+        if conditions["prerequisites"] == None:
+            continue
+    except:
+        ERRORS.append((code, "error accesing prerequisites key of conditions"))
+        print("    >>> error accesing prerequisites key of conditions")
         continue
 
-    flattened = flatten_array(conditions["prerequisites"])
+    try:
+        flattened = flatten_array(conditions["prerequisites"])
+    except:
+        ERRORS.append((code, "error in flattening array"))
+        print("    >>> error found flattening arary :(")
+        continue
 
     for course in flattened:
         if course not in BUILDS_INTO:
@@ -253,17 +264,19 @@ for idx, code in enumerate(list_of_courses):
 
 
 for course in BUILDS_INTO:
-    if course not in ENGINEERING_COURSES:
+    if course not in COURSES:
         continue
 
-    if ENGINEERING_COURSES[course] == None:
+    if COURSES[course] == None:
         continue
 
-    if ENGINEERING_COURSES[course]["builds_into"] == None:
-        ENGINEERING_COURSES[course]["builds_into"] = BUILDS_INTO[course]
+    if COURSES[course]["builds_into"] == None:
+        COURSES[course]["builds_into"] = BUILDS_INTO[course]
     else:
         for c in BUILDS_INTO[course]:
-            ENGINEERING_COURSES[course]["builds_into"].append(c)
+            COURSES[course]["builds_into"].append(c)
+
+print(ERRORS)
 
 with open("courses.json", "w") as write_file:
-        json.dump(ENGINEERING_COURSES, write_file)
+    json.dump(COURSES, write_file)

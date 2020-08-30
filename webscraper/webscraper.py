@@ -1,7 +1,14 @@
+# Gets faculty links from Handbook home page
+
 from bs4 import BeautifulSoup
 import engineering
 import requests
 import scrape
+
+########################################################################################################################
+# OLD FILE - DO NOT USE
+# NOT RELEVANT
+########################################################################################################################
 
 def get_faculties():
     homepage_html = scrape.get_html(scrape.HANDBOOK_URL)
