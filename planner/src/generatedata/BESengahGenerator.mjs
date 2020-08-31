@@ -1,4 +1,4 @@
-import { node_74b8cc, node_66ca86, node_ffad1f } from '../styles/nodes.mjs';
+import { node_66ca86, node_ca6f66, node_caa066, node_7766ca } from '../styles/nodes.mjs';
 import { createRequire } from "module";
 const require = createRequire(import.meta.url);
 
@@ -7,6 +7,19 @@ const courses = require("../webscraper/courses.json");
 var courses_output = [];
 
 var courses_list = []; // Keeps track of courses in this degree for easier checking later on
+
+// Add course header
+courses_list.push({
+    id: data.SENGAH.degree_code,
+    type: 'header1',
+    data: {
+        degree_name: data.SENGAH.degree_code,
+        degree_code: data.SENGAH.degree_code,
+        degree_units: data.SENGAH.degree_units,
+        builds_into: ['COMP1511', 'ENGG1000', 'MATH1131', 'MATH1081']
+    },
+    position: {x: 0, y: 0}
+})
 
 // Get all the courses for software engineering
 for (var course_group in data['SENGAH']['core_courses']) {
@@ -21,11 +34,13 @@ for (var course_group in data['SENGAH']['core_courses']) {
             }
             
             if (course_name.match(/COMP/)) {
-                node['style'] = node_74b8cc;
-            } else if (course_name.match(/MATH/)) {
                 node['style'] = node_66ca86;
+            } else if (course_name.match(/MATH/)) {
+                node['style'] = node_ca6f66;
+            } else if (course_name.match(/SENGAH/)){
+                node['style'] = node_7766ca;
             } else {
-                node['style'] = node_ffad1f;
+                node['style'] = node_caa066;
             }
 
             courses_output.push(node);
@@ -34,21 +49,17 @@ for (var course_group in data['SENGAH']['core_courses']) {
     }
 }
 
-console.log(courses_output);
+//console.log(courses_output);
 
 // Hard code in some specific requirements
 // DESN2000 - add ENG1000 as prerequisite, add DESN3000 as child. Check term which SENGAH can take it in
-for (var i in courses_output) {
+/*for (var i in courses_output) {
     if (courses_output[i]['id'] == 'DESN2000') {
         courses_output[i]['data']['terms'] = 2;
         courses_output[i]['data']['builds_into'] = ['DESN3000'];
         courses_output[i].data.conditions.prerequisites = ['ENGG1000'];
     }
-}
-
-
-
-
+}*/
 
 // Generate the edges
 var n_courses = courses_output.length;
@@ -78,9 +89,12 @@ for (var i = 0; i < n_courses; i++) {
 //console.log(edges_output);
 const output = courses_output.concat(edges_output);
 
+
 // Write to the file
 const fs = require('fs');
 fs.writeFile('../maps/EngineeringHonoursSoftware/data.json', JSON.stringify(output), (err) => {
     // In case of error
     if (err) throw err;
 })
+
+
