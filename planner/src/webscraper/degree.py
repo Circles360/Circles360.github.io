@@ -5,8 +5,6 @@ import scrape
 import json
 import os
 
-import engineering
-
 def get_degree_name(handbook_html):
     return handbook_html.find("h1", class_="o-ai-overview__h1").find("span").text
 
@@ -50,38 +48,4 @@ def get_core_courses(handbook_html):
 
 browser = webdriver.Chrome("./chromedriver") # NEED TO BE CHROME VERSION 85
 
-
-if os.path.isfile(engineering.CACHE_FILE):
-    with open(engineering.CACHE_FILE, "r") as read_file:
-        ENGINEERING = json.load(read_file)
-        ENGINEERING["degrees"] = {}
-
-# else:
-
-#     ENGINEERING = {}
-    for link in engineering.BACHELOR_DEGREE_LINKS:
-        browser.get(link)
-        html = BeautifulSoup(browser.page_source, "html.parser")
-        # browser.close()
-
-        degree_name = get_degree_name(html)
-        degree_code = get_degree_code(html)
-        degree_units = get_units_required(html)
-        core_courses = get_core_courses(html)
-
-        if degree_code in ENGINEERING["degrees"]:
-            print(degree_name, degree_code, "already in ENGINEERING")
-            continue
-
-        ENGINEERING["degrees"][degree_code] = {
-            "degree_name": degree_name,
-            "degree_code": degree_code,
-            "degree_units": degree_units,
-            "core_courses": core_courses
-        }
-
-
-    browser.quit()
-
-    with open(engineering.CACHE_FILE, "w") as write_file:
-        json.dump(ENGINEERING, write_file)
+browser.quit()
