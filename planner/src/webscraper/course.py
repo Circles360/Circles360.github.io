@@ -139,10 +139,16 @@ def get_course_conditions(handbook_html):
             level = match.group(2)
 
         elif "UOC" in cond or "UNITS OF CREDIT" in cond:
-            units_required = int(re.search("\d+", cond).group(0))
+            try:
+                units_required = int(re.search("\d+", cond).group(0))
+            except:
+                continue
 
         elif re.search("YEAR", cond):
-            core_year = int(re.search("\d+", cond).group(0))
+            try:
+                core_year = int(re.search("\d+", cond).group(0))
+            except:
+                continue
 
         elif "WAM" in cond:
             continue
@@ -192,7 +198,8 @@ COURSES = {}
 BUILDS_INTO = {}
 ERRORS = []
 
-with open("course_links.json", "r") as read_file:
+# with open("course_links.json", "r") as read_file:
+with open("error_courses.json", "r") as read_file:
     course_links = json.load(read_file)
 
 total = len(course_links)
@@ -216,12 +223,7 @@ for idx, link in enumerate(course_links):
     units = get_course_units(html)
     terms = get_course_terms(html)
     desc = get_course_desc(html)
-    try:
-        conditions = get_course_conditions(html)
-    except:
-        conditions = "ERROR"
-        ERRORS.append((code, "error found getting conditions"))
-        print("    >>> error found getting conditions :(")
+    conditions = get_course_conditions(html)
 
     equivalents = get_course_equivalents(html)
 
@@ -241,20 +243,10 @@ for idx, link in enumerate(course_links):
     if conditions == None:
         continue
 
-    try:
-        if conditions["prerequisites"] == None:
-            continue
-    except:
-        ERRORS.append((code, "error accesing prerequisites key of conditions"))
-        print("    >>> error accesing prerequisites key of conditions")
+    if conditions["prerequisites"] == None:
         continue
 
-    try:
-        flattened = flatten_array(conditions["prerequisites"])
-    except:
-        ERRORS.append((code, "error in flattening array"))
-        print("    >>> error found flattening arary :(")
-        continue
+    flattened = flatten_array(conditions["prerequisites"])
 
     for course in flattened:
         if course not in BUILDS_INTO:
@@ -278,5 +270,6 @@ for course in BUILDS_INTO:
 
 print(ERRORS)
 
-with open("courses.json", "w") as write_file:
+# with open("courses.json", "w") as write_file:
+with open("error_logs.json", "w") as write_file:
     json.dump(COURSES, write_file)
