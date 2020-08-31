@@ -1,5 +1,5 @@
 #!/usr/bin/perl -w
-
+'''
 `curl --silent "https://www.handbook.unsw.edu.au/undergraduate/specialisations/2020/SENGAH" > tmp.txt`;
 
 my $courses_text = `cat tmp.txt | grep -A 4 'data-bucket="1"'`;
@@ -33,3 +33,4 @@ print @titles;
 #}
 
 #print(@courses);
+'''
