@@ -15,6 +15,12 @@ const nodeTypes = {
     custom1: CustomNode1
 };
 
+const onElementClick = (event, element) => {
+    if (element.id.match(/^e/)) return;
+    console.log(element.data.course_name);
+    console.log(element.position.x + ' ' + element.position.y);
+}
+
 const BESengah = () => {
     const [elements, setElements] = useState(elementsData);
     
@@ -25,6 +31,7 @@ const BESengah = () => {
                 style={{width: '100%', height: '90vh'}}
                 onLoad={onLoad}
                 nodeTypes={nodeTypes}
+                onElementClick={onElementClick}
             >
                 
             </ReactFlow>
