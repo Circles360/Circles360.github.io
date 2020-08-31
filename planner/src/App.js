@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Component} from 'react';
 import {
   BrowserRouter as Router,
   Route,
@@ -9,14 +9,14 @@ import {
 
 import BESengah from './maps/EngineeringHonoursSoftware/map.js';
 
-function App() {
-  return (
-    <div className="App">
+class App extends Component {
+  render() {
+    return (
       <Router>
-        <Route path="/Software-Engineering" component={BESengah} />
+        <Route path="/SoftwareEngineering" component={BESengah} />
       </Router>
-    </div>
-  );
+    )
+  }
 }
 
 export default App;
