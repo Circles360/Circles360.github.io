@@ -198,8 +198,7 @@ COURSES = {}
 BUILDS_INTO = {}
 ERRORS = []
 
-# with open("course_links.json", "r") as read_file:
-with open("error_courses.json", "r") as read_file:
+with open("course_links.json", "r") as read_file:
     course_links = json.load(read_file)
 
 total = len(course_links)
@@ -270,6 +269,5 @@ for course in BUILDS_INTO:
 
 print(ERRORS)
 
-# with open("courses.json", "w") as write_file:
-with open("error_logs.json", "w") as write_file:
+with open("courses.json", "w") as write_file:
     json.dump(COURSES, write_file)
