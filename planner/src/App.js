@@ -7,10 +7,14 @@ import {
   Redirect
 } from 'react-router-dom';
 
+import BESengah from './maps/EngineeringHonoursSoftware/map.js';
+
 function App() {
   return (
     <div className="App">
-      
+      <Router>
+        <Route path="/Software-Engineering" component={BESengah} />
+      </Router>
     </div>
   );
 }
