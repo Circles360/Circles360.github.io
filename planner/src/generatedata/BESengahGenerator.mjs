@@ -6,7 +6,7 @@ const data = require("../webscraper/engineering_degrees.json");
 const courses = require("../webscraper/courses.json");
 var courses_output = [];
 
-var courses_list = {}; // Keeps track of courses in this degree for easier checking later on
+var courses_list = []; // Keeps track of courses in this degree for easier checking later on
 
 // Get all the courses for software engineering
 for (var course_group in data['SENGAH']['core_courses']) {
@@ -36,6 +36,20 @@ for (var course_group in data['SENGAH']['core_courses']) {
 
 console.log(courses_output);
 
+// Hard code in some specific requirements
+// DESN2000 - add ENG1000 as prerequisite, add DESN3000 as child. Check term which SENGAH can take it in
+for (var i in courses_output) {
+    if (courses_output[i]['id'] == 'DESN2000') {
+        courses_output[i]['data']['terms'] = 2;
+        courses_output[i]['data']['builds_into'] = ['DESN3000'];
+        courses_output[i].data.conditions.prerequisites = ['ENGG1000'];
+    }
+}
+
+
+
+
+
 // Generate the edges
 var n_courses = courses_output.length;
 var edges_output = [];
@@ -55,7 +69,6 @@ for (var i = 0; i < n_courses; i++) {
                 target: courses_output[i]['data']['builds_into'][j],
                 type: 'default',
                 animated: false,
-                arrowHeadType: 'arrowclosed'
             })
         }
     }
