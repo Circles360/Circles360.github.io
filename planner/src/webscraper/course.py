@@ -196,7 +196,6 @@ def get_course_equivalents(handbook_html):
 
 COURSES = {}
 BUILDS_INTO = {}
-ERRORS = []
 
 with open("course_links.json", "r") as read_file:
     course_links = json.load(read_file)
@@ -266,8 +265,6 @@ for course in BUILDS_INTO:
     else:
         for c in BUILDS_INTO[course]:
             COURSES[course]["builds_into"].append(c)
-
-print(ERRORS)
 
 with open("courses.json", "w") as write_file:
     json.dump(COURSES, write_file)
