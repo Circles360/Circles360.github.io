@@ -2,6 +2,7 @@
 
 from bs4 import BeautifulSoup
 import requests
+import json
 
 HANDBOOK_URL = "https://www.handbook.unsw.edu.au"
 
@@ -13,3 +14,11 @@ def get_html(url):
         return None
 
     return BeautifulSoup(response.content, "html.parser")
+
+def read_from_file(filename):
+    with open(filename, "r", encoding="utf8") as read_file:
+        return json.load(read_file)
+
+def write_to_file(filename, data):
+    with open(filename, "w") as write_file:
+        json.dump(data, write_file)
