@@ -1,23 +1,25 @@
-import { node_66ca86, node_ca6f66, node_caa066, node_7766ca } from '../styles/nodes.mjs';
+import { node_66ca86, node_ca6f66, node_caa066, header_node_7766ca } from '../styles/nodes.mjs';
 import { createRequire } from "module";
 const require = createRequire(import.meta.url);
 
 const data = require("../webscraper/engineering_degrees.json");
 const courses = require("../webscraper/courses.json");
-var courses_output = [];
+const position_data = require("../maps/EngineeringHonoursSoftware/position.json");
 
+var courses_output = [];
 var courses_list = []; // Keeps track of courses in this degree for easier checking later on
 
 // Add course header
-courses_list.push({
+courses_output.push({
     id: data.SENGAH.degree_code,
     type: 'header1',
     data: {
-        degree_name: data.SENGAH.degree_code,
+        degree_name: data.SENGAH.degree_name,
         degree_code: data.SENGAH.degree_code,
         degree_units: data.SENGAH.degree_units,
         builds_into: ['COMP1511', 'ENGG1000', 'MATH1131', 'MATH1081']
     },
+    style: header_node_7766ca,
     position: {x: 0, y: 0}
 })
 
@@ -37,8 +39,6 @@ for (var course_group in data['SENGAH']['core_courses']) {
                 node['style'] = node_66ca86;
             } else if (course_name.match(/MATH/)) {
                 node['style'] = node_ca6f66;
-            } else if (course_name.match(/SENGAH/)){
-                node['style'] = node_7766ca;
             } else {
                 node['style'] = node_caa066;
             }
@@ -49,17 +49,35 @@ for (var course_group in data['SENGAH']['core_courses']) {
     }
 }
 
-//console.log(courses_output);
-
 // Hard code in some specific requirements
-// DESN2000 - add ENG1000 as prerequisite, add DESN3000 as child. Check term which SENGAH can take it in
-/*for (var i in courses_output) {
-    if (courses_output[i]['id'] == 'DESN2000') {
-        courses_output[i]['data']['terms'] = 2;
-        courses_output[i]['data']['builds_into'] = ['DESN3000'];
-        courses_output[i].data.conditions.prerequisites = ['ENGG1000'];
+// DESN2000 - add ENG1000 as prerequisite. Check term which SENGAH can take it in
+for (const course of courses_output) {
+    if (course.id === 'DESN2000') {
+        course.data.terms = ['Term 2'];
+        course.data.conditions.prerequisites = [['ENGG1000']];
+        for (const parent of courses_output) {
+            if (parent.id === 'ENGG1000') {
+                parent.data.builds_into.push('DESN2000');
+                break;
+            }
+        }
+        break;
     }
-}*/
+}
+
+
+
+// Generate the position for each node
+for (const node of position_data) {
+    //console.log(node);
+    for (const course of courses_output) {
+        if (node.id === course.id) {
+            course.position.x = node.position.x;
+            course.position.y = node.position.y;
+            break;
+        }
+    }
+}
 
 // Generate the edges
 var n_courses = courses_output.length;
@@ -88,6 +106,7 @@ for (var i = 0; i < n_courses; i++) {
 
 //console.log(edges_output);
 const output = courses_output.concat(edges_output);
+
 
 
 // Write to the file

@@ -19,11 +19,12 @@ const nodeTypes = {
 };
 
 const onElementClick = (event, element) => {
-    if (element.id.match(/^e/)) return;
-    console.log(element.data.course_code);
+    if (element.id.match(/^e/)) return; // Don't care about edges
+
+    console.log(element.id);
     console.log(element.position.x + ' ' + element.position.y);
     for (var e of elementsData) {
-        if (e.id == element.data.course_code) {
+        if (e.id == element.id) {
             e.position.x = element.position.x;
             e.position.y = element.position.y;
         }
@@ -32,36 +33,42 @@ const onElementClick = (event, element) => {
 
 // HELPER FUNCTION FOR POSITIONING
 var positioning_data = [];
-/*const positionHelper = () => {
-    for (const e of elements) {
+const positionHelper = () => {
+    for (const e of elementsData) {
         if (!e.id.match(/^e/)) {
-            position=()
-        } else {
-            positioning_data.push(e);
+            positioning_data.push({
+                id: e.id,
+                position: {x: e.position.x, y: e.position.y},
+            });
         }
     }
-}*/
+    // Write data to position output file. Note we have to do this ourselves as we
+    // are making a server write to a local file.
+    console.log('[');
+    for (const e of positioning_data) {
+        console.log('{' + '"id": ' + '"' + e.id + '"' + ', position: {"x": ' + e.position.x + ', "y": ' + e.position.y + '}},');
+    }
+    console.log(']');
+}
 
 
 const BESengah = () => {
     const [elements, setElements] = useState(elementsData);
-    const positionHelper = () => {
-        console.log(elementsData);
-    }
 
     return (
         <div>
             <ReactFlow
                 elements={elements}
-                style={{width: '100%', height: '90vh'}}
+                style={{width: '100%', height: '100vh'}}
                 onLoad={onLoad}
                 nodeTypes={nodeTypes}
                 onElementClick={onElementClick}
+                nodesConnectable={false}
             >
             </ReactFlow>
-            <button type="button" onClick={positionHelper}>
-                Generate position
-            </button>
+            {/* <button type="button" onClick={positionHelper}> */}
+                {/* Generate position */}
+            {/* </button> */}
         </div>
     );
 };

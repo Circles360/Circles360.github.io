@@ -36,17 +36,17 @@ export const node_caa066 = {
     borderRadius: 32
 }
 
-export const node_7766ca = {
+export const header_node_7766ca = {
     display: 'flex',
     boxShadow: "0px 0px 3px grey",
     textAlign: 'center',
     alignItems: 'center',
-    fontSize: 8,
+    fontSize: 16,
     color: 'white',
     background: '#7766ca',
-    width: 64,
-    height: 64,
-    borderRadius: 32
+    width: 128,
+    height: 128,
+    borderRadius: 64
 }
 
 export const node_ff8499 = {

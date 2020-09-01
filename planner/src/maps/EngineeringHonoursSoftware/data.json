@@ -1,1 +1,1630 @@
-[{"id":"COMP1511","type":"custom1","data":{"course_name":"Programming Fundamentals","course_code":"COMP1511","course_level":1,"units":6,"terms":["Term 1","Term 2","Term 3"],"desc":"An introduction to problem-solving via programming, which aims to have students develop proficiency in using a high level programming language.","conditions":{"prerequisites":null,"corequisites":null,"units_required":null,"level_for_units_required":null,"core_year":null,"other":null},"equivalents":["COMP1917","DPST1091"],"builds_into":["COMP1521","COMP1531","COMP1927","COMP2041","COMP2111","COMP2121","COMP2521","COMP9334","ELEC2117","ELEC2142","MTRN2500"]},"position":{"x":0,"y":0},"style":{"display":"flex","boxShadow":"0px 0px 3px grey","textAlign":"center","alignItems":"center","fontSize":8,"color":"white","background":"#66ca86","width":64,"height":64,"borderRadius":32}},{"id":"COMP1521","type":"custom1","data":{"course_name":"Computer Systems Fundamentals","course_code":"COMP1521","course_level":1,"units":6,"terms":["Term 2","Term 3"],"desc":"This course provides a programmer's view on how a computer system executes programs, manipulates data and communicates.","conditions":{"prerequisites":[["COMP1511","DPST1091","COMP1911","COMP1917"]],"corequisites":null,"units_required":null,"level_for_units_required":null,"core_year":null,"other":null},"equivalents":["DPST1092"],"builds_into":["COMP2121","COMP3151","COMP3222","COMP3231","COMP3891","ELEC2142"]},"position":{"x":0,"y":0},"style":{"display":"flex","boxShadow":"0px 0px 3px grey","textAlign":"center","alignItems":"center","fontSize":8,"color":"white","background":"#66ca86","width":64,"height":64,"borderRadius":32}},{"id":"COMP1531","type":"custom1","data":{"course_name":"Software Engineering Fundamentals","course_code":"COMP1531","course_level":1,"units":6,"terms":["Term 1","Term 3"],"desc":"This course provides an introduction to software engineering principles: basic software lifecycle concepts, modern development methodologies, conceptual modeling and how these activities relate to programming.","conditions":{"prerequisites":[["COMP1511","DPST1091","COMP1917","COMP1921"]],"corequisites":null,"units_required":null,"level_for_units_required":null,"core_year":null,"other":null},"equivalents":null,"builds_into":["BINF6111","BINF6112","COMP2511","COMP3900","COMP6080","COMP6324","COMP6452","COMP6714","COMP9321","COMP9323","COMP9417","SENG2021"]},"position":{"x":0,"y":0},"style":{"display":"flex","boxShadow":"0px 0px 3px grey","textAlign":"center","alignItems":"center","fontSize":8,"color":"white","background":"#66ca86","width":64,"height":64,"borderRadius":32}},{"id":"ENGG1000","type":"custom1","data":{"course_name":"Introduction to Engineering Design and Innovation","course_code":"ENGG1000","course_level":1,"units":6,"terms":["Term 1","Term 3"],"desc":"In this course, students will experience first hand one of the major things that engineers do: designing and building creative solutions to problems.","conditions":{"prerequisites":null,"corequisites":null,"units_required":null,"level_for_units_required":null,"core_year":null,"other":null},"equivalents":["DPST1071"],"builds_into":["ENGG3600","ENGG4600"]},"position":{"x":0,"y":0},"style":{"display":"flex","boxShadow":"0px 0px 3px grey","textAlign":"center","alignItems":"center","fontSize":8,"color":"white","background":"#caa066","width":64,"height":64,"borderRadius":32}},{"id":"MATH1081","type":"custom1","data":{"course_name":"Discrete Mathematics","course_code":"MATH1081","course_level":1,"units":6,"terms":["Term 1","Term 2","Term 3"],"desc":"Role of proof in mathematics, logical reasoning and implication, different types of proofs.","conditions":{"prerequisites":null,"corequisites":[["MATH1131","DPST1013","MATH1141","MATH1151"]],"units_required":null,"level_for_units_required":null,"core_year":null,"other":null},"equivalents":null,"builds_into":["COMP2111","COMP3153","COMP4141","COMP6714","COMP6721","COMP6752","COMP9318","COMP9417","MATH2400","MATH3411","SENG2011"]},"position":{"x":0,"y":0},"style":{"display":"flex","boxShadow":"0px 0px 3px grey","textAlign":"center","alignItems":"center","fontSize":8,"color":"white","background":"#ca6f66","width":64,"height":64,"borderRadius":32}},{"id":"MATH1131","type":"custom1","data":{"course_name":"Mathematics 1A","course_code":"MATH1131","course_level":1,"units":6,"terms":["Term 1","Term 2","Term 3"],"desc":"Complex numbers, vectors and vector geometry, linear equations, matrices and matrix algebra, determinants.","conditions":{"prerequisites":null,"corequisites":null,"units_required":null,"level_for_units_required":null,"core_year":null,"other":null},"equivalents":["DPST1013"],"builds_into":["CHEM2041","CLIM2001","CVEN1300","ECON2101","ECON2112","ENGG1300","ENGG2500","MATH1231","MATH1241","MATS2001","MMAN2600","MMAN2700","PHYS2801"]},"position":{"x":0,"y":0},"style":{"display":"flex","boxShadow":"0px 0px 3px grey","textAlign":"center","alignItems":"center","fontSize":8,"color":"white","background":"#ca6f66","width":64,"height":64,"borderRadius":32}},{"id":"MATH1141","type":"custom1","data":{"course_name":"Higher Mathematics 1A","course_code":"MATH1141","course_level":1,"units":6,"terms":["Term 1","Term 3"],"desc":"As for MATH1131 but in greater depth.","conditions":{"prerequisites":null,"corequisites":null,"units_required":null,"level_for_units_required":null,"core_year":null,"other":null},"equivalents":null,"builds_into":["CHEM2041","CLIM2001","CVEN1300","ECON2101","ECON2112","ENGG1300","ENGG2500","MATH1231","MATH1241","MATS2001","MMAN2600","MMAN2700","PHYS2801"]},"position":{"x":0,"y":0},"style":{"display":"flex","boxShadow":"0px 0px 3px grey","textAlign":"center","alignItems":"center","fontSize":8,"color":"white","background":"#ca6f66","width":64,"height":64,"borderRadius":32}},{"id":"MATH1231","type":"custom1","data":{"course_name":"Mathematics 1B","course_code":"MATH1231","course_level":1,"units":6,"terms":["Term 1","Term 2","Term 3"],"desc":"Vector spaces, linear transformations, eigenvalues and eigenvectors.","conditions":{"prerequisites":[["MATH1131","DPST1013","MATH1141"]],"corequisites":null,"units_required":null,"level_for_units_required":null,"core_year":null,"other":null},"equivalents":["DPST1014"],"builds_into":["CHEM2041","CVEN2002","CVEN2702","ECON2102","ECON2206","ECON2209","GMAT2550","MARK3087","MATH2011","MATH2018","MATH2019","MATH2069","MATH2089","MATH2099","MATH2111","MATH2121","MATH2221","MATH2241","MATH2301","MATH2400","MATH2501","MATH2521","MATH2601","MATH2621","MATH2701","MATH2801","MATH2859","MATH2871","MATH2901","MATH3411","MATS2001","PHYS2111","PHYS2113","PTRL2019"]},"position":{"x":0,"y":0},"style":{"display":"flex","boxShadow":"0px 0px 3px grey","textAlign":"center","alignItems":"center","fontSize":8,"color":"white","background":"#ca6f66","width":64,"height":64,"borderRadius":32}},{"id":"MATH1241","type":"custom1","data":{"course_name":"Higher Mathematics 1B","course_code":"MATH1241","course_level":1,"units":6,"terms":["Term 1","Term 2"],"desc":"Vector spaces, linear transformations, eigenvalues and eigenvectors.","conditions":{"prerequisites":[["MATH1131","MATH1141","DPST1013"]],"corequisites":null,"units_required":null,"level_for_units_required":null,"core_year":null,"other":null},"equivalents":null,"builds_into":["ACTL2131","CHEM2041","CVEN2002","CVEN2702","ECON2102","ECON2206","ECON2209","GMAT2550","MARK3087","MATH2011","MATH2018","MATH2019","MATH2069","MATH2089","MATH2099","MATH2111","MATH2121","MATH2221","MATH2241","MATH2301","MATH2400","MATH2501","MATH2521","MATH2601","MATH2621","MATH2701","MATH2801","MATH2859","MATH2871","MATH2901","MATH3411","MATS2001","PHYS2111","PHYS2113","PTRL2019"]},"position":{"x":0,"y":0},"style":{"display":"flex","boxShadow":"0px 0px 3px grey","textAlign":"center","alignItems":"center","fontSize":8,"color":"white","background":"#ca6f66","width":64,"height":64,"borderRadius":32}},{"id":"COMP2041","type":"custom1","data":{"course_name":"Software Construction: Techniques and Tools","course_code":"COMP2041","course_level":2,"units":6,"terms":["Term 2"],"desc":"Software system decomposition and design.","conditions":{"prerequisites":[["COMP1511","DPST1091","COMP1917","COMP1921"]],"corequisites":null,"units_required":null,"level_for_units_required":null,"core_year":null,"other":null},"equivalents":["COMP9044"],"builds_into":["BINF6111","BINF6112","COMP6324","COMP6714","COMP9321","COMP9323","COMP9417"]},"position":{"x":0,"y":0},"style":{"display":"flex","boxShadow":"0px 0px 3px grey","textAlign":"center","alignItems":"center","fontSize":8,"color":"white","background":"#66ca86","width":64,"height":64,"borderRadius":32}},{"id":"COMP2511","type":"custom1","data":{"course_name":"Object-Oriented Design & Programming","course_code":"COMP2511","course_level":2,"units":6,"terms":["Term 2","Term 3"],"desc":"This course aims to introduce students to the principles of object-oriented design and to fundamental techniques in object-oriented programming.","conditions":{"prerequisites":[["COMP1531"],["COMP2521","COMP1927"]],"corequisites":null,"units_required":null,"level_for_units_required":null,"core_year":null,"other":null},"equivalents":null,"builds_into":["COMP3131","COMP3421","COMP4511","COMP4920","COMP6771"]},"position":{"x":0,"y":0},"style":{"display":"flex","boxShadow":"0px 0px 3px grey","textAlign":"center","alignItems":"center","fontSize":8,"color":"white","background":"#66ca86","width":64,"height":64,"borderRadius":32}},{"id":"COMP2521","type":"custom1","data":{"course_name":"Data Structures and Algorithms","course_code":"COMP2521","course_level":2,"units":6,"terms":["Term 1","Term 2","Term 3"],"desc":"The goal of this course is to deepen students' understanding of data structures and algorithms and how these can be employed effectively in the design of software systems.","conditions":{"prerequisites":[["COMP1511","DPST1091","COMP1917","COMP1921"]],"corequisites":null,"units_required":null,"level_for_units_required":null,"core_year":null,"other":null},"equivalents":null,"builds_into":["COMP2511","COMP2911","COMP3121","COMP3141","COMP3151","COMP3161","COMP3231","COMP3311","COMP3331","COMP3411","COMP3431","COMP3821","COMP3891","COMP3900","COMP4141","COMP6080","COMP6451","COMP6452","COMP6714","COMP6721","COMP6841","COMP9313","COMP9315","COMP9318","COMP9319","COMP9417","COMP9444","COMP9517","COMP9844"]},"position":{"x":0,"y":0},"style":{"display":"flex","boxShadow":"0px 0px 3px grey","textAlign":"center","alignItems":"center","fontSize":8,"color":"white","background":"#66ca86","width":64,"height":64,"borderRadius":32}},{"id":"DESN2000","type":"custom1","data":{"course_name":"Engineering Design and Professional Practice","course_code":"DESN2000","course_level":2,"units":6,"terms":["Term 2","Term 3"],"desc":"Design is one of the critical foundations of engineering and a main component in creating value.","conditions":{"prerequisites":null,"corequisites":null,"units_required":null,"level_for_units_required":null,"core_year":null,"other":null},"equivalents":["ELEC2142","MMAN2100","CVEN3031","SOLA2052"],"builds_into":["COMP3601"]},"position":{"x":0,"y":0},"style":{"display":"flex","boxShadow":"0px 0px 3px grey","textAlign":"center","alignItems":"center","fontSize":8,"color":"white","background":"#caa066","width":64,"height":64,"borderRadius":32}},{"id":"MATH2400","type":"custom1","data":{"course_name":"Finite Mathematics","course_code":"MATH2400","course_level":2,"units":3,"terms":["Term 2"],"desc":"This is an introduction to those areas of Mathematics which underpin parts of computing.","conditions":{"prerequisites":[["MATH1081","MATH1231","DPST1014","MATH1241","MATH1251"]],"corequisites":null,"units_required":null,"level_for_units_required":null,"core_year":null,"other":null},"equivalents":null,"builds_into":null},"position":{"x":0,"y":0},"style":{"display":"flex","boxShadow":"0px 0px 3px grey","textAlign":"center","alignItems":"center","fontSize":8,"color":"white","background":"#ca6f66","width":64,"height":64,"borderRadius":32}},{"id":"MATH2859","type":"custom1","data":{"course_name":"Probability, Statistics and Information","course_code":"MATH2859","course_level":2,"units":3,"terms":["Term 2"],"desc":"Sample spaces, probability, random variables and probability distributions; examples of discrete and continuous distributions; Central Limit Theorem; statistical inference, confidence intervals and hypothesis testing; bivariate normal distribution, optimal mean square estimation, introduction to the multivariate normal distribution; linear regression and least squares estimation; inference in the linear model; on-line and off-line estimation; statistical quality control; models, applications and statistical algorithms relevant to the fields of computer, electrical, software and telecommunications engineering.","conditions":{"prerequisites":[["MATH1231","MATH1241","MATH1251","DPST1014"],["MATH2089"],["MATH2099"],["MATH2801"],["MATH2901"],["BEES2041"],["BIOS2041"],["CVEN2002"]],"corequisites":null,"units_required":null,"level_for_units_required":null,"core_year":null,"other":null},"equivalents":null,"builds_into":["GEOS6733"]},"position":{"x":0,"y":0},"style":{"display":"flex","boxShadow":"0px 0px 3px grey","textAlign":"center","alignItems":"center","fontSize":8,"color":"white","background":"#ca6f66","width":64,"height":64,"borderRadius":32}},{"id":"SENG2011","type":"custom1","data":{"course_name":"Workshop on Reasoning about Programs","course_code":"SENG2011","course_level":2,"units":6,"terms":["Term 3"],"desc":"This is a workshop course aimed at developing the skills of writing precise specifications of programs and translating these specifications into correct implementations.","conditions":{"prerequisites":[["MATH1081"]],"corequisites":null,"units_required":null,"level_for_units_required":null,"core_year":null,"other":null},"equivalents":null,"builds_into":null},"position":{"x":0,"y":0},"style":{"display":"flex","boxShadow":"0px 0px 3px grey","textAlign":"center","alignItems":"center","fontSize":8,"color":"white","background":"#caa066","width":64,"height":64,"borderRadius":32}},{"id":"SENG2021","type":"custom1","data":{"course_name":"Requirements and Design Workshop","course_code":"SENG2021","course_level":2,"units":6,"terms":["Term 1"],"desc":"This course is part the series of software engineering workshops designed to teach students to work in teams and apply their knowledge to solve real-life problems.","conditions":{"prerequisites":[["SENG1031","COMP1531"]],"corequisites":null,"units_required":null,"level_for_units_required":null,"core_year":null,"other":null},"equivalents":null,"builds_into":["SENG3011"]},"position":{"x":0,"y":0},"style":{"display":"flex","boxShadow":"0px 0px 3px grey","textAlign":"center","alignItems":"center","fontSize":8,"color":"white","background":"#caa066","width":64,"height":64,"borderRadius":32}},{"id":"COMP3141","type":"custom1","data":{"course_name":"Software System Design and Implementation","course_code":"COMP3141","course_level":3,"units":6,"terms":["Term 2"],"desc":"This course will present rigorous and formal methods for the design and implementation phases of software system development.","conditions":{"prerequisites":[["COMP1927","COMP2521"]],"corequisites":null,"units_required":null,"level_for_units_required":null,"core_year":null,"other":null},"equivalents":null,"builds_into":null},"position":{"x":0,"y":0},"style":{"display":"flex","boxShadow":"0px 0px 3px grey","textAlign":"center","alignItems":"center","fontSize":8,"color":"white","background":"#66ca86","width":64,"height":64,"borderRadius":32}},{"id":"COMP3311","type":"custom1","data":{"course_name":"Database Systems","course_code":"COMP3311","course_level":3,"units":6,"terms":["Term 1","Term 3"],"desc":"Data models: entity-relationship, relational, object-oriented.","conditions":{"prerequisites":[["COMP2521","COMP1927"]],"corequisites":null,"units_required":null,"level_for_units_required":null,"core_year":null,"other":null},"equivalents":null,"builds_into":["COMP9313","COMP9315","COMP9318","COMP9321","COMP9323"]},"position":{"x":0,"y":0},"style":{"display":"flex","boxShadow":"0px 0px 3px grey","textAlign":"center","alignItems":"center","fontSize":8,"color":"white","background":"#66ca86","width":64,"height":64,"borderRadius":32}},{"id":"COMP3331","type":"custom1","data":{"course_name":"Computer Networks and Applications","course_code":"COMP3331","course_level":3,"units":6,"terms":["Term 1","Term 2","Term 3"],"desc":"Networking technology overview.","conditions":{"prerequisites":[["COMP1927","COMP2521","MTRN3500"]],"corequisites":null,"units_required":null,"level_for_units_required":null,"core_year":null,"other":null},"equivalents":["COMP9331"],"builds_into":["COMP4336","COMP4337","COMP6733","COMP9243","COMP9332"]},"position":{"x":0,"y":0},"style":{"display":"flex","boxShadow":"0px 0px 3px grey","textAlign":"center","alignItems":"center","fontSize":8,"color":"white","background":"#66ca86","width":64,"height":64,"borderRadius":32}},{"id":"SENG3011","type":"custom1","data":{"course_name":"Software Engineering Workshop 3","course_code":"SENG3011","course_level":3,"units":6,"terms":["Term 1"],"desc":"Following the first three Software Engineering Workshop courses (SENG1031, SENG2011 and SENG2021) this course involves teams (or groups) in the design, implementation and testing of a system, or subsystem, that satisfies a given set of requirements.","conditions":{"prerequisites":[["SENG2021"]],"corequisites":null,"units_required":null,"level_for_units_required":null,"core_year":null,"other":null},"equivalents":null,"builds_into":["SENG4920"]},"position":{"x":0,"y":0},"style":{"display":"flex","boxShadow":"0px 0px 3px grey","textAlign":"center","alignItems":"center","fontSize":8,"color":"white","background":"#caa066","width":64,"height":64,"borderRadius":32}},{"id":"COMP4920","type":"custom1","data":{"course_name":"Management and Ethics","course_code":"COMP4920","course_level":4,"units":6,"terms":["Term 3"],"desc":"This course will develop a framework on which management and ethical issues can be developed.","conditions":{"prerequisites":[["COMP2511","COMP2911"]],"corequisites":null,"units_required":96,"level_for_units_required":null,"core_year":null,"other":null},"equivalents":null,"builds_into":null},"position":{"x":0,"y":0},"style":{"display":"flex","boxShadow":"0px 0px 3px grey","textAlign":"center","alignItems":"center","fontSize":8,"color":"white","background":"#66ca86","width":64,"height":64,"borderRadius":32}},{"id":"COMP4951","type":"custom1","data":{"course_name":"Research Thesis A","course_code":"COMP4951","course_level":4,"units":4,"terms":["Term 1","Term 2","Term 3"],"desc":"The thesis provides an opportunity for you to bring together engineering principles learned over your previous years of study and apply these principles to innovatively solve problems such as the development of a specific design, process and/or the investigation of a hypothesis.","conditions":{"prerequisites":null,"corequisites":null,"units_required":126,"level_for_units_required":null,"core_year":3,"other":null},"equivalents":null,"builds_into":["COMP4952","COMP4962"]},"position":{"x":0,"y":0},"style":{"display":"flex","boxShadow":"0px 0px 3px grey","textAlign":"center","alignItems":"center","fontSize":8,"color":"white","background":"#66ca86","width":64,"height":64,"borderRadius":32}},{"id":"COMP4952","type":"custom1","data":{"course_name":"Research Thesis B","course_code":"COMP4952","course_level":4,"units":4,"terms":["Term 1","Term 2","Term 3"],"desc":"The thesis provides an opportunity for you to bring together engineering principles learned over your previous years of study and apply these principles to innovatively solve problems such as the development of a specific design, process and/or the investigation of a hypothesis.","conditions":{"prerequisites":["COMP4951"],"corequisites":null,"units_required":null,"level_for_units_required":null,"core_year":null,"other":null},"equivalents":null,"builds_into":["COMP4953"]},"position":{"x":0,"y":0},"style":{"display":"flex","boxShadow":"0px 0px 3px grey","textAlign":"center","alignItems":"center","fontSize":8,"color":"white","background":"#66ca86","width":64,"height":64,"borderRadius":32}},{"id":"COMP4953","type":"custom1","data":{"course_name":"Research Thesis C","course_code":"COMP4953","course_level":4,"units":4,"terms":["Term 1","Term 2","Term 3"],"desc":"The thesis provides an opportunity for you to bring together engineering principles learned over your previous years of study and apply these principles to innovatively solve problems such as the development of a specific design, process and/or the investigation of a hypothesis.","conditions":{"prerequisites":["COMP4952"],"corequisites":null,"units_required":null,"level_for_units_required":null,"core_year":null,"other":null},"equivalents":null,"builds_into":null},"position":{"x":0,"y":0},"style":{"display":"flex","boxShadow":"0px 0px 3px grey","textAlign":"center","alignItems":"center","fontSize":8,"color":"white","background":"#66ca86","width":64,"height":64,"borderRadius":32}},{"id":"eCOMP1511-COMP1521","source":"COMP1511","target":"COMP1521","type":"default","animated":false},{"id":"eCOMP1511-COMP1531","source":"COMP1511","target":"COMP1531","type":"default","animated":false},{"id":"eCOMP1511-COMP2041","source":"COMP1511","target":"COMP2041","type":"default","animated":false},{"id":"eCOMP1511-COMP2521","source":"COMP1511","target":"COMP2521","type":"default","animated":false},{"id":"eCOMP1531-COMP2511","source":"COMP1531","target":"COMP2511","type":"default","animated":false},{"id":"eCOMP1531-SENG2021","source":"COMP1531","target":"SENG2021","type":"default","animated":false},{"id":"eMATH1081-MATH2400","source":"MATH1081","target":"MATH2400","type":"default","animated":false},{"id":"eMATH1081-SENG2011","source":"MATH1081","target":"SENG2011","type":"default","animated":false},{"id":"eMATH1131-MATH1231","source":"MATH1131","target":"MATH1231","type":"default","animated":false},{"id":"eMATH1131-MATH1241","source":"MATH1131","target":"MATH1241","type":"default","animated":false},{"id":"eMATH1141-MATH1231","source":"MATH1141","target":"MATH1231","type":"default","animated":false},{"id":"eMATH1141-MATH1241","source":"MATH1141","target":"MATH1241","type":"default","animated":false},{"id":"eMATH1231-MATH2400","source":"MATH1231","target":"MATH2400","type":"default","animated":false},{"id":"eMATH1231-MATH2859","source":"MATH1231","target":"MATH2859","type":"default","animated":false},{"id":"eMATH1241-MATH2400","source":"MATH1241","target":"MATH2400","type":"default","animated":false},{"id":"eMATH1241-MATH2859","source":"MATH1241","target":"MATH2859","type":"default","animated":false},{"id":"eCOMP2511-COMP4920","source":"COMP2511","target":"COMP4920","type":"default","animated":false},{"id":"eCOMP2521-COMP2511","source":"COMP2521","target":"COMP2511","type":"default","animated":false},{"id":"eCOMP2521-COMP3141","source":"COMP2521","target":"COMP3141","type":"default","animated":false},{"id":"eCOMP2521-COMP3311","source":"COMP2521","target":"COMP3311","type":"default","animated":false},{"id":"eCOMP2521-COMP3331","source":"COMP2521","target":"COMP3331","type":"default","animated":false},{"id":"eSENG2021-SENG3011","source":"SENG2021","target":"SENG3011","type":"default","animated":false},{"id":"eCOMP4951-COMP4952","source":"COMP4951","target":"COMP4952","type":"default","animated":false},{"id":"eCOMP4952-COMP4953","source":"COMP4952","target":"COMP4953","type":"default","animated":false}]
+[
+    {
+        "id": "SENGAH",
+        "type": "header1",
+        "data": {
+            "degree_name": "Software Engineering",
+            "degree_code": "SENGAH",
+            "degree_units": "168",
+            "builds_into": [
+                "COMP1511",
+                "ENGG1000",
+                "MATH1131",
+                "MATH1081"
+            ]
+        },
+        "style": {
+            "display": "flex",
+            "boxShadow": "0px 0px 3px grey",
+            "textAlign": "center",
+            "alignItems": "center",
+            "fontSize": 16,
+            "color": "white",
+            "background": "#7766ca",
+            "width": 128,
+            "height": 128,
+            "borderRadius": 64
+        },
+        "position": {
+            "x": -1.2556696296132372,
+            "y": -1.436436061762521
+        }
+    },
+    {
+        "id": "COMP1511",
+        "type": "custom1",
+        "data": {
+            "course_name": "Programming Fundamentals",
+            "course_code": "COMP1511",
+            "course_level": 1,
+            "units": 6,
+            "terms": [
+                "Term 1",
+                "Term 2",
+                "Term 3"
+            ],
+            "desc": "An introduction to problem-solving via programming, which aims to have students develop proficiency in using a high level programming language.",
+            "conditions": {
+                "prerequisites": null,
+                "corequisites": null,
+                "units_required": null,
+                "level_for_units_required": null,
+                "core_year": null,
+                "other": null
+            },
+            "equivalents": [
+                "COMP1917",
+                "DPST1091"
+            ],
+            "builds_into": [
+                "COMP1521",
+                "COMP1531",
+                "COMP1927",
+                "COMP2041",
+                "COMP2111",
+                "COMP2121",
+                "COMP2521",
+                "COMP9334",
+                "ELEC2117",
+                "ELEC2142",
+                "MTRN2500"
+            ]
+        },
+        "position": {
+            "x": 147.84420218742423,
+            "y": 175.23644126187185
+        },
+        "style": {
+            "display": "flex",
+            "boxShadow": "0px 0px 3px grey",
+            "textAlign": "center",
+            "alignItems": "center",
+            "fontSize": 8,
+            "color": "white",
+            "background": "#66ca86",
+            "width": 64,
+            "height": 64,
+            "borderRadius": 32
+        }
+    },
+    {
+        "id": "COMP1521",
+        "type": "custom1",
+        "data": {
+            "course_name": "Computer Systems Fundamentals",
+            "course_code": "COMP1521",
+            "course_level": 1,
+            "units": 6,
+            "terms": [
+                "Term 2",
+                "Term 3"
+            ],
+            "desc": "This course provides a programmer's view on how a computer system executes programs, manipulates data and communicates.",
+            "conditions": {
+                "prerequisites": [
+                    [
+                        "COMP1511",
+                        "DPST1091",
+                        "COMP1911",
+                        "COMP1917"
+                    ]
+                ],
+                "corequisites": null,
+                "units_required": null,
+                "level_for_units_required": null,
+                "core_year": null,
+                "other": null
+            },
+            "equivalents": [
+                "DPST1092"
+            ],
+            "builds_into": [
+                "COMP2121",
+                "COMP3151",
+                "COMP3222",
+                "COMP3231",
+                "COMP3891",
+                "ELEC2142"
+            ]
+        },
+        "position": {
+            "x": -35.682016669121595,
+            "y": 357.9630630483466
+        },
+        "style": {
+            "display": "flex",
+            "boxShadow": "0px 0px 3px grey",
+            "textAlign": "center",
+            "alignItems": "center",
+            "fontSize": 8,
+            "color": "white",
+            "background": "#66ca86",
+            "width": 64,
+            "height": 64,
+            "borderRadius": 32
+        }
+    },
+    {
+        "id": "COMP1531",
+        "type": "custom1",
+        "data": {
+            "course_name": "Software Engineering Fundamentals",
+            "course_code": "COMP1531",
+            "course_level": 1,
+            "units": 6,
+            "terms": [
+                "Term 1",
+                "Term 3"
+            ],
+            "desc": "This course provides an introduction to software engineering principles: basic software lifecycle concepts, modern development methodologies, conceptual modeling and how these activities relate to programming.",
+            "conditions": {
+                "prerequisites": [
+                    [
+                        "COMP1511",
+                        "DPST1091",
+                        "COMP1917",
+                        "COMP1921"
+                    ]
+                ],
+                "corequisites": null,
+                "units_required": null,
+                "level_for_units_required": null,
+                "core_year": null,
+                "other": null
+            },
+            "equivalents": null,
+            "builds_into": [
+                "BINF6111",
+                "BINF6112",
+                "COMP2511",
+                "COMP3900",
+                "COMP6080",
+                "COMP6324",
+                "COMP6452",
+                "COMP6714",
+                "COMP9321",
+                "COMP9323",
+                "COMP9417",
+                "SENG2021"
+            ]
+        },
+        "position": {
+            "x": 145.9935343786243,
+            "y": 379.9532378475111
+        },
+        "style": {
+            "display": "flex",
+            "boxShadow": "0px 0px 3px grey",
+            "textAlign": "center",
+            "alignItems": "center",
+            "fontSize": 8,
+            "color": "white",
+            "background": "#66ca86",
+            "width": 64,
+            "height": 64,
+            "borderRadius": 32
+        }
+    },
+    {
+        "id": "ENGG1000",
+        "type": "custom1",
+        "data": {
+            "course_name": "Introduction to Engineering Design and Innovation",
+            "course_code": "ENGG1000",
+            "course_level": 1,
+            "units": 6,
+            "terms": [
+                "Term 1",
+                "Term 3"
+            ],
+            "desc": "In this course, students will experience first hand one of the major things that engineers do: designing and building creative solutions to problems.",
+            "conditions": {
+                "prerequisites": null,
+                "corequisites": null,
+                "units_required": null,
+                "level_for_units_required": null,
+                "core_year": null,
+                "other": null
+            },
+            "equivalents": [
+                "DPST1071"
+            ],
+            "builds_into": [
+                "ENGG3600",
+                "ENGG4600",
+                "DESN2000"
+            ]
+        },
+        "position": {
+            "x": -201.35992908617231,
+            "y": 88.89888580174068
+        },
+        "style": {
+            "display": "flex",
+            "boxShadow": "0px 0px 3px grey",
+            "textAlign": "center",
+            "alignItems": "center",
+            "fontSize": 8,
+            "color": "white",
+            "background": "#caa066",
+            "width": 64,
+            "height": 64,
+            "borderRadius": 32
+        }
+    },
+    {
+        "id": "MATH1081",
+        "type": "custom1",
+        "data": {
+            "course_name": "Discrete Mathematics",
+            "course_code": "MATH1081",
+            "course_level": 1,
+            "units": 6,
+            "terms": [
+                "Term 1",
+                "Term 2",
+                "Term 3"
+            ],
+            "desc": "Role of proof in mathematics, logical reasoning and implication, different types of proofs.",
+            "conditions": {
+                "prerequisites": null,
+                "corequisites": [
+                    [
+                        "MATH1131",
+                        "DPST1013",
+                        "MATH1141",
+                        "MATH1151"
+                    ]
+                ],
+                "units_required": null,
+                "level_for_units_required": null,
+                "core_year": null,
+                "other": null
+            },
+            "equivalents": null,
+            "builds_into": [
+                "COMP2111",
+                "COMP3153",
+                "COMP4141",
+                "COMP6714",
+                "COMP6721",
+                "COMP6752",
+                "COMP9318",
+                "COMP9417",
+                "MATH2400",
+                "MATH3411",
+                "SENG2011"
+            ]
+        },
+        "position": {
+            "x": -279.2855584801963,
+            "y": -94.07130282137362
+        },
+        "style": {
+            "display": "flex",
+            "boxShadow": "0px 0px 3px grey",
+            "textAlign": "center",
+            "alignItems": "center",
+            "fontSize": 8,
+            "color": "white",
+            "background": "#ca6f66",
+            "width": 64,
+            "height": 64,
+            "borderRadius": 32
+        }
+    },
+    {
+        "id": "MATH1131",
+        "type": "custom1",
+        "data": {
+            "course_name": "Mathematics 1A",
+            "course_code": "MATH1131",
+            "course_level": 1,
+            "units": 6,
+            "terms": [
+                "Term 1",
+                "Term 2",
+                "Term 3"
+            ],
+            "desc": "Complex numbers, vectors and vector geometry, linear equations, matrices and matrix algebra, determinants.",
+            "conditions": {
+                "prerequisites": null,
+                "corequisites": null,
+                "units_required": null,
+                "level_for_units_required": null,
+                "core_year": null,
+                "other": null
+            },
+            "equivalents": [
+                "DPST1013"
+            ],
+            "builds_into": [
+                "CHEM2041",
+                "CLIM2001",
+                "CVEN1300",
+                "ECON2101",
+                "ECON2112",
+                "ENGG1300",
+                "ENGG2500",
+                "MATH1231",
+                "MATH1241",
+                "MATS2001",
+                "MMAN2600",
+                "MMAN2700",
+                "PHYS2801"
+            ]
+        },
+        "position": {
+            "x": -5.979401127552592,
+            "y": -157.907496017124
+        },
+        "style": {
+            "display": "flex",
+            "boxShadow": "0px 0px 3px grey",
+            "textAlign": "center",
+            "alignItems": "center",
+            "fontSize": 8,
+            "color": "white",
+            "background": "#ca6f66",
+            "width": 64,
+            "height": 64,
+            "borderRadius": 32
+        }
+    },
+    {
+        "id": "MATH1141",
+        "type": "custom1",
+        "data": {
+            "course_name": "Higher Mathematics 1A",
+            "course_code": "MATH1141",
+            "course_level": 1,
+            "units": 6,
+            "terms": [
+                "Term 1",
+                "Term 3"
+            ],
+            "desc": "As for MATH1131 but in greater depth.",
+            "conditions": {
+                "prerequisites": null,
+                "corequisites": null,
+                "units_required": null,
+                "level_for_units_required": null,
+                "core_year": null,
+                "other": null
+            },
+            "equivalents": null,
+            "builds_into": [
+                "CHEM2041",
+                "CLIM2001",
+                "CVEN1300",
+                "ECON2101",
+                "ECON2112",
+                "ENGG1300",
+                "ENGG2500",
+                "MATH1231",
+                "MATH1241",
+                "MATS2001",
+                "MMAN2600",
+                "MMAN2700",
+                "PHYS2801"
+            ]
+        },
+        "position": {
+            "x": -7.142132008270096,
+            "y": -158.56453833342323
+        },
+        "style": {
+            "display": "flex",
+            "boxShadow": "0px 0px 3px grey",
+            "textAlign": "center",
+            "alignItems": "center",
+            "fontSize": 8,
+            "color": "white",
+            "background": "#ca6f66",
+            "width": 64,
+            "height": 64,
+            "borderRadius": 32
+        }
+    },
+    {
+        "id": "MATH1231",
+        "type": "custom1",
+        "data": {
+            "course_name": "Mathematics 1B",
+            "course_code": "MATH1231",
+            "course_level": 1,
+            "units": 6,
+            "terms": [
+                "Term 1",
+                "Term 2",
+                "Term 3"
+            ],
+            "desc": "Vector spaces, linear transformations, eigenvalues and eigenvectors.",
+            "conditions": {
+                "prerequisites": [
+                    [
+                        "MATH1131",
+                        "DPST1013",
+                        "MATH1141"
+                    ]
+                ],
+                "corequisites": null,
+                "units_required": null,
+                "level_for_units_required": null,
+                "core_year": null,
+                "other": null
+            },
+            "equivalents": [
+                "DPST1014"
+            ],
+            "builds_into": [
+                "CHEM2041",
+                "CVEN2002",
+                "CVEN2702",
+                "ECON2102",
+                "ECON2206",
+                "ECON2209",
+                "GMAT2550",
+                "MARK3087",
+                "MATH2011",
+                "MATH2018",
+                "MATH2019",
+                "MATH2069",
+                "MATH2089",
+                "MATH2099",
+                "MATH2111",
+                "MATH2121",
+                "MATH2221",
+                "MATH2241",
+                "MATH2301",
+                "MATH2400",
+                "MATH2501",
+                "MATH2521",
+                "MATH2601",
+                "MATH2621",
+                "MATH2701",
+                "MATH2801",
+                "MATH2859",
+                "MATH2871",
+                "MATH2901",
+                "MATH3411",
+                "MATS2001",
+                "PHYS2111",
+                "PHYS2113",
+                "PTRL2019"
+            ]
+        },
+        "position": {
+            "x": 41.49303235372099,
+            "y": -282.0688380381654
+        },
+        "style": {
+            "display": "flex",
+            "boxShadow": "0px 0px 3px grey",
+            "textAlign": "center",
+            "alignItems": "center",
+            "fontSize": 8,
+            "color": "white",
+            "background": "#ca6f66",
+            "width": 64,
+            "height": 64,
+            "borderRadius": 32
+        }
+    },
+    {
+        "id": "MATH1241",
+        "type": "custom1",
+        "data": {
+            "course_name": "Higher Mathematics 1B",
+            "course_code": "MATH1241",
+            "course_level": 1,
+            "units": 6,
+            "terms": [
+                "Term 1",
+                "Term 2"
+            ],
+            "desc": "Vector spaces, linear transformations, eigenvalues and eigenvectors.",
+            "conditions": {
+                "prerequisites": [
+                    [
+                        "MATH1131",
+                        "MATH1141",
+                        "DPST1013"
+                    ]
+                ],
+                "corequisites": null,
+                "units_required": null,
+                "level_for_units_required": null,
+                "core_year": null,
+                "other": null
+            },
+            "equivalents": null,
+            "builds_into": [
+                "ACTL2131",
+                "CHEM2041",
+                "CVEN2002",
+                "CVEN2702",
+                "ECON2102",
+                "ECON2206",
+                "ECON2209",
+                "GMAT2550",
+                "MARK3087",
+                "MATH2011",
+                "MATH2018",
+                "MATH2019",
+                "MATH2069",
+                "MATH2089",
+                "MATH2099",
+                "MATH2111",
+                "MATH2121",
+                "MATH2221",
+                "MATH2241",
+                "MATH2301",
+                "MATH2400",
+                "MATH2501",
+                "MATH2521",
+                "MATH2601",
+                "MATH2621",
+                "MATH2701",
+                "MATH2801",
+                "MATH2859",
+                "MATH2871",
+                "MATH2901",
+                "MATH3411",
+                "MATS2001",
+                "PHYS2111",
+                "PHYS2113",
+                "PTRL2019"
+            ]
+        },
+        "position": {
+            "x": 42.503604526383356,
+            "y": -282.78086725644357
+        },
+        "style": {
+            "display": "flex",
+            "boxShadow": "0px 0px 3px grey",
+            "textAlign": "center",
+            "alignItems": "center",
+            "fontSize": 8,
+            "color": "white",
+            "background": "#ca6f66",
+            "width": 64,
+            "height": 64,
+            "borderRadius": 32
+        }
+    },
+    {
+        "id": "COMP2041",
+        "type": "custom1",
+        "data": {
+            "course_name": "Software Construction: Techniques and Tools",
+            "course_code": "COMP2041",
+            "course_level": 2,
+            "units": 6,
+            "terms": [
+                "Term 2"
+            ],
+            "desc": "Software system decomposition and design.",
+            "conditions": {
+                "prerequisites": [
+                    [
+                        "COMP1511",
+                        "DPST1091",
+                        "COMP1917",
+                        "COMP1921"
+                    ]
+                ],
+                "corequisites": null,
+                "units_required": null,
+                "level_for_units_required": null,
+                "core_year": null,
+                "other": null
+            },
+            "equivalents": [
+                "COMP9044"
+            ],
+            "builds_into": [
+                "BINF6111",
+                "BINF6112",
+                "COMP6324",
+                "COMP6714",
+                "COMP9321",
+                "COMP9323",
+                "COMP9417"
+            ]
+        },
+        "position": {
+            "x": 363.4854026477505,
+            "y": 65.5009408748844
+        },
+        "style": {
+            "display": "flex",
+            "boxShadow": "0px 0px 3px grey",
+            "textAlign": "center",
+            "alignItems": "center",
+            "fontSize": 8,
+            "color": "white",
+            "background": "#66ca86",
+            "width": 64,
+            "height": 64,
+            "borderRadius": 32
+        }
+    },
+    {
+        "id": "COMP2511",
+        "type": "custom1",
+        "data": {
+            "course_name": "Object-Oriented Design & Programming",
+            "course_code": "COMP2511",
+            "course_level": 2,
+            "units": 6,
+            "terms": [
+                "Term 2",
+                "Term 3"
+            ],
+            "desc": "This course aims to introduce students to the principles of object-oriented design and to fundamental techniques in object-oriented programming.",
+            "conditions": {
+                "prerequisites": [
+                    [
+                        "COMP1531"
+                    ],
+                    [
+                        "COMP2521",
+                        "COMP1927"
+                    ]
+                ],
+                "corequisites": null,
+                "units_required": null,
+                "level_for_units_required": null,
+                "core_year": null,
+                "other": null
+            },
+            "equivalents": null,
+            "builds_into": [
+                "COMP3131",
+                "COMP3421",
+                "COMP4511",
+                "COMP4920",
+                "COMP6771"
+            ]
+        },
+        "position": {
+            "x": 398.26657129173725,
+            "y": 462.1054886846843
+        },
+        "style": {
+            "display": "flex",
+            "boxShadow": "0px 0px 3px grey",
+            "textAlign": "center",
+            "alignItems": "center",
+            "fontSize": 8,
+            "color": "white",
+            "background": "#66ca86",
+            "width": 64,
+            "height": 64,
+            "borderRadius": 32
+        }
+    },
+    {
+        "id": "COMP2521",
+        "type": "custom1",
+        "data": {
+            "course_name": "Data Structures and Algorithms",
+            "course_code": "COMP2521",
+            "course_level": 2,
+            "units": 6,
+            "terms": [
+                "Term 1",
+                "Term 2",
+                "Term 3"
+            ],
+            "desc": "The goal of this course is to deepen students' understanding of data structures and algorithms and how these can be employed effectively in the design of software systems.",
+            "conditions": {
+                "prerequisites": [
+                    [
+                        "COMP1511",
+                        "DPST1091",
+                        "COMP1917",
+                        "COMP1921"
+                    ]
+                ],
+                "corequisites": null,
+                "units_required": null,
+                "level_for_units_required": null,
+                "core_year": null,
+                "other": null
+            },
+            "equivalents": null,
+            "builds_into": [
+                "COMP2511",
+                "COMP2911",
+                "COMP3121",
+                "COMP3141",
+                "COMP3151",
+                "COMP3161",
+                "COMP3231",
+                "COMP3311",
+                "COMP3331",
+                "COMP3411",
+                "COMP3431",
+                "COMP3821",
+                "COMP3891",
+                "COMP3900",
+                "COMP4141",
+                "COMP6080",
+                "COMP6451",
+                "COMP6452",
+                "COMP6714",
+                "COMP6721",
+                "COMP6841",
+                "COMP9313",
+                "COMP9315",
+                "COMP9318",
+                "COMP9319",
+                "COMP9417",
+                "COMP9444",
+                "COMP9517",
+                "COMP9844"
+            ]
+        },
+        "position": {
+            "x": 441.30475459190063,
+            "y": 244.53128870836713
+        },
+        "style": {
+            "display": "flex",
+            "boxShadow": "0px 0px 3px grey",
+            "textAlign": "center",
+            "alignItems": "center",
+            "fontSize": 8,
+            "color": "white",
+            "background": "#66ca86",
+            "width": 64,
+            "height": 64,
+            "borderRadius": 32
+        }
+    },
+    {
+        "id": "DESN2000",
+        "type": "custom1",
+        "data": {
+            "course_name": "Engineering Design and Professional Practice",
+            "course_code": "DESN2000",
+            "course_level": 2,
+            "units": 6,
+            "terms": [
+                "Term 2"
+            ],
+            "desc": "Design is one of the critical foundations of engineering and a main component in creating value.",
+            "conditions": {
+                "prerequisites": [
+                    [
+                        "ENGG1000"
+                    ]
+                ],
+                "corequisites": null,
+                "units_required": null,
+                "level_for_units_required": null,
+                "core_year": null,
+                "other": null
+            },
+            "equivalents": [
+                "ELEC2142",
+                "MMAN2100",
+                "CVEN3031",
+                "SOLA2052"
+            ],
+            "builds_into": [
+                "DESN3000"
+            ]
+        },
+        "position": {
+            "x": -372.10312566022617,
+            "y": 204.48906309906965
+        },
+        "style": {
+            "display": "flex",
+            "boxShadow": "0px 0px 3px grey",
+            "textAlign": "center",
+            "alignItems": "center",
+            "fontSize": 8,
+            "color": "white",
+            "background": "#caa066",
+            "width": 64,
+            "height": 64,
+            "borderRadius": 32
+        }
+    },
+    {
+        "id": "MATH2400",
+        "type": "custom1",
+        "data": {
+            "course_name": "Finite Mathematics",
+            "course_code": "MATH2400",
+            "course_level": 2,
+            "units": 3,
+            "terms": [
+                "Term 2"
+            ],
+            "desc": "This is an introduction to those areas of Mathematics which underpin parts of computing.",
+            "conditions": {
+                "prerequisites": [
+                    [
+                        "MATH1081",
+                        "MATH1231",
+                        "DPST1014",
+                        "MATH1241",
+                        "MATH1251"
+                    ]
+                ],
+                "corequisites": null,
+                "units_required": null,
+                "level_for_units_required": null,
+                "core_year": null,
+                "other": null
+            },
+            "equivalents": null,
+            "builds_into": null
+        },
+        "position": {
+            "x": -302.0332867223512,
+            "y": -289.7712199767989
+        },
+        "style": {
+            "display": "flex",
+            "boxShadow": "0px 0px 3px grey",
+            "textAlign": "center",
+            "alignItems": "center",
+            "fontSize": 8,
+            "color": "white",
+            "background": "#ca6f66",
+            "width": 64,
+            "height": 64,
+            "borderRadius": 32
+        }
+    },
+    {
+        "id": "MATH2859",
+        "type": "custom1",
+        "data": {
+            "course_name": "Probability, Statistics and Information",
+            "course_code": "MATH2859",
+            "course_level": 2,
+            "units": 3,
+            "terms": [
+                "Term 2"
+            ],
+            "desc": "Sample spaces, probability, random variables and probability distributions; examples of discrete and continuous distributions; Central Limit Theorem; statistical inference, confidence intervals and hypothesis testing; bivariate normal distribution, optimal mean square estimation, introduction to the multivariate normal distribution; linear regression and least squares estimation; inference in the linear model; on-line and off-line estimation; statistical quality control; models, applications and statistical algorithms relevant to the fields of computer, electrical, software and telecommunications engineering.",
+            "conditions": {
+                "prerequisites": [
+                    [
+                        "MATH1231",
+                        "MATH1241",
+                        "MATH1251",
+                        "DPST1014"
+                    ],
+                    [
+                        "MATH2089"
+                    ],
+                    [
+                        "MATH2099"
+                    ],
+                    [
+                        "MATH2801"
+                    ],
+                    [
+                        "MATH2901"
+                    ],
+                    [
+                        "BEES2041"
+                    ],
+                    [
+                        "BIOS2041"
+                    ],
+                    [
+                        "CVEN2002"
+                    ]
+                ],
+                "corequisites": null,
+                "units_required": null,
+                "level_for_units_required": null,
+                "core_year": null,
+                "other": null
+            },
+            "equivalents": null,
+            "builds_into": [
+                "GEOS6733"
+            ]
+        },
+        "position": {
+            "x": 90.61705466434569,
+            "y": -424.70639317295763
+        },
+        "style": {
+            "display": "flex",
+            "boxShadow": "0px 0px 3px grey",
+            "textAlign": "center",
+            "alignItems": "center",
+            "fontSize": 8,
+            "color": "white",
+            "background": "#ca6f66",
+            "width": 64,
+            "height": 64,
+            "borderRadius": 32
+        }
+    },
+    {
+        "id": "SENG2011",
+        "type": "custom1",
+        "data": {
+            "course_name": "Workshop on Reasoning about Programs",
+            "course_code": "SENG2011",
+            "course_level": 2,
+            "units": 6,
+            "terms": [
+                "Term 3"
+            ],
+            "desc": "This is a workshop course aimed at developing the skills of writing precise specifications of programs and translating these specifications into correct implementations.",
+            "conditions": {
+                "prerequisites": [
+                    [
+                        "MATH1081"
+                    ]
+                ],
+                "corequisites": null,
+                "units_required": null,
+                "level_for_units_required": null,
+                "core_year": null,
+                "other": null
+            },
+            "equivalents": null,
+            "builds_into": null
+        },
+        "position": {
+            "x": -507.31767676599816,
+            "y": 22.808212548526058
+        },
+        "style": {
+            "display": "flex",
+            "boxShadow": "0px 0px 3px grey",
+            "textAlign": "center",
+            "alignItems": "center",
+            "fontSize": 8,
+            "color": "white",
+            "background": "#caa066",
+            "width": 64,
+            "height": 64,
+            "borderRadius": 32
+        }
+    },
+    {
+        "id": "SENG2021",
+        "type": "custom1",
+        "data": {
+            "course_name": "Requirements and Design Workshop",
+            "course_code": "SENG2021",
+            "course_level": 2,
+            "units": 6,
+            "terms": [
+                "Term 1"
+            ],
+            "desc": "This course is part the series of software engineering workshops designed to teach students to work in teams and apply their knowledge to solve real-life problems.",
+            "conditions": {
+                "prerequisites": [
+                    [
+                        "SENG1031",
+                        "COMP1531"
+                    ]
+                ],
+                "corequisites": null,
+                "units_required": null,
+                "level_for_units_required": null,
+                "core_year": null,
+                "other": null
+            },
+            "equivalents": null,
+            "builds_into": [
+                "SENG3011"
+            ]
+        },
+        "position": {
+            "x": -89.09781983255652,
+            "y": 503.1804358799452
+        },
+        "style": {
+            "display": "flex",
+            "boxShadow": "0px 0px 3px grey",
+            "textAlign": "center",
+            "alignItems": "center",
+            "fontSize": 8,
+            "color": "white",
+            "background": "#caa066",
+            "width": 64,
+            "height": 64,
+            "borderRadius": 32
+        }
+    },
+    {
+        "id": "COMP3141",
+        "type": "custom1",
+        "data": {
+            "course_name": "Software System Design and Implementation",
+            "course_code": "COMP3141",
+            "course_level": 3,
+            "units": 6,
+            "terms": [
+                "Term 2"
+            ],
+            "desc": "This course will present rigorous and formal methods for the design and implementation phases of software system development.",
+            "conditions": {
+                "prerequisites": [
+                    [
+                        "COMP1927",
+                        "COMP2521"
+                    ]
+                ],
+                "corequisites": null,
+                "units_required": null,
+                "level_for_units_required": null,
+                "core_year": null,
+                "other": null
+            },
+            "equivalents": null,
+            "builds_into": null
+        },
+        "position": {
+            "x": 644.7289737937408,
+            "y": 397.0249611888985
+        },
+        "style": {
+            "display": "flex",
+            "boxShadow": "0px 0px 3px grey",
+            "textAlign": "center",
+            "alignItems": "center",
+            "fontSize": 8,
+            "color": "white",
+            "background": "#66ca86",
+            "width": 64,
+            "height": 64,
+            "borderRadius": 32
+        }
+    },
+    {
+        "id": "COMP3311",
+        "type": "custom1",
+        "data": {
+            "course_name": "Database Systems",
+            "course_code": "COMP3311",
+            "course_level": 3,
+            "units": 6,
+            "terms": [
+                "Term 1",
+                "Term 3"
+            ],
+            "desc": "Data models: entity-relationship, relational, object-oriented.",
+            "conditions": {
+                "prerequisites": [
+                    [
+                        "COMP2521",
+                        "COMP1927"
+                    ]
+                ],
+                "corequisites": null,
+                "units_required": null,
+                "level_for_units_required": null,
+                "core_year": null,
+                "other": null
+            },
+            "equivalents": null,
+            "builds_into": [
+                "COMP9313",
+                "COMP9315",
+                "COMP9318",
+                "COMP9321",
+                "COMP9323"
+            ]
+        },
+        "position": {
+            "x": 730.5889562204625,
+            "y": 225.3035186882097
+        },
+        "style": {
+            "display": "flex",
+            "boxShadow": "0px 0px 3px grey",
+            "textAlign": "center",
+            "alignItems": "center",
+            "fontSize": 8,
+            "color": "white",
+            "background": "#66ca86",
+            "width": 64,
+            "height": 64,
+            "borderRadius": 32
+        }
+    },
+    {
+        "id": "COMP3331",
+        "type": "custom1",
+        "data": {
+            "course_name": "Computer Networks and Applications",
+            "course_code": "COMP3331",
+            "course_level": 3,
+            "units": 6,
+            "terms": [
+                "Term 1",
+                "Term 2",
+                "Term 3"
+            ],
+            "desc": "Networking technology overview.",
+            "conditions": {
+                "prerequisites": [
+                    [
+                        "COMP1927",
+                        "COMP2521",
+                        "MTRN3500"
+                    ]
+                ],
+                "corequisites": null,
+                "units_required": null,
+                "level_for_units_required": null,
+                "core_year": null,
+                "other": null
+            },
+            "equivalents": [
+                "COMP9331"
+            ],
+            "builds_into": [
+                "COMP4336",
+                "COMP4337",
+                "COMP6733",
+                "COMP9243",
+                "COMP9332"
+            ]
+        },
+        "position": {
+            "x": 627.6365367233855,
+            "y": 36.08148301155211
+        },
+        "style": {
+            "display": "flex",
+            "boxShadow": "0px 0px 3px grey",
+            "textAlign": "center",
+            "alignItems": "center",
+            "fontSize": 8,
+            "color": "white",
+            "background": "#66ca86",
+            "width": 64,
+            "height": 64,
+            "borderRadius": 32
+        }
+    },
+    {
+        "id": "SENG3011",
+        "type": "custom1",
+        "data": {
+            "course_name": "Software Engineering Workshop 3",
+            "course_code": "SENG3011",
+            "course_level": 3,
+            "units": 6,
+            "terms": [
+                "Term 1"
+            ],
+            "desc": "Following the first three Software Engineering Workshop courses (SENG1031, SENG2011 and SENG2021) this course involves teams (or groups) in the design, implementation and testing of a system, or subsystem, that satisfies a given set of requirements.",
+            "conditions": {
+                "prerequisites": [
+                    [
+                        "SENG2021"
+                    ]
+                ],
+                "corequisites": null,
+                "units_required": null,
+                "level_for_units_required": null,
+                "core_year": null,
+                "other": null
+            },
+            "equivalents": null,
+            "builds_into": [
+                "SENG4920"
+            ]
+        },
+        "position": {
+            "x": -325.0777898365402,
+            "y": 435.13842986943064
+        },
+        "style": {
+            "display": "flex",
+            "boxShadow": "0px 0px 3px grey",
+            "textAlign": "center",
+            "alignItems": "center",
+            "fontSize": 8,
+            "color": "white",
+            "background": "#caa066",
+            "width": 64,
+            "height": 64,
+            "borderRadius": 32
+        }
+    },
+    {
+        "id": "COMP4920",
+        "type": "custom1",
+        "data": {
+            "course_name": "Management and Ethics",
+            "course_code": "COMP4920",
+            "course_level": 4,
+            "units": 6,
+            "terms": [
+                "Term 3"
+            ],
+            "desc": "This course will develop a framework on which management and ethical issues can be developed.",
+            "conditions": {
+                "prerequisites": [
+                    [
+                        "COMP2511",
+                        "COMP2911"
+                    ]
+                ],
+                "corequisites": null,
+                "units_required": 96,
+                "level_for_units_required": null,
+                "core_year": null,
+                "other": null
+            },
+            "equivalents": null,
+            "builds_into": null
+        },
+        "position": {
+            "x": 344.75873130127144,
+            "y": 603.5955933459836
+        },
+        "style": {
+            "display": "flex",
+            "boxShadow": "0px 0px 3px grey",
+            "textAlign": "center",
+            "alignItems": "center",
+            "fontSize": 8,
+            "color": "white",
+            "background": "#66ca86",
+            "width": 64,
+            "height": 64,
+            "borderRadius": 32
+        }
+    },
+    {
+        "id": "COMP4951",
+        "type": "custom1",
+        "data": {
+            "course_name": "Research Thesis A",
+            "course_code": "COMP4951",
+            "course_level": 4,
+            "units": 4,
+            "terms": [
+                "Term 1",
+                "Term 2",
+                "Term 3"
+            ],
+            "desc": "The thesis provides an opportunity for you to bring together engineering principles learned over your previous years of study and apply these principles to innovatively solve problems such as the development of a specific design, process and/or the investigation of a hypothesis.",
+            "conditions": {
+                "prerequisites": null,
+                "corequisites": null,
+                "units_required": 126,
+                "level_for_units_required": null,
+                "core_year": 3,
+                "other": null
+            },
+            "equivalents": null,
+            "builds_into": [
+                "COMP4952",
+                "COMP4962"
+            ]
+        },
+        "position": {
+            "x": 117.11618023896563,
+            "y": 623.7418702221686
+        },
+        "style": {
+            "display": "flex",
+            "boxShadow": "0px 0px 3px grey",
+            "textAlign": "center",
+            "alignItems": "center",
+            "fontSize": 8,
+            "color": "white",
+            "background": "#66ca86",
+            "width": 64,
+            "height": 64,
+            "borderRadius": 32
+        }
+    },
+    {
+        "id": "COMP4952",
+        "type": "custom1",
+        "data": {
+            "course_name": "Research Thesis B",
+            "course_code": "COMP4952",
+            "course_level": 4,
+            "units": 4,
+            "terms": [
+                "Term 1",
+                "Term 2",
+                "Term 3"
+            ],
+            "desc": "The thesis provides an opportunity for you to bring together engineering principles learned over your previous years of study and apply these principles to innovatively solve problems such as the development of a specific design, process and/or the investigation of a hypothesis.",
+            "conditions": {
+                "prerequisites": [
+                    "COMP4951"
+                ],
+                "corequisites": null,
+                "units_required": null,
+                "level_for_units_required": null,
+                "core_year": null,
+                "other": null
+            },
+            "equivalents": null,
+            "builds_into": [
+                "COMP4953"
+            ]
+        },
+        "position": {
+            "x": 242.2996207397792,
+            "y": 753.5415360194457
+        },
+        "style": {
+            "display": "flex",
+            "boxShadow": "0px 0px 3px grey",
+            "textAlign": "center",
+            "alignItems": "center",
+            "fontSize": 8,
+            "color": "white",
+            "background": "#66ca86",
+            "width": 64,
+            "height": 64,
+            "borderRadius": 32
+        }
+    },
+    {
+        "id": "COMP4953",
+        "type": "custom1",
+        "data": {
+            "course_name": "Research Thesis C",
+            "course_code": "COMP4953",
+            "course_level": 4,
+            "units": 4,
+            "terms": [
+                "Term 1",
+                "Term 2",
+                "Term 3"
+            ],
+            "desc": "The thesis provides an opportunity for you to bring together engineering principles learned over your previous years of study and apply these principles to innovatively solve problems such as the development of a specific design, process and/or the investigation of a hypothesis.",
+            "conditions": {
+                "prerequisites": [
+                    "COMP4952"
+                ],
+                "corequisites": null,
+                "units_required": null,
+                "level_for_units_required": null,
+                "core_year": null,
+                "other": null
+            },
+            "equivalents": null,
+            "builds_into": null
+        },
+        "position": {
+            "x": 461.9364507700123,
+            "y": 786.2206098303476
+        },
+        "style": {
+            "display": "flex",
+            "boxShadow": "0px 0px 3px grey",
+            "textAlign": "center",
+            "alignItems": "center",
+            "fontSize": 8,
+            "color": "white",
+            "background": "#66ca86",
+            "width": 64,
+            "height": 64,
+            "borderRadius": 32
+        }
+    },
+    {
+        "id": "eSENGAH-COMP1511",
+        "source": "SENGAH",
+        "target": "COMP1511",
+        "type": "default",
+        "animated": false
+    },
+    {
+        "id": "eSENGAH-ENGG1000",
+        "source": "SENGAH",
+        "target": "ENGG1000",
+        "type": "default",
+        "animated": false
+    },
+    {
+        "id": "eSENGAH-MATH1131",
+        "source": "SENGAH",
+        "target": "MATH1131",
+        "type": "default",
+        "animated": false
+    },
+    {
+        "id": "eSENGAH-MATH1081",
+        "source": "SENGAH",
+        "target": "MATH1081",
+        "type": "default",
+        "animated": false
+    },
+    {
+        "id": "eCOMP1511-COMP1521",
+        "source": "COMP1511",
+        "target": "COMP1521",
+        "type": "default",
+        "animated": false
+    },
+    {
+        "id": "eCOMP1511-COMP1531",
+        "source": "COMP1511",
+        "target": "COMP1531",
+        "type": "default",
+        "animated": false
+    },
+    {
+        "id": "eCOMP1511-COMP2041",
+        "source": "COMP1511",
+        "target": "COMP2041",
+        "type": "default",
+        "animated": false
+    },
+    {
+        "id": "eCOMP1511-COMP2521",
+        "source": "COMP1511",
+        "target": "COMP2521",
+        "type": "default",
+        "animated": false
+    },
+    {
+        "id": "eCOMP1531-COMP2511",
+        "source": "COMP1531",
+        "target": "COMP2511",
+        "type": "default",
+        "animated": false
+    },
+    {
+        "id": "eCOMP1531-SENG2021",
+        "source": "COMP1531",
+        "target": "SENG2021",
+        "type": "default",
+        "animated": false
+    },
+    {
+        "id": "eENGG1000-DESN2000",
+        "source": "ENGG1000",
+        "target": "DESN2000",
+        "type": "default",
+        "animated": false
+    },
+    {
+        "id": "eMATH1081-MATH2400",
+        "source": "MATH1081",
+        "target": "MATH2400",
+        "type": "default",
+        "animated": false
+    },
+    {
+        "id": "eMATH1081-SENG2011",
+        "source": "MATH1081",
+        "target": "SENG2011",
+        "type": "default",
+        "animated": false
+    },
+    {
+        "id": "eMATH1131-MATH1231",
+        "source": "MATH1131",
+        "target": "MATH1231",
+        "type": "default",
+        "animated": false
+    },
+    {
+        "id": "eMATH1131-MATH1241",
+        "source": "MATH1131",
+        "target": "MATH1241",
+        "type": "default",
+        "animated": false
+    },
+    {
+        "id": "eMATH1141-MATH1231",
+        "source": "MATH1141",
+        "target": "MATH1231",
+        "type": "default",
+        "animated": false
+    },
+    {
+        "id": "eMATH1141-MATH1241",
+        "source": "MATH1141",
+        "target": "MATH1241",
+        "type": "default",
+        "animated": false
+    },
+    {
+        "id": "eMATH1231-MATH2400",
+        "source": "MATH1231",
+        "target": "MATH2400",
+        "type": "default",
+        "animated": false
+    },
+    {
+        "id": "eMATH1231-MATH2859",
+        "source": "MATH1231",
+        "target": "MATH2859",
+        "type": "default",
+        "animated": false
+    },
+    {
+        "id": "eMATH1241-MATH2400",
+        "source": "MATH1241",
+        "target": "MATH2400",
+        "type": "default",
+        "animated": false
+    },
+    {
+        "id": "eMATH1241-MATH2859",
+        "source": "MATH1241",
+        "target": "MATH2859",
+        "type": "default",
+        "animated": false
+    },
+    {
+        "id": "eCOMP2511-COMP4920",
+        "source": "COMP2511",
+        "target": "COMP4920",
+        "type": "default",
+        "animated": false
+    },
+    {
+        "id": "eCOMP2521-COMP2511",
+        "source": "COMP2521",
+        "target": "COMP2511",
+        "type": "default",
+        "animated": false
+    },
+    {
+        "id": "eCOMP2521-COMP3141",
+        "source": "COMP2521",
+        "target": "COMP3141",
+        "type": "default",
+        "animated": false
+    },
+    {
+        "id": "eCOMP2521-COMP3311",
+        "source": "COMP2521",
+        "target": "COMP3311",
+        "type": "default",
+        "animated": false
+    },
+    {
+        "id": "eCOMP2521-COMP3331",
+        "source": "COMP2521",
+        "target": "COMP3331",
+        "type": "default",
+        "animated": false
+    },
+    {
+        "id": "eSENG2021-SENG3011",
+        "source": "SENG2021",
+        "target": "SENG3011",
+        "type": "default",
+        "animated": false
+    },
+    {
+        "id": "eCOMP4951-COMP4952",
+        "source": "COMP4951",
+        "target": "COMP4952",
+        "type": "default",
+        "animated": false
+    },
+    {
+        "id": "eCOMP4952-COMP4953",
+        "source": "COMP4952",
+        "target": "COMP4953",
+        "type": "default",
+        "animated": false
+    }
+]

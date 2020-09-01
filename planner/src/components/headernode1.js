@@ -7,10 +7,7 @@ export default memo(({ data }) => {
     <>
       <Handle type="target" position="top" style={{opacity: 0, top: '50%'}} />
       <div>
-            <br></br>
-            <b>{data.course_code}</b>
-            <br></br>
-            {data.course_name}
+            <b>{data.degree_name}</b>
       </div>
       <Handle type="source" position="bottom" style={{opacity: 0, bottom: '50%'}} />
     </>
