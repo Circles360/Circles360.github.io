@@ -1,0 +1,3120 @@
+{
+    "AEROAH": {
+        "name": "Aerospace Engineering",
+        "code": "AEROAH",
+        "units": "168",
+        "faculty": "Faculty of Engineering",
+        "desc": "The Aerospace Engineering stream covers the analysis, design and operation of aircraft and spacecraft. Graduates work mainly on the design and manufacture of flight vehicles, their operation with major or satellite airlines and research for civil and military aerospace organisations. Owing to the international nature of aerospace industry, the topics studied cover a similar area and, in general, to the same depth of understanding as professional training programs in aerospace in other industrial countries. The aerospace industry is one of Australia's major exporters of high value added manufactured goods.",
+        "structure": {
+            "Level 1 Core Courses": {
+                "name": "Level 1 Core Courses",
+                "requirements": "Students must take 42 UOC of the following courses.",
+                "courses": [
+                    "ELEC1111",
+                    "ENGG1000",
+                    "ENGG1300",
+                    [
+                        "MATH1131",
+                        "MATH1141"
+                    ],
+                    [
+                        "MATH1231",
+                        "MATH1241"
+                    ],
+                    [
+                        "PHYS1121",
+                        "PHYS1131"
+                    ],
+                    [
+                        "COMP1511",
+                        "COMP1911",
+                        "ENGG1811"
+                    ]
+                ]
+            },
+            "Level 2 Core Courses": {
+                "name": "Level 2 Core Courses",
+                "requirements": "Students must take 48 UOC of the following courses.",
+                "courses": [
+                    "DESN2000",
+                    "ENGG2400",
+                    "ENGG2500",
+                    "MATH2019",
+                    "MATH2089",
+                    "MMAN2130",
+                    "MMAN2300",
+                    "MMAN2700"
+                ]
+            },
+            "Level 3 Core Courses": {
+                "name": "Level 3 Core Courses",
+                "requirements": "Students must take 36 UOC of the following courses.",
+                "courses": [
+                    "AERO3110",
+                    "AERO3410",
+                    "AERO3630",
+                    "AERO3660",
+                    "MMAN3000",
+                    "MMAN3200"
+                ]
+            },
+            "Level 4 Core Courses": {
+                "name": "Level 4 Core Courses",
+                "requirements": "Students must take 12 UOC of the following courses.",
+                "courses": [
+                    "AERO4110",
+                    "AERO4620"
+                ]
+            },
+            "THESIS COURSES": {
+                "name": "THESIS COURSES",
+                "requirements": "Students must take 12 UOC of thesis courses.NOTE: For further details about the practice or research thesis courses, please check the Thesis information page on the school website.",
+                "courses": [
+                    "MMAN4010",
+                    "MMAN4020",
+                    "MMAN4951",
+                    "MMAN4952",
+                    "MMAN4953"
+                ]
+            },
+            "RECOMMENDED DISCIPLINARY ELECTIVES": {
+                "name": "RECOMMENDED DISCIPLINARY ELECTIVES",
+                "requirements": "Students must take at least 6 UOC of the following courses.NOTE:All disciplinary electives should be chosen from the \"recommended elective list\" and/or \"disciplinary elective list\".At least 6 UOC of disciplinary electives must be chosen from the \"recommended elective list\".",
+                "courses": [
+                    "AERO9500",
+                    "AERO9610",
+                    "AERO9660",
+                    "MECH4305",
+                    "MECH4320",
+                    "MECH4620",
+                    "MECH4900",
+                    "MECH9420",
+                    "MMAN4200",
+                    "MMAN4400",
+                    "MMAN4410"
+                ]
+            },
+            "Disciplinary Electives": {
+                "name": "Disciplinary Electives",
+                "requirements": "Remaining disciplinary electives can be chosen from the following list.NOTE:- At most 2 disciplinary electives (12 UOC) without a AERO, MECH, MANF or MMAN prefix can be taken.- At most 1 disciplinary elective (6 UOC) may be substituted with another course in the School if the substituting course is NOT a core course for the stream and is at Level 3 or higher.- Postgraduate courses or/and courses offered outside of the School may require manual enrolment.",
+                "courses": [
+                    "COMP3141",
+                    "COMP3331",
+                    "ELEC4633",
+                    "ENGG3060",
+                    "MANF4100",
+                    "MANF4430",
+                    "MANF4611",
+                    "MANF6860",
+                    "MANF9400",
+                    "MANF9420",
+                    "MANF9472",
+                    "MECH4100",
+                    "MECH4880",
+                    "MECH9325",
+                    "MECH9650",
+                    "MECH9660",
+                    "MECH9720",
+                    "MECH9761",
+                    "MTRN4030",
+                    "MTRN9400",
+                    "SOLA5052",
+                    "SOLA5053",
+                    "SOLA5056",
+                    "SOLA5057"
+                ]
+            },
+            "Level 1 Prescribed Electives": {
+                "name": "Level 1 Prescribed Electives",
+                "requirements": "Students can take up to a maximum of 12 UOC of the following courses.NOTE:- Students take ENGG1300 and ELEC1111 as Level 1 Core and are not required to take further Level 1 electives and may choose to substitute L1 electives for higher level electives later in the program.- ENGG1300 excludes CVEN1300, MINE1300, and MMAN1300.- CHEM1031 and CHEM1041 will only be available to students enrolled in a program which has a Chemistry major.- Students without any prior Chemistry should choose CHEM1001. Other students with HSC Chemistry who wish to study Chemistry in more depth should choose CHEM1011.",
+                "courses": [
+                    "BABS1201",
+                    "BIOM1010",
+                    "BIOS1301",
+                    "CEIC1000",
+                    "CHEM1011",
+                    "CHEM1021",
+                    "CHEM1031",
+                    "CHEM1041",
+                    "CHEM1811",
+                    "CHEM1821",
+                    "COMP1521",
+                    "COMP1531",
+                    "CVEN1701",
+                    "ELEC1111",
+                    "ENGG1100",
+                    "ENGG1200",
+                    "ENGG1300",
+                    "ENGG1400",
+                    "GEOS1111",
+                    "GMAT1110",
+                    "MATH1081",
+                    "MATS1101",
+                    "MATS1110",
+                    "MINE1010",
+                    "PHYS1231",
+                    "PSYC1001",
+                    "SOLA1070"
+                ]
+            }
+        }
+    },
+    "BINFAH": {
+        "name": "Bioinformatics Engineering",
+        "code": "BINFAH",
+        "units": "168",
+        "faculty": "Faculty of Engineering",
+        "desc": "Bioinformatics Engineering is studied as a major stream in the BE (Hons). ",
+        "structure": {
+            "Level 1 Core Courses": {
+                "name": "Level 1 Core Courses",
+                "requirements": "Students must take 60 UOC of the following courses.",
+                "courses": [
+                    "BABS1201",
+                    "COMP1511",
+                    "COMP1521",
+                    "COMP1531",
+                    "ENGG1000",
+                    "MATH1081",
+                    [
+                        "CHEM1011",
+                        "CHEM1031"
+                    ],
+                    [
+                        "PHYS1111",
+                        "PHYS1121",
+                        "PHYS1131"
+                    ],
+                    [
+                        "MATH1131",
+                        "MATH1141"
+                    ],
+                    [
+                        "MATH1231",
+                        "MATH1241"
+                    ]
+                ]
+            },
+            "Level 2 Core Courses": {
+                "name": "Level 2 Core Courses",
+                "requirements": "Students must take 48 UOC of the following courses.",
+                "courses": [
+                    "BINF2010",
+                    "BIOC2201",
+                    "COMP2041",
+                    "COMP2511",
+                    "COMP2521",
+                    "DESN2000",
+                    [
+                        "MATH2801",
+                        "MATH2901"
+                    ],
+                    [
+                        "BABS2202",
+                        "BABS2204",
+                        "BABS2264",
+                        "BIOC2101",
+                        "MICR2011"
+                    ]
+                ]
+            },
+            "Level 3 Core Courses": {
+                "name": "Level 3 Core Courses",
+                "requirements": "Students must take 24 UOC of the following courses.",
+                "courses": [
+                    "BABS3121",
+                    "BINF3010",
+                    "COMP3121",
+                    "COMP3311"
+                ]
+            },
+            "Level 4 Core Courses": {
+                "name": "Level 4 Core Courses",
+                "requirements": "Students must take 24 UOC of the following courses.",
+                "courses": [
+                    "BINF6112",
+                    "COMP4920",
+                    "COMP4951",
+                    "COMP4952",
+                    "COMP4953"
+                ]
+            },
+            "Discipline Electives": {
+                "name": "Discipline Electives",
+                "requirements": "Students must take 12 UOC of the following:Level 3 or higher COMP courses.Level 3 BABS, BIOC or MICR courses",
+                "courses": [
+                    "BABS3",
+                    "BIOC3",
+                    "COMP3",
+                    "COMP4",
+                    "COMP6",
+                    "COMP9",
+                    "ENGG3060",
+                    "MICR3"
+                ]
+            }
+        }
+    },
+    "CEICAH": {
+        "name": "Chemical Engineering",
+        "code": "CEICAH",
+        "units": "168",
+        "faculty": "Faculty of Engineering",
+        "desc": "Chemical Engineering involves researching, developing and improving properties of products we use every day through the selection of raw materials, the design of chemical processes, and improving the conditions for production. It's about taking projects from inception as a research proposal, through product development and on to commercialisation and manufacture. You'll learn how to apply your knowledge in chemical engineering and chemistry to optimise complex chemical processes in environmental management, general industry and services like water delivery. You'll master the entire process, extrapolating small scale, laboratory chemistry into large, industrial scale production. To get work ready, you'll apply these skills through 60 days of approved industry training.",
+        "structure": {
+            "Level 1 Core Courses": {
+                "name": "Level 1 Core Courses",
+                "requirements": "Students must take 42 UOC of the following courses.",
+                "courses": [
+                    "CHEM1811",
+                    "CHEM1821",
+                    "ENGG1000",
+                    "ENGG1811",
+                    [
+                        "MATH1131",
+                        "MATH1141"
+                    ],
+                    [
+                        "MATH1231",
+                        "MATH1241"
+                    ],
+                    [
+                        "PHYS1121",
+                        "PHYS1131"
+                    ]
+                ]
+            },
+            "Level 2 Core Courses": {
+                "name": "Level 2 Core Courses",
+                "requirements": "Students must take 48 UOC of the following courses.",
+                "courses": [
+                    "CEIC2000",
+                    "CEIC2001",
+                    "CEIC2002",
+                    "CEIC2005",
+                    "CEIC2007",
+                    "DESN2000",
+                    "MATH2089",
+                    [
+                        "MATH2018",
+                        "MATH2019"
+                    ]
+                ]
+            },
+            "Level 3 Core Courses": {
+                "name": "Level 3 Core Courses",
+                "requirements": "Students must take 36 UOC of the following courses.",
+                "courses": [
+                    "CEIC3000",
+                    "CEIC3001",
+                    "CEIC3004",
+                    "CEIC3005",
+                    "CEIC3006",
+                    "CEIC3007"
+                ]
+            },
+            "Level 4 Core Courses": {
+                "name": "Level 4 Core Courses",
+                "requirements": "Students must take 30 UOC of the following courses.",
+                "courses": [
+                    "CEIC4000",
+                    "CEIC4001",
+                    "CEIC4951",
+                    "CEIC4952",
+                    "CEIC4953"
+                ]
+            },
+            "Discipline (Depth) Electives": {
+                "name": "Discipline (Depth) Electives",
+                "requirements": "Students must take at least 6 UOC, up to a maximum of 12 UOC of the following courses.",
+                "courses": [
+                    "CEIC6004",
+                    "CEIC6711",
+                    "CEIC6789",
+                    "CEIC8102",
+                    "CHEN6701",
+                    "CHEN6703",
+                    "CHEN6706"
+                ]
+            },
+            "Level 1 Prescribed Electives": {
+                "name": "Level 1 Prescribed Electives",
+                "requirements": "Students must take at least 6 UOC of the following courses.",
+                "courses": [
+                    "BABS1201",
+                    "BIOM1010",
+                    "BIOS1301",
+                    "CEIC1000",
+                    "COMP1521",
+                    "COMP1531",
+                    "CVEN1701",
+                    "ELEC1111",
+                    "ENGG1100",
+                    "ENGG1200",
+                    "ENGG1300",
+                    "ENGG1400",
+                    "GEOS1111",
+                    "GMAT1110",
+                    "MATH1081",
+                    "MATS1101",
+                    "MATS1110",
+                    "MINE1010",
+                    "PHYS1231",
+                    "PSYC1001",
+                    "SOLA1070"
+                ]
+            },
+            "Breadth Electives": {
+                "name": "Breadth Electives",
+                "requirements": "Students can take up to a maximum of 12 UOC of the following courses.",
+                "courses": [
+                    "CEIC6005",
+                    "CEIC6712",
+                    "CEIC8204",
+                    "CEIC8330",
+                    "CEIC8341",
+                    "CHEM2041",
+                    "ELEC4445",
+                    "ENGG3001",
+                    "FOOD3010",
+                    "FOOD8450",
+                    "GSOE9111",
+                    "POLY3000"
+                ]
+            },
+            "Practice Electives": {
+                "name": "Practice Electives",
+                "requirements": "Students can take up to a maximum of 6 UOC of the following courses.",
+                "courses": [
+                    "CEIC4954",
+                    "ENGG3060",
+                    "ENGG4060",
+                    "ENGG4102"
+                ]
+            }
+        }
+    },
+    "CEICDH": {
+        "name": "Chemical Product Engineering",
+        "code": "CEICDH",
+        "units": "168",
+        "faculty": "Faculty of Engineering",
+        "desc": "Chemical Product Engineering involves researching, developing and improving the properties of the products that we use every day through the selection and design of the materials that are used. Product engineers work on the fluids that you use in your everyday life, including chemicals (cosmetics, pharmaceuticals, shampoos, paints, glues), foods, and drinks. As a product engineer, you will learn to take consumer needs and turn them into technical requirements, finding the right combinations of chemicals to deliver those properties and then developing the product and strategies for commercialisation and manufacture. You will learn how to apply your knowledge of engineering and chemistry to design complex chemical products for the pharmaceutical, consumer products and food industries. You'll master the entire development process, testing out ideas for products and extrapolating small scale, laboratory chemistry into large, industrial scale production. In the final year Product Design Project, you will work with industry partners to develop a new consumer product up to the point where it could be patented and commercialised. To get work ready, you'll apply these skills through 60 days of approved industry training.\n\nThe courses listed below have to be completed to finish the degree, but the order in which they are taken is important and you need to follow advice on this. Many courses are offered only once per year and others have pre-requisites or exclusions which govern the order in which they can be taken. Both of these things can have a big impact on enrolment planning if poor choices of course combinations are made. You are strongly encouraged to consult the School website and follow the recommended course sequence linked here.\n\nThe timing of the general education courses and elective courses may be modified to optimise your choice of courses. It is your responsibility to plan your enrolment appropriately. Assistance is available from the School of Chemical Engineering Student Office, should you require it.",
+        "structure": {
+            "Level 1 Core Courses": {
+                "name": "Level 1 Core Courses",
+                "requirements": "Students must take 42 UOC of the following courses.",
+                "courses": [
+                    "CHEM1811",
+                    "CHEM1821",
+                    "ENGG1000",
+                    [
+                        "MATH1131",
+                        "MATH1141"
+                    ],
+                    [
+                        "MATH1231",
+                        "MATH1241"
+                    ],
+                    [
+                        "PHYS1121",
+                        "PHYS1131"
+                    ],
+                    [
+                        "COMP1511",
+                        "COMP1911",
+                        "ENGG1811"
+                    ]
+                ]
+            },
+            "Level 2 Core Courses": {
+                "name": "Level 2 Core Courses",
+                "requirements": "Students must take 60 UOC of the following courses.",
+                "courses": [
+                    "CEIC2000",
+                    "CEIC2001",
+                    "CEIC2002",
+                    "CEIC2005",
+                    "CHEM2021",
+                    "CHEM2031",
+                    "CHEM2041",
+                    "DESN2000",
+                    "MATH2089",
+                    [
+                        "MATH2018",
+                        "MATH2019"
+                    ]
+                ]
+            },
+            "Level 3 Core Courses": {
+                "name": "Level 3 Core Courses",
+                "requirements": "Students must take 18 UOC of the following courses.",
+                "courses": [
+                    "CEIC3001",
+                    "CHEM3021",
+                    "POLY3000"
+                ]
+            },
+            "Level 4 Core Courses": {
+                "name": "Level 4 Core Courses",
+                "requirements": "Students must take 30 UOC of the following courses.",
+                "courses": [
+                    "CEIC4000",
+                    "CEIC4007",
+                    "CEIC4008",
+                    "CEIC6711",
+                    [
+                        "CEIC8204",
+                        "ELEC4445"
+                    ]
+                ]
+            },
+            "Discipline Electives": {
+                "name": "Discipline Electives",
+                "requirements": "Students must take at least 12 UOC of the following courses.",
+                "courses": [
+                    "CEIC4951",
+                    "CEIC4952",
+                    "CEIC4953",
+                    "CEIC4954",
+                    "CEIC6005",
+                    "CEIC6712",
+                    "CEIC6789",
+                    "CEIC8105",
+                    "CEIC8330",
+                    "CEIC8341",
+                    "CHEN6701",
+                    "CHEN6703",
+                    "ENGG3001",
+                    "ENGG3060",
+                    "ENGG4060",
+                    "ENGG4102",
+                    "FOOD8450",
+                    "GSOE9111"
+                ]
+            },
+            "Level 1 Electives": {
+                "name": "Level 1 Electives",
+                "requirements": "Students must take at least 6 UOC of the following courses.",
+                "courses": [
+                    "BABS1201",
+                    "BIOM1010",
+                    "BIOS1301",
+                    "CEIC1000",
+                    "COMP1521",
+                    "COMP1531",
+                    "CVEN1701",
+                    "ELEC1111",
+                    "ENGG1100",
+                    "ENGG1200",
+                    "ENGG1300",
+                    "ENGG1400",
+                    "GEOS1111",
+                    "GMAT1110",
+                    "MATH1081",
+                    "MATS1101",
+                    "MATS1110",
+                    "MINE1010",
+                    "PHYS1231",
+                    "PSYC1001",
+                    "SOLA1070"
+                ]
+            }
+        }
+    },
+    "CVENAH": {
+        "name": "Civil Engineering",
+        "code": "CVENAH",
+        "units": "168",
+        "faculty": "Faculty of Engineering",
+        "desc": "\n              \nCivil Engineering is responsible for projects that enhance the overall quality of life. Civil engineers design, construct, manage, operate and maintain the infrastructure that supports modern society including buildings, bridges, roads and highways, tunnels, airfields, dams, ports and harbours, railways, new mines, water supply and sewerage schemes, irrigation systems and flood mitigation works. The profession is very broad and affords opportunities for involvement in many specialist activities.\n\nIn the final year of the Civil Engineering program students may choose electives in structural engineering, geotechnical engineering, transport engineering, water engineering or engineering construction and management. This program can be taken on a four-year full-time basis, or on a part-time basis subject to the approval of the Head of School. Intending part-time students are advised that all courses are offered only in the daytime.\n\nA detailed program structure can be found on the School website, which includes suggested scheduling of courses by semester. While some courses are given twice a year, many courses are given only once a year. In addition, courses may have prerequisites and exclusions. Thus students should plan their enrolments appropriately.\n                                  ",
+        "structure": {
+            "Level 1 Core Courses": {
+                "name": "Level 1 Core Courses",
+                "requirements": "Students must take 36 UOC of the following courses.",
+                "courses": [
+                    "ENGG1000",
+                    "ENGG1300",
+                    "ENGG1811",
+                    [
+                        "MATH1131",
+                        "MATH1141"
+                    ],
+                    [
+                        "MATH1231",
+                        "MATH1241"
+                    ],
+                    [
+                        "PHYS1121",
+                        "PHYS1131"
+                    ]
+                ]
+            },
+            "Level 2 Core Courses": {
+                "name": "Level 2 Core Courses",
+                "requirements": "Students must take 48 UOC of the following courses.",
+                "courses": [
+                    "CVEN2002",
+                    "CVEN2101",
+                    "CVEN2303",
+                    "CVEN2401",
+                    "DESN2000",
+                    "ENGG2400",
+                    "ENGG2500",
+                    [
+                        "MATH2018",
+                        "MATH2019"
+                    ]
+                ]
+            },
+            "Level 3 Core Courses": {
+                "name": "Level 3 Core Courses",
+                "requirements": "Students must take 42 UOC of the following courses.",
+                "courses": [
+                    "CVEN3101",
+                    "CVEN3202",
+                    "CVEN3203",
+                    "CVEN3303",
+                    "CVEN3304",
+                    "CVEN3501",
+                    "CVEN3502"
+                ]
+            },
+            "Thesis Courses": {
+                "name": "Thesis Courses",
+                "requirements": "Students must take at least 12 UOC, up to a maximum of 24 UOC of the following courses. ",
+                "courses": [
+                    "CVEN4032",
+                    "CVEN4033",
+                    "CVEN4050",
+                    "CVEN4051",
+                    "CVEN4951",
+                    "CVEN4952",
+                    "CVEN4953"
+                ]
+            },
+            "Discipline Electives": {
+                "name": "Discipline Electives",
+                "requirements": "Students must take at least 6 UOC, up to a maximum of 18 UOC of the following courses. ",
+                "courses": [
+                    "BENV1012",
+                    "CODE2170",
+                    "CVEN4002",
+                    "CVEN4003",
+                    "CVEN4101",
+                    "CVEN4102",
+                    "CVEN4103",
+                    "CVEN4104",
+                    "CVEN4201",
+                    "CVEN4202",
+                    "CVEN4204",
+                    "CVEN4300",
+                    "CVEN4301",
+                    "CVEN4308",
+                    "CVEN4309",
+                    "CVEN4310",
+                    "CVEN4402",
+                    "CVEN4404",
+                    "CVEN4405",
+                    "CVEN4503",
+                    "CVEN4504",
+                    "CVEN4701",
+                    "CVEN4703",
+                    "CVEN4705",
+                    "CVEN4800",
+                    "CVEN9405",
+                    "CVEN9415",
+                    "CVEN9612",
+                    "CVEN9620",
+                    "CVEN9640",
+                    "CVEN9809",
+                    "CVEN9818",
+                    "CVEN9820",
+                    "CVEN9822",
+                    "CVEN9824",
+                    "CVEN9826",
+                    "CVEN9881",
+                    "CVEN9884",
+                    "ENGG3001",
+                    "ENGG4060",
+                    "ENGG4102",
+                    "GMAT3220",
+                    "GSOE9740"
+                ]
+            },
+            "Level 1 Prescribed Electives": {
+                "name": "Level 1 Prescribed Electives",
+                "requirements": "Students must take at least 12 UOC of the following courses. ",
+                "courses": [
+                    "BABS1201",
+                    "BIOM1010",
+                    "BIOS1301",
+                    "CEIC1000",
+                    "CHEM1011",
+                    "CHEM1021",
+                    "CHEM1031",
+                    "CHEM1041",
+                    "CHEM1811",
+                    "CHEM1821",
+                    "COMP1521",
+                    "COMP1531",
+                    "CVEN1701",
+                    "ELEC1111",
+                    "ENGG1100",
+                    "ENGG1200",
+                    "ENGG1300",
+                    "ENGG1400",
+                    "GEOS1111",
+                    "GMAT1110",
+                    "MATH1081",
+                    "MATS1101",
+                    "MATS1110",
+                    "MINE1010",
+                    "PHYS1231",
+                    "PSYC1001",
+                    "SOLA1070"
+                ]
+            }
+        }
+    },
+    "BINFBH": {
+        "name": "Computational Biology",
+        "code": "BINFBH",
+        "units": "48",
+        "faculty": "Faculty of Engineering",
+        "desc": "\n              \nComputational Biology is the science of using biological data to develop algorithms and relations among various biological systems. The field draws on a range of computing disciplines including algorithms, databases, machine learning and big data for the purpose of developing methods to better analyse data from biology, and especially genomics. Honours in Computational Biology allows graduates from the BSc (Bioinformatics) to deepen their study of computer science and computational methods and apply these to a bioinformatics research project in the School of Computer Science and Engineering.\n                                  ",
+        "structure": {
+            "Coursework": {
+                "name": "Coursework",
+                "requirements": "Students must take at least 30 UOC of the following courses.",
+                "courses": [
+                    "BINF4",
+                    "COMP4",
+                    "COMP6",
+                    "COMP9"
+                ]
+            },
+            "Thesis": {
+                "name": "Thesis",
+                "requirements": "Students must take 18 UOC of the following courses.",
+                "courses": [
+                    "COMP4961",
+                    "COMP4962",
+                    "COMP4963"
+                ]
+            }
+        }
+    },
+    "COMPBH": {
+        "name": "Computer Engineering",
+        "code": "COMPBH",
+        "units": "168",
+        "faculty": "Faculty of Engineering",
+        "desc": "Computer Engineering encompasses the structured and integrated design of the hardware and software components of computerised systems. Not only do personal computer systems, such as desktops and laptops fall into this category, but so do embedded systems for gaming, cars and PDAs, supercomputers used in climate modelling and gene analysis, and prosthetic systems such as ocular implants intended to improve quality of life. The challenge for the engineer is to design these systems with maximal impact, and to trade off competing factors using engineering, scientific and mathematical principles. This stream teaches the principles and techniques necessary to engineer high quality systems.",
+        "structure": {
+            "Level 1 Core Courses": {
+                "name": "Level 1 Core Courses",
+                "requirements": "Students must take 54 UOC of the following courses.",
+                "courses": [
+                    "COMP1511",
+                    "COMP1521",
+                    "COMP1531",
+                    "ELEC1111",
+                    "ENGG1000",
+                    [
+                        "MATH1131",
+                        "MATH1141"
+                    ],
+                    [
+                        "MATH1231",
+                        "MATH1241"
+                    ],
+                    [
+                        "PHYS1121",
+                        "PHYS1131"
+                    ],
+                    [
+                        "PHYS1221",
+                        "PHYS1231"
+                    ]
+                ]
+            },
+            "Level 2 Core Courses": {
+                "name": "Level 2 Core Courses",
+                "requirements": "Students must take 42 UOC of the following courses.",
+                "courses": [
+                    "COMP2511",
+                    "COMP2521",
+                    "DESN2000",
+                    "ELEC2133",
+                    "ELEC2134",
+                    "MATH2069",
+                    "MATH2099"
+                ]
+            },
+            "Level 3 Core Courses": {
+                "name": "Level 3 Core Courses",
+                "requirements": "Students must take 24 UOC of the following courses.",
+                "courses": [
+                    "COMP3211",
+                    "COMP3222",
+                    "COMP3231",
+                    "COMP3601"
+                ]
+            },
+            "Level 4 Core Courses": {
+                "name": "Level 4 Core Courses",
+                "requirements": "Students must take 24 UOC of the following courses.",
+                "courses": [
+                    "COMP4601",
+                    "COMP4920",
+                    "COMP4951",
+                    "COMP4952",
+                    "COMP4953"
+                ]
+            },
+            "Discipline Electives": {
+                "name": "Discipline Electives",
+                "requirements": "Students must take at least 24 UOC of the following courses.",
+                "courses": [
+                    "COMP3",
+                    "COMP4",
+                    "COMP6",
+                    "COMP9",
+                    "ENGG3060"
+                ]
+            },
+            "Level 4 UOC Minimum": {
+                "name": "Level 4 UOC Minimum",
+                "requirements": "Students must complete a minimum of 36 UOC of Level 4 courses including core courses and at least 12 UOC of Level 4 Discipline Electives, including:",
+                "courses": [
+                    "COMP4601",
+                    "COMP4920",
+                    "COMP4951",
+                    "COMP4952",
+                    "COMP4953",
+                    "COMP4"
+                ]
+            }
+        }
+    },
+    "COMPAH": {
+        "name": "Computer Science",
+        "code": "COMPAH",
+        "units": "48",
+        "faculty": "Faculty of Engineering",
+        "desc": "\n              \nThe Computer Science Honours program is a one year full-time or two year part-time program. It is undertaken after completing the requirements for the Bachelor of Science in Computer Science with a WAM of 65.\n\nApplicants from other universities who have majored in computer science and obtained the equivalent of a 65 average are also eligible.\n                                  ",
+        "structure": {
+            "Thesis": {
+                "name": "Thesis",
+                "requirements": "Students must take 18 UOC of the following courses.",
+                "courses": [
+                    "COMP4961",
+                    "COMP4962",
+                    "COMP4963"
+                ]
+            },
+            "Coursework": {
+                "name": "Coursework",
+                "requirements": "Students must take at least 30 UOC of the following courses.",
+                "courses": [
+                    "COMP4",
+                    "COMP6",
+                    "COMP9"
+                ]
+            }
+        }
+    },
+    "ELECAH": {
+        "name": "Electrical Engineering",
+        "code": "ELECAH",
+        "units": "168",
+        "faculty": "Faculty of Engineering",
+        "desc": "\n              \nThe School of Electrical Engineering & Telecommunications offers a wide range of undergraduate and postgraduate study in all areas of the professions of Electrical Engineering and Telecommunications. The School's streams within the undergraduate Bachelor of Engineering (Hons) program in Electrical and Telecommunications Engineering continue to act as models for educating engineers in tomorrow's technology. Options within Electrical Engineering include: Telecommunications, Photonics, Systems and Control, Energy Systems, Microelectronics, and Signal Processing. The BE degree programs in Electrical Engineering are accredited by the Engineers Australia as meeting the requirements for admission to graduate membership.\n\nThe undergraduate curricula are being progressively revised to provide flexible training to suit the future needs of students. Individual student needs can be further met by substitution provisions within the programs.\n                                  ",
+        "structure": {
+            "Level 1 Core Courses": {
+                "name": "Level 1 Core Courses",
+                "requirements": "Students must take 48 UOC of the following courses.",
+                "courses": [
+                    "COMP1521",
+                    "ELEC1111",
+                    "ENGG1000",
+                    "PHYS1231",
+                    [
+                        "MATH1131",
+                        "MATH1141"
+                    ],
+                    [
+                        "MATH1231",
+                        "MATH1241"
+                    ],
+                    [
+                        "PHYS1121",
+                        "PHYS1131"
+                    ],
+                    [
+                        "COMP1511",
+                        "COMP1911"
+                    ]
+                ]
+            },
+            "Level 2 Core Courses": {
+                "name": "Level 2 Core Courses",
+                "requirements": "Students must take 36 UOC of the following courses.",
+                "courses": [
+                    "DESN2000",
+                    "ELEC2133",
+                    "ELEC2134",
+                    "ELEC2141",
+                    "MATH2069",
+                    "MATH2099"
+                ]
+            },
+            "Level 3 Core Courses": {
+                "name": "Level 3 Core Courses",
+                "requirements": "Students must take 42 UOC of the following courses.",
+                "courses": [
+                    "ELEC3104",
+                    "ELEC3105",
+                    "ELEC3106",
+                    "ELEC3114",
+                    "ELEC3115",
+                    "ELEC3117",
+                    "TELE3113"
+                ]
+            },
+            "Level 4 Core Courses": {
+                "name": "Level 4 Core Courses",
+                "requirements": "Students must take 24 UOC of the following courses.",
+                "courses": [
+                    "ELEC4122",
+                    "ELEC4123",
+                    "ELEC4951",
+                    "ELEC4952",
+                    "ELEC4953"
+                ]
+            },
+            "Level 1 Prescribed Electives": {
+                "name": "Level 1 Prescribed Electives",
+                "requirements": "Students can take up to a maximum of 12 UOC of the following courses.Note:- Students choosing the recommended ELEC1111 and COMP1521 Year 1 electives will gain two Level 3/Level 4 Electives later in the program.- CHEM1031 and CHEM1041 will only be available to students enrolled in a program which has a Chemistry major.",
+                "courses": [
+                    "BABS1201",
+                    "BIOM1010",
+                    "BIOS1301",
+                    "CEIC1000",
+                    "CHEM1011",
+                    "CHEM1021",
+                    "CHEM1031",
+                    "CHEM1041",
+                    "CHEM1811",
+                    "CHEM1821",
+                    "COMP1521",
+                    "COMP1531",
+                    "CVEN1701",
+                    "ELEC1111",
+                    "ENGG1100",
+                    "ENGG1200",
+                    "ENGG1300",
+                    "ENGG1400",
+                    "GEOS1111",
+                    "GMAT1110",
+                    "MATH1081",
+                    "MATS1101",
+                    "MATS1110",
+                    "MINE1010",
+                    "PHYS1231",
+                    "PSYC1001",
+                    "SOLA1070"
+                ]
+            },
+            "Level 3 Electives": {
+                "name": "Level 3 Electives",
+                "requirements": "Students can take up to a maximum of 6 UOC of the following courses.",
+                "courses": [
+                    "COMP2041",
+                    "COMP3211",
+                    "COMP3231",
+                    "ELEC2146",
+                    "ELEC3111",
+                    "ELEC3145",
+                    "ELEC3705",
+                    "ENGG3001",
+                    "ENGG3060",
+                    "ENGG4060",
+                    "ENGG4102",
+                    "MATH3101",
+                    "MATH3121",
+                    "MATH3161",
+                    "MATH3201",
+                    "MATH3261",
+                    "MATH3411",
+                    "TELE3118",
+                    "TELE3119"
+                ]
+            },
+            "Level 4 Electives": {
+                "name": "Level 4 Electives",
+                "requirements": "Students must take at least 12 UOC of the following courses. Students who have chosen ELEC1111 and COMP1521 as their Year 1 electives may take up to 12 UOC more of the courses below",
+                "courses": [
+                    "ELEC4445",
+                    "ELEC4601",
+                    "ELEC4602",
+                    "ELEC4603",
+                    "ELEC4604",
+                    "ELEC4605",
+                    "ELEC4611",
+                    "ELEC4612",
+                    "ELEC4613",
+                    "ELEC4614",
+                    "ELEC4617",
+                    "ELEC4621",
+                    "ELEC4622",
+                    "ELEC4623",
+                    "ELEC4631",
+                    "ELEC4632",
+                    "ELEC4633",
+                    "PHTN4661",
+                    "PHTN4662",
+                    "TELE4642",
+                    "TELE4651",
+                    "TELE4652",
+                    "TELE4653"
+                ]
+            }
+        }
+    },
+    "CVENBH": {
+        "name": "Environmental Engineering",
+        "code": "CVENBH",
+        "units": "168",
+        "faculty": "Faculty of Engineering",
+        "desc": "\n              \nThe School of Civil and Environmental Engineering offers a four year honours degree stream leading to a Bachelor of Engineering (Hons) in Environmental Engineering professionally accredited by Engineers Australia. Flexibility and choice are maintained throughout the entire structure by providing many elective courses.\n\nEnvironmental engineers are concerned with the environmental impact of engineering activities. They apply their broad knowledge of engineering and environmental processes in identifying environmental problems and in developing effective solutions to them. They also coordinate the activities of specialist groups such as biologists, ecologists and geologists within major projects. The discipline of environmental engineering embraces parts of civil engineering, with emphasis on management, systems design, water, geotechnical and transport engineering, together with aspects of chemical engineering, applied and biological sciences and environmental studies.\n\nThis stream can be taken on a four-year full-time basis or on a part-time basis subject to the approval of the Head of School. Intending part-time students are advised that all courses are offered only in the daytime.\n\nA detailed stream structure can be found on the School website, which includes suggested scheduling of courses by semester. While some courses are given twice a year, many courses are given only once a year. In addition, courses may have prerequisites and exclusions. Thus students should plan their enrolments appropriately.\n                                  ",
+        "structure": {
+            "Level 1 Core Courses": {
+                "name": "Level 1 Core Courses",
+                "requirements": "Students must take 42 UOC of the following courses.",
+                "courses": [
+                    "BIOS1301",
+                    "ENGG1000",
+                    "ENGG1811",
+                    [
+                        "MATH1131",
+                        "MATH1141"
+                    ],
+                    [
+                        "MATH1231",
+                        "MATH1241"
+                    ],
+                    [
+                        "PHYS1121",
+                        "PHYS1131"
+                    ],
+                    [
+                        "CHEM1011",
+                        "CHEM1811"
+                    ]
+                ]
+            },
+            "Level 2 Core Courses": {
+                "name": "Level 2 Core Courses",
+                "requirements": "Students must take 42 UOC of the following courses.",
+                "courses": [
+                    "CEIC2009",
+                    "CVEN2002",
+                    "CVEN2402",
+                    "CVEN2701",
+                    "DESN2000",
+                    "ENGG2500",
+                    [
+                        "MATH2018",
+                        "MATH2019"
+                    ]
+                ]
+            },
+            "Level 3 Core Courses": {
+                "name": "Level 3 Core Courses",
+                "requirements": "Students must take 42 UOC of the following courses.",
+                "courses": [
+                    "CVEN3101",
+                    "CVEN3202",
+                    "CVEN3203",
+                    "CVEN3501",
+                    "CVEN3502",
+                    "CVEN3701",
+                    "CVEN3702"
+                ]
+            },
+            "Level 4 Core Courses": {
+                "name": "Level 4 Core Courses",
+                "requirements": "Students must take 6 UOC of the following courses.",
+                "courses": [
+                    "CVEN4701"
+                ]
+            },
+            "Thesis Courses": {
+                "name": "Thesis Courses",
+                "requirements": "Students must take at least 12 UOC, up to a maximum of 24 UOC of the following courses. ",
+                "courses": [
+                    "CVEN4032",
+                    "CVEN4033",
+                    "CVEN4050",
+                    "CVEN4051",
+                    "CVEN4951",
+                    "CVEN4952",
+                    "CVEN4953"
+                ]
+            },
+            "Discipline Electives": {
+                "name": "Discipline Electives",
+                "requirements": "Students can take up to a maximum of 12 UOC of the following courses.",
+                "courses": [
+                    "CVEN4002",
+                    "CVEN4003",
+                    "CVEN4101",
+                    "CVEN4102",
+                    "CVEN4103",
+                    "CVEN4104",
+                    "CVEN4201",
+                    "CVEN4202",
+                    "CVEN4204",
+                    "CVEN4300",
+                    "CVEN4402",
+                    "CVEN4404",
+                    "CVEN4405",
+                    "CVEN4503",
+                    "CVEN4507",
+                    "CVEN4701",
+                    "CVEN4703",
+                    "CVEN4800",
+                    "CVEN9405",
+                    "CVEN9415",
+                    "CVEN9612",
+                    "CVEN9620",
+                    "CVEN9640",
+                    "CVEN9881",
+                    "CVEN9884",
+                    "ENGG3001",
+                    "GMAT9600",
+                    "GMAT9606",
+                    "GSOE9740"
+                ]
+            },
+            "Level 1 Prescribed Electives": {
+                "name": "Level 1 Prescribed Electives",
+                "requirements": "Students must take at least 12 UOC of the following courses. ",
+                "courses": [
+                    "BABS1201",
+                    "BIOM1010",
+                    "BIOS1301",
+                    "CEIC1000",
+                    "CHEM1011",
+                    "CHEM1021",
+                    "CHEM1031",
+                    "CHEM1041",
+                    "CHEM1811",
+                    "CHEM1821",
+                    "COMP1521",
+                    "COMP1531",
+                    "CVEN1701",
+                    "ELEC1111",
+                    "ENGG1100",
+                    "ENGG1200",
+                    "ENGG1300",
+                    "ENGG1400",
+                    "GEOS1111",
+                    "GMAT1110",
+                    "MATH1081",
+                    "MATS1101",
+                    "MATS1110",
+                    "MINE1010",
+                    "PHYS1231",
+                    "PSYC1001",
+                    "SOLA1070"
+                ]
+            }
+        }
+    },
+    "FOODKH": {
+        "name": "Food Science and Nutrition",
+        "code": "FOODKH",
+        "units": "168",
+        "faculty": "Faculty of Engineering",
+        "desc": "\n              \nThe UNSW Bachelor of Science (Honours) in food science is a four year professional degree program designed to equip you for a career as a food scientist. We provide you with a solid background in mathematics, natural and applied sciences that will prepare you for learning knowledge and skills in a food science specialisation. You will get the chance to apply yourself to food product design and enquiry projects, professional food practice, food systems management, product design, and research.\n\nThe specialisation in Food Science and Nutrition emphasises physiology and nutrition. \n\nThe stream structure below gives one sequence of courses that fulfils the requirements of the major. However, many courses are offered only once per year and others have pre-requisites or exclusions which govern the order in which they can be taken. Both of these things can have a big impact on enrolment planning if poor choices of course combinations are made. Students are strongly encouraged to consult the School websitefor advice on course sequences that are consistent with timetabling and availability.\n\nThe timing of the general education courses and elective courses may be modified to optimise the student's choice of courses. It is the students responsibility to plan their enrolments appropriately.\n\nNOTE: It is VERY IMPORTANT to check recommended course sequences as explained under Stream Structure.\n                                  ",
+        "structure": {
+            "Level 1 Core Courses": {
+                "name": "Level 1 Core Courses",
+                "requirements": "Students must take 54 UOC of the following courses.",
+                "courses": [
+                    "BABS1201",
+                    "CHEM1811",
+                    "CHEM1821",
+                    "ENGG1811",
+                    "FOOD1120",
+                    "FOOD1130",
+                    "MATH1041",
+                    [
+                        "PHYS1121",
+                        "PHYS1131"
+                    ],
+                    [
+                        "MATH1131",
+                        "MATH1141"
+                    ]
+                ]
+            },
+            "Level 2 Core Courses": {
+                "name": "Level 2 Core Courses",
+                "requirements": "Students must take 54 UOC of the following courses.",
+                "courses": [
+                    "BIOC2101",
+                    "BIOC2201",
+                    "CEIC2001",
+                    "CHEM2041",
+                    "CHEM2921",
+                    "FOOD2320",
+                    "MICR2011",
+                    "PHSL2101",
+                    "PHSL2201"
+                ]
+            },
+            "Level 3 Core Courses": {
+                "name": "Level 3 Core Courses",
+                "requirements": "Students must take 24 UOC of the following courses.",
+                "courses": [
+                    "FOOD3010",
+                    "FOOD3020",
+                    "FOOD3030",
+                    "FOOD3220"
+                ]
+            },
+            "Level 4 Core Courses": {
+                "name": "Level 4 Core Courses",
+                "requirements": "Students must take 30 UOC of the following courses.",
+                "courses": [
+                    "CEIC4007",
+                    "CEIC4008",
+                    "CEIC6711",
+                    "FOOD4110",
+                    "FOOD4403"
+                ]
+            },
+            "Discipline Electives": {
+                "name": "Discipline Electives",
+                "requirements": "Students must take 6 UOC of the following courses.",
+                "courses": [
+                    "BABS3031",
+                    "BABS3071",
+                    "BIOC3261",
+                    "CEIC2002",
+                    "CEIC4000",
+                    "CEIC4951",
+                    "CEIC4952",
+                    "CEIC4953",
+                    "CEIC4954",
+                    "CEIC6712",
+                    "CEIC6789",
+                    "CEIC8204",
+                    "FOOD3801"
+                ]
+            }
+        }
+    },
+    "FOODJH": {
+        "name": "Food Science and Technology",
+        "code": "FOODJH",
+        "units": "168",
+        "faculty": "Faculty of Engineering",
+        "desc": "This stream extends over four years and students study full-time during the day for twenty-four weeks of each year (excluding examination and recess periods).",
+        "structure": {
+            "Level 1 Core Courses": {
+                "name": "Level 1 Core Courses",
+                "requirements": "Students must take 54 UOC of the following courses.",
+                "courses": [
+                    "BABS1201",
+                    "CHEM1811",
+                    "CHEM1821",
+                    "ENGG1811",
+                    "FOOD1120",
+                    "FOOD1130",
+                    "MATH1041",
+                    [
+                        "PHYS1121",
+                        "PHYS1131"
+                    ],
+                    [
+                        "MATH1131",
+                        "MATH1141"
+                    ]
+                ]
+            },
+            "Level 2 Core Courses": {
+                "name": "Level 2 Core Courses",
+                "requirements": "Students must take 48 UOC of the following courses.",
+                "courses": [
+                    "BIOC2201",
+                    "CEIC2001",
+                    "CEIC2002",
+                    "CHEM2041",
+                    "CHEM2921",
+                    "FOOD2320",
+                    "MICR2011",
+                    [
+                        "BIOC2101",
+                        "BIOC2181"
+                    ]
+                ]
+            },
+            "Level 3 Core Courses": {
+                "name": "Level 3 Core Courses",
+                "requirements": "Students must take 30 UOC of the following courses.",
+                "courses": [
+                    "FOOD3010",
+                    "FOOD3020",
+                    "FOOD3030",
+                    "FOOD3220",
+                    "FOOD3801"
+                ]
+            },
+            "Level 4 Core Courses": {
+                "name": "Level 4 Core Courses",
+                "requirements": "Students must take 24 UOC of the following courses.",
+                "courses": [
+                    "CEIC4007",
+                    "CEIC4008",
+                    "CEIC6711",
+                    "FOOD4110"
+                ]
+            },
+            "Discipline Electives": {
+                "name": "Discipline Electives",
+                "requirements": "Students must take 12 UOC of the following courses.",
+                "courses": [
+                    "BABS3031",
+                    "BABS3071",
+                    "BIOC3261",
+                    "CEIC4000",
+                    "CEIC4951",
+                    "CEIC4952",
+                    "CEIC4953",
+                    "CEIC4954",
+                    "CEIC6712",
+                    "CEIC6789",
+                    "CEIC8204",
+                    "FOOD4403",
+                    "PHSL2101",
+                    "PHSL2201"
+                ]
+            }
+        }
+    },
+    "GMATEH": {
+        "name": "Geospatial Engineering",
+        "code": "GMATEH",
+        "units": "168",
+        "faculty": "Faculty of Engineering",
+        "desc": "\n              \n**This stream is not accepting new enrolments**\n\nThe BE in Geospatial Engineering is a four year, full time degree program. This program aims to prepare a graduate for a broad range of career opportunities in the various branches of Surveying and the numerous Spatial Information disciplines. To this end the program covers general scientific and IT principles, as well as specialised Surveying and Spatial Information topics. Specialisation is provided for through the provision of elective courses offered in the third and fourth years of the program and the choice of a targeted final year thesis project often aligned with an external industry partner. \n\nSuggestions for course sequences consistent with timetabling and availability can be found on the School website The timing of the general education courses and elective courses may be modified to optimize the student's choice of courses.While some courses are given twice a year, many courses are given only once a year. In addition, courses may have prerequisites and exclusions. Thus students should plan their enrolments appropriately.\n                                  ",
+        "structure": {
+            "Level 1 Core Courses": {
+                "name": "Level 1 Core Courses",
+                "requirements": "Students must take 36 UOC of the following courses.",
+                "courses": [
+                    "COMP1511",
+                    "ENGG1000",
+                    "GMAT1110",
+                    [
+                        "MATH1131",
+                        "MATH1141"
+                    ],
+                    [
+                        "MATH1231",
+                        "MATH1241"
+                    ],
+                    [
+                        "PHYS1121",
+                        "PHYS1131"
+                    ]
+                ]
+            },
+            "Level 2 Core Courses": {
+                "name": "Level 2 Core Courses",
+                "requirements": "Students must take 42 UOC of the following courses.",
+                "courses": [
+                    "COMP1927",
+                    "CVEN2002",
+                    "GMAT2500",
+                    "GMAT2550",
+                    "GMAT2700",
+                    "MATH2019",
+                    [
+                        "COMP2041",
+                        "COMP2911"
+                    ]
+                ]
+            },
+            "Level 3 Core Courses": {
+                "name": "Level 3 Core Courses",
+                "requirements": "Students must take 42 UOC of the following courses.",
+                "courses": [
+                    "COMP3311",
+                    "CVEN3101",
+                    "GMAT3150",
+                    "GMAT3220",
+                    "GMAT3420",
+                    "GMAT3500",
+                    "GMAT3700"
+                ]
+            },
+            "Level 4 Core Courses": {
+                "name": "Level 4 Core Courses",
+                "requirements": "Students must take 24 UOC of the following courses.",
+                "courses": [
+                    "GMAT4150",
+                    "GMAT4220",
+                    [
+                        "CVEN4040",
+                        "CVEN4050"
+                    ],
+                    [
+                        "CVEN4041",
+                        "CVEN4051"
+                    ]
+                ]
+            },
+            "Discipline Electives": {
+                "name": "Discipline Electives",
+                "requirements": "Students must take at least 6 UOC of the following courses.",
+                "courses": [
+                    "COMP3411",
+                    "COMP3421",
+                    "COMP3511",
+                    "COMP9315",
+                    "COMP9318",
+                    "COMP9321",
+                    "COMP9322",
+                    "COMP9323",
+                    "COMP9417",
+                    "COMP9517",
+                    "CVEN4800",
+                    "GEOS3911",
+                    "GMAT3100",
+                    "GMAT4220",
+                    "GMAT4400",
+                    "GMAT4450",
+                    "GMAT4900",
+                    "GMAT9600",
+                    "ZPEM8206"
+                ]
+            },
+            "Level 3 Elective": {
+                "name": "Level 3 Elective",
+                "requirements": "Students must take at least 6 UOC of the following courses.",
+                "courses": [
+                    "COMP3",
+                    "CVEN3",
+                    "GMAT3"
+                ]
+            },
+            "Year 1 Electives": {
+                "name": "Year 1 Electives",
+                "requirements": "Students must take at least 12 UOC of the following courses.",
+                "courses": [
+                    "BABS1201",
+                    "BIOM1010",
+                    "BIOS1301",
+                    "CEIC1000",
+                    "CHEM1011",
+                    "CHEM1021",
+                    "CHEM1031",
+                    "CHEM1041",
+                    "CHEM1811",
+                    "CHEM1821",
+                    "COMP1521",
+                    "COMP1531",
+                    "CVEN1300",
+                    "CVEN1701",
+                    "ELEC1111",
+                    "ENGG1200",
+                    "ENGG1400",
+                    "GEOS1111",
+                    "GMAT1110",
+                    "MATH1081",
+                    "MATS1101",
+                    "MATS1110",
+                    "MINE1010",
+                    "MMAN1300",
+                    "PHYS1231",
+                    "PSYC1001",
+                    "PTRL1001",
+                    "SOLA1070"
+                ]
+            }
+        }
+    },
+    "CEICBH": {
+        "name": "Industrial Chemistry",
+        "code": "CEICBH",
+        "units": "168",
+        "faculty": "Faculty of Engineering",
+        "desc": "**This stream is not accepting new enrolments**",
+        "structure": {
+            "Level 1 Core Courses": {
+                "name": "Level 1 Core Courses",
+                "requirements": "Students must take 42 UOC of the following courses.",
+                "courses": [
+                    "ENGG1000",
+                    "ENGG1811",
+                    [
+                        "MATH1131",
+                        "MATH1141"
+                    ],
+                    [
+                        "MATH1231",
+                        "MATH1241"
+                    ],
+                    [
+                        "PHYS1121",
+                        "PHYS1131"
+                    ],
+                    [
+                        "CHEM1011",
+                        "CHEM1031"
+                    ],
+                    [
+                        "CHEM1021",
+                        "CHEM1041"
+                    ]
+                ]
+            },
+            "Level 2 Core Courses": {
+                "name": "Level 2 Core Courses",
+                "requirements": "Students must take 48 UOC of the following courses.",
+                "courses": [
+                    "CEIC2000",
+                    "CEIC2001",
+                    "CEIC2002",
+                    "CEIC2005",
+                    "CHEM2021",
+                    "CHEM2041",
+                    "MATH2089",
+                    [
+                        "MATH2018",
+                        "MATH2019"
+                    ]
+                ]
+            },
+            "Level 3 Core Courses": {
+                "name": "Level 3 Core Courses",
+                "requirements": "Students must take 30 UOC of the following courses.",
+                "courses": [
+                    "CEIC3006",
+                    "CHEM2031",
+                    "CHEM3021",
+                    "POLY3000",
+                    [
+                        "CEIC3001",
+                        "INDC3001"
+                    ]
+                ]
+            },
+            "Level 4 Core Courses": {
+                "name": "Level 4 Core Courses",
+                "requirements": "Students must take 30 UOC of the following courses.",
+                "courses": [
+                    "CEIC4000",
+                    "CEIC4001",
+                    "CEIC4002",
+                    "CEIC4003"
+                ]
+            },
+            "Discipline Electives": {
+                "name": "Discipline Electives",
+                "requirements": "Students must take at least 12 UOC of the following courses.",
+                "courses": [
+                    "CEIC3005",
+                    "CEIC6004",
+                    "CEIC6005",
+                    "CEIC8102",
+                    "CEIC8204",
+                    "CEIC8330",
+                    "CEIC8341",
+                    "CEIC9002",
+                    "CEIC9003",
+                    "CHEN6701",
+                    "CHEN6703",
+                    "CHEN6706",
+                    "FOOD3010"
+                ]
+            },
+            "Level 1 Prescribed Electives": {
+                "name": "Level 1 Prescribed Electives",
+                "requirements": "Students must take at least 6 UOC of the following courses.",
+                "courses": [
+                    "BABS1201",
+                    "BIOM1010",
+                    "BIOS1301",
+                    "CEIC1000",
+                    "CHEM1011",
+                    "CHEM1021",
+                    "CHEM1031",
+                    "CHEM1041",
+                    "CHEM1811",
+                    "CHEM1821",
+                    "COMP1521",
+                    "COMP1531",
+                    "CVEN1300",
+                    "CVEN1701",
+                    "ELEC1111",
+                    "ENGG1200",
+                    "ENGG1400",
+                    "GEOS1111",
+                    "GMAT1110",
+                    "MATH1081",
+                    "MATS1101",
+                    "MINE1010",
+                    "MMAN1300",
+                    "PHYS1231",
+                    "PSYC1001",
+                    "PTRL1001",
+                    "SOLA1070"
+                ]
+            }
+        }
+    },
+    "MANFBH": {
+        "name": "Mechanical and Manufacturing Engineering",
+        "code": "MANFBH",
+        "units": "168",
+        "faculty": "Faculty of Engineering",
+        "desc": "\n              \nThe Mechanical and Manufacturing Engineering stream is designed for students with a mechanical engineering major whose interests also lie in realising, commercialising and implementing mechanical and mechatronic systems and designs. The five core courses included as part of this stream have been designed on the basis of world best practice in manufacturing and industrial engineering and reflect a top-down - bottom-up approach, spanning the disciplines of Strategy and Management, Operations and Supply Chains, Analysis and Decision-making, Design of Product-Process Systems and Technology & Automation.\n\nWithin each discipline area this new stream will cover many conceptual and analytical techniques, all supporting fact- and data-based analysis and decision making with the aim of improved product and process performance, economy and sustainability. This stream is designed to help you to learn how to transform a design from a conceptual stage into a prototype and ultimately into a commercially realisable and viable product. This stream focuses on technical as well as commercial aspects and particularly in developing the ability to build a business or commercial case for making engineering related decisions, such as investment in plant, equipment and processes. Although the main emphasis will be on product and process, consideration will also be given to designing compatible and appropriate engineering support services. The stream also emphasises the strategic impact of operations decisions and the interfaces between operations and the other functional areas of organisations, including of course, finance. This stream encompasses the key elements of operations management and investment analysis and pulls them together in a coherent format that allows you to understand the 'big picture' as well as 'the specific details'. It is aimed at integrating the knowledge gained from the mechanical engineering courses you have studied into a framework and process that allows you to implement your designs, solutions and ideas in a commercial environment.\n\nMechanical engineers have traditionally played the major role in the analysis and design of complex machinery, devices such as actuators and sensors, as well as energy transformation, heat transfer and electro-mechanical processes. In an environment of global competition, sustainability (energy, environment as well as cost and capital), increasingly complex customer requirements and statutory regulations as well as the increasing pace of technological change and new product innovation, it is vital for modern engineers to possess the skills to not only design but equally importantly, implement and realize their designs in the most appropriate way. In this increasingly complex environment, successful organizations - public, private or governmental - need engineers with analytical and diverse skills, especially in integrating technical with commercial and organisational issues, analyses and ultimately solutions. It is the purpose and aim of the Mechanical and Manufacturing Engineering stream to equip you with this knowledge and understanding to become a global engineer, indeed a leader, with the ability to apply analytical methods and quality processes to create short and long term value for your organization, your customers, and the community. It encapsulates the key elements of mechanical engineering and combines them with the five core disciplines of manufacturing and industrial engineering.\n\nAn engineer trained in Mechanical and Manufacturing Engineering may be employed in a very flexible and diverse range of disciplines and areas of industrial activity, including; product design, process design, computer aided design, computer aided manufacturing, quality improvement, technical and commercial analysis and decision making, strategic decision making, consulting, sales support, technical and organisational maintenance, and supply chain management.\n                                  ",
+        "structure": {
+            "Level 1 Core Courses": {
+                "name": "Level 1 Core Courses",
+                "requirements": "Students must take 42 UOC of the following courses.Note: ENGG1811 is the preferred Computing course for the MANFBH Stream.",
+                "courses": [
+                    "ELEC1111",
+                    "ENGG1000",
+                    "ENGG1300",
+                    [
+                        "MATH1131",
+                        "MATH1141"
+                    ],
+                    [
+                        "MATH1231",
+                        "MATH1241"
+                    ],
+                    [
+                        "PHYS1121",
+                        "PHYS1131"
+                    ],
+                    [
+                        "COMP1511",
+                        "COMP1911",
+                        "ENGG1811"
+                    ]
+                ]
+            },
+            "Level 2 Core Courses": {
+                "name": "Level 2 Core Courses",
+                "requirements": "Students must take 48 UOC of the following courses.",
+                "courses": [
+                    "DESN2000",
+                    "ENGG2400",
+                    "ENGG2500",
+                    "MATH2089",
+                    "MMAN2130",
+                    "MMAN2300",
+                    "MMAN2700",
+                    [
+                        "MATH2018",
+                        "MATH2019"
+                    ]
+                ]
+            },
+            "Level 3 Core Courses": {
+                "name": "Level 3 Core Courses",
+                "requirements": "Students must take 42 UOC of the following courses.",
+                "courses": [
+                    "MANF3100",
+                    "MANF3510",
+                    "MECH3110",
+                    "MMAN3000",
+                    "MMAN3200"
+                ]
+            },
+            "Level 4 Core Courses": {
+                "name": "Level 4 Core Courses",
+                "requirements": "Students must take 24 UOC of the following courses.",
+                "courses": [
+                    "MANF4100",
+                    "MANF4430",
+                    "MANF4611",
+                    "MMAN4400"
+                ]
+            },
+            "THESIS COURSES": {
+                "name": "THESIS COURSES",
+                "requirements": "Students must take 12 UOC of the following courses.NOTE: For further details about the practice or research thesis courses, please check the Thesis information page on the school website.",
+                "courses": [
+                    "MMAN4010",
+                    "MMAN4020",
+                    "MMAN4951",
+                    "MMAN4952",
+                    "MMAN4953"
+                ]
+            },
+            "RECOMMENDED DISCIPLINARY ELECTIVES": {
+                "name": "RECOMMENDED DISCIPLINARY ELECTIVES",
+                "requirements": "Students must take up to a maximum of 12 UOC of disciplinary electives from the \"recommended elective list\" and/or \"disciplinary elective list\".",
+                "courses": [
+                    "MANF6860",
+                    "MANF9400",
+                    "MANF9420",
+                    "MANF9472",
+                    "MMAN4200",
+                    "MMAN4410"
+                ]
+            },
+            "Discipline Electives": {
+                "name": "Discipline Electives",
+                "requirements": "Remaining disciplinary electives can be chosen from the following list.NOTE:- At most 2 disciplinary electives (12 UOC) without a AERO, MECH, MANF or MMAN prefix can be taken.- At most 1 disciplinary elective (6 UOC) may be substituted with another course in the School if the substituting course is NOT a core course for the stream and is at Level 3 or higher.- Postgraduate courses or/and courses offered outside of the School may require manual enrolment.",
+                "courses": [
+                    "AERO9500",
+                    "AERO9610",
+                    "AERO9660",
+                    "COMP3141",
+                    "COMP3331",
+                    "ELEC4633",
+                    "ENGG3060",
+                    "MECH4100",
+                    "MECH4305",
+                    "MECH4320",
+                    "MECH4620",
+                    "MECH4880",
+                    "MECH4900",
+                    "MECH9325",
+                    "MECH9420",
+                    "MECH9650",
+                    "MECH9660",
+                    "MECH9720",
+                    "MECH9761",
+                    "MTRN4030",
+                    "MTRN9400",
+                    "SOLA5052",
+                    "SOLA5053",
+                    "SOLA5056",
+                    "SOLA5057"
+                ]
+            },
+            "Level 1 Prescribed Electives": {
+                "name": "Level 1 Prescribed Electives",
+                "requirements": "Students can take up to a maximum of 12 UOC of the following courses.Note: - Students take ENGG1300 and ELEC1111 as Level 1 Core and are not required to take further Level 1 electives and may choose to substitute L1 elective for higher level electives later in the program.- ENGG1300  excludes CVEN1300, MINE1300, and MMAN1300.- CHEM1031 and CHEM1041 will only be available to students enrolled in a program which has a Chemistry major.- Students without any prior Chemistry should choose CHEM1001. Other students with HSC Chemistry who wish to study Chemistry in more depth should choose CHEM1011.",
+                "courses": [
+                    "BABS1201",
+                    "BIOM1010",
+                    "BIOS1301",
+                    "CEIC1000",
+                    "CHEM1011",
+                    "CHEM1021",
+                    "CHEM1031",
+                    "CHEM1041",
+                    "CHEM1811",
+                    "CHEM1821",
+                    "COMP1521",
+                    "COMP1531",
+                    "CVEN1701",
+                    "ELEC1111",
+                    "ENGG1100",
+                    "ENGG1200",
+                    "ENGG1300",
+                    "ENGG1400",
+                    "GEOS1111",
+                    "GMAT1110",
+                    "MATH1081",
+                    "MATS1101",
+                    "MATS1110",
+                    "MINE1010",
+                    "PHYS1231",
+                    "PSYC1001",
+                    "SOLA1070"
+                ]
+            }
+        }
+    },
+    "MECHAH": {
+        "name": "Mechanical Engineering",
+        "code": "MECHAH",
+        "units": "168",
+        "faculty": "Faculty of Engineering",
+        "desc": "\n              \nThe Mechanical Engineering stream provides a versatile, comprehensive coverage of areas involving the conception and design of machinery and mechanical plant, the supervision of its construction, operation and maintenance, the planning and supervision of large engineering projects, and general engineering management. Due to its wide range, a number of options are provided as Technical Elective courses in the final year. These are preferentially linked to provide a direction appropriate to the needs of Australian industry and to the specific interests of students, although some flexibility is available if required. Typical fields which may be encompassed by the program include building services, computer-aided design, power generation, energy and environmental systems, gas and liquid handling, bio-mechanics, materials handling, control systems and transport. An emphasis is placed on the application of engineering science, development and management in these fields.\n                                  ",
+        "structure": {
+            "Level 1 Core Courses": {
+                "name": "Level 1 Core Courses",
+                "requirements": "Students must take 42 UOC of the following courses.Note: ENGG1811 is the preferred computing course for the MECH Stream.",
+                "courses": [
+                    "ELEC1111",
+                    "ENGG1000",
+                    "ENGG1300",
+                    [
+                        "MATH1131",
+                        "MATH1141"
+                    ],
+                    [
+                        "MATH1231",
+                        "MATH1241"
+                    ],
+                    [
+                        "PHYS1121",
+                        "PHYS1131"
+                    ],
+                    [
+                        "COMP1511",
+                        "COMP1911",
+                        "ENGG1811"
+                    ]
+                ]
+            },
+            "Level 2 Core Courses": {
+                "name": "Level 2 Core Courses",
+                "requirements": "Students must take 48 UOC of the following courses.",
+                "courses": [
+                    "DESN2000",
+                    "ENGG2400",
+                    "ENGG2500",
+                    "MATH2089",
+                    "MMAN2130",
+                    "MMAN2300",
+                    "MMAN2700",
+                    [
+                        "MATH2018",
+                        "MATH2019"
+                    ]
+                ]
+            },
+            "Level 3 Core Courses": {
+                "name": "Level 3 Core Courses",
+                "requirements": "Students must take 30 UOC of the following courses.",
+                "courses": [
+                    "MECH3110",
+                    "MECH3610",
+                    "MMAN3000",
+                    "MMAN3200",
+                    "MMAN3400"
+                ]
+            },
+            "Level 4 Core Courses": {
+                "name": "Level 4 Core Courses",
+                "requirements": "Students must take 6 UOC of the following courses.",
+                "courses": [
+                    "MECH4100"
+                ]
+            },
+            "THESIS COURSES": {
+                "name": "THESIS COURSES",
+                "requirements": "Students must take 12 UOC of thesis courses.NOTE: For further details about the practice or research thesis courses, please check the Thesis information page on the school website.",
+                "courses": [
+                    "MMAN4010",
+                    "MMAN4020",
+                    "MMAN4951",
+                    "MMAN4952",
+                    "MMAN4953"
+                ]
+            },
+            "RECOMMENDED DISCIPLINE ELECTIVES": {
+                "name": "RECOMMENDED DISCIPLINE ELECTIVES",
+                "requirements": "NOTE:All disciplinary electives should be chosen from the \"recommended elective list\" and/or \"disciplinary elective list\".At least 18 UOC of disciplinary electives must be chosen from the \"recommended elective list\".",
+                "courses": [
+                    "MECH4305",
+                    "MECH4320",
+                    "MECH4620",
+                    "MECH4880",
+                    "MECH4900",
+                    "MECH9325",
+                    "MECH9420",
+                    "MECH9650",
+                    "MECH9660",
+                    "MECH9720",
+                    "MECH9761",
+                    "MMAN4200",
+                    "MMAN4400",
+                    "MMAN4410"
+                ]
+            },
+            "Discipline Electives": {
+                "name": "Discipline Electives",
+                "requirements": "Remaining disciplinary electives can be chosen from the following list.NOTE:- At most 2 disciplinary electives (12 UOC) without a AERO, MECH, MANF or MMAN prefix can be taken.- At most 1 disciplinary elective (6 UOC) may be substituted with another course in the School if the substituting course is NOT a core course for the stream and is at Level 3 or higher.- Postgraduate courses or/and courses offered outside of the School may require manual enrolment.",
+                "courses": [
+                    "AERO9500",
+                    "AERO9610",
+                    "AERO9660",
+                    "COMP3141",
+                    "COMP3331",
+                    "ELEC4633",
+                    "ENGG3060",
+                    "MANF4100",
+                    "MANF4430",
+                    "MANF4611",
+                    "MANF6860",
+                    "MANF9400",
+                    "MANF9420",
+                    "MANF9472",
+                    "MECH4100",
+                    "MTRN4030",
+                    "MTRN9400",
+                    "SOLA5052",
+                    "SOLA5053",
+                    "SOLA5056",
+                    "SOLA5057"
+                ]
+            },
+            "Level 1 Prescribed Electives": {
+                "name": "Level 1 Prescribed Electives",
+                "requirements": "Students can take up to a maximum of 12 UOC of the following courses.Note: - Students take ENGG1300 and ELEC1111 as Level 1 Core and are not required to take further Level 1 electives and may choose to substitute L1 elective for higher level electives later in the program.- ENGG1300 excludes CVEN1300, MINE1300, and MMAN1300.- CHEM1031 and CHEM1041 will only be available to students enrolled in a program which has a Chemistry major.- Students without any prior Chemistry should choose CHEM1001. Other students with HSC Chemistry who wish to study Chemistry in more depth should choose CHEM1011.",
+                "courses": [
+                    "BABS1201",
+                    "BIOM1010",
+                    "BIOS1301",
+                    "CEIC1000",
+                    "CHEM1011",
+                    "CHEM1021",
+                    "CHEM1031",
+                    "CHEM1041",
+                    "CHEM1811",
+                    "CHEM1821",
+                    "COMP1521",
+                    "COMP1531",
+                    "CVEN1701",
+                    "ELEC1111",
+                    "ENGG1100",
+                    "ENGG1200",
+                    "ENGG1300",
+                    "ENGG1400",
+                    "GEOS1111",
+                    "GMAT1110",
+                    "MATH1081",
+                    "MATS1101",
+                    "MATS1110",
+                    "MINE1010",
+                    "PHYS1231",
+                    "PSYC1001",
+                    "SOLA1070"
+                ]
+            }
+        }
+    },
+    "MTRNAH": {
+        "name": "Mechatronic Engineering",
+        "code": "MTRNAH",
+        "units": "168",
+        "faculty": "Faculty of Engineering",
+        "desc": "\n              \nThe Mechatronic Engineering stream provides the student with the ability to acquire a hybrid range of skills based on mechanics, electronics and computing. Whilst there is a comprehensive coverage of mechanical engineering and design areas, the stream enables a deeper understanding of the principles supporting the conception, design, construction, maintenance, integration and repair of intelligent machines. Typical examples of these machines are robots, white goods, cameras, automated test equipment and transport vehicles.\n\nTypical fields which may be encompassed by the program include building services, computer controlled plant, manufacturing, robotics and autonomous vehicles. An emphasis is placed on the application of engineering science, development and management in these fields.\n                                  ",
+        "structure": {
+            "Level 1 Core Courses": {
+                "name": "Level 1 Core Courses",
+                "requirements": "Students must take 42 UOC of the following courses.Note: COMP1511 is the preferred computing course for the MTRN Stream.",
+                "courses": [
+                    "ELEC1111",
+                    "ENGG1000",
+                    "ENGG1300",
+                    [
+                        "MATH1131",
+                        "MATH1141"
+                    ],
+                    [
+                        "MATH1231",
+                        "MATH1241"
+                    ],
+                    [
+                        "PHYS1121",
+                        "PHYS1131"
+                    ],
+                    [
+                        "COMP1511",
+                        "COMP1911"
+                    ]
+                ]
+            },
+            "Level 2 Core Courses": {
+                "name": "Level 2 Core Courses",
+                "requirements": "Students must take 54 UOC of the following courses.",
+                "courses": [
+                    "COMP2121",
+                    "DESN2000",
+                    "ELEC2141",
+                    "ENGG2400",
+                    "MATH2089",
+                    "MMAN2130",
+                    "MMAN2300",
+                    "MTRN2500",
+                    [
+                        "MATH2018",
+                        "MATH2019"
+                    ]
+                ]
+            },
+            "Level 3 Core Courses": {
+                "name": "Level 3 Core Courses",
+                "requirements": "Students must take 24 UOC of the following courses.",
+                "courses": [
+                    "MMAN3000",
+                    "MMAN3200",
+                    "MTRN3020",
+                    "MTRN3500"
+                ]
+            },
+            "Level 4 Core Courses": {
+                "name": "Level 4 Core Courses",
+                "requirements": "Students must take 18 UOC of the following courses.",
+                "courses": [
+                    "MTRN4010",
+                    "MTRN4110",
+                    "MTRN4230"
+                ]
+            },
+            "THESIS COURSES": {
+                "name": "THESIS COURSES",
+                "requirements": "Students must take 12 UOC of the following courses.NOTE: For further details about the practice or research thesis courses, please check the Thesis information page on the school website.",
+                "courses": [
+                    "MMAN4010",
+                    "MMAN4020",
+                    "MMAN4951",
+                    "MMAN4952",
+                    "MMAN4953"
+                ]
+            },
+            "RECOMMENDED DISCIPLINARY ELECTIVES": {
+                "name": "RECOMMENDED DISCIPLINARY ELECTIVES",
+                "requirements": "Students must take at least 6 UOC of disciplinary electives from the \"recommended elective list\" and/or \"disciplinary elective list\".",
+                "courses": [
+                    "COMP3141",
+                    "COMP3331",
+                    "ELEC4633",
+                    "ENGG3060",
+                    "MANF4611",
+                    "MMAN4400",
+                    "MTRN4030",
+                    "MTRN9400"
+                ]
+            },
+            "Disciplinary Electives": {
+                "name": "Disciplinary Electives",
+                "requirements": "Remaining disciplinary electives can be chosen from the following list.NOTE:- At most 2 disciplinary electives (12 UOC) without a AERO, MECH, MANF or MMAN prefix can be taken.- At most one of the following courses may be substituted for a disciplinary elective: MMAN2700, ENGG2500- Postgraduate courses or/and courses offered outside of the School may require manual enrolment.",
+                "courses": [
+                    "AERO9500",
+                    "AERO9610",
+                    "AERO9660",
+                    "ENGG3060",
+                    "MANF4100",
+                    "MANF4430",
+                    "MANF6860",
+                    "MANF9400",
+                    "MANF9420",
+                    "MANF9472",
+                    "MECH4100",
+                    "MECH4305",
+                    "MECH4320",
+                    "MECH4620",
+                    "MECH4880",
+                    "MECH4900",
+                    "MECH9325",
+                    "MECH9420",
+                    "MECH9650",
+                    "MECH9660",
+                    "MECH9720",
+                    "MECH9761",
+                    "MMAN4200",
+                    "SOLA5052",
+                    "SOLA5053",
+                    "SOLA5056",
+                    "SOLA5057"
+                ]
+            },
+            "Level 1 Prescribed Electives": {
+                "name": "Level 1 Prescribed Electives",
+                "requirements": "Students can take up to a maximum of 12 UOC of the following courses. Note: - Students take ENGG1300 and ELEC1111 as Level 1 Core and are not required to take further Level 1 electives and may choose to substitute L1 electives for higher level electives later in the program.- ENGG1300 excludes CVEN1300, MINE1300, and MMAN1300.- CHEM1031 and CHEM1041 will only be available to students enrolled in a program which has a Chemistry major.- Students without any prior Chemistry should choose CHEM1001. Other students with HSC Chemistry who wish to study Chemistry in more depth should choose CHEM1011.",
+                "courses": [
+                    "BABS1201",
+                    "BIOM1010",
+                    "BIOS1301",
+                    "CEIC1000",
+                    "CHEM1011",
+                    "CHEM1021",
+                    "CHEM1031",
+                    "CHEM1041",
+                    "CHEM1811",
+                    "CHEM1821",
+                    "COMP1521",
+                    "COMP1531",
+                    "CVEN1701",
+                    "ELEC1111",
+                    "ENGG1100",
+                    "ENGG1200",
+                    "ENGG1300",
+                    "ENGG1400",
+                    "GEOS1111",
+                    "GMAT1110",
+                    "MATH1081",
+                    "MATS1101",
+                    "MATS1110",
+                    "MINE1010",
+                    "PHYS1231",
+                    "PSYC1001",
+                    "SOLA1070"
+                ]
+            }
+        }
+    },
+    "MINEAH": {
+        "name": "Mining Engineering",
+        "code": "MINEAH",
+        "units": "168",
+        "faculty": "Faculty of Engineering",
+        "desc": "This stream extends over four years and students study full-time during the day for twenty-six weeks of each year (excluding examination and recess periods). Year 1 of the stream includes courses that cover the sciences to provide the foundation for many of the engineering courses offered in Year 2. Year 3 is largely devoted to fundamental courses in mining engineering while Year 4 provides advanced instruction in aspects essential for all mining engineers. Elective courses are offered in both Year 3 and Year 4 of the stream.",
+        "structure": {
+            "Level 1 Core Courses": {
+                "name": "Level 1 Core Courses",
+                "requirements": "Students must take 36 UOC of the following courses.",
+                "courses": [
+                    "ENGG1000",
+                    "ENGG1300",
+                    "ENGG1811",
+                    [
+                        "MATH1131",
+                        "MATH1141"
+                    ],
+                    [
+                        "MATH1231",
+                        "MATH1241"
+                    ],
+                    [
+                        "PHYS1121",
+                        "PHYS1131"
+                    ]
+                ]
+            },
+            "Level 2 Core Courses": {
+                "name": "Level 2 Core Courses",
+                "requirements": "Students must take 42 UOC of the following courses.",
+                "courses": [
+                    "ENGG2400",
+                    "MATH2089",
+                    "MATS2005",
+                    "MINE2010",
+                    "MINE2610",
+                    "MINE2810",
+                    [
+                        "MATH2018",
+                        "MATH2019"
+                    ]
+                ]
+            },
+            "Level 3 Core Courses": {
+                "name": "Level 3 Core Courses",
+                "requirements": "Students must take 42 UOC of the following courses.",
+                "courses": [
+                    "MINE3220",
+                    "MINE3230",
+                    "MINE3310",
+                    "MINE3430",
+                    "MINE3510",
+                    "MINE3630",
+                    "MINE3910"
+                ]
+            },
+            "Level 4 Core Courses": {
+                "name": "Level 4 Core Courses",
+                "requirements": "Students must take 36 UOC of the following courses.",
+                "courses": [
+                    "MINE4250",
+                    "MINE4260",
+                    "MINE4310",
+                    "MINE4710",
+                    "MINE4951",
+                    "MINE4952",
+                    "MINE4953"
+                ]
+            },
+            "Level 1 Prescribed Electives": {
+                "name": "Level 1 Prescribed Electives",
+                "requirements": "Students must take at least 12 UOC of the following courses. ",
+                "courses": [
+                    "BABS1201",
+                    "BIOM1010",
+                    "BIOS1301",
+                    "CEIC1000",
+                    "CHEM1011",
+                    "CHEM1021",
+                    "CHEM1031",
+                    "CHEM1041",
+                    "CHEM1811",
+                    "CHEM1821",
+                    "COMP1521",
+                    "COMP1531",
+                    "CVEN1701",
+                    "ELEC1111",
+                    "ENGG1100",
+                    "ENGG1200",
+                    "ENGG1300",
+                    "ENGG1400",
+                    "GEOS1111",
+                    "GMAT1110",
+                    "MATH1081",
+                    "MATS1101",
+                    "MATS1110",
+                    "MINE1010",
+                    "PHYS1231",
+                    "PSYC1001",
+                    "SOLA1070"
+                ]
+            }
+        }
+    },
+    "PETRAH": {
+        "name": "Petroleum Engineering",
+        "code": "PETRAH",
+        "units": "168",
+        "faculty": "Faculty of Engineering",
+        "desc": "Petroleum Engineering is a specialised engineering discipline which prepares graduates for careers in the oil and gas industries. Its related operations apply physical, mathematical and engineering principles to identify and solve problems associated with exploration, exploitation, drilling, production and all the related economic and management problems associated with the recovery of hydrocarbons and alternative sources of energy from deep beneath the earth's surface.",
+        "structure": {
+            "Level 1 Core Courses": {
+                "name": "Level 1 Core Courses",
+                "requirements": "Students must take 36 UOC of the following courses.",
+                "courses": [
+                    "ENGG1000",
+                    "ENGG1811",
+                    "MATS1101",
+                    [
+                        "MATH1131",
+                        "MATH1141"
+                    ],
+                    [
+                        "MATH1231",
+                        "MATH1241"
+                    ],
+                    [
+                        "PHYS1121",
+                        "PHYS1131"
+                    ]
+                ]
+            },
+            "Level 2 Core Courses": {
+                "name": "Level 2 Core Courses",
+                "requirements": "Students must take 42 UOC of the following courses.",
+                "courses": [
+                    "CEIC2001",
+                    "PTRL2010",
+                    "PTRL2019",
+                    "PTRL2020",
+                    "PTRL2030",
+                    "PTRL2114",
+                    [
+                        "MATH2018",
+                        "MATH2019"
+                    ]
+                ]
+            },
+            "Level 3 Core Courses": {
+                "name": "Level 3 Core Courses",
+                "requirements": "Students must take 42 UOC of the following courses.",
+                "courses": [
+                    "PTRL3001",
+                    "PTRL3015",
+                    "PTRL3022",
+                    "PTRL3025",
+                    "PTRL3030",
+                    "PTRL3040",
+                    "PTRL3050"
+                ]
+            },
+            "Level 4 Core Courses": {
+                "name": "Level 4 Core Courses",
+                "requirements": "Students must take 24 UOC of the following courses",
+                "courses": [
+                    "PTRL4012",
+                    "PTRL4017",
+                    "PTRL4020",
+                    "PTRL4021"
+                ]
+            },
+            "Level 4 Project / Thesis": {
+                "name": "Level 4 Project / Thesis",
+                "requirements": "Students must take 12 UOC of either PTRL4010 (6 UOC) and PTRL4011 (6UOC), or PTRL4951 (4 UOC) and PTRL4952 (4 UOC) and PTRL4953 (4 UOC). ",
+                "courses": [
+                    "PTRL4010",
+                    "PTRL4011",
+                    "PTRL4951",
+                    "PTRL4952",
+                    "PTRL4953"
+                ]
+            },
+            "Level 1 Prescribed Electives": {
+                "name": "Level 1 Prescribed Electives",
+                "requirements": "Students must take 12 UOC of the following courses.NOTE:- CHEM1031 and CHEM1041 are only available to students enrolled in a Program with a major in Chemistry-  GEOS1111 is the recommended first year elective for this specialisation",
+                "courses": [
+                    "BABS1201",
+                    "BIOM1010",
+                    "BIOS1301",
+                    "CEIC1000",
+                    "CHEM1011",
+                    "CHEM1021",
+                    "CHEM1031",
+                    "CHEM1041",
+                    "CHEM1811",
+                    "CHEM1821",
+                    "COMP1521",
+                    "COMP1531",
+                    "CVEN1701",
+                    "ELEC1111",
+                    "ENGG1100",
+                    "ENGG1200",
+                    "ENGG1300",
+                    "ENGG1400",
+                    "GEOS1111",
+                    "GMAT1110",
+                    "MATH1081",
+                    "MATS1101",
+                    "MATS1110",
+                    "MINE1010",
+                    "PHYS1231",
+                    "PSYC1001",
+                    "SOLA1070"
+                ]
+            },
+            "DISCIPLINE ELECTIVES (SINGLE DEGREE MODE)": {
+                "name": "DISCIPLINE ELECTIVES (SINGLE DEGREE MODE)",
+                "requirements": "All students of the single degree in Petroleum Engineering can take 12 UOC courses from the following list, in addition to the Petroleum Engineering stream requirements listed above, to satisfy the program level Discipline Elective requirement.",
+                "courses": [
+                    "AVIA3013",
+                    "CEIC2000",
+                    "CEIC2002",
+                    "CEIC2004",
+                    "CEIC2009",
+                    "CHEM2011",
+                    "CHEM2021",
+                    "CHEM2031",
+                    "CHEM2041",
+                    "COMP1511",
+                    "COMP1927",
+                    "COMP4920",
+                    "CVEN2501",
+                    "CVEN3502",
+                    "ECON1101",
+                    "ECON1102",
+                    "ECON1107",
+                    "ELEC4122",
+                    "ELEC4445",
+                    "FINS1613",
+                    "GEOS1701",
+                    "GEOS2241",
+                    "GEOS2711",
+                    "GEOS2721",
+                    "GEOS2821",
+                    "GEOS3141",
+                    "GEOS3733",
+                    "GEOS3761",
+                    "GSOE9712",
+                    "MARK1012",
+                    "MATH2301",
+                    "MATS2001",
+                    "MATS2008",
+                    "MGMT1001",
+                    "MGMT2724",
+                    "MMAN2100",
+                    "PTRL4024",
+                    "PTRL5100",
+                    "PTRL5101",
+                    "PTRL5102"
+                ]
+            }
+        }
+    },
+    "SOLAAH": {
+        "name": "Photovoltaics and Solar Energy",
+        "code": "SOLAAH",
+        "units": "168",
+        "faculty": "Faculty of Engineering",
+        "desc": "The stream includes training in technology development, manufacturing, quality control, reliability and life-cycle analysis, cell interconnection and encapsulation, a range of solar cell applications, system design, maintenance and fault diagnosis, marketing, policy development and the use of other renewable energy technologies. Emphasis is placed on gaining hands-on experience of working with solar energy devices, modules and systems.\n\nInnovative teaching techniques have been developed to enhance the learning environment including the 'Virtual Production Line' and 'Virtual World Solar Car Challenge'. UNSW academics in the photovoltaic field have been consistently ranked amongst the leaders worldwide through international peer review. This team has held the world record for silicon solar cell efficiencies for decades and were responsible for developing the most successfully commercialized new photovoltaic technology internationally throughout the same period. From 2006 onwards we have seen an explosion of interest in the School's technologies from major industry players all around the world.",
+        "structure": {
+            "Level 1 Core Courses": {
+                "name": "Level 1 Core Courses",
+                "requirements": "Students must complete 42 UOC.Note: Students doing  a Computing Strand should take COMP1911.",
+                "courses": [
+                    "ENGG1000",
+                    "MATS1101",
+                    [
+                        "MATH1131",
+                        "MATH1141"
+                    ],
+                    [
+                        "MATH1231",
+                        "MATH1241"
+                    ],
+                    [
+                        "PHYS1121",
+                        "PHYS1131"
+                    ],
+                    [
+                        "PHYS1221",
+                        "PHYS1231"
+                    ],
+                    [
+                        "COMP1911",
+                        "ENGG1811"
+                    ]
+                ]
+            },
+            "Level 2 Core Courses": {
+                "name": "Level 2 Core Courses",
+                "requirements": "Students must take 36 UOC of the following courses.Note: Students selecting Mathematics Strand and Physics Stand, and BE/BSc students majoring in 'Mathematics' or 'Physics' should replace MATH2019 with MATH2011 Several Variable Calculus and MATH2121 Theory and Applications of Differential Equations.",
+                "courses": [
+                    "DESN2000",
+                    "MATH2089",
+                    "SOLA2051",
+                    "SOLA2060",
+                    "SOLA2540",
+                    [
+                        "MATH2018",
+                        "MATH2019"
+                    ]
+                ]
+            },
+            "Level 3 Core Courses": {
+                "name": "Level 3 Core Courses",
+                "requirements": "Students must take 18 UOC of the following courses.",
+                "courses": [
+                    "SOLA3010",
+                    "SOLA3020",
+                    "SOLA3507"
+                ]
+            },
+            "Level 4 Core Courses": {
+                "name": "Level 4 Core Courses",
+                "requirements": "Students must take 30 UOC of the following courses.",
+                "courses": [
+                    "ELEC4122",
+                    "SOLA4012",
+                    "SOLA4951",
+                    "SOLA4952",
+                    "SOLA4953",
+                    "SOLA5057"
+                ]
+            },
+            "Discipline Elective": {
+                "name": "Discipline Elective",
+                "requirements": "Students must take 12 UOC of the following courses.Note: Approval of the Undergraduate Coordinator is required for selection of courses from outside the school.",
+                "courses": [
+                    "SOLA3",
+                    "SOLA4"
+                ]
+            },
+            "Level 1 Prescribed Electives": {
+                "name": "Level 1 Prescribed Electives",
+                "requirements": "Students must take at least 12 UOC of the following courses. ",
+                "courses": [
+                    "BABS1201",
+                    "BIOM1010",
+                    "BIOS1301",
+                    "CEIC1000",
+                    "CHEM1011",
+                    "CHEM1021",
+                    "CHEM1031",
+                    "CHEM1041",
+                    "CHEM1811",
+                    "CHEM1821",
+                    "COMP1521",
+                    "COMP1531",
+                    "CVEN1701",
+                    "ELEC1111",
+                    "ENGG1100",
+                    "ENGG1200",
+                    "ENGG1300",
+                    "ENGG1400",
+                    "GEOS1111",
+                    "GMAT1110",
+                    "MATH1081",
+                    "MATS1101",
+                    "MATS1110",
+                    "MINE1010",
+                    "PHYS1231",
+                    "PSYC1001",
+                    "SOLA1070"
+                ]
+            },
+            "Strand Electives": {
+                "name": "Strand Electives",
+                "requirements": "Students may choose up to 18 UOC of elective courses in a particular area of focus (Strand) such as Computing, Electronics, Electric Energy, Communications and Control, Mathematics, Mechanical Engineering, Chemical Engineering, Physics, Faculty of Built Environment or may also formulate their own Strands subject to the approval of the Undergraduate Coordinator.Note:- The Strand options listed are subject to change and may not be available every year.- Strand options are for students commencing the second year of their program; third year students should complete the strand courses they have already nominated and consult the School Office as required.",
+                "courses": [
+                    "ARCH1361",
+                    "BENV1072",
+                    "CEIC2000",
+                    "CEIC2001",
+                    "CEIC2002",
+                    "CODE2170",
+                    "COMP2041",
+                    "COMP2121",
+                    "COMP2511",
+                    "ELEC2133",
+                    "ELEC2134",
+                    "ELEC3104",
+                    "ELEC3105",
+                    "ELEC3106",
+                    "ELEC3114",
+                    "ELEC3115",
+                    "ELEC3117",
+                    "ELEC4614",
+                    "MATH2011",
+                    "MATH2121",
+                    "MATH3041",
+                    "MATH3101",
+                    "MATH3121",
+                    "MATH3261",
+                    "MECH3610",
+                    "MECH4620",
+                    "MECH9720",
+                    "MMAN2600",
+                    "MMAN2700",
+                    "PHYS2111",
+                    "PHYS3111",
+                    "PHYS3113",
+                    "PHYS3118",
+                    "TELE3113"
+                ]
+            }
+        }
+    },
+    "ELECCH": {
+        "name": "Quantum Engineering",
+        "code": "ELECCH",
+        "units": "168",
+        "faculty": "Faculty of Engineering",
+        "desc": "The progress of nanotechnology allows the fabrication of devices whose physical dimensions approach the atomic scale. For over 100 years, it has been known that the behaviour of physical systems at the atomic scale does not obey the familiar laws of classical physics. Atomic-size systems behave according to quantum mechanics, which allows them to exhibit rather spectacular properties and dynamics. This stream trains students to design and operate devices that behave according to quantum mechanics, opening the possibility to exploit the peculiar laws of quantum physics to perform otherwise cumbersome or impossible tasks, such as the efficient solution of computationally hard problems, or the secure teleportation of information. Graduates from this stream will have valuable skills that position them ideally for the burgeoning quantum engineering industry, as well as broad skills across most key electrical engineering disciplines.",
+        "structure": {
+            "Level 1 Core Courses": {
+                "name": "Level 1 Core Courses",
+                "requirements": "Students must take 42 UOC of the following courses.",
+                "courses": [
+                    "COMP1511",
+                    "ELEC1111",
+                    "ENGG1000",
+                    "PHYS1231",
+                    [
+                        "MATH1131",
+                        "MATH1141"
+                    ],
+                    [
+                        "PHYS1121",
+                        "PHYS1131"
+                    ],
+                    [
+                        "MATH1231",
+                        "MATH1241"
+                    ]
+                ]
+            },
+            "Level 2 Core Courses": {
+                "name": "Level 2 Core Courses",
+                "requirements": "Students must take 36 UOC of the following courses.",
+                "courses": [
+                    "DESN2000",
+                    "ELEC2133",
+                    "ELEC2134",
+                    "ELEC2141",
+                    "MATH2069",
+                    "MATH2099"
+                ]
+            },
+            "Level 3 Core Courses": {
+                "name": "Level 3 Core Courses",
+                "requirements": "Students must take 42 UOC of the following courses.",
+                "courses": [
+                    "ELEC3104",
+                    "ELEC3106",
+                    "ELEC3114",
+                    "ELEC3115",
+                    "ELEC3117",
+                    "ELEC3705",
+                    "PHYS3118"
+                ]
+            },
+            "Level 4 Core Courses": {
+                "name": "Level 4 Core Courses",
+                "requirements": "Students must take 36 UOC of the following courses.",
+                "courses": [
+                    "ELEC4122",
+                    "ELEC4123",
+                    "ELEC4605",
+                    "ELEC4951",
+                    "ELEC4952",
+                    "ELEC4953",
+                    "TELE9757"
+                ]
+            },
+            "Breadth Electives": {
+                "name": "Breadth Electives",
+                "requirements": "Students can take up to a maximum of 12 UOC of the following courses.",
+                "courses": [
+                    "COMP2041",
+                    "COMP3211",
+                    "COMP3231",
+                    "ELEC3145",
+                    "ENGG2600",
+                    "ENGG3600",
+                    "ENGG4600",
+                    "MATH3101",
+                    "MATH3121",
+                    "MATH3161",
+                    "MATH3201",
+                    "MATH3411",
+                    "TELE3113",
+                    "TELE3118"
+                ]
+            },
+            "Level 1 Presribed Electives": {
+                "name": "Level 1 Presribed Electives",
+                "requirements": "Students can take up to a maximum of 12 UOC of the following courses.Note: Students choosing the recommended ELEC1111 Year 1 electives will gain one Level 3/Level 4 Electives later in the program.",
+                "courses": [
+                    "BABS1201",
+                    "BIOM1010",
+                    "BIOS1301",
+                    "CEIC1000",
+                    "CHEM1011",
+                    "CHEM1021",
+                    "CHEM1031",
+                    "CHEM1041",
+                    "CHEM1811",
+                    "CHEM1821",
+                    "COMP1521",
+                    "COMP1531",
+                    "CVEN1701",
+                    "ELEC1111",
+                    "ENGG1100",
+                    "ENGG1200",
+                    "ENGG1300",
+                    "ENGG1400",
+                    "GEOS1111",
+                    "GMAT1110",
+                    "MATH1081",
+                    "MATS1101",
+                    "MATS1110",
+                    "MINE1010",
+                    "PHYS1231",
+                    "PSYC1001",
+                    "SOLA1070"
+                ]
+            },
+            "Practice Electives": {
+                "name": "Practice Electives",
+                "requirements": "Students can take up to 12 UOC of the following courses. Note: Students who have chosen ELEC1111 as Level 1 Elective may take up to 18 UOC of the courses below.",
+                "courses": [
+                    "ELEC4445",
+                    "ELEC4601",
+                    "ELEC4602",
+                    "ELEC4603",
+                    "ELEC4621",
+                    "ELEC4622",
+                    "ELEC4623",
+                    "ELEC4631",
+                    "ELEC4632",
+                    "ELEC4633",
+                    "PHTN4661",
+                    "PHTN4662",
+                    "TELE4642",
+                    "TELE4651",
+                    "TELE4652",
+                    "TELE4653"
+                ]
+            }
+        }
+    },
+    "SOLABH": {
+        "name": "Renewable Energy Engineering",
+        "code": "SOLABH",
+        "units": "168",
+        "faculty": "Faculty of Engineering",
+        "desc": "\n              \nThis stream in Renewable Energy Engineering encompasses a wider range of renewable energy technologies and their use. These include heat and electricity generation from solar thermal systems, photovoltaics, wind turbines, biomass and the important areas of solar architecture and the design of energy efficient buildings and appliances.\n\nRenewable Energy Engineering is also available as a component of the dual degree programs.\n                                  ",
+        "structure": {
+            "Level 1 Core Courses": {
+                "name": "Level 1 Core Courses",
+                "requirements": "Students must take 42 UOC of the following courses.",
+                "courses": [
+                    "ENGG1000",
+                    "MATS1101",
+                    [
+                        "MATH1131",
+                        "MATH1141"
+                    ],
+                    [
+                        "MATH1231",
+                        "MATH1241"
+                    ],
+                    [
+                        "PHYS1121",
+                        "PHYS1131"
+                    ],
+                    [
+                        "PHYS1221",
+                        "PHYS1231"
+                    ],
+                    [
+                        "COMP1911",
+                        "ENGG1811"
+                    ]
+                ]
+            },
+            "Level 2 Core Courses": {
+                "name": "Level 2 Core Courses",
+                "requirements": "Students must take 48 UOC of the following courses.Note: Students selecting Mathematics Strand and Physics Stand, and BE/BSc students majoring in 'Mathematics' or 'Physics' should replace MATH2019 with MATH2011 Several Variable Calculus and MATH2121 Theory and Applications of Differential Equations.",
+                "courses": [
+                    "DESN2000",
+                    "ENGG2500",
+                    "MATH2089",
+                    "MMAN2700",
+                    "SOLA2051",
+                    "SOLA2060",
+                    "SOLA2540",
+                    [
+                        "MATH2018",
+                        "MATH2019"
+                    ]
+                ]
+            },
+            "Level 3 Core Courses": {
+                "name": "Level 3 Core Courses",
+                "requirements": "Students must take 42 UOC of the following courses.",
+                "courses": [
+                    "MECH3610",
+                    "MECH9720",
+                    "SOLA3010",
+                    "SOLA5051",
+                    "SOLA5052",
+                    "SOLA5053",
+                    "SOLA5057"
+                ]
+            },
+            "Level 4 Core Courses": {
+                "name": "Level 4 Core Courses",
+                "requirements": "Students must take 24 UOC of the following courses.",
+                "courses": [
+                    "ELEC4122",
+                    "SOLA4951",
+                    "SOLA4952",
+                    "SOLA4953",
+                    "SOLA5050"
+                ]
+            },
+            "Level 1 Prescribed Electives": {
+                "name": "Level 1 Prescribed Electives",
+                "requirements": "Students must take at least 12 UOC of the following courses. ",
+                "courses": [
+                    "BABS1201",
+                    "BIOM1010",
+                    "BIOS1301",
+                    "CEIC1000",
+                    "CHEM1011",
+                    "CHEM1021",
+                    "CHEM1031",
+                    "CHEM1041",
+                    "CHEM1811",
+                    "CHEM1821",
+                    "COMP1521",
+                    "COMP1531",
+                    "CVEN1701",
+                    "ELEC1111",
+                    "ENGG1100",
+                    "ENGG1200",
+                    "ENGG1300",
+                    "ENGG1400",
+                    "GEOS1111",
+                    "GMAT1110",
+                    "MATH1081",
+                    "MATS1101",
+                    "MATS1110",
+                    "MINE1010",
+                    "PHYS1231",
+                    "PSYC1001",
+                    "SOLA1070"
+                ]
+            }
+        }
+    },
+    "SENGAH": {
+        "name": "Software Engineering",
+        "code": "SENGAH",
+        "units": "168",
+        "faculty": "Faculty of Engineering",
+        "desc": "Software Engineering is an Engineering profession concerned with the processes, methods, and tools for the design and development of high quality, reliable software systems. This involves the study and application of software specification, design, implementation, testing, and documentation of software. Target systems may range from simple software applications to mission-critical real-time systems.",
+        "structure": {
+            "Level 1 Core Courses": {
+                "name": "Level 1 Core Courses",
+                "requirements": "Students must take 42 UOC of the following courses.",
+                "courses": [
+                    "COMP1511",
+                    "COMP1521",
+                    "COMP1531",
+                    "ENGG1000",
+                    "MATH1081",
+                    [
+                        "MATH1131",
+                        "MATH1141"
+                    ],
+                    [
+                        "MATH1231",
+                        "MATH1241"
+                    ]
+                ]
+            },
+            "Level 2 Core Courses": {
+                "name": "Level 2 Core Courses",
+                "requirements": "Students must take 42 UOC of the following courses.",
+                "courses": [
+                    "COMP2041",
+                    "COMP2511",
+                    "COMP2521",
+                    "DESN2000",
+                    "MATH2400",
+                    "MATH2859",
+                    "SENG2011",
+                    "SENG2021"
+                ]
+            },
+            "Level 3 Core Courses": {
+                "name": "Level 3 Core Courses",
+                "requirements": "Students must take 24 UOC of the following courses.",
+                "courses": [
+                    "COMP3141",
+                    "COMP3311",
+                    "COMP3331",
+                    "SENG3011"
+                ]
+            },
+            "Level 4 Core Courses": {
+                "name": "Level 4 Core Courses",
+                "requirements": "Students must take 18 UOC of the following courses.",
+                "courses": [
+                    "COMP4920",
+                    "COMP4951",
+                    "COMP4952",
+                    "COMP4953"
+                ]
+            },
+            "Discipline Electives": {
+                "name": "Discipline Electives",
+                "requirements": "Students must take at least 36 UOC of the following courses.",
+                "courses": [
+                    "COMP3",
+                    "COMP4",
+                    "COMP6",
+                    "COMP9",
+                    "ELEC3",
+                    "ELEC4",
+                    "ENGG3060",
+                    "INFS3",
+                    "INFS4",
+                    "MATH3",
+                    "MATH4",
+                    "MATH6",
+                    "TELE3",
+                    "TELE4"
+                ]
+            },
+            "Free Elective": {
+                "name": "Free Elective",
+                "requirements": "Students must take at least 6 UOC of the following courses.",
+                "courses": []
+            },
+            "Level 4 (or higher) COMP UOC Minimum": {
+                "name": "Level 4 (or higher) COMP UOC Minimum",
+                "requirements": "Students must complete a minimum of 30 UOC of the following courses.",
+                "courses": [
+                    "COMP4",
+                    "COMP4920",
+                    "COMP4951",
+                    "COMP4952",
+                    "COMP4953",
+                    "COMP6",
+                    "COMP9"
+                ]
+            }
+        }
+    },
+    "GMATDH": {
+        "name": "Surveying",
+        "code": "GMATDH",
+        "units": "168",
+        "faculty": "Faculty of Engineering",
+        "desc": "\n              \nThe Surveying stream is full time and extends over four years. This stream aims to prepare a graduate for a broad range of career opportunities in the various branches of Surveying and the numerous Spatial Information disciplines. To this end the stream covers general scientific and IT principles, as well as specialised Surveying and Spatial Information topics. Specialisation is provided for through the provision of elective courses offered in the third and fourth years of the program and the choice of a targeted final year thesis project often aligned with an external industry partner. \n\nThe degree of BE in Surveying is recognised by the Board of Surveying and Spatial Information of New South Wales as meeting the requirements for entry as a candidate to become a Registered Surveyor. The degree is also recognised by the Institution of Surveyors, New South Wales, the Spatial Sciences Institute and Engineers Australia, for admission as corporate members.\n\nSuggestions for course sequences consistent with timetabling and availability can be found on the School website The timing of the general education courses and elective courses may be modified to optimize the student's choice of courses. While some courses are given twice a year, many courses are given only once a year. In addition, courses may have prerequisites and exclusions. Thus students should plan their enrolments appropriately.\n\nThe day to day administration of the stream is conducted through the School of Civil & Environmental Engineering, to which inquiries should be directed.\n                                  ",
+        "structure": {
+            "Level 1 Core Courses": {
+                "name": "Level 1 Core Courses",
+                "requirements": "Students must take 36 UOC of the following courses.",
+                "courses": [
+                    "ENGG1000",
+                    "ENGG1811",
+                    "GMAT1110",
+                    [
+                        "MATH1131",
+                        "MATH1141"
+                    ],
+                    [
+                        "MATH1231",
+                        "MATH1241"
+                    ],
+                    [
+                        "PHYS1121",
+                        "PHYS1131"
+                    ]
+                ]
+            },
+            "Level 2 Core Courses": {
+                "name": "Level 2 Core Courses",
+                "requirements": "Students must take 48 UOC of the following courses.",
+                "courses": [
+                    "CVEN2002",
+                    "DESN2000",
+                    "ENGG2500",
+                    "GMAT2120",
+                    "GMAT2500",
+                    "GMAT2550",
+                    "GMAT2700",
+                    [
+                        "MATH2018",
+                        "MATH2019"
+                    ]
+                ]
+            },
+            "Level 3 Core Courses": {
+                "name": "Level 3 Core Courses",
+                "requirements": "Students must take 48 UOC of the following courses.",
+                "courses": [
+                    "CVEN3101",
+                    "CVEN3501",
+                    "GMAT3100",
+                    "GMAT3150",
+                    "GMAT3220",
+                    "GMAT3420",
+                    "GMAT3500",
+                    "GMAT3700"
+                ]
+            },
+            "Level 4 Core Courses": {
+                "name": "Level 4 Core Courses",
+                "requirements": "Students must take 18 UOC of the following courses.",
+                "courses": [
+                    "CVEN4050",
+                    "CVEN4051",
+                    "CVEN4951",
+                    "CVEN4952",
+                    "CVEN4953",
+                    "GMAT4150"
+                ]
+            },
+            "Discipline Elective": {
+                "name": "Discipline Elective",
+                "requirements": "Students must take at least 6 UOC of the following courses. Students who wish to take any courses outside of this list need to get approval from the Program Authority.",
+                "courses": [
+                    "CVEN4800",
+                    "ENGG3001",
+                    "ENGG4060",
+                    "ENGG4102",
+                    "GEOS3911",
+                    "GMAT4220",
+                    "GMAT4400",
+                    "GMAT4450",
+                    "GMAT4900",
+                    "GMAT9600",
+                    "MINE2010"
+                ]
+            },
+            "Level 1 Prescribed Electives": {
+                "name": "Level 1 Prescribed Electives",
+                "requirements": "Students must take at least 12 UOC of the following courses. ",
+                "courses": [
+                    "BABS1201",
+                    "BIOM1010",
+                    "BIOS1301",
+                    "CEIC1000",
+                    "CHEM1011",
+                    "CHEM1021",
+                    "CHEM1031",
+                    "CHEM1041",
+                    "CHEM1811",
+                    "CHEM1821",
+                    "COMP1521",
+                    "COMP1531",
+                    "CVEN1701",
+                    "ELEC1111",
+                    "ENGG1100",
+                    "ENGG1200",
+                    "ENGG1300",
+                    "ENGG1400",
+                    "GEOS1111",
+                    "GMAT1110",
+                    "MATH1081",
+                    "MATS1101",
+                    "MATS1110",
+                    "MINE1010",
+                    "PHYS1231",
+                    "PSYC1001",
+                    "SOLA1070"
+                ]
+            }
+        }
+    },
+    "TELEAH": {
+        "name": "Telecommunications",
+        "code": "TELEAH",
+        "units": "168",
+        "faculty": "Faculty of Engineering",
+        "desc": "\n              \nTelecommunications engineering is the most rapidly developing and dynamic field of Engineering. The School's undergraduate BE (Hons) program in Telecommunications continue to act as a model for educating engineers in tomorrow's technology. Options within Telecommunications include: Photonics, Systems and Control, Energy Systems, Microelectronics and Signal Processing. The Degree programs are accredited by Engineers Australia as meeting the requirements for admission to graduate membership.\n\nThe undergraduate curricula are being progressively revised to provide flexible training to suit the future needs of students. Individual student needs can be further met by substitution provisions within the programs.\n\nThe Telecommunications stream consists of 168 UOC as described below. The stream structure outlined below gives one sequence of courses that fulfils the requirements of the degree. The timing of the general education courses and elective courses may be modified to optimize the student's choice of courses. While some courses are given twice a year, many courses are given only once a year. In addition, courses may have prerequisites and exclusions. Students are strongly encouraged to consult the Electrical Engineering School website for the recommended program structure and for advice on course selection sequences that are consistent with timetabling and availability.\n                                  ",
+        "structure": {
+            "Level 1 Core Courses": {
+                "name": "Level 1 Core Courses",
+                "requirements": "Students must take 48 UOC of the following courses.",
+                "courses": [
+                    "COMP1521",
+                    "ELEC1111",
+                    "ENGG1000",
+                    "PHYS1231",
+                    [
+                        "MATH1131",
+                        "MATH1141"
+                    ],
+                    [
+                        "MATH1231",
+                        "MATH1241"
+                    ],
+                    [
+                        "PHYS1121",
+                        "PHYS1131"
+                    ],
+                    [
+                        "COMP1511",
+                        "COMP1911"
+                    ]
+                ]
+            },
+            "Level 2 Core Courses": {
+                "name": "Level 2 Core Courses",
+                "requirements": "Students must take 36 UOC of the following courses.",
+                "courses": [
+                    "DESN2000",
+                    "ELEC2133",
+                    "ELEC2134",
+                    "ELEC2141",
+                    "MATH2069",
+                    "MATH2099"
+                ]
+            },
+            "Level 3 Core Courses": {
+                "name": "Level 3 Core Courses",
+                "requirements": "Students must take 48 UOC of the following courses.",
+                "courses": [
+                    "ELEC3104",
+                    "ELEC3106",
+                    "ELEC3114",
+                    "ELEC3115",
+                    "ELEC3117",
+                    "TELE3113",
+                    "TELE3118",
+                    "TELE3119"
+                ]
+            },
+            "Level 4 Core Courses": {
+                "name": "Level 4 Core Courses",
+                "requirements": "Students must take 24 UOC of the following courses.",
+                "courses": [
+                    "ELEC4122",
+                    "ELEC4123",
+                    "ELEC4951",
+                    "ELEC4952",
+                    "ELEC4953"
+                ]
+            },
+            "Level 1 Prescribed Electives": {
+                "name": "Level 1 Prescribed Electives",
+                "requirements": "Students can take up to a maximum of 12 UOC of the following courses.Note: - Students choosing the recommended ELEC1111 and COMP1521 Year 1 electives will gain two Level 4 Electives later in the program.- CHEM1031 and CHEM1041 will only be available to students enrolled in a program which has a Chemistry major.",
+                "courses": [
+                    "BABS1201",
+                    "BIOM1010",
+                    "BIOS1301",
+                    "CEIC1000",
+                    "CHEM1011",
+                    "CHEM1021",
+                    "CHEM1031",
+                    "CHEM1041",
+                    "CHEM1811",
+                    "CHEM1821",
+                    "COMP1521",
+                    "COMP1531",
+                    "CVEN1701",
+                    "ELEC1111",
+                    "ENGG1100",
+                    "ENGG1200",
+                    "ENGG1300",
+                    "ENGG1400",
+                    "GEOS1111",
+                    "GMAT1110",
+                    "MATH1081",
+                    "MATS1101",
+                    "MATS1110",
+                    "MINE1010",
+                    "PHYS1231",
+                    "PSYC1001",
+                    "SOLA1070"
+                ]
+            },
+            "Level 3 Prescribed Electives": {
+                "name": "Level 3 Prescribed Electives",
+                "requirements": "Students can take up to a maximum of 6 UOC of the following courses.",
+                "courses": [
+                    "COMP2041",
+                    "COMP3211",
+                    "COMP3231",
+                    "ELEC2146",
+                    "ELEC3105",
+                    "ELEC3111",
+                    "ELEC3145",
+                    "ELEC3705",
+                    "ENGG3001",
+                    "ENGG3060",
+                    "ENGG4060",
+                    "ENGG4102",
+                    "MATH3101",
+                    "MATH3121",
+                    "MATH3161",
+                    "MATH3201",
+                    "MATH3261",
+                    "MATH3411"
+                ]
+            },
+            "Level 4 Prescribed Electives": {
+                "name": "Level 4 Prescribed Electives",
+                "requirements": "Students must take at least 12 UOC of the following courses. Students who have chosen ELEC1111 and COMP1521 as their Year 1 electives may take up to 12 UOC more of the courses below",
+                "courses": [
+                    "ELEC4445",
+                    "ELEC4601",
+                    "ELEC4602",
+                    "ELEC4603",
+                    "ELEC4604",
+                    "ELEC4605",
+                    "ELEC4611",
+                    "ELEC4612",
+                    "ELEC4613",
+                    "ELEC4614",
+                    "ELEC4617",
+                    "ELEC4621",
+                    "ELEC4622",
+                    "ELEC4623",
+                    "ELEC4631",
+                    "ELEC4632",
+                    "ELEC4633",
+                    "PHTN4661",
+                    "PHTN4662",
+                    "TELE4642",
+                    "TELE4651",
+                    "TELE4652",
+                    "TELE4653"
+                ]
+            }
+        }
+    }
+}

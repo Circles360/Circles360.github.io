@@ -1,10 +1,8 @@
-# from selenium import webdriver
 from bs4 import BeautifulSoup
 import scrape
 import time
 import json
 import re
-import os
 
 COURSE_CODE_REGEX = "[A-Z]{4}[0-9]{4}"
 
@@ -197,8 +195,7 @@ def get_course_equivalents(handbook_html):
 COURSES = {}
 BUILDS_INTO = {}
 
-with open("course_links.json", "r") as read_file:
-    course_links = json.load(read_file)
+course_links = scrape.read_from_file("links_courses.json")
 
 total = len(course_links)
 
@@ -266,5 +263,4 @@ for course in BUILDS_INTO:
         for c in BUILDS_INTO[course]:
             COURSES[course]["builds_into"].append(c)
 
-with open("courses.json", "w") as write_file:
-    json.dump(COURSES, write_file)
+scrape.write_to_file("courses.json", COURSES)

@@ -2,7 +2,6 @@ from selenium import webdriver
 from bs4 import BeautifulSoup
 import scrape
 import json
-import os
 import time
 
 ALL_COURSES = "https://www.handbook.unsw.edu.au/search?q=&ct=subject&study_level=ugrd"
@@ -48,10 +47,6 @@ while (button):
     LINKS = LINKS + get_links(browser)
     # Get next page
     button = get_next_page(browser, first=False)
-
-# print("\n\n")
-# for l in LINKS:
-#     print(l)
 
 with open("course_links.json", "w") as write_file:
         json.dump(LINKS, write_file)

@@ -8,13 +8,10 @@ SUBJECT_AREAS = {
 }
 
 html = scrape.get_html(scrape.HANDBOOK_URL)
-
 subject_area_tiles = html.find(id="tab_educational_area").find_all("h3")
 
 for tile in subject_area_tiles:
-    text = tile.text
-
-    code, subject = text.split(": ")
+    code, subject = tile.text.split(": ")
 
     SUBJECT_AREAS["code_to_subject"][code] = subject
     SUBJECT_AREAS["subject_to_code"][subject] = code
