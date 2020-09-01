@@ -24,7 +24,7 @@ const onElementClick = (event, element) => {
     console.log(element.id);
     console.log(element.position.x + ' ' + element.position.y);
     for (var e of elementsData) {
-        if (e.id == element.id) {
+        if (e.id === element.id) {
             e.position.x = element.position.x;
             e.position.y = element.position.y;
         }
@@ -46,7 +46,7 @@ const positionHelper = () => {
     // are making a server write to a local file.
     console.log('[');
     for (const e of positioning_data) {
-        console.log('{' + '"id": ' + '"' + e.id + '"' + ', position: {"x": ' + e.position.x + ', "y": ' + e.position.y + '}},');
+        console.log('{"id": "' + e.id + '", position: {"x": ' + e.position.x + ', "y": ' + e.position.y + '}},');
     }
     console.log(']');
 }
@@ -66,9 +66,9 @@ const BESengah = () => {
                 nodesConnectable={false}
             >
             </ReactFlow>
-            {/* <button type="button" onClick={positionHelper}> */}
-                {/* Generate position */}
-            {/* </button> */}
+            <button type="button" onClick={positionHelper}>
+                Generate position
+            </button>
         </div>
     );
 };
