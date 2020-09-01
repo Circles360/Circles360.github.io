@@ -119,5 +119,4 @@ for link in ENG_HONOUR_LINKS:
 
     ENG_DEGREES[degree_info["code"]] = degree_info
 
-print(json.dumps(ENG_DEGREES, indent=2))
 scrape.write_to_file("fac_eng_degrees.json", ENG_DEGREES)
