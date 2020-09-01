@@ -5,7 +5,7 @@ var initialElements = [
     {id: '1', style: {opacity: 1}, position: {x: 0, y: 0}, data: {label: 'VINCENT'}, type: 'default'},
     {id: '2', style: {opacity: 1}, position: {x: 0, y: 100}, data: {label: 'HAYES'}, type: 'default'},
     {id: '3', style: {opacity: 1}, position: {x: 0, y: -100}, data: {label: 'JAMES'}, type: 'default'},
-
+    
     {id: 'e1-2', source: '1', target: '2', type: 'step', animated: true}
 ];
 
@@ -29,7 +29,7 @@ const Teaching = () => {
     const onClick = (event, element) => {
         setElements((els) =>
             els.map((e) => {
-                if (e.id == element.id) {
+                if (e.id === element.id) {
                     e.style.opacity = 0;
                     return e;
                 }
@@ -50,7 +50,7 @@ const Teaching = () => {
                 <Background />
                 <MiniMap 
                     nodeColor = {n=>{
-                        if (n.data.label == 'VINCENT') return 'red';
+                        if (n.data.label === 'VINCENT') return 'red';
                         return 'blue';
                     }}
                 />
