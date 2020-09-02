@@ -1,13 +1,16 @@
 import React, {useState} from 'react';
-import ReactFlow, {Controls} from 'react-flow-renderer';
+import ReactFlow, {Controls, getConnectedEdges, isNode, isEdge} from 'react-flow-renderer';
 import CustomNode1 from '../../components/customnode1.js';
 import HeaderNode1 from '../../components/headernode1.js';
+import ReactDOM from 'react-dom';
+import '../../styles/nodeclass.css';
 
 var elementsData = require("./data.json");
+var elementsNode = elementsData.filter(e => isNode(e));
+var elementsEdge = elementsData.filter(e => isEdge(e));
 //const eng_data = require("../../webscraper/engineering_degrees.json");
-console.log(elementsData);
 
-//Temporary generator for positioning
+console.log(elementsData);
 
 const onLoad = (reactFlowInstance) => {
     reactFlowInstance.fitView();
@@ -17,19 +20,6 @@ const nodeTypes = {
     custom1: CustomNode1,
     header1: HeaderNode1
 };
-
-const onElementClick = (event, element) => {
-    if (element.id.match(/^e/)) return; // Don't care about edges
-
-    console.log(element.id);
-    console.log(element.position.x + ' ' + element.position.y);
-    for (var e of elementsData) {
-        if (e.id === element.id) {
-            e.position.x = element.position.x;
-            e.position.y = element.position.y;
-        }
-    }
-}
 
 // HELPER FUNCTION FOR POSITIONING
 var positioning_data = [];
@@ -51,9 +41,43 @@ const positionHelper = () => {
     console.log(']');
 }
 
-
 const BESengah = () => {
     const [elements, setElements] = useState(elementsData);
+
+    const onElementClick = (event, element) => {
+        if (isEdge(element)) return; // Don't care about edges
+        
+        //console.log(element);
+        //console.log(element.className);
+        //console.log(event.target);
+
+        highlightEdges(element);
+    };
+
+    const highlightEdges = (element) => {
+        if (isEdge(element)) return;
+        console.log("HIHIHIHI");
+        const connectedEdges = getConnectedEdges([element], elementsEdge);
+        console.log(connectedEdges);
+        console.log(element);
+        const connectedEdgeIds = connectedEdges.map(e => e.id);
+        console.log(connectedEdgeIds);
+
+        console.log(elements);
+
+        setElements((els) => 
+            els.map((e) => {
+                //if (isEdge(e)) console.log(e.id);
+                if (connectedEdgeIds.includes(e.id)) {
+                    var stroke_colour;
+                    if (e.style.stroke === 'grey') return {...e, style: {...e.style, stroke: 'red', opacity: 1}};
+                    else if (e.style.stroke === 'red') return {...e, style: {...e.style, stroke: 'grey', opacity: 0.2}};
+                }
+                return e;
+            })
+        )
+    }
+
 
     return (
         <div>
@@ -65,6 +89,7 @@ const BESengah = () => {
                 onElementClick={onElementClick}
                 nodesConnectable={false}
                 minZoom={0.1}
+                // nodesDraggable={false}
             >
                 <Controls />
             </ReactFlow>

@@ -19,6 +19,7 @@ courses_output.push({
         units: data.SENGAH.units,
         builds_into: ['COMP1511', 'ENGG1000', 'MATH1131', 'MATH1081']
     },
+   // className: 'node_header',
     style: node_header,
     position: {x: 0, y: 0}
 })
@@ -48,6 +49,7 @@ function any_course_finder(code, level) {
                 type: 'custom1',
                 data: courses[course],
                 position: {x: 0, y: 0},
+                // className: 'node1',
                 style: node1
             })
         }
@@ -72,6 +74,7 @@ for (const course_group in data.SENGAH.structure) {
                     type: 'custom1',
                     data: courses[option],
                     position: {x: 0, y: 0},
+                    // className: 'node1',
                     style: node1,
                 })
             }
@@ -82,6 +85,7 @@ for (const course_group in data.SENGAH.structure) {
                     type: 'custom1',
                     data: courses[course],
                     position: {x: 0, y: 0},
+                    // className: 'node1',
                     style: node1,
                 })
             } else if (course.match(/^[A-Z]{4}[0-9]/)) {
@@ -155,7 +159,8 @@ for (const course of courses_output) {
                 source: course.id,
                 target: child,
                 type: 'straight',
-                style: {opacity: 0.15},
+                //className: 'edge_opaque_20',
+                style: {opacity: 0.20, stroke: 'grey'},
                 animated: false
             })
         }

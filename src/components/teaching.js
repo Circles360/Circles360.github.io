@@ -27,10 +27,12 @@ const Teaching = () => {
     
 
     const onClick = (event, element) => {
+        console.log('hi');
         setElements((els) =>
             els.map((e) => {
                 if (e.id === element.id) {
-                    e.style.opacity = 0;
+                    console.log(element);    
+                    console.log(e.style.opacity);
                     return e;
                 }
                 return e;
