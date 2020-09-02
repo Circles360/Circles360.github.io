@@ -1,21 +1,32 @@
+import scrape
 import json
+import re
 
-TEMPLATE = {
-    "prerequisites": None,
-    "corequisites": None,
-    "units_required": None,
-    "level_for_units_required": None,
-    "core_year": None,
-    "other": None
-}
+with open("fac_eng_degrees.json", "r", encoding="utf8") as read_file:
+    eng_degrees = json.load(read_file)
 
-with open("courses.json", "r", encoding="utf8") as read_file:
-    courses = json.load(read_file)
+def translate_requirements(req):
+    match = re.search("Students must ((complete )|(take )|(take at least )|(complete a minimum of ))(\d+) UOC", req)
+    if match:
+        min_uoc = match.group(5)
+        return f" >>> MIN UOC {min_uoc}"
 
-for code in courses:
-    if courses[code]["conditions"] == None:
-        courses[code]["conditions"] = TEMPLATE
+    match = re.search("Students can take up to (a maximum of )?(\d+) UOC", req)
+    if match:
+        max_uoc = match.group(2)
+        return f" >>> MAX UOC {max_uoc}"
 
+    match = re.search("Students must take at least (\d+) UOC, up to a maximum of (\d+) UOC", req)
+    if match:
+        min_uoc = match.group(1)
+        max_uoc = match.group(2)
+        return f" >>> BETWEEN {min_uoc} AND {max_uoc} UOC"
 
-with open("courses.json", "w") as write_file:
-    json.dump(courses, write_file)
+    return req
+
+for code in eng_degrees:
+    for s in eng_degrees[code]["structure"]:
+        translated = translate_requirements(eng_degrees[code]["structure"][s]["requirements"])
+        if translated == eng_degrees[code]["structure"][s]["requirements"]:
+            print(code, s, "//", translated, "\n")
+

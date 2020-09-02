@@ -5,100 +5,106 @@ import json
 import time
 import re
 
+WAIT = 2
+COURSE_CODE_REGEX = "[A-Z]{4}\d{4}"
+
 def get_degree_name(html):
-    return html.find("h1", class_="o-ai-overview__h1").find("span").text
+    return html.find("h2", class_="css-1b7bj3d-Heading-ComponentHeading-Heading-css-css ezav15i5").text
 
 def get_degree_code(html):
-    return html.find("div", class_="m-ai-overview-details__cell code p-left-0").find("strong").text
+    return html.find("h5", class_="introDetails__sub_heading css-ciwu9x-Subheading-css ezav15i1").text
 
 def get_units_required(html):
-    return html.find("div", class_="m-ai-overview-details__cell code").find("span").find("strong").text.split()[0]
+    return html.find("h4", text=re.compile("Minimum Units of Credit")).find_next_sibling("div").text
 
 def get_faculty(html):
-    return html.find(class_="a-column a-column-df-12 a-column-md-6 a-column-sm-12").find("a").text
-
-def get_degree_desc(html):
-    try:
-        return html.find(id="readMoreToggle1").find("p").text
-    except:
-        return html.find(id="readMoreToggle1").find("div", class_="readmore__wrapper").text
+    return html.find("div", class_="css-1cq5lls-Box-AttrContainer esd54cc0").find("a").text
 
 def get_level_courses(level_html):
     courses = []
-    course_tiles = level_html.find(class_="m-accordion-body-inner has-focus").find_all(class_="m-single-course-wrapper")
+    course_tiles = level_html.find_all("a", class_="exq3dcx2")
 
     for tile in course_tiles:
-        try:
-            course_code = tile.find("span", class_="align-left").text
-        except:
-            any_course = tile.find("p", class_="text-color-blue-400 no-margin").text
+        course_code = tile.find(text=re.compile(COURSE_CODE_REGEX))
+        if course_code:
+            courses.append(course_code)
+            continue
 
-            # Hard code
-            if re.search("course offered by Faculty of Engineering", any_course):
-                continue
+        any_level = tile.find(text=re.compile("any level \d+ .* course"))
+        if any_level:
+            match = re.search("any level (\d) (.*) course", any_level)
+            course_level = match.group(1)
+            course_subject_code = SUBJECT_AREAS["subject_to_code"][match.group(2)]
+            courses.append(course_subject_code + course_level)
+            continue
 
-            if re.search("any course", any_course):
-                continue
+        # Edge cases
+        cse_school_course = tile.find(text=re.compile("School of Computer Science and Engineering"))
+        if cse_school_course:
+            print("cse school only")
+            course_level = re.search("level (\d+)", cse_school_course).group(1)
+            course_subject_code = "COMP"
+            courses.append(course_subject_code + course_level)
+            continue
 
-            if re.search("School of Computer Science and Engineering", any_course):
-                course_level = re.search("level (\d)", any_course).group(1)
-                course_subject_code = "COMP"
-            else:
-                match = re.search("any level (\d) (.*) course", any_course)
-                course_level = match.group(1)
-                course_subject_code = SUBJECT_AREAS["subject_to_code"][match.group(2)]
+        if tile.find(text=re.compile("any course")):
+            courses.append("ANY")
+            continue
 
-            course_code = course_subject_code + course_level
 
-        print(course_code)
-        courses.append(course_code)
+        #     if re.search("course offered by Faculty of Engineering", any_course):
+        #         continue
 
-    # Then group all the courses that are "one of the following"
-    choice_groups = level_html.find_all(text="One of the following:")
+
+    # Then group all the courses that are "One of the following:"
+    choice_groups = level_html.find_all("strong", text=re.compile("One of the following:"))
 
     for group in choice_groups:
-        course_choices = []
-        choice_tiles = group.find_parent("div").find_next_sibling("div").find_all(class_="m-single-course-wrapper")
+        choice_tiles = group.find_parent("div", class_="AccordionItem css-1dfs90h-Box-CardBody e1q64pes0").find_all("a", class_="exq3dcx2")
 
+        one_of = []
         for tile in choice_tiles:
-            course_code = tile.find("span", class_="align-left").text
-            course_choices.append(course_code)
+            course_code = tile.find(text=re.compile(COURSE_CODE_REGEX))
+            one_of.append(course_code)
             courses.remove(course_code)
 
-        courses.append(course_choices)
+        courses.append(one_of)
+
+    if courses == []:
+        print("EMPTY COURSES")
 
     return courses
 
 def get_level_name(level_html):
-    return level_html.find("h4").text
+    return level_html.find("strong").text
 
 def get_level_requirements(level_html):
-    return level_html.find("p", class_="no-margin").find("p").text
+    try:
+        return int(level_html.find("small").text.split(" ")[0])
+    except:
+        return None
 
 def get_degree_structure(html):
     degree_structure = {}
-    specialisation_structure = html.find(id="structure").find_all(class_="a-card a-card--has-body")
+    specialisation_structure = html.find(id="SpecialisationStructure").find_all(class_="css-8x1vkg-Box-Card-EmptyCard-css-SAccordionContainer e1450wuy4")
 
     for level in specialisation_structure:
         level_name = get_level_name(level)
 
         degree_structure[level_name] = {
             "name": level_name,
-            "requirements": get_level_requirements(level),
+            "units_required": get_level_requirements(level),
             "courses": get_level_courses(level)
         }
 
     return degree_structure
 
-def get_degree_info(link):
-    html = scrape.get_html(link)
-
+def get_degree_info(html):
     return {
         "name": get_degree_name(html),
         "code": get_degree_code(html),
         "units": get_units_required(html),
         "faculty": get_faculty(html),
-        "desc": get_degree_desc(html),
         "structure": get_degree_structure(html)
     }
 
@@ -114,9 +120,19 @@ ENG_HONOUR_LINKS = ENG_LINKS["honours"]
 ENG_DOUBLE_DEGREE_LINKS = ENG_LINKS["double_degrees"]
 
 # Only honour links for now
+browser = webdriver.Chrome("./chromedriver") # NEED TO BE CHROME VERSION 85
 for link in ENG_HONOUR_LINKS:
-    degree_info = get_degree_info(link)
+    browser.get(link)
+
+    print(" >>> scraping" + link)
+    time.sleep(WAIT)
+
+    degree_html = BeautifulSoup(browser.page_source, "html.parser")
+    degree_info = get_degree_info(degree_html)
+
+    # print(json.dumps(degree_info, indent=2))
 
     ENG_DEGREES[degree_info["code"]] = degree_info
 
+browser.quit()
 scrape.write_to_file("fac_eng_degrees.json", ENG_DEGREES)
