@@ -48,13 +48,8 @@ def get_level_courses(level_html):
             continue
 
         if tile.find(text=re.compile("any course")):
-            courses.append("ANY")
+            courses.append("ANY COURSE")
             continue
-
-
-        #     if re.search("course offered by Faculty of Engineering", any_course):
-        #         continue
-
 
     # Then group all the courses that are "One of the following:"
     choice_groups = level_html.find_all("strong", text=re.compile("One of the following:"))
