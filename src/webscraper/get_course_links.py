@@ -4,24 +4,20 @@ import scrape
 import json
 import time
 
-ALL_COURSES = "https://www.handbook.unsw.edu.au/search?q=&ct=subject&study_level=ugrd"
-WAIT = 0.5
+SEARCH_LINK = "https://www.handbook.unsw.edu.au/search"
+WAIT = 2
 LINKS = []
 
 def get_next_page(browser, first):
     time.sleep(WAIT)
-    next_page = browser.find_elements_by_xpath("//*[@aria-label='Go to next search result page']")
-
-    if not next_page:
-        return None
-
-    return next_page[-1]
+    next_page_button = browser.find_elements_by_xpath("//*[@id='pagination-page-next']")[0]
+    return next_page_button if next_page_button.is_enabled() else None
 
 def get_links(browser):
     time.sleep(WAIT)
     html = BeautifulSoup(browser.page_source, "html.parser")
 
-    course_tiles = html.find(id="advanced-search__suggestions").find_all("a", class_="m-advanced-search-result-link m-advanced-search-result-link")
+    course_tiles = html.find(id="search-results").find_all("a")
 
     course_links = []
     for a in course_tiles:
@@ -33,20 +29,24 @@ def get_links(browser):
 
 # Open browser
 browser = webdriver.Chrome("./chromedriver") # NEED TO BE CHROME VERSION 85
-browser.get(ALL_COURSES)
+browser.get(SEARCH_LINK)
+
+# Show all courses
+show_course = browser.find_elements_by_xpath("//*[@id='react-tabs-6']")[0]
+show_course.click()
 
 # Scrape page for links
 LINKS = LINKS + get_links(browser)
 
 # Keep clicking next page
-button = get_next_page(browser, first=True)
-while (button):
-    button.click()
+next_page_button = get_next_page(browser, first=True)
+while (next_page_button):
+    browser.execute_script("arguments[0].click();", next_page_button)
 
     # Scrape page for links
     LINKS = LINKS + get_links(browser)
     # Get next page
-    button = get_next_page(browser, first=False)
+    next_page_button = get_next_page(browser, first=False)
 
 with open("course_links.json", "w") as write_file:
         json.dump(LINKS, write_file)
