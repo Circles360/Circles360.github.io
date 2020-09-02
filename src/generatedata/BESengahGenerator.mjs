@@ -2,21 +2,21 @@ import { node1, node_header} from '../styles/nodes.mjs';
 import { createRequire } from "module";
 const require = createRequire(import.meta.url);
 
-const data = require("../webscraper/engineering_degrees.json");
+const data = require("../webscraper/fac_eng_degrees.json");
 const courses = require("../webscraper/courses.json");
 const position_data = require("../maps/EngineeringHonoursSoftware/position.json");
 
 var courses_output = [];
-var courses_list = []; // Keeps track of courses in this degree for easier checking later on
+var courses_list = {}; // Keeps track of courses in this degree for easier checking later on
 
 // Add course header
 courses_output.push({
-    id: data.SENGAH.degree_code,
+    id: data.SENGAH.code,
     type: 'header1',
     data: {
-        degree_name: data.SENGAH.degree_name,
-        degree_code: data.SENGAH.degree_code,
-        degree_units: data.SENGAH.degree_units,
+        degree_name: data.SENGAH.name,
+        degree_code: data.SENGAH.code,
+        units: data.SENGAH.units,
         builds_into: ['COMP1511', 'ENGG1000', 'MATH1131', 'MATH1081']
     },
     style: node_header,
@@ -24,33 +24,6 @@ courses_output.push({
 })
 
 courses_output[0].style.background = '#7766ca';
-
-
-// Get all the courses for software engineering
-/*for (var course_group in data['SENGAH']['core_courses']) {
-    for (var course in data['SENGAH']['core_courses'][course_group]) {
-        var course_name = data['SENGAH']['core_courses'][course_group][course];
-        if (course_group.match(/Core/)) {
-            const node = {
-                id: course_name,
-                type: 'custom1',
-                data: courses[course_name],
-                position: {x: 0, y: 0}
-            }
-            
-            if (course_name.match(/COMP/)) {
-                node['style'] = node_66ca86;
-            } else if (course_name.match(/MATH/)) {
-                node['style'] = node_ca6f66;
-            } else {
-                node['style'] = node_caa066;
-            }
-
-            courses_output.push(node);
-            courses_list[course_name] = 1;
-        }
-    }
-}*/
 
 // Colours a node accordingly
 function colour_node(node) {
@@ -85,43 +58,48 @@ function any_course_finder(code, level) {
 
 
 // Get all the courses for software engineering
-for (const course_group in data.SENGAH.core_courses) {
+for (const course_group in data.SENGAH.structure) {
     //console.log(course_group);
-    //console.log(data.SENGAH.core_courses);
-    for (const course of data.SENGAH.core_courses[course_group]) {
+    //console.log(data.SENGAH.structure);
+    for (const course of data.SENGAH.structure[course_group].courses) {
+        //console.log(course);
         var node_list = [];
-        if (course.match(/^[A-Z]{4}[0-9]{4}$/)) {
-            var node = {
-                id: course,
-                type: 'custom1',
-                data: courses[course],
-                position: {x: 0, y: 0},
-                style: node1,
+
+        if (Array.isArray(course)) {
+            for (const option of course) {
+                node_list.push({
+                    id: option,
+                    type: 'custom1',
+                    data: courses[option],
+                    position: {x: 0, y: 0},
+                    style: node1,
+                })
             }
-            node_list.push(node);
-        } else if (course.match(/^any level/)) {
-            //console.log(course);
-            // Get all courses which fit this criteria
-            const level = course.match(/any level (\d)/)[1];
-            console.log(level);
-            const course_type = course.match(/any level \d (.*) course/)[1];
-            var code;
-
-            // Temporary hard code fix for now
-            if (course_type === 'Computer Science') code = 'COMP';
-            else if (course_type === 'Electrical Engineering') code = 'ELEC';
-            else if (course_type === 'Information Systems') code = 'INFS';
-            else if (course_type === 'Mathematics') code = 'MATH';
-            else if (course_type === 'Telecommunications') code = 'TELE';
-
-            node_list = any_course_finder(code, level);
+        } else {
+            if (course.match(/^[A-Z]{4}[0-9]{4}$/)) {
+                node_list.push({
+                    id: course,
+                    type: 'custom1',
+                    data: courses[course],
+                    position: {x: 0, y: 0},
+                    style: node1,
+                })
+            } else if (course.match(/^[A-Z]{4}[0-9]/)) {
+                // Get all courses which fit this criteria
+                const level = course.match(/(\d)/)[1];
+                //console.log(level);
+                const code = course.match(/([A-Z]{4})/)[1];
+                //console.log(code);
+            
+                node_list = any_course_finder(code, level);
+            }
         }
         
         for (const node of node_list) {
             //console.log(courses_list[node])
             if (!courses_list[node.id]) {
                 // Colour and add the node if we have not added it before
-                console.log("ADDING " + node.id);
+                //console.log("ADDING " + node.id);
                 colour_node(node);
                 courses_list[node.id] = 1;
                 courses_output.push(node);
@@ -129,7 +107,6 @@ for (const course_group in data.SENGAH.core_courses) {
         }
     }
 }
-
 
 // Hard code in some specific requirements
 // DESN2000 - add ENG1000 as prerequisite. Check term which SENGAH can take it in
@@ -148,8 +125,6 @@ for (const course of courses_output) {
     }
 }
 
-
-
 // Generate the position for each node
 for (const node of position_data) {
     //console.log(node);
@@ -163,34 +138,32 @@ for (const node of position_data) {
 }
 
 // Generate the edges
-var n_courses = courses_output.length;
 var edges_output = [];
-for (var i = 0; i < n_courses; i++) {
+for (const course of courses_output) {
+    //console.log(course);
+    //console.log("HI");
+    //console.log(course.data);
     // Find the children
-    if (courses_output[i]['data']['builds_into'] == null) {
+    if (course.data.builds_into === null) {
         continue;
     }
 
-    var n_children = courses_output[i]['data']['builds_into'].length;
-    for (var j = 0; j < n_children; j++) {
-        // Do not create the edge if the child course does not exist in our degree
-        if (courses_output[i]['data']['builds_into'][j] in courses_list) {
+    for (const child of course.data.builds_into) {
+        if (courses_list.hasOwnProperty(child)) {
             edges_output.push({
-                id: 'e' + courses_output[i]['id'] + '-' + courses_output[i]['data']['builds_into'][j],
-                source: courses_output[i]['id'],
-                target: courses_output[i]['data']['builds_into'][j],
-                type: 'default',
-                animated: false,
+                id: 'e' + course.id + '-' + child,
+                source: course.id,
+                target: child,
+                type: 'straight',
+                style: {opacity: 0.15},
+                animated: false
             })
         }
     }
 }
 
-
 //console.log(edges_output);
 const output = courses_output.concat(edges_output);
-
-
 
 // Write to the file
 const fs = require('fs');

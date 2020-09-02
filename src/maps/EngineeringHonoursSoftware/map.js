@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import ReactFlow from 'react-flow-renderer';
+import ReactFlow, {Controls} from 'react-flow-renderer';
 import CustomNode1 from '../../components/customnode1.js';
 import HeaderNode1 from '../../components/headernode1.js';
 
@@ -46,7 +46,7 @@ const positionHelper = () => {
     // are making a server write to a local file.
     console.log('[');
     for (const e of positioning_data) {
-        console.log('{"id": "' + e.id + '", position: {"x": ' + e.position.x + ', "y": ' + e.position.y + '}},');
+        console.log('{"id": "' + e.id + '", "position": {"x": ' + e.position.x + ', "y": ' + e.position.y + '}},');
     }
     console.log(']');
 }
@@ -64,7 +64,9 @@ const BESengah = () => {
                 nodeTypes={nodeTypes}
                 onElementClick={onElementClick}
                 nodesConnectable={false}
+                minZoom={0.1}
             >
+                <Controls />
             </ReactFlow>
             <button type="button" onClick={positionHelper}>
                 Generate position
