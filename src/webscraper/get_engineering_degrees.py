@@ -25,7 +25,7 @@ def get_links(browser, id):
     return specialisation_links
 
 # Open browser
-browser = webdriver.Chrome("./chromedriver") # NEED TO BE CHROME VERSION 85
+browser = webdriver.Chrome(scrape.CHROME_DRIVER) # NEED TO BE CHROME VERSION 85
 browser.get(FACULTY_OF_ENGINEERING)
 
 # Show all specialisation majors and scrape

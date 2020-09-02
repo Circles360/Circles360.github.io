@@ -8,7 +8,7 @@ SEARCH_LINK = "https://www.handbook.unsw.edu.au/search"
 WAIT = 2
 LINKS = []
 
-def get_next_page(browser, first):
+def get_next_page(browser):
     time.sleep(WAIT)
     next_page_button = browser.find_elements_by_xpath("//*[@id='pagination-page-next']")[0]
     return next_page_button if next_page_button.is_enabled() else None
@@ -28,7 +28,7 @@ def get_links(browser):
     return course_links
 
 # Open browser
-browser = webdriver.Chrome("./chromedriver") # NEED TO BE CHROME VERSION 85
+browser = webdriver.Chrome(scrape.CHROME_DRIVER) # NEED TO BE CHROME VERSION 85
 browser.get(SEARCH_LINK)
 
 # Show all courses
@@ -39,14 +39,14 @@ show_course.click()
 LINKS = LINKS + get_links(browser)
 
 # Keep clicking next page
-next_page_button = get_next_page(browser, first=True)
+next_page_button = get_next_page(browser)
 while (next_page_button):
     browser.execute_script("arguments[0].click();", next_page_button)
 
     # Scrape page for links
-    LINKS = LINKS + get_links(browser)
+    LINKS.extend(get_links(browser))
     # Get next page
-    next_page_button = get_next_page(browser, first=False)
+    next_page_button = get_next_page(browser)
 
 with open("course_links.json", "w") as write_file:
         json.dump(LINKS, write_file)

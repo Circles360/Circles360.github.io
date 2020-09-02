@@ -6,7 +6,7 @@ import time
 import re
 
 WAIT = 2
-COURSE_CODE_REGEX = "[A-Z]{4}\d{4}"
+REGEX_COURSE_CODE = "[A-Z]{4}\d{4}"
 
 def get_degree_name(html):
     return html.find("h2", class_="css-1b7bj3d-Heading-ComponentHeading-Heading-css-css ezav15i5").text
@@ -25,7 +25,7 @@ def get_level_courses(level_html):
     course_tiles = level_html.find_all("a", class_="exq3dcx2")
 
     for tile in course_tiles:
-        course_code = tile.find(text=re.compile(COURSE_CODE_REGEX))
+        course_code = tile.find(text=re.compile(REGEX_COURSE_CODE))
         if course_code:
             courses.append(course_code)
             continue
@@ -59,7 +59,7 @@ def get_level_courses(level_html):
 
         one_of = []
         for tile in choice_tiles:
-            course_code = tile.find(text=re.compile(COURSE_CODE_REGEX))
+            course_code = tile.find(text=re.compile(REGEX_COURSE_CODE))
             one_of.append(course_code)
             courses.remove(course_code)
 
@@ -115,7 +115,7 @@ ENG_HONOUR_LINKS = ENG_LINKS["honours"]
 ENG_DOUBLE_DEGREE_LINKS = ENG_LINKS["double_degrees"]
 
 # Only honour links for now
-browser = webdriver.Chrome("./chromedriver") # NEED TO BE CHROME VERSION 85
+browser = webdriver.Chrome(scrape.CHROME_DRIVER) # NEED TO BE CHROME VERSION 85
 for link in ENG_HONOUR_LINKS:
     browser.get(link)
 

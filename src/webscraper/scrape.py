@@ -4,7 +4,9 @@ from bs4 import BeautifulSoup
 import requests
 import json
 
+CHROME_DRIVER = "./drivers/chromedriver"
 HANDBOOK_URL = "https://www.handbook.unsw.edu.au"
+
 
 def get_html(url):
     response = requests.get(url)
