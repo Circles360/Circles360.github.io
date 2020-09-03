@@ -22,6 +22,10 @@ const nodeTypes = {
     header1: HeaderNode1
 };
 
+
+// Recursively get parents of a node and then parents of the parent and so on
+// until we hit a selected node. Return a list
+
 const BESengah = () => {
     const [elements, setElements] = useState(elementsData);
     // HELPER FUNCTION FOR POSITIONING
@@ -76,7 +80,7 @@ const BESengah = () => {
         }
 
         // Keep adding prerequisites until we hit selected nodes. Go until
-        // List is empty
+        // parentList is empty
         while (parentList.length !== 0) {
             
         }
