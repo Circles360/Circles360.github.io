@@ -158,7 +158,7 @@ def get_course_conditions(html):
             units_required = match.group(1)
             level = match.group(2)
 
-        elif "UOC" in cond or "UNITS OF CREDIT" in cond:
+        elif re.search("(UOC)|(UNITS? OF CREDIT)", cond):
             try:
                 units_required = int(re.search("\d+", cond).group(0))
             except:
