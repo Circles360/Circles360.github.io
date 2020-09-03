@@ -7,6 +7,8 @@ import '../../styles/nodeclass.css';
 var elementsData = require("./data.json");
 var elementsNode = elementsData.filter(e => isNode(e));
 var elementsEdge = elementsData.filter(e => isEdge(e));
+var selectedNodes = [elementsData[0]];
+var selectedEdges = [];
 //const eng_data = require("../../webscraper/engineering_degrees.json");
 
 console.log(elementsData);
@@ -44,14 +46,6 @@ const BESengah = () => {
 
     const onElementClick = (event, element) => {
         if (isEdge(element)) return; // Don't care about edges
-        
-        //console.log(element);
-        //console.log(element.className);
-        //console.log(event.target);
-        
-        //const setTransform = useStoreActions(actions => actions.updateTransform);
-        //setTransform()  
-
         //useStoreActions(action => actions.updateTransform(useStoreState(state => state.transform)), [100, 100, 1]);
         highlightEdges(element);
 
@@ -66,25 +60,42 @@ const BESengah = () => {
         }
     };
 
+    const showPrerequisites = (element) => {
+        if (isEdge(element)) return;
+        var changeEdges = {};
+        // Build a path of prerequisites until it hits a selected node.
+        // Get list of all prerequisites
+        // Get prerequisites of prerequisites, etc.
+
+        var parentList = [];
+
+        // Populate list with prerequisites we need to investigate
+        for (var parent of element.data.conditions.prerequisites) {
+            if (selectedNodes.hasOwnProperty(child)) continue;
+            parentList.push(parent);
+        }
+
+        // Keep adding prerequisites until we hit selected nodes. Go until
+        // List is empty
+        while (parentList.length !== 0) {
+            
+        }
+
+
+    }
 
     const highlightEdges = (element) => {
         if (isEdge(element)) return;
-        //console.log("HIHIHIHI");
         const connectedEdges = getConnectedEdges([element], elementsEdge);
-        //console.log(connectedEdges);
-        //console.log(element);
         const connectedEdgeIds = connectedEdges.map(e => e.id);
-        //console.log(connectedEdgeIds);
-
-        //console.log(elements);
-
+        
         setElements((els) => 
             els.map((e) => {
                 //if (isEdge(e)) console.log(e.id);
                 if (connectedEdgeIds.includes(e.id)) {
                     var stroke_colour;
-                    if (e.style.stroke === 'grey') return {...e, style: {...e.style, stroke: 'red', opacity: 1}};
-                    else if (e.style.stroke === 'red') return {...e, style: {...e.style, stroke: 'grey', opacity: 0.2}};
+                    if (e.style.stroke === 'grey') return {...e, style: {...e.style, stroke: 'red', opacity: 1}, animated: true};
+                    else if (e.style.stroke === 'red') return {...e, style: {...e.style, stroke: 'grey', opacity: 0.2}, animated: false};
                 }
                 return e;
             })
@@ -103,7 +114,7 @@ const BESengah = () => {
                     nodesConnectable={false}
                     minZoom={0.1}
                     //setInitTransform={TransformUpdater({x: 100, y: 100, z: 1})}
-                    // nodesDraggable={false}
+                    nodesDraggable={false}
                 >
                     <Controls />
                 </ReactFlow>

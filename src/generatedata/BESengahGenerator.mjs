@@ -17,14 +17,15 @@ courses_output.push({
         degree_name: data.SENGAH.name,
         degree_code: data.SENGAH.code,
         units: data.SENGAH.units,
-        builds_into: ['COMP1511', 'ENGG1000', 'MATH1131', 'MATH1081']
+        builds_into: ['COMP1511', 'ENGG1000', 'MATH1131', 'MATH1141', 'MATH1081']
     },
    // className: 'node_header',
     style: node_header,
     position: {x: 0, y: 0}
 })
-
 courses_output[0].style.background = '#7766ca';
+courses_list['SENGAH'] = 1;
+
 
 // Colours a node accordingly
 function colour_node(node) {
@@ -126,6 +127,13 @@ for (const course of courses_output) {
             }
         }
         break;
+    }
+}
+
+// Hard code in prerequisites for starting courses
+for (var course of courses_output) {
+    if (course.id in ['COMP1511, ENGG1000', 'MATH1131', 'MATH1141', 'MATH1081']) {
+        course.id.conditions.prerequisites = [course.id];
     }
 }
 
