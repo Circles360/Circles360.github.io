@@ -11,6 +11,7 @@ REGEX_COURSE_CODE = "[A-Z]{4}\d{4}"
 
 FILTER_COURSE_CODES = scrape.read_from_file("filter_course_codes.json")
 
+# COURSES = scrape.read_from_file("courses.json")
 COURSES = {}
 UNLOCKS = {}
 
@@ -265,10 +266,15 @@ total = len(course_links)
 browser = webdriver.Chrome(scrape.CHROME_DRIVER) # NEED TO BE CHROME VERSION 85
 
 for idx, link in enumerate(course_links):
-    if idx > 100:
-        break
+    if idx % 50 == 0:
+        scrape.write_to_file("courses.json", COURSES)
 
-    random_int = random.randint(10, 30)
+    code_from_link = re.search(REGEX_COURSE_CODE, link).group(0)
+    if code_from_link in COURSES:
+        print(f" ~~ skipped {code_from_link}")
+        continue
+
+    random_int = random.randint(5, 10)
     print(f"{idx + 1}/{total} >>> waiting {random_int} seconds >>> {link}")
 
     # Get html
@@ -276,17 +282,20 @@ for idx, link in enumerate(course_links):
     # browser.get("https://www.handbook.unsw.edu.au/undergraduate/courses/2021/ACTL4001")
     time.sleep(random_int)
     course_html = BeautifulSoup(browser.page_source, "html.parser")
+    try:
+        course_info = get_course_info(course_html)
+        COURSES[course_info["course_code"]] = course_info
 
-    course_info = get_course_info(course_html)
+        # if course_info["conditions"]["prerequisites"] == None:
+        #     continue
 
-    COURSES[course_info["course_code"]] = course_info
-
-    if course_info["conditions"]["prerequisites"] == None:
+        # UNLOCKS = store_unlocks(UNLOCKS, course_info)
+    except:
+        # Update all data if possible
+        print(f" @@@@@ crashed on {code_from_link}")
         continue
 
-    UNLOCKS = store_unlocks(UNLOCKS, course_info)
-
-COURSES = update_unlocks(UNLOCKS, COURSES)
+# COURSES = update_unlocks(UNLOCKS, COURSES)
 scrape.write_to_file("courses.json", COURSES)
 
 browser.quit()
