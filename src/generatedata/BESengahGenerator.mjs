@@ -3,7 +3,7 @@ import { createRequire } from "module";
 const require = createRequire(import.meta.url);
 
 const data = require("../webscraper/fac_eng_degrees.json");
-const courses = require("../webscraper/courses.json");
+const courses = require("../webscraper/courses_OLD.json");
 const position_data = require("../maps/EngineeringHonoursSoftware/position.json");
 
 var courses_output = [];

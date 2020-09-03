@@ -9,8 +9,6 @@ do
     output="${output},\n${new_line}"
 done < '../maps/EngineeringHonoursSoftware/position.json'
 
-#echo $output
-
 echo "[\n" > '../maps/EngineeringHonoursSoftware/position.json'
 echo $output >> '../maps/EngineeringHonoursSoftware/position.json'
 echo "\n]" >> '../maps/EngineeringHonoursSoftware/position.json'
