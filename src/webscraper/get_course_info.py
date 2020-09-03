@@ -266,7 +266,7 @@ total = len(course_links)
 browser = webdriver.Chrome(scrape.CHROME_DRIVER) # NEED TO BE CHROME VERSION 85
 
 for idx, link in enumerate(course_links):
-    if idx % 50 == 0:
+    if idx % 10 == 0:
         scrape.write_to_file("courses.json", COURSES)
 
     code_from_link = re.search(REGEX_COURSE_CODE, link).group(0)
@@ -292,7 +292,7 @@ for idx, link in enumerate(course_links):
         # UNLOCKS = store_unlocks(UNLOCKS, course_info)
     except:
         # Update all data if possible
-        print(f" @@@@@ crashed on {code_from_link}")
+        print(f" @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ crashed on {code_from_link}")
         continue
 
 # COURSES = update_unlocks(UNLOCKS, COURSES)
