@@ -1,5 +1,6 @@
 from selenium import webdriver
 from bs4 import BeautifulSoup
+import random
 import scrape
 import time
 import json
@@ -55,7 +56,10 @@ def get_course_school(html):
 
 @scrape.return_null_on_failure
 def get_course_desc(html):
-    return html.find(id="Overview").find("p").text.strip()
+    try:
+        return html.find(id="Overview").find("p").text.strip()
+    except:
+        return html.find(id="Overview").text.strip()
 
 def split_conditions(raw):
     split = []
@@ -263,12 +267,14 @@ browser = webdriver.Chrome(scrape.CHROME_DRIVER) # NEED TO BE CHROME VERSION 85
 for idx, link in enumerate(course_links):
     if idx > 100:
         break
-    print(f"{idx + 1}/{total} >>> {link}")
+
+    random_int = random.randint(10, 30)
+    print(f"{idx + 1}/{total} >>> waiting {random_int} seconds >>> {link}")
 
     # Get html
     browser.get(link)
     # browser.get("https://www.handbook.unsw.edu.au/undergraduate/courses/2021/ACTL4001")
-    time.sleep(WAIT)
+    time.sleep(random_int)
     course_html = BeautifulSoup(browser.page_source, "html.parser")
 
     course_info = get_course_info(course_html)
