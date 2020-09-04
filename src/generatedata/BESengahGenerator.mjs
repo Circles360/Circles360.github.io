@@ -64,15 +64,19 @@ function getRelevantPrereq(array) {
         } else {
             // Remove the child if it is not in our program
             if (! courses_list.hasOwnProperty(child)) {
-                to_remove.push(array);
+                to_remove.push(child);
             }
         }
     }
 
     for (var r of to_remove) {
+        console.log(array);
         var index = array.indexOf(r);
         array.splice(index, 1);
-        //console.log("REMOVED", r);
+        console.log(r);
+        console.log(index);
+        console.log("REMOVED", r);
+        console.log(array);
     }
     return array;
 }
@@ -180,17 +184,31 @@ for (const course of courses_output) {
     }
 }
 
-// Hard code in prerequisites for starting courses
+
+// Go through all courses and alter prerequisites/unlocks to only contain courses
+// in the degree. For free electives, we will refer back to the courses.json file.
 for (var course of courses_output) {
-    if (course.id in ['COMP1511, ENGG1000', 'MATH1131', 'MATH1141', 'MATH1081']) {
-        course.id.conditions.prerequisites = [course.id];
+    console.log(course.id);
+    console.log(course.data.conditions.prerequisites);
+    if (course.data.conditions.prerequisites !== null) {
+        course.data.conditions.prerequisites = getRelevantPrereq(course.data.conditions.prerequisites);
+    }
+    console.log("========================================================");
+    console.log(course.data.conditions.prerequisites);
+    console.log("========================================================");
+
+    // Store the unlock if it is in our degree
+    if (course.data.unlocks !== null) {
+        course.data.unlocks = course.data.unlocks.filter(item => courses_list.hasOwnProperty(item));
     }
 }
+
+
 
 // Create encapsulating nodes for exclusion courses
 var exclusion_groups = []; // Holds all exclusion groups
 var exclusion_list = {};  // Quick checking if we have already excluded this course
-console.log("===========================================");
+/*console.log("===========================================");
 for (var course of courses_output) {
     if (course.data.exclusions === null) continue;
     if (exclusion_list.hasOwnProperty(course.id)) continue;
@@ -210,29 +228,11 @@ for (var course of courses_output) {
     exclusion_courses.push(course.id);
     exclusion_groups.push(exclusion_courses);
     exclusion_list[course.id] = 1;
-}
+}*/
 
 //console.log(exclusion_groups);
 
-// Go through all courses and alter prerequisites/unlocks to only contain courses
-// in the degree. For free electives, we will refer back to the courses.json file.
-for (var course of courses_output) {
-    //console.log(course.id);
-    //console.log(course.data.conditions.prerequisites);
-    if (course.data.conditions.prerequisites !== null) {
-        course.data.conditions.prerequisites = getRelevantPrereq(course.data.conditions.prerequisites);
-    }
-    /*console.log("========================================================");
-    console.log(prereq_relevant);
-    console.log("========================================================");*/
-
-    // Store the unlock if it is in our degree
-    if (course.data.unlocks !== null) {
-        course.data.unlocks = course.data.unlocks.filter(item => courses_list.hasOwnProperty(item));
-    }
-}
-
-var exclusion_nodes = []; // Contains exclusion group nodes for easier checking
+/*var exclusion_nodes = []; // Contains exclusion group nodes for easier checking
 for (var group of exclusion_groups) {
     // Create an exclusion node
     var e = {
@@ -263,10 +263,13 @@ for (var group of exclusion_groups) {
     //console.log(e);
     courses_output.push(e);
     exclusion_nodes.push(e);
-}
+}*/
+
+
+
 
 // Add course header
-courses_output.push({
+courses_output.unshift({
     id: data.SENGAH.code,
     type: 'header1',
     data: {
@@ -282,6 +285,18 @@ courses_output.push({
 })
 courses_output[0].style.background = '#7766ca';
 courses_list['SENGAH'] = 1;
+
+
+
+// Hard code in prerequisites for starting courses
+for (var course of courses_output) {
+    if (['COMP1511', 'ENGG1000', 'MATH1131', 'MATH1141', 'MATH1081'].includes(course.id)) {
+        console.log(course.id);
+        course.data.conditions.prerequisites = ['SENGAH'];
+    }
+}
+
+
 
 // Generate the position for each node
 for (const node of position_data) {
@@ -319,7 +334,7 @@ for (const course of courses_output) {
             if (exclusion_list.hasOwnProperty(child)) {
                 // This is part of an exclusion group. Connect the group nodes
                 // to each other instead.
-                for (var group of exclusion_nodes) {
+                /*for (var group of exclusion_nodes) {
                     // Add the edge if it hasn't been added.
                     if (group.data.children.includes(child)) {
                         if (! edges_list.hasOwnProperty('e' + course.id + '-' + group.id)) {
@@ -332,9 +347,10 @@ for (const course of courses_output) {
 
                         break;
                     }
-                }
+                }*/
             } else {
                 // Not part of an exclusion group. Normal node to normal node edge.
+                if ( edges_list.hasOwnProperty('e' + course.id + '-' + child)) continue;
                 new_edge.id = 'e' + course.id + '-' + child;
                 new_edge.target = child;
                 edges_output.push(new_edge);
