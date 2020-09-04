@@ -36,7 +36,7 @@ show_course = browser.find_elements_by_xpath("//*[@id='react-tabs-6']")[0]
 show_course.click()
 
 # Scrape page for links
-LINKS = LINKS + get_links(browser)
+LINKS.extend(get_links(browser))
 
 # Keep clicking next page
 next_page_button = get_next_page(browser)
