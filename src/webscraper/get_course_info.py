@@ -13,9 +13,11 @@ FILTER_COURSE_CODES = scrape.read_from_file("filter_course_codes.json")
 
 COURSES = scrape.read_from_file("courses.json")
 # COURSES = {}
-UNLOCKS = {}
 
 def flatten_array(arr):
+    if arr == None:
+        return []
+
     flattened = []
 
     for a in arr:
@@ -98,7 +100,7 @@ def get_course_conditions(html):
 
     # FILTER OUT IRRELEVANT CODES:
     for filter_code in FILTER_COURSE_CODES:
-        raw.replace(filter_code, "")
+        raw = raw.replace(filter_code, "")
 
     conditions = raw.split("\n")[0].upper()
 
@@ -233,31 +235,60 @@ def get_course_info(html):
         "conditions": conditions if conditions != None else NO_CONDITIONS,
         "equivalents": get_related_courses(html, "EquivalentCourses"),
         "exclusions": get_related_courses(html, "ExclusionCourses"),
-        "unlocks": None
+        "unlocks": []
     }
 
-def store_unlocks(unlocks, course_info):
-    flattened = flatten_array(course_info["conditions"]["prerequisites"])
+def update_unlocks(courses):
+    for code in courses:
+        courses[code]["unlocks"] = []
 
-    for code in flattened:
-        if code not in unlocks:
-            unlocks[code] = []
+    # Update the "unlocks" field for each course object
+    for code in courses:
+        flattened_prerequisites = flatten_array(courses[code]["conditions"]["prerequisites"])
+        for prereq in flattened_prerequisites:
+            try:
+                courses[prereq]["unlocks"].append(code)
+            except:
+                print(f"## {prereq} not in database")
 
-        unlocks[code].append(course_info["course_code"])
-
-    return unlocks
-
-def update_unlocks(unlocks, courses):
-    for code in unlocks:
-        if code not in courses:
-            continue
-
-        if courses[code] == None:
-            continue
-
-        courses[code]["unlocks"] = unlocks[code]
+    # Reset "unlocks" to None if empty array
+    for code in courses:
+        if courses[code]["unlocks"] == []:
+            courses[code]["unlocks"] = None
 
     return courses
+
+def check_contaminated(arr):
+    intersection = [x for x in arr if x in FILTER_COURSE_CODES]
+    if intersection:
+        return True
+
+    return False
+
+
+def check_if_need_updating(course):
+    if course["conditions"]["prerequisites"]:
+        flattened = flatten_array(course["conditions"]["prerequisites"])
+        if check_contaminated(flattened):
+            return True
+
+    if course["conditions"]["corequisites"]:
+        flattened = flatten_array(course["conditions"]["corequisites"])
+        if check_contaminated(flattened):
+            return True
+
+    if course["equivalents"]:
+        flattened = flatten_array(course["equivalents"])
+        if check_contaminated(flattened):
+            return True
+
+    if course["exclusions"]:
+        flattened = flatten_array(course["exclusions"])
+        if check_contaminated(flattened):
+            return True
+
+    return False
+
 
 course_links = scrape.read_from_file("links_courses.json")
 total = len(course_links)
@@ -266,10 +297,8 @@ total = len(course_links)
 browser = webdriver.Chrome(scrape.CHROME_DRIVER) # NEED TO BE CHROME VERSION 85
 
 for idx, link in enumerate(course_links):
-     
-
     code_from_link = re.search(REGEX_COURSE_CODE, link).group(0)
-    if code_from_link in COURSES:
+    if not check_if_need_updating(COURSES[code_from_link]):
         print(f" ~~ skipped {code_from_link}")
         continue
 
@@ -285,20 +314,17 @@ for idx, link in enumerate(course_links):
         course_info = get_course_info(course_html)
         COURSES[course_info["course_code"]] = course_info
         scrape.write_to_file("courses.json", COURSES)
-        # if course_info["conditions"]["prerequisites"] == None:
-        #     continue
-
-        # UNLOCKS = store_unlocks(UNLOCKS, course_info)
     except:
         # Update all data if possible
         print(f"@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@")
         print(f"@@@                             @@@")
-        print(f"@@@ crashed on {code_from_link} @@@")
+        print(f"@@@     crashed on {code_from_link}     @@@")
         print(f"@@@                             @@@")
         print(f"@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@")
         continue
 
-# COURSES = update_unlocks(UNLOCKS, COURSES)
-scrape.write_to_file("courses.json", COURSES)
+# Update unlocks
+COURSES = update_unlocks(COURSES)
 
+scrape.write_to_file("courses.json", COURSES)
 browser.quit()

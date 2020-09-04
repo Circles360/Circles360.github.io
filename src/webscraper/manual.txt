@@ -1,0 +1,4 @@
+This file is a log to keep track all the manual changes made to any files.
+
+COURSES.JSON:
+ELEC3115 should have PHYS1231, but on website says PHY1231
