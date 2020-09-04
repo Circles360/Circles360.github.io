@@ -1,30 +1,48 @@
 from selenium import webdriver
 from bs4 import BeautifulSoup
+import random
 import scrape
 import json
 import time
 import re
 
-WAIT = 2
-REGEX_COURSE_CODE = "[A-Z]{4}\d{4}"
+SUBJECT_AREAS = scrape.read_from_file("subject_areas.json")
 
+SPECIALISATIONS = scrape.read_from_file("specialisations.json")
+# SPECIALISATIONS = {}
+
+LINKS = scrape.read_from_file("links_degrees.json")
+
+WAIT = 20
+REGEX_COURSE_CODE = "[A-Z]{4}\d{4}"
+REGEX_SPECIALISATION_CODE = "[A-Z]{5}[H\d]"
+REGEX_PROGRAM_CODE = "\d{4}"
+
+@scrape.return_null_on_failure
 def get_degree_name(html):
     return html.find("h2", class_="css-1b7bj3d-Heading-ComponentHeading-Heading-css-css ezav15i5").text
 
+@scrape.return_null_on_failure
 def get_degree_code(html):
     return html.find("h5", class_="introDetails__sub_heading css-ciwu9x-Subheading-css ezav15i1").text
 
+@scrape.return_null_on_failure
 def get_units_required(html):
     return html.find("h4", text=re.compile("Minimum Units of Credit")).find_next_sibling("div").text
 
+@scrape.return_null_on_failure
 def get_faculty(html):
     return html.find("div", class_="css-1cq5lls-Box-AttrContainer esd54cc0").find("a").text
 
+@scrape.return_null_on_failure
 def get_level_courses(level_html):
     courses = []
     course_tiles = level_html.find_all("a", class_="exq3dcx2")
 
     for tile in course_tiles:
+        if "inactive" in tile["class"]:
+            continue
+
         course_code = tile.find(text=re.compile(REGEX_COURSE_CODE))
         if course_code:
             courses.append(course_code)
@@ -51,6 +69,8 @@ def get_level_courses(level_html):
             courses.append("ANY COURSE")
             continue
 
+        print(" //// cannot read:", tile.text)
+
     # Then group all the courses that are "One of the following:"
     choice_groups = level_html.find_all("strong", text=re.compile("One of the following:"))
 
@@ -65,19 +85,15 @@ def get_level_courses(level_html):
 
         courses.append(one_of)
 
-    if courses == []:
-        print("EMPTY COURSES")
+    return courses if courses else None
 
-    return courses
-
+@scrape.return_null_on_failure
 def get_level_name(level_html):
     return level_html.find("strong").text
 
+@scrape.return_null_on_failure
 def get_level_requirements(level_html):
-    try:
-        return int(level_html.find("small").text.split(" ")[0])
-    except:
-        return None
+    return int(level_html.find("small").text.split(" ")[0])
 
 def get_degree_structure(html):
     degree_structure = {}
@@ -94,7 +110,7 @@ def get_degree_structure(html):
 
     return degree_structure
 
-def get_degree_info(html):
+def get_specialisation_info(html):
     return {
         "name": get_degree_name(html),
         "code": get_degree_code(html),
@@ -103,31 +119,47 @@ def get_degree_info(html):
         "structure": get_degree_structure(html)
     }
 
+def get_faculty_specialisations(browser, faculty_links):
+    links = []
+    try:
+        links.extend(faculty_links["majors"])
+    except:
+        pass
 
-# Engineering honours only for now
-SUBJECT_AREAS = scrape.read_from_file("subject_areas.json")
+    try:
+        links.extend(faculty_links["minors"])
+    except:
+        pass
 
-ENG_DEGREES = {}
+    try:
+        links.extend(faculty_links["honours"])
+    except:
+        pass
 
-ENG_LINKS = scrape.read_from_file("links_eng_degrees.json")
-ENG_MAJOR_LINKS = ENG_LINKS["majors"]
-ENG_HONOUR_LINKS = ENG_LINKS["honours"]
-ENG_DOUBLE_DEGREE_LINKS = ENG_LINKS["double_degrees"]
+    total = len(links)
 
-# Only honour links for now
+    for idx, link in enumerate(links):
+        print(f"{idx + 1} / {total} >>> scraping {link}")
+
+        code_in_link = re.search(REGEX_SPECIALISATION_CODE, link).group(0)
+        if code_in_link in SPECIALISATIONS:
+            continue
+
+
+        browser.get(link)
+        time.sleep(random.randint(15, 25))
+        html = BeautifulSoup(browser.page_source, "html.parser")
+
+        specialisation_info = get_specialisation_info(html)
+        SPECIALISATIONS[specialisation_info["code"]] = specialisation_info
+        scrape.write_to_file("specialisations.json", SPECIALISATIONS)
+
 browser = webdriver.Chrome(scrape.CHROME_DRIVER) # NEED TO BE CHROME VERSION 85
-for link in ENG_HONOUR_LINKS:
-    browser.get(link)
 
-    print(" >>> scraping" + link)
-    time.sleep(WAIT)
+for faculty in LINKS:
+    get_faculty_specialisations(browser, LINKS[faculty])
 
-    degree_html = BeautifulSoup(browser.page_source, "html.parser")
-    degree_info = get_degree_info(degree_html)
-
-    # print(json.dumps(degree_info, indent=2))
-
-    ENG_DEGREES[degree_info["code"]] = degree_info
+# get_faculty_specialisations(browser, LINKS["Engineering"])
 
 browser.quit()
-scrape.write_to_file("fac_eng_degrees.json", ENG_DEGREES)
+scrape.write_to_file("specialisations.json", SPECIALISATIONS)
