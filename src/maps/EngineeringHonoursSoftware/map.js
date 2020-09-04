@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
 import ReactFlow, {Controls, getConnectedEdges, isNode, isEdge, useStoreState, useStoreActions, ReactFlowProvider} from 'react-flow-renderer';
 import CustomNode1 from '../../components/customnode1.js';
+import CustomNode2 from '../../components/customnode2.js';
 import HeaderNode1 from '../../components/headernode1.js';
-import '../../styles/nodeclass.css';
 
 var elementsData = require("./data.json");
 var elementsNode = elementsData.filter(e => isNode(e));
@@ -19,6 +19,7 @@ const onLoad = (reactFlowInstance) => {
 
 const nodeTypes = {
     custom1: CustomNode1,
+    custom2: CustomNode2,
     header1: HeaderNode1
 };
 
@@ -65,22 +66,24 @@ const BESengah = () => {
     };
 
     const showPrerequisites = (element) => {
+        // only works when clicking an unselected node
         if (isEdge(element)) return;
+        if (selectedNodes.hasOwnProperty(element));
+
         var changeEdges = {};
         // Build a path of prerequisites until it hits a selected node.
         // Get list of all prerequisites
         // Get prerequisites of prerequisites, etc.
-
         var parentList = [];
 
-        // Populate list with prerequisites we need to investigate
+        // Populate list with non-selected prerequisites we need to investigate
         for (var parent of element.data.conditions.prerequisites) {
-            if (selectedNodes.hasOwnProperty(child)) continue;
+            if (selectedNodes.hasOwnProperty(parent)) continue;
             parentList.push(parent);
         }
 
         // Keep adding prerequisites until we hit selected nodes. Go until
-        // parentList is empty
+        // parentList is empty0
         while (parentList.length !== 0) {
             
         }
@@ -118,7 +121,7 @@ const BESengah = () => {
                     nodesConnectable={false}
                     minZoom={0.1}
                     //setInitTransform={TransformUpdater({x: 100, y: 100, z: 1})}
-                    nodesDraggable={false}
+                    //nodesDraggable={false}
                 >
                     <Controls />
                 </ReactFlow>
