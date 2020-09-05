@@ -149,13 +149,6 @@ def get_course_conditions(html):
         elif re.search(REGEX_COURSE_CODE, cond):
             prerequisites.append(re.findall(REGEX_COURSE_CODE, cond))
 
-        elif re.search("COMPLETION OF.*[0-9]{4}", cond):
-            # COURSE NUMBER ONLY
-            all_code_numbers = re.findall("[0-9]{4}", cond)
-            for code_number in all_code_numbers:
-                code_faculty = re.search("[A-Z]{4}", get_course_code(html)).group(0)
-                prerequisites.append([code_faculty + code_number])
-
         elif re.search("\d+ UNITS OF CREDIT IN LEVEL \d+", cond):
             match = re.search("(\d+) UNITS OF CREDIT IN LEVEL (\d+)", cond)
             units_required = match.group(1)
@@ -163,9 +156,16 @@ def get_course_conditions(html):
 
         elif re.search("(UOC)|(UNITS? OF CREDIT)", cond):
             try:
-                units_required = int(re.search("\d+", cond).group(0))
+                units_required = int(re.search("(\d+) (UOC)|(UNITS? OF CREDIT)", cond).group(1))
             except:
                 continue
+
+        elif re.search("COMPLETION OF.*[0-9]{4}", cond):
+            # COURSE NUMBER ONLY
+            all_code_numbers = re.findall("[0-9]{4}", cond)
+            for code_number in all_code_numbers:
+                code_faculty = re.search("[A-Z]{4}", get_course_code(html)).group(0)
+                prerequisites.append([code_faculty + code_number])
 
         elif re.search("YEAR", cond):
             try:
