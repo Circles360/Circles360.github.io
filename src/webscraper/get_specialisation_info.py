@@ -16,7 +16,6 @@ LINKS = scrape.read_from_file("links_degrees.json")
 WAIT = 20
 REGEX_COURSE_CODE = "[A-Z]{4}\d{4}"
 REGEX_SPECIALISATION_CODE = "[A-Z]{5}[H\d]"
-REGEX_PROGRAM_CODE = "\d{4}"
 
 @scrape.return_null_on_failure
 def get_degree_name(html):

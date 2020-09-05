@@ -154,7 +154,7 @@ def get_course_conditions(html):
             all_code_numbers = re.findall("[0-9]{4}", cond)
             for code_number in all_code_numbers:
                 code_faculty = re.search("[A-Z]{4}", get_course_code(html)).group(0)
-                prerequisites.append(code_faculty + code_number)
+                prerequisites.append([code_faculty + code_number])
 
         elif re.search("\d+ UNITS OF CREDIT IN LEVEL \d+", cond):
             match = re.search("(\d+) UNITS OF CREDIT IN LEVEL (\d+)", cond)
