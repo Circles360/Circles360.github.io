@@ -1,4 +1,10 @@
 This file is a log to keep track all the manual changes made to any files.
 
 COURSES.JSON:
-ELEC3115 should have PHYS1231, but on website says PHY1231
+- ELEC3115 should have PHYS1231, but on website says PHY1231
+- Add proper requisites for ENGG1000, ENGG2600, ENGG3600, ENGG4600
+
+BESENGAHGENERATOR.MJS:
+- DESN2000 needs to have terms and prereqs and unlocks added (specifically for SENGAH)
+- SENGAH header node needs to have children added and children need to
+    have SENGAH added as prerequisites

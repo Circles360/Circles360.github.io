@@ -183,6 +183,21 @@ for (const course of courses_output) {
         break;
     }
 }
+// ENGG1000-ENGG2600-ENGG3600-ENGG4600
+for (const course of courses_output) {
+    if (course.id === 'ENGG1000') {
+        course.data.unlocks = ['ENGG2600'];
+    } else if (course.id === 'ENGG2600') {
+        course.data.conditions.prerequisites = ['ENGG1000'];
+        course.data.unlocks = ['ENGG3600']
+    } else if (course.id === 'ENGG3600') {
+        course.data.conditions.prerequisites = ['ENGG2600'];
+        course.data.unlocks = ['ENGG4600'];
+    } else if (course.id === 'ENGG4600') {
+        course.data.conditions.prerequisites = ['ENGG3600'];
+    }
+}
+
 
 
 // Go through all courses and alter prerequisites/unlocks to only contain courses
