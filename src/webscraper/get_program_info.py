@@ -8,7 +8,7 @@ import re
 
 LINKS = scrape.read_from_file("links_degrees.json")
 
-PROGRAMS = {}
+PROGRAMS = scrape.read_from_file("programs.json")
 
 WAIT = 20
 REGEX_COURSE_CODE = "[A-Z]{4}\d{4}"
@@ -110,20 +110,26 @@ def get_programs(browser, faculty_links):
 
     for idx, link in enumerate(faculty_links["programs"]):
         print(f"{idx + 1} / {total} >>> scraping {link}")
+        code_from_link = link.split("/")[-1]
+        if code_from_link in PROGRAMS:
+            continue
 
         browser.get(link)
-        time.sleep(random.randint(2, 3))
+        time.sleep(random.randint(3, 7))
         html = BeautifulSoup(browser.page_source, "html.parser")
 
         program_info = get_program_info(html)
+        if re.search("Co(-| )op", program_info["name"]):
+            continue
+
         PROGRAMS[program_info["code"]] = program_info
         scrape.write_to_file("programs.json", PROGRAMS)
 
 browser = webdriver.Chrome(scrape.CHROME_DRIVER)
 
-# for faculty in LINKS:
-#     get_programs(browser, LINKS[faculty])
-get_programs(browser, LINKS["Engineering"])
+for faculty in LINKS:
+    get_programs(browser, LINKS[faculty])
+# get_programs(browser, LINKS["Engineering"])
 
 browser.quit()
 scrape.write_to_file("programs.json", PROGRAMS)
