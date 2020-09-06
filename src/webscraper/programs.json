@@ -7,18 +7,19 @@
         "units": 192,
         "duration": 4,
         "structure": {
-            "Disciplinary Component": {
-                "name": "Disciplinary Component",
-                "units_required": 168
-            },
-            "Discipline Elective List": {
-                "name": "Discipline Elective List",
-                "units_required": null
-            },
-            "General Education": {
-                "name": "General Education",
-                "units_required": 12
-            }
+            "Disciplinary Component": 168,
+            "Discipline Elective List": 12,
+            "General Education": 12
+        },
+        "degrees_involved": {
+            "majors": [],
+            "minors": [
+                "FOODA2"
+            ],
+            "honours": [
+                "FOODJH",
+                "FOODKH"
+            ]
         }
     },
     "3635": {
@@ -29,42 +30,20 @@
         "units": 192,
         "duration": 4,
         "structure": {
-            "Level 1 Core Courses": {
-                "name": "Level 1 Core Courses",
-                "units_required": 42
-            },
-            "Level 2 Core Courses": {
-                "name": "Level 2 Core Courses",
-                "units_required": 48
-            },
-            "Level 3 Core Courses": {
-                "name": "Level 3 Core Courses",
-                "units_required": 48
-            },
-            "Level 4 Core Courses": {
-                "name": "Level 4 Core Courses",
-                "units_required": 12
-            },
-            "Thesis Courses": {
-                "name": "Thesis Courses",
-                "units_required": null
-            },
-            "Built Environment Electives": {
-                "name": "Built Environment Electives",
-                "units_required": 12
-            },
-            "Civil Engineering Level 4 Discipline Electives": {
-                "name": "Civil Engineering Level 4 Discipline Electives",
-                "units_required": null
-            },
-            "Level 1 Engineering Electives": {
-                "name": "Level 1 Engineering Electives",
-                "units_required": 6
-            },
-            "Industrial Training Requirement": {
-                "name": "Industrial Training Requirement",
-                "units_required": null
-            }
+            "Level 1 Core Courses": 42,
+            "Level 2 Core Courses": 48,
+            "Level 3 Core Courses": 48,
+            "Level 4 Core Courses": 12,
+            "Thesis Courses": null,
+            "Built Environment Electives": 12,
+            "Civil Engineering Level 4 Discipline Electives": null,
+            "Level 1 Engineering Electives": 6,
+            "Industrial Training Requirement": null
+        },
+        "degrees_involved": {
+            "majors": [],
+            "minors": [],
+            "honours": []
         }
     },
     "3706": {
@@ -75,22 +54,36 @@
         "units": 144,
         "duration": 3,
         "structure": {
-            "Disciplinary Component": {
-                "name": "Disciplinary Component",
-                "units_required": 96
-            },
-            "Engineering Electives": {
-                "name": "Engineering Electives",
-                "units_required": 12
-            },
-            "Free Electives": {
-                "name": "Free Electives",
-                "units_required": 24
-            },
-            "General Education": {
-                "name": "General Education",
-                "units_required": 12
-            }
+            "Disciplinary Component": 96,
+            "Engineering Electives": 12,
+            "Free Electives": 24,
+            "General Education": 12
+        },
+        "degrees_involved": {
+            "majors": [
+                "AEROD1",
+                "BINFC1",
+                "CEICM1",
+                "CEICN1",
+                "COMPF1",
+                "CVENJ1",
+                "CVENK1",
+                "ELECF1",
+                "GMATE1",
+                "GMATF1",
+                "MECHD1",
+                "MECHE1",
+                "MINEC1",
+                "MTRND1",
+                "NAVLB1",
+                "PETRB1",
+                "SENGD1",
+                "SOLAC1",
+                "SOLAD1",
+                "TELEE1"
+            ],
+            "minors": [],
+            "honours": []
         }
     },
     "3707": {
@@ -101,18 +94,36 @@
         "units": 192,
         "duration": 4,
         "structure": {
-            "Disciplinary Component": {
-                "name": "Disciplinary Component",
-                "units_required": 168
-            },
-            "Discipline Elective List": {
-                "name": "Discipline Elective List",
-                "units_required": null
-            },
-            "General Education": {
-                "name": "General Education",
-                "units_required": 12
-            }
+            "Disciplinary Component": 168,
+            "Discipline Elective List": 12,
+            "General Education": 12
+        },
+        "degrees_involved": {
+            "majors": [],
+            "minors": [],
+            "honours": [
+                "AEROAH",
+                "BINFAH",
+                "CEICAH",
+                "CEICDH",
+                "COMPBH",
+                "CVENAH",
+                "CVENBH",
+                "ELECAH",
+                "ELECCH",
+                "GMATDH",
+                "GMATEH",
+                "MANFBH",
+                "MECHAH",
+                "MINEAH",
+                "MTRNAH",
+                "NAVLAH",
+                "PETRAH",
+                "SENGAH",
+                "SOLAAH",
+                "SOLABH",
+                "TELEAH"
+            ]
         }
     },
     "3775": {
@@ -123,22 +134,15 @@
         "units": 192,
         "duration": 4,
         "structure": {
-            "Disciplinary Component": {
-                "name": "Disciplinary Component",
-                "units_required": 144
-            },
-            "Year 1 Engineering Electives": {
-                "name": "Year 1 Engineering Electives",
-                "units_required": 12
-            },
-            "Free Electives": {
-                "name": "Free Electives",
-                "units_required": 24
-            },
-            "General Education": {
-                "name": "General Education",
-                "units_required": 12
-            }
+            "Disciplinary Component": 144,
+            "Year 1 Engineering Electives": 12,
+            "Free Electives": 24,
+            "General Education": 12
+        },
+        "degrees_involved": {
+            "majors": [],
+            "minors": [],
+            "honours": []
         }
     },
     "3778": {
@@ -149,18 +153,30 @@
         "units": 144,
         "duration": 3,
         "structure": {
-            "Disciplinary Component": {
-                "name": "Disciplinary Component",
-                "units_required": 96
-            },
-            "Free Electives": {
-                "name": "Free Electives",
-                "units_required": 36
-            },
-            "General Education": {
-                "name": "General Education",
-                "units_required": 12
-            }
+            "Disciplinary Component": 96,
+            "Free Electives": 36,
+            "General Education": 12
+        },
+        "degrees_involved": {
+            "majors": [
+                "COMPA1",
+                "COMPD1",
+                "COMPE1",
+                "COMPI1",
+                "COMPJ1",
+                "COMPN1",
+                "COMPS1",
+                "COMPY1"
+            ],
+            "minors": [
+                "ACCTA2",
+                "FINSA2",
+                "INFSA2",
+                "MARKA2",
+                "MATHC2",
+                "PSYCM2"
+            ],
+            "honours": []
         }
     },
     "4515": {
@@ -171,10 +187,15 @@
         "units": 48,
         "duration": 1,
         "structure": {
-            "Specialisation Requirements": {
-                "name": "Specialisation Requirements",
-                "units_required": null
-            }
+            "Specialisation Requirements": 48
+        },
+        "degrees_involved": {
+            "majors": [],
+            "minors": [],
+            "honours": [
+                "BINFBH",
+                "COMPAH"
+            ]
         }
     }
 }
