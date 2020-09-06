@@ -27,7 +27,7 @@ def get_degree_code(html):
 
 @scrape.return_null_on_failure
 def get_units_required(html):
-    return html.find("h4", text=re.compile("Minimum Units of Credit")).find_next_sibling("div").text
+    return int(html.find("h4", text=re.compile("Minimum Units of Credit")).find_next_sibling("div").text)
 
 @scrape.return_null_on_failure
 def get_faculty(html):

@@ -1,0 +1,180 @@
+{
+    "3061": {
+        "name": "Food Science (Honours)",
+        "code": "3061",
+        "desc": "The UNSW Bachelor of Science (Honours) Food Science program is designed to equip you for a career as a professional food scientist. We provide you with a solid background in mathematics, natural and applied sciences that will prepare you for acquiring knowledge and skills in a food science specialisation. You will get the chance to apply yourself to food product design and enquiry projects, professional food practice, food systems management and conduct research towards your thesis project.",
+        "faculty": "Faculty of Engineering",
+        "units": 192,
+        "duration": 4,
+        "structure": {
+            "Disciplinary Component": {
+                "name": "Disciplinary Component",
+                "units_required": 168
+            },
+            "Discipline Elective List": {
+                "name": "Discipline Elective List",
+                "units_required": null
+            },
+            "General Education": {
+                "name": "General Education",
+                "units_required": 12
+            }
+        }
+    },
+    "3635": {
+        "name": "Engineering (Civil Eng w Arch) (Honours)",
+        "code": "3635",
+        "desc": "This innovative program extends the current Civil Engineering bachelor degree by the inclusion of a stream of courses in Architecture from the Faculty of the Built Environment. Civil Engineers essentially engineer and manage the infrastructure of our built environment including buildings, bridges, roads and highways, tunnels, airfields, dams, ports and harbours, railways, new mines, water supply and sewerage schemes, irrigation systems and flood mitigation works.The Civil Engineering with Architecture program provides for an appreciation of architectural principles and an understanding of both the architect's role in construction and the interaction between architects and engineers. The ultimate aim is to help students become conceptual thinkers, inspired by beautiful creations to build even better ones, to develop an appreciation for beauty with the mathematical ability to challenge the traditional boundaries of structural design. Students graduating from this degree will be well qualified to collaborate with architects and other professionals in the built environment to produce integrated and sustainable design. Creativity and inventiveness are the key attributes of this program.",
+        "faculty": "Faculty of Engineering",
+        "units": 192,
+        "duration": 4,
+        "structure": {
+            "Level 1 Core Courses": {
+                "name": "Level 1 Core Courses",
+                "units_required": 42
+            },
+            "Level 2 Core Courses": {
+                "name": "Level 2 Core Courses",
+                "units_required": 48
+            },
+            "Level 3 Core Courses": {
+                "name": "Level 3 Core Courses",
+                "units_required": 48
+            },
+            "Level 4 Core Courses": {
+                "name": "Level 4 Core Courses",
+                "units_required": 12
+            },
+            "Thesis Courses": {
+                "name": "Thesis Courses",
+                "units_required": null
+            },
+            "Built Environment Electives": {
+                "name": "Built Environment Electives",
+                "units_required": 12
+            },
+            "Civil Engineering Level 4 Discipline Electives": {
+                "name": "Civil Engineering Level 4 Discipline Electives",
+                "units_required": null
+            },
+            "Level 1 Engineering Electives": {
+                "name": "Level 1 Engineering Electives",
+                "units_required": 6
+            },
+            "Industrial Training Requirement": {
+                "name": "Industrial Training Requirement",
+                "units_required": null
+            }
+        }
+    },
+    "3706": {
+        "name": "Engineering Science",
+        "code": "3706",
+        "desc": "Overview This program is an exit point for students from the Bachelor of Engineering (Honours) program 3707.",
+        "faculty": "Faculty of Engineering",
+        "units": 144,
+        "duration": 3,
+        "structure": {
+            "Disciplinary Component": {
+                "name": "Disciplinary Component",
+                "units_required": 96
+            },
+            "Engineering Electives": {
+                "name": "Engineering Electives",
+                "units_required": 12
+            },
+            "Free Electives": {
+                "name": "Free Electives",
+                "units_required": 24
+            },
+            "General Education": {
+                "name": "General Education",
+                "units_required": 12
+            }
+        }
+    },
+    "3707": {
+        "name": "Engineering (Honours)",
+        "code": "3707",
+        "desc": "The UNSW Bachelor of Engineering (Honours) is designed to equip you for a career as a professional engineer. We provide you with a solid background in mathematics, natural sciences and computing that will prepare you for learning knowledge and skills in an engineering discipline specialisation. You will get the chance to apply yourself to engineering design and enquiry projects, professional engineering practice, engineering and technical management and conduct research towards your thesis project.",
+        "faculty": "Faculty of Engineering",
+        "units": 192,
+        "duration": 4,
+        "structure": {
+            "Disciplinary Component": {
+                "name": "Disciplinary Component",
+                "units_required": 168
+            },
+            "Discipline Elective List": {
+                "name": "Discipline Elective List",
+                "units_required": null
+            },
+            "General Education": {
+                "name": "General Education",
+                "units_required": 12
+            }
+        }
+    },
+    "3775": {
+        "name": "Surveying",
+        "code": "3775",
+        "desc": "This program is only available combined with the Bachelor of Engineering (Honours) program 3707.",
+        "faculty": "Faculty of Engineering",
+        "units": 192,
+        "duration": 4,
+        "structure": {
+            "Disciplinary Component": {
+                "name": "Disciplinary Component",
+                "units_required": 144
+            },
+            "Year 1 Engineering Electives": {
+                "name": "Year 1 Engineering Electives",
+                "units_required": 12
+            },
+            "Free Electives": {
+                "name": "Free Electives",
+                "units_required": 24
+            },
+            "General Education": {
+                "name": "General Education",
+                "units_required": 12
+            }
+        }
+    },
+    "3778": {
+        "name": "Computer Science",
+        "code": "3778",
+        "desc": "Computer Science involves the study of the design, construction and uses of computer systems. It is concerned with the representation of data and data structures in computer systems and the design of algorithms for automatic manipulation of this information by programming languages and machine systems. It is very much concerned with the design and development of hardware and software tools by which computer applications may be developed, but not so much with the applications themselves. It is, however, noted that non-computing elements (such as human interface or psychological aspects) can often dictate the level of success of computing systems. At UNSW, particular emphasis is given to comprehension of the basic principles behind computing tools, operating systems, compilers and translators, and computer hardware.Further details on the program requirements, electives, and advice regarding the order and placement of courses in the program can be found at: Courses-Programs",
+        "faculty": "Faculty of Engineering",
+        "units": 144,
+        "duration": 3,
+        "structure": {
+            "Disciplinary Component": {
+                "name": "Disciplinary Component",
+                "units_required": 96
+            },
+            "Free Electives": {
+                "name": "Free Electives",
+                "units_required": 36
+            },
+            "General Education": {
+                "name": "General Education",
+                "units_required": 12
+            }
+        }
+    },
+    "4515": {
+        "name": "Computer Science & Engineering (Honours)",
+        "code": "4515",
+        "desc": "The Bachelor of Science (Honours) program in Computer Science and Engineering is a 1 year full-time or 2 year part-time award undertaken by eligible students after completion of a 3 year Bachelor of Science program in a relevant discipline and offers students an opportunity to deepen their understanding of the discipline through the completion of advanced coursework and a research thesis.",
+        "faculty": "Faculty of Engineering",
+        "units": 48,
+        "duration": 1,
+        "structure": {
+            "Specialisation Requirements": {
+                "name": "Specialisation Requirements",
+                "units_required": null
+            }
+        }
+    }
+}
