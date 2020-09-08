@@ -61,13 +61,13 @@ const BESengah = () => {
         //setElements(selectNode(elements, elements), [, console.log("SELECTED CALLBACK")]);
 
         setElements(highlightElements(elements, selectedNodes, selectedEdges), [, console.log("HIGHLIGHTED")]);
-        /*for (var e of elements) {
+        for (var e of elements) {
             if (e.id === element.id) {
                 e.position.x = element.position.x;
                 e.position.y = element.position.y;
                 break;
             }
-        }*/
+        }
     };
 
     const highlightEdges = (element) => {
