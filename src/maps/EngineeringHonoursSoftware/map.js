@@ -4,14 +4,20 @@ import CustomNode1 from '../../components/customnode1.js';
 import CustomNode2 from '../../components/customnode2.js';
 import HeaderNode1 from '../../components/headernode1.js';
 
+import positionHelper from '../../components/positionhelper.js';
+import selectNode from '../../components/selectnode.js';
+import showPrerequisites from '../../components/showprerequisites.js';
+import highlightElements from '../../components/highlightelements.js';
+import getPrerequisites from '../../components/getprerequisites.js';
+
 var elementsData = require("./data.json");
-var elementsNode = elementsData.filter(e => isNode(e));
-var elementsEdge = elementsData.filter(e => isEdge(e));
+var nodesData = elementsData.filter(e => isNode(e));
+var edgesData = elementsData.filter(e => isEdge(e));
 var selectedNodes = {
     'SENGAH': 1
 };
 
-var selectedEdges = [];
+var selectedEdges = {};
 //const eng_data = require("../../webscraper/engineering_degrees.json");
 
 console.log(elementsData);
@@ -44,112 +50,29 @@ const getElement = (id) => {
 
 const BESengah = () => {
     const [elements, setElements] = useState(elementsData);
-    // HELPER FUNCTION FOR POSITIONING
-    var positioning_data = [];
-    const positionHelper = () => {
-        for (const e of elements) {
-            if (isNode(e)) {
-                positioning_data.push({
-                    id: e.id,
-                    position: {x: e.position.x, y: e.position.y},
-                });
-            }
-        }
-        // Write data to position output file. Note we have to do this ourselves as we
-        // are making a server write to a local file.
-        console.log('[');
-        for (const e of positioning_data) {
-            console.log('{"id": "' + e.id + '", "position": {"x": ' + e.position.x + ', "y": ' + e.position.y + '}},');
-        }
-        console.log(']');
-    }
 
     const onElementClick = (event, element) => {
+        console.log("ONELEMENTCLICK");
         if (isEdge(element)) return; // Don't care about edges
-        //useStoreActions(action => actions.updateTransform(useStoreState(state => state.transform)), [100, 100, 1]);
-        // highlightEdges(element);
 
-        showPrerequisites(element);
-        // Update the element's position for position helper
-        for (var e of elements) {
+        getPrerequisites(elements, element, selectedNodes, selectedEdges)
+        //setElements(showPrerequisites(elements, element, selectedNodes, nodesData), [, console.log("PREREQ CALLBACK")]);
+        
+        //setElements(selectNode(elements, elements), [, console.log("SELECTED CALLBACK")]);
+
+        setElements(highlightElements(elements, selectedNodes, selectedEdges), [, console.log("HIGHLIGHTED")]);
+        /*for (var e of elements) {
             if (e.id === element.id) {
                 e.position.x = element.position.x;
                 e.position.y = element.position.y;
-                console.log(e);
                 break;
             }
-        }
+        }*/
     };
-
-    const showPrerequisites = (element) => {
-        // only works when clicking an unselected node
-        if (isEdge(element)) return;
-        if (selectedNodes.hasOwnProperty(element.id)) return;
-        if (element.data.conditions.prerequisites === null) return;
-
-        var changeEdges = {};
-        // Build a path of prerequisites until it hits a selected node.
-        // Get list of all prerequisites
-        // Get prerequisites of prerequisites, etc.
-        var parentList = [];
-
-        // TODO: DOES NOT DEAL WITH EXCLUSION PREREQUISITES PROPERLY. NEED TO
-        // CHANGE IN GENERATOR
-        
-        // Populate list with non-selected prerequisites we need to investigate
-        var flat_prereqs = element.data.conditions.prerequisites.flat(Infinity);
-        for (var prereq of flat_prereqs) {
-            console.log("PREREQUISITE", prereq);
-
-            // FOR NOW: Light up all these edges regardless of their current state
-            changeEdges['e' + prereq + '-' + element.id] = 1;
-            if (selectedNodes.hasOwnProperty(prereq)) continue;
-            parentList.push(prereq);
-            console.log("PUSHED", prereq);
-        }
-
-        console.log("================================");
-        console.log(parentList);
-        console.log("================================");
-
-        // Keep adding prerequisites until we hit selected nodes. Go until
-        // parentList is empty
-        while (parentList.length !== 0) {
-            var current = getElement(parentList.shift());
-            console.log("CURRENT IS", current);
-            if (selectedNodes.hasOwnProperty(current)) continue;
-            if (current.data.conditions.prerequisites === null) continue;
-
-            var flat_prereqs = current.data.conditions.prerequisites.flat(Infinity);
-            for (var prereq of flat_prereqs) {
-                console.log("PREREQUISITE", prereq);
-                if (! changeEdges.hasOwnProperty('e') + prereq.id + '-' + current.id) {
-                    changeEdges['e' + prereq + '-' + current.id] = 1;
-                }
-
-                if (selectedNodes.hasOwnProperty(prereq)) continue;
-                parentList.push(prereq);
-            }
-        }
-
-        console.log("==================");
-        console.log(changeEdges);
-        console.log("==================");
-        // For each edge, highlight it (FOR NOW. TODO)
-        setElements((els) =>
-            els.map((e) => {
-                if (changeEdges.hasOwnProperty(e.id)) {
-                    if (e.style.stroke === 'grey') return {...e, style: {...e.style, stroke: 'red', opacity: 1}, animated: true};
-                    else if (e.style.stroke === 'red') return {...e, style: {...e.style, stroke: 'grey', opacity: 0.2}, animated: false};
-                }
-                return e;
-            })
-        )
-    }
 
     const highlightEdges = (element) => {
         if (isEdge(element)) return;
-        const connectedEdges = getConnectedEdges([element], elementsEdge);
+        const connectedEdges = getConnectedEdges([element], edgesData);
         const connectedEdgeIds = connectedEdges.map(e => e.id);
         
         setElements((els) => 
@@ -177,11 +100,11 @@ const BESengah = () => {
                     nodesConnectable={false}
                     minZoom={0.1}
                     //setInitTransform={TransformUpdater({x: 100, y: 100, z: 1})}
-                    //nodesDraggable={false}
+                    nodesDraggable={false}
                 >
                     <Controls />
                 </ReactFlow>
-                <button type="button" onClick={positionHelper}>
+                <button type="button" onClick={positionHelper(elements)}>
                     Generate position
                 </button>
             </ReactFlowProvider>

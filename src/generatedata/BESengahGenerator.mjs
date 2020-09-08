@@ -9,8 +9,6 @@ const position_data = require("../maps/EngineeringHonoursSoftware/position.json"
 var courses_output = [];
 var courses_list = {}; // Keeps track of courses in this degree for easier checking later on
 
-
-
 // Colours a node accordingly
 function colour_node(node) {
     if (node.id.match(/^COMP/)) node.style = {...node.style, background: '#66ca86'};

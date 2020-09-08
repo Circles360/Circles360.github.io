@@ -9,7 +9,8 @@ export const node1 = {
     background: 'black',
     width: 64,
     height: 64,
-    borderRadius: 32
+    borderRadius: 32,
+    filter: 'brightness(0.75)'
 }
 
 export const node2 = {
@@ -27,7 +28,8 @@ export const node2 = {
     borderStyle: 'solid',
     borderSize: '1px',
     borderColor: 'black',
-    zIndex: -5000
+    zIndex: -5000,
+    filter: 'brightness(0.75)'
 }
 
 export const node_header = {
@@ -41,5 +43,6 @@ export const node_header = {
     background: 'black',
     width: 256,
     height: 256,
-    borderRadius: 128
+    borderRadius: 128,
+    filter: 'brightness(1.25)'
 }

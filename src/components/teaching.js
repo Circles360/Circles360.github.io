@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, Fragment} from 'react';
 import ReactFlow, {Background, Controls, MiniMap} from 'react-flow-renderer';
 
 var initialElements = [
@@ -42,12 +42,13 @@ const Teaching = () => {
 
 
     return (
-        <div>
+        <Fragment>
             <ReactFlow
                 elements={elements}
                 onLoad={onLoad}
                 style={{width: "100%", height: "99vh"}}
                 onElementClick={onClick}
+                nodesDraggable={false}
             >
                 <Background />
                 <MiniMap 
@@ -63,7 +64,7 @@ const Teaching = () => {
                     ADD NEW NODE HERE!!!!
                 </button>
             </div>
-        </div>
+        </Fragment>
     );
 }
 
