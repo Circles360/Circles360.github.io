@@ -2,7 +2,7 @@ import {isNode} from 'react-flow-renderer';
 
 // HELPER FUNCTION FOR POSITIONING
 // Prints out positions of all nodes
-export default function positionHelper(elements) {
+export default function positionHelper(elements, elementsData) {
     var positioning_data = [];
     for (const e of elements) {
         if (isNode(e)) {

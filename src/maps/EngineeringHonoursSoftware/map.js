@@ -15,18 +15,35 @@ var nodesData = elementsData.filter(e => isNode(e));
 var edgesData = elementsData.filter(e => isEdge(e));
 var selectedNodes = {
     'SENGAH': 1
-};
-
+}
 var selectedEdges = {};
+var selectableNodes = {};
+for (const headerNode of nodesData) {
+    if (headerNode.id === 'SENGAH') {
+        for (const course of headerNode.data.unlocks) {
+            console.log(course);
+            selectableNodes[course] = 1;
+            selectedNodes[course] = 1;
+        }
+        break;
+    }
+}
+
+elementsData = highlightElements(elementsData, selectedNodes, selectedEdges);
+
+
 //const eng_data = require("../../webscraper/engineering_degrees.json");
 
 console.log(elementsData);
 
 console.log("=====SELECTED=====");
 console.log(selectedNodes);
+console.log("=====SELECTABLE NODES=====");
+console.log(selectableNodes);
 
-const onLoad = (reactFlowInstance) => {
+const onLoad = (reactFlowInstance) => {    
     reactFlowInstance.fitView();
+    // Highlight selectable nodes
 };
 
 const nodeTypes = {
@@ -54,13 +71,23 @@ const BESengah = () => {
     const onElementClick = (event, element) => {
         console.log("ONELEMENTCLICK");
         if (isEdge(element)) return; // Don't care about edges
+        if (element.id === 'SENGAH') return; // Cannot click on main node
+        if (! selectableNodes.hasOwnProperty(element)) return; // Cannot select non-selectable nodes
 
-        getPrerequisites(elements, element, selectedNodes, selectedEdges)
+
+        // 1. Fill in the edges (maybe make non opaque grey show potential edges?)
+        // 2. Highlight the selected node
+        // 3. Determine children to unlock and new potential edges
+        // 4. Fill in potential edges
+
+
+
+        //getPrerequisites(elements, element, selectedNodes, selectedEdges)
         //setElements(showPrerequisites(elements, element, selectedNodes, nodesData), [, console.log("PREREQ CALLBACK")]);
         
         //setElements(selectNode(elements, elements), [, console.log("SELECTED CALLBACK")]);
 
-        setElements(highlightElements(elements, selectedNodes, selectedEdges), [, console.log("HIGHLIGHTED")]);
+        //setElements(highlightElements(elements, selectedNodes, selectedEdges), [, console.log("HIGHLIGHTED")]);
         for (var e of elements) {
             if (e.id === element.id) {
                 e.position.x = element.position.x;
@@ -104,7 +131,7 @@ const BESengah = () => {
                 >
                     <Controls />
                 </ReactFlow>
-                <button type="button" onClick={positionHelper(elements)}>
+                <button type="button">
                     Generate position
                 </button>
             </ReactFlowProvider>

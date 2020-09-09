@@ -29,9 +29,9 @@ export default function getPrerequisites(elements, node, selectedNodes, selected
     if (node.data.conditions.prerequisites === null) return;
     var parentList = [];
 
-    var flat_prereqs = node.data.conditions.prerequisites.flat(Infinity);
-    for (var prereq of flat_prereqs) {
-        // Highlight this edge
+    var flatPrereqs = node.data.conditions.prerequisites.flat(Infinity);
+    for (var prereq of flatPrereqs) {
+        // Highlight the edge depending on if it is an optional prerequisite
         selectedEdges['e' + prereq + '-' + node.id] = 1;
 
         // Do not add to queue if the prereq is a selected node
@@ -40,6 +40,7 @@ export default function getPrerequisites(elements, node, selectedNodes, selected
 
         parentList.push(prereq);
     }
+
 
     // Keep adding prerequisites until we hit selected nodes. Go until
     // parentList is empty
@@ -50,8 +51,8 @@ export default function getPrerequisites(elements, node, selectedNodes, selected
         if (selectedNodes.hasOwnProperty(current)) continue;
         if (current.data.conditions.prerequisites === null) continue;
 
-        var flat_prereqs = current.data.conditions.prerequisites.flat(Infinity);
-        for (var prereq of flat_prereqs) {
+        var flatPrereqs = current.data.conditions.prerequisites.flat(Infinity);
+        for (var prereq of flatPrereqs) {
             selectedEdges['e' + prereq + '-' + current.id] = 1;
 
             // Do not add to queue if prereq is a selected node
@@ -66,6 +67,28 @@ export default function getPrerequisites(elements, node, selectedNodes, selected
     return;
 }
 
+/*selectedEdges['e' + prereq + '-' + node.id] = 1;
+// Helper function to determine how to mark an edge. 1 = red (must select)
+// 2 = blue (one of many prerequisite options)
+const selectEdgeHelper = (selectedEdges, prereq, node) => {
+
+}*/
+
+// Helper function to iterate through prerequisites recursively. Will mark the edge
+// accordingly based on if it is part of an "OR" condition (determined by length of array)
+function iteratePrereq(prereqArray, selectedEdges, prereq, node) {
+    for (var child of prereqArray) {
+        if (Array.isArray(child)) {
+            // It is an array, keep iterating
+        } else if (child === prereq) {
+            // Found the prereq
+        } else {
+            // It is a course, stop iterating,
+        }
+    }
+}
+
+
 // Helper function to unselect a node. Will unhighlight all prereqs 1 layer down
 // Will also push selected children onto a queue
 const unselectHelper = (node, unselectQueue, selectedNodes, selectedEdges) => {
@@ -73,8 +96,8 @@ const unselectHelper = (node, unselectQueue, selectedNodes, selectedEdges) => {
 
     // Unselect prereq edges 1 layer down
     if (node.data.conditions.prerequisites !== null) {
-        var flat_prereqs = node.data.conditions.prerequisites.flat(Infinity);
-        for (var prereq of flat_prereqs) {
+        var flatPrereqs = node.data.conditions.prerequisites.flat(Infinity);
+        for (var prereq of flatPrereqs) {
             console.log("Checking", 'e' + prereq + '-' + node.id);
             if (selectedEdges.hasOwnProperty('e' + prereq + '-' + node.id)) {
                 console.log("SELECTED", prereq);

@@ -13,7 +13,7 @@ export default function highlightElements(elements, selectedNodes, selectedEdges
 
         // It is a node
         if (selectedNodes.hasOwnProperty(e.id)) {
-            return {...e, style: {...e.style, filter: 'brightness(1.25)'}}
+            return {...e, style: {...e.style, filter: 'brightness(1.15)'}}
         } else {
             return {...e, style: {...e.style, filter: 'brightness(0.75)'}}
         }
