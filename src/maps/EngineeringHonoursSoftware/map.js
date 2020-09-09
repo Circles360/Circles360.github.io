@@ -18,32 +18,24 @@ var selectedNodes = {
 }
 var selectedEdges = {};
 var selectableNodes = {};
+var potentialEdges = {};
+
+// Load up the chart with initial selectable nodes and edges
 for (const headerNode of nodesData) {
     if (headerNode.id === 'SENGAH') {
         for (const course of headerNode.data.unlocks) {
             console.log(course);
             selectableNodes[course] = 1;
-            selectedNodes[course] = 1;
+            potentialEdges['eSENGAH-' + course] = 1;
         }
         break;
     }
 }
 
-elementsData = highlightElements(elementsData, selectedNodes, selectedEdges);
-
-
-//const eng_data = require("../../webscraper/engineering_degrees.json");
-
-console.log(elementsData);
-
-console.log("=====SELECTED=====");
-console.log(selectedNodes);
-console.log("=====SELECTABLE NODES=====");
-console.log(selectableNodes);
+elementsData = highlightElements(elementsData, selectedNodes, selectedEdges, selectableNodes, potentialEdges);
 
 const onLoad = (reactFlowInstance) => {    
     reactFlowInstance.fitView();
-    // Highlight selectable nodes
 };
 
 const nodeTypes = {
@@ -52,19 +44,6 @@ const nodeTypes = {
     header1: HeaderNode1
 };
 
-// Given an id, get the corresponding element from the elementsData
-const getElement = (id) => {
-    for (var e of elementsData) {
-        if (e.id === id) {
-            return e;
-        }
-    }
-    return null;
-}
-
-// Breaks down prerequisite list 
-
-
 const BESengah = () => {
     const [elements, setElements] = useState(elementsData);
 
@@ -72,8 +51,29 @@ const BESengah = () => {
         console.log("ONELEMENTCLICK");
         if (isEdge(element)) return; // Don't care about edges
         if (element.id === 'SENGAH') return; // Cannot click on main node
-        if (! selectableNodes.hasOwnProperty(element)) return; // Cannot select non-selectable nodes
+        if ((! selectableNodes.hasOwnProperty(element.id)) && (! selectedNodes.hasOwnProperty(element.id))) return; // Cannot select non selectable nodes
 
+        // 1. Select the node and fill in edges.
+        // - Deal with unselecting nodes
+        selectNode(elements, element, selectedNodes, selectedEdges, selectableNodes, potentialEdges);
+
+        // After selecting node:
+        console.log("==========SelectedNodes==========");
+        console.log(selectedNodes);
+        console.log("==========SelectedEdges==========");
+        console.log(selectedEdges);
+        console.log("==========SelectableNodes==========");
+        console.log(selectableNodes);
+        console.log("==========PotentialEdges==========");
+        console.log(potentialEdges);
+
+        // 2. Determine which nodes are now selectable
+        // - Determine which previously selectable nodes are now unselectable
+        
+
+        // Render graph accordingly
+        setElements(highlightElements(elements, selectedNodes, selectedEdges, selectableNodes, potentialEdges));
+        
 
         // 1. Fill in the edges (maybe make non opaque grey show potential edges?)
         // 2. Highlight the selected node
