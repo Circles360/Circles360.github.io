@@ -1,0 +1,2377 @@
+{
+    "3053": {
+        "name": "Biotechnology (Honours)",
+        "code": "3053",
+        "desc": "Biotechnology can be defined as the use of various biological processes to make products and perform services. In biotechnology, living cells and biochemical macromolecules such as proteins, DNA and RNA are applied in a rapidly expanding range of activities of direct benefit to society. Biotechnology is used for the production of pharmaceuticals, food and industrial chemicals, in the development of improved crops and livestock for farming, for environmental clean-up, and in forensics. Modern biotechnology makes practical use of the most recent scientific advances in areas such as molecular genetics and molecular cell biology.The development of recombinant DNA technology has resulted in the ability to create, modify and improve industrial organisms and to produce large quantities of any useful protein. Based on this technology, biopharmaceuticals including hormones, vaccines, anti-hypertensive agents, anti-inflammatory agents and new therapies for the treatment of cancer are being developed with the potential to revolutionise medicine. The sequencing of the human genome and the rapid emergence of high-throughput genomic and proteomic techniques is resulting in a surge of new drug targets. Translation of this advanced knowledge into useful therapies and improved medical practices requires the application of biotechnology.Microorganisms and viruses are being modified for use in controlling plant and animal diseases and pests. Diagnostic kits are being developed for use in forensic science and in product identification and quality control. Genetic improvements in agriculture, plants and animals are becoming a reality, as is the control of inborn genetic disorders in humans. The ability to treat diseased and injured organs with replacement cells and tissues generated outside of the body is advancing rapidly.The future for expansion in all the above areas is immense. Our ability to cope with many medical, environmental, agricultural and manufacturing problems in the 21st century will depend heavily on advances in biotechnology.",
+        "faculty": "Faculty of Science",
+        "units": 192,
+        "duration": 4,
+        "structure": {
+            "Disciplinary Component": 168,
+            "General Education": 12,
+            "Course Information Rule": null,
+            "Excluded General Education Courses": null,
+            "Free Electives": 12,
+            "Suggested Free Electives": null
+        },
+        "degrees_involved": {
+            "majors": [],
+            "minors": [],
+            "honours": []
+        }
+    },
+    "3061": {
+        "name": "Food Science (Honours)",
+        "code": "3061",
+        "desc": "The UNSW Bachelor of Science (Honours) Food Science program is designed to equip you for a career as a professional food scientist. We provide you with a solid background in mathematics, natural and applied sciences that will prepare you for acquiring knowledge and skills in a food science specialisation. You will get the chance to apply yourself to food product design and enquiry projects, professional food practice, food systems management and conduct research towards your thesis project.",
+        "faculty": "Faculty of Engineering",
+        "units": 192,
+        "duration": 4,
+        "structure": {
+            "Disciplinary Component": 168,
+            "Discipline Elective List": 12,
+            "General Education": 12
+        },
+        "degrees_involved": {
+            "majors": [],
+            "minors": [
+                "FOODA2"
+            ],
+            "honours": [
+                "FOODJH",
+                "FOODKH"
+            ]
+        }
+    },
+    "3131": {
+        "name": "Materials Science and Engineering (Honours)",
+        "code": "3131",
+        "desc": "The field of Materials Science and Engineering offers unlimited possibilities for innovation and development. Attention is being focused on developing and processing metals, ceramics, polymers and composites with improved properties.",
+        "faculty": "Faculty of Science",
+        "units": 192,
+        "duration": 4,
+        "structure": {
+            "Disciplinary Component": 168,
+            "Professional Electives": 12,
+            "General Education": 12,
+            "Excluded General Education Courses": 0
+        },
+        "degrees_involved": {
+            "majors": [
+                "MATSE1",
+                "MATSF1",
+                "MATSG1",
+                "MATSH1",
+                "MATSJ1"
+            ],
+            "minors": [],
+            "honours": []
+        }
+    },
+    "3181": {
+        "name": "Vision Science",
+        "code": "3181",
+        "desc": "Overview Vision Science is the study of the sensory processes that underlie vision, and the development and use of vision-related technologies. This is broad discipline degree that provides comprehensive knowledge and direct training in areas relevant to a career in Vision Science such as: Optics, anatomy and functioning of the eye, … For more content click the Read more button below.Vision Science is the study of the sensory processes that underlie vision, and the development and use of vision-related technologies. This is broad discipline degree that provides comprehensive knowledge and direct training in areas relevant to a career in Vision Science such as: Optics, anatomy and functioning of the eye, eye disorders, clinical optometry, ocular therapy, sensation and perception, psychophysics, and research design, methods and experimentation.This degree is designed to develop scientists who can work with ophthalmic industries in the development of new technologies, diagnostic instruments, and patient care options, as well as develop persons who can liaise with ophthalmic practitioners dealing with the patient directly.Students who complete this degree may be elligible to transfer to the Master of Clinical Optometry degree, see Additional Information below.Read more",
+        "faculty": "Faculty of Science",
+        "units": 144,
+        "duration": 3,
+        "structure": {
+            "Disciplinary Component": 132,
+            "General Education": 12,
+            "Excluded General Education Courses": 0
+        },
+        "degrees_involved": {
+            "majors": [],
+            "minors": [],
+            "honours": []
+        }
+    },
+    "3256": {
+        "name": "Interior Architecture (Honours)",
+        "code": "3256",
+        "desc": "Interior Architecture at UNSW is positioned as a research-led creative practice which focuses on the design and agency of the inhabited interiors of the built environment, from the scale of the room to the scale of the city, from permanent to temporary spaces.",
+        "faculty": "Faculty of Built Environment",
+        "units": 192,
+        "duration": 4,
+        "structure": {
+            "Disciplinary Component": 168,
+            "Free Electives": 12,
+            "General Education": 12
+        },
+        "degrees_involved": {
+            "majors": [],
+            "minors": [],
+            "honours": []
+        }
+    },
+    "3261": {
+        "name": "Architectural Studies",
+        "code": "3261",
+        "desc": "The Bachelor of Architectural Studies degree provides academic education in the practice and theory of architecture. It requires full time attendance for three years. In combination with the Master of Architecture, it is designed to deliver an architectural education appropriate to contemporary multidisciplinary professional practice. Graduates will be eligible to apply for entry into the Master of Architecture program at UNSW.Progression through the program is by stages, each comprising two semester-long design studios and their corresponding supporting courses. Admission to each stage is subject to the successful completion of the design courses of the preceding stages, except where approval has been given by the Director of Architecture.The Program provides students with a disciplinary grounding in architectural design and related technical and academic knowledge.It prepares students to work in architecture and other design-based industries. It also prepares students to undertake the Master of Architecture Program, a two year accredited degree required by students intending to undertake the professional examinations within their state or territory in order to become registered Architects. Lectures and practical sessions cover the following areas:",
+        "faculty": "Faculty of Built Environment",
+        "units": 144,
+        "duration": 3,
+        "structure": {
+            "Disciplinary Component": 120,
+            "BE Interdisciplinary Learning (BEIL) courses": 6,
+            "Free Electives": 6,
+            "General Education": 12
+        },
+        "degrees_involved": {
+            "majors": [],
+            "minors": [],
+            "honours": []
+        }
+    },
+    "3264": {
+        "name": "Architecture (UNSW-Tongji)",
+        "code": "3264",
+        "desc": "Program Summary:The program offers an excellent opportunity for students to study architecture at two pre-eminant architecture schools in Australia and China; namely the University of New South Wales and Tongji University, China.",
+        "faculty": "Faculty of Built Environment",
+        "units": 192,
+        "duration": 4,
+        "structure": {
+            "Semesters 1-3 @ Tongji": 96,
+            "Level 2 Core Courses": 42,
+            "Level 3 Core Courses": 36,
+            "BE Interdisciplinary Electives": 12,
+            "Free Elective": 6
+        },
+        "degrees_involved": {
+            "majors": [],
+            "minors": [],
+            "honours": []
+        }
+    },
+    "3268": {
+        "name": "Computational Design",
+        "code": "3268",
+        "desc": "The Computational Design degree is the nexus of architecture and design with engineering and science all through a profound understanding of computing and computation. Computers have infiltrated all aspects of the built environment. Thus the program focuses on applying state of the art thinking in design, architecture and urbanism with theories from engineering and science together with frontier computer skills and digital fabrication technologies. The resulting creative, technical and aesthetic solutions are taught in individual interlinked modules. The degree offers unique skills on the application of digital technologies in the built environment to face the challenges of the 21st century.",
+        "faculty": "Faculty of Built Environment",
+        "units": 144,
+        "duration": 3,
+        "structure": {
+            "Disciplinary Component": 120,
+            "Free Electives": 12,
+            "General Education": 12,
+            "Recommended Elective List": 0
+        },
+        "degrees_involved": {
+            "majors": [],
+            "minors": [],
+            "honours": []
+        }
+    },
+    "3321": {
+        "name": "Social Science",
+        "code": "3321",
+        "desc": "The Bachelor of Social Science (BSocSci) degree offers the opportunity to pursue knowledge in the social research and policy while developing technical and professional skills to apply this knowledge to issues in the real world.",
+        "faculty": "Faculty of Arts and Social Sciences",
+        "units": 144,
+        "duration": 3,
+        "structure": {
+            "Disciplinary Component": 120,
+            "Free Electives": 12,
+            "General Education": 12,
+            "Academic Writing and Language Enhancement": 0
+        },
+        "degrees_involved": {
+            "majors": [
+                "ATSIC1",
+                "COMDF1",
+                "ECONA1",
+                "ENVPE1",
+                "IBUSA1",
+                "MARKA1",
+                "MECTC1",
+                "MGMTH1",
+                "POLSG1",
+                "SOCAD1"
+            ],
+            "minors": [],
+            "honours": []
+        }
+    },
+    "3332": {
+        "name": "Construction Management and Property",
+        "code": "3332",
+        "desc": "The Bachelor of Construction Management and Property is a three-year full-time (or equivalent part-time) program of study which students undertake to develop management skills within the construction and property industries.",
+        "faculty": "Faculty of Built Environment",
+        "units": 144,
+        "duration": 3,
+        "structure": {
+            "Disciplinary Component": 120,
+            "Interdisciplinary Learning (BEIL) Electives": 12,
+            "General Education": 12
+        },
+        "degrees_involved": {
+            "majors": [],
+            "minors": [],
+            "honours": []
+        }
+    },
+    "3362": {
+        "name": "City Planning (Honours)",
+        "code": "3362",
+        "desc": "The Bachelor of City Planning (Hons) provides academic education and applied learning leading to professional, accredited qualifications in planning. The Program is of four years full-time duration with embedded Honours. The degree comprises core courses that develop and strengthen disciplinary foundations and help develop advanced and specific knowledge and skills; elective options including Built Environment Interdisciplinary Learning courses, an integrated learning Practice Year where students develop skills in the workplace as well as classroom; and a final year involving a Plan Making Studio, research thesis and opportunities to further pursue specialist areas of interest.",
+        "faculty": "Faculty of Built Environment",
+        "units": 192,
+        "duration": 4,
+        "structure": {
+            "Disciplinary Component": 168,
+            "Interdisciplinary Learning (BEIL) Electives": 12,
+            "General Education": 12
+        },
+        "degrees_involved": {
+            "majors": [],
+            "minors": [],
+            "honours": []
+        }
+    },
+    "3381": {
+        "name": "Landscape Architecture (Hons)",
+        "code": "3381",
+        "desc": "Landscape Architecture is a design discipline which is concerned with the environment as a whole. Students at UNSW learn the theory and practice of Landscape Architecture through the exploration of design principles, graphic techniques, ecological processes and studies of human modification of the environment. The emphasis of the program is on creative design inspired by the Australian situation, and prepares our students to work anywhere in the world.",
+        "faculty": "Faculty of Built Environment",
+        "units": 192,
+        "duration": 4,
+        "structure": {
+            "Disciplinary Component": 168,
+            "Thesis Electives": null,
+            "Free Electives": null,
+            "General Education": 12
+        },
+        "degrees_involved": {
+            "majors": [],
+            "minors": [],
+            "honours": []
+        }
+    },
+    "3387": {
+        "name": "Industrial Design",
+        "code": "3387",
+        "desc": "Behind many manufactured products and services encountered at home, at work and in the public arena is the creativity, problem solving and technical know-how of an Industrial Designer. Their role is to create practical, attractive and functional products that fulfil a genuine market demand or societal need. Understanding materials, manufacturing technology and user insights within economic, social and environmental contexts in which products are produced, marketed and used is essential. Students develop their creative and professional abilities to understand and resolve these requirements while working at the frontiers of social and technological change. Graduates will work with engineers, marketers and other design and business professionals to turn good ideas into successful products. Increasingly, Industrial Designers are playing an important role beyond the production line in strategic roles involving branding, corporate identity and design focusing upon the user experience.",
+        "faculty": "Faculty of Built Environment",
+        "units": 144,
+        "duration": 3,
+        "structure": {
+            "Disciplinary Component": 108,
+            "Interdisciplinary Learning Prescribed Electives": 12,
+            "Free Electives": 12,
+            "General Education": 12
+        },
+        "degrees_involved": {
+            "majors": [],
+            "minors": [],
+            "honours": []
+        }
+    },
+    "3409": {
+        "name": "Arts",
+        "code": "3409",
+        "desc": "The Bachelor of Arts (UNSW BA) is designed to provide you with all the benefits of an education in the Humanities, Social Sciences and the Creative and Performing Arts. The degree is flexible so that you can structure it around your skills, interests and career aspirations. The program has both breadth, allowing you to try out and explore different areas of interest, and depth, allowing you to focus in detail on two areas of specialisation. The UNSW BA can be completed full time in Single mode (normally 3 years), in Dual Mode (the equivalent of two years full time) or part time. Dual Mode can only be taken in conjunction with enrolment in another degree.",
+        "faculty": "Faculty of Arts and Social Sciences",
+        "units": 144,
+        "duration": 3,
+        "structure": {
+            "Disciplinary Component": 96,
+            "Free Electives": 24,
+            "General Education": 12
+        },
+        "degrees_involved": {
+            "majors": [
+                "ASIAB1",
+                "ATSIC1",
+                "CHINE1",
+                "CHINF1",
+                "COMDF1",
+                "CRIMC1",
+                "CRWTA1",
+                "ENGLC1",
+                "ENVPE1",
+                "EUROC1",
+                "FILMB1",
+                "FRENF1",
+                "FRENG1",
+                "GEOGK1",
+                "GERSF1",
+                "HISTD1",
+                "JAPNF1",
+                "JAPNG1",
+                "KOREF1",
+                "KOREG1",
+                "LINGC1",
+                "MECTC1",
+                "MUSCJ1",
+                "MUSCK1",
+                "PHILE1",
+                "POLSG1",
+                "SOCAD1",
+                "SPANH1",
+                "THSTC1",
+                "ECONA1",
+                "IBUSA1",
+                "MGMTH1",
+                "PSYCD1"
+            ],
+            "minors": [],
+            "honours": []
+        }
+    },
+    "3417": {
+        "name": "Language Studies",
+        "code": "3417",
+        "desc": "Overview The Diploma in Language Studies is designed to provide students with the opportunity to acquire proficiency in a second language. It requires the completion of 48 UOC in a language specialisation and related courses as approved by the School of Humanities and Languages. It may be taken concurrently with another degree program or by graduates.",
+        "faculty": "Faculty of Arts and Social Sciences",
+        "units": 48,
+        "duration": 1,
+        "structure": {
+            "Specialisation Requirements": 48
+        },
+        "degrees_involved": {
+            "majors": [
+                "CHINA1",
+                "CHINB1",
+                "FRENA1",
+                "FRENE1",
+                "GERSA1",
+                "INDOA1",
+                "JAPNA1",
+                "JAPNE1",
+                "KORED1",
+                "KOREE1",
+                "SPANF1"
+            ],
+            "minors": [],
+            "honours": []
+        }
+    },
+    "3420": {
+        "name": "Social Research and Policy",
+        "code": "3420",
+        "desc": "This program is for students commencing from 2019.",
+        "faculty": "Faculty of Arts and Social Sciences",
+        "units": 144,
+        "duration": 3,
+        "structure": {
+            "Disciplinary Component": 120,
+            "Free Electives": 12,
+            "General Education": 12
+        },
+        "degrees_involved": {
+            "majors": [
+                "ATSIC1",
+                "COMDF1",
+                "ECONA1",
+                "ENVPE1",
+                "IBUSA1",
+                "MARKA1",
+                "MECTC1",
+                "MGMTH1",
+                "POLSG1",
+                "SOCAD1"
+            ],
+            "minors": [],
+            "honours": []
+        }
+    },
+    "3422": {
+        "name": "Criminology & Criminal Justice",
+        "code": "3422",
+        "desc": "This program is for students commencing from 2019",
+        "faculty": "Faculty of Arts and Social Sciences",
+        "units": 144,
+        "duration": 3,
+        "structure": {
+            "Disciplinary Component": 96,
+            "Arts & Social Sciences Prescribed Electives": 12,
+            "Free Electives": 24,
+            "General Education": 12
+        },
+        "degrees_involved": {
+            "majors": [],
+            "minors": [],
+            "honours": []
+        }
+    },
+    "3429": {
+        "name": "Media (Comm & Journalism)",
+        "code": "3429",
+        "desc": "This program structure applies to students commencing prior to 2019.",
+        "faculty": "Faculty of Arts and Social Sciences",
+        "units": 144,
+        "duration": 3,
+        "structure": {
+            "Disciplinary Component": 96,
+            "Optional Minors": null,
+            "Arts and Social Sciences Prescribed Electives": null,
+            "Free Electives": null,
+            "General Education": null
+        },
+        "degrees_involved": {
+            "majors": [],
+            "minors": [
+                "ARTHB2",
+                "ARTSB2",
+                "ASIAB2",
+                "ATSIC2",
+                "AUSTB2",
+                "CHINE2",
+                "CHINF2",
+                "COMDE2",
+                "CRIMC2",
+                "CRWTA2",
+                "ECONA2",
+                "ENGLC2",
+                "ENVPE2",
+                "EUROC2",
+                "FILMB2",
+                "FRENF2",
+                "FRENG2",
+                "GEOGS2",
+                "GERSF2",
+                "GREKC2",
+                "HISTD2",
+                "IBUSA2",
+                "INDOC2",
+                "ITALB2",
+                "JAPNF2",
+                "JAPNG2",
+                "KOREF2",
+                "KOREG2",
+                "LINGC2",
+                "MGMTH2",
+                "MUSCJ2",
+                "PHILE2",
+                "POLSG2",
+                "PSYCB2",
+                "PSYCM2",
+                "SOCAD2",
+                "SPANH2",
+                "THSTC2",
+                "WOMSB2"
+            ],
+            "honours": []
+        }
+    },
+    "3434": {
+        "name": "Media (PR and Advertising)",
+        "code": "3434",
+        "desc": "This program structure applies to students commencing prior to 2019.",
+        "faculty": "Faculty of Arts and Social Sciences",
+        "units": 144,
+        "duration": 3,
+        "structure": {
+            "Disciplinary Component": 96,
+            "Optional Minors": 0,
+            "Arts and Social Sciences Prescribed Electives": 12,
+            "Free Electives": 24,
+            "General Education": 12
+        },
+        "degrees_involved": {
+            "majors": [],
+            "minors": [
+                "ARTHB2",
+                "ARTSB2",
+                "ASIAB2",
+                "ATSIC2",
+                "AUSTB2",
+                "CHINE2",
+                "CHINF2",
+                "COMDE2",
+                "CRIMC2",
+                "CRWTA2",
+                "ECONA2",
+                "ENGLC2",
+                "ENVPE2",
+                "EUROC2",
+                "FILMB2",
+                "FRENF2",
+                "FRENG2",
+                "GEOGS2",
+                "GERSF2",
+                "GREKC2",
+                "HISTD2",
+                "IBUSA2",
+                "INDOC2",
+                "ITALB2",
+                "JAPNF2",
+                "JAPNG2",
+                "KOREF2",
+                "KOREG2",
+                "LINGC2",
+                "MGMTH2",
+                "MUSCJ2",
+                "PHILE2",
+                "POLSG2",
+                "PSYCB2",
+                "PSYCM2",
+                "SOCAD2",
+                "SPANH2",
+                "THSTC2",
+                "WOMSB2"
+            ],
+            "honours": []
+        }
+    },
+    "3435": {
+        "name": "Psychological Science",
+        "code": "3435",
+        "desc": "Psychology is a discipline of both scientific research and applied practice. As a science, psychology is concerned with the study of behaviour and its underlying mental and neural processes. Students gain an integrated and comprehensive education in main discipline areas, including developmental, social, cognitive, biological, physiological and abnormal psychology. The program also develops research methods skills. Psychology has many areas of cutting edge interdisciplinary research and application and students have an option to pursue individual interests, choosing electives from a range of specialist areas, including psychology and law; psychology and work; development disorders; psychopathology; health psychology, language, cognitive science, neuroscience and others.",
+        "faculty": "Faculty of Science",
+        "units": 144,
+        "duration": 3,
+        "structure": {
+            "Disciplinary Component": 96,
+            "Free electives": null,
+            "General Education": 12,
+            "Excluded General Education Courses": null
+        },
+        "degrees_involved": {
+            "majors": [
+                "CRIMC1",
+                "LINGC1",
+                "MARKA1",
+                "MGMTA1",
+                "MGMTH1",
+                "NEURS1",
+                "PHILE1",
+                "VISNA1"
+            ],
+            "minors": [],
+            "honours": []
+        }
+    },
+    "3436": {
+        "name": "Music",
+        "code": "3436",
+        "desc": "The Bachelor of Music (BMus) is a four-year, full-time degree that offers intensive pre-professional training in one of four specialisations: Music Creative Practice, Musicology, Sonic Arts, and Music Pedagogy. The first 1.5 years are common to all specialisations. All BMus candidates receive individual performance tuition (or composition tuition on approval) for the first two years of the program. Music Pedagogy candidates receive additional individual performance tuition in year three of the program and Music Creative Practice candidates receive additional individual performance tuition (or composition tuition) in years three and four of the program.Music Creative Practice students may specialise in performance or composition in a self-selected musical style or tradition, including Jazz or World Music on approval. Musicology provides a highly academic focus on studies in Historical Musicology, Ethnomusicology, Music Analysis or the Psychology of Music. Sonic Arts develops technical and creative skills in Electro-Acoustic music and Sound Design and provides links with Media Studies at UNSW. Music Pedagogy provides a course of study in studio teaching with an emphasis on practical application and preparation for further study in music education. All specialisations include extensive training in developing musicianship skills and ensemble performance, which is supported by a variety of large and small, Western and Non-Western Music ensembles.",
+        "faculty": "Faculty of Arts and Social Sciences",
+        "units": 192,
+        "duration": 4,
+        "structure": {
+            "Disciplinary Component": 144,
+            "Arts and Social Sciences Prescribed Electives": 12,
+            "Academic Writing & Language Enhancement": 0,
+            "Free Electives": 24,
+            "General Education": 12
+        },
+        "degrees_involved": {
+            "majors": [
+                "MUSCE1",
+                "MUSCG1",
+                "MUSCH1",
+                "MUSCO1"
+            ],
+            "minors": [],
+            "honours": []
+        }
+    },
+    "3438": {
+        "name": "Media (Screen and Sound Production)",
+        "code": "3438",
+        "desc": "THIS PROGRAM IS FOR STUDENTS COMMENCING IN 2015 ONWARDS.The Bachelor of Media (Screen and Sound Production) [UNSW BMedia (S&SP)] is designed to provide you with foundational and applied skills, knowledge and capabilities relevant to career pathways in a broad range of audio-visual, digital and screen production industries. The emphasis is on the acquisition of relevant creative and professional skills relevant to current media industry contexts, along with a sophisticated conceptual understanding of the increasingly convergent role of media and film in contemporary societies.Through a suite of electives, you will gain practical experience in digital film and sound production, animation, interaction and game design in a degree that is both ideas driven and vocationally relevant in its orientation. You will gain foundational practical experience in the thoughtful and creative application of established and emerging media technologies, while also being immersed in the history, culture and philosophy of media and film studies through a diverse suite of core and elective courses. The balance between practice and theory, film and media enables you to be at the forefront of an increasingly convergent media landscape.At level 1 you will study introductory courses in film and media studies and also take a range of foundational courses in video production, sonic arts as well as a course that introduces you to foundational principles of graphic design, animation and interaction design.At Levels 2 and 3 you select from a wide range of production and project-based courses to expand and deepen your knowledge and understanding in the technical, analytical and conceptual application of various media forms including audio-visual production, screenwriting, animation and game design. Concurrently, you will continue to expand your knowledge of the histories, theories and cultures in the disciplinary courses in film and media studies. It is here that you will develop discipline specific and generic skills in critical and creative thought, writing, research and presentation.The UNSW BMedia (S&SP) aims to prepare graduates for a leadership role in the thoughtful application of screen and sound production technologies informed by a solid understanding of film and media histories, theories and cultures. Graduates will also gain a deep understanding of the convergence of film and media industries in the contemporary world. You are not simply skilled up in the use of video and sound recorders, computers and media applications, but are encouraged to become thoughtful and resourceful professionals capable of tackling complex issues by drawing on your integrated practical and theoretical expertise. You will become immersed in the current culture of contemporary screen and sound production and theory. You are encouraged to test out emerging ideas and developments and look for novel ways to approach the planning and production of contemporary audio-visual and digital media projects. Graduates will gain foundational expertise in a range of screen and sound production tools, but more importantly, you will be able to interpret and reflect on emerging audio-visual practices and increasingly diverse screen environments, enabling you to take leading, imaginative and inventive roles in the rapidly changing media industries.",
+        "faculty": "Faculty of Arts and Social Sciences",
+        "units": 144,
+        "duration": 3,
+        "structure": {
+            "Disciplinary Component": 96,
+            "Optional Film Studies Major": null,
+            "Optional Minors": null,
+            "Arts and Social Sciences Prescribed Elective Courses": 12,
+            "Free Electives": 24,
+            "General Education": 12,
+            "Suggested Arts & Social Sciences Elective Courses": null
+        },
+        "degrees_involved": {
+            "majors": [
+                "FILMB1"
+            ],
+            "minors": [
+                "ARTHB2",
+                "ARTSB2",
+                "ASIAB2",
+                "ATSIC2",
+                "AUSTB2",
+                "CHINE2",
+                "CHINF2",
+                "COMDF2",
+                "CRIMC2",
+                "CRWTA2",
+                "ECONA2",
+                "ENGLC2",
+                "ENVPE2",
+                "EUROC2",
+                "FILMB2",
+                "FRENF2",
+                "FRENG2",
+                "GEOGK2",
+                "GEOGS2",
+                "GERSF2",
+                "GREKC2",
+                "HISTD2",
+                "IBUSA2",
+                "INDOC2",
+                "ITALB2",
+                "JAPNF2",
+                "JAPNG2",
+                "KOREF2",
+                "KOREG2",
+                "LINGC2",
+                "MGMTH2",
+                "MUSCJ2",
+                "PHILE2",
+                "POLSG2",
+                "PSYCB2",
+                "PSYCM2",
+                "SOCAD2",
+                "SPANH2",
+                "THSTC2",
+                "WOMSC2"
+            ],
+            "honours": []
+        }
+    },
+    "3440": {
+        "name": "Music (Honours)",
+        "code": "3440",
+        "desc": "THIS PROGRAM IS FOR STUDENTS TRANSFERRING INTO HONOURS FROM PROGRAM 3436 BACHELOR OF MUSIC THROUGH A UNSW INTERNAL PROGRAM TRANSFER.",
+        "faculty": "Faculty of Arts and Social Sciences",
+        "units": 192,
+        "duration": 4,
+        "structure": {
+            "Disciplinary Component": 144,
+            "Arts and Social Sciences Prescribed Electives": 12,
+            "Academic Writing & Language Enhancement": 0,
+            "Free Electives": 24,
+            "General Education": 12
+        },
+        "degrees_involved": {
+            "majors": [],
+            "minors": [],
+            "honours": [
+                "MUSCJH",
+                "MUSCLH",
+                "MUSCMH",
+                "MUSCNH"
+            ]
+        }
+    },
+    "3444": {
+        "name": "Arts and Business",
+        "code": "3444",
+        "desc": "The Bachelor of Arts and Business (BA&Bus) is designed to provide you with all the benefits of an education in the Humanities, Social Sciences and the Creative and Performing Arts PLUS study in Business. The program provides you with not only the depth (Major and Minor streams) of the Bachelor of Arts but a specially-designed Business Studies component that will introduce you to key concepts and approaches in Business and Management.The aims of the BA&Bus are",
+        "faculty": "Faculty of Arts and Social Sciences",
+        "units": 144,
+        "duration": 3,
+        "structure": {
+            "Disciplinary Component": 144
+        },
+        "degrees_involved": {
+            "majors": [
+                "ASIAB1",
+                "ATSIC1",
+                "CHINE1",
+                "CHINF1",
+                "COMDF1",
+                "CRIMC1",
+                "CRWTA1",
+                "ENGLC1",
+                "ENVPE1",
+                "EUROC1",
+                "FILMB1",
+                "FRENF1",
+                "FRENG1",
+                "GEOGK1",
+                "GERSF1",
+                "HISTD1",
+                "JAPNF1",
+                "JAPNG1",
+                "KOREF1",
+                "KOREG1",
+                "LINGC1",
+                "MECTC1",
+                "MUSCJ1",
+                "MUSCK1",
+                "PHILE1",
+                "POLSG1",
+                "SOCAD1",
+                "SPANH1",
+                "THSTC1"
+            ],
+            "minors": [
+                "ARTHB2",
+                "ARTSB2",
+                "ASIAB2",
+                "ATSIC2",
+                "AUSTB2",
+                "CHINE2",
+                "CHINF2",
+                "COMDF2",
+                "CRIMC2",
+                "CRWTA2",
+                "ENGLC2",
+                "ENVPE2",
+                "EUROC2",
+                "FILMB2",
+                "FRENF2",
+                "FRENG2",
+                "GEOGK2",
+                "GERSF2",
+                "GREKC2",
+                "HISTD2",
+                "INDOC2",
+                "ITALB2",
+                "JAPNF2",
+                "JAPNG2",
+                "KOREF2",
+                "KOREG2",
+                "LINGC2",
+                "MECTC2",
+                "MUSCJ2",
+                "PHILE2",
+                "POLSG2",
+                "PSYCB2",
+                "SOCAD2",
+                "SPANH2",
+                "THSTC2",
+                "WOMSC2"
+            ],
+            "honours": []
+        }
+    },
+    "3447": {
+        "name": "International Studies",
+        "code": "3447",
+        "desc": "This program is for students commencing from 2017.",
+        "faculty": "Faculty of Arts and Social Sciences",
+        "units": 192,
+        "duration": 4,
+        "structure": {
+            "Disciplinary Component": 144,
+            "Arts and Social Sciences Prescribed Electives": 12,
+            "Free Electives": 24,
+            "General Education": 12
+        },
+        "degrees_involved": {
+            "majors": [
+                "IBUSA1"
+            ],
+            "minors": [],
+            "honours": []
+        }
+    },
+    "3453": {
+        "name": "Media (Public Relations and Advertising)",
+        "code": "3453",
+        "desc": "This program structure applies to students commencing in 2019. If you commenced prior to 2019 please consult the Handbook for the year in which you started.",
+        "faculty": "Faculty of Arts and Social Sciences",
+        "units": 144,
+        "duration": 3,
+        "structure": {
+            "Disciplinary Component": 96,
+            "Optional Minors": null,
+            "Arts & Social Sciences Prescribed Electives": 12,
+            "Free Electives": 24,
+            "General Education": 12,
+            "Academic Writing & English Enhancement Courses": null
+        },
+        "degrees_involved": {
+            "majors": [],
+            "minors": [
+                "ARTHB2",
+                "ASIAB2",
+                "ATSIC2",
+                "AUSTB2",
+                "CHINE2",
+                "CHINF2",
+                "COMDF2",
+                "CRIMC2",
+                "CRWTA2",
+                "ECONA2",
+                "ENGLC2",
+                "ENVPE2",
+                "EUROC2",
+                "FILMB2",
+                "FRENF2",
+                "FRENG2",
+                "GEOGK2",
+                "GEOGS2",
+                "GERSF2",
+                "GREKC2",
+                "HISTD2",
+                "IBUSA2",
+                "INDOC2",
+                "ITALB2",
+                "JAPNF2",
+                "JAPNG2",
+                "KOREF2",
+                "KOREG2",
+                "LINGC2",
+                "MGMTH2",
+                "MUSCJ2",
+                "PHILE2",
+                "POLSG2",
+                "PSYCB2",
+                "PSYCM2",
+                "SOCAD2",
+                "SPANH2",
+                "THSTC2",
+                "WOMSC2"
+            ],
+            "honours": []
+        }
+    },
+    "3454": {
+        "name": "Media (Communication and Journalism)",
+        "code": "3454",
+        "desc": "This program structure applies to students commencing from 2019. If you commenced prior to 2019 please consult the Handbook for the year in which you started.",
+        "faculty": "Faculty of Arts and Social Sciences",
+        "units": 144,
+        "duration": 3,
+        "structure": {
+            "Disciplinary Component": 96,
+            "Optional Minors": null,
+            "Arts and Social Sciences Prescribed Electives": 12,
+            "Free Electives": 24,
+            "General Education": 12,
+            "Academic Writing & English Enhancement Courses": null
+        },
+        "degrees_involved": {
+            "majors": [],
+            "minors": [
+                "ARTHB2",
+                "ARTSB2",
+                "ASIAB2",
+                "ATSIC2",
+                "AUSTB2",
+                "CHINE2",
+                "CHINF2",
+                "COMDF2",
+                "CRIMC2",
+                "CRWTA2",
+                "ECONA2",
+                "ENGLC2",
+                "ENVPE2",
+                "EUROC2",
+                "FILMB2",
+                "FRENF2",
+                "FRENG2",
+                "GEOGK2",
+                "GEOGS2",
+                "GERSF2",
+                "GREKC2",
+                "HISTD2",
+                "IBUSA2",
+                "INDOC2",
+                "ITALB2",
+                "JAPNF2",
+                "JAPNG2",
+                "KOREF2",
+                "KOREG2",
+                "LINGC2",
+                "MGMTH2",
+                "MUSCJ2",
+                "PHILE2",
+                "POLSG2",
+                "PSYCB2",
+                "PSYCM2",
+                "SOCAD2",
+                "SPANH2",
+                "THSTC2",
+                "WOMSC2"
+            ],
+            "honours": []
+        }
+    },
+    "3478": {
+        "name": "Politics, Philosophy and Economics",
+        "code": "3478",
+        "desc": "The Bachelor of Politics, Philosophy and Economics (BPPE) provides graduates with a uniquely powerful combination of intellectual tools with which to understand and act on the world. PPE graduates globally are recognised leaders in all aspects of public life, including the highest reaches of government, political parties and lobby groups, the public service, NGOs, and social activist organisations. It also equips students for careers in banking, consultancy work, and strategic advising to major corporations. PPE graduates are also well known as public commentators on contemporary issues. The PPE will help you bring the perspectives of three crucial intellectual disciplines to pressing contemporary national and global issues such as justice, inequality and climate change. As well as combining a carefully chosen combination of existing courses from the Politics and International Relations, Philosophy, and Economics streams, the program will include courses specifically designed to enable you to explore the synergies and tensions between them and assess their relevance to meeting humanity's most difficult challenges.",
+        "faculty": "Faculty of Arts and Social Sciences",
+        "units": 144,
+        "duration": 3,
+        "structure": {
+            "Disciplinary Component": 144,
+            "Free Electives": 0
+        },
+        "degrees_involved": {
+            "majors": [
+                "ECONA1",
+                "PHILE1",
+                "POLSG1"
+            ],
+            "minors": [],
+            "honours": []
+        }
+    },
+    "3502": {
+        "name": "Commerce",
+        "code": "3502",
+        "desc": "The Bachelor of Commerce (BCom) is a highly valued business qualification offering students a career-focused education for long term success. Students are empowered to become adaptive thinkers and drive purposeful change to thrive in a fast-changing world.A unique feature of the BCom is the Integrated First Year, where students learn about business management and the broader environment in which an organisation operates, with a strong focus on developing professional skills and capabilities.",
+        "faculty": "UNSW Business School",
+        "units": 144,
+        "duration": 3,
+        "structure": {
+            "Disciplinary Component": 96,
+            "Free Electives": 36,
+            "General Education": 12
+        },
+        "degrees_involved": {
+            "majors": [
+                "ACCTA1",
+                "COMMJ1",
+                "ECONF1",
+                "ECONI1",
+                "FINSA1",
+                "FINSR1",
+                "IBUSA1",
+                "INFSA1",
+                "MARKA1",
+                "MGMTA1",
+                "MGMTH1",
+                "TABLA1",
+                "TABLC1"
+            ],
+            "minors": [
+                "ACCTA2",
+                "CHINE2",
+                "CHINF2",
+                "COMMJ2",
+                "ECONF2",
+                "FINSA2",
+                "FINSR2",
+                "FRENF2",
+                "FRENG2",
+                "GERSF2",
+                "IBUSA2",
+                "INFSA2",
+                "JAPNF2",
+                "JAPNG2",
+                "KOREF2",
+                "KOREG2",
+                "MARKA2",
+                "MGMTA2",
+                "MGMTH2",
+                "SPANH2",
+                "TABLA2",
+                "TABLC2"
+            ],
+            "honours": []
+        }
+    },
+    "3543": {
+        "name": "Economics",
+        "code": "3543",
+        "desc": "The Bachelor of Economics (BEc) is a highly regarded professional qualification allowing graduates access to an extremely diverse range of occupations. Our graduates work as professional economists and can be found in leading government and international agencies, private firms and consultancies.Graduates who combine economics with other disciplines, such as accounting, finance or marketing, often work as professionals in those fields, with the economics training providing a highly valued understanding of the business environment.More broadly, graduates develop analytical skills which have wide applications in business, finance and policy. The knowledge obtained from the degree also enables graduates to become economically literate, with an in-depth understanding of local and world economic issues.Program Benefits:",
+        "faculty": "UNSW Business School",
+        "units": 144,
+        "duration": 3,
+        "structure": {
+            "Disciplinary Component": 96,
+            "Free Electives": 36,
+            "General Education": 12
+        },
+        "degrees_involved": {
+            "majors": [
+                "ECONA1",
+                "ECONE1",
+                "ECONJ1",
+                "ACCTA1",
+                "COMMF1",
+                "COMMJ1",
+                "FINSA1",
+                "FINSR1",
+                "IBUSA1",
+                "INFSA1",
+                "MARKA1",
+                "MGMTA1",
+                "MGMTH1",
+                "TABLA1",
+                "TABLC1"
+            ],
+            "minors": [],
+            "honours": []
+        }
+    },
+    "3558": {
+        "name": "Commerce (International)",
+        "code": "3558",
+        "desc": "The Bachelor of Commerce (B Com (International)), which includes a one year international exchange component, is a highly valued business qualification. The program is designed for students who want to complement their business degree with international studies (including asian studies, european studies or languages), and also for those students who want to align their degree with their interests and careers ambitions in accounting, finance, human resource management, marketing or information systems.Program Benefits:",
+        "faculty": "UNSW Business School",
+        "units": 192,
+        "duration": 4,
+        "structure": {
+            "Disciplinary Component": 144,
+            "Free Electives": 48
+        },
+        "degrees_involved": {
+            "majors": [
+                "ACCTA1",
+                "COMMJ1",
+                "ECONF1",
+                "ECONI1",
+                "FINSA1",
+                "FINSR1",
+                "IBUSA1",
+                "INFSA1",
+                "MARKA1",
+                "MGMTA1",
+                "MGMTH1",
+                "TABLA1",
+                "TABLC1",
+                "ACCTA1",
+                "COMMJ1",
+                "ECONF1",
+                "ECONI1",
+                "FINSA1",
+                "FINSR1",
+                "IBUSA1",
+                "INFSA1",
+                "MARKA1",
+                "MGMTA1",
+                "MGMTH1",
+                "TABLA1",
+                "TABLC1",
+                "ASIAB1",
+                "CHINE1",
+                "CHINF1",
+                "COMDF1",
+                "EUROC1",
+                "FRENF1",
+                "FRENG1",
+                "GERSF1",
+                "HISTD1",
+                "JAPNF1",
+                "JAPNG1",
+                "KOREF1",
+                "KOREG1",
+                "POLSG1",
+                "SPANH1"
+            ],
+            "minors": [],
+            "honours": []
+        }
+    },
+    "3586": {
+        "name": "Actuarial Studies",
+        "code": "3586",
+        "desc": "The Actuarial Studies program serves as a foundation for students who wish to enter the actuarial profession. Students must achieve the required academic standard in their Actuarial Studies courses to gain exemption from the Foundation Program of the Actuaries Institute professional examinations, the Core Principles courses of the Institute and Faculty of Actuaries (UK) professional examinations, and the Validation by Educational Experience (VEE) credit for the Society of Actuaries (USA) and Casualty Actuarial Society (USA).  Students (esp. Actuarial Studies (Co-op) students and dual degree students) may also be eligible to gain exemption from the university accreditation components of the Associate Program of the Actuaries Institute professional examinations.",
+        "faculty": "UNSW Business School",
+        "units": 144,
+        "duration": 3,
+        "structure": {
+            "Disciplinary Component": 96,
+            "Free Electives": 36,
+            "General Education": 12
+        },
+        "degrees_involved": {
+            "majors": [
+                "ACTLE1",
+                "MATHE1",
+                "ACCTA1",
+                "COMMF1",
+                "COMMJ1",
+                "ECONF1",
+                "ECONI1",
+                "ECONJ1",
+                "FINSA1",
+                "FINSR1",
+                "IBUSA1",
+                "INFSA1",
+                "MARKA1",
+                "MATHM1",
+                "MATHT1",
+                "MGMTA1",
+                "MGMTH1",
+                "TABLA1",
+                "TABLC1"
+            ],
+            "minors": [],
+            "honours": []
+        }
+    },
+    "3632": {
+        "name": "Psychology (Honours)",
+        "code": "3632",
+        "desc": "Psychology is a discipline of both scientific research and applied practice. As a science, psychology is concerned with the study of behaviour and its underlying mental and neural processes. Topics of study include learning, memory, cognition, perception, motivation, life-span development, personality, social interactions, and abnormal psychology. The program also develops research methods skills. Psychology has many areas of cutting edge interdisciplinary research and application and students have an option to pursue individual interests, choosing electives from a range of specialist areas, including psychology and law; psychology and work; development disorders; psychopathology; health psychology, language, cognitive science, neuroscience and others.",
+        "faculty": "Faculty of Science",
+        "units": 192,
+        "duration": 4,
+        "structure": {
+            "Disciplinary Component": 144,
+            "Free Electives": 36,
+            "General Education": 12,
+            "Excluded General Education Courses": null,
+            "Course Information Rule": null
+        },
+        "degrees_involved": {
+            "majors": [],
+            "minors": [],
+            "honours": []
+        }
+    },
+    "3635": {
+        "name": "Engineering (Civil Eng w Arch) (Honours)",
+        "code": "3635",
+        "desc": "This innovative program extends the current Civil Engineering bachelor degree by the inclusion of a stream of courses in Architecture from the Faculty of the Built Environment. Civil Engineers essentially engineer and manage the infrastructure of our built environment including buildings, bridges, roads and highways, tunnels, airfields, dams, ports and harbours, railways, new mines, water supply and sewerage schemes, irrigation systems and flood mitigation works.The Civil Engineering with Architecture program provides for an appreciation of architectural principles and an understanding of both the architect's role in construction and the interaction between architects and engineers. The ultimate aim is to help students become conceptual thinkers, inspired by beautiful creations to build even better ones, to develop an appreciation for beauty with the mathematical ability to challenge the traditional boundaries of structural design. Students graduating from this degree will be well qualified to collaborate with architects and other professionals in the built environment to produce integrated and sustainable design. Creativity and inventiveness are the key attributes of this program.",
+        "faculty": "Faculty of Engineering",
+        "units": 192,
+        "duration": 4,
+        "structure": {
+            "Level 1 Core Courses": 42,
+            "Level 2 Core Courses": 48,
+            "Level 3 Core Courses": 48,
+            "Level 4 Core Courses": 12,
+            "Thesis Courses": null,
+            "Built Environment Electives": 12,
+            "Civil Engineering Level 4 Discipline Electives": null,
+            "Level 1 Engineering Electives": 6,
+            "Industrial Training Requirement": null
+        },
+        "degrees_involved": {
+            "majors": [],
+            "minors": [],
+            "honours": []
+        }
+    },
+    "3706": {
+        "name": "Engineering Science",
+        "code": "3706",
+        "desc": "Overview This program is an exit point for students from the Bachelor of Engineering (Honours) program 3707.",
+        "faculty": "Faculty of Engineering",
+        "units": 144,
+        "duration": 3,
+        "structure": {
+            "Disciplinary Component": 96,
+            "Engineering Electives": 12,
+            "Free Electives": 24,
+            "General Education": 12
+        },
+        "degrees_involved": {
+            "majors": [
+                "AEROD1",
+                "BINFC1",
+                "CEICM1",
+                "CEICN1",
+                "COMPF1",
+                "CVENJ1",
+                "CVENK1",
+                "ELECF1",
+                "GMATE1",
+                "GMATF1",
+                "MECHD1",
+                "MECHE1",
+                "MINEC1",
+                "MTRND1",
+                "NAVLB1",
+                "PETRB1",
+                "SENGD1",
+                "SOLAC1",
+                "SOLAD1",
+                "TELEE1"
+            ],
+            "minors": [],
+            "honours": []
+        }
+    },
+    "3707": {
+        "name": "Engineering (Honours)",
+        "code": "3707",
+        "desc": "The UNSW Bachelor of Engineering (Honours) is designed to equip you for a career as a professional engineer. We provide you with a solid background in mathematics, natural sciences and computing that will prepare you for learning knowledge and skills in an engineering discipline specialisation. You will get the chance to apply yourself to engineering design and enquiry projects, professional engineering practice, engineering and technical management and conduct research towards your thesis project.",
+        "faculty": "Faculty of Engineering",
+        "units": 192,
+        "duration": 4,
+        "structure": {
+            "Disciplinary Component": 168,
+            "Discipline Elective List": 12,
+            "General Education": 12
+        },
+        "degrees_involved": {
+            "majors": [],
+            "minors": [],
+            "honours": [
+                "AEROAH",
+                "BINFAH",
+                "CEICAH",
+                "CEICDH",
+                "COMPBH",
+                "CVENAH",
+                "CVENBH",
+                "ELECAH",
+                "ELECCH",
+                "GMATDH",
+                "GMATEH",
+                "MANFBH",
+                "MECHAH",
+                "MINEAH",
+                "MTRNAH",
+                "NAVLAH",
+                "PETRAH",
+                "SENGAH",
+                "SOLAAH",
+                "SOLABH",
+                "TELEAH"
+            ]
+        }
+    },
+    "3775": {
+        "name": "Surveying",
+        "code": "3775",
+        "desc": "This program is only available combined with the Bachelor of Engineering (Honours) program 3707.",
+        "faculty": "Faculty of Engineering",
+        "units": 192,
+        "duration": 4,
+        "structure": {
+            "Disciplinary Component": 144,
+            "Year 1 Engineering Electives": 12,
+            "Free Electives": 24,
+            "General Education": 12
+        },
+        "degrees_involved": {
+            "majors": [],
+            "minors": [],
+            "honours": []
+        }
+    },
+    "3778": {
+        "name": "Computer Science",
+        "code": "3778",
+        "desc": "Computer Science involves the study of the design, construction and uses of computer systems. It is concerned with the representation of data and data structures in computer systems and the design of algorithms for automatic manipulation of this information by programming languages and machine systems. It is very much concerned with the design and development of hardware and software tools by which computer applications may be developed, but not so much with the applications themselves. It is, however, noted that non-computing elements (such as human interface or psychological aspects) can often dictate the level of success of computing systems. At UNSW, particular emphasis is given to comprehension of the basic principles behind computing tools, operating systems, compilers and translators, and computer hardware.Further details on the program requirements, electives, and advice regarding the order and placement of courses in the program can be found at: Courses-Programs",
+        "faculty": "Faculty of Engineering",
+        "units": 144,
+        "duration": 3,
+        "structure": {
+            "Disciplinary Component": 96,
+            "Free Electives": 36,
+            "General Education": 12
+        },
+        "degrees_involved": {
+            "majors": [
+                "COMPA1",
+                "COMPD1",
+                "COMPE1",
+                "COMPI1",
+                "COMPJ1",
+                "COMPN1",
+                "COMPS1",
+                "COMPY1"
+            ],
+            "minors": [
+                "ACCTA2",
+                "FINSA2",
+                "INFSA2",
+                "MARKA2",
+                "MATHC2",
+                "PSYCM2"
+            ],
+            "honours": []
+        }
+    },
+    "3805": {
+        "name": "Medicine",
+        "code": "3805",
+        "desc": "UNSW Medicine offers a six year integrated Medicine program (288 UOC) which leads to the awards of Bachelor of Medical Studies (BMed) and Doctor of Medicine (MD).",
+        "faculty": "Faculty of Medicine",
+        "units": 288,
+        "duration": 6,
+        "structure": {
+            "Disciplinary Component": 276,
+            "General Education": 12
+        },
+        "degrees_involved": {
+            "majors": [],
+            "minors": [],
+            "honours": []
+        }
+    },
+    "3831": {
+        "name": "Science (Medicine) Honours",
+        "code": "3831",
+        "desc": "This is a one year research program offered to students in year 4 of the six year Medicine program or Arts/Medicine who have achieved a high standard in their studies. Those who complete the research program in conjunction with the six year curriculum will be eligible for the award of the degree BSc(Med)Hons.",
+        "faculty": "Faculty of Medicine",
+        "units": 48,
+        "duration": 1,
+        "structure": {
+            "Core Courses": 42,
+            "Advanced Course": 6,
+            "Clinical Transition Course": 0
+        },
+        "degrees_involved": {
+            "majors": [],
+            "minors": [],
+            "honours": []
+        }
+    },
+    "3871": {
+        "name": "Exercise Physiology",
+        "code": "3871",
+        "desc": "The program offers a comprehensive education in the area of health and exercise science with a focus on the use of physical activity as a preventative and rehabilitative therapy. Four years of full-time study leads to the award of a Bachelor of Exercise Physiology. A total of 192 units of credit must be successfully completed for the award of this degree. Graduates may expect to find employment as Accredited Exercise Physiologists (AEP) in rehabilitation clinics and hospitals working in post-acute rehabilitation, sports medicine clinics, corporate health, specialised fitness centres, and private practice for rehabilitation/exercise prescription for people requiring specialist guidance (e.g. workplace rehabilitation). The Bachelor of Exercise Physiology is accredited by the national governing body, Exercise and Sports Science Australia (ESSA). Graduates are eligible to become members of ESSA and practice as Accredited Exercise Physiologists and Accredited Exercise Scientists.",
+        "faculty": "Faculty of Medicine",
+        "units": 192,
+        "duration": 4,
+        "structure": {
+            "Disciplinary Component": 180,
+            "General Education": 12,
+            "Maximum Level 1 UOC": 0
+        },
+        "degrees_involved": {
+            "majors": [],
+            "minors": [],
+            "honours": []
+        }
+    },
+    "3880": {
+        "name": "International Public Health",
+        "code": "3880",
+        "desc": "The Bachelor of International Public Health (BIPH) aims to provide students with an understanding of the key issues impacting on the health of populations around the world and to support the development of in-demand job skills needed to design, develop and implement solutions to these global challenges and to ensure that they have social impact.  The UNSW BIPH program is a three-year degree, which can be taken partily on campus in Sydney or fully online, at a flexible pace (full or part time). The course material has been developed by the world's leading universities; UNSW Sydney, and Arizona State University (USA).",
+        "faculty": "Faculty of Medicine",
+        "units": 144,
+        "duration": 3,
+        "structure": {
+            "Disciplinary Component": 30,
+            "General Education": 12
+        },
+        "degrees_involved": {
+            "majors": [],
+            "minors": [],
+            "honours": []
+        }
+    },
+    "3925": {
+        "name": "Science and Business",
+        "code": "3925",
+        "desc": "The three-year Bachelor of Science and Business has been developed to provide a new generation of scientists for today's increasingly competitive and business-aware world. This program allows students to combine a coherent stream of studies in a contemporary Science discipline with courses that provide a broad background to business and management. Students will study a range of foundation business courses that will provide exposure to several aspects of business practices, and will also have the opportunity to increase their breadth of experience using electives, and select from a limited number of higher year courses to gain a greater understanding of a feature of the commercial domain. The program has been designed for students whose passion is Science, but who also recognise that awareness of contemporary business practices can be vital in the modern workplace.",
+        "faculty": "Faculty of Science",
+        "units": 144,
+        "duration": 3,
+        "structure": {
+            "Disciplinary Component": 144
+        },
+        "degrees_involved": {
+            "majors": [
+                "ANATA1",
+                "BINFB1",
+                "BIOCC1",
+                "BIOCM1",
+                "BIOSG1",
+                "BIOSJ1",
+                "BIOTA1",
+                "CHEMA1",
+                "FOODH1",
+                "GEOGG1",
+                "GEOLS1",
+                "MATHM1",
+                "MATHN1",
+                "MATHT1",
+                "MATSB1",
+                "MICRB1",
+                "MSCIM1",
+                "NEURS1",
+                "PATHA1",
+                "PHARA1",
+                "PHSLA1",
+                "PHYSL1",
+                "PSYCA1",
+                "VISNA1"
+            ],
+            "minors": [],
+            "honours": []
+        }
+    },
+    "3956": {
+        "name": "Advanced Mathematics (Honours)",
+        "code": "3956",
+        "desc": "The Advanced Mathematics degree is aimed at high achieving students who wish to specialise in mathematics as a basis for the increasing range of quantitative careers in areas such as finance, environmental modelling and research. This four-year degree combines advanced coursework with an Honours-level research project in one of the available plans of study. UNSW offers mathematics students advanced facilities combined with innovative teaching. This program has been designed to cater for the specific abilities and interests of talented students with a superior ATAR.",
+        "faculty": "Faculty of Science",
+        "units": 192,
+        "duration": 4,
+        "structure": {
+            "Disciplinary Component": 144,
+            "Free Electives": 36,
+            "Course Information Rule": null,
+            "General Education": 12,
+            "Excluded General Education Courses": null
+        },
+        "degrees_involved": {
+            "majors": [
+                "MATHA1",
+                "MATHP1",
+                "MATHU1"
+            ],
+            "minors": [],
+            "honours": [
+                "MATHAH",
+                "MATHPH",
+                "MATHTH"
+            ]
+        }
+    },
+    "3959": {
+        "name": "Data Science and Decisions",
+        "code": "3959",
+        "desc": "The three-year Bachelor of Data Science and Decisions has been developed to train scientists to meet the current, and future, strong demand for Data Scientists and Data Analysts.",
+        "faculty": "Faculty of Science",
+        "units": 144,
+        "duration": 3,
+        "structure": {
+            "Disciplinary Component": 120,
+            "Free Electives": 12,
+            "General Education": 12,
+            "Excluded General Education Courses": null,
+            "Course Information Rule": null
+        },
+        "degrees_involved": {
+            "majors": [
+                "COMPZ1",
+                "ECONL1",
+                "MATHE1"
+            ],
+            "minors": [],
+            "honours": []
+        }
+    },
+    "3962": {
+        "name": "Advanced Science (Honours)",
+        "code": "3962",
+        "desc": "The Bachelor of Advanced Science (Honours) is the degree of choice for innovative thinkers with exceptional scientific knowledge and skills. It's designed for talented students and offers the flexibility to tailor the degree in a way that works for them. The degree offers students access to advanced level courses and includes an Honours year. Students will study foundation courses, which may include subjects such as biology, chemistry, physics and maths, before choosing a major (or two) and really explore what inspires them most. In their fourth year, students undertake an Honours year which involves a supervised research project and in some cases, advanced coursework. Outstanding Honours students may continue their studies in a higher research degree.",
+        "faculty": "Faculty of Science",
+        "units": 192,
+        "duration": 4,
+        "structure": {
+            "Disciplinary Component": 144,
+            "Science Electives": null,
+            "General Education": 12,
+            "Excluded General Education Courses": null,
+            "Free Electives": null,
+            "Course Information Rule": null
+        },
+        "degrees_involved": {
+            "majors": [
+                "ANATA1",
+                "BINFB1",
+                "BIOCG1",
+                "BIOCL1",
+                "BIOSG1",
+                "BIOSJ1",
+                "BIOTB1",
+                "CHEMB1",
+                "CLIMB1",
+                "CLIMC1",
+                "GEOGG1",
+                "GEOLS1",
+                "MATHJ1",
+                "MATHK1",
+                "MATHO1",
+                "MATSB1",
+                "MICRE1",
+                "MICRJ1",
+                "MSCIM1",
+                "NEURA1",
+                "PATHB1",
+                "PHARB1",
+                "PHSLB1",
+                "PHYSC1",
+                "PSYCA1",
+                "VISNA1"
+            ],
+            "minors": [
+                "ANATB2",
+                "ARCYB2",
+                "BIOCD2",
+                "BIOSD2",
+                "CHEMD2",
+                "CLIMA2",
+                "GEOGH2",
+                "GEOLF2",
+                "MATHC2",
+                "MATHD2",
+                "MICRJ2",
+                "MSCIH2",
+                "PATHB2",
+                "PHARB2",
+                "PHSLB2",
+                "PHYSC2",
+                "PSYCM2",
+                "VISNB2"
+            ],
+            "honours": [
+                "ARCYBH",
+                "BABSBH",
+                "BIOCFH",
+                "BIOCGH",
+                "BIOSKH",
+                "BIOSLH",
+                "BIOTBH",
+                "CHEMFH",
+                "CLIMDH",
+                "GEOGTH",
+                "GEOLMH",
+                "MATHAH",
+                "MATHNH",
+                "MATHPH",
+                "MATHTH",
+                "MATSCH",
+                "MICRFH",
+                "MSCIJH",
+                "NEURBH",
+                "PHYSGH",
+                "PSYCAH",
+                "SOMSAH",
+                "SOMSBH",
+                "SOMSCH",
+                "SOMSDH",
+                "SOMSEH",
+                "VISNBH"
+            ]
+        }
+    },
+    "3965": {
+        "name": "Environmental Management",
+        "code": "3965",
+        "desc": "The Bachelor of Environmental Management program contains a core sequence of compulsory courses, a choice of disciplinary Majors and choices from a group of Directed Electives. The Majors include Biology, Earth Science, Ecology, Environmental Chemistry, Geography and Marine and Coastal Science.The aim of the program is to provide a strong education in the skills and knowledge necessary to work or carry out research as an environmental scientist. In addition to the graduate attributes applicable to 3970 Bachelor of Science, graduates of the B. Env. Mgmt. will need to be able to place their understanding of the scientific aspects of the environment within the general context of the policy and legal framework of environmental regulations, as well as economic and social dimensions to environmental policy and management. The B. Env. Mgmt. is designed as a 3 year (full-time) program. There is also an opportunity for students to continue onto an Honours year in Program 4500 Science (Honours), if they satisfy the entry requirements (usually a Credit WAM) or to combine the B. Env. Mgmt. with the Masters of Environmental Management (Program 8623).",
+        "faculty": "Faculty of Science",
+        "units": 144,
+        "duration": 3,
+        "structure": {
+            "Disciplinary Component": 120,
+            "Free Electives": 12,
+            "General Education": 12,
+            "Course Information Rule": null,
+            "Excluded General Education Courses": null
+        },
+        "degrees_involved": {
+            "majors": [
+                "BIOSG1",
+                "BIOSJ1",
+                "ENVST1",
+                "GEOGG1",
+                "GEOLS1",
+                "MSCIM1"
+            ],
+            "minors": [],
+            "honours": []
+        }
+    },
+    "3966": {
+        "name": "Life Sciences",
+        "code": "3966",
+        "desc": "The three-year Life Sciences degree has been designed for students who seek a 'generalist' degree in which there is a large element of choice but with an emphasis on the life and health sciences. A student will select a major area of study and can combine courses from two or more Science disciplines, or take courses from outside the Science disciplines. There is also the option to continue into an Honours year by enrolling in a further year of study (program 4500). The basic rules for this degree are set out below.",
+        "faculty": "Faculty of Science",
+        "units": 144,
+        "duration": 3,
+        "structure": {
+            "Disciplinary Component": 96,
+            "Free Electives": null,
+            "General Education": 12,
+            "Excluded General Education Courses": null,
+            "Course Information Rule": null
+        },
+        "degrees_involved": {
+            "majors": [
+                "ANATA1",
+                "BIOCC1",
+                "BIOCM1",
+                "BIOSG1",
+                "BIOSJ1",
+                "BIOTA1",
+                "CHEMJ1",
+                "MICRB1",
+                "MICRJ1",
+                "MSCIM1",
+                "PATHA1",
+                "PHARA1",
+                "PHSLA1",
+                "PSYCA1"
+            ],
+            "minors": [],
+            "honours": []
+        }
+    },
+    "3970": {
+        "name": "Science",
+        "code": "3970",
+        "desc": "Overview The three-year Bachelor of Science allows you to study a wide range of science subjects as well as many other areas of interest. This degree is ideal for students who seek a 'generalist' degree in which there is a large element of choice. Students are encouraged to choose a broad … For more content click the Read more button below.The three-year Bachelor of Science allows you to study a wide range of science subjects as well as many other areas of interest. This degree is ideal for students who seek a 'generalist' degree in which there is a large element of choice. Students are encouraged to choose a broad range of courses in the first year, to expand their general understanding of Science which then enables them to choose from a wide selection of major options in the second and third year. There is also the option to apply for an additional Honours year at the end of the three years, subject to a student's academic performance and other criteria. The rules and requirements for the degree are set out below.Read more",
+        "faculty": "Faculty of Science",
+        "units": 144,
+        "duration": 3,
+        "structure": {
+            "Disciplinary Component": 96,
+            "Science Elective Courses": null,
+            "Free Electives": null,
+            "General Education": 12,
+            "Course Information Rule": null,
+            "Excluded General Education Courses": null
+        },
+        "degrees_involved": {
+            "majors": [
+                "ANATA1",
+                "BINFB1",
+                "BIOCC1",
+                "BIOCM1",
+                "BIOSG1",
+                "BIOSJ1",
+                "BIOTA1",
+                "CHEMA1",
+                "FOODH1",
+                "GEOGG1",
+                "GEOLS1",
+                "MATHM1",
+                "MATHN1",
+                "MATHT1",
+                "MATHV1",
+                "MATSB1",
+                "MICRB1",
+                "MICRJ1",
+                "MSCIM1",
+                "NEURS1",
+                "PATHA1",
+                "PHARA1",
+                "PHSLA1",
+                "PHYSL1",
+                "PSYCA1",
+                "VISNA1"
+            ],
+            "minors": [
+                "ANATB2",
+                "ARCYB2",
+                "BIOCD2",
+                "BIOSD2",
+                "CHEMD2",
+                "CLIMA2",
+                "GEOGH2",
+                "GEOLF2",
+                "MATHC2",
+                "MATHD2",
+                "MICRJ2",
+                "MSCIH2",
+                "PATHB2",
+                "PHARB2",
+                "PHSLB2",
+                "PHYSC2",
+                "PSYCM2",
+                "VISNB2"
+            ],
+            "honours": []
+        }
+    },
+    "3979": {
+        "name": "Information Systems",
+        "code": "3979",
+        "desc": "The Bachelor of Information Systems (BIS) degree is a highly prized qualification which provides students with information systems expertise and business skills. The program is intended to develop conceptual and practical skills. After an introductory first stage, students will learn about business systems analysis and design, data management, enterprise systems, business process management, big data business analytics, business systems infrastructure and security as well as mathematics, management accounting and commercial programming.",
+        "faculty": "UNSW Business School",
+        "units": 144,
+        "duration": 3,
+        "structure": {
+            "Disciplinary Component": 96,
+            "Level 2 and 3 Prescribed Electives": 12,
+            "Free Electives": 24,
+            "General Education": 12
+        },
+        "degrees_involved": {
+            "majors": [],
+            "minors": [],
+            "honours": []
+        }
+    },
+    "3980": {
+        "name": "Aviation (Flying)",
+        "code": "3980",
+        "desc": "The degree of Bachelor of Aviation is offered by the School of Aviation in the Faculty of Science.",
+        "faculty": "Faculty of Science",
+        "units": 144,
+        "duration": 3,
+        "structure": {
+            "Disciplinary Component": 132,
+            "General Education": 12,
+            "Excluded General Education Courses": null,
+            "General Education Maturity Requirements": null,
+            "Maximum Level 1 UOC": null
+        },
+        "degrees_involved": {
+            "majors": [],
+            "minors": [],
+            "honours": []
+        }
+    },
+    "3981": {
+        "name": "Aviation (Management)",
+        "code": "3981",
+        "desc": "The Bachelor of Aviation is offered by the Faculty of Science with input from the Business School.",
+        "faculty": "Faculty of Science",
+        "units": 144,
+        "duration": 3,
+        "structure": {
+            "Disciplinary Component": 96,
+            "Level 1 Prescibed Electives": 6,
+            "Level 3 Prescribed Electives": 6,
+            "Free Electives": 24,
+            "General Education": 12,
+            "Excluded General Education Courses": null,
+            "Course Information Rule": null
+        },
+        "degrees_involved": {
+            "majors": [],
+            "minors": [],
+            "honours": []
+        }
+    },
+    "3987": {
+        "name": "Science (International)",
+        "code": "3987",
+        "desc": "The Bachelor of Science (International) recognises that science involves a global network, which is faced with and addresses global issues and often operates within companies and agencies that have an international focus. The BSc (International) is thus aimed at providing for the needs of students by preparing them for an increasingly globalised work environment.",
+        "faculty": "Faculty of Science",
+        "units": 192,
+        "duration": 4,
+        "structure": {
+            "Disciplinary Component": 168,
+            "Maximum Level 1 UOC": null,
+            "Free Electives": null
+        },
+        "degrees_involved": {
+            "majors": [
+                "ANATA1",
+                "BINFB1",
+                "BIOCC1",
+                "BIOCM1",
+                "BIOSG1",
+                "BIOSJ1",
+                "BIOTA1",
+                "CHEMA1",
+                "FOODH1",
+                "GEOGG1",
+                "GEOLS1",
+                "MATHM1",
+                "MATHN1",
+                "MATHT1",
+                "MATSB1",
+                "MICRB1",
+                "MSCIM1",
+                "NEURS1",
+                "PATHA1",
+                "PHARA1",
+                "PHSLA1",
+                "PHYSL1",
+                "PSYCA1",
+                "VISNA1"
+            ],
+            "minors": [
+                "CHINC2",
+                "CHIND2",
+                "FRENC2",
+                "FREND2",
+                "GERSC2",
+                "INDOD2",
+                "JAPND2",
+                "JAPNE2",
+                "KOREC2",
+                "KORED2",
+                "SPANF2"
+            ],
+            "honours": []
+        }
+    },
+    "3991": {
+        "name": "Medical Science",
+        "code": "3991",
+        "desc": "This three-year degree program is jointly offered by the Faculty of Medicine and the Faculty of Science. It provides the basis for a career in biomedical research and is also an appropriate first degree for students planning to enter graduate medical or paramedical programs.",
+        "faculty": "Faculty of Science",
+        "units": 144,
+        "duration": 3,
+        "structure": {
+            "Disciplinary Component": 120,
+            "Free Electives": 12,
+            "General Education": 12,
+            "Course Information Rule": null,
+            "Excluded General Education Courses": null
+        },
+        "degrees_involved": {
+            "majors": [
+                "ANATE1",
+                "BIOCH1",
+                "BIOCI1",
+                "MICRH1",
+                "MICRK1",
+                "NEURB1",
+                "PATHC1",
+                "PHARC1",
+                "PHSLC1"
+            ],
+            "minors": [],
+            "honours": []
+        }
+    },
+    "3999": {
+        "name": "Medicinal Chemistry (Honours)",
+        "code": "3999",
+        "desc": "Important: prior to 2016 this program was known as 3992 Bachelor of Medicinal Chemistry. Students must follow the Handbook of the year they commenced their program, so continuing students should refer to the past edition Handbook here.",
+        "faculty": "Faculty of Science",
+        "units": 192,
+        "duration": 4,
+        "structure": {
+            "Disciplinary Component": 168,
+            "Free Electives": 12,
+            "General Education": 12,
+            "Course Information Rule": null,
+            "Excluded General Education Courses": null
+        },
+        "degrees_involved": {
+            "majors": [],
+            "minors": [],
+            "honours": []
+        }
+    },
+    "4033": {
+        "name": "Social Work (Honours)",
+        "code": "4033",
+        "desc": "This program is for students commencing from 2019.",
+        "faculty": "Faculty of Arts and Social Sciences",
+        "units": 192,
+        "duration": 4,
+        "structure": {
+            "Disciplinary Component": 168,
+            "Free Electives": 12,
+            "General Education": 12
+        },
+        "degrees_involved": {
+            "majors": [],
+            "minors": [],
+            "honours": []
+        }
+    },
+    "4056": {
+        "name": "Education (Secondary)",
+        "code": "4056",
+        "desc": "Note: This program is not available as a standalone degree.",
+        "faculty": "Faculty of Arts and Social Sciences",
+        "units": 144,
+        "duration": 3,
+        "structure": {
+            "Disciplinary Component": 96
+        },
+        "degrees_involved": {
+            "majors": [],
+            "minors": [],
+            "honours": []
+        }
+    },
+    "4500": {
+        "name": "Science (Honours)",
+        "code": "4500",
+        "desc": "The purpose of Honours in the Faculty of Science is to enable students who have performed well at undergraduate level to deepen their knowledge of approaches, perspectives and traditions in their chosen scientific discipline and undertake a significant research project. Honours is a means for connecting undergraduate study with supervised independent research by consolidating and extending work completed in the undergraduate program and providing an academic foundation for students continuing on to a Masters by research or a PhD.",
+        "faculty": "Faculty of Science",
+        "units": 48,
+        "duration": 1,
+        "structure": {
+            "Honours Specialisations": 48
+        },
+        "degrees_involved": {
+            "majors": [],
+            "minors": [],
+            "honours": [
+                "ARCYBH",
+                "AVIAAH",
+                "BABSBH",
+                "BIOCFH",
+                "BIOCGH",
+                "BIOSKH",
+                "BIOSLH",
+                "BIOTBH",
+                "CHEMFH",
+                "CLIMDH",
+                "ENVSUH",
+                "GEOGTH",
+                "GEOLMH",
+                "MATHAH",
+                "MATHEH",
+                "MATHNH",
+                "MATHPH",
+                "MATHTH",
+                "MATSCH",
+                "MICRFH",
+                "MSCIJH",
+                "NEURBH",
+                "PHYSGH",
+                "SOMSAH",
+                "SOMSBH",
+                "SOMSCH",
+                "SOMSDH",
+                "SOMSEH",
+                "SOMSFH",
+                "VISNBH"
+            ]
+        }
+    },
+    "4501": {
+        "name": "Commerce (Honours)",
+        "code": "4501",
+        "desc": "The Bachelor of Commerce (Honours) is a one year advanced undergraduate degree for high-achieving students which may be undertaken upon completion of an undergraduate pass degree. A student undertaking this program will normally complete honours within the business specialisation (major) of their pass degree.",
+        "faculty": "UNSW Business School",
+        "units": 48,
+        "duration": 1,
+        "structure": {
+            "Specialisation Requirements": 48
+        },
+        "degrees_involved": {
+            "majors": [],
+            "minors": [],
+            "honours": [
+                "ACCTAH",
+                "ECONFH",
+                "FINSAH",
+                "INFSAH",
+                "MARKAH",
+                "TABLAH",
+                "TABLLH"
+            ]
+        }
+    },
+    "4502": {
+        "name": "Economics (Honours)",
+        "code": "4502",
+        "desc": "The Bachelor of Economics (Honours) is a one year advanced undergraduate degree for high-achieving students which may be undertaken upon completion of the requirements of an undergraduate pass degree. A student undertaking this program will complete honours within the economics-related specialisation (major) of their pass degree. The program enables students to expand and deepen their understanding of this discipline and develop highly sought after analytical, problem solving and research skills through undertaking a significant independent research thesis. The program may be a pathway into a PhD. Honours may be completed within the areas of Economics and Econometrics.",
+        "faculty": "UNSW Business School",
+        "units": 48,
+        "duration": 1,
+        "structure": {
+            "Specialisation Requirements": 48
+        },
+        "degrees_involved": {
+            "majors": [],
+            "minors": [],
+            "honours": [
+                "ECONAH",
+                "ECONEH"
+            ]
+        }
+    },
+    "4504": {
+        "name": "Arts & Social Sciences (Hons)",
+        "code": "4504",
+        "desc": "The Bachelor of Arts and Social Sciences (Honours) is a 48 UOC (one year equivalent) advanced undergraduate degree for high achieving students which may be taken upon completion of an undergraduate pass degree in Arts, International Studies or Social Research and Policy. A student undertaking this program will normally complete honours within their chosen major stream of study in their pass degree. The focus of Honours year is on the further development of analytical and research skills, deepening of knowledge, and application of methods that are specific to students' chosen (major) discipline of study. The BASS (Hons) may be completed full-time or part-time.",
+        "faculty": "Faculty of Arts and Social Sciences",
+        "units": 48,
+        "duration": 1,
+        "structure": {
+            "Specialisations": 48
+        },
+        "degrees_involved": {
+            "majors": [],
+            "minors": [],
+            "honours": [
+                "ASIABH",
+                "CHINBH",
+                "COMDFH",
+                "CRIMBH",
+                "CRWTWH",
+                "DANCBH",
+                "ENGLDH",
+                "ENVPEH",
+                "EUROBH",
+                "FILMBH",
+                "FRENBH",
+                "GERSBH",
+                "HISTCH",
+                "JAPNDH",
+                "KORECH",
+                "LINGCH",
+                "MECTBH",
+                "MUSCBH",
+                "PHILBH",
+                "POLSGH",
+                "SOCACH",
+                "SPANBH",
+                "THSTBH"
+            ]
+        }
+    },
+    "4505": {
+        "name": "Criminology (Honours)",
+        "code": "4505",
+        "desc": "The Bachelor of Criminology (Honours) [BCCJ (Hons)] is a 48 UOC (one year equivalent) advanced undergraduate degree for high achieving students which may be taken upon completion of an undergraduate pass degree in Criminology & Criminal Justice. The BCCJ (Hons) can be completed full-time or part-time.",
+        "faculty": "Faculty of Arts and Social Sciences",
+        "units": 48,
+        "duration": 1,
+        "structure": {
+            "Core Courses": 18,
+            "Thesis or Project": 30
+        },
+        "degrees_involved": {
+            "majors": [],
+            "minors": [],
+            "honours": []
+        }
+    },
+    "4508": {
+        "name": "Music (Honours)",
+        "code": "4508",
+        "desc": "The Bachelor of Music (Honours) is a 48 UOC (one year equivalent) advanced undergraduate degree for high achieving students which may be taken upon completion of an undergraduate pass degree in Music. The BMus (Hons) can be completed full-time or part-time.",
+        "faculty": "Faculty of Arts and Social Sciences",
+        "units": 48,
+        "duration": 1,
+        "structure": {
+            "Core Courses": 18,
+            "Thesis or Project": 30
+        },
+        "degrees_involved": {
+            "majors": [],
+            "minors": [],
+            "honours": []
+        }
+    },
+    "4509": {
+        "name": "Education (Secondary) (Hons)",
+        "code": "4509",
+        "desc": "The Bachelor of Education (Honours) is a 48 UOC (one year equivalent) advanced undergraduate degree for high achieving students which may be taken upon completion of an undergraduate pass degree in Education. The focus of the Honours year is on the further development of analytical and research skills, deepening of knowledge, and application of methods specific to educational research. The program may be a pathway into a graduate research degree (MEd Research; PhD).The BEd (Hons) can be completed full-time or part-time.",
+        "faculty": "Faculty of Arts and Social Sciences",
+        "units": 48,
+        "duration": 1,
+        "structure": {
+            "Core Courses": 18,
+            "Thesis or Project": 30
+        },
+        "degrees_involved": {
+            "majors": [],
+            "minors": [],
+            "honours": []
+        }
+    },
+    "4510": {
+        "name": "Media (Honours)",
+        "code": "4510",
+        "desc": "The Bachelor of Media (Honours) is a 48 UOC (one year equivalent) advanced undergraduate degree for high achieving students which may be undertaken upon completion of an undergraduate pass degree in Media. The BMedia (Hons) can be completed full-time or part-time. A student undertaking this program will complete honours within the area of media specialisation in their pass degree. The program enables students to expand and deepen their knowledge and understanding of Media and to develop highly sought after analytical, problem solving and research skills through undertaking a significant independent research thesis or a practice-based research project. The program may be a pathway to a PhD.",
+        "faculty": "Faculty of Arts and Social Sciences",
+        "units": 48,
+        "duration": 1,
+        "structure": {
+            "Specialisations": 48
+        },
+        "degrees_involved": {
+            "majors": [],
+            "minors": [],
+            "honours": [
+                "MDIADH",
+                "MDIAGH",
+                "MDIAHH"
+            ]
+        }
+    },
+    "4515": {
+        "name": "Computer Science & Engineering (Honours)",
+        "code": "4515",
+        "desc": "The Bachelor of Science (Honours) program in Computer Science and Engineering is a 1 year full-time or 2 year part-time award undertaken by eligible students after completion of a 3 year Bachelor of Science program in a relevant discipline and offers students an opportunity to deepen their understanding of the discipline through the completion of advanced coursework and a research thesis.",
+        "faculty": "Faculty of Engineering",
+        "units": 48,
+        "duration": 1,
+        "structure": {
+            "Specialisation Requirements": 48
+        },
+        "degrees_involved": {
+            "majors": [],
+            "minors": [],
+            "honours": [
+                "BINFBH",
+                "COMPAH"
+            ]
+        }
+    },
+    "4516": {
+        "name": "Art Theory (Honours)",
+        "code": "4516",
+        "desc": "The Bachelor of Art Theory (Honours) is a 48 UOC (one year equivalent) advanced undergraduate degree for high achieving students. The program is designed for those who have completed an undergraduate degree in art history and theory (or cognate area), and wish to extend their critical and scholarly skills in art history and theory. The BAT (Hons) program enables students to expand and deepen their knowledge and understanding of art history and theory by undertaking a significant independent research thesis. Supported by coursework in art theory, the program supports students to gain an in-depth understanding of art history and theory and to develop highly sought after analytical, problem solving, and research skills. By doing so, this program can provide pathways to higher degree research programs such as an MPhil or PhD, as well as a diverse array of professional and career outcomes in the arts and cultural sectors.",
+        "faculty": "Faculty of Art & Design",
+        "units": 48,
+        "duration": 1,
+        "structure": {
+            "Core Courses": 42,
+            "Electives": 6
+        },
+        "degrees_involved": {
+            "majors": [],
+            "minors": [],
+            "honours": []
+        }
+    },
+    "4518": {
+        "name": "Psychological Science (Honours)",
+        "code": "4518",
+        "desc": "The purpose of Honours in Psychology is to enable students who have performed well at undergraduate level to deepen their knowledge of approaches, perspectives and traditions in psychology and undertake a significant research project. Honours is a means for connecting undergraduate study with supervised independent research by consolidating and extending work completed in the undergraduate program and providing an academic foundation for students continuing on to a Masters by coursework, a Masters by research, or a PhD.",
+        "faculty": "Faculty of Science",
+        "units": 48,
+        "duration": 1,
+        "structure": {
+            "Specialisation Requirements": 48
+        },
+        "degrees_involved": {
+            "majors": [],
+            "minors": [],
+            "honours": [
+                "PSYCAH"
+            ]
+        }
+    },
+    "4520": {
+        "name": "Actuarial Studies (Honours)",
+        "code": "4520",
+        "desc": "The Bachelor of Actuarial Studies (Honours) is a one year advanced undergraduate degree for high-achieving students which may be undertaken upon completion of the requirements of an undergraduate pass degree. The program enables students to expand and deepen their understanding of actuarial studies and develop highly sought after analytical, problem solving and research skills through undertaking a significant independent research thesis. The program may be a pathway into a PhD.",
+        "faculty": "UNSW Business School",
+        "units": 48,
+        "duration": 1,
+        "structure": {
+            "Core Course": 6,
+            "Thesis": 24,
+            "Prescribed Electives": 18
+        },
+        "degrees_involved": {
+            "majors": [],
+            "minors": [],
+            "honours": []
+        }
+    },
+    "4521": {
+        "name": "Architectural Studies (Honours)",
+        "code": "4521",
+        "desc": "The purpose of Honours within the Discipline of Architecture is to enable students who have performed well at undergraduate level to deepen their knowledge of design methods, knowledge and history by undertaking a significant research project. Honours is a means for connecting undergraduate study with supervised independent research by consolidating and extending work completed in the undergraduate program and providing an academic foundation for students continuing on to a Professional Masters, Masters by research or a PhD.",
+        "faculty": "Faculty of Built Environment",
+        "units": 48,
+        "duration": 1,
+        "structure": {
+            "Core Courses": 18,
+            "Thesis": 18,
+            "Prescribed Electives": 12
+        },
+        "degrees_involved": {
+            "majors": [],
+            "minors": [],
+            "honours": []
+        }
+    },
+    "4522": {
+        "name": "Construction Management and Property (Honours)",
+        "code": "4522",
+        "desc": "The Bachelor of Construction Management and Property (Honours) is a one-year program which provides students with a further study option after completing a three-year degree in the construction management and property discipline area. Students can choose to do a generalist honours degree or complete honours in one of the following disciplines: Building, Property Development, Quantity Surveying.",
+        "faculty": "Faculty of Built Environment",
+        "units": 48,
+        "duration": 1,
+        "structure": {
+            "Specialisation Requirements": 48
+        },
+        "degrees_involved": {
+            "majors": [],
+            "minors": [],
+            "honours": [
+                "BLDGAH",
+                "BLDGBH",
+                "BLDGCH",
+                "BLDGDH"
+            ]
+        }
+    },
+    "4523": {
+        "name": "Computational Design (Honours)",
+        "code": "4523",
+        "desc": "Overview The purpose of Honours within the Discipline of Computational Design is to enable students who have performed well at undergraduate level to deepen their knowledge of design methods, literature and history by undertaking a significant research project. Honours is a means for connecting undergraduate study with supervised independent research by … For more content click the Read more button below.The purpose of Honours within the Discipline of Computational Design is to enable students who have performed well at undergraduate level to deepen their knowledge of design methods, literature and history by undertaking a significant research project. Honours is a means for connecting undergraduate study with supervised independent research by consolidating and extending work completed in the undergraduate program and providing an academic foundation for students continuing on to a Professional Masters, Masters by research or a PhD. As part of the Honours program students will be expected to complete a significant independent research project and coursework study. Students will generally also be expected to undertake research literacy training, Integrity in research training, attend OH & S and safety training in the Faculty's Squarehouse studios and present at Faculty research seminars.Read more",
+        "faculty": "Faculty of Built Environment",
+        "units": 48,
+        "duration": 1,
+        "structure": {
+            "Core Courses": 18,
+            "Thesis": 18,
+            "Prescribed Electives": 12
+        },
+        "degrees_involved": {
+            "majors": [],
+            "minors": [],
+            "honours": []
+        }
+    },
+    "4525": {
+        "name": "Industrial Design (Honours)",
+        "code": "4525",
+        "desc": "The purpose of Honours within the Discipline of Industrial Design is to enable students who have performed well at undergraduate level in an Industrial Design or aligned program area an opportunity to undertake a substantial individual project of research and design exploration, the equivalent of an Honours thesis. Building upon the  disciplinary foundation in knowledge, literacy and skills of the Bachelors degree, the Honours year enables academic excellence, social engagement and global perspective to a level where graduates are prepared for transition to professional practice. The Honours program is also a  means of connecting undergraduate study with supervised independent research by consolidating and extending work completed in the undergraduate program and providing an academic foundation for students who may wish to a Masters by research or a PhD program.",
+        "faculty": "Faculty of Built Environment",
+        "units": 48,
+        "duration": 1,
+        "structure": {
+            "Core Courses": 36,
+            "Electives": 12
+        },
+        "degrees_involved": {
+            "majors": [],
+            "minors": [],
+            "honours": []
+        }
+    },
+    "4526": {
+        "name": "Fine Arts (Honours)",
+        "code": "4526",
+        "desc": "The Bachelor of Fine Arts (Honours) is a 48 UOC (one year equivalent) advanced undergraduate degree for high achieving students. The program is designed for those who have completed an undergraduate degree in Fine Arts (or cognate area), and wish to extend their critical and creative skills in contemporary art contexts. The BFA (Hons) enables students to advance their knowledge and understanding of artistic practice by developing a significant practice-led research project. Supported by coursework in art theory and professional practice, the program supports students to gain an in-depth understanding of the relationship between theory and practice in contemporary art contexts. By doing so, this program can provide pathways to higher degree research programs such as an MFA or PhD, as well as a diverse array of professional and career outcomes in the arts and cultural sectors.",
+        "faculty": "Faculty of Art & Design",
+        "units": 48,
+        "duration": 1,
+        "structure": {
+            "Core Courses": 48
+        },
+        "degrees_involved": {
+            "majors": [],
+            "minors": [],
+            "honours": []
+        }
+    },
+    "4527": {
+        "name": "Design (Honours)",
+        "code": "4527",
+        "desc": "The Design (Honours) program is a 48 UOC (one year equivalent) advanced undergraduate degree for high achieving students. The program is designed for those who have completed an undergraduate degree in Design (or cognate area), and wish to extend their critical and creative skills in Design. The Design (Hons) enables students to advance their knowledge and understanding of design practice by developing a significant practice-led research project. Access to UNSW Art & Design’s leading research labs and a selective professional placement program allow students to explore the potential of design in the 21st Century.",
+        "faculty": "Faculty of Art & Design",
+        "units": 48,
+        "duration": 1,
+        "structure": {
+            "Core Courses": 48
+        },
+        "degrees_involved": {
+            "majors": [],
+            "minors": [],
+            "honours": []
+        }
+    },
+    "4528": {
+        "name": "Media Arts (Honours)",
+        "code": "4528",
+        "desc": "The Bachelor of Media Arts (Honours) is a 48 UOC (one year equivalent) advanced undergraduate degree for high achieving students. The program is designed for those who have completed an undergraduate degree in Media Arts (or cognate area), and wish to extend their critical and creative skills in media arts contexts. The BMA (Hons) enables students to advance their knowledge and understanding of creative practice by developing a significant practice-led research project. Supported by coursework in art and design theory and professional practice, the program supports students to gain an in-depth understanding of the relationship between theory and practice in contemporary media arts contexts. By doing so, this program can provide pathways to higher degree research programs such as an MFA or PhD, as well as a diverse array of professional and career outcomes in the arts, media, and cultural sectors.",
+        "faculty": "Faculty of Art & Design",
+        "units": 48,
+        "duration": 1,
+        "structure": {
+            "Core Courses": 48
+        },
+        "degrees_involved": {
+            "majors": [],
+            "minors": [],
+            "honours": []
+        }
+    },
+    "4529": {
+        "name": "Social Science (Honours)",
+        "code": "4529",
+        "desc": "The Bachelor of Social Science (Honours) is a 48 UOC (one year equivalent) advanced undergraduate degree for high achieving students which may be undertaken upon completion of an undergraduate pass degree in Social Science. The BSocSci(Hons) can be completed full-time or part-time. A student undertaking this program will normally complete Honours within the policy specialisation of their Bachelor degree. The program enables students to expand and deepen their understanding of this discipline and develop highly sought after analytical, problem solving and research skills through undertaking a significant independent research thesis. The program may be a pathway into a PhD.",
+        "faculty": "Faculty of Arts and Social Sciences",
+        "units": 48,
+        "duration": 1,
+        "structure": {
+            "Core Courses": 18,
+            "Thesis": 30
+        },
+        "degrees_involved": {
+            "majors": [],
+            "minors": [],
+            "honours": []
+        }
+    },
+    "4701": {
+        "name": "Law",
+        "code": "4701",
+        "desc": "Please note: This Program is not available for enrolment. The Bachelor of Laws (LLB) cannot be studied as a single stand alone degree.",
+        "faculty": "Faculty of Law",
+        "units": 144,
+        "duration": 3,
+        "structure": {
+            "Disciplinary Component": 144
+        },
+        "degrees_involved": {
+            "majors": [],
+            "minors": [],
+            "honours": []
+        }
+    },
+    "4702": {
+        "name": "Law (Honours)",
+        "code": "4702",
+        "desc": "Please note:",
+        "faculty": "Faculty of Law",
+        "units": 144,
+        "duration": 3,
+        "structure": {
+            "Disciplinary Component": 144
+        },
+        "degrees_involved": {
+            "majors": [],
+            "minors": [],
+            "honours": []
+        }
+    },
+    "4803": {
+        "name": "Art Theory",
+        "code": "4803",
+        "desc": "The Bachelor of Art Theory degree focuses on the histories and theories of contemporary art. Situated in a nationally and internationally renowned art and design school, students learn alongside artists, designers, curators, and writers as they critically engage with significant debates in the field. Studies in this area allow students to trace multiple genealogies, themes, and discourses through 20th and 21st century art, while also exploring new approaches to theorising art and visual culture. The program introduces students to key artistic practices, movements, and debates with particular attention to the relationship between local and global perspectives. The program also develops students’ scholarly capacities through foundational skills in visual analysis, critical thinking, academic writing, and research, and enables professional development opportunities through our strong industry partnerships. Through both structured and flexible learning pathways, students are supported in developing the skills and knowledge to successfully engage with a diverse range of opportunities in today’s arts and cultural industries.",
+        "faculty": "Faculty of Art & Design",
+        "units": 144,
+        "duration": 3,
+        "structure": {
+            "Disciplinary Component": 96,
+            "Free electives": 36,
+            "General Education": 12
+        },
+        "degrees_involved": {
+            "majors": [],
+            "minors": [],
+            "honours": []
+        }
+    },
+    "4813": {
+        "name": "Media Arts",
+        "code": "4813",
+        "desc": "The Bachelor of Media Arts (BMA) empowers students to thrive as media practitioners working with the latest creative ideas and technologies. In a world of rapidly changing digital technologies, this three-year program recognises the need for imaginative and critically informed media practitioners now and into the future. With a focus on developing skills and knowledge across a range of digital and screen-based media, the BMA allows students to experiment with a variety of media technologies, platforms, and ideas. Whether working with animation, visual effects, moving image, sound, or 3D visualisation, BMA students explore their individual interests within a supportive, interdisciplinary, and peer-oriented learning environment. Bolstered by studies in the histories and theories informing current practices, BMA students simultaneously develop their creative and critical thinking skills, enabling them to undertake a range of careers across the artistic, creative, entertainment, and technology industries. Through a rich engagement with diverse media arts ideas and practices, the BMA equips students to creatively respond to and lead the mediated experiences of the future.",
+        "faculty": "Faculty of Art & Design",
+        "units": 144,
+        "duration": 3,
+        "structure": {
+            "Disciplinary Component": 96,
+            "Free Electives": 36,
+            "General Education": 12
+        },
+        "degrees_involved": {
+            "majors": [],
+            "minors": [],
+            "honours": []
+        }
+    },
+    "4821": {
+        "name": "Fine Arts",
+        "code": "4821",
+        "desc": "The Bachelor of Fine Arts (BFA) is a three-year program (equivalent full-time) designed for those who wish to thrive in and lead the future of global contemporary art and culture. Students in the BFA are encouraged to experiment with a range of artistic processes, mediums, and techniques in order to explore their ideas, curiosities and passions. Underpinned by specialised art history and theory courses, students are also grounded in the relationship between theory and practice, helping them become highly literate in the ways that creative processes intersect with critical frameworks, concepts, and ways of thinking. The BFA has two distinct majors that allow students to focus on Studio Practice or Art Theory. Both pathways feature professional practice and research skills throughout, meaning the BFA prepares students for a diverse range of professional contexts and careers in the arts and cultural sectors. For those wishing to extend their studies on completion of the degree, the BFA program is designed to provide a pathway to the UNSW one-year Honours program.",
+        "faculty": "Faculty of Art & Design",
+        "units": 144,
+        "duration": 3,
+        "structure": {
+            "Disciplinary Component": 96,
+            "Free Electives": 36,
+            "General Education": 12
+        },
+        "degrees_involved": {
+            "majors": [
+                "DARTA1",
+                "DARTB1"
+            ],
+            "minors": [],
+            "honours": []
+        }
+    },
+    "4822": {
+        "name": "Design",
+        "code": "4822",
+        "desc": "The Bachelor of Design degree program at UNSW Art & Design provides a studio based, critical, research-led education in the overarching discipline of design. We produce graduates who are both versatile and adventurous. The program builds on UNSW Art & Design's strengths in equipping graduates with a commitment to material quality coupled with critical idealism. The 3-year program emphasises a distinctive understanding of how design can change our societies, grounded in a deep reflection on diverse historical, social and cultural values. Graduates of the Bachelor of Design program understand how design-led solutions assist people to perform at their best in agile and rapidly changing environments. We also ensure that the futures that they co-design are diverse and sustainable for all peoples. The merging of making, criticality, technology, research, management and business provides graduates with transferable skills for careers across a range of existing and emerging design fields.",
+        "faculty": "Faculty of Art & Design",
+        "units": 144,
+        "duration": 3,
+        "structure": {
+            "Disciplinary Component": 120,
+            "Free Electives": 12,
+            "General Education": 12
+        },
+        "degrees_involved": {
+            "majors": [],
+            "minors": [],
+            "honours": []
+        }
+    }
+}
