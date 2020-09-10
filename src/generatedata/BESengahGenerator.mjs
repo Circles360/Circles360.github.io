@@ -48,6 +48,7 @@ function any_course_finder(code, level) {
             })
         }
     }
+    
     return node_list;
 }
 
