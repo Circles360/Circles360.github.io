@@ -28,6 +28,25 @@ def flatten_array(arr):
 
     return flattened
 
+def filter_irrelevant(code):
+    return False if code in FILTER_COURSE_CODES else True
+
+def map_executable(elem):
+    elem = elem[0]
+
+    if elem == " OR ":
+        return "||"
+    if elem == " AND ":
+        return "&&"
+    if "(" in elem:
+        return "("
+    if ")" in elem:
+        return ")"
+    if re.search(REGEX_COURSE_CODE, elem):
+        if elem in FILTER_COURSE_CODES:
+            return "0"
+    return elem
+
 @scrape.return_null_on_failure
 def get_side_bar_element(html, element_header):
     side_bar = html.find_all(class_="css-1cq5lls-Box-AttrContainer esd54cc0")
@@ -62,124 +81,57 @@ def get_course_desc(html):
     try:
         return html.find(id="Overview").find("p").text.strip()
     except:
-        return html.find(id="Overview").text.strip()
-
-def split_conditions(raw):
-    split = []
-
-    for requisite in raw.split(";"):
-        for cond in requisite.split(" AND "):
-            no_white_space = cond.strip()
-            if no_white_space == "":
-                continue
-            split.append(no_white_space)
-
-    return split
-
-def or_then_and(raw):
-    # fuck me
-    condition_set = re.split("\),? OR \(", raw)
-
-    prerequisites = []
-
-    for c_set in condition_set:
-        course_set = []
-        for cond in split_conditions(c_set):
-            course_set.append(re.findall(REGEX_COURSE_CODE, cond))
-
-        prerequisites.append(course_set)
-
-    return [prerequisites]
+        return html.find(id="Overview").text.split("Overview")[1].strip()
 
 @scrape.return_null_on_failure
 def get_course_conditions(html):
-    raw = html.find(id="ConditionsforEnrolment").find("div", class_="css-1l0t84s-Box-CardBody e1q64pes0").text.strip()
-
-    if raw == None or raw == "None":
-        return None
-
-    # FILTER OUT IRRELEVANT CODES:
-    for filter_code in FILTER_COURSE_CODES:
-        raw = raw.replace(filter_code, "")
-
-    conditions = raw.split("\n")[0].upper()
-
-    if "PLEASE REFER TO THE COURSE OVERVIEW SECTION FOR INFORMATION ON PREREQUISITE REQUIREMENTS" in conditions:
-        # Treat as NULL
-        return None
-
-    if "EXCL" in raw:
-        # Remove everything after "EXCL". If EXCL still in string (only condition), then skip
-        conditions = conditions.split("EXCL", 1)[0].strip()
-        if "EXCL" in conditions:
+    try:
+        raw = html.find(id="ConditionsforEnrolment").find("div", class_="css-1l0t84s-Box-CardBody e1q64pes0").text.strip()
+        if raw == None or raw == "None" or raw == "":
             return None
+    except:
+        return None
 
-    if ", OR BOTH " in conditions:
-        conditions = conditions.replace(", OR BOTH ", ") OR (")
-
-    if re.search("\),? OR \(", conditions):
-        # fml
-        prerequisites = or_then_and(conditions)
-        return {
-            "prerequisites": prerequisites,
-            "corequisites": None,
-            "units_required": None,
-            "level_for_units_required": None,
-            "core_year": None,
-            "other": None
-        }
-
-    if "," in conditions and ", OR" not in conditions and " AND " not in conditions:
-        conditions = conditions.replace(",", " AND ")
-
-    prerequisites = []
+    prereqs_executable = None
+    prerequisites = None
     corequisites = []
     units_required = None
     core_year = None
     level = None
     other = []
 
-    for cond in split_conditions(conditions):
-        if "ENROLMENT IN" in cond:
-            continue
+    conditions = raw.split("\n")[0].split("EXCL")[0].split("EQUIV")[0].upper().strip()
 
-        if re.search("CO-?REQ", cond):
-            corequisites.append(re.findall(REGEX_COURSE_CODE, cond))
+    if re.search("PRE-?REQ(UISITE)?S?[:;]?", conditions):
+        executable_array = re.findall(f"((\({REGEX_COURSE_CODE})|({REGEX_COURSE_CODE}\))|( OR )|( AND )|({REGEX_COURSE_CODE}))", conditions)
+        executable_array = map(map_executable, executable_array)
+        executable_array = list(filter(filter_irrelevant, executable_array))
+        prereqs_executable = " ".join(executable_array)
 
-        elif re.search(REGEX_COURSE_CODE, cond):
-            prerequisites.append(re.findall(REGEX_COURSE_CODE, cond))
+        prerequisites = list(filter(filter_irrelevant, re.findall(REGEX_COURSE_CODE, conditions)))
 
-        elif re.search("\d+ UNITS OF CREDIT IN LEVEL \d+", cond):
-            match = re.search("(\d+) UNITS OF CREDIT IN LEVEL (\d+)", cond)
-            units_required = match.group(1)
-            level = match.group(2)
+    if re.search("CO-?REQ", conditions):
+        corequisites = list(filter(filter_irrelevant, re.findall(REGEX_COURSE_CODE, conditions)))
 
-        elif re.search("(UOC)|(UNITS? OF CREDIT)", cond):
-            try:
-                units_required = int(re.search("(\d+) (UOC)|(UNITS? OF CREDIT)", cond).group(1))
-            except:
-                continue
+    if re.search("\d+ UNITS OF CREDIT IN LEVEL \d+", conditions):
+        match = re.search("(\d+) UNITS OF CREDIT IN LEVEL (\d+)", conditions)
+        units_required = match.group(1)
+        level = match.group(2)
+    elif re.search("(UOC)|(UNITS? OF CREDIT)", conditions):
+        try:
+            units_required = int(re.search("(\d+) (UOC)|(UNITS? OF CREDIT)", conditions).group(1))
+        except:
+            pass
 
-        elif re.search("COMPLETION OF.*[0-9]{4}", cond):
-            # COURSE NUMBER ONLY
-            all_code_numbers = re.findall("[0-9]{4}", cond)
-            for code_number in all_code_numbers:
-                code_faculty = re.search("[A-Z]{4}", get_course_code(html)).group(0)
-                prerequisites.append([code_faculty + code_number])
-
-        elif re.search("YEAR", cond):
-            try:
-                core_year = int(re.search("\d+", cond).group(0))
-            except:
-                continue
-
-        elif "WAM" in cond:
-            continue
-
-        else:
-            other.append(cond.strip())
+    if re.search("YEAR", conditions):
+        try:
+            core_year = int(re.search("\d+", conditions).group(0))
+        except:
+            pass
 
     return {
+        "raw": raw,
+        "prereqs_executable": prereqs_executable if prereqs_executable != "" else None,
         "prerequisites": prerequisites if prerequisites != [] else None,
         "corequisites": corequisites if corequisites != [] else None,
         "units_required": units_required,
@@ -212,6 +164,8 @@ def get_related_courses(html, relation):
 
 def get_course_info(html):
     NO_CONDITIONS = {
+        "raw": None,
+        "prereqs_executable": None,
         "prerequisites": None,
         "corequisites": None,
         "units_required": None,
@@ -244,8 +198,7 @@ def update_unlocks(courses):
 
     # Update the "unlocks" field for each course object
     for code in courses:
-        flattened_prerequisites = flatten_array(courses[code]["conditions"]["prerequisites"])
-        for prereq in flattened_prerequisites:
+        for prereq in courses[code]["conditions"]["prerequisites"]:
             try:
                 courses[prereq]["unlocks"].append(code)
             except:
@@ -264,7 +217,6 @@ def check_contaminated(arr):
         return True
 
     return False
-
 
 def check_if_need_updating(course):
     if course["conditions"]["prerequisites"]:
@@ -298,11 +250,11 @@ browser = webdriver.Chrome(scrape.CHROME_DRIVER) # NEED TO BE CHROME VERSION 85
 
 for idx, link in enumerate(course_links):
     code_from_link = re.search(REGEX_COURSE_CODE, link).group(0)
-    if not check_if_need_updating(COURSES[code_from_link]):
+    if code_from_link in COURSES:
         print(f" ~~ skipped {code_from_link}")
         continue
 
-    random_int = random.randint(15, 25)
+    random_int = random.randint(15, 20)
     print(f"{idx + 1}/{total} >>> waiting {random_int} seconds >>> {link}")
 
     # Get html
@@ -315,7 +267,7 @@ for idx, link in enumerate(course_links):
         COURSES[course_info["course_code"]] = course_info
         scrape.write_to_file("courses.json", COURSES)
     except:
-        # Update all data if possible
+        # note crash
         print(f"@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@")
         print(f"@@@                             @@@")
         print(f"@@@     crashed on {code_from_link}     @@@")
@@ -324,7 +276,7 @@ for idx, link in enumerate(course_links):
         continue
 
 # Update unlocks
-COURSES = update_unlocks(COURSES)
+# COURSES = update_unlocks(COURSES)
 
 scrape.write_to_file("courses.json", COURSES)
 browser.quit()
