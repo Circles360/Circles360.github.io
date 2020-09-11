@@ -1,12 +1,13 @@
 import React, {Fragment} from "react"
-import "../styles/sidebarStyles.css"
+import { Button } from 'semantic-ui-react'
+// import "../styles/sidebarStyles.css"
 
-const Toggle = (props) => {
-    return(
-        <Fragment>
-            <button id="toggle" onClick={props.click}>Click</button>
-        </Fragment>
-    )
+const ButtonCircular = () => {
+    return <Button
+        circular
+        icon="setting"
+        floated="left"
+    />
 }
 
-export default Toggle
+export default ButtonCircular
