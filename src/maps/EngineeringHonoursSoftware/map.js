@@ -146,7 +146,7 @@ const BESengah = () => {
     return (
         <Segment.Group horizontal>
             <Segment
-                style={{width: "80%"}}
+                style={{width: "90%"}}
             >
                 <ReactFlowProvider>
                     <ReactFlow
@@ -164,7 +164,7 @@ const BESengah = () => {
                         />
                 </ReactFlowProvider>
             </Segment>
-            <Sidebar style={{width: "20%", maxWidth: "20%"}}/>
+            <Sidebar style={{width: "10%", maxWidth: "10%"}}/>
         </Segment.Group>
     );
 };
