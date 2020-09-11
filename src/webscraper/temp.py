@@ -6,14 +6,13 @@ FILTER_COURSE_CODES = scrape.read_from_file("filter_course_codes.json")
 
 REGEX_COURSE_CODE = "[A-Z]{4}\d{4}"
 
-OLD = scrape.read_from_file("courses_OLD.json")
-
 for code in COURSES:
-    if OLD[code]["unlocks"] == None:
-        COURSES[code]["unlocks"] = OLD[code]["unlocks"]
-    else:
-        COURSES[code]["unlocks"] = [x for x in OLD[code]["unlocks"] if x not in FILTER_COURSE_CODES]
-        if COURSES[code]["unlocks"] == []:
-            COURSES[code]["unlocks"] = None
+    conditions = COURSES[code]["conditions"]["raw"]
+    if conditions == None:
+        continue
+    if re.search("PHY\d{4}", conditions):
+        incorrect_code = re.search("PHY\d{4}", conditions).group(0)
+        correct_code = "PHYS" + incorrect_code[3:]
+        COURSES[code]["conditions"]["raw"] = COURSES[code]["conditions"]["raw"].replace(incorrect_code, correct_code)
 
-scrape.write_to_file("courses_with_unlocks.json", COURSES)
+scrape.write_to_file("courses.json", COURSES)
