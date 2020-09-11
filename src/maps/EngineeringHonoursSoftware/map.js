@@ -165,7 +165,7 @@ const BESengah = () => {
             <ReactFlowProvider>
                 <ReactFlow
                     elements={elements}
-                    style={{width: '100%', height: '90vh'}}
+                    style={{width: '100%', height: '100vh'}}
                     onLoad={onLoad}
                     nodeTypes={nodeTypes}
                     onElementClick={onElementClick}
