@@ -172,7 +172,8 @@ for (const course of courses_output) {
     if (course.id === 'DESN2000') {
         //console.log(course);
         course.data.terms = ['Term 2'];
-        course.data.conditions.prerequisites = [['ENGG1000']];
+        course.data.conditions.prerequisites = ['ENGG1000'];
+        course.data.conditions.prereqs_executable = 'ENGG1000'
         for (const parent of courses_output) {
             if (parent.id === 'ENGG1000') {
                 parent.data.unlocks.push('DESN2000');
@@ -188,13 +189,16 @@ for (const course of courses_output) {
     if (course.id === 'ENGG1000') {
         course.data.unlocks.push('ENGG2600');
     } else if (course.id === 'ENGG2600') {
-        course.data.conditions.prerequisites = [['ENGG1000']];
+        course.data.conditions.prerequisites = ['ENGG1000'];
+        course.data.conditions.prereqs_executable = 'ENGG1000';
         course.data.unlocks = ['ENGG3600']
     } else if (course.id === 'ENGG3600') {
-        course.data.conditions.prerequisites = [['ENGG2600']];
+        course.data.conditions.prerequisites = ['ENGG2600'];
+        course.data.conditions.prereqs_executable = 'ENGG2600';
         course.data.unlocks = ['ENGG4600'];
     } else if (course.id === 'ENGG4600') {
-        course.data.conditions.prerequisites = [['ENGG3600']];
+        course.data.conditions.prerequisites = ['ENGG3600'];
+        course.data.conditions.prereqs_executable = 'ENGG3600';
     } else if (course.id === 'INFS3830') {
         course.data.conditions.prerequisites = ['INFS3603'];
         course.data.conditions.prereqs_executable = "INFS3603";

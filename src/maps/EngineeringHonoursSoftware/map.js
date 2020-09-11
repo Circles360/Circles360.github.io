@@ -8,6 +8,8 @@ import CustomNode2 from '../../components/customnode2.js';
 import HeaderNode1 from '../../components/headernode1.js';
 
 import HoverInfo from '../../components/hoverinfo.js';
+import hoverPrerequisites from '../../components/hoverprerequisites.js';
+
 
 import SideBar from '../../components/sidebar.js';
 import Toggle from '../../components/toggle.js';
@@ -28,6 +30,7 @@ var selectedNodes = {
 var selectedEdges = {};
 var selectableNodes = {};
 var potentialEdges = {};
+var hoverEdges = {};
 
 // Load up the chart with initial selectable nodes and edges
 for (const node of nodesData) {
@@ -42,7 +45,7 @@ for (const node of nodesData) {
 }
 
 
-elementsData = highlightElements(elementsData, selectedNodes, selectedEdges, selectableNodes, potentialEdges);
+elementsData = highlightElements(elementsData, selectedNodes, selectedEdges, selectableNodes, potentialEdges, hoverEdges);
 
 const onLoad = (reactFlowInstance) => {    
     reactFlowInstance.fitView();
@@ -59,7 +62,6 @@ const BESengah = () => {
     const [hoverText, setHoverText] = useState(false);
     const [hoverNode, setHoverNode] = useState();
     const [sidebarOpen, setSidebarOpen] = useState(false);
-    
 
 
     // ==========ONCLICK==========
@@ -92,7 +94,7 @@ const BESengah = () => {
         console.log(potentialEdges);
 
         // Render graph accordingly
-        setElements(highlightElements(elements, selectedNodes, selectedEdges, selectableNodes, potentialEdges));
+        setElements(highlightElements(elements, selectedNodes, selectedEdges, selectableNodes, potentialEdges, hoverEdges));
 
         for (var e of elements) {
             if (e.id === element.id) {
@@ -106,10 +108,14 @@ const BESengah = () => {
 
     // ==========ONHOVER==========
     const onNodeMouseEnter = (event, node) => {
+        // Display node information in top left
         setHoverText(true);
         setHoverNode(node);
-        console.log("SET");
-        console.log(hoverNode);
+
+        // If the node is unselected, highlight prerequisite edges in purple
+        /*if ((!selectedNodes.hasOwnProperty(node.id)) && (!selectableNodes.hasOwnProperty(node.id))) {
+            hoverPrerequisites(node, elements, selectedNodes, selectedEdges, selectableNodes, potentialEdges, hoverEdges);
+        }*/
     }
     const onNodeMouseLeave = (event, node) => {
         setHoverText(false);
