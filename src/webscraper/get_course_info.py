@@ -121,13 +121,22 @@ def clean_up(arr):
     return clean_up(string.split(" "))
 
 @scrape.return_null_on_failure
-def get_course_conditions(html):
-    try:
-        raw = html.find(id="ConditionsforEnrolment").find("div", class_="css-1l0t84s-Box-CardBody e1q64pes0").text.strip()
-        if raw == None or raw == "None" or raw == "":
-            return None
-    except:
+def get_raw_course_conditions(html):
+    raw = html.find(id="ConditionsforEnrolment").find("div", class_="css-1l0t84s-Box-CardBody e1q64pes0").text.strip()
+    if raw == None or raw == "None" or raw == "":
         return None
+
+    # Fix PHY\d{4} TYPOS
+    if re.search("PHY\d{4}", raw):
+        incorrect_code = re.search("PHY\d{4}", raw).group(0)
+        correct_code = "PHYS" + incorrect_code[3:]
+        raw = raw.replace(incorrect_code, correct_code)
+
+    return raw
+
+@scrape.return_null_on_failure
+def get_course_conditions(html):
+    raw = get_raw_course_conditions(html)
 
     prereqs_executable = None
     prerequisites = None
@@ -139,6 +148,7 @@ def get_course_conditions(html):
 
     conditions = raw.upper().split("\n")[0].split("EXCL")[0].split("EQUIV")[0].strip()
 
+    # Get corequisites
     if re.search("CO-?REQ", conditions):
         split_conditions = re.split("CO-?REQ", conditions)
         corequisites = list(filter(filter_irrelevant, re.findall(REGEX_COURSE_CODE, split_conditions[1])))
@@ -186,6 +196,10 @@ def get_course_conditions(html):
             core_year = 5
         elif "SIXTH YEAR" in conditions or "6TH YEAR" in conditions:
             core_year = 6
+
+    if re.search("COMPLETION OF RESEARCH THESIS (A|B) \((\d+)\)", conditions):
+        prereqs_executable = get_course_code(html)[:4] + re.search("COMPLETION OF RESEARCH THESIS (A|B) \((\d+)\)", conditions).group(2)
+        prerequisites = [prereqs_executable]
 
     return {
         "raw": raw,

@@ -17210,8 +17210,10 @@
         "desc": "The thesis provides an opportunity for you to bring together engineering principles learned over your previous years of study and apply these principles to innovatively solve problems such as the development of a specific design, process and/or the investigation of a hypothesis. Thesis projects are complex, open-ended problems that allow room for your creativity, and the acquisition, analysis and interpretation of results. There are multiple possible solutions or conclusions at the outset and sufficient complexity to require a degree of project planning. The thesis requires you to formulate problems in scientific or engineering terms, manage an technical project and find solutions by applying scientific and engineering methods. You will also develop their ability to work in a research and development environment. You must identify a supervisor and project prior to enrolling in this course.",
         "conditions": {
             "raw": "Prerequisite: Completion of Research Thesis A (4951)",
-            "prereqs_executable": null,
-            "prerequisites": null,
+            "prereqs_executable": "BIOM4951",
+            "prerequisites": [
+                "BIOM4951"
+            ],
             "corequisites": null,
             "units_required": null,
             "level_for_units_required": null,
@@ -17239,8 +17241,10 @@
         "desc": "The thesis provides an opportunity for you to bring together engineering principles learned over your previous years of study and apply these principles to innovatively solve problems such as the development of a specific design, process and/or the investigation of a hypothesis. Thesis projects are complex, open-ended problems that allow room for your creativity, and the acquisition, analysis and interpretation of results. There are multiple possible solutions or conclusions at the outset and sufficient complexity to require a degree of project planning. The thesis requires you to formulate problems in scientific or engineering terms, manage an technical project and find solutions by applying scientific and engineering methods. You will also develop their ability to work in a research and development environment. You must identify a supervisor and project prior to enrolling in this course.",
         "conditions": {
             "raw": "Prerequisite: Completion of Research Thesis B (4952)",
-            "prereqs_executable": null,
-            "prerequisites": null,
+            "prereqs_executable": "BIOM4952",
+            "prerequisites": [
+                "BIOM4952"
+            ],
             "corequisites": null,
             "units_required": null,
             "level_for_units_required": null,
@@ -19479,10 +19483,11 @@
         "school": "School of Chemical Engineering",
         "desc": "In this course students will learn sufficient thermodynamics and problem solution strategies to be able to apply thermodynamic concepts with material and energy balances to chemical process problems involving several unit operations and involving chemical reactions. This will include study of the first and second law of thermodynamics, vapour liquid equilibria for pure components, heats of phase change, heats of reaction and example applications such as refrigeration and power plants. This course is part of the chemical engineering design stream and thus culminates in a significant design exercise.",
         "conditions": {
-            "raw": "Pre-requisites:  PHYS1121 or PHY1131",
-            "prereqs_executable": "PHYS1121",
+            "raw": "Pre-requisites:  PHYS1121 or PHYS1131",
+            "prereqs_executable": "PHYS1121 || PHYS1131",
             "prerequisites": [
-                "PHYS1121"
+                "PHYS1121",
+                "PHYS1131"
             ],
             "corequisites": null,
             "units_required": null,
@@ -19515,10 +19520,11 @@
         "school": "School of Chemical Engineering",
         "desc": "Fluid Flow and Particle Technology. In this course, a introduction to the transport phenomena is presented via fluid and particle transport. Topics include: Units and Dimension Analysis. General fluid properties. Fluid Statics. Introduction to Fluids Motion. Flow Measurement. Introduction to Compressible Flow. Pumps and Pumping. Particle Technology. Particles Sampling and Analysis. Mixing and Segregation. Particle Motion. Particle separation and fluidisation.",
         "conditions": {
-            "raw": "Pre-requisites:  PHYS1121 or PHY1131",
-            "prereqs_executable": "PHYS1121",
+            "raw": "Pre-requisites:  PHYS1121 or PHYS1131",
+            "prereqs_executable": "PHYS1121 || PHYS1131",
             "prerequisites": [
-                "PHYS1121"
+                "PHYS1121",
+                "PHYS1131"
             ],
             "corequisites": null,
             "units_required": null,
@@ -20140,8 +20146,10 @@
         "desc": "Research Thesis s an inquiry-based learning course that provides an opportunity for students to bring together engineering principles learned through academic study. Students apply these principles to innovatively solve problems such as the development of a specific design, process and/or the investigation of a hypothesis.",
         "conditions": {
             "raw": "Prerequisite: Completion of Research Thesis A (4951)",
-            "prereqs_executable": null,
-            "prerequisites": null,
+            "prereqs_executable": "CEIC4951",
+            "prerequisites": [
+                "CEIC4951"
+            ],
             "corequisites": null,
             "units_required": null,
             "level_for_units_required": null,
@@ -20170,8 +20178,10 @@
         "desc": "Research Thesis is an inquiry-based learning course that provides an opportunity for students to bring together engineering principles learned through academic study. Students apply these principles to innovatively solve problems such as the development of a specific design, process and/or the investigation of a hypothesis.",
         "conditions": {
             "raw": "Prerequisite: Completion of Research Thesis B (4952)",
-            "prereqs_executable": null,
-            "prerequisites": null,
+            "prereqs_executable": "CEIC4952",
+            "prerequisites": [
+                "CEIC4952"
+            ],
             "corequisites": null,
             "units_required": null,
             "level_for_units_required": null,
@@ -24833,8 +24843,10 @@
         "desc": "The thesis provides an opportunity for you to bring together engineering principles learned over your previous years of study and apply these principles to innovatively solve problems such as the development of a specific design, process and/or the investigation of a hypothesis. Thesis projects are complex, open-ended problems that allow room for your creativity, and the acquisition, analysis and interpretation of results. There are multiple possible solutions or conclusions at the outset and sufficient complexity to require a degree of project planning. The thesis requires you to formulate problems in scientific or engineering terms, manage an technical project and find solutions by applying scientific and engineering methods. You will also develop their ability to work in a research and development environment. You must identify a supervisor and project prior to enrolling in this course. This is the first course of the 3 course thesis structure.",
         "conditions": {
             "raw": "Prerequisite: Completion of Research Thesis A (4951)",
-            "prereqs_executable": null,
-            "prerequisites": null,
+            "prereqs_executable": "COMP4951",
+            "prerequisites": [
+                "COMP4951"
+            ],
             "corequisites": null,
             "units_required": null,
             "level_for_units_required": null,
@@ -24862,8 +24874,10 @@
         "desc": "The thesis provides an opportunity for you to bring together engineering principles learned over your previous years of study and apply these principles to innovatively solve problems such as the development of a specific design, process and/or the investigation of a hypothesis. Thesis projects are complex, open-ended problems that allow room for your creativity, and the acquisition, analysis and interpretation of results. There are multiple possible solutions or conclusions at the outset and sufficient complexity to require a degree of project planning. The thesis requires you to formulate problems in scientific or engineering terms, manage an technical project and find solutions by applying scientific and engineering methods. You will also develop their ability to work in a research and development environment. You must identify a supervisor and project prior to enrolling in this course. This is the first course of the 3 course thesis structure.",
         "conditions": {
             "raw": "Prerequisite: Completion of Research Thesis B (4952)",
-            "prereqs_executable": null,
-            "prerequisites": null,
+            "prereqs_executable": "COMP4952",
+            "prerequisites": [
+                "COMP4952"
+            ],
             "corequisites": null,
             "units_required": null,
             "level_for_units_required": null,
@@ -38602,8 +38616,10 @@
         "desc": "The thesis provides an opportunity for you to bring together engineering principles learned over your previous years of study and apply these principles to innovatively solve problems such as the development of a specific design, process and/or the investigation of a hypothesis. Thesis projects are complex, open-ended problems that allow room for your creativity, and the acquisition, analysis and interpretation of results. There are multiple possible solutions or conclusions at the outset and sufficient complexity to require a degree of project planning. The thesis requires you to formulate problems in scientific or engineering terms, manage an technical project and find solutions by applying scientific and engineering methods. You will also develop their ability to work in a research and development environment. You must identify a supervisor and project prior to enrolling in this course. This is the second course of the 3 course thesis structure.",
         "conditions": {
             "raw": "Prerequisite: Completion of Research Thesis A (4951)",
-            "prereqs_executable": null,
-            "prerequisites": null,
+            "prereqs_executable": "ELEC4951",
+            "prerequisites": [
+                "ELEC4951"
+            ],
             "corequisites": null,
             "units_required": null,
             "level_for_units_required": null,
@@ -38631,8 +38647,10 @@
         "desc": "The thesis provides an opportunity for you to bring together engineering principles learned over your previous years of study and apply these principles to innovatively solve problems such as the development of a specific design, process and/or the investigation of a hypothesis. Thesis projects are complex, open-ended problems that allow room for your creativity, and the acquisition, analysis and interpretation of results. There are multiple possible solutions or conclusions at the outset and sufficient complexity to require a degree of project planning. The thesis requires you to formulate problems in scientific or engineering terms, manage an technical project and find solutions by applying scientific and engineering methods. You will also develop their ability to work in a research and development environment. You must identify a supervisor and project prior to enrolling in this course. This is the third course of the 3 course thesis structure.",
         "conditions": {
             "raw": "Prerequisite: Completion of Research Thesis B (4952)",
-            "prereqs_executable": null,
-            "prerequisites": null,
+            "prereqs_executable": "ELEC4952",
+            "prerequisites": [
+                "ELEC4952"
+            ],
             "corequisites": null,
             "units_required": null,
             "level_for_units_required": null,
@@ -61550,8 +61568,10 @@
         "desc": "The thesis provides an opportunity for you to bring together engineering principles learned over your previous years of study and apply these principles to innovatively solve problems such as the development of a specific design, process and/or the investigation of a hypothesis. Thesis projects are complex, open-ended problems that allow room for your creativity, and the acquisition, analysis and interpretation of results. There are multiple possible solutions or conclusions at the outset and sufficient complexity to require a degree of project planning. The thesis requires you to formulate problems in scientific or engineering terms, manage an technical project and find solutions by applying scientific and engineering methods. You will also develop their ability to work in a research and development environment. You must identify a supervisor and project prior to enrolling in this course. This is the second course of the 3 course thesis structure.",
         "conditions": {
             "raw": "Prerequisite: Completion of Research Thesis A (4951)",
-            "prereqs_executable": null,
-            "prerequisites": null,
+            "prereqs_executable": "MMAN4951",
+            "prerequisites": [
+                "MMAN4951"
+            ],
             "corequisites": null,
             "units_required": null,
             "level_for_units_required": null,
@@ -61579,8 +61599,10 @@
         "desc": "The thesis provides an opportunity for you to bring together engineering principles learned over your previous years of study and apply these principles to innovatively solve problems such as the development of a specific design, process and/or the investigation of a hypothesis. Thesis projects are complex, open-ended problems that allow room for your creativity, and the acquisition, analysis and interpretation of results. There are multiple possible solutions or conclusions at the outset and sufficient complexity to require a degree of project planning. The thesis requires you to formulate problems in scientific or engineering terms, manage an technical project and find solutions by applying scientific and engineering methods. You will also develop their ability to work in a research and development environment. You must identify a supervisor and project prior to enrolling in this course. This is the third course of the 3 course thesis structure.",
         "conditions": {
             "raw": "Prerequisite: Completion of Research Thesis B (4952)",
-            "prereqs_executable": null,
-            "prerequisites": null,
+            "prereqs_executable": "MMAN4952",
+            "prerequisites": [
+                "MMAN4952"
+            ],
             "corequisites": null,
             "units_required": null,
             "level_for_units_required": null,
@@ -73775,8 +73797,10 @@
         "desc": "The thesis provides an opportunity for you to bring together engineering principles learned over your previous years of study and apply these principles to innovatively solve problems such as the development of a specific design, process and/or the investigation of a hypothesis. Thesis projects are complex, open-ended problems that allow room for your creativity, and the acquisition, analysis and interpretation of results. There are multiple possible solutions or conclusions at the outset and sufficient complexity to require a degree of project planning. The thesis requires you to formulate problems in scientific or engineering terms, manage an technical project and find solutions by applying scientific and engineering methods. You will also develop their ability to work in a research and development environment. You must identify a supervisor and project prior to enrolling in this course. This is the second course of the 3 course thesis structure.",
         "conditions": {
             "raw": "Prerequisite: Completion of Research Thesis A (4951)",
-            "prereqs_executable": null,
-            "prerequisites": null,
+            "prereqs_executable": "SOLA4951",
+            "prerequisites": [
+                "SOLA4951"
+            ],
             "corequisites": null,
             "units_required": null,
             "level_for_units_required": null,
@@ -73804,8 +73828,10 @@
         "desc": "The thesis provides an opportunity for you to bring together engineering principles learned over your previous years of study and apply these principles to innovatively solve problems such as the development of a specific design, process and/or the investigation of a hypothesis. Thesis projects are complex, open-ended problems that allow room for your creativity, and the acquisition, analysis and interpretation of results. There are multiple possible solutions or conclusions at the outset and sufficient complexity to require a degree of project planning. The thesis requires you to formulate problems in scientific or engineering terms, manage an technical project and find solutions by applying scientific and engineering methods. You will also develop their ability to work in a research and development environment. You must identify a supervisor and project prior to enrolling in this course. This is the last course of the 3 course thesis structure.",
         "conditions": {
             "raw": "Prerequisite: Completion of Research Thesis B (4952)",
-            "prereqs_executable": null,
-            "prerequisites": null,
+            "prereqs_executable": "SOLA4952",
+            "prerequisites": [
+                "SOLA4952"
+            ],
             "corequisites": null,
             "units_required": null,
             "level_for_units_required": null,
