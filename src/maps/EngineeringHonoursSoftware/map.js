@@ -9,7 +9,7 @@ import HeaderNode1 from '../../components/headernode1.js';
 
 import HoverInfo from '../../components/hoverinfo.js';
 import hoverPrerequisites from '../../components/hoverprerequisites.js';
-
+import unhoverPrerequisites from '../../components/unhoverprerequisites.js';
 
 import SideBar from '../../components/sidebar.js';
 import Toggle from '../../components/toggle.js';
@@ -34,16 +34,24 @@ var hoverEdges = {};
 
 // Load up the chart with initial selectable nodes and edges
 for (const node of nodesData) {
-    if (checkPrerequisites(node, nodesData)) {
-        selectableNodes[node.id] = 1;
-        if (node.data.unlocks !== null) {
-            for (const unlockCourse of node.data.unlocks) {
-                potentialEdges['e' + node.id + '-' + unlockCourse] = 1;
-            }
+    if (selectedNodes.hasOwnProperty(node.id)) {
+        if (node.data.unlocks === null) continue;
+        for (const unlockCourse of node.data.unlocks) {
+            potentialEdges['e' + node.id + '-' + unlockCourse] = 1;
         }
+    } else if (checkPrerequisites(node, nodesData)) {
+        selectableNodes[node.id] = 1; 
     }
 }
 
+console.log("==========SelectedNodes==========");
+console.log(selectedNodes);
+console.log("==========SelectedEdges==========");
+console.log(selectedEdges);
+console.log("==========SelectableNodes==========");
+console.log(selectableNodes);
+console.log("==========PotentialEdges==========");
+console.log(potentialEdges);
 
 elementsData = highlightElements(elementsData, selectedNodes, selectedEdges, selectableNodes, potentialEdges, hoverEdges);
 
@@ -70,6 +78,10 @@ const BESengah = () => {
         if (isEdge(element)) return; // Don't care about edges
         if (element.id === 'SENGAH') return; // Cannot click on main node
         if ((! selectableNodes.hasOwnProperty(element.id)) && (! selectedNodes.hasOwnProperty(element.id))) return; // Cannot select non selectable nodes
+        
+        // NOTE: Might not need this?????
+        // Unhover edges which lit up on nodeMouseEnter
+        unhoverPrerequisites(hoverEdges);
 
         // 1. Select the node and fill in edges.
         // - Deal with unselecting nodes
@@ -113,17 +125,19 @@ const BESengah = () => {
         setHoverNode(node);
 
         // If the node is unselected, highlight prerequisite edges in purple
-        /*if ((!selectedNodes.hasOwnProperty(node.id)) && (!selectableNodes.hasOwnProperty(node.id))) {
+        if ((!selectedNodes.hasOwnProperty(node.id)) && (!selectableNodes.hasOwnProperty(node.id))) {
             hoverPrerequisites(node, elements, selectedNodes, selectedEdges, selectableNodes, potentialEdges, hoverEdges);
-        }*/
+        }
+        setElements(highlightElements(elements, selectedNodes, selectedEdges, selectableNodes, potentialEdges, hoverEdges));
     }
     const onNodeMouseLeave = (event, node) => {
         setHoverText(false);
+        unhoverPrerequisites(hoverEdges);
+        setElements(highlightElements(elements, selectedNodes, selectedEdges, selectableNodes, potentialEdges, hoverEdges));
     }
 
     let hoverDisplay;
     if (hoverText) {
-        console.log("SHOW", hoverNode);
         hoverDisplay = <HoverInfo node={hoverNode}/>
     }
     // ===========================

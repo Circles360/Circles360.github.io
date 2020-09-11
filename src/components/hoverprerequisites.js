@@ -5,12 +5,13 @@ import getElement from './getelement.js';
 
 export default function hoverPrerequisites(node, elements, selectedNodes, selectedEdges, selectableNodes, potentialEdges, hoverEdges) {
     if (node.data.conditions.prerequisites === null) return;
-    console.log("123123123123===== " + node.id);
     var prereqQueue = [node.id];
     while (prereqQueue.length !== 0) {
-        console.log("=====================");
-        console.log(prereqQueue[0]);
-        const current = getElement(prereqQueue.unshift(), elements);
+        const current = getElement(prereqQueue.shift(), elements);
+        
+        // Make sure this course exists as a node in our map
+        if (current === null) continue;
+
         if (current.data.conditions.prerequisites === null) continue;
 
         for (const prereq of current.data.conditions.prerequisites) {

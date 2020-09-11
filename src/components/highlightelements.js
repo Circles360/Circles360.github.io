@@ -11,7 +11,7 @@ export default function highlightElements(elements, selectedNodes, selectedEdges
             } else if (potentialEdges.hasOwnProperty(e.id)) {
                 return {...e, style: {...e.style, stroke: 'blue', strokeWidth: 1, opacity: 0.3}, animated: false};
             } else if (hoverEdges.hasOwnProperty(e.id)) {
-                return {...e, style: {...e.style, stroke: 'purple', strokeWidth: 1, opacity: 1}, animated: true};
+                return {...e, style: {...e.style, stroke: 'purple', strokeWidth: 2.5, opacity: 1}, animated: true};
             } else {
                 return {...e, style: {...e.style, stroke: 'grey', strokeWidth: 1, opacity: 0.2}, animated: false};
             } 
