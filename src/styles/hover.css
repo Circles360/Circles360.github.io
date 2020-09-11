@@ -1,0 +1,15 @@
+#hoverbox {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: grey;
+    z-index: 5000;
+    height: 30vh;
+    width: 25vh;
+    padding: 0 1% 1% 1%;
+}
+
+#header {
+    color: white;
+    text-align: center;
+}

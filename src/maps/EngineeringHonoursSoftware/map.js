@@ -7,15 +7,15 @@ import CustomNode1 from '../../components/customnode1.js';
 import CustomNode2 from '../../components/customnode2.js';
 import HeaderNode1 from '../../components/headernode1.js';
 
+import HoverInfo from '../../components/hoverinfo.js';
+
 import SideBar from '../../components/sidebar.js';
 import Toggle from '../../components/toggle.js';
 
 import positionHelper from '../../components/positionhelper.js';
 import selectNode from '../../components/selectnode.js';
 import unselectNode from '../../components/unselectnode.js';
-import showPrerequisites from '../../components/showprerequisites.js';
 import highlightElements from '../../components/highlightelements.js';
-import getPrerequisites from '../../components/getprerequisites.js';
 import getSelectable from '../../components/getselectable.js';
 import checkPrerequisites from '../../components/checkprerequisites';
 
@@ -39,14 +39,6 @@ for (const node of nodesData) {
             }
         }
     }
-    /*if (node.id === 'SENGAH') {
-        for (const course of node.data.unlocks) {
-            console.log(course);
-            selectableNodes[course] = 1;
-            potentialEdges['eSENGAH-' + course] = 1;
-        }
-        break;
-    }*/
 }
 
 
@@ -64,8 +56,13 @@ const nodeTypes = {
 
 const BESengah = () => {
     const [elements, setElements] = useState(elementsData);
+    const [hoverText, setHoverText] = useState(false);
+    const [hoverNode, setHoverNode] = useState();
     const [sidebarOpen, setSidebarOpen] = useState(false);
+    
 
+
+    // ==========ONCLICK==========
     const onElementClick = (event, element) => {
         console.log("ONELEMENTCLICK");
         if (isEdge(element)) return; // Don't care about edges
@@ -105,9 +102,29 @@ const BESengah = () => {
             }
         }
     };
+    // ===========================
+
+    // ==========ONHOVER==========
+    const onNodeMouseEnter = (event, node) => {
+        setHoverText(true);
+        setHoverNode(node);
+        console.log("SET");
+        console.log(hoverNode);
+    }
+    const onNodeMouseLeave = (event, node) => {
+        setHoverText(false);
+    }
+
+    let hoverDisplay;
+    if (hoverText) {
+        console.log("SHOW", hoverNode);
+        hoverDisplay = <HoverInfo node={hoverNode}/>
+    }
+    // ===========================
 
 
 
+    // ==========SIDEBAR==========
     const sidebarOpenHandler = () => {
         if (!sidebarOpen) setSidebarOpen(true);
         else setSidebarOpen(false);
@@ -121,6 +138,7 @@ const BESengah = () => {
     if (sidebarOpen) {
         sidebar = <SideBar close={sidebarCloseHandler} sidebar={"sidebar"} items={selectableNodes}/>
     }
+    // ============================
 
     return (
         <div class="layout">
@@ -135,11 +153,13 @@ const BESengah = () => {
                     minZoom={0.1}
                     //setInitTransform={TransformUpdater({x: 100, y: 100, z: 1})}
                     nodesDraggable={false}
+                    onNodeMouseEnter={onNodeMouseEnter}
+                    onNodeMouseLeave={onNodeMouseLeave}
                 >   
-                    <Controls />
                 </ReactFlow>
                 <Toggle click={sidebarOpenHandler}/>
             </ReactFlowProvider>
+            {hoverDisplay}
             {sidebar}
         </div>
     );
