@@ -32,11 +32,9 @@ def filter_irrelevant(code):
     return False if code in FILTER_COURSE_CODES else True
 
 def map_executable(elem):
-    elem = elem[0]
-
     if elem == " OR ":
         return "||"
-    if elem == " AND ":
+    if elem == " AND " or elem == "&":
         return "&&"
     if "(" in elem:
         return "("
@@ -83,6 +81,45 @@ def get_course_desc(html):
     except:
         return html.find(id="Overview").text.split("Overview")[1].strip()
 
+def clean_up(arr):
+    original = " ".join(arr)
+
+    # Remove ""
+    arr = [x for x in arr if x != ""]
+
+    # From the back
+    arr.reverse()
+    while arr and (arr[0] == "&&" or arr[0] == "||" or arr[0] == "("):
+        arr.pop(0)
+
+    # From the front
+    arr.reverse()
+    while arr and (arr[0] == "&&" or arr[0] == "||" or arr[0] == ")"):
+        arr.pop(0)
+
+    string = " ".join(arr)
+    string = string.replace("&& &&", "&&")               # && && ==> &&
+    string = string.replace("|| ||", "||")               # || || ==> ||
+    string = string.replace("|| &&", "&&")               # || && ==> &&
+    string = string.replace("&& ||", "||")               # && || ==> ||
+    string = re.sub("\( ((&& )|(\|\| ))*\)", "", string) # remove any ( ), ( || ) or ( && ), ...
+    string = re.sub("\(\s+&&", "(", string)              # ( &&  ==> (
+    string = re.sub("\(\s+\|\|", "(", string)            # ( ||  ==> (
+    string = re.sub("&&\s+\)", ")", string)              # && )  ==> )
+    string = re.sub("\|\|\s+\)", ")", string)            # || )  ==> )
+    string = re.sub("\)\s+\(", ") && (", string)              # ) (   ==> ) && (
+
+    # Insert || if there exists "CODE CODE"
+    match = re.search(f"(({REGEX_COURSE_CODE} {REGEX_COURSE_CODE})|({REGEX_COURSE_CODE} 0)|(0 {REGEX_COURSE_CODE})|(0 0))", string)
+    if match:
+        adjacent_codes = match.group(0)
+        separated_codes = adjacent_codes.replace(" ", " || ")
+        string = string.replace(adjacent_codes, separated_codes)
+
+    if string == original:
+        return string
+    return clean_up(string.split(" "))
+
 @scrape.return_null_on_failure
 def get_course_conditions(html):
     try:
@@ -100,26 +137,38 @@ def get_course_conditions(html):
     level = None
     other = []
 
-    conditions = raw.split("\n")[0].split("EXCL")[0].split("EQUIV")[0].upper().strip()
-
-    if re.search("PRE-?REQ(UISITE)?S?[:;]?", conditions):
-        executable_array = re.findall(f"((\({REGEX_COURSE_CODE})|({REGEX_COURSE_CODE}\))|( OR )|( AND )|({REGEX_COURSE_CODE}))", conditions)
-        executable_array = map(map_executable, executable_array)
-        executable_array = list(filter(filter_irrelevant, executable_array))
-        prereqs_executable = " ".join(executable_array)
-
-        prerequisites = list(filter(filter_irrelevant, re.findall(REGEX_COURSE_CODE, conditions)))
+    conditions = raw.upper().split("\n")[0].split("EXCL")[0].split("EQUIV")[0].strip()
 
     if re.search("CO-?REQ", conditions):
-        corequisites = list(filter(filter_irrelevant, re.findall(REGEX_COURSE_CODE, conditions)))
+        split_conditions = re.split("CO-?REQ", conditions)
+        corequisites = list(filter(filter_irrelevant, re.findall(REGEX_COURSE_CODE, split_conditions[1])))
+        conditions = split_conditions[0] # Remove co-reqs
 
-    if re.search("\d+ UNITS OF CREDIT IN LEVEL \d+", conditions):
-        match = re.search("(\d+) UNITS OF CREDIT IN LEVEL (\d+)", conditions)
-        units_required = match.group(1)
-        level = match.group(2)
-    elif re.search("(UOC)|(UNITS? OF CREDIT)", conditions):
+    if re.search("PRE-?REQ(UISITE)?S?", conditions):
+        # Need to deal with commas
+        if "," in conditions:
+            # see if "," = "OR"
+            if re.search(f", ?{REGEX_COURSE_CODE},? OR ", conditions):
+                conditions = conditions.replace(",", " OR ")
+            elif re.search(f", ?{REGEX_COURSE_CODE},?( AND )?", conditions):
+                conditions = conditions.replace(",", " AND ")
+
+        raw_array = re.findall(f"(\(|\)|&|( OR )|( AND )|({REGEX_COURSE_CODE}))", conditions)
+        raw_array = [x[0] for x in raw_array]
+        executable_array = map(map_executable, raw_array)
+        executable_array = list(filter(filter_irrelevant, executable_array))
+
+        prereqs_executable = clean_up(executable_array)
+
+    if re.search("(UOC)|(UNITS? OF CREDIT)", conditions):
+        match = re.search("(\d+) ?((UOC)|(UNITS? OF CREDIT))( ((IN)|(AT)) LEVEL (\d+))?", conditions)
         try:
-            units_required = int(re.search("(\d+) (UOC)|(UNITS? OF CREDIT)", conditions).group(1))
+            units_required = int(match.group(1))
+        except:
+            pass
+
+        try:
+            level = int(match.group(9))
         except:
             pass
 
