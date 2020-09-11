@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import SidebarTestComp from './sidebartestcomp.js';
-import Toggle from './toggle';
+// import Toggle from './toggle';
 
 export default function Layout() {
     const [sidebarOpen, setSideBarOpen] = useState(false);
@@ -24,7 +24,6 @@ export default function Layout() {
     return (
         <div>
             {sidebar}
-            <Toggle click={openHandler}/>
         </div>
     );
 }
