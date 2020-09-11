@@ -35,6 +35,7 @@ export default function getSelectable(elements, selectedNodes, selectedEdges, se
         } else {
             if (selectableNodes.hasOwnProperty(nodeID)) delete selectableNodes[nodeID];
             // TODO: Deal with selected nodes cases? (e.g. unselecting a child???)
+            
         }
     }
 }

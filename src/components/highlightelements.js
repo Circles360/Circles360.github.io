@@ -2,7 +2,7 @@
 // Will highlight/unhighlight nodes based on selectedNodes dictionary
 import { isEdge } from "react-flow-renderer";
 
-export default function highlightElements(elements, selectedNodes, selectedEdges, selectableNodes, potentialEdges) {
+export default function highlightElements(elements, selectedNodes, selectedEdges, selectableNodes, potentialEdges, hoverEdges) {
     const newElements = elements.map((e) => {
         // It is an edge
         if (isEdge(e)) {
@@ -10,9 +10,11 @@ export default function highlightElements(elements, selectedNodes, selectedEdges
                 return {...e, style: {...e.style, stroke: 'red', strokeWidth: 5, opacity: 1}, animated: true};
             } else if (potentialEdges.hasOwnProperty(e.id)) {
                 return {...e, style: {...e.style, stroke: 'blue', strokeWidth: 1, opacity: 0.3}, animated: false};
+            } else if (hoverEdges.hasOwnProperty(e.id)) {
+                return {...e, style: {...e.style, stroke: 'purple', strokeWidth: 2.5, opacity: 1}, animated: true};
             } else {
                 return {...e, style: {...e.style, stroke: 'grey', strokeWidth: 1, opacity: 0.2}, animated: false};
-            }
+            } 
         }
 
         // It is a node
