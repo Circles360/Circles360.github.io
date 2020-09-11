@@ -1,3 +1,4 @@
+import process_course_conditions
 from selenium import webdriver
 from bs4 import BeautifulSoup
 import random
@@ -13,37 +14,6 @@ FILTER_COURSE_CODES = scrape.read_from_file("filter_course_codes.json")
 
 COURSES = scrape.read_from_file("courses.json")
 # COURSES = {}
-
-def flatten_array(arr):
-    if arr == None:
-        return []
-
-    flattened = []
-
-    for a in arr:
-        if isinstance(a, list):
-            flattened.extend(flatten_array(a))
-        else:
-            flattened.append(a)
-
-    return flattened
-
-def filter_irrelevant(code):
-    return False if code in FILTER_COURSE_CODES else True
-
-def map_executable(elem):
-    if elem == " OR ":
-        return "||"
-    if elem == " AND " or elem == "&":
-        return "&&"
-    if "(" in elem:
-        return "("
-    if ")" in elem:
-        return ")"
-    if re.search(REGEX_COURSE_CODE, elem):
-        if elem in FILTER_COURSE_CODES or elem not in COURSES:
-            return "0"
-    return elem
 
 @scrape.return_null_on_failure
 def get_side_bar_element(html, element_header):
@@ -81,45 +51,6 @@ def get_course_desc(html):
     except:
         return html.find(id="Overview").text.split("Overview")[1].strip()
 
-def clean_up(arr):
-    original = " ".join(arr)
-
-    # Remove ""
-    arr = [x for x in arr if x != ""]
-
-    # From the back
-    arr.reverse()
-    while arr and (arr[0] == "&&" or arr[0] == "||" or arr[0] == "("):
-        arr.pop(0)
-
-    # From the front
-    arr.reverse()
-    while arr and (arr[0] == "&&" or arr[0] == "||" or arr[0] == ")"):
-        arr.pop(0)
-
-    string = " ".join(arr)
-    string = string.replace("&& &&", "&&")               # && && ==> &&
-    string = string.replace("|| ||", "||")               # || || ==> ||
-    string = string.replace("|| &&", "&&")               # || && ==> &&
-    string = string.replace("&& ||", "||")               # && || ==> ||
-    string = re.sub("\( ((&& )|(\|\| ))*\)", "", string) # remove any ( ), ( || ) or ( && ), ...
-    string = re.sub("\(\s+&&", "(", string)              # ( &&  ==> (
-    string = re.sub("\(\s+\|\|", "(", string)            # ( ||  ==> (
-    string = re.sub("&&\s+\)", ")", string)              # && )  ==> )
-    string = re.sub("\|\|\s+\)", ")", string)            # || )  ==> )
-    string = re.sub("\)\s+\(", ") && (", string)              # ) (   ==> ) && (
-
-    # Insert || if there exists "CODE CODE"
-    match = re.search(f"(({REGEX_COURSE_CODE} {REGEX_COURSE_CODE})|({REGEX_COURSE_CODE} 0)|(0 {REGEX_COURSE_CODE})|(0 0))", string)
-    if match:
-        adjacent_codes = match.group(0)
-        separated_codes = adjacent_codes.replace(" ", " || ")
-        string = string.replace(adjacent_codes, separated_codes)
-
-    if string == original:
-        return string
-    return clean_up(string.split(" "))
-
 @scrape.return_null_on_failure
 def get_raw_course_conditions(html):
     raw = html.find(id="ConditionsforEnrolment").find("div", class_="css-1l0t84s-Box-CardBody e1q64pes0").text.strip()
@@ -137,80 +68,7 @@ def get_raw_course_conditions(html):
 @scrape.return_null_on_failure
 def get_course_conditions(html):
     raw = get_raw_course_conditions(html)
-
-    prereqs_executable = None
-    prerequisites = None
-    corequisites = []
-    units_required = None
-    core_year = None
-    level = None
-    other = []
-
-    conditions = raw.upper().split("\n")[0].split("EXCL")[0].split("EQUIV")[0].strip()
-
-    # Get corequisites
-    if re.search("CO-?REQ", conditions):
-        split_conditions = re.split("CO-?REQ", conditions)
-        corequisites = list(filter(filter_irrelevant, re.findall(REGEX_COURSE_CODE, split_conditions[1])))
-        conditions = split_conditions[0] # Remove co-reqs
-
-    if re.search("PRE-?REQ(UISITE)?S?", conditions):
-        # Need to deal with commas
-        if "," in conditions:
-            # see if "," = "OR"
-            if re.search(f", ?{REGEX_COURSE_CODE},? OR ", conditions):
-                conditions = conditions.replace(",", " OR ")
-            elif re.search(f", ?{REGEX_COURSE_CODE},?( AND )?", conditions):
-                conditions = conditions.replace(",", " AND ")
-
-        raw_array = re.findall(f"(\(|\)|&|( OR )|( AND )|({REGEX_COURSE_CODE}))", conditions)
-        raw_array = [x[0] for x in raw_array]
-        executable_array = map(map_executable, raw_array)
-        executable_array = list(filter(filter_irrelevant, executable_array))
-
-        prereqs_executable = clean_up(executable_array)
-        prerequisites = re.findall(REGEX_COURSE_CODE, prereqs_executable)
-
-    if re.search("(UOC)|(UNITS? OF CREDIT)", conditions):
-        match = re.search("(\d+) ?((UOC)|(UNITS? OF CREDIT))( ((IN)|(AT)) LEVEL (\d+))?", conditions)
-        try:
-            units_required = int(match.group(1))
-        except:
-            pass
-
-        try:
-            level = int(match.group(9))
-        except:
-            pass
-
-    if "YEAR" in conditions:
-        if "FIRST YEAR" in conditions or "1ST YEAR" in conditions:
-            core_year = 1
-        elif "SECOND YEAR" in conditions or "2ND YEAR" in conditions:
-            core_year = 2
-        elif "THIRD YEAR" in conditions or "3RD YEAR" in conditions:
-            core_year = 3
-        elif "FOURTH YEAR" in conditions or "4TH YEAR" in conditions:
-            core_year = 4
-        elif "FIFTH YEAR" in conditions or "5TH YEAR" in conditions:
-            core_year = 5
-        elif "SIXTH YEAR" in conditions or "6TH YEAR" in conditions:
-            core_year = 6
-
-    if re.search("COMPLETION OF RESEARCH THESIS (A|B) \((\d+)\)", conditions):
-        prereqs_executable = get_course_code(html)[:4] + re.search("COMPLETION OF RESEARCH THESIS (A|B) \((\d+)\)", conditions).group(2)
-        prerequisites = [prereqs_executable]
-
-    return {
-        "raw": raw,
-        "prereqs_executable": prereqs_executable if prereqs_executable != "" else None,
-        "prerequisites": prerequisites if prerequisites != [] else None,
-        "corequisites": corequisites if corequisites != [] else None,
-        "units_required": units_required,
-        "level_for_units_required": level,
-        "core_year": core_year,
-        "other": other if other != [] else None
-    }
+    return process_course_conditions.process_course_conditions(raw, get_course_code(html))
 
 @scrape.return_null_on_failure
 def get_related_courses(html, relation):
@@ -270,9 +128,12 @@ def update_unlocks(courses):
 
     # Update the "unlocks" field for each course object
     for code in courses:
+        if not courses[code]["conditions"]["prerequisites"]:
+            continue
         for prereq in courses[code]["conditions"]["prerequisites"]:
             try:
-                courses[prereq]["unlocks"].append(code)
+                if code not in courses[prereq]["unlocks"]:
+                    courses[prereq]["unlocks"].append(code)
             except:
                 print(f"## {prereq} not in database")
 
@@ -284,35 +145,14 @@ def update_unlocks(courses):
     return courses
 
 def check_contaminated(arr):
-    intersection = [x for x in arr if x in FILTER_COURSE_CODES]
-    if intersection:
-        return True
+    if not arr:
+        return False
 
-    return False
+    intersection = [x for x in arr if x in FILTER_COURSE_CODES]
+    return True if intersection else False
 
 def check_if_need_updating(course):
-    if course["conditions"]["prerequisites"]:
-        flattened = flatten_array(course["conditions"]["prerequisites"])
-        if check_contaminated(flattened):
-            return True
-
-    if course["conditions"]["corequisites"]:
-        flattened = flatten_array(course["conditions"]["corequisites"])
-        if check_contaminated(flattened):
-            return True
-
-    if course["equivalents"]:
-        flattened = flatten_array(course["equivalents"])
-        if check_contaminated(flattened):
-            return True
-
-    if course["exclusions"]:
-        flattened = flatten_array(course["exclusions"])
-        if check_contaminated(flattened):
-            return True
-
-    return False
-
+    return check_contaminated(course["conditions"]["prerequisites"]) or check_contaminated(course["conditions"]["corequisites"]) or check_contaminated(course["equivalents"]) or check_contaminated(course["exclusions"])
 
 course_links = scrape.read_from_file("links_courses.json")
 total = len(course_links)
@@ -331,7 +171,6 @@ for idx, link in enumerate(course_links):
 
     # Get html
     browser.get(link)
-    # browser.get("https://www.handbook.unsw.edu.au/undergraduate/courses/2021/ACTL4001")
     time.sleep(random_int)
     course_html = BeautifulSoup(browser.page_source, "html.parser")
     try:
@@ -348,7 +187,7 @@ for idx, link in enumerate(course_links):
         continue
 
 # Update unlocks
-# COURSES = update_unlocks(COURSES)
+COURSES = update_unlocks(COURSES)
 
 scrape.write_to_file("courses.json", COURSES)
 browser.quit()

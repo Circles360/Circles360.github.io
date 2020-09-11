@@ -10,9 +10,9 @@ for code in COURSES:
     conditions = COURSES[code]["conditions"]["raw"]
     if conditions == None:
         continue
-    if re.search("PHY\d{4}", conditions):
-        incorrect_code = re.search("PHY\d{4}", conditions).group(0)
-        correct_code = "PHYS" + incorrect_code[3:]
-        COURSES[code]["conditions"]["raw"] = COURSES[code]["conditions"]["raw"].replace(incorrect_code, correct_code)
 
-scrape.write_to_file("courses.json", COURSES)
+    conditions = conditions.upper()
+    if "[" in conditions:
+        print(code, conditions)
+
+# scrape.write_to_file("courses.json", COURSES)

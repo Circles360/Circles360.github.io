@@ -702,7 +702,6 @@
             "ACTL3142",
             "ACTL3191",
             "ACTL3192",
-            "ECON1203",
             "ECON3114",
             "ECON3117"
         ]
@@ -1161,8 +1160,12 @@
         "desc": "This course covers the motivations and techniques for risk and capital management in financial institutions, including insurers, reinsurers, superannuation funds, and banks and the major types of risks encountered. Topics covered include: economic and regulatory capital; regulatory frameworks for banks and insurers; quantitative and qualitative issues of measuring and management of market risk, credit risk, interest rate risk, operational risk, liquidity risk and model risk, with particular emphasis on data issues met when quantifying those risks; scenario analysis and stress testing methods. Together with ACTL4301/ACTL5301 it is designed to cover the course topics for the professional actuarial Enterprise Risk Management / CERA qualification",
         "conditions": {
             "raw": "Completed at least two of the following courses ACTL3141, ACTL3162 & ACTL3182.",
-            "prereqs_executable": null,
-            "prerequisites": null,
+            "prereqs_executable": "ACTL3141 && ACTL3162 && ACTL3182",
+            "prerequisites": [
+                "ACTL3141",
+                "ACTL3162",
+                "ACTL3182"
+            ],
             "corequisites": null,
             "units_required": null,
             "level_for_units_required": null,
@@ -1480,8 +1483,10 @@
         "desc": "Honours Research Project A requires students in the BFA (Hons), BMA (Hons) and BDes (Hons) to plan and undertake a research project into an issue, topic or area of art and design, and complete studio work along with appropriate documentation.  You will undertake research within themes, which will be developed within particular classes. The themes will allow you to develop a research project which shows the use of appropriate research methods, a high level of scholarship and the ability to plan and execute a project. Support and supervision will be provided within the theme classes.",
         "conditions": {
             "raw": "Completed 138UOC + ADAD3114",
-            "prereqs_executable": null,
-            "prerequisites": null,
+            "prereqs_executable": "ADAD3114",
+            "prerequisites": [
+                "ADAD3114"
+            ],
             "corequisites": null,
             "units_required": 138,
             "level_for_units_required": null,
@@ -1505,8 +1510,10 @@
         "desc": "Honours Research Project B requires students in the BFA (Hons), BMA (Hons) and BDes (Hons) to plan and undertake a research project into an issue, topic or area of art and design, and complete both studio work and a written component. You will undertake research within themes, which will be developed within particular classes.  The themes will allow you to develop a research project which shows the use of appropriate research methods, a high level of scholarship and the ability to plan and execute a project. Support and supervision will be provided within the theme classes.",
         "conditions": {
             "raw": "Must have completed ADAD4010",
-            "prereqs_executable": null,
-            "prerequisites": null,
+            "prereqs_executable": "ADAD4010",
+            "prerequisites": [
+                "ADAD4010"
+            ],
             "corequisites": null,
             "units_required": null,
             "level_for_units_required": null,
@@ -1924,7 +1931,6 @@
         ],
         "unlocks": [
             "ANAT2451",
-            "ANAT2511",
             "ANAT3121",
             "ANAT3131",
             "ANAT3141",
@@ -1964,7 +1970,6 @@
         "unlocks": [
             "ANAT2111",
             "ANAT2341",
-            "ANAT2511",
             "ANAT3231",
             "PATH2201",
             "SOMS3232"
@@ -2312,8 +2317,7 @@
         "equivalents": null,
         "exclusions": null,
         "unlocks": [
-            "ARCH1102",
-            "ARCH1201"
+            "ARCH1102"
         ]
     },
     "ARCH1102": {
@@ -2341,9 +2345,7 @@
         },
         "equivalents": null,
         "exclusions": null,
-        "unlocks": [
-            "ARCH1201"
-        ]
+        "unlocks": null
     },
     "ARCH1121": {
         "course_name": "Architectural History and Theory 1",
@@ -3364,7 +3366,9 @@
         },
         "equivalents": null,
         "exclusions": null,
-        "unlocks": null
+        "unlocks": [
+            "INST2003"
+        ]
     },
     "ARTS1270": {
         "course_name": "Global History: Exploring the First Globalization, 15th-19th Century",
@@ -7306,12 +7310,8 @@
         "unlocks": [
             "SOCW3009",
             "SOCW4003",
-            "SOCW4003",
-            "SOCW4011",
             "SOCW4011",
             "SOCW4012",
-            "SOCW4012",
-            "SOCW4013",
             "SOCW4013",
             "SOSS3002",
             "SOSS3003"
@@ -9405,8 +9405,10 @@
         "desc": "The French-speaking world represents one of the biggest linguistic zones in the world with an estimated 274 million French-speakers on all 5 continents. In pursuing your study of the language, you are joining a rich, vibrant and diverse community of close to 49 million learners worldwide. This course will be perfect for you if you already have a solid knowledge of French (equivalent to four terms/semesters of studying at university level) and will enable you to not only improve your written and aural comprehension but also to communicate ideas in short essays and discussions. Vocabulary and grammatical structures are presented in the context of culturally relevant issues and your learning will be enhanced with online components designed to make language acquisition faster and more efficient. New technologies are an integral part of the course and you will have the opportunity to experience new approaches to learning a foreign language.",
         "conditions": {
             "raw": "rerequisite:  ARTS2481 or language placement approval",
-            "prereqs_executable": null,
-            "prerequisites": null,
+            "prereqs_executable": "ARTS2481",
+            "prerequisites": [
+                "ARTS2481"
+            ],
             "corequisites": null,
             "units_required": null,
             "level_for_units_required": null,
@@ -15195,10 +15197,7 @@
             "MATH2901"
         ],
         "unlocks": [
-            "GEOS6733",
-            "MATH2801",
-            "MATH2859",
-            "MATH2901"
+            "GEOS6733"
         ]
     },
     "BEES2680": {
@@ -15515,9 +15514,7 @@
         },
         "equivalents": null,
         "exclusions": null,
-        "unlocks": [
-            "BEES2680"
-        ]
+        "unlocks": null
     },
     "BEIL0001": {
         "course_name": "Graphic Design for the Built Environment",
@@ -16262,7 +16259,6 @@
             "PLAN1005"
         ],
         "unlocks": [
-            "CODE1240",
             "LAND2142"
         ]
     },
@@ -16291,11 +16287,7 @@
         "exclusions": [
             "CODE1150"
         ],
-        "unlocks": [
-            "CODE1240",
-            "CODE2121",
-            "CODE2132"
-        ]
+        "unlocks": null
     },
     "BENV1015": {
         "course_name": "History of Design Thinking",
@@ -16936,7 +16928,6 @@
             "BIOC2101"
         ],
         "unlocks": [
-            "BABS3041",
             "BABS3041",
             "FOOD3220",
             "HESC2501",
@@ -18138,8 +18129,7 @@
         "equivalents": null,
         "exclusions": null,
         "unlocks": [
-            "BIOS2123",
-            "CVEN9884"
+            "BIOS2123"
         ]
     },
     "BIOS1501": {
@@ -18475,8 +18465,12 @@
         "desc": "Forty-four percent of Australia is desert and a further 37% is semi-arid grassland or shrub communities. These arid lands contribute much to our unique biodiversity. We examine the history of the formation of the Australian arid lands, their characteristics relative to other arid parts of the world, the evolutionary history of the flora and fauna, adaptations of plants and animals to arid environments, the major arid lands ecosystems and conservation of biodiversity. We apply biological knowledge to issues of land degradation, salinisation of soils, dryland farming, feral animal control and wildlife management for a sustainable future. A field trip to Western NSW is an essential part of the course and students will incur expenses.",
         "conditions": {
             "raw": "6 UOC from BIOS2031 or BIOS2051 or BIOS2061",
-            "prereqs_executable": null,
-            "prerequisites": null,
+            "prereqs_executable": "BIOS2031 || BIOS2051 || BIOS2061",
+            "prerequisites": [
+                "BIOS2031",
+                "BIOS2051",
+                "BIOS2061"
+            ],
             "corequisites": null,
             "units_required": 6,
             "level_for_units_required": null,
@@ -18740,8 +18734,7 @@
         "equivalents": null,
         "exclusions": null,
         "unlocks": [
-            "BLDG1021",
-            "BLDG2021"
+            "BLDG1021"
         ]
     },
     "BLDG1012": {
@@ -18844,9 +18837,7 @@
         },
         "equivalents": null,
         "exclusions": null,
-        "unlocks": [
-            "BLDG2021"
-        ]
+        "unlocks": null
     },
     "BLDG1022": {
         "course_name": "Building Structures",
@@ -18896,9 +18887,7 @@
         },
         "equivalents": null,
         "exclusions": null,
-        "unlocks": [
-            "BLDG3022"
-        ]
+        "unlocks": null
     },
     "BLDG1024": {
         "course_name": "Construction & Property Economics",
@@ -19001,9 +18990,7 @@
         "equivalents": null,
         "exclusions": null,
         "unlocks": [
-            "BLDG3013",
-            "BLDG3021",
-            "BLDG3022"
+            "BLDG3021"
         ]
     },
     "BLDG2021": {
@@ -19081,10 +19068,7 @@
         },
         "equivalents": null,
         "exclusions": null,
-        "unlocks": [
-            "BLDG3013",
-            "BLDG3022"
-        ]
+        "unlocks": null
     },
     "BLDG3011": {
         "course_name": "Organisational & People Management in Construction",
@@ -19498,6 +19482,7 @@
         "equivalents": null,
         "exclusions": null,
         "unlocks": [
+            "CEIC2005",
             "CEIC3001",
             "CEIC3002",
             "CEIC3004",
@@ -19842,7 +19827,6 @@
         "exclusions": null,
         "unlocks": [
             "CEIC4001",
-            "CEIC4001",
             "CEIC4002",
             "CHEN6710"
         ]
@@ -19875,7 +19859,6 @@
         "equivalents": null,
         "exclusions": null,
         "unlocks": [
-            "CEIC4001",
             "CEIC4001",
             "CEIC4002",
             "CHEN6710"
@@ -19910,7 +19893,6 @@
         "equivalents": null,
         "exclusions": null,
         "unlocks": [
-            "CEIC4001",
             "CEIC4001",
             "CEIC4002",
             "CEIC8102",
@@ -20452,9 +20434,7 @@
         },
         "equivalents": null,
         "exclusions": null,
-        "unlocks": [
-            "CHEM2996"
-        ]
+        "unlocks": null
     },
     "CHEM1011": {
         "course_name": "Chemistry 1A: Atoms, Molecules and Energy",
@@ -20494,7 +20474,6 @@
             "BIOC2181",
             "BIOC2201",
             "CEIC6005",
-            "CHEM1001",
             "CHEM1021",
             "CHEM1041",
             "CHEM1061",
@@ -20544,7 +20523,6 @@
             "BIOC2201",
             "CEIC2004",
             "CEIC6005",
-            "CHEM1821",
             "CHEM2041",
             "CHEM2921",
             "INDC2003",
@@ -20586,7 +20564,6 @@
             "BIOC2101",
             "BIOC2181",
             "BIOC2201",
-            "CHEM1001",
             "CHEM1021",
             "CHEM1041",
             "CHEM1061",
@@ -20632,7 +20609,6 @@
             "BIOC2101",
             "BIOC2201",
             "CEIC2004",
-            "CHEM1821",
             "CHEM2041",
             "CHEM2921",
             "INDC2003",
@@ -20672,7 +20648,6 @@
         "unlocks": [
             "BIOC2101",
             "BIOC2201",
-            "CHEM1001",
             "CHEM1061",
             "CHEM2041",
             "CHEM2921"
@@ -20712,7 +20687,6 @@
         "unlocks": [
             "BIOC2101",
             "BIOC2201",
-            "CHEM1821",
             "CHEM2041",
             "CHEM2921"
         ]
@@ -20740,9 +20714,7 @@
         },
         "equivalents": null,
         "exclusions": null,
-        "unlocks": [
-            "CHEM2996"
-        ]
+        "unlocks": null
     },
     "CHEM1811": {
         "course_name": "Engineering Chemistry 1A",
@@ -20872,7 +20844,6 @@
         "exclusions": null,
         "unlocks": [
             "BIOC2181",
-            "CHEM1001",
             "PHSL2501"
         ]
     },
@@ -21055,6 +21026,7 @@
         "exclusions": null,
         "unlocks": [
             "FOOD3010",
+            "FOOD3020",
             "FOOD3901",
             "FOOD4110"
         ]
@@ -21164,9 +21136,7 @@
         },
         "equivalents": null,
         "exclusions": null,
-        "unlocks": [
-            "CHEM3051"
-        ]
+        "unlocks": null
     },
     "CHEM3031": {
         "course_name": "Inorganic Chemistry: Transition Metals and Complexes",
@@ -21646,8 +21616,13 @@
         "desc": "Topics in contemporary Chemistry A is a premier lecture course run by the School of Chemistry. The course runs in term 1 and can be taken as a stand alone course or as a complement to CHEM6702 (the term 2 partner to this course). The course will emphasise some of the latest advances in chemistry, including several topics based on current research directions of the School. Students will study three topics. The topics will vary depending on availability and will differ from, and complement, those offered in the following CHEM6702 course. Students should check with the course coordinator which topics will be offered.",
         "conditions": {
             "raw": "12 UOC of CHEM2011, CHEM2021, CHEM2031, CHEM2839, CHEM2041 & CHEM2828",
-            "prereqs_executable": null,
-            "prerequisites": null,
+            "prereqs_executable": "CHEM2011 && CHEM2021 && CHEM2031 && 0 && CHEM2041 && 0",
+            "prerequisites": [
+                "CHEM2011",
+                "CHEM2021",
+                "CHEM2031",
+                "CHEM2041"
+            ],
             "corequisites": null,
             "units_required": 12,
             "level_for_units_required": null,
@@ -21806,8 +21781,19 @@
         "desc": "This course covers the basic physical principles and processes which govern our atmosphere and its climate. First of all, this course provides an introduction and overview of our atmosphere, the main physical principles that govern its behaviour, and how to apply them to important questions about weather and climate. This shows students an important application of basic physics (and a bit of chemistry), and for Oceanography, Meteorology and Climate students this will provide a necessary foundation upon which later courses will build. For instance, you will learn about the ozone hole, the greenhouse effect, how to use charts to determine the likelihood of storms developing, why deserts occur at certain latitudes, and how to use the Bureau of Meteorology’s radar images on its website to track thunderstorms. This course will also train students in how to apply basic principles of physics and mathematics (including calculus) to real-world problems and situations. This skill will add value to the work you have already invested in learning those principles and will be relevant no matter what later path in life you take.",
         "conditions": {
             "raw": "PHYS1111 or PHYS1121 or PHYS1131 or DPST1023 or PHYS1141 or PHYS1211 and MATH1011 or MATH1031 or MATH1131 or DPST1013 or MATH1141 or MATH1151",
-            "prereqs_executable": null,
-            "prerequisites": null,
+            "prereqs_executable": "PHYS1111 || PHYS1121 || PHYS1131 || 0 || PHYS1141 || PHYS1211 && MATH1011 || MATH1031 || MATH1131 || 0 || MATH1141 || MATH1151",
+            "prerequisites": [
+                "PHYS1111",
+                "PHYS1121",
+                "PHYS1131",
+                "PHYS1141",
+                "PHYS1211",
+                "MATH1011",
+                "MATH1031",
+                "MATH1131",
+                "MATH1141",
+                "MATH1151"
+            ],
             "corequisites": null,
             "units_required": null,
             "level_for_units_required": null,
@@ -22006,9 +21992,7 @@
         },
         "equivalents": null,
         "exclusions": null,
-        "unlocks": [
-            "CODE1234"
-        ]
+        "unlocks": null
     },
     "CODE1234": {
         "course_name": "Urban Data",
@@ -22058,10 +22042,7 @@
         },
         "equivalents": null,
         "exclusions": null,
-        "unlocks": [
-            "CODE2121",
-            "CODE2132"
-        ]
+        "unlocks": null
     },
     "CODE2110": {
         "course_name": "Computational Design Theory 3",
@@ -22134,9 +22115,7 @@
         },
         "equivalents": null,
         "exclusions": null,
-        "unlocks": [
-            "CODE2132"
-        ]
+        "unlocks": null
     },
     "CODE2132": {
         "course_name": "Computational Design Studio IV (Proficiency)",
@@ -22161,10 +22140,7 @@
         },
         "equivalents": null,
         "exclusions": null,
-        "unlocks": [
-            "CODE1234",
-            "CODE2120"
-        ]
+        "unlocks": null
     },
     "CODE2170": {
         "course_name": "Building Information Modelling",
@@ -22189,9 +22165,7 @@
         },
         "equivalents": null,
         "exclusions": null,
-        "unlocks": [
-            "CODE2120"
-        ]
+        "unlocks": null
     },
     "CODE2230": {
         "course_name": "Human Machine Interaction",
@@ -22216,9 +22190,7 @@
         },
         "equivalents": null,
         "exclusions": null,
-        "unlocks": [
-            "CODE3100"
-        ]
+        "unlocks": null
     },
     "CODE2250": {
         "course_name": "Advanced Digital Fabrication",
@@ -22243,9 +22215,7 @@
         },
         "equivalents": null,
         "exclusions": null,
-        "unlocks": [
-            "CODE3100"
-        ]
+        "unlocks": null
     },
     "CODE2256": {
         "course_name": "Rhino and Grasshopper Advanced: Python I",
@@ -22601,8 +22571,10 @@
         "desc": "COMM1100 is the first course in the Bachelor of Commerce and provides students with a rigorous introduction to business decision-making. Taking the perspective of a manager, students learn about economic, corporate responsibility and legal principles to understand what organisational leaders need to consider and what actions they might take when making business decisions.  Fundamental economic principles inform managers to ask and answer questions about how the economy works, and how these principles influence the decisions that individuals and organisations make. Core legal principles guide managers to protect value for owners and other stakeholders, and to protect both managers and organisations from public and private legal actions arising from their decisions. Corporate sustainability principles direct managers to meet the organisation’s responsibilities to a range of stakeholders and help explain why organisations may not always make the best decisions.",
         "conditions": {
             "raw": "Students who have completed ECON1101 are not permitted to enrol. Only available to single and double degree Business School students in Term 1. It will be offered to non-Business School students in Terms 2 and 3.",
-            "prereqs_executable": null,
-            "prerequisites": null,
+            "prereqs_executable": "ECON1101",
+            "prerequisites": [
+                "ECON1101"
+            ],
             "corequisites": null,
             "units_required": null,
             "level_for_units_required": null,
@@ -22614,8 +22586,7 @@
             "ECON1101"
         ],
         "unlocks": [
-            "COMM1150",
-            "COMM1900"
+            "COMM1150"
         ]
     },
     "COMM1110": {
@@ -22735,9 +22706,7 @@
         "exclusions": [
             "ECON1102"
         ],
-        "unlocks": [
-            "COMM1900"
-        ]
+        "unlocks": null
     },
     "COMM1170": {
         "course_name": "Organisational Resources",
@@ -22965,7 +22934,7 @@
         "desc": "This course provides an opportunity for Business School students to apply their academic knowledge and other professional skills to solve real world problems as part of consulting team. Partnering with Industry, students will work with a company mentor and have the opportunity to pitch their solution to a panel of industry experts.",
         "conditions": {
             "raw": "65+ WAM, completed 48 UOC Business courses, Good Standing, completed COMM6000 and have space in degree for course.Its recommended to seek a progression check prior to application. Visit Career Accelerator page on Business School website for more info.",
-            "prereqs_executable": null,
+            "prereqs_executable": "0",
             "prerequisites": null,
             "corequisites": null,
             "units_required": 48,
@@ -23008,8 +22977,6 @@
             "COMM3500",
             "COMM3501",
             "INFS3830",
-            "INFS3830",
-            "INFS3873",
             "INFS3873",
             "MARK3087",
             "MARK3088",
@@ -23031,7 +22998,7 @@
         "desc": "COMM3020 is an experiential and intensive for-credit course. It provides students the unique opportunity to gain international understanding, exposure and workplace skills through studying and working in a specified location overseas.",
         "conditions": {
             "raw": "WAM 65+, minimum 72 UOC, room in degree for this course, good academic standing, completed COMM6000 Career Accelerator: Essentials. This course is by application only. Please visit Business School website for more information",
-            "prereqs_executable": null,
+            "prereqs_executable": "0",
             "prerequisites": null,
             "corequisites": null,
             "units_required": 72,
@@ -23407,6 +23374,7 @@
         "equivalents": null,
         "exclusions": null,
         "unlocks": [
+            "BINF6111",
             "BINF6112",
             "COMP2511",
             "COMP3900",
@@ -23537,6 +23505,7 @@
         ],
         "exclusions": null,
         "unlocks": [
+            "BINF6111",
             "BINF6112",
             "COMP6324",
             "COMP6714",
@@ -25604,7 +25573,7 @@
         "desc": "A detailed coverage of distributed systems, with a particular focus on  operating systems issues: client-server paradigm, remote-procedure call as OS support for client-server; distributed shared memory, distributed memory coherency; distributed file systems; distributed process management, including load sharing and process migration; concurrency  control; fault tolerance, recoverability and distributed transactions; naming; … For more content click the Read more button below.A detailed coverage of distributed systems, with a particular focus on  operating systems issues: client-server paradigm, remote-procedure call as OS support for client-server; distributed shared memory, distributed memory coherency; distributed file systems; distributed process management, including load sharing and process migration; concurrency  control; fault tolerance, recoverability and distributed transactions; naming; industry standards; case studies.Read more",
         "conditions": {
             "raw": "Prerequisite: [COMP3231 or COMP3891] and [COMP3331 or TELE3018].",
-            "prereqs_executable": "COMP3231 || COMP3891 && COMP3331 || 0",
+            "prereqs_executable": "( COMP3231 || COMP3891 ) && ( COMP3331 || 0 )",
             "prerequisites": [
                 "COMP3231",
                 "COMP3891",
@@ -25635,8 +25604,16 @@
         "desc": "Students will complete a small research project under the supervision of an academic member of the school and co-supervision of an industry expert as appropriate",
         "conditions": {
             "raw": "(COMP6441 OR COMP6841) AND (6 UOC from  (COMP6443, COMP6843, COMP6445, COMP6845, COMP6447)) AND enrolled in final term of program",
-            "prereqs_executable": null,
-            "prerequisites": null,
+            "prereqs_executable": "( COMP6441 || COMP6841 ) && ( ( COMP6443 && COMP6843 && COMP6445 && COMP6845 && COMP6447 ) )",
+            "prerequisites": [
+                "COMP6441",
+                "COMP6841",
+                "COMP6443",
+                "COMP6843",
+                "COMP6445",
+                "COMP6845",
+                "COMP6447"
+            ],
             "corequisites": null,
             "units_required": 6,
             "level_for_units_required": null,
@@ -25662,8 +25639,16 @@
         "desc": "Students will complete a large research project under the supervision of an academic member of the school and co-supervision of an industry expert as appropriate",
         "conditions": {
             "raw": "(COMP6441 OR COMP6841) AND (12 UOC from (COMP6443, COMP6843, COMP6445, COMP6845, COMP6447)) AND enrolled in final term of program",
-            "prereqs_executable": null,
-            "prerequisites": null,
+            "prereqs_executable": "( COMP6441 || COMP6841 ) && ( ( COMP6443 && COMP6843 && COMP6445 && COMP6845 && COMP6447 ) )",
+            "prerequisites": [
+                "COMP6441",
+                "COMP6841",
+                "COMP6443",
+                "COMP6843",
+                "COMP6445",
+                "COMP6845",
+                "COMP6447"
+            ],
             "corequisites": null,
             "units_required": 12,
             "level_for_units_required": null,
@@ -26963,6 +26948,7 @@
         "unlocks": [
             "AERO3660",
             "CVEN2303",
+            "CVEN3301",
             "CVEN3303",
             "CVEN3304",
             "ENGG2400",
@@ -27030,12 +27016,7 @@
             "MATH2801"
         ],
         "unlocks": [
-            "CVEN4308",
-            "MATH2089",
-            "MATH2301",
-            "MATH2801",
-            "MATH2859",
-            "MATH2901"
+            "CVEN4308"
         ]
     },
     "CVEN2101": {
@@ -27127,7 +27108,6 @@
             "CVEN2303",
             "CVEN3303",
             "CVEN3304",
-            "CVEN4309",
             "MECH9420",
             "MINE3310"
         ]
@@ -27192,8 +27172,7 @@
         "exclusions": null,
         "unlocks": [
             "CVEN4301",
-            "CVEN4308",
-            "CVEN4309"
+            "CVEN4308"
         ]
     },
     "CVEN2401": {
@@ -27353,10 +27332,7 @@
         },
         "equivalents": null,
         "exclusions": null,
-        "unlocks": [
-            "MATH2089",
-            "MATH2301"
-        ]
+        "unlocks": null
     },
     "CVEN3031": {
         "course_name": "Civil and Environmental Engineering Practice",
@@ -29513,8 +29489,10 @@
         "desc": "Studio Art Practice 2 is the second in a sequence of six core courses that enables you to develop your independent artistic practice. This course builds on Studio Art Practice 1, encouraging you to cultivate your individual creative interests through a series of structured studio classes that connect with the making facilities on campus. This course pays particular attention to the ways that rules, systems, and constraints can allow artists to generate new ideas and artworks. Throughout the course, you are also provided opportunities to develop your artistic vocabularies, and to work in group environments to build peer-to-peer skills. The weekly topics incorporate diverse examples that further help you to develop connections between materials, processes, and ideas, and your understandings of social and cultural contexts for art. Field trips, making activities, and a combination of collaborative and individual tasks, also enable you to explore different ways of working in creative contexts.",
         "conditions": {
             "raw": "Must have completed DART1100",
-            "prereqs_executable": null,
-            "prerequisites": null,
+            "prereqs_executable": "DART1100",
+            "prerequisites": [
+                "DART1100"
+            ],
             "corequisites": null,
             "units_required": null,
             "level_for_units_required": null,
@@ -29917,8 +29895,10 @@
         "desc": "In this course, you will build on your foundational skills and knowledge in Media Arts adding new skills with a particular focus on interaction. You will be introduced to interaction as a key concept and process in contemporary media production and engage with contemporary examples that demonstrate how the media arts landscape is changing with new technologies. You will learn to use industry-leading creative authoring software, and develop creative skills that can be applied in a wide range of interactive contexts from games to advertising to installation art.",
         "conditions": {
             "raw": "Must have completed DART1200",
-            "prereqs_executable": null,
-            "prerequisites": null,
+            "prereqs_executable": "DART1200",
+            "prerequisites": [
+                "DART1200"
+            ],
             "corequisites": null,
             "units_required": null,
             "level_for_units_required": null,
@@ -30146,8 +30126,10 @@
         "desc": "This course introduces you to recent histories and contexts that inform the major themes of contemporary art. As Lynne Segal noted “it is never possible, whatever the image, to isolate it, fix its meaning and predict some inevitable pattern of response, independently from assessing its wider representational context”. This course locates art practices within wider social, cultural, political, and philosophical contexts. You will be introduced to the histories of postmodernism, feminism, globalisation, decolonisation and other major frameworks that continue to shape contemporary art. The course focuses on art practices since the 1960s and examines how the rise of installation, performance and conceptual art have influenced the breakdown of traditional discipline boundaries. You will develop critical visual analysis skills through discursive tutorial activities, academic reading, writing and research tasks, assisting you to situate your own artistic interests within the context of recent key debates in art history and theory.",
         "conditions": {
             "raw": "Must have completed DART1300",
-            "prereqs_executable": null,
-            "prerequisites": null,
+            "prereqs_executable": "DART1300",
+            "prerequisites": [
+                "DART1300"
+            ],
             "corequisites": null,
             "units_required": null,
             "level_for_units_required": null,
@@ -30301,8 +30283,10 @@
         "desc": "This course focuses on the key themes and theories that inform contemporary media arts practice. The course begins with an investigation into media, mediums, and post-media practices. It then examines a range of platforms instrumental to the development of the field and concludes with an investigation of the emergence of data, algorithms, and the relationships between devices and networks within media arts practice. The course adopts a multidisciplinary approach to media arts practice and engages with a diverse range of theoretical positions including media theory, theories of the image, cybernetics, and software studies. Through this course, students are encouraged to develop their critical understandings of the key themes within media arts’ historical development in order to better understand current and emerging developments in the field.",
         "conditions": {
             "raw": "Must have completed DART1350",
-            "prereqs_executable": null,
-            "prerequisites": null,
+            "prereqs_executable": "DART1350",
+            "prerequisites": [
+                "DART1350"
+            ],
             "corequisites": null,
             "units_required": null,
             "level_for_units_required": null,
@@ -30349,8 +30333,10 @@
         "desc": "Studio Art Practice 3 is the third in a sequence of six core courses that enables you to develop your independent artistic practice. This course builds on Studio Art Practice 1-2, and helps you to develop an awareness of how artists respond to a diverse range of influences and contexts through their practices. Through a series of structured studio classes, you are encouraged to consider how the studio provides a site not only for the transformation of materials, but also for the exploration of artistic, social, and cultural contexts. With an emphasis on identifying and responding to spheres of influence, this course allows you to explore new ways of working with materials, processes, and ideas. To support a focus on making, weekly topics provide diverse examples of how other artists have explored social and cultural contexts through material experiments and processes. By encouraging class discussions and collaborative work, this course also allows you to continue to develop your interpersonal and peer-to-peer skills as you advance your independent practice.",
         "conditions": {
             "raw": "Must have completed DART1101",
-            "prereqs_executable": null,
-            "prerequisites": null,
+            "prereqs_executable": "DART1101",
+            "prerequisites": [
+                "DART1101"
+            ],
             "corequisites": null,
             "units_required": null,
             "level_for_units_required": null,
@@ -30376,8 +30362,10 @@
         "desc": "Studio Art Practice 4 is the fourth in a sequence of six core courses that enables you to develop your independent artistic practice. This course builds on Studio Art Practice 1-3, and helps you to extend your individual practice by connecting it with other artistic, social, and cultural contexts. Through a series of structured and semi-structured studio classes, you are encouraged to consider how your work can engage with contexts in and out of the studio. Field trips and fieldwork supplement class discussions and making activities to allow you to explore how artistic processes can move beyond the familiar surroundings of the studio. Weekly topics and diverse examples also help provide frameworks for you to creatively and critically explore assumptions about where and how art is made. With increasing emphasis on class discussions and group critiques, you are supported in developing your studio vocabularies and peer-to-peer skills.",
         "conditions": {
             "raw": "Must have completed DART2100",
-            "prereqs_executable": null,
-            "prerequisites": null,
+            "prereqs_executable": "DART2100",
+            "prerequisites": [
+                "DART2100"
+            ],
             "corequisites": null,
             "units_required": null,
             "level_for_units_required": null,
@@ -30404,8 +30392,10 @@
         "desc": "This course expands your skills and knowledge in drawing by focusing on the imaginative, narrative, abstract, and spatial potentials of the medium. Throughout the course, you will critically engage with historical, contemporary, and culturally diverse drawing systems to explore the medium's capacities for spatial construction and pictorial representation. The course also encourages you to draw influence from other artists’ ideas, techniques, and processes, as well as engage with critical debates about contemporary drawing. By doing so, the course leads to an evolution of your own ideas and assists you in developing an independent studio practice.",
         "conditions": {
             "raw": "Must have completed DART1110",
-            "prereqs_executable": null,
-            "prerequisites": null,
+            "prereqs_executable": "DART1110",
+            "prerequisites": [
+                "DART1110"
+            ],
             "corequisites": null,
             "units_required": null,
             "level_for_units_required": null,
@@ -30460,8 +30450,10 @@
         "desc": "This course builds your skills and knowledge in contemporary photographic practice by introducing you to the principles and techniques of studio lighting for still photography. Throughout the course, you will analyse the relationship between photography, time, and light and learn how to manipulate and modify light in order to create forms, communicate information, and convey meaning in your photographs. In addition to building on your practical and technical skill set, demonstrations and projects will help you to develop an awareness and understanding of the critical frameworks for directorial and constructed photography in contemporary art contexts. You will continue to learn to identify the connections between artists’ ideas, technical skills, and critical debates, allowing you to explore your own ideas as you develop an independent studio-based artistic practice.",
         "conditions": {
             "raw": "Must have completed DART1130",
-            "prereqs_executable": null,
-            "prerequisites": null,
+            "prereqs_executable": "DART1130",
+            "prerequisites": [
+                "DART1130"
+            ],
             "corequisites": null,
             "units_required": null,
             "level_for_units_required": null,
@@ -30487,8 +30479,10 @@
         "desc": "Building on your foundational skills and knowledge in printmaking, this studio-based course will help you to develop intermediate and advanced matrix-based and screen printing techniques. Focusing particularly on the physicality of the print and its relationship with ideas, images and words, the course addresses how printmaking connects with contemporary art contexts where distinctions between disciplines is increasingly fluid. Throughout the course, you will be introduced to acid-based intaglio matrix techniques, multiple pass relief printing methods, and advanced processes involving pin and tab registration in conjunction with a screen vacuum printing table. Practical and creative tasks encourage you to interpret visual concepts, manage printmaking production methods, and facilitate the expression of a personal visual language. In conjunction with this, you will also develop research and analytical skills in relation to graphic history and current trends in printed art.",
         "conditions": {
             "raw": "Must have completed DART1140",
-            "prereqs_executable": null,
-            "prerequisites": null,
+            "prereqs_executable": "DART1140",
+            "prerequisites": [
+                "DART1140"
+            ],
             "corequisites": null,
             "units_required": null,
             "level_for_units_required": null,
@@ -30539,8 +30533,10 @@
         "desc": "This course develops your skills and knowledge in 'expanded' sculptural practice through a focus on the iterative and process-based potentials of the medium. Through studio-based learning, you will develop skills in mould making and casting so that you can experiment with producing artworks in series and multiples, as well as create artworks with multiple components. Key themes and processes such as material transformation, translation, mirroring, inversion, and mimicry will be investigated in relation to broader strategies of installation art and considerations of embodied experience. Within this framework, you will be encouraged to investigate a diverse range of materials and processes so that you can develop deeper understandings of your creative interests in contemporary sculptural practices and contexts.",
         "conditions": {
             "raw": "Must have completed DART1150",
-            "prereqs_executable": null,
-            "prerequisites": null,
+            "prereqs_executable": "DART1150",
+            "prerequisites": [
+                "DART1150"
+            ],
             "corequisites": null,
             "units_required": null,
             "level_for_units_required": null,
@@ -30591,8 +30587,10 @@
         "desc": "This course allows you to further develop your practical, technical, and conceptual skills in animation by extending your engagement with 3D animation. Building on your foundational skills and knowledge in animation practice, this course focuses on 3D animation principles, techniques, and workflows so that you can expand your practice. Throughout the course, you will be encouraged to experiment with 3D animation processes and concepts as you create your own sequences. Particular emphasis is given to performance as a key aspect of 3D animation. You will also focus on planning and iterating your creative work, to help you develop greater awareness of the relationships between form, content, and meaning in animation practice.",
         "conditions": {
             "raw": "Must have completed DART1210",
-            "prereqs_executable": null,
-            "prerequisites": null,
+            "prereqs_executable": "DART1210",
+            "prerequisites": [
+                "DART1210"
+            ],
             "corequisites": null,
             "units_required": null,
             "level_for_units_required": null,
@@ -30666,8 +30664,10 @@
         "desc": "This course allows you to further develop your practical, technical, and conceptual skills in visual effects. Building on your foundational skills and knowledge in visual effects practice, the course focuses on intermediate compositing processes and 3D CGI integration. As you develop your own sequences, you will be encouraged to experiment and to explore pertinent concepts in relation to screen-based practice. Particular emphasis is given to planning and iterating your creative work, as you develop greater awareness of the relationships between form, content, and meaning in visual effects practice.",
         "conditions": {
             "raw": "Must have completed DART1220",
-            "prereqs_executable": null,
-            "prerequisites": null,
+            "prereqs_executable": "DART1220",
+            "prerequisites": [
+                "DART1220"
+            ],
             "corequisites": null,
             "units_required": null,
             "level_for_units_required": null,
@@ -30693,8 +30693,10 @@
         "desc": "This course further enhances your visual effects practice by engaging you with a range of advanced compositing processes and techniques. With additional focus on 3D CGI integration, as well as emerging techniques and processes, the course helps you to advance your practice in visual effects. By emphasising iterative processes and collaborative workflows, the course also supports you to develop creative and professional approaches that can be applied in future projects and contexts. Taking a project from conception to completion, you will continue to explore new ways of working in this dynamic field of practice, assisting you in continuing to expand and develop your media arts practice.",
         "conditions": {
             "raw": "Must have completed DART2220",
-            "prereqs_executable": null,
-            "prerequisites": null,
+            "prereqs_executable": "DART2220",
+            "prerequisites": [
+                "DART2220"
+            ],
             "corequisites": null,
             "units_required": null,
             "level_for_units_required": null,
@@ -30718,8 +30720,10 @@
         "desc": "This course enables you to further develop your creative and technical skills in contemporary moving image practice. Building on your foundational skills and knowledge, this course focuses on developing your understandings of key conventions, forms, genres, and studio production techniques so that you can apply and experiment with them in your own works. By developing deeper understandings of the medium’s visual language, as well as gaining new production skills, this course provides a platform from which to explore a range of creative possibilities in contemporary moving image practice. Particular emphasis is given to planning and delivering a creative work within a team environment to allow you to build collaborative skills necessary for professional practice within the field.",
         "conditions": {
             "raw": "Must have completed DART1230",
-            "prereqs_executable": null,
-            "prerequisites": null,
+            "prereqs_executable": "DART1230",
+            "prerequisites": [
+                "DART1230"
+            ],
             "corequisites": null,
             "units_required": null,
             "level_for_units_required": null,
@@ -30745,8 +30749,10 @@
         "desc": "This course supports you to explore the expanded potentials of contemporary moving image practice. Extending on the skills and knowledge you have developed in moving image practice, this course enables you to push beyond familiar conventions, structures and formats to experiment with new and innovative possibilities. Throughout the course, you will be encouraged to identify and develop your creative interests as a moving image practitioner and to consider how your self-initiated practice is situated within broader contexts. Particular emphasis is given to resolving a final creative work with consideration of how it is communicated to an audience through professional presentation formats.",
         "conditions": {
             "raw": "Must have completed DART2230",
-            "prereqs_executable": null,
-            "prerequisites": null,
+            "prereqs_executable": "DART2230",
+            "prerequisites": [
+                "DART2230"
+            ],
             "corequisites": null,
             "units_required": null,
             "level_for_units_required": null,
@@ -30770,8 +30776,10 @@
         "desc": "This course provides you with opportunities to further develop and explore your sound practice by focussing on the material, performative, and expressive aspects of sound production and instrument building. Throughout the course, you will be encouraged to experiment with materials and technologies for building and modifying sound-generating systems, from analogue and kinetic possibilities to modular synthesisers. In doing so, you will be supported to develop your own creative works exploring the conceptual, formal, and technical potentials of sound as a creative medium.",
         "conditions": {
             "raw": "Must have completed DART1240",
-            "prereqs_executable": null,
-            "prerequisites": null,
+            "prereqs_executable": "DART1240",
+            "prerequisites": [
+                "DART1240"
+            ],
             "corequisites": null,
             "units_required": null,
             "level_for_units_required": null,
@@ -30797,8 +30805,10 @@
         "desc": "This course further enhances your practice in sound by supporting you to conceive, develop, and present a major sound-based creative project. With a focus on more advanced production techniques as well as project planning and iterative creative processes, this course encourages you to consider the potentials of spatialisation, installation, and performance as you develop your practice in sound. Extending beyond the traditional studio or workshop, this course encourages you to think broadly about sound and its relationship with media arts practices and contexts. By working towards a sound project to be experienced by an audience, this course prepares you to take the next steps in continuing to expand and develop your media arts practice.",
         "conditions": {
             "raw": "Must have completed DART2240",
-            "prereqs_executable": null,
-            "prerequisites": null,
+            "prereqs_executable": "DART2240",
+            "prerequisites": [
+                "DART2240"
+            ],
             "corequisites": null,
             "units_required": null,
             "level_for_units_required": null,
@@ -30820,8 +30830,10 @@
         "desc": "This course examines the critical and creative potentials of human-computer interfaces in media arts practice. In this course, you will explore various ways that the 'interface' shapes experiences and opens up new ways of interacting with the world around us. This course seeks to develop your technical skills by using sensing technologies to control audio, visual and/or mechatronic systems. By developing an original interactive artwork, you will also deepen your understandings of embodiment and interaction as creative and conceptual tools in media arts practice.",
         "conditions": {
             "raw": "Must have completed DART1250",
-            "prereqs_executable": null,
-            "prerequisites": null,
+            "prereqs_executable": "DART1250",
+            "prerequisites": [
+                "DART1250"
+            ],
             "corequisites": null,
             "units_required": null,
             "level_for_units_required": null,
@@ -30845,8 +30857,10 @@
         "desc": "This course provides you with the opportunity to conceive and create interactive and responsive media installations that consider audience engagements and spatial environments. By integrating advanced technical skills and conceptual strategies, you will create rich interactive experiences that conceptualise, prototype, and test responsive interfaces and interactivity. This course provides opportunities for you to synthesise and deepen your interactive media practice, as well as contextualise your practice in creative and cultural contexts.",
         "conditions": {
             "raw": "Must have completed DART2250",
-            "prereqs_executable": null,
-            "prerequisites": null,
+            "prereqs_executable": "DART2250",
+            "prerequisites": [
+                "DART2250"
+            ],
             "corequisites": null,
             "units_required": null,
             "level_for_units_required": null,
@@ -31070,8 +31084,10 @@
         "desc": "Studio Art Practice 5 is the fifth in a sequence of six core courses that enables you to develop your independent artistic practice throughout the BFA program. This course builds on Studio Art Practice 1-4, and provides opportunities for you to develop your emerging practice by critically reflecting on your creative journey so far, and planning ahead for the future. With greater emphasis on self-initiated practice, the weekly topics and examples are responsive to the individual and collective needs of the class. Structured and semi-structured studio classes allow you to focus on your specific areas of interest, while also connected with other students in a peer-to-peer studio environment. You are expected to regularly contribute to and lead class discussions and group critiques so as to build the collegiate and critically-engaged studio environment. Professional contexts and standards are also scaffolded into the course so as to help prepare you for future pathways.",
         "conditions": {
             "raw": "Must have completed DART2101",
-            "prereqs_executable": null,
-            "prerequisites": null,
+            "prereqs_executable": "DART2101",
+            "prerequisites": [
+                "DART2101"
+            ],
             "corequisites": null,
             "units_required": null,
             "level_for_units_required": null,
@@ -31097,8 +31113,10 @@
         "desc": "Studio Art Practice 6 is the sixth in a sequence of six core courses that enables you to develop your independent artistic practice. This course builds on Studio Art Practice 1-5, and provides opportunities for you to deepen your self-initiated work through practice-led research. As it is the final course in the sequence, you are encouraged to follow the materials, processes, and ideas that are fundamental to your practice, and to cultivate a deep engagement with your creative interests. Through structured and semi-structured studio classes, you are given opportunities to plan, develop, and resolve your works in peer-to-peer contexts. You are expected to regularly contribute to and lead class discussions and group critiques. With a particular focus on the discourses that shape contemporary art practice, the weekly topics and examples provided are responsive to the individual and collective needs of the class. Professional contexts and standards are also scaffolded into the course so as to help prepare you for future pathways.",
         "conditions": {
             "raw": "Must have completed DART3100",
-            "prereqs_executable": null,
-            "prerequisites": null,
+            "prereqs_executable": "DART3100",
+            "prerequisites": [
+                "DART3100"
+            ],
             "corequisites": null,
             "units_required": null,
             "level_for_units_required": null,
@@ -31123,8 +31141,10 @@
         "desc": "This course focuses on expanding the artistic strategies, concepts, and vocabulary of your drawing practice in the context of contemporary art. By making and learning in the studio, you will be encouraged to explore new ideas, materials, processes, and technologies as well as consolidate your existing skills and knowledge in drawing. A significant focus of this course is planning, developing, and completing a self-initiated body of work that demonstrates an advanced, independent enquiry into drawing. To assist you in doing this, the course offers diverse conceptual and thematic frameworks, and concentrates on identifying resonances with other artists’ ideas, techniques, and processes.",
         "conditions": {
             "raw": "Must have completed DART2110",
-            "prereqs_executable": null,
-            "prerequisites": null,
+            "prereqs_executable": "DART2110",
+            "prerequisites": [
+                "DART2110"
+            ],
             "corequisites": null,
             "units_required": null,
             "level_for_units_required": null,
@@ -31149,8 +31169,10 @@
         "desc": "This course focuses on advancing your self-initiated painting practice in the context of contemporary art. Throughout this course, you will develop new work in the studio as well as undertake contextual research and engage in supportive peer-to-peer discussions, helping you to develop a critically informed painting practice. There is a particular focus throughout the course on considering new developments in painting, as well as how contemporary painting is informed by a range of technological, social, and cultural contexts. By engaging with a diverse range of painting practices, exhibitions, and institutions, this course will also help you to broaden your understandings of painting in professional contemporary art contexts both locally and globally.",
         "conditions": {
             "raw": "Must have completed DART2120",
-            "prereqs_executable": null,
-            "prerequisites": null,
+            "prereqs_executable": "DART2120",
+            "prerequisites": [
+                "DART2120"
+            ],
             "corequisites": null,
             "units_required": null,
             "level_for_units_required": null,
@@ -31174,8 +31196,10 @@
         "desc": "This course allows you to expand and deepen your photographic practice in contemporary art contexts. Throughout this course, you will explore how contemporary practices and conditions of photography are being shaped by new digital and time-based technologies and a range of related social, cultural, and artistic contexts. You will also develop new technical skills by engaging with advanced photographic techniques. Through experimentation in the studio, as well as supportive group discussions and feedback sessions, you will not only broaden your understandings of the key ideas and practices informing contemporary photography, but also develop your own critically informed, self-initiated photographic practice.",
         "conditions": {
             "raw": "Must have completed DART2130",
-            "prereqs_executable": null,
-            "prerequisites": null,
+            "prereqs_executable": "DART2130",
+            "prerequisites": [
+                "DART2130"
+            ],
             "corequisites": null,
             "units_required": null,
             "level_for_units_required": null,
@@ -31199,8 +31223,10 @@
         "desc": "This course seeks to reinforce and extend your theoretical, conceptual, technical, and analytical skills in contemporary printmaking. Through practice-led research and an engagement with advanced studio processes, you will develop new artworks and insights in your printmaking practice. The course enables you to develop a strong framework for your self-initiated practice by focusing on individually conceived and managed projects that are supported by lectures, demonstrations, consultations, and group critiques. The course also includes opportunities to investigate approaches in content development and technically analyse examples of printed art.",
         "conditions": {
             "raw": "Must have completed DART2140",
-            "prereqs_executable": null,
-            "prerequisites": null,
+            "prereqs_executable": "DART2140",
+            "prerequisites": [
+                "DART2140"
+            ],
             "corequisites": null,
             "units_required": null,
             "level_for_units_required": null,
@@ -31224,8 +31250,10 @@
         "desc": "This course allows you to extend your sculptural practice by creating a new body of work ready for exhibition. With a specific focus on resolving your artworks for public display, this course focuses on the ways that site, venue, spatial relations, and audience impact your work as it emerges from the studio. While your work will be self-initiated, you will also be working in peer-oriented environments as you plan and prepare for an exhibition outcome. Through this combination, you will have opportunities to integrate professional practice principles into your work as you plan, install, and document your artwork for exhibition contexts.",
         "conditions": {
             "raw": "Must have completed DART2150",
-            "prereqs_executable": null,
-            "prerequisites": null,
+            "prereqs_executable": "DART2150",
+            "prerequisites": [
+                "DART2150"
+            ],
             "corequisites": null,
             "units_required": null,
             "level_for_units_required": null,
@@ -31276,8 +31304,10 @@
         "desc": "This course enables you to extend your media arts practice by creating a resolved major self-initiated work. This course builds on your previous studies in Media Arts and provides opportunities for you to deepen your skills and knowledge by integrating practice-led research principles. As a capstone experience, you are encouraged to explore the ideas, techniques, and processes that are important to your media arts practice. With a particular focus on resolving the conceptual, formal, and technical concerns of your work, this course helps prepare you for future learning and professional contexts.",
         "conditions": {
             "raw": "Must have completed DART3200",
-            "prereqs_executable": null,
-            "prerequisites": null,
+            "prereqs_executable": "DART3200",
+            "prerequisites": [
+                "DART3200"
+            ],
             "corequisites": null,
             "units_required": null,
             "level_for_units_required": null,
@@ -31602,8 +31632,10 @@
         "desc": "Fine Arts Honours Research Project 2 is a 12 UOC core course in the Fine Arts Honours program. Taken across two terms for a total of 24 UOC, the course is designed to support you in developing and completing your Honours research project. In this course, you will continue to build on your practice-led research project as established in DART4101. Formative tasks in T2 are designed to support you to resolve your research outcomes through a body of creative work and a thesis that are submitted in T3.This course is taught in a studio context, emphasising contemporary studio practice as a key mode of investigation and discovery. The studio also operates as a collegiate and peer-oriented environment, fostering a supportive and rigorous culture of creative practice, critical discussion, and exchange.",
         "conditions": {
             "raw": "Must have completed DART4101",
-            "prereqs_executable": null,
-            "prerequisites": null,
+            "prereqs_executable": "DART4101",
+            "prerequisites": [
+                "DART4101"
+            ],
             "corequisites": null,
             "units_required": null,
             "level_for_units_required": null,
@@ -31655,8 +31687,10 @@
         "desc": "Media Arts Honours Research Project 2 is a 12 UOC core course in the Media Arts Honours program. Taken across two terms for a total of 24 UOC, the course is designed to support you in developing and completing your Honours research project. In this course, you will continue to build on your practice-led research project as established in DART4201. Formative tasks in T2 are designed to support you to resolve your research outcomes through a body of creative work and a thesis that are submitted in T3.",
         "conditions": {
             "raw": "Must have completed DART4201",
-            "prereqs_executable": null,
-            "prerequisites": null,
+            "prereqs_executable": "DART4201",
+            "prerequisites": [
+                "DART4201"
+            ],
             "corequisites": null,
             "units_required": null,
             "level_for_units_required": null,
@@ -31810,8 +31844,10 @@
         "desc": "Design Studio 2 builds on the fundamental principles and processes of design as learnt in Design Studio 1. You will be introduced to a range of methods, purposes and application of design communication. You will develop skills in engagement, collaboration and presentation to a range of stakeholders and contexts.",
         "conditions": {
             "raw": "Must have completed DDES1100",
-            "prereqs_executable": null,
-            "prerequisites": null,
+            "prereqs_executable": "DDES1100",
+            "prerequisites": [
+                "DDES1100"
+            ],
             "corequisites": null,
             "units_required": null,
             "level_for_units_required": null,
@@ -32042,8 +32078,10 @@
         "desc": "In this course, you will investigate the central question, “what is design?” and consider key theories that will explore this question from a number of different historical and contemporary perspectives. Using the knowledge and research and analysis skills developed in the introductory Design History and Theory course, you will further investigate these theories in relation to key contexts in design such as globalisation, sustainability, ethics and innovation. Through a series of lectures and tutorials, you will develop and implement the tools required to critically reflect upon and communicate your practice in nuanced and effective ways. At the conclusion of this course, you will understand the relevance and purpose of design theory to your own design practice.",
         "conditions": {
             "raw": "Must have completed DDES1200",
-            "prereqs_executable": null,
-            "prerequisites": null,
+            "prereqs_executable": "DDES1200",
+            "prerequisites": [
+                "DDES1200"
+            ],
             "corequisites": null,
             "units_required": null,
             "level_for_units_required": null,
@@ -32092,8 +32130,10 @@
         "desc": "This course is an agile, industry focussed project that provides a platform for collaboration across real-world industry and stakeholder project possibilities. Collaboration and followship are the key drivers of the design process. You will experience the dynamics of individual achievement and contribution in a collaborative outcome.",
         "conditions": {
             "raw": "Must have completed DDES1101",
-            "prereqs_executable": null,
-            "prerequisites": null,
+            "prereqs_executable": "DDES1101",
+            "prerequisites": [
+                "DDES1101"
+            ],
             "corequisites": null,
             "units_required": null,
             "level_for_units_required": null,
@@ -32168,8 +32208,10 @@
         "desc": "This intermediate course within the 3D Visualisation disciplinary studio will help you explore 3D computer visualisations through the creation of a digital 3D environment. Building on the skills already acquired in the introductory course to create a 3D virtual asset in isolation, you will now create multiple assets before laying them out in a complete, fully realised virtual scene. To successfully complete this process, you will need to consider how assets engage and relate to each other and the space they inhabit. The creation of the virtual scene will be conceptually driven and supported by theoretical research. Engaging studio workshops will explore the full Computer-Generated Imagery (CGI) workflow with a particular emphasis on CGI lighting, rendering techniques and clear art direction. This course will provide you with an increased ability to apply the knowledge and skills that are used in the field of computer modelling and Computer-Generated visualisation to the creation of your own 3D virtual worlds.",
         "conditions": {
             "raw": "Must have completed DDES1110",
-            "prereqs_executable": null,
-            "prerequisites": null,
+            "prereqs_executable": "DDES1110",
+            "prerequisites": [
+                "DDES1110"
+            ],
             "corequisites": null,
             "units_required": null,
             "level_for_units_required": null,
@@ -32196,8 +32238,10 @@
         "desc": "This advanced course within the 3D Visualisation disciplinary studio will provide you with the opportunity to immerse yourself in the field of computer modelling and computer-generated visualisation and refine your knowledge, methods and skills. Expanding in complexity and drawing on the skills already acquired in the preceding courses, you will design and create an experiential, explorable and 3D virtual world. Scholarly research will provide an informed foundation for the creation of a sophisticated, conceptually focussed virtual environment. Engaging studio workshops will explore the full computer-generated imagery workflow with a particular emphasis on how 3D assets engage and relate to each other in a realtime platform, low-poly modelling and a high level of art direction in the creation of your own virtual world.",
         "conditions": {
             "raw": "Must have completed DDES2110",
-            "prereqs_executable": null,
-            "prerequisites": null,
+            "prereqs_executable": "DDES2110",
+            "prerequisites": [
+                "DDES2110"
+            ],
             "corequisites": null,
             "units_required": null,
             "level_for_units_required": null,
@@ -32222,8 +32266,10 @@
         "desc": "This intermediate course within the Object disciplinary studio will introduce you to the contextual and relational significance of objects. Building on fundamental thinking-through-making skills acquired in the introductory course, you will focus on the context of culture and place to examine social practices relating to dining rituals. Through this contextual lens, you will learn how to develop an understanding of the role of objects in facilitating social and meaningful interactions. You will design and make prototypes by utilising digital technologies and craft processes. Central to the processes learned is the potential for objects to be produced as multiples using casting and 3D printing methods.",
         "conditions": {
             "raw": "Must have completed DDES1120",
-            "prereqs_executable": null,
-            "prerequisites": null,
+            "prereqs_executable": "DDES1120",
+            "prerequisites": [
+                "DDES1120"
+            ],
             "corequisites": null,
             "units_required": null,
             "level_for_units_required": null,
@@ -32250,8 +32296,10 @@
         "desc": "This advanced course within the Object disciplinary studio will explore the impact of human activity on the natural world through objects and material-led enquiries. You will build on the handmaking and digital skills acquired in the introductory and intermediate Object courses and knowledge of materiality and social contexts to engage with and critique ideas relating to ecology and design-nature relationships. Informed by ecological frameworks such as the issue of material resources or biophilic design influences you will develop material experimentation and prototypes to gain greater insight of our role as responsible designers and agents of change.",
         "conditions": {
             "raw": "Must have completed DDES2120",
-            "prereqs_executable": null,
-            "prerequisites": null,
+            "prereqs_executable": "DDES2120",
+            "prerequisites": [
+                "DDES2120"
+            ],
             "corequisites": null,
             "units_required": null,
             "level_for_units_required": null,
@@ -32276,8 +32324,10 @@
         "desc": "This intermediate course within the Experience disciplinary studio will explore the possibilities of exhibition spaces as active sites for participation and collaboration. Building on foundational knowledge and skills acquired in the introductory course, you will explore the cultures of display that influence exhibition practice. It investigates strategies employed by exhibition designers to frame objects and ideas in order to communicate their meaning to a diverse participating public. More than this, you will be encouraged as a designer to be an agent of change – provoking active engagement with collections and cultural spaces. The studio-based classes will explore ideas and theories for designing for museums and galleries. You will develop a creative inquiry-based around narrative composition and sequencing of spaces, and will learn about the integration of mediated experiences and technologies as an important element in contemporary exhibition practice. Adopting an iterative and collaborative methodology you will propose display strategies and prototype designs with consideration of different materials and constructions methods, that can ultimately reframe a visitor’s experience of ideas, objects and spaces.",
         "conditions": {
             "raw": "Must have completed DDES1130",
-            "prereqs_executable": null,
-            "prerequisites": null,
+            "prereqs_executable": "DDES1130",
+            "prerequisites": [
+                "DDES1130"
+            ],
             "corequisites": null,
             "units_required": null,
             "level_for_units_required": null,
@@ -32304,8 +32354,10 @@
         "desc": "This advanced course within the Experience disciplinary studio will explore the relationships between people, space, spectacle and culture. Focusing on events as rich, multifaceted sites of experience, you will develop and test ideas and conditions for heightened and collective experiences.",
         "conditions": {
             "raw": "Must have completed DDES2130",
-            "prereqs_executable": null,
-            "prerequisites": null,
+            "prereqs_executable": "DDES2130",
+            "prerequisites": [
+                "DDES2130"
+            ],
             "corequisites": null,
             "units_required": null,
             "level_for_units_required": null,
@@ -32330,8 +32382,10 @@
         "desc": "This intermediate course within the Graphics disciplinary studio will introduce you to research-based responses to developing a visual identity in the context of a broader understanding of brand design. You will build on the typography and image fundamentals acquired in the introductory course, and develop an understanding of how to apply strategic thinking to your design process when developing visual identities and sophisticated graphic systems across a range of media. Your approaches will be framed by theory, as well as a consideration of end-users, naming and tone of voice, and practical issues such as copyright. Your knowledge of visual identity will be further advanced by applying graphic solutions to three-dimensional forms, as well as developing an understanding of issues such as materiality, life-cycle analysis, and responsible practices such as sustainability and ethics in the context of graphic design.",
         "conditions": {
             "raw": "Must have completed DDES1140",
-            "prereqs_executable": null,
-            "prerequisites": null,
+            "prereqs_executable": "DDES1140",
+            "prerequisites": [
+                "DDES1140"
+            ],
             "corequisites": null,
             "units_required": null,
             "level_for_units_required": null,
@@ -32358,8 +32412,10 @@
         "desc": "This advanced course within the Graphics disciplinary studio will extend the skills you have developed in the introductory and intermediate courses into three-dimensional places and spaces, with an emphasis on research and critical thinking. You will develop interpretive narratives through graphic interventions, alongside strategies for the installation of your responses. Expressed through a design proposition and subsequent development of a graphic design project, we will continue our established disciplinary focus on typographic skills alongside a broad range of image making techniques. By the end of the course, you will have a strong portfolio piece that reflects your emerging graphic design voice.",
         "conditions": {
             "raw": "Must have completed DDES2140",
-            "prereqs_executable": null,
-            "prerequisites": null,
+            "prereqs_executable": "DDES2140",
+            "prerequisites": [
+                "DDES2140"
+            ],
             "corequisites": null,
             "units_required": null,
             "level_for_units_required": null,
@@ -32384,8 +32440,10 @@
         "desc": "This intermediate course within the Interaction disciplinary studio will introduce you to the formal methodologies of interaction design. Building on the principles and practices acquired in the introductory course, a holistic, situated approach to technology will be used as a framework to look at how new designs work and are used in industry. You will examine design probes, need finding and user evaluation studies, and investigate case studies to understand how specific companies and individual designers innovate, adapt and respond to multiple constraints.  Through the implementation of iterative design processes such as the interaction design lifecycle model, you will learn to evaluate the feasibility of projects and adapt project goals.  Beginning with identifying users’ needs, design development, prototyping, and testing of new designs, your work will culminate in a working prototype, communicated through text, video and/or interactive demonstrations to clearly explain the design concept.",
         "conditions": {
             "raw": "Must have completed DDES1150",
-            "prereqs_executable": null,
-            "prerequisites": null,
+            "prereqs_executable": "DDES1150",
+            "prerequisites": [
+                "DDES1150"
+            ],
             "corequisites": null,
             "units_required": null,
             "level_for_units_required": null,
@@ -32412,8 +32470,10 @@
         "desc": "This advanced course within the Interaction disciplinary studio will introduce you to some of the state-of-the-art emerging applications in interaction design. Throughout the course, you will examine the importance of human physical, social and cognitive abilities to inform the design process. The course focuses on the key emerging technological areas that are transforming current interaction design practice, including artificial intelligence, conversational interfaces, robotic interfaces, and mixed reality environments.",
         "conditions": {
             "raw": "Must have completed DDES2150",
-            "prereqs_executable": null,
-            "prerequisites": null,
+            "prereqs_executable": "DDES2150",
+            "prerequisites": [
+                "DDES2150"
+            ],
             "corequisites": null,
             "units_required": null,
             "level_for_units_required": null,
@@ -32438,8 +32498,10 @@
         "desc": "This intermediate course within the Textiles disciplinary studio involves experimentation, research and design development for innovative and experimental applications of textile designs. Experimentation and investigation are central to creating original, innovative and contemporary textile designs, and this course allows you to develop your own experimental approach to your textile design practice. By building on textile fundamentals acquired in the introductory course, you will also develop digital textile design and diverse making techniques, underpinned by more advanced design development processes. Working with industry standard briefs will allow you to take into consideration the requirements of designing for a commercial organisation. In addition, the course traces the ways in which designs can be translated into sustainable outcomes for production by hand, machine or digitally. This commitment to sustainability and social engagement in the course enables you to analyse contemporary issues, understand a designer’s responsibility, and know how to respond to professional design briefs responsibly, ethically and with cultural acknowledgement.",
         "conditions": {
             "raw": "Must have completed DDES1160",
-            "prereqs_executable": null,
-            "prerequisites": null,
+            "prereqs_executable": "DDES1160",
+            "prerequisites": [
+                "DDES1160"
+            ],
             "corequisites": null,
             "units_required": null,
             "level_for_units_required": null,
@@ -32466,8 +32528,10 @@
         "desc": "This advanced course within the Textiles disciplinary studio will encourage you to actively engage with textile materials, processes and technologies to create novel responses to global and/or local issues or developments. Building on the skills already acquired in the introductory and intermediate courses, you will now identify a problem, issue or opportunity to contextualise your development of textiles. Working through an iterative design process, you will produce innovative design solutions that demonstrate a strong emphasis on personal expression and experimentation both in the use of design stimulus, materials and techniques. Studio sessions will encourage you to expand your aesthetic awareness and take unconventional approaches to textiles practice for fashion, interior, exterior or product contexts.",
         "conditions": {
             "raw": "Must have completed DDES2160",
-            "prereqs_executable": null,
-            "prerequisites": null,
+            "prereqs_executable": "DDES2160",
+            "prerequisites": [
+                "DDES2160"
+            ],
             "corequisites": null,
             "units_required": null,
             "level_for_units_required": null,
@@ -32514,8 +32578,10 @@
         "desc": "This course is the third of four courses within the Design History and Theory core. It builds on the knowledge and skills that you have acquired during the preceding courses. During the course you will explore the ideas of positions in design and in order to do so will examine issues of personal and professional identities through the lens of race, gender, nationality. Through a series of engaging lectures and tutorials, you will discuss how the modes of designing have changed through time and ask the question “what does it mean to be a designer?” By engaging with contemporary design theories and the histories that have informed them, you will analyse the notion of design agency in the evolution of social, economic, technological and political contexts, both past and present.",
         "conditions": {
             "raw": "Must have complete DDES1201",
-            "prereqs_executable": null,
-            "prerequisites": null,
+            "prereqs_executable": "DDES1201",
+            "prerequisites": [
+                "DDES1201"
+            ],
             "corequisites": null,
             "units_required": null,
             "level_for_units_required": null,
@@ -32568,8 +32634,10 @@
         "desc": "This culminating capstone studio project will extend from research and development undertaken in Design Studio 5 through to the translation of research findings into realised design solutions in the form of a major project. The completed project will demonstrate the synthesis of previously learned disciplinary specialisations, theory, research, and practice studies with reference to more than one studio area in the finished project. You will be required to develop a rigorous and legible design process, investigation of additional areas of knowledge, to demonstrate design management of the project. You will show leadership in the social, ethical and environmental impact of your design solution and apply your skills to clear documentation and presentation of an integrated design outcome.",
         "conditions": {
             "raw": "Must have completed DDES3100",
-            "prereqs_executable": null,
-            "prerequisites": null,
+            "prereqs_executable": "DDES3100",
+            "prerequisites": [
+                "DDES3100"
+            ],
             "corequisites": null,
             "units_required": null,
             "level_for_units_required": null,
@@ -32616,8 +32684,10 @@
         "desc": "This is the fourth and final course in the Design History and Theory core of the Bachelor of Design program. In this course, you will apply the knowledge and skills you have gained in Design History & Theory 1, 2 and 3 across national design histories, global design contexts, design positionality and broader contemporary social and cultural challenges to situate your practice within the expanded field of creative and cultural industries. This course will introduce you to the diverse views, ideas and practices of contemporary design stakeholders who contribute to making and thinking design in an expanded field including journalists, curators, managers, policy makers, researchers, educators, heritage and conservation specialists. The course will help you better understand how design cultures have evolved and critically evaluate a broad spectrum of positions that design stakeholders have occupied in the twentieth and twenty-first centuries. At the successful completion of this course, you will be able to identify diverse and alternative career pathways to engage with and through design and effectively communicate your design position, values and philosophy to the wider world.",
         "conditions": {
             "raw": "Must have completed DDES2200",
-            "prereqs_executable": null,
-            "prerequisites": null,
+            "prereqs_executable": "DDES2200",
+            "prerequisites": [
+                "DDES2200"
+            ],
             "corequisites": null,
             "units_required": null,
             "level_for_units_required": null,
@@ -32669,8 +32739,10 @@
         "desc": "Design Honours Research Project 2 is the final of two Honours research courses designed to support you in developing and delivering your self-guided Honours research project. In this course, you will continue to critically develop your theoretical and/or practice-led research project realised in DDES4101 Design Honours Research Project 1, in relation to both your design practice, and your scholarly research framework and written dissertation. You will then resolve your research project into a sophisticated, professional design outcome supported by a written thesis. This course is taught in a studio context, emphasising contemporary design practice as a key mode of investigation and discovery and alignment to industry. The studio also operates as a collegiate and peer-oriented environment, run over two consecutive terms, so as to allow time for experimentation, development and exploration ahead of the final outcomes that constitute the majority of your Honours grade. The studio course fosters a supportive and rigorous culture of creative practice, critical discussion, and exchange.",
         "conditions": {
             "raw": "Must have completed DDES4101",
-            "prereqs_executable": null,
-            "prerequisites": null,
+            "prereqs_executable": "DDES4101",
+            "prerequisites": [
+                "DDES4101"
+            ],
             "corequisites": null,
             "units_required": null,
             "level_for_units_required": null,
@@ -32903,8 +32975,7 @@
         "unlocks": [
             "ECON2101",
             "ECON2112",
-            "ECON2403",
-            "MATH1011"
+            "ECON2403"
         ]
     },
     "ECON1203": {
@@ -33874,8 +33945,12 @@
         "desc": "The course provides unifying methods for estimation, inference and computation for a variety of single and multiple equation econometric models and gives some theoretical justification for the methods. The course emphasises the links between the theory for econometric models, the computations required for inference, and the application of the models to real examples. Being equipped with this knowledge will enable students to conduct a very broad range of relatively sophisticated econometric modelling tasks.",
         "conditions": {
             "raw": "ECON3209 or ECON2215 or MATH2801 or MATH2901",
-            "prereqs_executable": null,
-            "prerequisites": null,
+            "prereqs_executable": "ECON3209 || 0 || MATH2801 || MATH2901",
+            "prerequisites": [
+                "ECON3209",
+                "MATH2801",
+                "MATH2901"
+            ],
             "corequisites": null,
             "units_required": null,
             "level_for_units_required": null,
@@ -33977,8 +34052,7 @@
             "MATH2801"
         ],
         "unlocks": [
-            "ECON3203",
-            "MATH2089"
+            "ECON3203"
         ]
     },
     "ECON3210": {
@@ -38805,6 +38879,7 @@
         "unlocks": [
             "AERO3660",
             "CVEN2303",
+            "CVEN3301",
             "CVEN3303",
             "CVEN3304",
             "ENGG2400",
@@ -38906,7 +38981,6 @@
             "CVEN2303",
             "CVEN3303",
             "CVEN3304",
-            "MECH3110",
             "MECH9420",
             "MINE3310",
             "MMAN3400"
@@ -39436,7 +39510,6 @@
         "equivalents": null,
         "exclusions": null,
         "unlocks": [
-            "FINS2622",
             "FINS2643",
             "FINS3616",
             "FINS3625",
@@ -40569,7 +40642,6 @@
         "exclusions": null,
         "unlocks": [
             "FOOD3030",
-            "FOOD3801",
             "FOOD3801"
         ]
     },
@@ -41470,11 +41542,7 @@
             "LAWS3523"
         ],
         "exclusions": null,
-        "unlocks": [
-            "LAWS3021",
-            "LAWS3046",
-            "LAWS3248"
-        ]
+        "unlocks": null
     },
     "GENL2456": {
         "course_name": "Innovation Law and Policy",
@@ -42365,8 +42433,12 @@
         "desc": "Most regions of the Earth's crust have been deformed over many millions of years, resulting in a complex three dimensional form. This course seeks to unravel this history through use of remotely sensed geophysical imagery and field mapping data. This course will demonstrate how large scale regional structures are inferred … For more content click the Read more button below.Most regions of the Earth's crust have been deformed over many millions of years, resulting in a complex three dimensional form. This course seeks to unravel this history through use of remotely sensed geophysical imagery and field mapping data. This course will demonstrate how large scale regional structures are inferred or measures from surface outcrop mapping. Note: A five day field mapping camp is an essential part of the course and will involve some cost to students.Read more",
         "conditions": {
             "raw": "(GEOS1111 or GEOS1211) and GEOS2131",
-            "prereqs_executable": null,
-            "prerequisites": null,
+            "prereqs_executable": "( GEOS1111 || GEOS1211 ) && GEOS2131",
+            "prerequisites": [
+                "GEOS1111",
+                "GEOS1211",
+                "GEOS2131"
+            ],
             "corequisites": null,
             "units_required": null,
             "level_for_units_required": null,
@@ -42710,9 +42782,7 @@
         },
         "equivalents": null,
         "exclusions": null,
-        "unlocks": [
-            "GMAT3100"
-        ]
+        "unlocks": null
     },
     "GMAT2130": {
         "course_name": "Integrating Surveying Techniques",
@@ -42792,11 +42862,7 @@
         "equivalents": null,
         "exclusions": null,
         "unlocks": [
-            "GMAT2120",
-            "GMAT2130",
-            "GMAT3150",
-            "GMAT3420",
-            "GMAT4400"
+            "GMAT2120"
         ]
     },
     "GMAT2550": {
@@ -42825,11 +42891,7 @@
         },
         "equivalents": null,
         "exclusions": null,
-        "unlocks": [
-            "GMAT3100",
-            "GMAT3150",
-            "GMAT3700"
-        ]
+        "unlocks": null
     },
     "GMAT2700": {
         "course_name": "Foundations of Geodesy & Geospatial Ref Frames",
@@ -42859,9 +42921,7 @@
             "GMAT9205"
         ],
         "unlocks": [
-            "GMAT2120",
-            "GMAT2130",
-            "GMAT3700"
+            "GMAT2120"
         ]
     },
     "GMAT3100": {
@@ -42966,9 +43026,7 @@
         },
         "equivalents": null,
         "exclusions": null,
-        "unlocks": [
-            "GMAT4220"
-        ]
+        "unlocks": null
     },
     "GMAT3420": {
         "course_name": "Cadastral Surveying and Land Law",
@@ -43418,8 +43476,7 @@
         "equivalents": null,
         "exclusions": null,
         "unlocks": [
-            "ANAT2111",
-            "HESC1511"
+            "ANAT2111"
         ]
     },
     "HESC1511": {
@@ -44999,12 +45056,8 @@
         "unlocks": [
             "INFS2603",
             "INFS2609",
-            "INFS2621",
-            "INFS2631",
             "INFS2848",
-            "INFS3603",
-            "INFS3617",
-            "INFS3632"
+            "INFS3603"
         ]
     },
     "INFS1603": {
@@ -45379,10 +45432,6 @@
         ],
         "unlocks": [
             "INFS3830",
-            "INFS3830",
-            "INFS3830",
-            "INFS3873",
-            "INFS3873",
             "INFS3873"
         ]
     },
@@ -45875,7 +45924,8 @@
         "equivalents": null,
         "exclusions": null,
         "unlocks": [
-            "INST1006"
+            "INST1006",
+            "INST2003"
         ]
     },
     "INST1006": {
@@ -47153,8 +47203,7 @@
         "equivalents": null,
         "exclusions": null,
         "unlocks": [
-            "LAND2301",
-            "LAND2311"
+            "LAND2301"
         ]
     },
     "LAND2251": {
@@ -47237,10 +47286,7 @@
         },
         "equivalents": null,
         "exclusions": null,
-        "unlocks": [
-            "LAND1322",
-            "LAND2311"
-        ]
+        "unlocks": null
     },
     "LAND2301": {
         "course_name": "Landscape Studio 5 Site Planning: Landscape Systems and Performance",
@@ -47955,6 +48001,7 @@
         "unlocks": [
             "LAWS2150",
             "LAWS3141",
+            "LAWS3281",
             "LAWS3282",
             "LAWS3302"
         ]
@@ -48040,6 +48087,7 @@
         ],
         "unlocks": [
             "LAWS3060",
+            "LAWS3170",
             "LAWS3240",
             "LAWS3303",
             "LAWS3304",
@@ -48220,8 +48268,7 @@
             "JURD7251"
         ],
         "unlocks": [
-            "LAWS3060",
-            "LAWS3170"
+            "LAWS3060"
         ]
     },
     "LAWS2371": {
@@ -48296,7 +48343,6 @@
             "JURD7283"
         ],
         "unlocks": [
-            "LAWS3018",
             "LAWS3073",
             "LAWS3115",
             "LAWS3142",
@@ -48555,10 +48601,7 @@
             "JURD7321"
         ],
         "exclusions": null,
-        "unlocks": [
-            "LAWS3046",
-            "LAWS3248"
-        ]
+        "unlocks": null
     },
     "LAWS3022": {
         "course_name": "Competition Law",
@@ -48719,9 +48762,7 @@
             "JURD7446"
         ],
         "exclusions": null,
-        "unlocks": [
-            "LAWS3021"
-        ]
+        "unlocks": null
     },
     "LAWS3047": {
         "course_name": "Australian Bills of Rights and the Protection of Human Rights",
@@ -49505,7 +49546,6 @@
             "LAWS3751"
         ],
         "unlocks": [
-            "TABL2751",
             "TABL3752",
             "TABL3755",
             "TABL3757",
@@ -50244,9 +50284,7 @@
             "JURD7448"
         ],
         "exclusions": null,
-        "unlocks": [
-            "LAWS3021"
-        ]
+        "unlocks": null
     },
     "LAWS3251": {
         "course_name": "Australian Legal History - Before and After the First Fleet",
@@ -51861,11 +51899,7 @@
             "GENL2323"
         ],
         "exclusions": null,
-        "unlocks": [
-            "LAWS3021",
-            "LAWS3046",
-            "LAWS3248"
-        ]
+        "unlocks": null
     },
     "LAWS3524": {
         "course_name": "Indigenous Women and the Law",
@@ -52084,9 +52118,7 @@
             "JURD7751",
             "LAWS3147"
         ],
-        "unlocks": [
-            "TABL2751"
-        ]
+        "unlocks": null
     },
     "LAWS3758": {
         "course_name": "Roman Law",
@@ -53283,7 +53315,6 @@
             "ECON2101",
             "ECON2112",
             "FOOD1360",
-            "MATH1011",
             "MATH2301",
             "PHYS2801"
         ]
@@ -53734,7 +53765,6 @@
             "MATH2111"
         ],
         "unlocks": [
-            "MATH2069",
             "MATH3101",
             "MATH3121",
             "MATH3161",
@@ -53835,8 +53865,6 @@
             "CEIC3000",
             "CEIC3006",
             "CHEN6706",
-            "MATH2011",
-            "MATH2111",
             "MATH3101",
             "MATH3121",
             "MATH3161",
@@ -53881,10 +53909,6 @@
         "exclusions": null,
         "unlocks": [
             "ELEC3115",
-            "MATH2011",
-            "MATH2111",
-            "MATH2521",
-            "MATH2621",
             "MATH3101",
             "MATH3121",
             "MATH3161",
@@ -53941,10 +53965,6 @@
             "MANF3610",
             "MANF4430",
             "MANF4611",
-            "MATH2301",
-            "MATH2801",
-            "MATH2859",
-            "MATH2901",
             "MATH3101",
             "MATH3121",
             "MATH3161",
@@ -53991,16 +54011,9 @@
             "MATH2901"
         ],
         "unlocks": [
-            "BEES2041",
-            "ECON1203",
             "ELEC3114",
             "ELEC3705",
             "GEOS6733",
-            "MATH2501",
-            "MATH2601",
-            "MATH2801",
-            "MATH2859",
-            "MATH2901",
             "MATH3101",
             "MATH3121",
             "MATH3161",
@@ -54042,7 +54055,6 @@
             "MATH2011"
         ],
         "unlocks": [
-            "MATH2069",
             "MATH3101",
             "MATH3121",
             "MATH3161",
@@ -54098,7 +54110,6 @@
             "MATH3261",
             "MATH3311",
             "MATH6781",
-            "MMAN2300",
             "MMAN2300"
         ]
     },
@@ -54266,7 +54277,6 @@
             "MATH2601"
         ],
         "unlocks": [
-            "MATH2099",
             "MATH3161",
             "MATH3171",
             "MATH3201",
@@ -54340,7 +54350,6 @@
             "MATH2501"
         ],
         "unlocks": [
-            "MATH2099",
             "MATH3161",
             "MATH3171",
             "MATH3201",
@@ -54444,14 +54453,10 @@
             "ECON3209"
         ],
         "unlocks": [
-            "ECON1203",
             "ECON2107",
             "ECON3203",
             "GEOS6733",
-            "MATH2801",
             "MATH2831",
-            "MATH2859",
-            "MATH2901",
             "MATH2931",
             "MATH3311",
             "MATH3361",
@@ -54608,14 +54613,10 @@
             "ACTL3162",
             "ACTL3191",
             "ACTL3192",
-            "ECON1203",
             "ECON2107",
             "ECON3203",
             "GEOS6733",
-            "MATH2801",
             "MATH2831",
-            "MATH2859",
-            "MATH2901",
             "MATH2931",
             "MATH3311",
             "MATH3361",
@@ -54656,7 +54657,6 @@
             "MATH2831"
         ],
         "unlocks": [
-            "ACTL3142",
             "ACTL3142",
             "ACTL3191",
             "ACTL3192",
@@ -54895,8 +54895,18 @@
         "desc": "Optimization is the mathematical problem of finding a decision to achieve the best possible outcome while satisfying certain restrictions. Linear programs, conic linear programs and discrete optimization problems arise in a myriad of applications: electricity markets, airlines, logistics, public transport, international shipping, mining, finance, engineering, and data science. This course will provide an introduction to the basic mathematical theory, modelling techniques, computational methods and selected applications of linear, conic and discrete optimization.",
         "conditions": {
             "raw": "(1) [MATH2011 or MATH2111] and [MATH2501 or MATH2601]; or (2) both MATH2069 (CR) and MATH2099 ; or (3) both [MATH2018 or MATH2019] (DN) and MATH2089 .",
-            "prereqs_executable": null,
-            "prerequisites": null,
+            "prereqs_executable": "( MATH2011 || MATH2111 ) && ( MATH2501 || MATH2601 ) || MATH2069 && MATH2099 || ( MATH2018 || MATH2019 ) && MATH2089",
+            "prerequisites": [
+                "MATH2011",
+                "MATH2111",
+                "MATH2501",
+                "MATH2601",
+                "MATH2069",
+                "MATH2099",
+                "MATH2018",
+                "MATH2019",
+                "MATH2089"
+            ],
             "corequisites": null,
             "units_required": null,
             "level_for_units_required": null,
@@ -55623,8 +55633,15 @@
         "desc": "Introduction to mathematical modelling and data analysis for biological and biomedical systems. Examples include: the formation of animal coat patterns, the spread of diseases through the community, the interaction between pathogens and the immune system of the body, the growth of tumours, nerve cell signalling, population dynamics, pharmacokinetics and bacterial growth. The emphasis in this course is on the development of the governing model equations and on computer simulations of the model equations rather than on mathematical methods for solving the model equations.",
         "conditions": {
             "raw": "12 units of credit in Level 2 Mathematics courses including (MATH2120 or MATH2130 or MATH2121 or MATH2221), or both MATH2019 and MATH2089, or both MATH2069 and MATH2099",
-            "prereqs_executable": null,
-            "prerequisites": null,
+            "prereqs_executable": "( 0 || 0 || MATH2121 || MATH2221 ) || MATH2019 && MATH2089 || MATH2069 && MATH2099",
+            "prerequisites": [
+                "MATH2121",
+                "MATH2221",
+                "MATH2019",
+                "MATH2089",
+                "MATH2069",
+                "MATH2099"
+            ],
             "corequisites": null,
             "units_required": 12,
             "level_for_units_required": 2,
@@ -55662,7 +55679,6 @@
         ],
         "unlocks": [
             "CEIC6005",
-            "CHEM1821",
             "MATS2004",
             "MATS2008",
             "MINE2810"
@@ -58151,9 +58167,7 @@
         },
         "equivalents": null,
         "exclusions": null,
-        "unlocks": [
-            "MERE4953"
-        ]
+        "unlocks": null
     },
     "MERE4953": {
         "course_name": "Research Thesis C",
@@ -59726,8 +59740,10 @@
         "desc": "This is a capstone course for the Bachelor of Commerce (International) degree program.  It provides students with an opportunity to reflect on, and evaluate, knowledge and experiences gained in the study periods in Australia and overseas, as required for the program.",
         "conditions": {
             "raw": "MGMT2102 and completion of 72 UOC (if you are enrolled the Commerce International [program 3558], completion of the Commerce Overseas Program (Exchange) is also required)",
-            "prereqs_executable": null,
-            "prerequisites": null,
+            "prereqs_executable": "MGMT2102",
+            "prerequisites": [
+                "MGMT2102"
+            ],
             "corequisites": null,
             "units_required": 72,
             "level_for_units_required": null,
@@ -61110,8 +61126,7 @@
         "equivalents": null,
         "exclusions": null,
         "unlocks": [
-            "AERO3110",
-            "MECH3110"
+            "AERO3110"
         ]
     },
     "MMAN2130": {
@@ -61206,7 +61221,6 @@
         "unlocks": [
             "AERO3110",
             "AERO3410",
-            "MECH3110",
             "MECH9420",
             "MMAN3400",
             "MMAN4410"
@@ -62008,9 +62022,7 @@
         },
         "equivalents": null,
         "exclusions": null,
-        "unlocks": [
-            "MUSC2111"
-        ]
+        "unlocks": null
     },
     "MUSC1602": {
         "course_name": "Materials and Structures of Music 1",
@@ -62040,7 +62052,8 @@
             "MUSC2602",
             "MUSC3162",
             "MUSC3302",
-            "MUSC4101"
+            "MUSC4101",
+            "MUSC4102"
         ]
     },
     "MUSC1603": {
@@ -62102,6 +62115,7 @@
             "MUSC3162",
             "MUSC3302",
             "MUSC4101",
+            "MUSC4102",
             "MUSC4103"
         ]
     },
@@ -62182,9 +62196,7 @@
         },
         "equivalents": null,
         "exclusions": null,
-        "unlocks": [
-            "MUSC1101"
-        ]
+        "unlocks": null
     },
     "MUSC2113": {
         "course_name": "Film Music",
@@ -63766,7 +63778,6 @@
         "equivalents": null,
         "exclusions": null,
         "unlocks": [
-            "OPTM2133",
             "OPTM2291"
         ]
     },
@@ -63856,7 +63867,9 @@
         "equivalents": null,
         "exclusions": null,
         "unlocks": [
-            "OPTM3205"
+            "OPTM3205",
+            "OPTM6400",
+            "OPTM6413"
         ]
     },
     "OPTM3111": {
@@ -63916,6 +63929,7 @@
         "equivalents": null,
         "exclusions": null,
         "unlocks": [
+            "OPTM3211",
             "OPTM3231",
             "OPTM4151"
         ]
@@ -63946,7 +63960,9 @@
         "equivalents": null,
         "exclusions": null,
         "unlocks": [
-            "OPTM3233"
+            "OPTM3233",
+            "OPTM6400",
+            "OPTM6413"
         ]
     },
     "OPTM3201": {
@@ -63974,7 +63990,10 @@
         },
         "equivalents": null,
         "exclusions": null,
-        "unlocks": null
+        "unlocks": [
+            "OPTM6400",
+            "OPTM6413"
+        ]
     },
     "OPTM3205": {
         "course_name": "Disease Processes of the Eye 2",
@@ -64001,7 +64020,10 @@
         },
         "equivalents": null,
         "exclusions": null,
-        "unlocks": null
+        "unlocks": [
+            "OPTM6400",
+            "OPTM6413"
+        ]
     },
     "OPTM3211": {
         "course_name": "Optometry 3B",
@@ -64034,7 +64056,9 @@
         "exclusions": null,
         "unlocks": [
             "OPTM4110",
-            "OPTM4131"
+            "OPTM4131",
+            "OPTM6411",
+            "OPTM6412"
         ]
     },
     "OPTM3231": {
@@ -64061,11 +64085,12 @@
         "equivalents": null,
         "exclusions": null,
         "unlocks": [
-            "OPTM3205",
             "OPTM4110",
             "OPTM4131",
             "OPTM4151",
-            "OPTM4291"
+            "OPTM4291",
+            "OPTM6411",
+            "OPTM6412"
         ]
     },
     "OPTM3233": {
@@ -64093,7 +64118,10 @@
         },
         "equivalents": null,
         "exclusions": null,
-        "unlocks": null
+        "unlocks": [
+            "OPTM6400",
+            "OPTM6413"
+        ]
     },
     "OPTM4110": {
         "course_name": "Optometry 4A",
@@ -64126,7 +64154,6 @@
         "unlocks": [
             "OPTM4211",
             "OPTM4231",
-            "OPTM4271",
             "OPTM5131"
         ]
     },
@@ -64162,7 +64189,6 @@
         "unlocks": [
             "OPTM4211",
             "OPTM4231",
-            "OPTM4271",
             "OPTM5131"
         ]
     },
@@ -64194,12 +64220,9 @@
         "equivalents": null,
         "exclusions": null,
         "unlocks": [
-            "OPTM4110",
-            "OPTM4131",
             "OPTM4211",
             "OPTM4231",
             "OPTM4251",
-            "OPTM4271",
             "OPTM5131"
         ]
     },
@@ -64233,7 +64256,6 @@
         "equivalents": null,
         "exclusions": null,
         "unlocks": [
-            "OPTM4271",
             "OPTM5111",
             "OPTM5131",
             "OPTM5171"
@@ -64269,7 +64291,6 @@
         "equivalents": null,
         "exclusions": null,
         "unlocks": [
-            "OPTM4271",
             "OPTM5111",
             "OPTM5131",
             "OPTM5151",
@@ -64302,9 +64323,6 @@
         "equivalents": null,
         "exclusions": null,
         "unlocks": [
-            "OPTM4211",
-            "OPTM4231",
-            "OPTM4271",
             "OPTM5111",
             "OPTM5131",
             "OPTM5151"
@@ -64336,8 +64354,6 @@
         "equivalents": null,
         "exclusions": null,
         "unlocks": [
-            "OPTM4211",
-            "OPTM4231",
             "OPTM5111",
             "OPTM5131"
         ]
@@ -64365,7 +64381,9 @@
         },
         "equivalents": null,
         "exclusions": null,
-        "unlocks": null
+        "unlocks": [
+            "OPTM5131"
+        ]
     },
     "OPTM5111": {
         "course_name": "Clinical Optometry 5A",
@@ -64467,7 +64485,6 @@
         "equivalents": null,
         "exclusions": null,
         "unlocks": [
-            "OPTM5131",
             "OPTM5251"
         ]
     },
@@ -64628,7 +64645,12 @@
         },
         "equivalents": null,
         "exclusions": null,
-        "unlocks": null
+        "unlocks": [
+            "OPTM6411",
+            "OPTM6412",
+            "OPTM6421",
+            "OPTM6424"
+        ]
     },
     "OPTM6411": {
         "course_name": "Contact Lenses",
@@ -64660,7 +64682,13 @@
         },
         "equivalents": null,
         "exclusions": null,
-        "unlocks": null
+        "unlocks": [
+            "OPTM6412",
+            "OPTM6422",
+            "OPTM6424",
+            "OPTM8513",
+            "OPTM8521"
+        ]
     },
     "OPTM6412": {
         "course_name": "Clinical Optometry 4A",
@@ -64691,7 +64719,10 @@
         },
         "equivalents": null,
         "exclusions": null,
-        "unlocks": null
+        "unlocks": [
+            "OPTM6422",
+            "OPTM6424"
+        ]
     },
     "OPTM6413": {
         "course_name": "Anterior Eye Therapeutics",
@@ -64722,7 +64753,13 @@
         },
         "equivalents": null,
         "exclusions": null,
-        "unlocks": null
+        "unlocks": [
+            "OPTM6411",
+            "OPTM6412",
+            "OPTM6422",
+            "OPTM6423",
+            "OPTM8513"
+        ]
     },
     "OPTM6421": {
         "course_name": "Binocular Vision, Paediatrics and Low Vision",
@@ -64749,7 +64786,11 @@
         },
         "equivalents": null,
         "exclusions": null,
-        "unlocks": null
+        "unlocks": [
+            "OPTM8512",
+            "OPTM8513",
+            "OPTM8522"
+        ]
     },
     "OPTM6422": {
         "course_name": "Clinical Optometry 4B",
@@ -64776,7 +64817,13 @@
         },
         "equivalents": null,
         "exclusions": null,
-        "unlocks": null
+        "unlocks": [
+            "OPTM8511",
+            "OPTM8512",
+            "OPTM8513",
+            "OPTM8521",
+            "OPTM8522"
+        ]
     },
     "OPTM6423": {
         "course_name": "Therapeutics and the Posterior Eye",
@@ -64801,7 +64848,11 @@
         },
         "equivalents": null,
         "exclusions": null,
-        "unlocks": null
+        "unlocks": [
+            "OPTM8512",
+            "OPTM8513",
+            "OPTM8522"
+        ]
     },
     "OPTM6424": {
         "course_name": "Professional Optometry",
@@ -64828,7 +64879,10 @@
         },
         "equivalents": null,
         "exclusions": null,
-        "unlocks": null
+        "unlocks": [
+            "OPTM8512",
+            "OPTM8522"
+        ]
     },
     "OPTM8511": {
         "course_name": "Clinical Paediatrics, Low Vision and Colour Vision",
@@ -64910,7 +64964,9 @@
         },
         "equivalents": null,
         "exclusions": null,
-        "unlocks": null
+        "unlocks": [
+            "OPTM8523"
+        ]
     },
     "OPTM8514": {
         "course_name": "Optometry Research Project",
@@ -65408,10 +65464,13 @@
         "equivalents": null,
         "exclusions": null,
         "unlocks": [
-            "OPTM3211",
             "OPTM4131",
             "OPTM4151",
-            "OPTM5111"
+            "OPTM5111",
+            "OPTM6400",
+            "OPTM6411",
+            "OPTM6412",
+            "OPTM6413"
         ]
     },
     "PHCM1001": {
@@ -66339,8 +66398,6 @@
             "MATS2001",
             "MMAN2600",
             "MMAN2700",
-            "PHYS1110",
-            "PHYS1111",
             "PHYS1221",
             "PHYS1231",
             "PHYS2801",
@@ -66382,6 +66439,8 @@
             "PHYS9120"
         ],
         "unlocks": [
+            "CEIC2000",
+            "CEIC2001",
             "CLIM2001",
             "CVEN1300",
             "ENGG1300",
@@ -66390,8 +66449,6 @@
             "MINE2810",
             "MMAN2600",
             "MMAN2700",
-            "PHYS1110",
-            "PHYS1111",
             "PHYS1221",
             "PHYS1231",
             "PHYS1241",
@@ -66438,8 +66495,6 @@
             "ENGG2500",
             "MMAN2600",
             "MMAN2700",
-            "PHYS1110",
-            "PHYS1111",
             "PHYS1221",
             "PHYS1231",
             "PHYS1241",
@@ -66475,9 +66530,7 @@
             "PHYS1111",
             "PHYS9110"
         ],
-        "unlocks": [
-            "PHYS1111"
-        ]
+        "unlocks": null
     },
     "PHYS1160": {
         "course_name": "Introduction to Astronomy",
@@ -66558,7 +66611,6 @@
         "unlocks": [
             "AVIA2013",
             "CLIM2001",
-            "PHYS1110",
             "PHYS2801"
         ]
     },
@@ -66600,7 +66652,6 @@
         ],
         "unlocks": [
             "ELEC3705",
-            "PHYS1110",
             "PHYS2111",
             "PHYS2113",
             "PHYS2114"
@@ -66645,7 +66696,6 @@
         "unlocks": [
             "ELEC3115",
             "ELEC3705",
-            "PHYS1110",
             "PHYS2111",
             "PHYS2113",
             "PHYS2114"
@@ -66686,7 +66736,6 @@
             "PHYS9130"
         ],
         "unlocks": [
-            "PHYS1110",
             "PHYS2111",
             "PHYS2113",
             "PHYS2114"
@@ -66815,8 +66864,19 @@
         "desc": "This course covers the basic physical principles and processes which govern our atmosphere and its climate. First of all, this course provides an introduction and overview of our atmosphere, the main physical principles that govern its behaviour, and how to apply them to important questions about weather and climate. This shows students an important application of basic physics (and a bit of chemistry), and for Oceanography, Meteorology and Climate students this will provide a necessary foundation upon which later courses will build. For instance, you will learn about the ozone hole, the greenhouse effect, how to use charts to determine the likelihood of storms developing, why deserts occur at certain latitudes, and how to use the Bureau of Meteorology’s radar images on its website to track thunderstorms. This course will also train students in how to apply basic principles of physics and mathematics (including calculus) to real-world problems and situations. This skill will add value to the work you have already invested in learning those principles and will be relevant no matter what later path in life you take.",
         "conditions": {
             "raw": "PHYS1111 or PHYS1121 or PHYS1131 or DPST1023 or PHYS1141 or PHYS1211 and MATH1011 or MATH1031 or MATH1131 or DPST1013 or MATH1141 or MATH1151",
-            "prereqs_executable": null,
-            "prerequisites": null,
+            "prereqs_executable": "PHYS1111 || PHYS1121 || PHYS1131 || 0 || PHYS1141 || PHYS1211 && MATH1011 || MATH1031 || MATH1131 || 0 || MATH1141 || MATH1151",
+            "prerequisites": [
+                "PHYS1111",
+                "PHYS1121",
+                "PHYS1131",
+                "PHYS1141",
+                "PHYS1211",
+                "MATH1011",
+                "MATH1031",
+                "MATH1131",
+                "MATH1141",
+                "MATH1151"
+            ],
             "corequisites": null,
             "units_required": null,
             "level_for_units_required": null,
@@ -68223,12 +68283,8 @@
         ],
         "exclusions": null,
         "unlocks": [
-            "HESC1511",
             "HESC3511",
             "PSYC2001",
-            "PSYC2061",
-            "PSYC2071",
-            "PSYC2081",
             "PSYC2101",
             "SOCW3009"
         ]
@@ -68260,10 +68316,7 @@
         ],
         "exclusions": null,
         "unlocks": [
-            "PSYC2001",
-            "PSYC2061",
-            "PSYC2071",
-            "PSYC2081"
+            "PSYC2001"
         ]
     },
     "PSYC1021": {
@@ -68592,7 +68645,6 @@
         "equivalents": null,
         "exclusions": null,
         "unlocks": [
-            "BEES2041",
             "MATH2871",
             "PSYC3001",
             "PSYC3011",
@@ -71694,8 +71746,10 @@
         "desc": "Design Practice helps you develop an understanding of the many contexts in which design can be practiced.  Exploration of design practice includes the intersection of theoretical and practitioner perspectives using a weekly set of industry encounters, guest lectures and video vignettes. You will develop a plan for a digital personal profile that has the capacity to communicate effectively with a range of external design practitioners, sites and situations.  This course will prepare you to effectively undertake professional experience projects (PEP) and create new pathways in design practice.",
         "conditions": {
             "raw": "SDES2116 is reserved for students in the Bachelor of Design (4802, Faculty of Art & Design), Bachelor of Architectural Computing (3267, FBE), Diploma in Innovation Management (3451, ASB),  and Design Honours (4809, Faculty of Art & Design)",
-            "prereqs_executable": null,
-            "prerequisites": null,
+            "prereqs_executable": "SDES2116",
+            "prerequisites": [
+                "SDES2116"
+            ],
             "corequisites": null,
             "units_required": null,
             "level_for_units_required": null,
@@ -73188,8 +73242,6 @@
         "exclusions": null,
         "unlocks": [
             "SOCW3006",
-            "SOCW3006",
-            "SOCW3010",
             "SOCW3010"
         ]
     },
@@ -73256,6 +73308,7 @@
         "equivalents": null,
         "exclusions": null,
         "unlocks": [
+            "SOCW4015",
             "SOCW4016"
         ]
     },
@@ -73289,6 +73342,7 @@
         "equivalents": null,
         "exclusions": null,
         "unlocks": [
+            "SOCW4015",
             "SOCW4016"
         ]
     },
@@ -73322,6 +73376,7 @@
         "equivalents": null,
         "exclusions": null,
         "unlocks": [
+            "SOCW4015",
             "SOCW4016"
         ]
     },
@@ -73355,6 +73410,7 @@
         "equivalents": null,
         "exclusions": null,
         "unlocks": [
+            "SOCW4015",
             "SOCW4016"
         ]
     },
@@ -74105,8 +74161,10 @@
         "desc": "SOMA1001 Media Arts Gateway 1 is an introductory course for students in the Bachelor of Media Arts. It explores the nature of sound and vision by capturing and manipulating audio and still images, before progressing to images in motion and the sequencing of audio-visual time. Working with sound in the digital realm, students will use audio recorders to study and test the technical implications of timbre, frequency, acoustics and context. When transferring images to monitor and paper students will use the still camera to study light, colour, framing and composition.",
         "conditions": {
             "raw": "Must have completed DART1210",
-            "prereqs_executable": null,
-            "prerequisites": null,
+            "prereqs_executable": "DART1210",
+            "prerequisites": [
+                "DART1210"
+            ],
             "corequisites": null,
             "units_required": null,
             "level_for_units_required": null,
@@ -74420,8 +74478,15 @@
         "desc": "This undergraduate elective course introduces you to Motion capture (mocap) technology that digitally captures human movement as data for use in film, animation, visual effects, and games production as well as experimentation in media and creative disciplines relevant to your self-determined career practice.",
         "conditions": {
             "raw": "Intro to Motion Graphics - Must have completed SOMA2410 or SOMA2408 or SOMA3410 or SOMA3408 or SOMA2411 or SOMA3411",
-            "prereqs_executable": null,
-            "prerequisites": null,
+            "prereqs_executable": "SOMA2410 || SOMA2408 || SOMA3410 || SOMA3408 || SOMA2411 || SOMA3411",
+            "prerequisites": [
+                "SOMA2410",
+                "SOMA2408",
+                "SOMA3410",
+                "SOMA3408",
+                "SOMA2411",
+                "SOMA3411"
+            ],
             "corequisites": null,
             "units_required": null,
             "level_for_units_required": null,
@@ -74780,8 +74845,19 @@
         "desc": "SOMS 3212 will provide you with an understanding of how different imaging techniques work and how to apply them to obtain multidimensional data about disease processes. You will gain insight into how images are formed and processed for analysis, and in turn how to critically evaluate the quality of an imaging experiment. Key topics that will be covered include sample preparation, effective use of imaging instruments, the use of artificial intelligence for segmentation and how to obtain quantitative data from imaging experiments.",
         "conditions": {
             "raw": "72 UOC including one of these courses: ANAT2111/1521/2241/2521/2341/2511, BABS2011/2202/2204, BIOC2181/2101, MICR2011, NEUR2201, PATH2201, PHAR2011, PHSL2101/2121/2201/2221, CHEM2041, NANO2002",
-            "prereqs_executable": null,
-            "prerequisites": null,
+            "prereqs_executable": "ANAT2111 && BABS2011 && BIOC2181 && MICR2011 && NEUR2201 && PATH2201 && PHAR2011 && PHSL2101 && CHEM2041 && NANO2002",
+            "prerequisites": [
+                "ANAT2111",
+                "BABS2011",
+                "BIOC2181",
+                "MICR2011",
+                "NEUR2201",
+                "PATH2201",
+                "PHAR2011",
+                "PHSL2101",
+                "CHEM2041",
+                "NANO2002"
+            ],
             "corequisites": null,
             "units_required": 72,
             "level_for_units_required": null,
@@ -75789,7 +75865,6 @@
         "equivalents": null,
         "exclusions": null,
         "unlocks": [
-            "LAWS3751",
             "TABL3003",
             "TABL3005",
             "TABL3006",
@@ -76002,9 +76077,7 @@
         "exclusions": [
             "TABL5506"
         ],
-        "unlocks": [
-            "TABL1006"
-        ]
+        "unlocks": null
     },
     "TABL3007": {
         "course_name": "Taxation of Corporate Finance",
@@ -76391,8 +76464,11 @@
         "desc": "Property transactions are one of the most common and significant dealings forming a large part of just about every Federal and State tax base. This course examines all income tax, CGT, GST, land tax and stamp duty consequences of acquiring, holding, developing, building on, leasing, disposing of or otherwise dealing with land and buildings, including various real property investment options.",
         "conditions": {
             "raw": "(ATAX0611 or TABL3015 or TABL3752) and (ATAX0623 or TABL3023) and (completion of 48 uoc)",
-            "prereqs_executable": null,
-            "prerequisites": null,
+            "prereqs_executable": "( 0 || 0 || TABL3752 ) && ( 0 || TABL3023 )",
+            "prerequisites": [
+                "TABL3752",
+                "TABL3023"
+            ],
             "corequisites": null,
             "units_required": 48,
             "level_for_units_required": null,
@@ -77446,6 +77522,8 @@
         "exclusions": null,
         "unlocks": [
             "OPTM3211",
+            "OPTM6400",
+            "OPTM6413",
             "VISN3211"
         ]
     },
@@ -77473,9 +77551,10 @@
         "equivalents": null,
         "exclusions": null,
         "unlocks": [
-            "OPTM3211",
             "OPTM4110",
-            "OPTM4131"
+            "OPTM4131",
+            "OPTM6411",
+            "OPTM6412"
         ]
     },
     "VISN4003": {

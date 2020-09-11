@@ -1,7 +1,6 @@
 This file is a log to keep track all the manual changes made to any files.
 
 COURSES.JSON:
-- ELEC3115 should have PHYS1231, but on website says PHY1231
 - Add proper prerequisites and unlocks to ENGG2600, ENGG3600, ENGG4600
     All 3 courses have to be completed in order to receive credit
     Eng1000 is prerequisite for Engineering students (but not for med students)
