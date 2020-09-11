@@ -183,7 +183,7 @@ for (const course of courses_output) {
     }
 }
 // ENGG1000-ENGG2600-ENGG3600-ENGG4600
-// INFS3830 prerequisites = 3603
+// INFS3830 and INFS3873 prerequisites = 3603
 for (const course of courses_output) {
     if (course.id === 'ENGG1000') {
         course.data.unlocks.push('ENGG2600');
@@ -203,6 +203,13 @@ for (const course of courses_output) {
         course.data.conditions.prereqs_executable = "INFS3603";
     }
 }
+
+// COMP4951-COMP4952-COMP4953
+/*for (const course of courses_output) {
+    if (course.id === 'COMP4951') {
+        course.data.unlocks"
+    }
+}*/
 
 
 
@@ -321,6 +328,7 @@ courses_output.unshift({
         },
         exclusions: null,
         equivalents: null,
+        desc: "Software Engineering is an Engineering profession concerned with the processes, methods, and tools for the design and development of high quality, reliable software systems."
     },
    // className: 'node_header',
     style: node_header,
