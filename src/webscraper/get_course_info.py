@@ -41,7 +41,7 @@ def map_executable(elem):
     if ")" in elem:
         return ")"
     if re.search(REGEX_COURSE_CODE, elem):
-        if elem in FILTER_COURSE_CODES:
+        if elem in FILTER_COURSE_CODES or elem not in COURSES:
             return "0"
     return elem
 
@@ -159,6 +159,7 @@ def get_course_conditions(html):
         executable_array = list(filter(filter_irrelevant, executable_array))
 
         prereqs_executable = clean_up(executable_array)
+        prerequisites = re.findall(REGEX_COURSE_CODE, prereqs_executable)
 
     if re.search("(UOC)|(UNITS? OF CREDIT)", conditions):
         match = re.search("(\d+) ?((UOC)|(UNITS? OF CREDIT))( ((IN)|(AT)) LEVEL (\d+))?", conditions)
@@ -172,11 +173,19 @@ def get_course_conditions(html):
         except:
             pass
 
-    if re.search("YEAR", conditions):
-        try:
-            core_year = int(re.search("\d+", conditions).group(0))
-        except:
-            pass
+    if "YEAR" in conditions:
+        if "FIRST YEAR" in conditions or "1ST YEAR" in conditions:
+            core_year = 1
+        elif "SECOND YEAR" in conditions or "2ND YEAR" in conditions:
+            core_year = 2
+        elif "THIRD YEAR" in conditions or "3RD YEAR" in conditions:
+            core_year = 3
+        elif "FOURTH YEAR" in conditions or "4TH YEAR" in conditions:
+            core_year = 4
+        elif "FIFTH YEAR" in conditions or "5TH YEAR" in conditions:
+            core_year = 5
+        elif "SIXTH YEAR" in conditions or "6TH YEAR" in conditions:
+            core_year = 6
 
     return {
         "raw": raw,
