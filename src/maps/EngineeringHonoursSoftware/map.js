@@ -155,7 +155,7 @@ const BESengah = () => {
                     nodesDraggable={false}
                     onNodeMouseEnter={onNodeMouseEnter}
                     onNodeMouseLeave={onNodeMouseLeave}
-                >   
+                >
                 </ReactFlow>
                 <Toggle click={sidebarOpenHandler}/>
             </ReactFlowProvider>
