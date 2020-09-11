@@ -54,7 +54,7 @@ function any_course_finder(code, level) {
 
 // Recursive function to delete irreleavnt prerequisites from a given
 // prerequisites array
-function getRelevantPrereq(array) {
+/*function getRelevantPrereq(array) {
     var to_remove = [];
     for (var child of array) {
         //console.log("CHECKING", child);
@@ -78,7 +78,7 @@ function getRelevantPrereq(array) {
         console.log(array);
     }
     return array;
-}
+}*/
 
 // TODO:
 // Given an exclusion node and one of its child nodes, go into that child node
@@ -156,7 +156,7 @@ for (const course_group in data.SENGAH.structure) {
         }
         
         for (const node of node_list) {
-            if (!courses_list[node.id]) {
+            if (! courses_list.hasOwnProperty(node.id)) {
                 // Colour and add the node if we have not added it before
                 colour_node(node);
                 courses_list[node.id] = 1;
@@ -183,6 +183,7 @@ for (const course of courses_output) {
     }
 }
 // ENGG1000-ENGG2600-ENGG3600-ENGG4600
+// INFS3830 prerequisites = 3603
 for (const course of courses_output) {
     if (course.id === 'ENGG1000') {
         course.data.unlocks.push('ENGG2600');
@@ -194,14 +195,22 @@ for (const course of courses_output) {
         course.data.unlocks = ['ENGG4600'];
     } else if (course.id === 'ENGG4600') {
         course.data.conditions.prerequisites = [['ENGG3600']];
+    } else if (course.id === 'INFS3830') {
+        course.data.conditions.prerequisites = ['INFS3603'];
+        course.data.conditions.prereqs_executable = "INFS3603";
+    } else if (course.id === 'INFS3873') {
+        course.data.conditions.prerequisites = ['INFS3603'];
+        course.data.conditions.prereqs_executable = "INFS3603";
     }
 }
 
 
 
+
+
 // Go through all courses and alter prerequisites/unlocks to only contain courses
 // in the degree. For free electives, we will refer back to the courses.json file.
-for (var course of courses_output) {
+/*for (var course of courses_output) {
     console.log(course.id);
     console.log(course.data.conditions.prerequisites);
     if (course.data.conditions.prerequisites !== null) {
@@ -215,7 +224,22 @@ for (var course of courses_output) {
     if (course.data.unlocks !== null) {
         course.data.unlocks = course.data.unlocks.filter(item => courses_list.hasOwnProperty(item));
     }
+}*/
+
+
+// Go through the unlocks for each course and if it is not a node in our graph,
+// delete it. If the array is empty, set it to null
+for (var course of courses_output) {
+    if (course.data.unlocks === null) continue;
+    course.data.unlocks = course.data.unlocks.filter((unlockCourse) => {
+        if (courses_list.hasOwnProperty(unlockCourse)) return unlockCourse;
+    })
+
+    if (course.data.unlocks.length === 0) {
+        course.data.unlocks = null;
+    }
 }
+
 
 
 
@@ -291,7 +315,12 @@ courses_output.unshift({
         degree_code: data.SENGAH.code,
         units: data.SENGAH.units,
         unlocks: ['COMP1511', 'ENGG1000', 'MATH1131', 'MATH1141', 'MATH1081'],
-        exclusions: null
+        conditions: {
+            prerequisites: null,
+            corequisites: null
+        },
+        exclusions: null,
+        equivalents: null,
     },
    // className: 'node_header',
     style: node_header,

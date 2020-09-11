@@ -7,11 +7,11 @@ export default function highlightElements(elements, selectedNodes, selectedEdges
         // It is an edge
         if (isEdge(e)) {
             if (selectedEdges.hasOwnProperty(e.id)) {
-                return {...e, style: {...e.style, stroke: 'red', opacity: 1}, animated: true};
+                return {...e, style: {...e.style, stroke: 'red', strokeWidth: 5, opacity: 1}, animated: true};
             } else if (potentialEdges.hasOwnProperty(e.id)) {
-                return {...e, style: {...e.style, stroke: 'blue', opacity: 1,}, animated: true};
+                return {...e, style: {...e.style, stroke: 'blue', strokeWidth: 1, opacity: 0.3}, animated: false};
             } else {
-                return {...e, style: {...e.style, stroke: 'grey', opacity: 0.2}, animated: false};
+                return {...e, style: {...e.style, stroke: 'grey', strokeWidth: 1, opacity: 0.2}, animated: false};
             }
         }
 
@@ -20,7 +20,7 @@ export default function highlightElements(elements, selectedNodes, selectedEdges
             if (e.style.background === 'white') {
                 // It was previously a selectable node. Adjust colours accordingly
                 const backgroundColour = e.style.color;
-                return {...e, style: {...e.style, color: 'white', background: backgroundColour, filer: 'brightness(1)'}}
+                return {...e, style: {...e.style, color: 'white', background: backgroundColour, filter: 'brightness(1)'}}
             } else {
                 // It was an unselected node or an already selected node. Simply make sure its brightness is adjusted
                 return {...e, style: {...e.style, filter: 'brightness(1)'}};
@@ -32,7 +32,7 @@ export default function highlightElements(elements, selectedNodes, selectedEdges
             } else {
                 // It was an unselected node or an already selected node. Adjust text colour and background
                 const textColour = e.style.background;
-                return {...e, style: {...e.style, color: textColour, background: 'white'}};
+                return {...e, style: {...e.style, color: textColour, background: 'white', filter: 'brightness(1)'}};
             }
         } else {
             if (e.style.background === 'white') {

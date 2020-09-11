@@ -1,6 +1,11 @@
 // HELPER FUNCTION to determine which previously unselectable nodes
 // are now selectable
-export default function getSelectable(elements, selectedNodes, selectedEdges, seletableNodes, potentialEdges) {
+import checkPrerequisites from './checkprerequisites.js';
+import getElement from './getelement.js';
+
+export default function getSelectable(elements, selectedNodes, selectedEdges, selectableNodes, potentialEdges) {
+    // TODO: Deal with outsider nodes
+
     // Analyse the target of potential edges for potential nodes
     var analyseNodes = {};
     const potentialEdgesKeys = Object.keys(potentialEdges);
@@ -14,12 +19,22 @@ export default function getSelectable(elements, selectedNodes, selectedEdges, se
     }
 
     const analyseNodesKeys = Object.keys(analyseNodes);
-    for (var node of analyseNodesKeys) {
+    //console.log("==========ANALYSE NODES KEYS===========");
+    //console.log(analyseNodesKeys);
+    //console.log("==============ELEMENTS===============");
+    //console.log(elements);
+
+    for (const nodeID of analyseNodesKeys) {
         // Determine if the prerequisite has been met
+        // For now, assume prerequisites are met
+        const node = getElement(nodeID, elements);
+        //console.log(node);
         
-
-        // IDEA ON HOW TO START: For each list, ensure at least one criteria has been
-        // met. If the criteria is another list, go into it. Can push to queue or do recursive?
+        if (checkPrerequisites(node, selectedNodes)) {
+            selectableNodes[nodeID] = 1;
+        } else {
+            if (selectableNodes.hasOwnProperty(nodeID)) delete selectableNodes[nodeID];
+            // TODO: Deal with selected nodes cases? (e.g. unselecting a child???)
+        }
     }
-
 }
