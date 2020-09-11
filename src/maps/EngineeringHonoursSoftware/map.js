@@ -162,6 +162,7 @@ const BESengah = () => {
                         onNodeMouseEnter={onNodeMouseEnter}
                         onNodeMouseLeave={onNodeMouseLeave}
                         />
+                    {hoverDisplay}
                 </ReactFlowProvider>
             </Segment>
             <Sidebar style={{width: "10%", maxWidth: "10%"}}/>
