@@ -5,12 +5,13 @@ COURSES.JSON:
 - Add proper prerequisites and unlocks to ENGG2600, ENGG3600, ENGG4600
     All 3 courses have to be completed in order to receive credit
     Eng1000 is prerequisite for Engineering students (but not for med students)
+- COMP4951-COMP4952-COMP4953 chain
+
 
 BESENGAHGENERATOR.MJS:
 - DESN2000 needs to have terms and prereqs and unlocks added (specifically for SENGAH)
 - SENGAH header node needs to have children added and children need to
     have SENGAH added as prerequisites
-- ENGG2600 needs ENGG1000 has a prerequisite
+- ENGG1000-ENGG2600-ENG3600-ENGG4600 chain
 - INFS3830 has prerequisites hardcoded (INFS3603 ONLY)
 - INFS3873 has prerequisites hardcoded (INFS3603 ONLY)
-- COMP4951-COMP4952-COMP4953

@@ -16,3 +16,4 @@ for code in COURSES:
         COURSES[code]["conditions"]["raw"] = COURSES[code]["conditions"]["raw"].replace(incorrect_code, correct_code)
 
 scrape.write_to_file("courses.json", COURSES)
+
