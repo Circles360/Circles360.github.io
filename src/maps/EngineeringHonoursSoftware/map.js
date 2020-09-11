@@ -1,8 +1,6 @@
 import React, {useState} from 'react';
 import ReactFlow, {Background, Controls, getConnectedEdges, isNode, isEdge, useStoreState, useStoreActions, ReactFlowProvider, EdgeText} from 'react-flow-renderer';
 
-import '../../styles/layout.css';
-
 import CustomNode1 from '../../components/customnode1.js';
 import CustomNode2 from '../../components/customnode2.js';
 import HeaderNode1 from '../../components/headernode1.js';
@@ -11,9 +9,9 @@ import HoverInfo from '../../components/hoverinfo.js';
 import hoverPrerequisites from '../../components/hoverprerequisites.js';
 import unhoverPrerequisites from '../../components/unhoverprerequisites.js';
 
-import Menu from '../../components/sidebar.js';
 import DropdownD from "../../components/dropdownDegrees.js"
 import { Segment } from 'semantic-ui-react'
+import Sidebar from "../../components/sidebar.js"
 import pkg from 'semantic-ui-react/package.json'
 
 import positionHelper from '../../components/positionhelper.js';
@@ -43,18 +41,18 @@ for (const node of nodesData) {
             potentialEdges['e' + node.id + '-' + unlockCourse] = 1;
         }
     } else if (checkPrerequisites(node, nodesData)) {
-        selectableNodes[node.id] = 1; 
+        selectableNodes[node.id] = 1;
     }
 }
 
-console.log("==========SelectedNodes==========");
-console.log(selectedNodes);
-console.log("==========SelectedEdges==========");
-console.log(selectedEdges);
-console.log("==========SelectableNodes==========");
-console.log(selectableNodes);
-console.log("==========PotentialEdges==========");
-console.log(potentialEdges);
+// console.log("==========SelectedNodes==========");
+// console.log(selectedNodes);
+// console.log("==========SelectedEdges==========");
+// console.log(selectedEdges);
+// console.log("==========SelectableNodes==========");
+// console.log(selectableNodes);
+// console.log("==========PotentialEdges==========");
+// console.log(potentialEdges);
 
 elementsData = highlightElements(elementsData, selectedNodes, selectedEdges, selectableNodes, potentialEdges, hoverEdges);
 
@@ -81,7 +79,7 @@ const BESengah = () => {
         if (isEdge(element)) return; // Don't care about edges
         if (element.id === 'SENGAH') return; // Cannot click on main node
         if ((! selectableNodes.hasOwnProperty(element.id)) && (! selectedNodes.hasOwnProperty(element.id))) return; // Cannot select non selectable nodes
-        
+
         // NOTE: Might not need this?????
         // Unhover edges which lit up on nodeMouseEnter
         unhoverPrerequisites(hoverEdges);
@@ -145,24 +143,6 @@ const BESengah = () => {
     }
     // ===========================
 
-
-
-    // ==========SIDEBAR==========
-    const sidebarOpenHandler = () => {
-        if (!sidebarOpen) setSidebarOpen(true);
-        else setSidebarOpen(false);
-    }
-
-    const sidebarCloseHandler = () => {
-        setSidebarOpen(false);
-    }
-
-    let sidebar;
-    if (sidebarOpen) {
-        sidebar = <Menu close={sidebarCloseHandler} sidebar={"sidebar"} items={selectableNodes}/>
-    }
-    // ============================
-
     return (
         <Segment.Group horizontal>
             <Segment
@@ -184,11 +164,7 @@ const BESengah = () => {
                         />
                 </ReactFlowProvider>
             </Segment>
-            <Segment
-                style={{width: "20%"}}
-            >
-                <DropdownD />
-            </Segment>
+            <Sidebar style={{width: "20%", maxWidth: "20%"}}/>
         </Segment.Group>
     );
 };

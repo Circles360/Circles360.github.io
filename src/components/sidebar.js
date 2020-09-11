@@ -1,39 +1,67 @@
 import React, {useState} from 'react';
-import { Header, Icon, Image, Menu, Segment, Sidebar } from 'semantic-ui-react';
-// import '../styles/sidebarStyles.css';
+import DropdownDegrees from "./dropdownDegrees.js"
+import { Button, Segment, Dropdown } from 'semantic-ui-react'
 
-const SidebarExample = (props) => (
-    <Sidebar.Pushable as={Segment}>
-      <Sidebar
-        as={Menu}
-        animation='overlay'
-        icon='labeled'
-        inverted
-        vertical
-        visible
-        width='thin'
-      >
-        <Menu.Item as='a'>
-          <Icon name='home' />
-          Home
-        </Menu.Item>
-        <Menu.Item as='a'>
-          <Icon name='gamepad' />
-          Games
-        </Menu.Item>
-        <Menu.Item as='a'>
-          <Icon name='camera' />
-          Channels
-        </Menu.Item>
-      </Sidebar>
+const example = [
+    { key: 'af', value: 'af', flag: 'af', text: 'Afghanistan' },
+    { key: 'ax', value: 'ax', flag: 'ax', text: 'Aland Islands' },
+    { key: 'al', value: 'al', flag: 'al', text: 'Albania' },
+    { key: 'dz', value: 'dz', flag: 'dz', text: 'Algeria' },
+    { key: 'as', value: 'as', flag: 'as', text: 'American Samoa' },
+    { key: 'ad', value: 'ad', flag: 'ad', text: 'Andorra' },
+    { key: 'ao', value: 'ao', flag: 'ao', text: 'Angola' },
+    { key: 'ai', value: 'ai', flag: 'ai', text: 'Anguilla' },
+    { key: 'ag', value: 'ag', flag: 'ag', text: 'Antigua' },
+    { key: 'ar', value: 'ar', flag: 'ar', text: 'Argentina' },
+    { key: 'am', value: 'am', flag: 'am', text: 'Armenia' },
+    { key: 'aw', value: 'aw', flag: 'aw', text: 'Aruba' },
+    { key: 'au', value: 'au', flag: 'au', text: 'Australia' },
+    { key: 'at', value: 'at', flag: 'at', text: 'Austria' },
+    { key: 'az', value: 'az', flag: 'az', text: 'Azerbaijan' },
+    { key: 'bs', value: 'bs', flag: 'bs', text: 'Bahamas' },
+    { key: 'bh', value: 'bh', flag: 'bh', text: 'Bahrain' },
+    { key: 'bd', value: 'bd', flag: 'bd', text: 'Bangladesh' },
+    { key: 'bb', value: 'bb', flag: 'bb', text: 'Barbados' },
+    { key: 'by', value: 'by', flag: 'by', text: 'Belarus' },
+    { key: 'be', value: 'be', flag: 'be', text: 'Belgium' },
+    { key: 'bz', value: 'bz', flag: 'bz', text: 'Belize' },
+    { key: 'bj', value: 'bj', flag: 'bj', text: 'Benin' }
+]
 
-      <Sidebar.Pusher>
-        <Segment basic>
-          <Header as='h3'>Application Content</Header>
-          <Image src='https://react.semantic-ui.com/images/wireframe/paragraph.png' />
-        </Segment>
-      </Sidebar.Pusher>
-    </Sidebar.Pushable>
-  )
+const Sidebar = (props) => {
+    return (
+        <Segment.Group vertical>
+            <Segment>
+                <DropdownDegrees />
+            </Segment>
+            <Segment>
+                <Dropdown
+                    selection
+                    search
+                    multiple
+                    options={example}
+                    placeholder="Level 1 Core Courses"
+                />
+                <br/>
+                <Dropdown
+                    selection
+                    search
+                    multiple
+                    options={example}
+                    placeholder="Level 2 Core Courses"
+                />
+                <br/>
+                <Dropdown
+                    selection
+                    search
+                    multiple
+                    options={example}
+                    placeholder="Level 3 Core Courses"
+                />
+            </Segment>
+        </Segment.Group>
+    );
+}
 
-export default SidebarExample;
+
+export default Sidebar
