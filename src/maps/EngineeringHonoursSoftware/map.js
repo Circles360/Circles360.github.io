@@ -12,7 +12,8 @@ import hoverPrerequisites from '../../components/hoverprerequisites.js';
 import unhoverPrerequisites from '../../components/unhoverprerequisites.js';
 
 import Menu from '../../components/sidebar.js';
-import { Button } from 'semantic-ui-react'
+import DropdownD from "../../components/dropdownDegrees.js"
+import { Segment } from 'semantic-ui-react'
 import pkg from 'semantic-ui-react/package.json'
 
 import positionHelper from '../../components/positionhelper.js';
@@ -21,6 +22,7 @@ import unselectNode from '../../components/unselectnode.js';
 import highlightElements from '../../components/highlightelements.js';
 import getSelectable from '../../components/getselectable.js';
 import checkPrerequisites from '../../components/checkprerequisites';
+import DropdownDegrees from '../../components/dropdownDegrees';
 
 var elementsData = require("./data.json");
 var nodesData = elementsData.filter(e => isNode(e));
@@ -56,7 +58,7 @@ console.log(potentialEdges);
 
 elementsData = highlightElements(elementsData, selectedNodes, selectedEdges, selectableNodes, potentialEdges, hoverEdges);
 
-const onLoad = (reactFlowInstance) => {    
+const onLoad = (reactFlowInstance) => {
     reactFlowInstance.fitView();
 };
 
@@ -162,33 +164,32 @@ const BESengah = () => {
     // ============================
 
     return (
-        <div class="layout">
-            <Button
-                circular
-                color="red"
-                icon="angle left"
-                floated="right"
-                onClick={sidebarOpenHandler}
-            />
-            <ReactFlowProvider>
-                <ReactFlow
-                    elements={elements}
-                    style={{width: '100%', height: '90vh'}}
-                    onLoad={onLoad}
-                    nodeTypes={nodeTypes}
-                    onElementClick={onElementClick}
-                    nodesConnectable={false}
-                    minZoom={0.1}
-                    //setInitTransform={TransformUpdater({x: 100, y: 100, z: 1})}
-                    nodesDraggable={false}
-                    onNodeMouseEnter={onNodeMouseEnter}
-                    onNodeMouseLeave={onNodeMouseLeave}
-                >
-                </ReactFlow>
-            </ReactFlowProvider>
-            {hoverDisplay}
-            {sidebar}
-        </div>
+        <Segment.Group horizontal>
+            <Segment
+                style={{width: "80%"}}
+            >
+                <ReactFlowProvider>
+                    <ReactFlow
+                        elements={elements}
+                        style={{width: '100%', height: '90vh'}}
+                        onLoad={onLoad}
+                        nodeTypes={nodeTypes}
+                        nodesConnectable={false}
+                        onElementClick={onElementClick}
+                        minZoom={0.1}
+                        //setInitTransform={TransformUpdater({x: 100, y: 100, z: 1})}
+                        nodesDraggable={false}
+                        onNodeMouseEnter={onNodeMouseEnter}
+                        onNodeMouseLeave={onNodeMouseLeave}
+                        />
+                </ReactFlowProvider>
+            </Segment>
+            <Segment
+                style={{width: "20%"}}
+            >
+                <DropdownD />
+            </Segment>
+        </Segment.Group>
     );
 };
 

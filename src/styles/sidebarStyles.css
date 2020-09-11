@@ -3,24 +3,6 @@
     float: right;
 }
 
-#toggle {
-    cursor: pointer;
-    color: black;
-    font-size: 20px;
-    margin-left: 20px;
-    background: white;
-    border: none;
-    padding: 10px;
-    position: absolute;
-    top: 0;
-    right: 0;
-    z-index: 4999;
-}
-
-#toggle img {
-    width: 20px;
-}
-
 .sidebarHeader {
     display: inline-block;
     font-size: 3vh;
