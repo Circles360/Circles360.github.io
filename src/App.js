@@ -9,6 +9,7 @@ import {
 
 import BESengah from './maps/EngineeringHonoursSoftware/map.js';
 import Teaching from './components/teaching.js';
+import SidebarTest from './components/sidebartest.js';
 
 class App extends Component {
   render() {
@@ -16,6 +17,7 @@ class App extends Component {
       <Router>
         <Route path="/SoftwareEngineering" component={BESengah} />
         <Route path="/Teaching" component={Teaching}/>
+        <Route path="/SidebarTest" component={SidebarTest}/>
       </Router>
     )
   }

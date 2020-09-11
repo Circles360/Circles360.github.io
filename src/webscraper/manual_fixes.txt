@@ -11,3 +11,6 @@ BESENGAHGENERATOR.MJS:
 - SENGAH header node needs to have children added and children need to
     have SENGAH added as prerequisites
 - ENGG2600 needs ENGG1000 has a prerequisite
+- INFS3830 has prerequisites hardcoded (INFS3603 ONLY)
+- INFS3873 has prerequisites hardcoded (INFS3603 ONLY)
+- COMP4951-COMP4952-COMP4953
