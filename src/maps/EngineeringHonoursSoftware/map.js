@@ -11,8 +11,9 @@ import HoverInfo from '../../components/hoverinfo.js';
 import hoverPrerequisites from '../../components/hoverprerequisites.js';
 import unhoverPrerequisites from '../../components/unhoverprerequisites.js';
 
-import SideBar from '../../components/sidebar.js';
-import Toggle from '../../components/toggle.js';
+import Menu from '../../components/sidebar.js';
+import { Button } from 'semantic-ui-react'
+import pkg from 'semantic-ui-react/package.json'
 
 import positionHelper from '../../components/positionhelper.js';
 import selectNode from '../../components/selectnode.js';
@@ -156,12 +157,19 @@ const BESengah = () => {
 
     let sidebar;
     if (sidebarOpen) {
-        sidebar = <SideBar close={sidebarCloseHandler} sidebar={"sidebar"} items={selectableNodes}/>
+        sidebar = <Menu close={sidebarCloseHandler} sidebar={"sidebar"} items={selectableNodes}/>
     }
     // ============================
 
     return (
         <div class="layout">
+            <Button
+                circular
+                color="red"
+                icon="angle left"
+                floated="right"
+                onClick={sidebarOpenHandler}
+            />
             <ReactFlowProvider>
                 <ReactFlow
                     elements={elements}
@@ -177,7 +185,6 @@ const BESengah = () => {
                     onNodeMouseLeave={onNodeMouseLeave}
                 >
                 </ReactFlow>
-                <Toggle click={sidebarOpenHandler}/>
             </ReactFlowProvider>
             {hoverDisplay}
             {sidebar}
