@@ -7,9 +7,11 @@ export default function highlightElements(elements, selectedNodes, selectedEdges
         // It is an edge
         if (isEdge(e)) {
             if (selectedEdges.hasOwnProperty(e.id)) {
-                return {...e, style: {...e.style, stroke: 'red', strokeWidth: 5, opacity: 1}, animated: true};
+                if (hoverEdges.hasOwnProperty(e.id)) return {...e, style: {...e.style, stroke: 'red', strokeWidth: 5, opacity: 1}, animated: true};
+                else return {...e, style: {...e.style, stroke: 'red', strokeWidth: 5, opacity: 1}, animated: false};
             } else if (potentialEdges.hasOwnProperty(e.id)) {
-                return {...e, style: {...e.style, stroke: 'blue', strokeWidth: 1, opacity: 0.3}, animated: false};
+                if (hoverEdges.hasOwnProperty(e.id)) return {...e, style: {...e.style, stroke: 'blue', strokeWidth: 2.5, opacity: 1}, animated: true};
+                else return {...e, style: {...e.style, stroke: 'blue', strokeWidth: 1, opacity: 0.3}, animated: false};
             } else if (hoverEdges.hasOwnProperty(e.id)) {
                 return {...e, style: {...e.style, stroke: 'purple', strokeWidth: 2.5, opacity: 1}, animated: true};
             } else {

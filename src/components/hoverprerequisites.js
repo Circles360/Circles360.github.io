@@ -5,19 +5,29 @@ import getElement from './getelement.js';
 
 export default function hoverPrerequisites(node, elements, selectedNodes, selectedEdges, selectableNodes, potentialEdges, hoverEdges) {
     if (node.data.conditions.prerequisites === null) return;
+    // Get all selected edges one layer down and add to hover edges
+    for (const prereq of node.data.conditions.prerequisites) {
+        if (selectedEdges.hasOwnProperty('e' + prereq + '-' + node.id)) {
+            hoverEdges['e' + prereq + '-' + node.id] = 1;
+        }
+    }
+
+    // hoverEdge all unselected (AND POTENTIAL???) edges until we hit selected/selectable node
     var prereqQueue = [node.id];
     while (prereqQueue.length !== 0) {
         const current = getElement(prereqQueue.shift(), elements);
-        
         // Make sure this course exists as a node in our map
         if (current === null) continue;
 
         if (current.data.conditions.prerequisites === null) continue;
 
         for (const prereq of current.data.conditions.prerequisites) {
-            if ((!selectedEdges.hasOwnProperty('e' + prereq + '-' + current.id)) && (!potentialEdges.hasOwnProperty('e' + prereq + '-' + current.id))) {
+            if (!selectedEdges.hasOwnProperty('e' + prereq + '-' + current.id)) {
                 hoverEdges['e' + prereq + '-' + current.id] = 1;
             }
+            /*if ((!selectedEdges.hasOwnProperty('e' + prereq + '-' + current.id)) && (!potentialEdges.hasOwnProperty('e' + prereq + '-' + current.id))) {
+                hoverEdges['e' + prereq + '-' + current.id] = 1;
+            }*/
 
             if ((!selectedNodes.hasOwnProperty(prereq)) && (!selectableNodes.hasOwnProperty(prereq))) {
                 prereqQueue.push(prereq);

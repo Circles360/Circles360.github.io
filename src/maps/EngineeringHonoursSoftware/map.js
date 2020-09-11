@@ -125,9 +125,9 @@ const BESengah = () => {
         setHoverNode(node);
 
         // If the node is unselected, highlight prerequisite edges in purple
-        if ((!selectedNodes.hasOwnProperty(node.id)) && (!selectableNodes.hasOwnProperty(node.id))) {
-            hoverPrerequisites(node, elements, selectedNodes, selectedEdges, selectableNodes, potentialEdges, hoverEdges);
-        }
+        //if ((!selectedNodes.hasOwnProperty(node.id)) && (!selectableNodes.hasOwnProperty(node.id))) {
+        hoverPrerequisites(node, elements, selectedNodes, selectedEdges, selectableNodes, potentialEdges, hoverEdges);
+        //}
         setElements(highlightElements(elements, selectedNodes, selectedEdges, selectableNodes, potentialEdges, hoverEdges));
     }
     const onNodeMouseLeave = (event, node) => {
