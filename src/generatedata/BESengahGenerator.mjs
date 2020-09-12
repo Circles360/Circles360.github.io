@@ -44,74 +44,14 @@ function any_course_finder(code, level) {
                 data: courses[course],
                 position: {x: 0, y: 0},
                 // className: 'node1',
-                style: node1
+                style: node1,
+                isHidden: false
             })
         }
     }
     
     return node_list;
 }
-
-// Recursive function to delete irreleavnt prerequisites from a given
-// prerequisites array
-/*function getRelevantPrereq(array) {
-    var to_remove = [];
-    for (var child of array) {
-        //console.log("CHECKING", child);
-        if (Array.isArray(child)) {
-            getRelevantPrereq(child);
-        } else {
-            // Remove the child if it is not in our program
-            if (! courses_list.hasOwnProperty(child)) {
-                to_remove.push(child);
-            }
-        }
-    }
-
-    for (var r of to_remove) {
-        console.log(array);
-        var index = array.indexOf(r);
-        array.splice(index, 1);
-        console.log(r);
-        console.log(index);
-        console.log("REMOVED", r);
-        console.log(array);
-    }
-    return array;
-}*/
-
-// TODO:
-// Given an exclusion node and one of its child nodes, go into that child node
-// and replace mentions of their children in unlocks with themselves
-/*function alterPrerequisites(exclusion_node, child) {
-    for (var course in courses_output) {
-
-    }
-}
-
-// Given an exclusion node, goes through all the nodes and alters their
-// prerequisites and unlocks to point to the exclusion node instead.
-function substitute_exclusion_group(exclusion_node) {
-    for (var course of courses_output) {
-        if (exclusion_node.data.children.includes(course.id)) {
-            // For each course in prerequisite, alter unlocks
-            // For each course in unlocks, alter prerequisite
-            const all_prereqs = course.data.conditions.prerequisites.flat(Infinity);
-            for (const prereq of all_prereqs) {
-                alterPrerequisites(exclusion_node, prereq);
-            }
-            alterPrerequisites()
-            alterUnlocks()
-            for (var prereq in courses_output) {
-                if (course.data.conditions.prerequisites.includes(prereq.data))
-            }
-
-            // Break after one because we assume exclusion courses are essentially identical in the degree
-            break;
-        }
-    }
-}*/
-
 
 // Get all the courses for software engineering
 for (const course_group in data.SENGAH.structure) {
@@ -131,6 +71,7 @@ for (const course_group in data.SENGAH.structure) {
                     data: courses[option],
                     position: {x: 0, y: 0},
                     style: node1,
+                    isHidden: false
                 })
             }
         } else {
@@ -142,6 +83,7 @@ for (const course_group in data.SENGAH.structure) {
                     data: courses[course],
                     position: {x: 0, y: 0},
                     style: node1,
+                    isHidden: false
                 })
             } else if (course.match(/^[A-Z]{4}[0-9]/)) {
                 // Course levels
@@ -208,36 +150,6 @@ for (const course of courses_output) {
     }
 }
 
-// COMP4951-COMP4952-COMP4953
-/*for (const course of courses_output) {
-    if (course.id === 'COMP4951') {
-        course.data.unlocks"
-    }
-}*/
-
-
-
-
-
-// Go through all courses and alter prerequisites/unlocks to only contain courses
-// in the degree. For free electives, we will refer back to the courses.json file.
-/*for (var course of courses_output) {
-    console.log(course.id);
-    console.log(course.data.conditions.prerequisites);
-    if (course.data.conditions.prerequisites !== null) {
-        course.data.conditions.prerequisites = getRelevantPrereq(course.data.conditions.prerequisites);
-    }
-    console.log("========================================================");
-    console.log(course.data.conditions.prerequisites);
-    console.log("========================================================");
-
-    // Store the unlock if it is in our degree
-    if (course.data.unlocks !== null) {
-        course.data.unlocks = course.data.unlocks.filter(item => courses_list.hasOwnProperty(item));
-    }
-}*/
-
-
 // Go through the unlocks for each course and if it is not a node in our graph,
 // delete it. If the array is empty, set it to null
 for (var course of courses_output) {
@@ -250,72 +162,6 @@ for (var course of courses_output) {
         course.data.unlocks = null;
     }
 }
-
-
-
-
-// Create encapsulating nodes for exclusion courses
-var exclusion_groups = []; // Holds all exclusion groups
-var exclusion_list = {};  // Quick checking if we have already excluded this course
-/*console.log("===========================================");
-for (var course of courses_output) {
-    if (course.data.exclusions === null) continue;
-    if (exclusion_list.hasOwnProperty(course.id)) continue;
-
-    //console.log(course.id);
-    //console.log(course.data.exclusions);
-    // Get all courses in our program which it excludes
-    var exclusion_courses = [];
-    for (var exclude of course.data.exclusions) {
-        if (!courses_list.hasOwnProperty(exclude)) continue;
-        exclusion_courses.push(exclude);
-        exclusion_list[exclude] = 1;
-    }
-
-    // Check if we found any exclusion courses
-    if (exclusion_courses.length === 0) continue;
-    exclusion_courses.push(course.id);
-    exclusion_groups.push(exclusion_courses);
-    exclusion_list[course.id] = 1;
-}*/
-
-//console.log(exclusion_groups);
-
-/*var exclusion_nodes = []; // Contains exclusion group nodes for easier checking
-for (var group of exclusion_groups) {
-    // Create an exclusion node
-    var e = {
-        id: 'x' + group.join('or'),
-        type: 'custom2',
-        data: {
-            id: 'x' + group.join('or'),
-            children: [],
-            terms: [],
-            conditions: null,
-            unlocks: [],
-        },
-        position: {x: 0, y: 0},
-        style: node2
-    }
-    
-    for (var course of group) {
-        e.data.children.push(course);
-    }
-
-    // Assuming that the conditions for exclusions courses are the same
-    e.data.conditions = courses[group[0]].conditions;
-    e.data.terms = courses[group[0]].terms;
-    e.data.unlocks = courses[group[0]].unlocks;
-
-    colour_node(e);
-
-    //console.log(e);
-    courses_output.push(e);
-    exclusion_nodes.push(e);
-}*/
-
-
-
 
 // Add course header
 courses_output.unshift({
@@ -351,8 +197,6 @@ for (var course of courses_output) {
     }
 }
 
-
-
 // Generate the position for each node
 for (const node of position_data) {
     //console.log(node);
@@ -370,50 +214,76 @@ var edges_output = [];
 var edges_list = {};
 
 for (const course of courses_output) {
-    // Do not generate for individual grouped exclusion nodes
-    if (exclusion_list.hasOwnProperty(course.id)) continue;
-
-    // Find the children
-    if (course.data.unlocks === null) {
-        continue;
-    }
-
+    if (course.data.unlocks === null) continue;
     for (const child of course.data.unlocks) {
         if (courses_list.hasOwnProperty(child)) {
-            var new_edge = {
+            var newEdge = {
+                id: 'e' + course.id + '-' + child,
                 source: course.id,
+                target: child,
                 type: 'straight',
-                style: {opacity: 0.20, stroke: 'grey'},
-                animated: false
+                style: {opacity: 0.2, stroke: 'grey'},
+                animated: false,
+                isHidden: false
             }
-            if (exclusion_list.hasOwnProperty(child)) {
-                // This is part of an exclusion group. Connect the group nodes
-                // to each other instead.
-                /*for (var group of exclusion_nodes) {
-                    // Add the edge if it hasn't been added.
-                    if (group.data.children.includes(child)) {
-                        if (! edges_list.hasOwnProperty('e' + course.id + '-' + group.id)) {
-                            new_edge.id = 'e' + course.id + '-' + group.id;
-                            new_edge.target = group.id;
-                            edges_output.push(new_edge);
-                            edges_list[new_edge.id] = 1;
-                        }
-
-
-                        break;
-                    }
-                }*/
-            } else {
-                // Not part of an exclusion group. Normal node to normal node edge.
-                if ( edges_list.hasOwnProperty('e' + course.id + '-' + child)) continue;
-                new_edge.id = 'e' + course.id + '-' + child;
-                new_edge.target = child;
-                edges_output.push(new_edge);
-                edges_list[new_edge.id] = 1;
-            }
+            edges_list['e' + course.id + '-' + child] = 1;
+            edges_output.push(newEdge);
         }
     }
 }
+
+// Generate exclusion course data
+var exclusion_groups = []; // Holds all exclusion groups
+var exclusion_list = {};  // Quick checking if we have already excluded this course
+// Create exclusion nodes
+for (var course of courses_output) {
+    if (exclusion_list.hasOwnProperty(course.id)) continue; 
+    if (course.data.exclusions === null) continue;
+
+    var group = [];
+    for (const exclusion of course.data.exclusions) {
+        if (courses_list.hasOwnProperty(exclusion)) {
+            // Create an exclusion course with this node as it exists in our program
+            exclusion_list[exclusion] = 1;
+            group.push(exclusion);
+        }
+    }
+
+    if (group.length > 0) {
+        exclusion_list[course.id] = 1;
+        group.unshift(course.id);
+        exclusion_groups.push(group);
+    }
+}
+
+console.log(exclusion_groups);
+
+// set isHidden to true for the last exclusion course in each group and their edges
+/*for (var group of exclusion_groups) {
+    const last = group.pop();
+
+    for (var course of courses_output) {
+        if (last === course.id) {
+            course.isHidden = true;
+            
+            // Get all the edges and hide them too
+            for (var edge of edges_output) {
+                if (edge.source === last || edge.target === last) {
+                    console.log("hiding " + edge.id);
+                    edge.isHidden = true;
+                }
+            }
+            break;
+        }
+    }
+
+    group.push(last);
+}*/
+
+console.log(exclusion_groups);
+
+
+
 
 //console.log(edges_output);
 const output = courses_output.concat(edges_output);
@@ -421,6 +291,12 @@ const output = courses_output.concat(edges_output);
 // Write to the file
 const fs = require('fs');
 fs.writeFile('../maps/EngineeringHonoursSoftware/data.json', JSON.stringify(output), (err) => {
+    // In case of error
+    if (err) throw err;
+})
+
+// Write exclusion data to another file
+fs.writeFile('../maps/EngineeringHonoursSoftware/data_exclusion.json', JSON.stringify(exclusion_groups), (err) => {
     // In case of error
     if (err) throw err;
 })

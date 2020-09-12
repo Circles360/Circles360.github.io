@@ -22,6 +22,8 @@ import getSelectable from '../../components/getselectable.js';
 import checkPrerequisites from '../../components/checkprerequisites';
 import DropdownDegrees from '../../components/dropdownDegrees';
 
+import exclusionSwap from '../../components/exclusionswap.js';
+
 var elementsData = require("./data.json");
 var nodesData = elementsData.filter(e => isNode(e));
 var edgesData = elementsData.filter(e => isEdge(e));
@@ -44,6 +46,8 @@ for (const node of nodesData) {
         selectableNodes[node.id] = 1;
     }
 }
+
+var exclusionGroups = require("./data_exclusion.json");
 
 // console.log("==========SelectedNodes==========");
 // console.log(selectedNodes);
@@ -71,16 +75,13 @@ const BESengah = () => {
     const [hoverText, setHoverText] = useState(false);
     const [hoverNode, setHoverNode] = useState();
     const [sidebarOpen, setSidebarOpen] = useState(false);
+    var clickCount = 0;
+    var singleClickTimer = '';
 
-
-    // ==========ONCLICK==========
-    const onElementClick = (event, element) => {
-        console.log("ONELEMENTCLICK");
-        if (isEdge(element)) return; // Don't care about edges
-        if (element.id === 'SENGAH') return; // Cannot click on main node
-        if ((! selectableNodes.hasOwnProperty(element.id)) && (! selectedNodes.hasOwnProperty(element.id))) return; // Cannot select non selectable nodes
-
+    const selectUnselect = (element) => {
         // NOTE: Might not need this?????
+        // EXPLANATION: Reason we dont need it is because we have to leave node
+        // anyways to hover another node. But maybe good practise to have just in case
         // Unhover edges which lit up on nodeMouseEnter
         unhoverPrerequisites(hoverEdges);
 
@@ -97,25 +98,55 @@ const BESengah = () => {
         getSelectable(elements, selectedNodes, selectedEdges, selectableNodes, potentialEdges);
 
         // After selecting node:
-        console.log("==========SelectedNodes==========");
+        /*console.log("==========SelectedNodes==========");
         console.log(selectedNodes);
         console.log("==========SelectedEdges==========");
         console.log(selectedEdges);
         console.log("==========SelectableNodes==========");
         console.log(selectableNodes);
         console.log("==========PotentialEdges==========");
-        console.log(potentialEdges);
+        console.log(potentialEdges);*/
 
         // Render graph accordingly
         setElements(highlightElements(elements, selectedNodes, selectedEdges, selectableNodes, potentialEdges, hoverEdges));
+    }
 
-        for (var e of elements) {
+    const toggleExclusion = (element) => {
+        // TODO: ARE there courses which do not 
+        // For all immediate edges of the element, swap
+        // with the exclusion course
+        setElements(exclusionSwap(element, elements, edgesData, selectedNodes, selectedEdges, selectableNodes, potentialEdges, hoverEdges, exclusionGroups));
+        setElements(highlightElements(elements, selectedNodes, selectedEdges, selectableNodes, potentialEdges, hoverEdges));
+    }
+
+
+    // ==========ONCLICK==========
+    const onElementClick = (event, element) => {
+        console.log("ONELEMENTCLICK");
+        if (isEdge(element)) return; // Don't care about edges
+        if (element.id === 'SENGAH') return; // Cannot click on main node
+        if ((! selectableNodes.hasOwnProperty(element.id)) && (! selectedNodes.hasOwnProperty(element.id))) return; // Cannot select non selectable nodes
+
+        // Determine double or single click
+        clickCount++;
+        if (clickCount === 1) {
+            singleClickTimer = setTimeout(function() {
+                clickCount = 0;
+                selectUnselect(element);
+            }, 200);
+        } else if (clickCount === 2) {
+            clearTimeout(singleClickTimer);
+            clickCount = 0;
+            toggleExclusion(element);
+        }
+    
+        /*for (var e of elements) {
             if (e.id === element.id) {
                 e.position.x = element.position.x;
                 e.position.y = element.position.y;
                 break;
             }
-        }
+        }*/
     };
     // ===========================
 
@@ -131,6 +162,7 @@ const BESengah = () => {
         //}
         setElements(highlightElements(elements, selectedNodes, selectedEdges, selectableNodes, potentialEdges, hoverEdges));
     }
+
     const onNodeMouseLeave = (event, node) => {
         setHoverText(false);
         unhoverPrerequisites(hoverEdges);
@@ -143,12 +175,16 @@ const BESengah = () => {
     }
     // ===========================
 
+    const onNodeContextMenu = (event, node) => {
+        console.log("THE EVEENT");
+        console.log(event);
+    }
     return (
         <div style={{display: 'flex', flexDirection: 'row'}}>
             <ReactFlowProvider style={{width: "90%"}}>
                 <ReactFlow
                     elements={elements}
-                    style={{width: '100%', height: '90vh'}}
+                    style={{width: '100%', height: '100vh'}}
                     onLoad={onLoad}
                     nodeTypes={nodeTypes}
                     nodesConnectable={false}
@@ -158,7 +194,10 @@ const BESengah = () => {
                     nodesDraggable={false}
                     onNodeMouseEnter={onNodeMouseEnter}
                     onNodeMouseLeave={onNodeMouseLeave}
-                    />
+                    selectNodesOnDrag={false}
+                    onNodeContextMenu={onNodeContextMenu}
+                >
+                </ReactFlow>
                 {hoverDisplay}
             </ReactFlowProvider>
             <Sidebar style={{width: "10%", maxWidth: "10%"}}/>
