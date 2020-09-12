@@ -14,6 +14,8 @@ import { Grid, Segment } from 'semantic-ui-react'
 import Sidebar from "../../components/sidebar.js"
 import pkg from 'semantic-ui-react/package.json'
 
+import DegreePlanner from "../../components/degreeplanner.js"
+
 import positionHelper from '../../components/positionhelper.js';
 import selectNode from '../../components/selectnode.js';
 import unselectNode from '../../components/unselectnode.js';
@@ -205,56 +207,12 @@ const BESengah = () => {
                 </Grid.Column>
 
                 <Grid.Column width="4">
-                    <Sidebar />
+                    {/* <Sidebar /> */}
+                    <DegreePlanner/>
                 </Grid.Column>
             </Grid>
 
-            <Grid columns={3} celled>
-                <Grid.Column>
-                    <Grid.Row>
-                        <Segment></Segment>
-                    </Grid.Row>
-                    <Grid.Row>
-                        <Segment></Segment>
-                    </Grid.Row>
-                    <Grid.Row>
-                        <Segment></Segment>
-                    </Grid.Row>
-                    <Grid.Row>
-                        <Segment></Segment>
-                    </Grid.Row>
-                </Grid.Column>
-
-                <Grid.Column>
-                    <Grid.Row>
-                        <Segment></Segment>
-                    </Grid.Row>
-                    <Grid.Row>
-                        <Segment></Segment>
-                    </Grid.Row>
-                    <Grid.Row>
-                        <Segment></Segment>
-                    </Grid.Row>
-                    <Grid.Row>
-                        <Segment></Segment>
-                    </Grid.Row>
-                </Grid.Column>
-
-                <Grid.Column>
-                    <Grid.Row>
-                        <Segment></Segment>
-                    </Grid.Row>
-                    <Grid.Row>
-                        <Segment></Segment>
-                    </Grid.Row>
-                    <Grid.Row>
-                        <Segment></Segment>
-                    </Grid.Row>
-                    <Grid.Row>
-                        <Segment></Segment>
-                    </Grid.Row>
-                </Grid.Column>
-            </Grid>
+            {/* <DegreePlanner/> */}
         </>
     );
 };
