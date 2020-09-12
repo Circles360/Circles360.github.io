@@ -2,6 +2,7 @@
 // Will hide the current course and its edges, unhide the next course and edges
 // in the queue. Finds new edges to show by regex substitution???
 import { getConnectedEdges } from 'react-flow-renderer';
+import getElement from './getelement.js';
 
 export default function exclusionSwap(node, elements, edges, selectedNodes, selectedEdges, selectableNodes, potentialEdges, hoverEdges, exclusionGroups) {
     console.log("EXCLUSION SWAP");
@@ -17,6 +18,7 @@ export default function exclusionSwap(node, elements, edges, selectedNodes, sele
             // Move this to the back
             const prevCourse = group.shift();
             group.push(prevCourse);
+
             // Current course we need to display is now at front of queue
             const curCourse = group[0];
 
@@ -87,12 +89,16 @@ export default function exclusionSwap(node, elements, edges, selectedNodes, sele
                 }
             }
 
-            // For each edge, show it
+            // For each edge, show it IF TARGET AND SOURCE ARE NOT HIDDEN
             for (const newEdge of newEdgesList) {
                 for (const edge of newElements) {
                     if (newEdge === edge.id) {
                         console.log(newEdge);
-                        edge.isHidden = false;
+                        const sourceNode = getElement(edge.source, elements);
+                        const targetNode = getElement(edge.target, elements);
+                        if ((!sourceNode.isHidden) && (!targetNode.isHidden)) {
+                            edge.isHidden = false;
+                        }
                         break;
                     }
                 }
