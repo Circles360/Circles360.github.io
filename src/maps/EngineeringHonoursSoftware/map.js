@@ -144,29 +144,27 @@ const BESengah = () => {
     // ===========================
 
     return (
-        <Segment.Group horizontal>
-            <Segment
-                style={{width: "90%"}}
-            >
-                <ReactFlowProvider>
-                    <ReactFlow
-                        elements={elements}
-                        style={{width: '100%', height: '90vh'}}
-                        onLoad={onLoad}
-                        nodeTypes={nodeTypes}
-                        nodesConnectable={false}
-                        onElementClick={onElementClick}
-                        minZoom={0.1}
-                        //setInitTransform={TransformUpdater({x: 100, y: 100, z: 1})}
-                        nodesDraggable={false}
-                        onNodeMouseEnter={onNodeMouseEnter}
-                        onNodeMouseLeave={onNodeMouseLeave}
-                        />
-                </ReactFlowProvider>
-            </Segment>
+        <div style={{display: 'flex', flexDirection: 'row'}}>
+            <ReactFlowProvider style={{width: "90%"}}>
+                <ReactFlow
+                    elements={elements}
+                    style={{width: '100%', height: '90vh'}}
+                    onLoad={onLoad}
+                    nodeTypes={nodeTypes}
+                    nodesConnectable={false}
+                    onElementClick={onElementClick}
+                    minZoom={0.1}
+                    //setInitTransform={TransformUpdater({x: 100, y: 100, z: 1})}
+                    nodesDraggable={false}
+                    onNodeMouseEnter={onNodeMouseEnter}
+                    onNodeMouseLeave={onNodeMouseLeave}
+                    />
+                {hoverDisplay}
+            </ReactFlowProvider>
             <Sidebar style={{width: "10%", maxWidth: "10%"}}/>
-        </Segment.Group>
+        </div>
     );
 };
+BESengah.whyDidYouRender = true;
 
 export default BESengah;

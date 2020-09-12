@@ -21,10 +21,8 @@ export default function checkPrerequisites(node, selectedNodes) {
 
     console.log(condition);
     if (eval(condition)) {
-        console.log("TRUE");
         return true;
     } else {
-        console.log("FALSE");
         return false;
     }
 }
