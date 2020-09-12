@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import DropdownDegrees from "./dropdownDegrees.js"
-import { Button, Segment, Dropdown } from 'semantic-ui-react'
+import { Icon, Button, Container, Segment, Header, Dropdown, Grid } from 'semantic-ui-react'
 
 const example = [
     { key: 'af', value: 'af', flag: 'af', text: 'Afghanistan' },
@@ -30,36 +30,66 @@ const example = [
 
 const Sidebar = (props) => {
     return (
-        <Segment.Group vertical>
-            <Segment>
-                <DropdownDegrees />
-            </Segment>
-            <Segment>
-                <Dropdown
-                    selection
-                    search
-                    multiple
-                    options={example}
-                    placeholder="Level 1 Core Courses"
-                />
-                <br/>
-                <Dropdown
-                    selection
-                    search
-                    multiple
-                    options={example}
-                    placeholder="Level 2 Core Courses"
-                />
-                <br/>
-                <Dropdown
-                    selection
-                    search
-                    multiple
-                    options={example}
-                    placeholder="Level 3 Core Courses"
-                />
-            </Segment>
-        </Segment.Group>
+        <Container style={{paddingLeft: "10px", paddingRight: "10px"}}>
+
+            <Grid divided="vertically" stretched>
+                <Grid.Row>
+                    <Container>
+                        <Header as="h3" textAlign="center" style={{marginTop: "5px"}}>Choose your degree</Header>
+                        <DropdownDegrees />
+                    </Container>
+                </Grid.Row>
+
+                <Grid.Row>
+                    <Container>
+                        <Header as="h3" textAlign="center">Choose your courses</Header>
+                        <Header as="h4" style={{marginBottom: 0}}>Level 1 Core Courses</Header>
+                        <Dropdown
+                            fluid
+                            selection
+                            search
+                            multiple
+                            options={example}
+                            placeholder="Select courses"
+                        />
+
+                        <Header as="h4" style={{marginBottom: 0}}>Level 2 Core Courses</Header>
+                        <Dropdown
+                            fluid
+                            selection
+                            search
+                            multiple
+                            options={example}
+                            placeholder="Select courses"
+                        />
+
+                        <Header as="h4" style={{marginBottom: 0}}>Level 3 Core Courses</Header>
+                        <Dropdown
+                            fluid
+                            selection
+                            search
+                            multiple
+                            options={example}
+                            placeholder="Select courses"
+                        />
+                    </Container>
+                </Grid.Row>
+
+                <Container textAlign="center">
+                    <Button
+                        animated="vertical"
+                        color="red"
+                    >
+                        <Button.Content visible>Generate degree planner</Button.Content>
+                        <Button.Content hidden>
+                            <Icon name="arrow down" />
+                        </Button.Content>
+                    </Button>
+
+                </Container>
+            </Grid>
+        </Container>
+
     );
 }
 

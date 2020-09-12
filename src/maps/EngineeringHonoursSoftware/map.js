@@ -10,9 +10,11 @@ import hoverPrerequisites from '../../components/hoverprerequisites.js';
 import unhoverPrerequisites from '../../components/unhoverprerequisites.js';
 
 import DropdownD from "../../components/dropdownDegrees.js"
-import { Segment } from 'semantic-ui-react'
+import { Grid, Segment } from 'semantic-ui-react'
 import Sidebar from "../../components/sidebar.js"
 import pkg from 'semantic-ui-react/package.json'
+
+import DegreePlanner from "../../components/degreeplanner.js"
 
 import positionHelper from '../../components/positionhelper.js';
 import selectNode from '../../components/selectnode.js';
@@ -215,28 +217,38 @@ const BESengah = () => {
         console.log(event);
     }
     return (
-        <div style={{display: 'flex', flexDirection: 'row'}}>
-            <ReactFlowProvider style={{width: "90%"}}>
-                <ReactFlow
-                    elements={elements}
-                    style={{width: '100%', height: '100vh'}}
-                    onLoad={onLoad}
-                    nodeTypes={nodeTypes}
-                    nodesConnectable={false}
-                    onElementClick={onElementClick}
-                    minZoom={0.1}
-                    //setInitTransform={TransformUpdater({x: 100, y: 100, z: 1})}
-                    nodesDraggable={false}
-                    onNodeMouseEnter={onNodeMouseEnter}
-                    onNodeMouseLeave={onNodeMouseLeave}
-                    selectNodesOnDrag={false}
-                    onNodeContextMenu={onNodeContextMenu}
-                >
-                </ReactFlow>
-                {hoverDisplay}
-            </ReactFlowProvider>
-            <Sidebar style={{width: "10%", maxWidth: "10%"}}/>
-        </div>
+        <>
+            <Grid columns={2} divided>
+                <Grid.Column width="12">
+                    <ReactFlowProvider>
+                        <ReactFlow
+                            elements={elements}
+                            style={{width: '100%', height: '95vh'}}
+                            onLoad={onLoad}
+                            nodeTypes={nodeTypes}
+                            nodesConnectable={false}
+                            onElementClick={onElementClick}
+                            minZoom={0.1}
+                            //setInitTransform={TransformUpdater({x: 100, y: 100, z: 1})}
+                            nodesDraggable={false}
+                            onNodeMouseEnter={onNodeMouseEnter}
+                            onNodeMouseLeave={onNodeMouseLeave}
+                            selectNodesOnDrag={false}
+                            onNodeContextMenu={onNodeContextMenu}
+                        >
+                        </ReactFlow>
+                        {hoverDisplay}
+                    </ReactFlowProvider>
+                </Grid.Column>
+
+                <Grid.Column width="4">
+                    {/* <Sidebar /> */}
+                    <DegreePlanner/>
+                </Grid.Column>
+            </Grid>
+
+            {/* <DegreePlanner/> */}
+        </>
     );
 };
 BESengah.whyDidYouRender = true;
