@@ -50,6 +50,12 @@ for (const node of nodesData) {
 }
 
 var exclusionGroups = require("./data_exclusion.json");
+var exclusionNodes = {};
+for (const group of exclusionGroups) {
+    for (const exclusion of group) {
+        exclusionNodes[exclusion] = 1;
+    }
+}
 
 // console.log("==========SelectedNodes==========");
 // console.log(selectedNodes);
@@ -62,8 +68,29 @@ var exclusionGroups = require("./data_exclusion.json");
 
 elementsData = highlightElements(elementsData, selectedNodes, selectedEdges, selectableNodes, potentialEdges, hoverEdges);
 
+
 const onLoad = (reactFlowInstance) => {
     reactFlowInstance.fitView();
+    for (var group of exclusionGroups) {
+        const last = group.pop();
+    
+        for (var course of elementsData) {
+            if (last === course.id) {
+                course.isHidden = true;
+                
+                // Get all the edges and hide them too
+                for (var edge of elementsData) {
+                    if (isNode(edge)) continue;
+                    if (edge.source === last || edge.target === last) {
+                        console.log("hiding " + edge.id);
+                        edge.isHidden = true;
+                    }
+                }
+                break;
+            }
+        }
+        group.push(last);
+    }
 };
 
 const nodeTypes = {
@@ -128,19 +155,27 @@ const BESengah = () => {
         if (isEdge(element)) return; // Don't care about edges
         if (element.id === 'SENGAH') return; // Cannot click on main node
         if ((! selectableNodes.hasOwnProperty(element.id)) && (! selectedNodes.hasOwnProperty(element.id))) return; // Cannot select non selectable nodes
+        
 
-        // Determine double or single click
-        clickCount++;
-        if (clickCount === 1) {
-            singleClickTimer = setTimeout(function() {
+        // Determine double or single click for exclusion nodes
+        // This will prevent normal nodes from waiting the double click delay
+        if (exclusionNodes.hasOwnProperty(element.id)) {
+            clickCount++;
+            if (clickCount === 1) {
+                singleClickTimer = setTimeout(function() {
+                    clickCount = 0;
+                    selectUnselect(element);
+                }, 150);
+            } else if (clickCount === 2) {
+                clearTimeout(singleClickTimer);
                 clickCount = 0;
-                selectUnselect(element);
-            }, 200);
-        } else if (clickCount === 2) {
-            clearTimeout(singleClickTimer);
-            clickCount = 0;
-            toggleExclusion(element);
+                toggleExclusion(element);
+            }
+        } else {
+            // Not an exclusion node.
+            selectUnselect(element);
         }
+
     
         /*for (var e of elements) {
             if (e.id === element.id) {
