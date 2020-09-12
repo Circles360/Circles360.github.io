@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import DropdownDegrees from "./dropdownDegrees.js"
 import { Icon, Button, Container, Segment, Header, Dropdown, Grid } from 'semantic-ui-react'
+import ScrollTo from "react-scroll-into-view"
 
 const example = [
     { key: 'af', value: 'af', flag: 'af', text: 'Afghanistan' },
@@ -76,15 +77,18 @@ const Sidebar = (props) => {
                 </Grid.Row>
 
                 <Container textAlign="center">
-                    <Button
-                        animated="vertical"
-                        color="red"
-                    >
-                        <Button.Content visible>Generate degree planner</Button.Content>
-                        <Button.Content hidden>
-                            <Icon name="arrow down" />
-                        </Button.Content>
-                    </Button>
+                    <ScrollTo selector="#DegreePlanner">
+
+                        <Button
+                            animated="vertical"
+                            color="red"
+                        >
+                            <Button.Content visible>Generate degree planner</Button.Content>
+                            <Button.Content hidden>
+                                <Icon name="arrow down" />
+                            </Button.Content>
+                        </Button>
+                    </ScrollTo>
 
                 </Container>
             </Grid>

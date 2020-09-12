@@ -12,6 +12,7 @@
     "react-flow-renderer": "^5.9.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.3",
+    "react-scroll-into-view": "^1.8.2",
     "semantic-ui-css": "^2.4.1",
     "semantic-ui-react": "^1.2.1"
   },
