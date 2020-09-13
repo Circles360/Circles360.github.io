@@ -45,53 +45,23 @@ export default function exclusionSwap(node, elements, edges, selectedNodes, sele
                 }
             }
 
-            // Get all the edges of the previous course and hide all of them
-            // Then use regex sub to determine the new edges to reveal
-            // Transfer over selected, potential and hover edges
-            var edgesList = getConnectedEdges([node], edges);
-            //var newEdgesList = [];
-            for (const hideEdge of edgesList) {
-                for (const edge of newElements) {
-                    if (hideEdge.id === edge.id) {
-                        edge.isHidden = true;
-                        console.log("HIDING", edge.id);
-
-                        // Get the name of the new edge
-                        var newEdge = hideEdge.id.replace(prevCourse, curCourse);
-                        console.log("SHOWING", newEdge);
-
-                        // Keep selected, potential and hover edges
-                        if (selectedEdges.hasOwnProperty(hideEdge.id)) {
-                            delete selectedEdges[hideEdge.id];
-                            selectedEdges[newEdge] = 1;
-                        }
-
-                        if (potentialEdges.hasOwnProperty(hideEdge.id)) {
-                            delete potentialEdges[hideEdge.id];
-                            potentialEdges[newEdge] = 1;
-                        }
-                        
-                        if (hoverEdges.hasOwnProperty(hideEdge.id)) {
-                            delete hoverEdges[hideEdge.id];
-                            hoverEdges[newEdge] = 1;
-                        }
-
-                        //newEdgesList.push(newEdge);
-                        break;
-                    }
-                }
-            }
             // Determine state of the nodes (E.g. COMP6441 can be selectable
             // whilst COMP6841 is not)
             var curNode = getElement(curCourse, elements);
             if (checkPrerequisites(curNode, selectedNodes)) {
                 // The new node is selectable
+                console.log("================== SELECTABLE", curCourse);
+                selectableNodes[curCourse] = 1;
+                
+                // Determine previous node condition
                 if (selectedNodes.hasOwnProperty(prevCourse)) {
+                    console.log("PREVIOUS SELECTED", prevCourse);
                     delete selectedNodes[prevCourse];
+                    delete selectableNodes[curCourse];
                     selectedNodes[curCourse] = 1;
                 } else if (selectableNodes.hasOwnProperty(prevCourse)) {
+                    console.log("PREVIOUS SELECTABLE", prevCourse);
                     delete selectableNodes[prevCourse];
-                    selectableNodes[curCourse] = 1;
                 }
             } else {
                 // The new node is not selectable
@@ -99,11 +69,135 @@ export default function exclusionSwap(node, elements, edges, selectedNodes, sele
                 unselectNode(elements, node, selectedNodes, selectedEdges, selectableNodes, potentialEdges);
             }         
 
+            // Get all the edges of the previous course and hide all of them
+            // Then use regex sub to determine the new edges to reveal
+            // Transfer over selected, potential and hover edges if they are in newedgeslist
+            var edgesList = getConnectedEdges([node], edges);
+            var newEdgesList = getConnectedEdges([curNode], edges);
+            var edgesIds = [];
+            var newEdgesIds = [];
+            for (const edge of edgesList) {
+                edgesIds.push(edge.id);
+            }
+            for (const newEdge of newEdgesList) {
+                newEdgesIds.push(newEdge.id);
+            }        
+            var checkedEdges = [];
+
+            // Go through each edge we need to hide and check what we should do
+            // with the edge in hideEdgesList
+            for (const edge of edgesList) {
+                var hideEdge = getElement(edge.id, elements);
+                hideEdge.isHidden = true;
+                var newEdgeId = hideEdge.id.replace(prevCourse, curCourse);
+                if (getElement(newEdgeId, edges) !== null) {
+                    checkedEdges.push(newEdgeId);
+                } 
+
+                // If selected, unselect it
+                if (selectedEdges.hasOwnProperty(hideEdge.id)) {
+                    delete selectedEdges[hideEdge.id];
+                    if (newEdgesIds.includes(newEdgeId)) {
+                        // This is in the newEdges list. Transfer the edge property
+                        selectedEdges[newEdgeId] = 1;
+                    }
+                }
+
+                // If potential, unpotential it
+                if (potentialEdges.hasOwnProperty(hideEdge.id)) {
+                    delete potentialEdges[hideEdge.id];
+                    if (newEdgesIds.includes(newEdgeId)) {
+                        // This is in the newEdges list. Transfer the edge property
+                        potentialEdges[newEdgeId] = 1;
+                    }
+                }
+
+                // If hover, unhover it
+                if (hoverEdges.hasOwnProperty(hideEdge.id)) {
+                    delete hoverEdges[hideEdge.id];
+                    if (newEdgesIds.includes(newEdgeId)) {
+                        // This is in the newEdges list. Transfer the edge property
+                        hoverEdges[newEdgeId] = 1;
+                    }
+                }
+            }
+            
+            console.log("CHECKED EDGES", checkedEdges);
+            
+            for (const edge of edgesIds) {
+                const newEdgeId = edge.replace(prevCourse, curCourse);
+                if (! checkedEdges.includes(newEdgeId)) {
+                    // Old edge which has not been transferred to new edge.
+                    // Deal with the TARGET NODE SELECTABILITY right here
+                    var target = newEdgeId.split('-')[1];
+                    console.log("CHECKING", newEdgeId);
+                    console.log("TARGET IS", target);
+                    // Note that we cannot use newEdge.target as this edge
+                    // DOES NOT EXIST ( i think )
+
+                    // TODO: TEMPORARY FIX. Make sure target is not current course
+                    if (target === curCourse) continue;
+
+                    if (selectableNodes.hasOwnProperty(target)) {
+                        console.log("Deleting " + target);
+                        delete selectableNodes[target];
+                    }
+                }
+            }
+
             // For each edge, show it IF TARGET AND SOURCE ARE NOT HIDDEN
             // Will also show any additional edges
             // (Example: COMP6441, COMP6841. COMP6841 -> COMP6448 but COMP6441 does not)
-            var newEdgesList = getConnectedEdges([curNode], edges);
             for (const newEdge of newEdgesList) {
+                var edge = getElement(newEdge.id, elements);
+                const sourceNode = getElement(edge.source, elements);
+                const targetNode = getElement(edge.target, elements);
+                if ((!sourceNode.isHidden) && (!targetNode.isHidden)) {
+                    // Show the edge if both nodes are not hidden
+                    edge.isHidden = false;    
+                }
+
+                // Determine if this edge has been checked before
+                if (checkedEdges.includes(newEdge.id)) {
+                    // It has been checked before
+                    // TODO: THIS CAN BREAK if both nodes have same edges
+                    // but one has an additional prerequisite??????
+                    continue;
+                } else {
+                    console.log(newEdge.id + " NOT BEEN CHECKED BEFORE")
+                    // It has NOT been checked before
+                    if (selectedNodes.hasOwnProperty(curCourse)) {
+                        console.log(curCourse + " was previously seleted");
+                        potentialEdges[newEdge.id] = 1;
+                        // Check if the target node is selectable
+                        if (! selectableNodes.hasOwnProperty(edge.target)) {
+                            if (checkPrerequisites(targetNode, selectedNodes)) {
+                                console.log(edge.target + " DOES MEET PREREQS");
+                                selectableNodes[targetNode.id] = 1;
+                            } else {
+                                console.log(edge.target + " DOES NOT MEET PREREQS");
+                            }
+                        }
+                    } else {
+                        console.log(curCourse + " was not previously selected")
+                        // The node was not selected before. Delete any potential edges
+                        // Make target node unselectable if prereqs are not met
+                        if (potentialEdges.hasOwnProperty(edge.id)) {
+                            console.log("DELETING " + edge.id);
+                            delete potentialEdges[edge.id];
+                            if (selectableNodes.hasOwnProperty(edge.target)) {
+                                console.log(edge.target + " WAS SELECTABLE")
+                                if (! checkPrerequisites(targetNode, selectedNodes)) {
+                                    console.log(edge.target + " DOES NOT MEET PREREQS");
+                                    delete selectableNodes[targetNode.id];
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            /*for (const newEdge of newEdgesList) {
                 for (const edge of newElements) {
                     if (newEdge.id === edge.id) {
                         const sourceNode = getElement(edge.source, elements);
@@ -111,25 +205,29 @@ export default function exclusionSwap(node, elements, edges, selectedNodes, sele
                         if ((!sourceNode.isHidden) && (!targetNode.isHidden)) {
                             edge.isHidden = false;
                             
+                            
                             // If the new node is selected, make this edge blue
                             // Else, make this edge grey. Deals with differing edge
                             // cases COMP6441 and COMP6841
                             if (selectedNodes.hasOwnProperty(curCourse)) {
-                                console.log("SELECTED");
-                                console.log("ADDING " + edge.id);
                                 potentialEdges[edge.id] = 1;
+                                // Make sure the target node is selectable
+                                if (! selectableNodes.hasOwnProperty(edge.target)) {
+                                    if (checkPrerequisites(targetNode, selectedNodes)) {
+                                        selectableNodes[targetNode.id] = 1;
+                                    }
+                                }
                             } else {
-                                console.log("NOT SELECTED");
                                 if (potentialEdges.hasOwnProperty(edge.id)) {
-                                    delete potentialEdges[edge.id];
+                                   delete potentialEdges[edge.id];
                                 }
                             }
+
                         }
                         break;
                     }
                 }
-            }
-   
+            }*/
 
 
             break;
