@@ -9,19 +9,15 @@ export default class Column extends React.Component {
     render () {
         return (
             <Container>
-                <Header as="h3">
-                    {this.props.column.title}
-                </Header>
                 <Droppable droppableId={this.props.column.id}>
-                    {provided => (
-                        <div
-                            // style={{padding: "8px"}}
-                            ref={provided.innerRef}
-                            {...provided.droppableProps}
-                        >
-                            {this.props.tasks.map((task, index) => <Task key={task.id} task={task} index={index} />)}
-                            {provided.placeholder}
-                        </div>
+                    {(provided, snapshot) => (
+                        <Segment style={{backgroundColor: snapshot.isDraggingOver ? "#e8fbe8" : "white", transition: "0.2s ease"}}>
+                            <Header as="h3">{this.props.column.title}</Header>
+                            <div ref={provided.innerRef} {...provided.droppableProps} style={{minHeight: "100px"}}>
+                                {this.props.tasks.map((task, index) => <Task key={task.id} task={task} index={index} />)}
+                                {provided.placeholder}
+                            </div>
+                        </Segment>
                     )}
                 </Droppable>
             </Container>

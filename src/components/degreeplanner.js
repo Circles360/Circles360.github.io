@@ -17,38 +17,93 @@ const initialData = {
     },
 
     columns: {
-        "Summer Term": {
-            id: "T1",
+        "TS": {
+            id: "TS",
             title: "Summer Term",
-            taskIds: ["COMP1511", "COMP1521", "COMP1531", "MATH1141", "MATH1241"]
+            taskIds: []
         },
-        "Term 1": {
+        "T1": {
             id: "T1",
             title: "Term 1",
-            taskIds: ["COMP1511", "COMP1521", "COMP1531", "MATH1141", "MATH1241"]
+            taskIds: ["COMP1511"]
         },
-        "Term 2": {
-            id: "T1",
+        "T2": {
+            id: "T2",
             title: "Term 2",
-            taskIds: ["COMP1511", "COMP1521", "COMP1531", "MATH1141", "MATH1241"]
+            taskIds: ["COMP1521", "COMP1531"]
         },
-        "Term 3": {
-            id: "T1",
+        "T3": {
+            id: "T3",
             title: "Term 3",
-            taskIds: ["COMP1511", "COMP1521", "COMP1531", "MATH1141", "MATH1241"]
+            taskIds: ["MATH1141", "MATH1241"]
         }
     },
 
-    years: [1, 2, 3, 4, 5, 6],
+    // years: [1, 2, 3, 4, 5, 6],
+    years: [1],
 
-    columnOrder: ["Summer Term", "Term 1", "Term 2", "Term 3"]
+    columnOrder: ["TS", "T1", "T2", "T3"]
 }
 
 class DegreePlanner extends React.Component {
     state = initialData;
 
     onDragEnd = result => {
-        console.log("drag finished")
+        const {destination, source, draggableId} = result;
+
+        if (!destination) return;
+
+        if (destination.droppableId === source.droppableId && destination.index === source.index) return;
+
+        const start = this.state.columns[source.droppableId];
+        const finish = this.state.columns[destination.droppableId];
+        if (start === finish) {
+            const newTaskIds = Array.from(start.taskIds);
+            newTaskIds.splice(source.index, 1); // Remove 1 item at source.index
+            newTaskIds.splice(destination.index, 0, draggableId); // Insert dragggableId into destination
+            const newColumn = {
+                ...start,
+                taskIds: newTaskIds
+            };
+
+            const newState = {
+                ...this.state,
+                columns: {
+                    ...this.state.columns,
+                    [newColumn.id]: newColumn,
+                }
+            }
+
+            this.setState(newState);
+            return;
+        }
+
+        // Moving from one list to another
+        const startTaskIds = Array.from(start.taskIds);
+        startTaskIds.splice(source.index, 1);
+        const newStart = {
+            ...start,
+            taskIds: startTaskIds,
+        }
+
+        const finishTaskIds = Array.from(finish.taskIds);
+        finishTaskIds.splice(destination.index, 0, draggableId);
+        const newFinish = {
+            ...finish,
+            taskIds: finishTaskIds
+        }
+
+        const newState = {
+            ...this.state,
+            columns: {
+                ...this.state.columns,
+                [newStart.id]: newStart,
+                [newFinish.id]: newFinish
+            }
+        }
+
+        this.setState(newState);
+
     }
 
     render() {
@@ -68,8 +123,8 @@ class DegreePlanner extends React.Component {
 
                     <p><em>Please note that our data is scraped from the UNSW Handbook and may have some inconsistencies.</em></p>
 
-                    {this.state.years.map(years => (
-                        <DragDropContext onDragEnd={this.onDragEnd}>
+                    <DragDropContext onDragEnd={this.onDragEnd}>
+                        {this.state.years.map(years => (
                             <Grid columns={4}>
                                 {this.state.columnOrder.map(columnId => {
                                     const column = this.state.columns[columnId];
@@ -77,15 +132,17 @@ class DegreePlanner extends React.Component {
 
                                     return (
                                         <Grid.Column>
-                                            <Segment>
-                                                <Column key={column.id} column={column} tasks={tasks} />
-                                            </Segment>
+                                            <Column key={column.id} column={column} tasks={tasks} />
                                         </Grid.Column>
                                     );
                                 })}
                             </Grid>
-                        </DragDropContext>
-                    ))}
+                        ))}
+                    </DragDropContext>
+                    <Segment style={{backgroundColor: "lightpink"}}>
+                        <Header as="h2">Error messages</Header>
+                        <p>None</p>
+                    </Segment>
                 </Container>
             </Segment>
         );

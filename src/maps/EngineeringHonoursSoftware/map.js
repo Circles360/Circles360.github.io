@@ -155,7 +155,6 @@ const BESengah = () => {
         if (isEdge(element)) return; // Don't care about edges
         if (element.id === 'SENGAH') return; // Cannot click on main node
         if ((! selectableNodes.hasOwnProperty(element.id)) && (! selectedNodes.hasOwnProperty(element.id))) return; // Cannot select non selectable nodes
-        
 
         // Determine double or single click for exclusion nodes
         // This will prevent normal nodes from waiting the double click delay
@@ -175,8 +174,6 @@ const BESengah = () => {
             // Not an exclusion node.
             selectUnselect(element);
         }
-
-    
         /*for (var e of elements) {
             if (e.id === element.id) {
                 e.position.x = element.position.x;
