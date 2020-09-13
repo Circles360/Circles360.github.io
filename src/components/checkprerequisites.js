@@ -14,11 +14,15 @@ export default function checkPrerequisites(node, selectedNodes) {
     
     console.log(node.id);
     var condition = node.data.conditions.prereqs_executable;
-    condition = condition.replace(/[A-Z]{4}[0-9]{4}/gi, function(match) {
-        if (selectedNodes.hasOwnProperty(match)) return 1;
-        else return 0;
-    })
-
+    console.log(condition);
+    condition = condition.replace(/[A-Z]{4}[A-Z0-9]*/gi, function(match) {
+        if (selectedNodes.hasOwnProperty(match)) {
+            return 1;
+        } else {
+            return 0;
+        }
+    });
+    console.log("--------------");
     console.log(condition);
     if (eval(condition)) {
         return true;

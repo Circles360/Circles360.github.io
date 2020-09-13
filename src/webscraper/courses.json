@@ -25604,7 +25604,7 @@
         "desc": "Students will complete a small research project under the supervision of an academic member of the school and co-supervision of an industry expert as appropriate",
         "conditions": {
             "raw": "(COMP6441 OR COMP6841) AND (6 UOC from  (COMP6443, COMP6843, COMP6445, COMP6845, COMP6447)) AND enrolled in final term of program",
-            "prereqs_executable": "( COMP6441 || COMP6841 ) && ( ( COMP6443 && COMP6843 && COMP6445 && COMP6845 && COMP6447 ) )",
+            "prereqs_executable": "((COMP6441 || COMP6841) && (COMP6443 || COMP6843 || COMP6445 || COMP6845 || COMP6447))",
             "prerequisites": [
                 "COMP6441",
                 "COMP6841",
@@ -25639,7 +25639,7 @@
         "desc": "Students will complete a large research project under the supervision of an academic member of the school and co-supervision of an industry expert as appropriate",
         "conditions": {
             "raw": "(COMP6441 OR COMP6841) AND (12 UOC from (COMP6443, COMP6843, COMP6445, COMP6845, COMP6447)) AND enrolled in final term of program",
-            "prereqs_executable": "( COMP6441 || COMP6841 ) && ( ( COMP6443 && COMP6843 && COMP6445 && COMP6845 && COMP6447 ) )",
+            "prereqs_executable": "((COMP6441 || COMP6841) && ((COMP6443 && COMP6843) || (COMP6443 && COMP6445) || (COMP6443 && COMP6845) || (COMP6443 && COMP6447) || (COMP6843 && COMP6445) || (COMP6843 && COMP6845) || (COMP6843 && COMP6447) || (COMP6445 && COMP6845) || (COMP6445 && COMP6447) || (COMP6845 && COMP6447)))",
             "prerequisites": [
                 "COMP6441",
                 "COMP6841",
@@ -45807,8 +45807,10 @@
         "desc": "This is a Level 4 Information Systems (IS) course that continues students’ study of IS by furthering their knowledge and skills in relation to research methods and analytical skills. This course focuses on the understanding of IS research methodologies.",
         "conditions": {
             "raw": "Prerequisite: Enrolled in Honours majoring in Information Systems.",
-            "prereqs_executable": null,
-            "prerequisites": null,
+            "prereqs_executable": "(INFSA1)",
+            "prerequisites": [
+                "INFSA1"
+            ],
             "corequisites": null,
             "units_required": null,
             "level_for_units_required": null,
@@ -53379,8 +53381,12 @@
         "desc": "Role of proof in mathematics, logical reasoning and implication, different types of proofs. Sets, algebra of sets, operations on sets. Mathematical logic, truth tables, syntax, induction. Graphs and directed graphs, basic graph algorithms. Counting, combinatorial identities, binomial and multinomial theorems. Binary operations and their properties, ordered structures. Recursion relations. Assumed … For more content click the Read more button below.Role of proof in mathematics, logical reasoning and implication, different types of proofs. Sets, algebra of sets, operations on sets. Mathematical logic, truth tables, syntax, induction. Graphs and directed graphs, basic graph algorithms. Counting, combinatorial identities, binomial and multinomial theorems. Binary operations and their properties, ordered structures. Recursion relations. Assumed knowledge: HSC Mathematics Extension 1. Students will be expected to have achieved a combined mark of at least 100 in Mathematics and Mathematics Extension 1.Read more",
         "conditions": {
             "raw": "Corequisite: MATH1131 or DPST1013 or MATH1141 or MATH1151",
-            "prereqs_executable": null,
-            "prerequisites": null,
+            "prereqs_executable": "(MATH1131 || DPST1013 || MATH1141 || MATH1151)",
+            "prerequisites": [
+                "MATH1131",
+                "MATH1141",
+                "MATH1151"
+            ],
             "corequisites": [
                 "MATH1131",
                 "MATH1141",

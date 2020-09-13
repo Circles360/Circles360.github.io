@@ -6,6 +6,20 @@ COURSES.JSON:
     Eng1000 is prerequisite for Engineering students (but not for med students)
 - COMP4951-COMP4952-COMP4953 chain
 
+- MATH1081: Treat corequisites the same as prerequisites on the graph
+    - MATH1081 prerequisites = MATH1081 corequisites
+    - MATH1081 prerequisites executable = MATH1131 || DPST1013 || MATH1141 || MATH1151
+
+- COMP9301, COMP9302, 12uoc condition
+    - COMP9301 prerequisites executable = (COMP6441 || COMP6841) && (COMP6443 || COMP6843 || COMP6445 || COMP6845 || COMP6447)
+    - COMP9302 prerequisites executable = (COMP6441 || COMP6841) && ((COMP6443 && COMP6843) || (COMP6443 && COMP6445) || (COMP6443 && COMP6845) || (COMP6443 && COMP6447) || (COMP6843 && COMP6445) || (COMP6843 && COMP6845) || (COMP6843 && COMP6447) || (COMP6445 && COMP6845) || (COMP6445 && COMP6447) || (COMP6845 && COMP6447))
+
+- INFS4886: must be enrolled in information system major honours
+    - HAVEN'T DONE HONOURS PART
+    - prerequisites = 'INFSA1'
+        (Header node will be INFSA1 and it will be always selected by default)
+
+
 
 BESENGAHGENERATOR.MJS:
 - DESN2000 needs to have terms and prereqs and unlocks added (specifically for SENGAH)
@@ -14,3 +28,4 @@ BESENGAHGENERATOR.MJS:
 - ENGG1000-ENGG2600-ENG3600-ENGG4600 chain
 - INFS3830 has prerequisites hardcoded (INFS3603 ONLY)
 - INFS3873 has prerequisites hardcoded (INFS3603 ONLY)
+NEW: 
