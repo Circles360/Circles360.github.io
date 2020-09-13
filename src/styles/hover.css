@@ -14,3 +14,7 @@
     color: white;
     text-align: center;
 }
+
+#testing {
+    @import 'semantic-ui';
+}

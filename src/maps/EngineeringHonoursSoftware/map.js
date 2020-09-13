@@ -242,11 +242,10 @@ const BESengah = () => {
                 </Grid.Column>
 
                 <Grid.Column width="4">
-                    <Sidebar />
+                    <Sidebar/>
                     {/* <DegreePlanner/> */}
                 </Grid.Column>
             </Grid>
-
             <div id="DegreePlanner">
                 <DegreePlanner />
             </div>
