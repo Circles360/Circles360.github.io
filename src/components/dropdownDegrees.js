@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Button, Dropdown } from 'semantic-ui-react'
+import { Button, Dropdown, Grid } from 'semantic-ui-react'
 
 import programsJSON from "../webscraper/programs.json"
 import specialisationsJSON from "../webscraper/specialisations.json"
@@ -72,6 +72,8 @@ class DropdownDegrees extends Component {
 
         disabledPrimary: true,
         disabledSecondary: true,
+        hiddenPrimary: 'hidden',
+        hiddenSecondary: 'hidden',
 
         valProgram: null,
         valPrimary: null,
@@ -89,11 +91,13 @@ class DropdownDegrees extends Component {
 
             valPrimary: null,
             disabledPrimary: false,
+            hiddenPrimary: 'visible',
             majorOptions: majors,
             phPrimary: "Select Major",
 
             valSecondary: null,
             disabledSecondary: true,
+            hiddenSecondary: 'hidden',
             minorOptions: [],
             phSecondary: "N/A"
         })
@@ -106,6 +110,7 @@ class DropdownDegrees extends Component {
                 phSecondary: "Select Minor",
                 minorOptions: getMinors(program.value),
                 disabledSecondary: false,
+                hiddenSecondary: 'visible',
             });
         }
     }
@@ -130,32 +135,43 @@ class DropdownDegrees extends Component {
 
     render() {
         return <>
-            <Dropdown
-                selection
-                search
-                onChange={this.chooseProgram}
-                options= {this.state.programOptions}
-                enabled
-                placeholder= 'Select Program'
-            />{' '}
-            <Dropdown
-                selection
-                search
-                onChange={this.choosePrimary}
-                options= {this.state.majorOptions}
-                disabled= {this.state.disabledPrimary}
-                value= {this.state.valPrimary}
-                placeholder= {this.state.phPrimary}
-            />{' '}
-            <Dropdown
-                selection
-                search
-                onChange={this.chooseSecondary}
-                options= {this.state.minorOptions}
-                disabled= {this.state.disabledSecondary}
-                value= {this.state.valSecondary}
-                placeholder= {this.state.phSecondary}
-            />
+            <Grid centered> 
+                <Grid.Row>  
+                    <Dropdown
+                        selection
+                        search
+                        onChange={this.chooseProgram}
+                        options= {this.state.programOptions}
+                        enabled
+                        placeholder= 'Select Program'
+                    />
+                </Grid.Row>
+                <Grid.Row>
+                    <Dropdown
+                        selection
+                        search
+                        onChange={this.choosePrimary}
+                        options= {this.state.majorOptions}
+                        disabled= {this.state.disabledPrimary}
+                        value= {this.state.valPrimary}
+                        placeholder= {this.state.phPrimary}
+                        style={{visibility: this.state.hiddenPrimary}}
+                    />
+                </Grid.Row>
+                <Grid.Row>
+                    <Dropdown
+                        selection
+                        search
+                        onChange={this.chooseSecondary}
+                        options= {this.state.minorOptions}
+                        disabled= {this.state.disabledSecondary}
+                        value= {this.state.valSecondary}
+                        placeholder= {this.state.phSecondary}
+                        style={{visibility: this.state.hiddenSecondary}}
+                    />
+                </Grid.Row>
+            </Grid>
+            
             <div>
                 <Button
                     onClick={this.clickDone}

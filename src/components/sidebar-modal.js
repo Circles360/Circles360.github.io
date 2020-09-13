@@ -1,23 +1,52 @@
 import React, { useState } from "react";
-import { Modal, Button } from "semantic-ui-react";
+import DropdownDegrees from "./dropdownDegrees.js"
+import { Icon, Button, Container, Modal, Header, Dropdown, Grid, Message } from 'semantic-ui-react'
 
-const SidebarModal = () => {
-    const [open, setOpen] = React.useState(false)
-    return (
-        <Modal
-            onClose={() => setOpen(false)}
-            onOpen={() => setOpen(true)}
-            open={open}
-            trigger={<Button>Need help?</Button>}
-        >
-            <Modal.Header>Welcome to Circles</Modal.Header>
-            <Modal.Actions>
-                <Button color="black" onClick={() => setOpen(false)}>
-                    Okay
-                </Button>
-            </Modal.Actions>
-        </Modal>
-    );
-};
+function exampleReducer(state, action) {
+  switch (action.type) {
+    case 'OPEN_MODAL':
+      return { open: true, dimmer: action.dimmer }
+    case 'CLOSE_MODAL':
+      return { open: false }
+    default:
+      throw new Error()
+  }
+}
 
-export default SidebarModal;
+function SideBarModal() {
+  const [state, dispatch] = React.useReducer(exampleReducer, {
+    open: false,
+    dimmer: undefined,
+  })
+  const { open, dimmer } = state
+
+  return (
+    <div>
+      <Button
+        onClick={() => dispatch({ type: 'OPEN_MODAL', dimmer: 'blurring' })}
+      >
+        Click on Me :) 
+      </Button>
+
+      <Modal
+        dimmer={dimmer}
+        open={open}
+        onClose={() => dispatch({ type: 'CLOSE_MODAL' })}
+      >
+        <Modal.Header>Choose your degree</Modal.Header>
+        <Container>
+            <Header as="h3" textAlign="center" style={{marginTop: "5px"}}>Choose your degree</Header>
+            <DropdownDegrees />
+        </Container>
+        <Modal.Actions>
+          <Button color='black' onClick={() => dispatch({ type: 'CLOSE_MODAL' })}>
+            Generate
+          </Button>
+        </Modal.Actions>
+      </Modal>
+    </div>
+  )
+}
+
+export default SideBarModal
+

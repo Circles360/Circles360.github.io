@@ -10,11 +10,12 @@ import hoverPrerequisites from '../../components/hoverprerequisites.js';
 import unhoverPrerequisites from '../../components/unhoverprerequisites.js';
 
 import DropdownD from "../../components/dropdownDegrees.js"
-import { Grid } from 'semantic-ui-react'
+import { Grid, Segment } from 'semantic-ui-react'
 import Sidebar from "../../components/sidebar.js"
 import pkg from 'semantic-ui-react/package.json'
 
 import DegreePlanner from "../../components/degreeplanner.js"
+import DropdownDegrees from '../../components/dropdownDegrees';
 
 import positionHelper from '../../components/positionhelper.js';
 import selectNode from '../../components/selectnode.js';
@@ -22,8 +23,6 @@ import unselectNode from '../../components/unselectnode.js';
 import highlightElements from '../../components/highlightelements.js';
 import getSelectable from '../../components/getselectable.js';
 import checkPrerequisites from '../../components/checkprerequisites';
-import DropdownDegrees from '../../components/dropdownDegrees';
-
 import exclusionSwap from '../../components/exclusionswap.js';
 
 var elementsData = require("./data.json");
@@ -57,27 +56,17 @@ for (const group of exclusionGroups) {
     }
 }
 
-// console.log("==========SelectedNodes==========");
-// console.log(selectedNodes);
-// console.log("==========SelectedEdges==========");
-// console.log(selectedEdges);
-// console.log("==========SelectableNodes==========");
-// console.log(selectableNodes);
-// console.log("==========PotentialEdges==========");
-// console.log(potentialEdges);
-
 elementsData = highlightElements(elementsData, selectedNodes, selectedEdges, selectableNodes, potentialEdges, hoverEdges);
 
 
 const onLoad = (reactFlowInstance) => {
-    reactFlowInstance.fitView();
     for (var group of exclusionGroups) {
         const last = group.pop();
     
         for (var course of elementsData) {
             if (last === course.id) {
                 course.isHidden = true;
-                
+                console.log("Hiding " + course.id);
                 // Get all the edges and hide them too
                 for (var edge of elementsData) {
                     if (isNode(edge)) continue;
@@ -91,6 +80,7 @@ const onLoad = (reactFlowInstance) => {
         }
         group.push(last);
     }
+    reactFlowInstance.setTransform({x: 100, y: 100, zoom: 1});
 };
 
 const nodeTypes = {
@@ -99,6 +89,9 @@ const nodeTypes = {
     header1: HeaderNode1
 };
 
+const layoutStyle = {overflowX: "hidden", overflowY: "overlay", width: "100vw", height: "100vh"};
+
+
 const BESengah = () => {
     const [elements, setElements] = useState(elementsData);
     const [hoverText, setHoverText] = useState(false);
@@ -106,6 +99,7 @@ const BESengah = () => {
     const [sidebarOpen, setSidebarOpen] = useState(false);
     var clickCount = 0;
     var singleClickTimer = '';
+    const [layout, setLayout] = useState(layoutStyle);
 
     const selectUnselect = (element) => {
         // NOTE: Might not need this?????
@@ -164,7 +158,7 @@ const BESengah = () => {
                 singleClickTimer = setTimeout(function() {
                     clickCount = 0;
                     selectUnselect(element);
-                }, 200);
+                }, 150);
             } else if (clickCount === 2) {
                 clearTimeout(singleClickTimer);
                 clickCount = 0;
@@ -217,30 +211,41 @@ const BESengah = () => {
         }
     }
 
+    const disableBodyScroll = () => {
+        setLayout({...layout, overflowY: 'hidden'});
+    }
+
+    const enableBodyScroll = () => {
+        setLayout({...layout, overflowY: 'overlay'});
+    }
+
     return (
         <>
+        <div style={layout}>
             <Grid columns={2} divided>
                 <Grid.Column width="12">
-                    <ReactFlowProvider>
-                        <ReactFlow
-                            elements={elements}
-                            style={{width: '100%', height: '95vh'}}
-                            onLoad={onLoad}
-                            nodeTypes={nodeTypes}
-                            nodesConnectable={false}
-                            onElementClick={onElementClick}
-                            minZoom={0.1}
-                            //setInitTransform={TransformUpdater({x: 100, y: 100, z: 1})}
-                            //nodesDraggable={false}
-                            onNodeMouseEnter={onNodeMouseEnter}
-                            onNodeMouseLeave={onNodeMouseLeave}
-                            selectNodesOnDrag={false}
-                            onNodeContextMenu={onNodeContextMenu}
-                            onNodeDragStop={onNodeDragStop}
-                        >
-                        </ReactFlow>
-                        {hoverDisplay}
-                    </ReactFlowProvider>
+                    <div onMouseEnter={disableBodyScroll} onMouseLeave={enableBodyScroll}>
+                        <ReactFlowProvider>
+                            <ReactFlow
+                                elements={elements}
+                                style={{width: '100%', height: '100vh'}}
+                                onLoad={onLoad}
+                                nodeTypes={nodeTypes}
+                                nodesConnectable={false}
+                                onElementClick={onElementClick}
+                                minZoom={0.5}
+                                //setInitTransform={TransformUpdater({x: 100, y: 100, z: 1})}
+                                //nodesDraggable={false}
+                                onNodeMouseEnter={onNodeMouseEnter}
+                                onNodeMouseLeave={onNodeMouseLeave}
+                                selectNodesOnDrag={false}
+                                onNodeContextMenu={onNodeContextMenu}
+                                onNodeDragStop={onNodeDragStop}
+                            >
+                            </ReactFlow>
+                            {hoverDisplay}
+                        </ReactFlowProvider>
+                    </div>
                 </Grid.Column>
                 <Grid.Column width="4">
                     <Sidebar/>
@@ -250,6 +255,7 @@ const BESengah = () => {
             <div id="DegreePlanner">
                 <DegreePlanner />
             </div>
+        </div>
         </>
     );
 };
