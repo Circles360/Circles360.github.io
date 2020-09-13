@@ -11,7 +11,7 @@ import hoverPrerequisites from '../../components/hoverprerequisites.js';
 import unhoverPrerequisites from '../../components/unhoverprerequisites.js';
 
 import DropdownD from "../../components/dropdownDegrees.js"
-import { Grid } from 'semantic-ui-react'
+import { Grid, Segment } from 'semantic-ui-react'
 import Sidebar from "../../components/sidebar.js"
 import pkg from 'semantic-ui-react/package.json'
 
@@ -58,15 +58,6 @@ for (const group of exclusionGroups) {
     }
 }
 
-// console.log("==========SelectedNodes==========");
-// console.log(selectedNodes);
-// console.log("==========SelectedEdges==========");
-// console.log(selectedEdges);
-// console.log("==========SelectableNodes==========");
-// console.log(selectableNodes);
-// console.log("==========PotentialEdges==========");
-// console.log(potentialEdges);
-
 elementsData = highlightElements(elementsData, selectedNodes, selectedEdges, selectableNodes, potentialEdges, hoverEdges);
 
 
@@ -101,7 +92,7 @@ const nodeTypes = {
     header1: HeaderNode1
 };
 
-const layoutStyle = {overflow: "scroll", width: '100%', height: '100vh'};
+const layoutStyle = {overflowX: "hidden", overflowY: "scroll", width: '100%', height: '100vh'};
 
 
 const BESengah = () => {
@@ -170,7 +161,7 @@ const BESengah = () => {
                 singleClickTimer = setTimeout(function() {
                     clickCount = 0;
                     selectUnselect(element);
-                }, 200);
+                }, 150);
             } else if (clickCount === 2) {
                 clearTimeout(singleClickTimer);
                 clickCount = 0;
@@ -224,11 +215,11 @@ const BESengah = () => {
     }
 
     const disableBodyScroll = () => {
-        setLayout({overflow: "hidden", width: '100%', height: '100vh'});
+        setLayout({...layout, overflowY: 'hidden'});
     }
 
     const enableBodyScroll = () => {
-        setLayout({overflow: "scroll", width: '100%', height: '100vh'});
+        setLayout({...layout, overflowY: 'scroll'});
     }
 
     return (
