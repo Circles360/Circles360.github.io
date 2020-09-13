@@ -43,7 +43,7 @@ for (const node of nodesData) {
         for (const unlockCourse of node.data.unlocks) {
             potentialEdges['e' + node.id + '-' + unlockCourse] = 1;
         }
-    } else if (checkPrerequisites(node, elementsData, nodesData)) {
+    } else if (checkPrerequisites(node, elementsData, selectedNodes)) {
         selectableNodes[node.id] = 1;
     }
 }
@@ -66,12 +66,12 @@ const onLoad = (reactFlowInstance) => {
         for (var course of elementsData) {
             if (last === course.id) {
                 course.isHidden = true;
-                console.log("Hiding " + course.id);
+                //console.log("Hiding " + course.id);
                 // Get all the edges and hide them too
                 for (var edge of elementsData) {
                     if (isNode(edge)) continue;
                     if (edge.source === last || edge.target === last) {
-                        console.log("hiding " + edge.id);
+                        //console.log("hiding " + edge.id);
                         edge.isHidden = true;
                     }
                 }
@@ -111,24 +111,28 @@ const BESengah = () => {
         // 1. Select the node and fill in edges.
         // - Deal with unselecting nodes
         if (selectableNodes.hasOwnProperty(element.id)) {
+            console.log("MAINSELECT");
             selectNode(elements, element, selectedNodes, selectedEdges, selectableNodes, potentialEdges);
         } else if (selectedNodes.hasOwnProperty(element.id)) {
+            console.log("UNSELECTING");
             unselectNode(elements, element, selectedNodes, selectedEdges, selectableNodes, potentialEdges);
         }
-
-        // 2. Determine which nodes are now selectable
-        // - Determine which previously selectable nodes are now unselectable
-        getSelectable(elements, selectedNodes, selectedEdges, selectableNodes, potentialEdges);
-
-        // After selecting node:
-        /*console.log("==========SelectedNodes==========");
+        
+        console.log("==========SelectedNodes==========");
         console.log(selectedNodes);
         console.log("==========SelectedEdges==========");
         console.log(selectedEdges);
         console.log("==========SelectableNodes==========");
         console.log(selectableNodes);
         console.log("==========PotentialEdges==========");
-        console.log(potentialEdges);*/
+        console.log(potentialEdges);
+
+        // 2. Determine which nodes are now selectable
+        // - Determine which previously selectable nodes are now unselectable
+        getSelectable(elements, selectedNodes, selectedEdges, selectableNodes, potentialEdges);
+
+        // After selecting node:
+
 
         // Render graph accordingly
         setElements(highlightElements(elements, selectedNodes, selectedEdges, selectableNodes, potentialEdges, hoverEdges));

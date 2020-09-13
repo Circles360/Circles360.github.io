@@ -10,12 +10,12 @@ import getElement from './getelement.js';
 export default function checkPrerequisites(node, elements, selectedNodes) {
     if (node.data.conditions.prerequisites !== null && node.data.conditions.prereqs_executable !== null) {
         // Evaluate the condition
-        console.log("HERE");
-        console.log(node.data.conditions.prereqs_executable);
+        //console.log("HERE");
+        //console.log(node.data.conditions.prereqs_executable);
         var condition = node.data.conditions.prereqs_executable;
-        console.log(condition);
+        //console.log(condition);
         condition = condition.replace(/[A-Z]{4}[A-Z0-9]+/gi, function(match) {
-            console.log(match);
+            //console.log(match);
             if (selectedNodes.hasOwnProperty(match)) {
                 return 1;
             } else {
@@ -30,15 +30,18 @@ export default function checkPrerequisites(node, elements, selectedNodes) {
     } else {
         // Check if units required exists
         if (node.data.conditions.units_required !== null) {
-            if (node.data.conditions.level_for_units === null) {
-                console.log("LEVEL FOR UNITS", node.id);
+            if (node.data.conditions.level_for_units_required === null) {
+                //console.log("LEVEL FOR UNITS", node.id);
                 // See if we meet the total for this course
                 var total = 0;
                 const target = node.data.conditions.units_required;
-                for (const selected of selectedNodes) {
+                const selectedList = Object.keys(selectedNodes);
+                //console.log(selectedNodes);
+                for (const selected of selectedList) {
+                    //console.log(selected);
                     const node = getElement(selected, elements);
-                    total += node.units;
-                    console.log("HELLO");
+                    total += node.data.units;
+                    //console.log(node.id + "=" + node.data.units);
                 }
 
                 if (total >= target) {

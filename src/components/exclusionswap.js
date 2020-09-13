@@ -7,15 +7,15 @@ import checkPrerequisites from './checkprerequisites.js';
 import unselectNode from './unselectnode.js';
 
 export default function exclusionSwap(node, elements, edges, selectedNodes, selectedEdges, selectableNodes, potentialEdges, hoverEdges, exclusionGroups) {
-    console.log("EXCLUSION SWAP");
+    /*console.log("EXCLUSION SWAP");
     console.log(exclusionGroups);
-    console.log(node.id);
+    console.log(node.id);*/
     const newElements = [...elements];
     for (var group of exclusionGroups) {
-        console.log("CHECKING", group);
+        //console.log("CHECKING", group);
         if (group.includes(node.id)) {
-            console.log("FOUND THE EXCLUSION GROUP");
-            console.log(group);
+            //console.log("FOUND THE EXCLUSION GROUP");
+            //console.log(group);
 
             // Move this to the back
             const prevCourse = group.shift();
@@ -24,24 +24,24 @@ export default function exclusionSwap(node, elements, edges, selectedNodes, sele
             // Current course we need to display is now at front of queue
             const curCourse = group[0];
 
-            console.log(prevCourse);
-            console.log(curCourse);
+            //console.log(prevCourse);
+            //console.log(curCourse);
 
 
             // Toggle the nodes themselves accordingly
             for (var e of elements) {
                 if (e.id === prevCourse) {
-                    console.log(e);
+                    /*console.log(e);
                     console.log("HIDING");
-                    console.log(prevCourse);
+                    console.log(prevCourse);*/
                     e.isHidden = true;
-                    console.log(e);
+                    //console.log(e);
                 } else if (e.id === curCourse) {
-                    console.log(e);
+                    /*console.log(e);
                     console.log("REVEALING");
-                    console.log(curCourse);
+                    console.log(curCourse);*/
                     e.isHidden = false;
-                    console.log(e);
+                    //console.log(e);
                 }
             }
 
@@ -50,17 +50,17 @@ export default function exclusionSwap(node, elements, edges, selectedNodes, sele
             var curNode = getElement(curCourse, elements);
             if (checkPrerequisites(curNode, elements, selectedNodes)) {
                 // The new node is selectable
-                console.log("================== SELECTABLE", curCourse);
+                //console.log("================== SELECTABLE", curCourse);
                 selectableNodes[curCourse] = 1;
                 
                 // Determine previous node condition
                 if (selectedNodes.hasOwnProperty(prevCourse)) {
-                    console.log("PREVIOUS SELECTED", prevCourse);
+                    //console.log("PREVIOUS SELECTED", prevCourse);
                     delete selectedNodes[prevCourse];
                     delete selectableNodes[curCourse];
                     selectedNodes[curCourse] = 1;
                 } else if (selectableNodes.hasOwnProperty(prevCourse)) {
-                    console.log("PREVIOUS SELECTABLE", prevCourse);
+                    //console.log("PREVIOUS SELECTABLE", prevCourse);
                     delete selectableNodes[prevCourse];
                 }
             } else {
@@ -122,7 +122,7 @@ export default function exclusionSwap(node, elements, edges, selectedNodes, sele
                 }
             }
             
-            console.log("CHECKED EDGES", checkedEdges);
+            //console.log("CHECKED EDGES", checkedEdges);
             
             for (const edge of edgesIds) {
                 const newEdgeId = edge.replace(prevCourse, curCourse);
@@ -130,8 +130,8 @@ export default function exclusionSwap(node, elements, edges, selectedNodes, sele
                     // Old edge which has not been transferred to new edge.
                     // Deal with the TARGET NODE SELECTABILITY right here
                     var target = newEdgeId.split('-')[1];
-                    console.log("CHECKING", newEdgeId);
-                    console.log("TARGET IS", target);
+                    //console.log("CHECKING", newEdgeId);
+                    //console.log("TARGET IS", target);
                     // Note that we cannot use newEdge.target as this edge
                     // DOES NOT EXIST ( i think )
 
@@ -139,7 +139,7 @@ export default function exclusionSwap(node, elements, edges, selectedNodes, sele
                     if (target === curCourse) continue;
 
                     if (selectableNodes.hasOwnProperty(target)) {
-                        console.log("Deleting " + target);
+                        //console.log("Deleting " + target);
                         delete selectableNodes[target];
                     }
                 }
@@ -164,31 +164,31 @@ export default function exclusionSwap(node, elements, edges, selectedNodes, sele
                     // but one has an additional prerequisite??????
                     continue;
                 } else {
-                    console.log(newEdge.id + " NOT BEEN CHECKED BEFORE")
+                    //console.log(newEdge.id + " NOT BEEN CHECKED BEFORE")
                     // It has NOT been checked before
                     if (selectedNodes.hasOwnProperty(curCourse)) {
-                        console.log(curCourse + " was previously seleted");
+                        //console.log(curCourse + " was previously seleted");
                         potentialEdges[newEdge.id] = 1;
                         // Check if the target node is selectable
                         if (! selectableNodes.hasOwnProperty(edge.target)) {
                             if (checkPrerequisites(targetNode, elements, selectedNodes)) {
-                                console.log(edge.target + " DOES MEET PREREQS");
+                                //console.log(edge.target + " DOES MEET PREREQS");
                                 selectableNodes[targetNode.id] = 1;
                             } else {
-                                console.log(edge.target + " DOES NOT MEET PREREQS");
+                                //console.log(edge.target + " DOES NOT MEET PREREQS");
                             }
                         }
                     } else {
-                        console.log(curCourse + " was not previously selected")
+                        //console.log(curCourse + " was not previously selected")
                         // The node was not selected before. Delete any potential edges
                         // Make target node unselectable if prereqs are not met
                         if (potentialEdges.hasOwnProperty(edge.id)) {
-                            console.log("DELETING " + edge.id);
+                            //console.log("DELETING " + edge.id);
                             delete potentialEdges[edge.id];
                             if (selectableNodes.hasOwnProperty(edge.target)) {
-                                console.log(edge.target + " WAS SELECTABLE")
+                                //console.log(edge.target + " WAS SELECTABLE")
                                 if (! checkPrerequisites(targetNode, elements, selectedNodes)) {
-                                    console.log(edge.target + " DOES NOT MEET PREREQS");
+                                    //console.log(edge.target + " DOES NOT MEET PREREQS");
                                     delete selectableNodes[targetNode.id];
                                 }
                             }
