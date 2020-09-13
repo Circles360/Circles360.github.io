@@ -232,6 +232,7 @@ for (const course of courses_output) {
     }
 }
 
+console.log("====================");
 // Generate exclusion course data
 var exclusion_groups = []; // Holds all exclusion groups
 var exclusion_list = {};  // Quick checking if we have already excluded this course
@@ -244,6 +245,7 @@ for (var course of courses_output) {
     for (const exclusion of course.data.exclusions) {
         if (courses_list.hasOwnProperty(exclusion)) {
             // Create an exclusion course with this node as it exists in our program
+            console.log(exclusion);
             exclusion_list[exclusion] = 1;
             group.push(exclusion);
         }
@@ -253,6 +255,9 @@ for (var course of courses_output) {
         exclusion_list[course.id] = 1;
         group.unshift(course.id);
         exclusion_groups.push(group);
+        console.log(course.id);
+        console.log(course.data.exclusions);
+        console.log("====================");
     }
 }
 

@@ -60,14 +60,13 @@ elementsData = highlightElements(elementsData, selectedNodes, selectedEdges, sel
 
 
 const onLoad = (reactFlowInstance) => {
-    reactFlowInstance.fitView();
     for (var group of exclusionGroups) {
         const last = group.pop();
     
         for (var course of elementsData) {
             if (last === course.id) {
                 course.isHidden = true;
-                
+                console.log("Hiding " + course.id);
                 // Get all the edges and hide them too
                 for (var edge of elementsData) {
                     if (isNode(edge)) continue;
