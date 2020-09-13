@@ -42,13 +42,6 @@ const Sidebar = (props) => {
             <Grid stretched>
                 <Grid.Row>
                     <Container>
-                        <Header as="h3" textAlign="center" style={{marginTop: "5px"}}>Choose your degree</Header>
-                        <DropdownDegrees />
-                    </Container>
-                </Grid.Row>
-
-                <Grid.Row>
-                    <Container>
                         <Header as="h3" textAlign="center">Choose your courses</Header>
                         <Header as="h4" style={{marginBottom: 0}}>Level 1 Core Courses</Header>
                         <Dropdown

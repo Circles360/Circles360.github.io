@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Button, Dropdown } from 'semantic-ui-react'
+import { Button, Dropdown, Grid } from 'semantic-ui-react'
 
 import programsJSON from "../webscraper/programs.json"
 import specialisationsJSON from "../webscraper/specialisations.json"
@@ -135,34 +135,43 @@ class DropdownDegrees extends Component {
 
     render() {
         return <>
-            <Dropdown
-                selection
-                search
-                onChange={this.chooseProgram}
-                options= {this.state.programOptions}
-                enabled
-                placeholder= 'Select Program'
-            />{' '}
-            <Dropdown
-                selection
-                search
-                onChange={this.choosePrimary}
-                options= {this.state.majorOptions}
-                disabled= {this.state.disabledPrimary}
-                value= {this.state.valPrimary}
-                placeholder= {this.state.phPrimary}
-                style={{visibility: this.state.hiddenPrimary}}
-            />{' '}
-            <Dropdown
-                selection
-                search
-                onChange={this.chooseSecondary}
-                options= {this.state.minorOptions}
-                disabled= {this.state.disabledSecondary}
-                value= {this.state.valSecondary}
-                placeholder= {this.state.phSecondary}
-                style={{visibility: this.state.hiddenSecondary}}
-            />
+            <Grid centered> 
+                <Grid.Row>  
+                    <Dropdown
+                        selection
+                        search
+                        onChange={this.chooseProgram}
+                        options= {this.state.programOptions}
+                        enabled
+                        placeholder= 'Select Program'
+                    />
+                </Grid.Row>
+                <Grid.Row>
+                    <Dropdown
+                        selection
+                        search
+                        onChange={this.choosePrimary}
+                        options= {this.state.majorOptions}
+                        disabled= {this.state.disabledPrimary}
+                        value= {this.state.valPrimary}
+                        placeholder= {this.state.phPrimary}
+                        style={{visibility: this.state.hiddenPrimary}}
+                    />
+                </Grid.Row>
+                <Grid.Row>
+                    <Dropdown
+                        selection
+                        search
+                        onChange={this.chooseSecondary}
+                        options= {this.state.minorOptions}
+                        disabled= {this.state.disabledSecondary}
+                        value= {this.state.valSecondary}
+                        placeholder= {this.state.phSecondary}
+                        style={{visibility: this.state.hiddenSecondary}}
+                    />
+                </Grid.Row>
+            </Grid>
+            
             <div>
                 <Button
                     onClick={this.clickDone}
