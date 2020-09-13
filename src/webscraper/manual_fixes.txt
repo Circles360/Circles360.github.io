@@ -10,7 +10,7 @@ COURSES.JSON:
     - MATH1081 prerequisites = MATH1081 corequisites
     - MATH1081 prerequisites executable = MATH1131 || DPST1013 || MATH1141 || MATH1151
     - Add MATH1081 as unlocks to MATH1131, DPST1031, MATH1141, MATH1151
-    
+
 - COMP9301, COMP9302, 12uoc condition
     - COMP9301 prerequisites executable = (COMP6441 || COMP6841) && (COMP6443 || COMP6843 || COMP6445 || COMP6845 || COMP6447)
     - COMP9302 prerequisites executable = (COMP6441 || COMP6841) && ((COMP6443 && COMP6843) || (COMP6443 && COMP6445) || (COMP6443 && COMP6845) || (COMP6443 && COMP6447) || (COMP6843 && COMP6445) || (COMP6843 && COMP6845) || (COMP6843 && COMP6447) || (COMP6445 && COMP6845) || (COMP6445 && COMP6447) || (COMP6845 && COMP6447))
@@ -20,6 +20,11 @@ COURSES.JSON:
     - prerequisites = 'INFSA1'
         (Header node will be INFSA1 and it will be always selected by default)
 
+- COMP4962 and COMP4963 have themselves as prerequisites
+    - COMP4962 prerequisite = COMP4951, remove from prerequisites
+        - It also unlocks itself
+    - COMP4963 prerequisite = COMP4962, remove from prerequisites
+        - It also unlocks itself
 
 
 BESENGAHGENERATOR.MJS:
@@ -29,4 +34,3 @@ BESENGAHGENERATOR.MJS:
 - ENGG1000-ENGG2600-ENG3600-ENGG4600 chain
 - INFS3830 has prerequisites hardcoded (INFS3603 ONLY)
 - INFS3873 has prerequisites hardcoded (INFS3603 ONLY)
-NEW: 

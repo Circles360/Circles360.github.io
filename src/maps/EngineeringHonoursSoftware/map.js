@@ -80,7 +80,7 @@ const onLoad = (reactFlowInstance) => {
         }
         group.push(last);
     }
-    reactFlowInstance.setTransform({x: 100, y: 100, zoom: 1});
+    reactFlowInstance.setTransform({x: 470, y: 350, zoom: 0.38});
 };
 
 const nodeTypes = {
@@ -233,7 +233,7 @@ const BESengah = () => {
                                 nodeTypes={nodeTypes}
                                 nodesConnectable={false}
                                 onElementClick={onElementClick}
-                                minZoom={0.5}
+                                minZoom={0.38}
                                 //setInitTransform={TransformUpdater({x: 100, y: 100, z: 1})}
                                 //nodesDraggable={false}
                                 onNodeMouseEnter={onNodeMouseEnter}
@@ -245,8 +245,9 @@ const BESengah = () => {
                             </ReactFlow>
                             {hoverDisplay}
                         </ReactFlowProvider>
-                    </div>
+                    </div>                    
                 </Grid.Column>
+                <button onClick={positionHelper(elements)}>GENERATE POSITION</button>
                 <Grid.Column width="4">
                     <Sidebar/>
                     {/* <DegreePlanner/> */}

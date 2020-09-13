@@ -24899,9 +24899,8 @@
         "desc": "The thesis provides an opportunity for you to bring together engineering principles learned over your previous years of study and apply these principles to innovatively solve problems such as the development of a specific design, process and/or the investigation of a hypothesis. Thesis projects are complex, open-ended problems that allow room for your creativity, and the acquisition, analysis and interpretation of results. There are multiple possible solutions or conclusions at the outset and sufficient complexity to require a degree of project planning. The thesis requires you to formulate problems in scientific or engineering terms, manage an technical project and find solutions by applying scientific and engineering methods. You will also develop their ability to work in a research and development environment. You must have successfully completed COMP4961 prior to enrolling in this course. This is the second course of the 3 course thesis structure.",
         "conditions": {
             "raw": "COMP4962 Prerequisite: Students must successfully complete COMP4951",
-            "prereqs_executable": "COMP4962 || COMP4951",
+            "prereqs_executable": "COMP4951",
             "prerequisites": [
-                "COMP4962",
                 "COMP4951"
             ],
             "corequisites": null,
@@ -24913,7 +24912,6 @@
         "equivalents": null,
         "exclusions": null,
         "unlocks": [
-            "COMP4962",
             "COMP4963"
         ]
     },
@@ -24932,9 +24930,8 @@
         "desc": "The thesis provides an opportunity for you to bring together engineering principles learned over your previous years of study and apply these principles to innovatively solve problems such as the development of a specific design, process and/or the investigation of a hypothesis. Thesis projects are complex, open-ended problems that allow room for your creativity, and the acquisition, analysis and interpretation of results. There are multiple possible solutions or conclusions at the outset and sufficient complexity to require a degree of project planning. The thesis requires you to formulate problems in scientific or engineering terms, manage an technical project and find solutions by applying scientific and engineering methods. You will also develop their ability to work in a research and development environment. You must have successfully completed COMP4962 prior to enrolling in this course. This is the third and final course of the 3 course thesis structure.",
         "conditions": {
             "raw": "COMP4963 Prerequisite: Student must successfully complete COMP4962",
-            "prereqs_executable": "COMP4963 || COMP4962",
+            "prereqs_executable": "COMP4962",
             "prerequisites": [
-                "COMP4963",
                 "COMP4962"
             ],
             "corequisites": null,
@@ -24946,7 +24943,6 @@
         "equivalents": null,
         "exclusions": null,
         "unlocks": [
-            "COMP4963"
         ]
     },
     "COMP6080": {
