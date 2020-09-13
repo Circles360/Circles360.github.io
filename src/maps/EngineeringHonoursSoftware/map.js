@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import ReactFlow, {Background, Controls, getConnectedEdges, isNode, isEdge, useStoreState, useStoreActions, ReactFlowProvider, EdgeText} from 'react-flow-renderer';
+//import {disableBodyScroll, enableBodyScroll} from 'body-scroll-lock';
 
 import CustomNode1 from '../../components/customnode1.js';
 import CustomNode2 from '../../components/customnode2.js';
@@ -91,6 +92,7 @@ const onLoad = (reactFlowInstance) => {
         }
         group.push(last);
     }
+    reactFlowInstance.setTransform({x: 100, y: 100, zoom: 1});
 };
 
 const nodeTypes = {
@@ -99,6 +101,9 @@ const nodeTypes = {
     header1: HeaderNode1
 };
 
+const layoutStyle = {overflow: "scroll", width: '100%', height: '100vh'};
+
+
 const BESengah = () => {
     const [elements, setElements] = useState(elementsData);
     const [hoverText, setHoverText] = useState(false);
@@ -106,6 +111,7 @@ const BESengah = () => {
     const [sidebarOpen, setSidebarOpen] = useState(false);
     var clickCount = 0;
     var singleClickTimer = '';
+    const [layout, setLayout] = useState(layoutStyle);
 
     const selectUnselect = (element) => {
         // NOTE: Might not need this?????
@@ -217,30 +223,41 @@ const BESengah = () => {
         }
     }
 
+    const disableBodyScroll = () => {
+        setLayout({overflow: "hidden", width: '100%', height: '100vh'});
+    }
+
+    const enableBodyScroll = () => {
+        setLayout({overflow: "scroll", width: '100%', height: '100vh'});
+    }
+
     return (
         <>
+        <div style={layout}>
             <Grid columns={2} divided>
                 <Grid.Column width="12">
-                    <ReactFlowProvider>
-                        <ReactFlow
-                            elements={elements}
-                            style={{width: '100%', height: '95vh'}}
-                            onLoad={onLoad}
-                            nodeTypes={nodeTypes}
-                            nodesConnectable={false}
-                            onElementClick={onElementClick}
-                            minZoom={0.1}
-                            //setInitTransform={TransformUpdater({x: 100, y: 100, z: 1})}
-                            //nodesDraggable={false}
-                            onNodeMouseEnter={onNodeMouseEnter}
-                            onNodeMouseLeave={onNodeMouseLeave}
-                            selectNodesOnDrag={false}
-                            onNodeContextMenu={onNodeContextMenu}
-                            onNodeDragStop={onNodeDragStop}
-                        >
-                        </ReactFlow>
-                        {hoverDisplay}
-                    </ReactFlowProvider>
+                    <div onMouseEnter={disableBodyScroll} onMouseLeave={enableBodyScroll}>
+                        <ReactFlowProvider>
+                            <ReactFlow
+                                elements={elements}
+                                style={{width: '100%', height: '100vh'}}
+                                onLoad={onLoad}
+                                nodeTypes={nodeTypes}
+                                nodesConnectable={false}
+                                onElementClick={onElementClick}
+                                minZoom={0.5}
+                                //setInitTransform={TransformUpdater({x: 100, y: 100, z: 1})}
+                                //nodesDraggable={false}
+                                onNodeMouseEnter={onNodeMouseEnter}
+                                onNodeMouseLeave={onNodeMouseLeave}
+                                selectNodesOnDrag={false}
+                                onNodeContextMenu={onNodeContextMenu}
+                                onNodeDragStop={onNodeDragStop}
+                            >
+                            </ReactFlow>
+                            {hoverDisplay}
+                        </ReactFlowProvider>
+                    </div>
                 </Grid.Column>
                 <Grid.Column width="4">
                     <Sidebar/>
@@ -250,6 +267,7 @@ const BESengah = () => {
             <div id="DegreePlanner">
                 <DegreePlanner />
             </div>
+        </div>
         </>
     );
 };
