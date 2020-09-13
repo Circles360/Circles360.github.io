@@ -158,7 +158,7 @@ const BESengah = () => {
                 singleClickTimer = setTimeout(function() {
                     clickCount = 0;
                     selectUnselect(element);
-                }, 150);
+                }, 200);
             } else if (clickCount === 2) {
                 clearTimeout(singleClickTimer);
                 clickCount = 0;
