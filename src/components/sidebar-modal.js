@@ -29,20 +29,23 @@ function SideBarModal() {
       </Button>
 
       <Modal
+        closeIcon
         dimmer={dimmer}
         open={open}
         onClose={() => dispatch({ type: 'CLOSE_MODAL' })}
       >
-        <Modal.Header>Choose your degree</Modal.Header>
+        <Modal.Header textAlign="center">Degree Planner</Modal.Header>
         <Container>
             <Header as="h3" textAlign="center" style={{marginTop: "5px"}}>Choose your degree</Header>
             <DropdownDegrees />
         </Container>
-        <Modal.Actions>
-          <Button color='black' onClick={() => dispatch({ type: 'CLOSE_MODAL' })}>
+        {/* <Modal.Actions>
+          <Button color='black' onClick={() => {
+              dispatch({ type: 'CLOSE_MODAL' });
+            }}>
             Generate
           </Button>
-        </Modal.Actions>
+        </Modal.Actions> */}
       </Modal>
     </div>
   )
@@ -50,3 +53,7 @@ function SideBarModal() {
 
 export default SideBarModal
 
+//DropdownDegrees.clickDone() 
+
+//DropdownDegrees d = new DropdownDegrees(); 
+//d.clickDone()

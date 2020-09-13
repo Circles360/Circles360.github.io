@@ -43,7 +43,7 @@ for (const node of nodesData) {
         for (const unlockCourse of node.data.unlocks) {
             potentialEdges['e' + node.id + '-' + unlockCourse] = 1;
         }
-    } else if (checkPrerequisites(node, nodesData)) {
+    } else if (checkPrerequisites(node, elementsData, nodesData)) {
         selectableNodes[node.id] = 1;
     }
 }
