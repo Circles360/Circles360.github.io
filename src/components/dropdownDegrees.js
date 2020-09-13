@@ -11,8 +11,6 @@ const HONOURS = 3;
 const courseOptions = {}
 const programOptions = []
 
-console.log(programsJSON)
-
 for (const code in programsJSON) {
     if (programsJSON[code].degrees_involved.majors.length === 0 && programsJSON[code].degrees_involved.honours.length === 0) continue;
 

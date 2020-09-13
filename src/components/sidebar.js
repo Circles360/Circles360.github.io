@@ -77,7 +77,6 @@ const Sidebar = (props) => {
 
                 <Container textAlign="center">
                     <ScrollTo selector="#DegreePlanner">
-
                         <Button
                             animated="vertical"
                             color="red"

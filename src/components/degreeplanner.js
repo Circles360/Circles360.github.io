@@ -4,11 +4,24 @@ import { Icon, Button, Container, Segment, Header, Dropdown, Grid } from 'semant
 // import programsJSON from "../webscraper/programs.json"
 // import specialisationsJSON from "../webscraper/specialisations.json"
 import coursesJSON from "../webscraper/courses.json"
+import specialisationsJSON from "../webscraper/specialisations.json"
 
 import { DragDropContext } from "react-beautiful-dnd"
 import Term from "./degreeplanner-term"
 
-const selectedCourses = ["COMP1511", "COMP1521", "COMP1531", "MATH1141", "MATH1241", "ENGG1000", "COMP3331", "MATH1081", "COMP2521"];
+
+const getCoreCourses = (code) => {
+    const coreCourses = [];
+
+    for (const level in specialisationsJSON[code].structure) {
+        if (level.includes("Core") || level.includes("core")) {
+            coreCourses.push(...specialisationsJSON[code].structure[level].courses.flat())
+        }
+    }
+
+    return coreCourses
+}
+const selectedCourses = getCoreCourses("SENGAH").filter(c => c != "MATH1131" && c != "MATH1231");
 
 const getCourses = (selectedCourses) => {
     const courses = {}
@@ -69,24 +82,157 @@ const generateTerms = (yearId) => {
     return terms;
 }
 
-const populateTerms = (plan) => {
-    plan["1"]["1T2"].courseIds = ["COMP1521", "MATH1241", "COMP2521"];
-    plan["1"]["1T1"].courseIds = ["COMP1511", "MATH1141", "ENGG1000"];
-    plan["1"]["1T3"].courseIds = ["MATH1081", "COMP3331", "COMP1531"];
+const addPriority = (priority, courseId, unlocksCourse) => {
+    // code.conditions.prerequisites is an array
+    console.log("addPriority", unlocksCourse, "-->", courseId, priority);
+
+    if (!coursesJSON[courseId].conditions.prerequisites) return priority;
+
+    for (const prereq of coursesJSON[courseId].conditions.prerequisites) {
+        if (!(prereq in priority)) continue;
+        if (courseId === prereq) continue;
+
+        priority[prereq].unlocks.push(unlocksCourse);
+        priority = addPriority(priority, prereq, unlocksCourse);
+    }
+
+    return priority;
+}
+
+const prioritiseCourses = (selectedCourses) => {
+    // Initiate priorities
+    var priority = {};
+    for (const courseId of selectedCourses) {
+        priority[courseId] = {
+            courseId: courseId,
+            level: Number(courseId[4]),
+            unlocks: [],
+            termsAvailable: coursesJSON[courseId].terms.filter(t => t != "Summer Term").length
+        }
+    }
+
+    // Calculate priorities
+    for (const courseId of selectedCourses) {
+        priority = addPriority(priority, courseId, courseId);
+    }
+
+    // Sort keys of priority into array to give into prioritised
+    const prioritised = Object.values(priority);
+
+    prioritised.sort((a, b) => {
+        // Sort by:
+        // 1. Level (ASC)
+        // 2. Unlocks (DESC)
+        // 3. Terms Available (ASC)
+
+        if (a.level === b.level) {
+            if (a.unlocks.length === b.unlocks.length) {
+                return a.termsAvailable - b.termsAvailable; // Ascending
+            }
+            return b.unlocks.length - a.unlocks.length; // Descending
+        }
+        return a.level - b.level; // Ascending
+    });
+
+    return prioritised;
+}
+
+const checkPrereqsMet = (termPlan, termId, courseId) => {
+    const REGEX_COURSE_CODE = /[A-Z]{4}\d{4}/g;
+
+    let prereqsExecutable = coursesJSON[courseId].conditions.prereqs_executable;
+    if (!prereqsExecutable) return true; // No executable
+
+    // Get courses taken up to termId
+    const coursesTaken = [];
+    for (const t in termPlan) {
+        if (t === termId) break;
+        coursesTaken.push(...termPlan[t].courseIds);
+    }
+    console.log("courseId", courseId, "coursestaken", coursesTaken);
+
+    for (const course of coursesTaken) {
+        prereqsExecutable = prereqsExecutable.replace(course, "1");
+    }
+    prereqsExecutable = prereqsExecutable.replace(REGEX_COURSE_CODE, "0");
+    return eval(prereqsExecutable);
+}
+
+const addCourseToPlan = (termPlan, courseId) => {
+    const maxUOC = 18;
+
+    for (const termId in termPlan) {
+        if (termPlan[termId].units >= maxUOC) continue;
+
+        const courseUnits = coursesJSON[courseId].units;
+        if (termPlan[termId].units + courseUnits > maxUOC) continue;
+
+        const termsAvailable = coursesJSON[courseId].terms.map(term => {
+            if (term === "Summer Term") return "TS"
+            if (term === "Term 1") return "T1"
+            if (term === "Term 2") return "T2"
+            if (term === "Term 3") return "T3"
+        })
+        if (!(termsAvailable.includes(termId.substring(1, 3)))) continue;
+
+        // Need to check prerequisites have been met here
+        if (!checkPrereqsMet(termPlan, termId, courseId)) continue;
+
+        // Add course to plan
+        termPlan[termId].units += coursesJSON[courseId].units;
+        termPlan[termId].courseIds.push(courseId);
+        return termPlan;
+    }
+
+    console.log("ERROR WITH ", courseId);
+}
+
+const populateTerms = (maxYears, prioritisedCourses) => {
+    const maxTerms = 3;
+
+    const termPlan = {};
+    for (let year = 1; year <= maxYears; year++) {
+        for (let term = 1; term <= maxTerms; term++) {
+            const termId = `${year}T${term}`;
+            termPlan[termId] = {
+                units: 0,
+                courseIds: []
+            };
+        }
+    }
+
+    // For each course in the prioritised, slot into earliest possible term
+    for (const course of prioritisedCourses) {
+        addCourseToPlan(termPlan, course.courseId);
+    }
+
+    return termPlan;
+}
+
+const makePlan = (plan, maxYears) => {
+    const prioritisedCourses = prioritiseCourses(selectedCourses);
+    console.log("prioritised", prioritisedCourses);
+
+    const termPlan = populateTerms(maxYears, prioritisedCourses);
+
+    for (const termId in termPlan) {
+        const year = termId[0];
+        plan[year][termId].courseIds = termPlan[termId].courseIds
+    }
+
+    console.table(termPlan);
 
     return plan;
 }
 
-const generatePlan = (years) => {
+const generatePlanScaffold = (years) => {
     let plan = {};
 
     for (let year = 1; year <= years; year++) {
-        console.log(year)
         plan[year.toString()] = generateTerms(year)
     }
-    console.log("generated years", plan)
 
-    plan = populateTerms(plan)
+    plan = makePlan(plan, years)
 
     return plan;
 }
@@ -94,7 +240,7 @@ const generatePlan = (years) => {
 class DegreePlanner extends React.Component {
     state = {
         courses: getCourses(selectedCourses),
-        plan: generatePlan(4),
+        plan: generatePlanScaffold(4),
     };
 
     onDragEnd = result => {
@@ -161,12 +307,6 @@ class DegreePlanner extends React.Component {
         this.setState(newState);
     }
 
-    populateTerms = () => {
-        this.state.plan["1"]["1T2"].courseIds = ["COMP1521", "MATH1241", "COMP2521"];
-        this.state.plan["1"]["1T1"].courseIds = ["COMP1511", "MATH1141", "ENGG1000"];
-        this.state.plan["1"]["1T3"].courseIds = ["MATH1081", "COMP3331", "COMP1531"];
-    }
-
     render() {
         return (
             <Segment>
@@ -175,9 +315,9 @@ class DegreePlanner extends React.Component {
                     <p>The following degree plan has been generated based on the courses you have selected above. By default, our algorithm:</p>
                     <ul>
                         <li>allocates 18 UOC per term</li>
-                        <li>does not allocate courses in Summer Term</li>
                         <li>ensures courses have their prerequisites met</li>
-                        <li>ensures courses can be taken in allocated terms</li>
+                        <li>ensures courses are offered in allocated terms</li>
+                        <li>does not allocate courses in Summer Term</li>
                     </ul>
 
                     <p>Drag and drop the courses below to further customise your degree plan!</p>

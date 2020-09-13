@@ -66,12 +66,12 @@ const onLoad = (reactFlowInstance) => {
         for (var course of elementsData) {
             if (last === course.id) {
                 course.isHidden = true;
-                console.log("Hiding " + course.id);
+                // console.log("Hiding " + course.id);
                 // Get all the edges and hide them too
                 for (var edge of elementsData) {
                     if (isNode(edge)) continue;
                     if (edge.source === last || edge.target === last) {
-                        console.log("hiding " + edge.id);
+                        // console.log("hiding " + edge.id);
                         edge.isHidden = true;
                     }
                 }
@@ -145,7 +145,7 @@ const BESengah = () => {
 
     // ==========ONCLICK==========
     const onElementClick = (event, element) => {
-        console.log("ONELEMENTCLICK");
+        // console.log("ONELEMENTCLICK");
         if (isEdge(element)) return; // Don't care about edges
         if (element.id === 'SENGAH') return; // Cannot click on main node
         if ((! selectableNodes.hasOwnProperty(element.id)) && (! selectedNodes.hasOwnProperty(element.id))) return; // Cannot select non selectable nodes
@@ -197,8 +197,8 @@ const BESengah = () => {
     // ===========================
 
     const onNodeContextMenu = (event, node) => {
-        console.log("THE EVEENT");
-        console.log(event);
+        // console.log("THE EVEENT");
+        // console.log(event);
     }
 
     const onNodeDragStop = (event, node) => {
