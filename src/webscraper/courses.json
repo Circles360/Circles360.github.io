@@ -24359,8 +24359,8 @@
         "desc": "The student will complete a small research project under the supervision of a member of the academic staff of the School. The project will be assessed on the basis of a report written by the student.",
         "conditions": {
             "raw": "Prerequisite: 80+ WAM in COMP, SENG or BINF courses, completion of all first and second year core requirements a CSE program, and agreement from a suitable CSE academic supervisor.",
-            "prereqs_executable": null,
-            "prerequisites": null,
+            "prereqs_executable": "(COMP1511 && COMP1521 && COMP1531 && (MATH1131 || MATH1141) && ENGG1000 && (MATH1231 || MATH1241) && COMP2041 && COMP2511 && COMP2521 && DESN2000 && MATH2400 && MATH2859 && SENG2011 && SENG2021)",
+            "prerequisites": ["COMP1511", "COMP1521", "COMP1531", "MATH1131", "MATH1141", "ENGG1000", "MATH1231", "MATH1241", "COMP2041", "COMP2511", "COMP2521", "DESN2000", "MATH2400", "MATH2859", "SENG2011", "SENG2021"],
             "corequisites": null,
             "units_required": null,
             "level_for_units_required": null,
@@ -24386,8 +24386,8 @@
         "desc": "The student will complete a medium-sized research project under the supervision of a member of the academic staff of the School. The project will be assessed on the basis of report written by the student.",
         "conditions": {
             "raw": "Prerequisite: 80+ WAM in COMP, SENG or BINF courses, completion of all first and second year core requirements a CSE program, and agreement from a suitable CSE academic supervisor.",
-            "prereqs_executable": null,
-            "prerequisites": null,
+            "prereqs_executable": "(COMP1511 && COMP1521 && COMP1531 && (MATH1131 || MATH1141) && ENGG1000 && (MATH1231 || MATH1241) && COMP2041 && COMP2511 && COMP2521 && DESN2000 && MATH2400 && MATH2859 && SENG2011 && SENG2021)",
+            "prerequisites": ["COMP1511", "COMP1521", "COMP1531", "MATH1131", "MATH1141", "ENGG1000", "MATH1231", "MATH1241", "COMP2041", "COMP2511", "COMP2521", "DESN2000", "MATH2400", "MATH2859", "SENG2011", "SENG2021"],
             "corequisites": null,
             "units_required": null,
             "level_for_units_required": null,

@@ -34,3 +34,9 @@ BESENGAHGENERATOR.MJS:
 - ENGG1000-ENGG2600-ENG3600-ENGG4600 chain
 - INFS3830 has prerequisites hardcoded (INFS3603 ONLY)
 - INFS3873 has prerequisites hardcoded (INFS3603 ONLY)
+- COMP4961 cannot be taken unless enrolled in bachelor of computer science (HONOUR) or program 3648.
+    - prereq_executable = 0
+- COMP3901 and COMP3902 prerequisites - completion of first and second year core
+    - prereqs_executable = "(COMP1511 && COMP1521 && COMP1531 && (MATH1131 || MATH1141) && ENGG1000 && (MATH1231 || MATH1241) && COMP2041 && COMP2511 && COMP2521 && DESN2000 && MATH2400 && MATH2859 && SENG2011 && SENG2021)"
+    - prerequisites = ["COMP1511", "COMP1521", "COMP1531", "MATH1131", "MATH1141", "ENGG1000", "MATH1231", "MATH1241", "COMP2041", "COMP2511", "COMP2521", "DESN2000", "MATH2400", "MATH2859", "SENG2011", "SENG2021"]
+TODO: Should I add unlocks? ^ Will make a shit ton of nodes link to these two.

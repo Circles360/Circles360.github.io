@@ -127,6 +127,7 @@ for (const course of courses_output) {
 }
 // ENGG1000-ENGG2600-ENGG3600-ENGG4600
 // INFS3830 and INFS3873 prerequisites = 3603
+// COMP4961 cannot be taken (not doing the right program)
 for (const course of courses_output) {
     if (course.id === 'ENGG1000') {
         course.data.unlocks.push('ENGG2600');
@@ -147,6 +148,9 @@ for (const course of courses_output) {
     } else if (course.id === 'INFS3873') {
         course.data.conditions.prerequisites = ['INFS3603'];
         course.data.conditions.prereqs_executable = "INFS3603";
+    } else if (course.id === "COMP4961") {
+        course.data.conditions.prerequisites = [];
+        course.data.conditions.prereqs_executable = "0";
     }
 }
 
@@ -170,7 +174,7 @@ courses_output.unshift({
     data: {
         degree_name: data.SENGAH.name,
         degree_code: data.SENGAH.code,
-        units: data.SENGAH.units,
+        units: 0,
         unlocks: ['COMP1511', 'ENGG1000', 'MATH1131', 'MATH1141'],
         conditions: {
             prerequisites: null,

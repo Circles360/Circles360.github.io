@@ -36,7 +36,7 @@ export default function unselectNode(elements, node, selectedNodes, selectedEdge
         }
 
         // Determine the status of the current node
-        if (! checkPrerequisites(current, selectedNodes)) {
+        if (! checkPrerequisites(current, elements, selectedNodes)) {
             // Does not meet prerequisites. Make it unselectable
             if (selectableNodes.hasOwnProperty(current.id)) delete selectableNodes[current.id];
             else if (selectedNodes.hasOwnProperty(current.id)) delete selectedNodes[current.id];

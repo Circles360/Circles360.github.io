@@ -2,12 +2,20 @@
 // are now selectable
 import checkPrerequisites from './checkprerequisites.js';
 import getElement from './getelement.js';
+import {isNode} from 'react-flow-renderer';
 
 export default function getSelectable(elements, selectedNodes, selectedEdges, selectableNodes, potentialEdges) {
     // TODO: Deal with outsider nodes
 
+    const analyseNodesKeys = [];
+    for (const e of elements) {
+        if (isNode(e)) {
+            analyseNodesKeys.push(e);
+        }
+    }
+
     // Analyse the target of potential edges for potential nodes
-    var analyseNodes = {};
+    /*var analyseNodes = {};
     const potentialEdgesKeys = Object.keys(potentialEdges);
     for (var edge of potentialEdgesKeys) {
         // Get the target course
@@ -16,24 +24,32 @@ export default function getSelectable(elements, selectedNodes, selectedEdges, se
         if ((! selectedNodes.hasOwnProperty(target)) && (! selectableNodes.hasOwnProperty(target))) {
             analyseNodes[edge.split('-')[1]] = 1;
         }
-    }
+    }*/
 
-    const analyseNodesKeys = Object.keys(analyseNodes);
+    
+    //const analyseNodesKeys = Object.keys(analyseNodes);
     //console.log("==========ANALYSE NODES KEYS===========");
     //console.log(analyseNodesKeys);
     //console.log("==============ELEMENTS===============");
     //console.log(elements);
 
-    for (const nodeID of analyseNodesKeys) {
+    for (const node of analyseNodesKeys) {
         // Determine if the prerequisite has been met
-        // For now, assume prerequisites are met
-        const node = getElement(nodeID, elements);
+        //const node = getElement(nodeID, elements);
         //console.log(node);
         
-        if (checkPrerequisites(node, selectedNodes)) {
-            selectableNodes[nodeID] = 1;
+        // If the node is already selected, don't bother making it selectable
+        if (selectedNodes.hasOwnProperty(node.id)) continue;
+
+
+        if (checkPrerequisites(node, elements, selectedNodes)) {
+            //console.log("SELECTABLE");
+            //console.log(node.id);
+            selectableNodes[node.id] = 1;
         } else {
-            if (selectableNodes.hasOwnProperty(nodeID)) delete selectableNodes[nodeID];
+            if (selectableNodes.hasOwnProperty(node.id)) delete selectableNodes[node.id];
+            //console.log("DELETE UNSELECTABLE");
+            //console.log(node.id);
             // TODO: Deal with selected nodes cases? (e.g. unselecting a child???)
 
         }
