@@ -171,7 +171,7 @@ courses_output.unshift({
         degree_name: data.SENGAH.name,
         degree_code: data.SENGAH.code,
         units: data.SENGAH.units,
-        unlocks: ['COMP1511', 'ENGG1000', 'MATH1131', 'MATH1141', 'MATH1081'],
+        unlocks: ['COMP1511', 'ENGG1000', 'MATH1131', 'MATH1141'],
         conditions: {
             prerequisites: null,
             corequisites: null
@@ -191,7 +191,7 @@ courses_list['SENGAH'] = 1;
 
 // Hard code in prerequisites for starting courses
 for (var course of courses_output) {
-    if (['COMP1511', 'ENGG1000', 'MATH1131', 'MATH1141', 'MATH1081'].includes(course.id)) {
+    if (['COMP1511', 'ENGG1000', 'MATH1131', 'MATH1141'].includes(course.id)) {
         console.log(course.id);
         course.data.conditions.prerequisites = ['SENGAH'];
     }
