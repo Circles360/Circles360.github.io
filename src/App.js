@@ -16,13 +16,8 @@ class App extends Component {
     return (
       <HashRouter basename='/'>
         <div>
-          <ul>
-            <li><Link to="/">Home</Link></li>
-            <li><Link to="/SoftwareEngineering">Software Engineering</Link></li>
-          </ul>
-
           <hr />
-          <Route path="/SoftwareEngineering" component={BESengah} />
+          <Route path="/" component={BESengah} />
           <Route path="/Teaching" component={Teaching}/>
         </div>
       </HashRouter>
