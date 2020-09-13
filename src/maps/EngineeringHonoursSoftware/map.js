@@ -10,7 +10,7 @@ import hoverPrerequisites from '../../components/hoverprerequisites.js';
 import unhoverPrerequisites from '../../components/unhoverprerequisites.js';
 
 import DropdownD from "../../components/dropdownDegrees.js"
-import { Grid, Segment } from 'semantic-ui-react'
+import { Grid } from 'semantic-ui-react'
 import Sidebar from "../../components/sidebar.js"
 import pkg from 'semantic-ui-react/package.json'
 
