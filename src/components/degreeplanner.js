@@ -147,6 +147,7 @@ class DegreePlanner extends React.Component {
                     <p>Drag and drop the courses below to further customise your degree plan!</p>
 
                     <p><em>Please note that our data is scraped from the UNSW Handbook and may have some inconsistencies.</em></p>
+                    <p><em>Also note, you can drag a course into a term even if it is not offered as our data may be out of date, please double check :) </em></p>
 
                     <DragDropContext onDragEnd={this.onDragEnd}>
                         {this.state.years.map(years => (

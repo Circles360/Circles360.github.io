@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import DropdownDegrees from "./dropdownDegrees.js"
-import { Icon, Button, Container, Segment, Header, Dropdown, Grid } from 'semantic-ui-react'
+import SidebarModal from "./sidebar-modal.js"
+import { Icon, Button, Container, Modal, Header, Dropdown, Grid, Message } from 'semantic-ui-react'
 import ScrollTo from "react-scroll-into-view"
 
 const example = [
@@ -32,8 +33,13 @@ const example = [
 const Sidebar = (props) => {
     return (
         <Container style={{paddingLeft: "10px", paddingRight: "10px"}}>
+            <Header as="h1" textAlign="center" style={{marginTop: "10px"}}>Circles</Header>
+            <Message info>
+                <p>Circles is a visual degree planner for UNSW students. Choose your program and degree below to begin!</p>
+                <SidebarModal />
+            </Message>
 
-            <Grid divided="vertically" stretched>
+            <Grid stretched>
                 <Grid.Row>
                     <Container>
                         <Header as="h3" textAlign="center" style={{marginTop: "5px"}}>Choose your degree</Header>

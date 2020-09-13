@@ -72,6 +72,8 @@ class DropdownDegrees extends Component {
 
         disabledPrimary: true,
         disabledSecondary: true,
+        hiddenPrimary: 'hidden',
+        hiddenSecondary: 'hidden',
 
         valProgram: null,
         valPrimary: null,
@@ -89,11 +91,13 @@ class DropdownDegrees extends Component {
 
             valPrimary: null,
             disabledPrimary: false,
+            hiddenPrimary: 'visible',
             majorOptions: majors,
             phPrimary: "Select Major",
 
             valSecondary: null,
             disabledSecondary: true,
+            hiddenSecondary: 'hidden',
             minorOptions: [],
             phSecondary: "N/A"
         })
@@ -106,6 +110,7 @@ class DropdownDegrees extends Component {
                 phSecondary: "Select Minor",
                 minorOptions: getMinors(program.value),
                 disabledSecondary: false,
+                hiddenSecondary: 'visible',
             });
         }
     }
@@ -146,6 +151,7 @@ class DropdownDegrees extends Component {
                 disabled= {this.state.disabledPrimary}
                 value= {this.state.valPrimary}
                 placeholder= {this.state.phPrimary}
+                style={{visibility: this.state.hiddenPrimary}}
             />{' '}
             <Dropdown
                 selection
@@ -155,6 +161,7 @@ class DropdownDegrees extends Component {
                 disabled= {this.state.disabledSecondary}
                 value= {this.state.valSecondary}
                 placeholder= {this.state.phSecondary}
+                style={{visibility: this.state.hiddenSecondary}}
             />
             <div>
                 <Button
