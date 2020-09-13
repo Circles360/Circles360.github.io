@@ -10,8 +10,12 @@ import getElement from './getelement.js';
 export default function checkPrerequisites(node, elements, selectedNodes) {
     if (node.data.conditions.prerequisites !== null && node.data.conditions.prereqs_executable !== null) {
         // Evaluate the condition
+        console.log("HERE");
+        console.log(node.data.conditions.prereqs_executable);
         var condition = node.data.conditions.prereqs_executable;
-        condition = condition.replace(/[A-Z]{4}[A-Z0-9]*/gi, function(match) {
+        console.log(condition);
+        condition = condition.replace(/[A-Z]{4}[A-Z0-9]+/gi, function(match) {
+            console.log(match);
             if (selectedNodes.hasOwnProperty(match)) {
                 return 1;
             } else {

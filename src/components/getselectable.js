@@ -30,7 +30,7 @@ export default function getSelectable(elements, selectedNodes, selectedEdges, se
         const node = getElement(nodeID, elements);
         //console.log(node);
         
-        if (checkPrerequisites(node, selectedNodes)) {
+        if (checkPrerequisites(node, elements, selectedNodes)) {
             selectableNodes[nodeID] = 1;
         } else {
             if (selectableNodes.hasOwnProperty(nodeID)) delete selectableNodes[nodeID];
