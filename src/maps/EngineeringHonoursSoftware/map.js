@@ -174,13 +174,6 @@ const BESengah = () => {
             // Not an exclusion node.
             selectUnselect(element);
         }
-        /*for (var e of elements) {
-            if (e.id === element.id) {
-                e.position.x = element.position.x;
-                e.position.y = element.position.y;
-                break;
-            }
-        }*/
     };
     // ===========================
 
@@ -213,6 +206,17 @@ const BESengah = () => {
         console.log("THE EVEENT");
         console.log(event);
     }
+
+    const onNodeDragStop = (event, node) => {
+        for (var e of elements) {
+            if (e.id === node.id) {
+                e.position.x = node.position.x;
+                e.position.y = node.position.y;
+                break;
+            }
+        }
+    }
+
     return (
         <>
             <Grid columns={2} divided>
@@ -227,17 +231,17 @@ const BESengah = () => {
                             onElementClick={onElementClick}
                             minZoom={0.1}
                             //setInitTransform={TransformUpdater({x: 100, y: 100, z: 1})}
-                            nodesDraggable={false}
+                            //nodesDraggable={false}
                             onNodeMouseEnter={onNodeMouseEnter}
                             onNodeMouseLeave={onNodeMouseLeave}
                             selectNodesOnDrag={false}
                             onNodeContextMenu={onNodeContextMenu}
+                            onNodeDragStop={onNodeDragStop}
                         >
                         </ReactFlow>
                         {hoverDisplay}
                     </ReactFlowProvider>
                 </Grid.Column>
-
                 <Grid.Column width="4">
                     <Sidebar/>
                     {/* <DegreePlanner/> */}
