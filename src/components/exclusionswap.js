@@ -48,7 +48,7 @@ export default function exclusionSwap(node, elements, edges, selectedNodes, sele
             // Determine state of the nodes (E.g. COMP6441 can be selectable
             // whilst COMP6841 is not)
             var curNode = getElement(curCourse, elements);
-            if (checkPrerequisites(curNode, selectedNodes)) {
+            if (checkPrerequisites(curNode, elements, selectedNodes)) {
                 // The new node is selectable
                 console.log("================== SELECTABLE", curCourse);
                 selectableNodes[curCourse] = 1;
@@ -171,7 +171,7 @@ export default function exclusionSwap(node, elements, edges, selectedNodes, sele
                         potentialEdges[newEdge.id] = 1;
                         // Check if the target node is selectable
                         if (! selectableNodes.hasOwnProperty(edge.target)) {
-                            if (checkPrerequisites(targetNode, selectedNodes)) {
+                            if (checkPrerequisites(targetNode, elements, selectedNodes)) {
                                 console.log(edge.target + " DOES MEET PREREQS");
                                 selectableNodes[targetNode.id] = 1;
                             } else {
@@ -187,7 +187,7 @@ export default function exclusionSwap(node, elements, edges, selectedNodes, sele
                             delete potentialEdges[edge.id];
                             if (selectableNodes.hasOwnProperty(edge.target)) {
                                 console.log(edge.target + " WAS SELECTABLE")
-                                if (! checkPrerequisites(targetNode, selectedNodes)) {
+                                if (! checkPrerequisites(targetNode, elements, selectedNodes)) {
                                     console.log(edge.target + " DOES NOT MEET PREREQS");
                                     delete selectableNodes[targetNode.id];
                                 }
