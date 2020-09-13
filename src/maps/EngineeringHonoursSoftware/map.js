@@ -247,7 +247,6 @@ const BESengah = () => {
                         </ReactFlowProvider>
                     </div>                    
                 </Grid.Column>
-                <button onClick={positionHelper(elements)}>GENERATE POSITION</button>
                 <Grid.Column width="4">
                     <Sidebar/>
                     {/* <DegreePlanner/> */}
