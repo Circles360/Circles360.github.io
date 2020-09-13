@@ -90,7 +90,7 @@ const nodeTypes = {
     header1: HeaderNode1
 };
 
-const layoutStyle = {overflowX: "hidden", overflowY: "scroll", width: '100%', height: '100vh'};
+const layoutStyle = {overflowX: "hidden", overflowY: "overlay", width: "100vw", height: "100vh"};
 
 
 const BESengah = () => {
@@ -217,7 +217,7 @@ const BESengah = () => {
     }
 
     const enableBodyScroll = () => {
-        setLayout({...layout, overflowY: 'scroll'});
+        setLayout({...layout, overflowY: 'overlay'});
     }
 
     return (

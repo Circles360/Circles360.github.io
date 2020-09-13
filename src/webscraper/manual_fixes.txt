@@ -9,7 +9,8 @@ COURSES.JSON:
 - MATH1081: Treat corequisites the same as prerequisites on the graph
     - MATH1081 prerequisites = MATH1081 corequisites
     - MATH1081 prerequisites executable = MATH1131 || DPST1013 || MATH1141 || MATH1151
-
+    - Add MATH1081 as unlocks to MATH1131, DPST1031, MATH1141, MATH1151
+    
 - COMP9301, COMP9302, 12uoc condition
     - COMP9301 prerequisites executable = (COMP6441 || COMP6841) && (COMP6443 || COMP6843 || COMP6445 || COMP6845 || COMP6447)
     - COMP9302 prerequisites executable = (COMP6441 || COMP6841) && ((COMP6443 && COMP6843) || (COMP6443 && COMP6445) || (COMP6443 && COMP6845) || (COMP6443 && COMP6447) || (COMP6843 && COMP6445) || (COMP6843 && COMP6845) || (COMP6843 && COMP6447) || (COMP6445 && COMP6845) || (COMP6445 && COMP6447) || (COMP6845 && COMP6447))

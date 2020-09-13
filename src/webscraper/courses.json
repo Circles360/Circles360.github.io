@@ -53440,7 +53440,8 @@
         "exclusions": [
             "ECON1202",
             "MATH1141",
-            "MATH1151"
+            "MATH1151",
+            "MATH1081"
         ],
         "unlocks": [
             "CHEM2041",
@@ -53499,7 +53500,8 @@
             "MATS2001",
             "MMAN2600",
             "MMAN2700",
-            "PHYS2801"
+            "PHYS2801",
+            "MATH1081"
         ]
     },
     "MATH1151": {
@@ -53536,7 +53538,8 @@
             "ECON2101",
             "ECON2112",
             "MATH1251",
-            "PHYS2801"
+            "PHYS2801",
+            "MATH1081"
         ]
     },
     "MATH1231": {
