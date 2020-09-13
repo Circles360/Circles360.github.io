@@ -1,48 +1,67 @@
 import React from 'react';
 import { Icon, Button, Container, Segment, Header, Dropdown, Grid } from 'semantic-ui-react'
 
-import programsJSON from "../webscraper/programs.json"
-import specialisationsJSON from "../webscraper/specialisations.json"
+// import programsJSON from "../webscraper/programs.json"
+// import specialisationsJSON from "../webscraper/specialisations.json"
+import coursesJSON from "../webscraper/courses.json"
 
 import { DragDropContext } from "react-beautiful-dnd"
-import Column from "./degreeplanner-column"
+import Term from "./degreeplanner-term"
+
+const selectedCourses = ["COMP1511", "COMP1521", "COMP1531", "MATH1141", "MATH1241"]
+
+const getCourses = (selectedCourses) => {
+    const courses = {}
+
+    selectedCourses.forEach(c => {
+        const termsAvailable = coursesJSON[c].terms.map(term => {
+            if (term === "Summer Term") return "TS"
+            if (term === "Term 1") return "T1"
+            if (term === "Term 2") return "T2"
+            if (term === "Term 3") return "T3"
+        })
+
+        courses[c] = {
+            id: c,
+            content: `${c} - ${coursesJSON[c].course_name}`,
+            termsAvailable: termsAvailable
+        }
+    })
+
+    return courses
+}
 
 const initialData = {
-    tasks: {
-        "COMP1511": {id: "COMP1511", content: "COMP1511"},
-        "COMP1521": {id: "COMP1521", content: "COMP1521"},
-        "COMP1531": {id: "COMP1531", content: "COMP1531"},
-        "MATH1141": {id: "MATH1141", content: "MATH1141"},
-        "MATH1241": {id: "MATH1241", content: "MATH1241"}
-    },
 
-    columns: {
+    courses: getCourses(selectedCourses),
+
+    terms: {
         "TS": {
             id: "TS",
             title: "Summer Term",
-            taskIds: []
+            courseIds: []
         },
         "T1": {
             id: "T1",
             title: "Term 1",
-            taskIds: ["COMP1511"]
+            courseIds: ["COMP1511"]
         },
         "T2": {
             id: "T2",
             title: "Term 2",
-            taskIds: ["COMP1521", "COMP1531"]
+            courseIds: ["COMP1521", "COMP1531"]
         },
         "T3": {
             id: "T3",
             title: "Term 3",
-            taskIds: ["MATH1141", "MATH1241"]
+            courseIds: ["MATH1141", "MATH1241"]
         }
     },
 
     // years: [1, 2, 3, 4, 5, 6],
     years: [1],
 
-    columnOrder: ["TS", "T1", "T2", "T3"]
+    termOrder: ["TS", "T1", "T2", "T3"]
 }
 
 class DegreePlanner extends React.Component {
@@ -55,22 +74,22 @@ class DegreePlanner extends React.Component {
 
         if (destination.droppableId === source.droppableId && destination.index === source.index) return;
 
-        const start = this.state.columns[source.droppableId];
-        const finish = this.state.columns[destination.droppableId];
+        const start = this.state.terms[source.droppableId];
+        const finish = this.state.terms[destination.droppableId];
         if (start === finish) {
-            const newTaskIds = Array.from(start.taskIds);
-            newTaskIds.splice(source.index, 1); // Remove 1 item at source.index
-            newTaskIds.splice(destination.index, 0, draggableId); // Insert dragggableId into destination
-            const newColumn = {
+            const newCourseIds = Array.from(start.courseIds);
+            newCourseIds.splice(source.index, 1); // Remove 1 item at source.index
+            newCourseIds.splice(destination.index, 0, draggableId); // Insert dragggableId into destination
+            const newTerm = {
                 ...start,
-                taskIds: newTaskIds
+                courseIds: newCourseIds
             };
 
             const newState = {
                 ...this.state,
-                columns: {
-                    ...this.state.columns,
-                    [newColumn.id]: newColumn,
+                terms: {
+                    ...this.state.terms,
+                    [newTerm.id]: newTerm,
                 }
             }
 
@@ -79,24 +98,24 @@ class DegreePlanner extends React.Component {
         }
 
         // Moving from one list to another
-        const startTaskIds = Array.from(start.taskIds);
-        startTaskIds.splice(source.index, 1);
+        const startCourseIds = Array.from(start.courseIds);
+        startCourseIds.splice(source.index, 1);
         const newStart = {
             ...start,
-            taskIds: startTaskIds,
+            courseIds: startCourseIds,
         }
 
-        const finishTaskIds = Array.from(finish.taskIds);
-        finishTaskIds.splice(destination.index, 0, draggableId);
+        const finishCourseIds = Array.from(finish.courseIds);
+        finishCourseIds.splice(destination.index, 0, draggableId);
         const newFinish = {
             ...finish,
-            taskIds: finishTaskIds
+            courseIds: finishCourseIds
         }
 
         const newState = {
             ...this.state,
-            columns: {
-                ...this.state.columns,
+            terms: {
+                ...this.state.terms,
                 [newStart.id]: newStart,
                 [newFinish.id]: newFinish
             }
@@ -106,7 +125,13 @@ class DegreePlanner extends React.Component {
 
     }
 
+    populateTerms = () => {
+        
+    }
+
     render() {
+        this.populateTerms()
+
         return (
             <Segment>
                 <Container>
@@ -126,13 +151,12 @@ class DegreePlanner extends React.Component {
                     <DragDropContext onDragEnd={this.onDragEnd}>
                         {this.state.years.map(years => (
                             <Grid columns={4}>
-                                {this.state.columnOrder.map(columnId => {
-                                    const column = this.state.columns[columnId];
-                                    const tasks = column.taskIds.map(taskId => this.state.tasks[taskId]);
-
+                                {this.state.termOrder.map(termId => {
+                                    const term = this.state.terms[termId];
+                                    const courses = term.courseIds.map(courseId => this.state.courses[courseId]);
                                     return (
                                         <Grid.Column>
-                                            <Column key={column.id} column={column} tasks={tasks} />
+                                            <Term key={term.id} term={term} courses={courses} allCourses={this.state.courses}/>
                                         </Grid.Column>
                                     );
                                 })}
@@ -140,7 +164,7 @@ class DegreePlanner extends React.Component {
                         ))}
                     </DragDropContext>
                     <Segment style={{backgroundColor: "lightpink"}}>
-                        <Header as="h2">Error messages</Header>
+                        <Header as="h3">Error messages</Header>
                         <p>None</p>
                     </Segment>
                 </Container>
