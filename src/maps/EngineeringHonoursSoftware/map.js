@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
 import ReactFlow, {Background, Controls, getConnectedEdges, isNode, isEdge, useStoreState, useStoreActions, ReactFlowProvider, EdgeText} from 'react-flow-renderer';
-//import {disableBodyScroll, enableBodyScroll} from 'body-scroll-lock';
 
 import CustomNode1 from '../../components/customnode1.js';
 import CustomNode2 from '../../components/customnode2.js';
@@ -16,6 +15,7 @@ import Sidebar from "../../components/sidebar.js"
 import pkg from 'semantic-ui-react/package.json'
 
 import DegreePlanner from "../../components/degreeplanner.js"
+import DropdownDegrees from '../../components/dropdownDegrees';
 
 import positionHelper from '../../components/positionhelper.js';
 import selectNode from '../../components/selectnode.js';
@@ -23,8 +23,6 @@ import unselectNode from '../../components/unselectnode.js';
 import highlightElements from '../../components/highlightelements.js';
 import getSelectable from '../../components/getselectable.js';
 import checkPrerequisites from '../../components/checkprerequisites';
-import DropdownDegrees from '../../components/dropdownDegrees';
-
 import exclusionSwap from '../../components/exclusionswap.js';
 
 var elementsData = require("./data.json");
