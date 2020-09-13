@@ -280,8 +280,16 @@ console.log(exclusion_groups);
     group.push(last);
 }*/
 
-console.log(exclusion_groups);
 
+// Get all the corequisites
+for (const course of courses_output) {
+    if (course.data.conditions.corequisites === null) continue;
+    console.log(course.id);
+    for (const corerequisite of course.data.conditions.corequisites) {
+        console.log(corerequisite);
+    }
+    console.log("=============");
+}
 
 
 
