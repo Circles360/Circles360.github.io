@@ -37,7 +37,8 @@ const getCourses = (selectedCourses) => {
         courses[c] = {
             id: c,
             content: `${c} - ${coursesJSON[c].course_name}`,
-            termsAvailable: termsAvailable
+            termsAvailable: termsAvailable,
+            units: coursesJSON[c].units
         }
     })
 

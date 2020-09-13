@@ -62,7 +62,7 @@ elementsData = highlightElements(elementsData, selectedNodes, selectedEdges, sel
 const onLoad = (reactFlowInstance) => {
     for (var group of exclusionGroups) {
         const last = group.pop();
-    
+
         for (var course of elementsData) {
             if (last === course.id) {
                 course.isHidden = true;
