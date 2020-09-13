@@ -135,7 +135,7 @@ class DropdownDegrees extends Component {
 
     render() {
         return <>
-            <Grid centered> 
+            <Grid centered style={{marginBottom: "20px"}}> 
                 <Grid.Row>  
                     <Dropdown
                         selection
@@ -170,16 +170,27 @@ class DropdownDegrees extends Component {
                         style={{visibility: this.state.hiddenSecondary}}
                     />
                 </Grid.Row>
+                <Grid.Row>
+                    <Button
+                    onClick={this.clickDone}
+                    color="red"
+                    >Done! Print to console</Button>
+                </Grid.Row>
             </Grid>
             
-            <div>
-                <Button
-                    onClick={this.clickDone}
-                    style={{marginTop: "20px"}}
-                >Done! Print to console</Button>
-            </div>
+
         </>;
     }
 }
 
 export default DropdownDegrees
+
+{/* <Button
+animated="vertical"
+color="red"
+>
+<Button.Content visible>Generate degree planner</Button.Content>
+<Button.Content hidden>
+    <Icon name="arrow down" />
+</Button.Content>
+</Button> */}
