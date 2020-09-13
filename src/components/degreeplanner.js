@@ -8,7 +8,7 @@ import coursesJSON from "../webscraper/courses.json"
 import { DragDropContext } from "react-beautiful-dnd"
 import Term from "./degreeplanner-term"
 
-const selectedCourses = ["COMP1511", "COMP1521", "COMP1531", "MATH1141", "MATH1241"]
+const selectedCourses = ["COMP1511", "COMP1521", "COMP1531", "MATH1141", "MATH1241", "ENGG1000", "COMP3331", "MATH1081", "COMP2521"];
 
 const getCourses = (selectedCourses) => {
     const courses = {}
@@ -31,55 +31,92 @@ const getCourses = (selectedCourses) => {
     return courses
 }
 
-const initialData = {
+const generateTerms = (yearId) => {
+    const terms = {}
 
-    courses: getCourses(selectedCourses),
+    // Terms have id of <YEAR>T<TERM TYPE> eg: 1TS is 1st Year, Summer Term
 
-    terms: {
-        "TS": {
-            id: "TS",
-            title: "Summer Term",
-            courseIds: []
-        },
-        "T1": {
-            id: "T1",
-            title: "Term 1",
-            courseIds: ["COMP1511"]
-        },
-        "T2": {
-            id: "T2",
-            title: "Term 2",
-            courseIds: ["COMP1521", "COMP1531"]
-        },
-        "T3": {
-            id: "T3",
-            title: "Term 3",
-            courseIds: ["MATH1141", "MATH1241"]
-        }
-    },
+    const TSKey = `${yearId}TS`;
+    const T1Key = `${yearId}T1`;
+    const T2Key = `${yearId}T2`;
+    const T3Key = `${yearId}T3`;
+    terms["termOrder"] = [TSKey, T1Key, T2Key, T3Key];
 
-    // years: [1, 2, 3, 4, 5, 6],
-    years: [1],
+    terms[TSKey] = {
+        id: TSKey,
+        title: "Summer Term",
+        courseIds: []
+    }
 
-    termOrder: ["TS", "T1", "T2", "T3"]
+    terms[T1Key] = {
+        id: T1Key,
+        title: "Term 1",
+        courseIds: []
+    }
+
+    terms[T2Key] = {
+        id: T2Key,
+        title: "Term 2",
+        courseIds: []
+    }
+
+    terms[T3Key] = {
+        id: T3Key,
+        title: "Term 3",
+        courseIds: []
+    }
+
+    return terms;
+}
+
+const populateTerms = (plan) => {
+    plan["1"]["1T2"].courseIds = ["COMP1521", "MATH1241", "COMP2521"];
+    plan["1"]["1T1"].courseIds = ["COMP1511", "MATH1141", "ENGG1000"];
+    plan["1"]["1T3"].courseIds = ["MATH1081", "COMP3331", "COMP1531"];
+
+    return plan;
+}
+
+const generatePlan = (years) => {
+    let plan = {};
+
+    for (let year = 1; year <= years; year++) {
+        console.log(year)
+        plan[year.toString()] = generateTerms(year)
+    }
+    console.log("generated years", plan)
+
+    plan = populateTerms(plan)
+
+    return plan;
 }
 
 class DegreePlanner extends React.Component {
-    state = initialData;
+    state = {
+        courses: getCourses(selectedCourses),
+        plan: generatePlan(4),
+    };
 
     onDragEnd = result => {
         const {destination, source, draggableId} = result;
 
+        // Null destination means label was not dragged into a droppable
         if (!destination) return;
 
+        // Label was dragged into the same position
         if (destination.droppableId === source.droppableId && destination.index === source.index) return;
 
-        const start = this.state.terms[source.droppableId];
-        const finish = this.state.terms[destination.droppableId];
+        const sourceYear = source.droppableId[0];
+        const start = this.state.plan[sourceYear][source.droppableId];
+        const destinationYear = destination.droppableId[0];
+        const finish = this.state.plan[destinationYear][destination.droppableId];
+
         if (start === finish) {
             const newCourseIds = Array.from(start.courseIds);
+            // console.log("before", newCourseIds)
             newCourseIds.splice(source.index, 1); // Remove 1 item at source.index
             newCourseIds.splice(destination.index, 0, draggableId); // Insert dragggableId into destination
+            // console.log("after", newCourseIds)
             const newTerm = {
                 ...start,
                 courseIds: newCourseIds
@@ -87,9 +124,12 @@ class DegreePlanner extends React.Component {
 
             const newState = {
                 ...this.state,
-                terms: {
-                    ...this.state.terms,
-                    [newTerm.id]: newTerm,
+                plan: {
+                    ...this.state.plan,
+                    [sourceYear]: {
+                        ...this.state.plan[sourceYear],
+                        [newTerm.id]: newTerm,
+                    }
                 }
             }
 
@@ -98,40 +138,36 @@ class DegreePlanner extends React.Component {
         }
 
         // Moving from one list to another
-        const startCourseIds = Array.from(start.courseIds);
+        const startCourseIds = Array.from(start.courseIds)
         startCourseIds.splice(source.index, 1);
+
         const newStart = {
             ...start,
             courseIds: startCourseIds,
         }
 
-        const finishCourseIds = Array.from(finish.courseIds);
+        const finishCourseIds = Array.from(finish.courseIds)
         finishCourseIds.splice(destination.index, 0, draggableId);
+
         const newFinish = {
             ...finish,
             courseIds: finishCourseIds
         }
 
-        const newState = {
-            ...this.state,
-            terms: {
-                ...this.state.terms,
-                [newStart.id]: newStart,
-                [newFinish.id]: newFinish
-            }
-        }
+        const newState = this.state;
+        newState.plan[sourceYear][newStart.id] = newStart;
+        newState.plan[destinationYear][newFinish.id] = newFinish;
 
         this.setState(newState);
-
     }
 
     populateTerms = () => {
-        
+        this.state.plan["1"]["1T2"].courseIds = ["COMP1521", "MATH1241", "COMP2521"];
+        this.state.plan["1"]["1T1"].courseIds = ["COMP1511", "MATH1141", "ENGG1000"];
+        this.state.plan["1"]["1T3"].courseIds = ["MATH1081", "COMP3331", "COMP1531"];
     }
 
     render() {
-        this.populateTerms()
-
         return (
             <Segment>
                 <Container>
@@ -150,10 +186,10 @@ class DegreePlanner extends React.Component {
                     <p><em>Also note, you can drag a course into a term even if it is not offered as our data may be out of date, please double check </em></p>
 
                     <DragDropContext onDragEnd={this.onDragEnd}>
-                        {this.state.years.map(years => (
+                        {Object.keys(this.state.plan).map(yearId => (
                             <Grid columns={4}>
-                                {this.state.termOrder.map(termId => {
-                                    const term = this.state.terms[termId];
+                                {this.state.plan[yearId].termOrder.map(termId => {
+                                    const term = this.state.plan[yearId][termId];
                                     const courses = term.courseIds.map(courseId => this.state.courses[courseId]);
                                     return (
                                         <Grid.Column>
