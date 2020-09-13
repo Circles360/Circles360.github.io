@@ -84,8 +84,6 @@ const generateTerms = (yearId) => {
 }
 
 const addPriority = (priority, courseId, unlocksCourse) => {
-    // code.conditions.prerequisites is an array
-    console.log("addPriority", unlocksCourse, "-->", courseId, priority);
 
     if (!coursesJSON[courseId].conditions.prerequisites) return priority;
 
@@ -150,7 +148,6 @@ const checkPrereqsMet = (termPlan, termId, courseId) => {
         if (t === termId) break;
         coursesTaken.push(...termPlan[t].courseIds);
     }
-    console.log("courseId", courseId, "coursestaken", coursesTaken);
 
     for (const course of coursesTaken) {
         prereqsExecutable = prereqsExecutable.replace(course, "1");
@@ -185,7 +182,7 @@ const addCourseToPlan = (termPlan, courseId) => {
         return termPlan;
     }
 
-    console.log("ERROR WITH ", courseId);
+    console.log("ERROR WITH ", courseId); // TODO: put in a "error" segment
 }
 
 const populateTerms = (maxYears, prioritisedCourses) => {
@@ -212,7 +209,6 @@ const populateTerms = (maxYears, prioritisedCourses) => {
 
 const makePlan = (plan, maxYears) => {
     const prioritisedCourses = prioritiseCourses(selectedCourses);
-    console.log("prioritised", prioritisedCourses);
 
     const termPlan = populateTerms(maxYears, prioritisedCourses);
 
@@ -241,11 +237,15 @@ const generatePlanScaffold = (years) => {
 class DegreePlanner extends React.Component {
     state = {
         courses: getCourses(selectedCourses),
-        plan: generatePlanScaffold(4),
+        plan: generatePlanScaffold(4)
+    };
+
+    onDragStart = result => {
+        const { draggableId } = result;
     };
 
     onDragEnd = result => {
-        const {destination, source, draggableId} = result;
+        const { destination, source, draggableId } = result;
 
         // Null destination means label was not dragged into a droppable
         if (!destination) return;
@@ -260,10 +260,8 @@ class DegreePlanner extends React.Component {
 
         if (start === finish) {
             const newCourseIds = Array.from(start.courseIds);
-            // console.log("before", newCourseIds)
             newCourseIds.splice(source.index, 1); // Remove 1 item at source.index
             newCourseIds.splice(destination.index, 0, draggableId); // Insert dragggableId into destination
-            // console.log("after", newCourseIds)
             const newTerm = {
                 ...start,
                 courseIds: newCourseIds
@@ -326,7 +324,7 @@ class DegreePlanner extends React.Component {
                     <p><em>Please note that our data is scraped from the UNSW Handbook and may have some inconsistencies.</em></p>
                     <p><em>Also note, you can drag a course into a term even if it is not offered as our data may be out of date, please double check :) </em></p>
 
-                    <DragDropContext onDragEnd={this.onDragEnd}>
+                    <DragDropContext onDragEnd={this.onDragEnd} onDragStart={this.onDragStart}>
                         {Object.keys(this.state.plan).map(yearId => (
                             <Grid columns={4}>
                                 {this.state.plan[yearId].termOrder.map(termId => {
