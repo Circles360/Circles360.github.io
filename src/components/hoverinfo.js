@@ -19,7 +19,7 @@ export default function HoverInfo(props) {
             </div>}
             {props.node.data.corequisites !== null &&             
             <div id="corequisites">
-                <b>Coreqs: </b>{props.node.data.conditions.corequisites}
+                <b>Coreqs: </b>{props.node.data.corequisites}
             </div>}
         </div>
     );
