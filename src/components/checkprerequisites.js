@@ -39,6 +39,8 @@ export default function checkPrerequisites(node, elements, selectedNodes) {
                 //console.log(selectedNodes);
                 for (const selected of selectedList) {
                     //console.log(selected);
+                    if (selected === node.id) continue; // The node can't include itself
+                    
                     const node = getElement(selected, elements);
                     total += node.data.units;
                     //console.log(node.id + "=" + node.data.units);
@@ -51,7 +53,7 @@ export default function checkPrerequisites(node, elements, selectedNodes) {
                 }
             }
         } else if (node.data.conditions.core_year !== null) {
-            console.log("CORE YEAR NOT NULL");
+
         }
     }
 
