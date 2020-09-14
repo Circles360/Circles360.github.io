@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import SidebarModal from "./sidebar-modal.js";
-import { Icon, Button, Container, Header, Dropdown, Grid, Segment, Message, Label } from 'semantic-ui-react';
+import { Icon, Button, Container, Header, Divider, Grid, Segment, Message, Label } from 'semantic-ui-react';
 import ScrollTo from "react-scroll-into-view";
 import specialisationsJSON from "../webscraper/specialisations.json";
 import coursesJSON from "../webscraper/courses.json";
@@ -26,7 +26,6 @@ const getSelectedCourses = (specialisationCode) => {
             coursesInThisSpecialisation.push(courseId);
         } else if (courseId.match(/^[A-Z]{4}\d$/)) {
             const relevantCourses = allCourseIds.filter(c => c.includes(courseId));
-            console.log("relevant", relevantCourses);
             relevantCourses.forEach(c => {
                 if (coursesInThisSpecialisation.includes(c)) return;
                 coursesInThisSpecialisation.push(c);
@@ -34,7 +33,7 @@ const getSelectedCourses = (specialisationCode) => {
         }
     });
 
-    return coursesInThisSpecialisation.map(c => (<Label style={{margin: "2px"}}>{c}</Label>));
+    return coursesInThisSpecialisation.map(c => (<Label size="mini" style={{margin: "2px"}}>{c}</Label>));
 }
 class Sidebar extends React.Component {
     state = {
@@ -50,10 +49,11 @@ class Sidebar extends React.Component {
                     <p>Circles is a visual degree planner for UNSW students. Choose your program and degree below to begin!</p>
                     <SidebarModal />
                 </Message>
+                <Divider></Divider>
                 <Grid stretched>
                     <Grid.Row>
                         <Container>
-                            <Header as="h3" textAlign="center">Choose your courses</Header>
+                            <Header as="h3" textAlign="center">Your selected courses</Header>
                             {getSelectedCourses("SENGAH")}
                         </Container>
                     </Grid.Row>
