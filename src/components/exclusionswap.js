@@ -24,7 +24,7 @@ export default function exclusionSwap(node, elements, edges, selectedNodes, sele
             // Current course we need to display is now at front of queue
             const curCourse = group[0];
 
-            //console.log(prevCourse);
+            //console.log(prevCourse);-
             //console.log(curCourse);
 
 
@@ -82,6 +82,8 @@ export default function exclusionSwap(node, elements, edges, selectedNodes, sele
             for (const newEdge of newEdgesList) {
                 newEdgesIds.push(newEdge.id);
             }        
+
+            // Stores all the common edges
             var checkedEdges = [];
 
             // Go through each edge we need to hide and check what we should do
@@ -167,15 +169,34 @@ export default function exclusionSwap(node, elements, edges, selectedNodes, sele
                     //console.log(newEdge.id + " NOT BEEN CHECKED BEFORE")
                     // It has NOT been checked before
                     if (selectedNodes.hasOwnProperty(curCourse)) {
-                        //console.log(curCourse + " was previously seleted");
-                        potentialEdges[newEdge.id] = 1;
-                        // Check if the target node is selectable
-                        if (! selectableNodes.hasOwnProperty(edge.target)) {
-                            if (checkPrerequisites(targetNode, elements, selectedNodes)) {
-                                //console.log(edge.target + " DOES MEET PREREQS");
-                                selectableNodes[targetNode.id] = 1;
-                            } else {
-                                //console.log(edge.target + " DOES NOT MEET PREREQS");
+                        //console.log(curCourse + " was previously selected");
+                        
+                        if (sourceNode.id === curCourse) {
+                            // Reveal node is selected and source of edge. Make potential edge.
+                            potentialEdges[newEdge.id] = 1;
+                            // Check if the target node is selectable
+                            if (! selectableNodes.hasOwnProperty(edge.target)) {
+                                if (checkPrerequisites(targetNode, elements, selectedNodes)) {
+                                    //console.log(edge.target + " DOES MEET PREREQS");
+                                    selectableNodes[targetNode.id] = 1;
+                                } else {
+                                    //console.log(edge.target + " DOES NOT MEET PREREQS");
+                                }
+                            }
+                        } else {
+                            // Reveal node is selected and target of edge. Check previous edges/nodes
+                            if (curNode.data.conditions.prerequisites !== null) {
+                                for (const prereq of curNode.data.conditions.prerequisites) {
+                                    if (selectedNodes.hasOwnProperty(prereq)) {
+                                        // This node was selected. Make the edge selected
+                                        if (potentialEdges.hasOwnProperty('e' + prereq + '-' + curCourse)) delete potentialEdges['e' + prereq + '-' + curCourse];
+                                        selectedEdges['e' + prereq + '-' + curCourse] = 1;
+                                    } else {
+                                        // This node was not selected. Make sure the edge is unselected
+                                        if (potentialEdges.hasOwnProperty('e' + prereq + '-' + curCourse)) delete potentialEdges['e' + prereq + '-' + curCourse];
+                                        if (selectedEdges.hasOwnProperty('e' + prereq + '-' + curCourse)) delete selectedEdges['e' + prereq + '-' + curCourse];
+                                    }
+                                }
                             }
                         }
                     } else {

@@ -140,8 +140,23 @@ for (const course of courses_output) {
     } else if (course.id === "COMP4961") {
         course.data.conditions.prerequisites = [];
         course.data.conditions.prereqs_executable = "0";
+    } else if (course.id === 'MATH1081') {
+        course.data.unlocks = course.data.unlocks.filter(function(course){
+            return course !== 'COMP6721';
+        });
+    } else if (course.id === 'COMP2521') {
+        course.data.unlocks = course.data.unlocks.filter(function(course){
+            return course !== 'COMP6721';
+        });    
     }
 }
+
+// Delete comp6721 from our graph
+delete courses_list['COMP6721'];
+courses_output = courses_output.filter(function(course) {
+    return course.id !== 'COMP6721';
+});
+
 
 // Go through the unlocks for each course and if it is not a node in our graph,
 // delete it. If the array is empty, set it to null
@@ -155,6 +170,8 @@ for (var course of courses_output) {
         course.data.unlocks = null;
     }
 }
+
+
 
 // Add course header
 courses_output.unshift({
