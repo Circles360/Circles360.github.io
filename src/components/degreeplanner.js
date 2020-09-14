@@ -237,30 +237,8 @@ const generatePlanScaffold = (years, selectedCourses) => {
 class DegreePlanner extends React.Component {
     state = {
         courses: getCourses(this.props.selectedCourses),
-        selectedCourses: this.props.selectedCourses,
         plan: generatePlanScaffold(4, this.props.selectedCourses)
     };
-
-    shouldComponentUpdate(nextProps, nextState) {
-        const { selectedCourses: nextPropsSelectedCourses } = nextProps;
-        const { selectedCourses: propsSelectedCourses } = this.props;
-        
-        const { selectedCourses } = this.state;
-
-        if (nextPropsSelectedCourses !== propsSelectedCourses && nextPropsSelectedCourses !== selectedCourses) {
-            console.log("UPDATE!!!!");
-            console.log(nextProps);
-            console.log(nextState);
-            this.setState({
-                courses: getCourses(nextPropsSelectedCourses),
-                selectedCourses: nextPropsSelectedCourses,
-                plan: generatePlanScaffold(4, nextPropsSelectedCourses)
-            });
-        }
-
-        return selectedCourses !== nextState.selectedCourses;
-    }
-
 
     onDragStart = result => {
         const { draggableId } = result;
