@@ -42,4 +42,8 @@ BESENGAHGENERATOR.MJS:
 - COMP3901 and COMP3902 prerequisites - completion of first and second year core
     - prereqs_executable = "(COMP1511 && COMP1521 && COMP1531 && (MATH1131 || MATH1141) && ENGG1000 && (MATH1231 || MATH1241) && COMP2041 && COMP2511 && COMP2521 && DESN2000 && MATH2400 && MATH2859 && SENG2011 && SENG2021)"
     - prerequisites = ["COMP1511", "COMP1521", "COMP1531", "MATH1131", "MATH1141", "ENGG1000", "MATH1231", "MATH1241", "COMP2041", "COMP2511", "COMP2521", "DESN2000", "MATH2400", "MATH2859", "SENG2011", "SENG2021"]
+- COMP6721 cannot be taken in SENGAH LMFAOOOOO
+    - MATH1081 and COMP2521 leads to it so remove unlocks from them
+    - Then remove COMP6721
+
 TODO: Should I add unlocks? ^ Will make a shit ton of nodes link to these two.
