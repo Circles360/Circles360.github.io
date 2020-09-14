@@ -44,15 +44,16 @@ const getSelectedCourses = (specialisationCode, selectedNodes) => {
             return (
                 <Segment color="red">
                     <Header as="h5">{levelName}</Header>
-                    {courseList.map(c => c in selectedNodes ? <Label color="grey">{c}</Label> : <Label color="grey" basic>{c}</Label>)}
+                    {courseList.map(c => c in selectedNodes ? <Label compact color="grey">{c}</Label> : <Label compact color="grey" basic>{c}</Label>)}
                 </Segment>
             )
         } else {
             // Not core course. Render segment with chosen electives only.
+            console.log("core", coreCourses);
             return (
                 <Segment>
                     <Header as="h5">{levelName}</Header>
-                    {courseList.filter(c => (c in selectedNodes && !(c in coreCourses))).map(c => <Label color="grey">{c}</Label>)}
+                    {courseList.filter(c => (c in selectedNodes && !(coreCourses.includes(c)))).map(c => <Label compact color="grey">{c}</Label>)}
                 </Segment>
             )
         }
