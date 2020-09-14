@@ -122,7 +122,7 @@ const BESengah = () => {
             console.log("UNSELECTING");
             unselectNode(elements, element, selectedNodes, selectedEdges, selectableNodes, potentialEdges);
         }
-        
+
         console.log("==========SelectedNodes==========");
         console.log(selectedNodes);
         console.log("==========SelectedEdges==========");
@@ -255,11 +255,10 @@ const BESengah = () => {
                         {hoverDisplay}
                         <SearchPan elements={nodesData}/>
                         <GetPan />
-                    </div>                    
+                    </div>
                 </Grid.Column>
                 <Grid.Column width="4">
-                    <Sidebar/>
-                    {/* <DegreePlanner/> */}
+                    <Sidebar selectedNodes={selectedNodes}/>
                 </Grid.Column>
             </Grid>
             {/* <button onClick={positionHelper(elements)}>GENERATE POSITION</button> */}
@@ -270,6 +269,5 @@ const BESengah = () => {
         </ReactFlowProvider>
     );
 };
-BESengah.whyDidYouRender = true;
 
 export default BESengah;

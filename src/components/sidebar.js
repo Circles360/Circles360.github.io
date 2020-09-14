@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import SidebarModal from "./sidebar-modal.js";
 import { Icon, Button, Container, Header, Divider, Grid, Segment, Message, Label } from 'semantic-ui-react';
 import ScrollTo from "react-scroll-into-view";
@@ -7,33 +7,56 @@ import coursesJSON from "../webscraper/courses.json";
 
 const REGEX_COURSE_CODE = /[A-Z]{4}\d{4}/g;
 
-const getSelectedCourses = (specialisationCode) => {
-    const levels = Object.keys(specialisationsJSON[specialisationCode].structure);
-
-    const rawCourses = levels.filter(levelName => {
-        const coursesInLevel = specialisationsJSON[specialisationCode].structure[levelName].courses;
-        if (coursesInLevel == null) return false;
-        if (coursesInLevel.length === 1 && coursesInLevel.includes("ANY COURSE")) return false;
-        return true;
-    }).map(levelName => specialisationsJSON[specialisationCode].structure[levelName].courses.flat().filter(c => c != "ANY LEVEL")).flat();
-
-    console.log(rawCourses);
+const getCoursesInLevel = (rawList) => {
+    rawList = rawList.filter(c => c != "ANY COURSE");
     const allCourseIds = Object.keys(coursesJSON);
-
-    const coursesInThisSpecialisation = [];
-    rawCourses.forEach(courseId => {
+    const courseList = [];
+    rawList.forEach(courseId => {
         if (courseId.match(REGEX_COURSE_CODE)) {
-            coursesInThisSpecialisation.push(courseId);
+            courseList.push(courseId);
         } else if (courseId.match(/^[A-Z]{4}\d$/)) {
             const relevantCourses = allCourseIds.filter(c => c.includes(courseId));
             relevantCourses.forEach(c => {
-                if (coursesInThisSpecialisation.includes(c)) return;
-                coursesInThisSpecialisation.push(c);
-            })
+                if (courseList.includes(c)) return;
+                courseList.push(c);
+            });
         }
     });
 
-    return coursesInThisSpecialisation.map(c => (<Label size="mini" style={{margin: "2px"}}>{c}</Label>));
+    return courseList;
+}
+
+const getSelectedCourses = (specialisationCode, selectedNodes) => {
+    const levels = Object.keys(specialisationsJSON[specialisationCode].structure);
+
+    return levels.filter(levelName => {
+        const courseList = specialisationsJSON[specialisationCode].structure[levelName].courses;
+        if (!courseList) return false;
+        if (courseList.length === 1 && courseList.includes("ANY COURSE")) return false;
+        return true;
+    }).map(levelName => {
+        const rawList = specialisationsJSON[specialisationCode].structure[levelName].courses.flat();
+        const courseList = getCoursesInLevel(rawList);
+        if (levelName.match(/[Cc]ore/g)) {
+            // CORE COURSE
+            return (
+                <Segment color="red">
+                    <Header as="h5">{levelName}</Header>
+                    {courseList.map(c => c in selectedNodes ? <Label color="red">{c}</Label> : <Label color="red" basic>{c}</Label>)}
+                </Segment>
+            )
+        } else {
+            // Not core course. Render segment with chosen electives only.
+            return (
+                <Segment>
+                    <Header as="h5">{levelName}</Header>
+                    {courseList.filter(c => c in selectedNodes).map(c => <Label>{c}</Label>)}
+                </Segment>
+            )
+        }
+    })
+
+    // return coursesInThisSpecialisation.map(c => (c in selectedNodes) ? (<Label color="teal" style={{margin: "2px"}}>{c}</Label>) : (<Label style={{margin: "2px"}}>{c}</Label>));
 }
 class Sidebar extends React.Component {
     state = {
@@ -54,7 +77,7 @@ class Sidebar extends React.Component {
                     <Grid.Row>
                         <Container>
                             <Header as="h3" textAlign="center">Your selected courses</Header>
-                            {getSelectedCourses("SENGAH")}
+                            {getSelectedCourses("SENGAH", this.props.selectedNodes)}
                         </Container>
                     </Grid.Row>
 
