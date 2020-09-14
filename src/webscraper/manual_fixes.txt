@@ -25,6 +25,8 @@ COURSES.JSON:
         - It also unlocks itself
     - COMP4963 prerequisite = COMP4962, remove from prerequisites
         - It also unlocks itself
+- Add comp3821 and comp3121 as exclusion courses
+- Add COMP3891 and COMP3231 as exclusion courses
 
 
 BESENGAHGENERATOR.MJS:

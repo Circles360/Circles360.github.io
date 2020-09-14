@@ -23743,7 +23743,8 @@
         ],
         "exclusions": [
             "COMP9101",
-            "COMP9801"
+            "COMP9801",
+            "COMP3821"
         ],
         "unlocks": [
             "COMP4121",
@@ -23995,7 +23996,9 @@
             "COMP9201",
             "COMP9283"
         ],
-        "exclusions": null,
+        "exclusions": [
+            "COMP3891"
+        ],
         "unlocks": [
             "COMP6445",
             "COMP6845",
@@ -24263,7 +24266,9 @@
             "COMP3121",
             "COMP9801"
         ],
-        "exclusions": null,
+        "exclusions": [
+            "COMP3121"
+        ],
         "unlocks": [
             "COMP4121",
             "COMP4128",
@@ -24301,7 +24306,9 @@
             "COMP9201",
             "COMP9283"
         ],
-        "exclusions": null,
+        "exclusions": [
+            "COMP3231"
+        ],
         "unlocks": [
             "COMP6445",
             "COMP6845",
