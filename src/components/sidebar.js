@@ -60,13 +60,7 @@ const getSelectedCourses = (specialisationCode, selectedNodes) => {
 
     // return coursesInThisSpecialisation.map(c => (c in selectedNodes) ? (<Label color="teal" style={{margin: "2px"}}>{c}</Label>) : (<Label style={{margin: "2px"}}>{c}</Label>));
 }
-
 class Sidebar extends React.Component {
-
-    handleClick = () => {
-        console.log("CLICKED!")
-    }
-
     render() {
         return (
             <Container style={{paddingLeft: "10px", paddingRight: "10px"}}>
@@ -89,7 +83,6 @@ class Sidebar extends React.Component {
                             <Button
                                 animated="vertical"
                                 color="red"
-                                onClick={this.handleClick}
                             >
                                 <Button.Content visible>Generate degree planner</Button.Content>
                                 <Button.Content hidden>
