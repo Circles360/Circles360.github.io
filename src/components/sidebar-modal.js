@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import DropdownDegrees from "./dropdownDegrees.js"
+import DropdownSearch from "./dropdownsearch.js"
 import { Icon, Button, Container, Modal, Header, Dropdown, Grid, Message } from 'semantic-ui-react'
 
 function exampleReducer(state, action) {
@@ -37,15 +38,8 @@ function SideBarModal() {
         <Modal.Header textAlign="center">Degree Planner</Modal.Header>
         <Container>
             <Header as="h3" textAlign="center" style={{marginTop: "5px"}}>Choose your degree</Header>
-            <DropdownDegrees />
+            <DropdownSearch />
         </Container>
-        {/* <Modal.Actions>
-          <Button color='black' onClick={() => {
-              dispatch({ type: 'CLOSE_MODAL' });
-            }}>
-            Generate
-          </Button>
-        </Modal.Actions> */}
       </Modal>
     </div>
   )
