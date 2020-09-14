@@ -4,36 +4,36 @@ import { isEdge } from "react-flow-renderer";
 
 const selectedEdgeAnimated = {
     stroke: "#e94646",
-    strokeWidth: 5,
+    strokeWidth: 2,
     opacity: 1,
 }
 const selectedEdgeStatic = {
-    stroke: "#e94646",
-    strokeWidth: 5,
+    stroke: "#454545",
+    strokeWidth: 2,
     opacity: 1,
 }
 
 const hoverEdge = {
-    stroke: "ad66d1",
-    strokeWidth: 3,
+    stroke: "#454545",
+    strokeWidth: 2,
     opacity: 1,
 }
 
 const potentialHoverEdge = {
-    stroke: "#3594e7",
-    strokeWidth: 3,
+    stroke: "#454545",
+    strokeWidth: 2,
     opacity: 1,
 }
 const potentialEdge = {
-    stroke: "3594e7",
+    stroke: "#cecece",
     strokeWidth: 1,
-    opacity: 0.3,
+    opacity: 1,
 }
 
 const unselectedEdge = {
-    stroke: "grey",
+    stroke: "#cecece",
     strokeWidth: 1,
-    opacity: 0.2
+    opacity: 1
 }
 
 export default function highlightElements(elements, selectedNodes, selectedEdges, selectableNodes, potentialEdges, hoverEdges) {
