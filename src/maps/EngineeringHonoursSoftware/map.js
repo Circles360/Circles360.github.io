@@ -226,41 +226,41 @@ const BESengah = () => {
 
     return (
         <ReactFlowProvider>
-        <div style={layout}>
-            <Grid columns={2} divided>
-                <Grid.Column width="12">
-                    <div onMouseEnter={disableBodyScroll} onMouseLeave={enableBodyScroll}>
-                        <ReactFlow
-                            elements={elements}
-                            style={{width: '100%', height: '100vh'}}
-                            onLoad={onLoad}
-                            nodeTypes={nodeTypes}
-                            nodesConnectable={false}
-                            onElementClick={onElementClick}
-                            minZoom={0.38}
-                            //setInitTransform={TransformUpdater({x: 100, y: 100, z: 1})}
-                            //nodesDraggable={false}
-                            onNodeMouseEnter={onNodeMouseEnter}
-                            onNodeMouseLeave={onNodeMouseLeave}
-                            selectNodesOnDrag={false}
-                            onNodeDragStop={onNodeDragStop}
-                            elementsSelectable={false}
-                        >
-                        </ReactFlow>
-                        <DropdownSearch/>
-                        <GetPan />
-                    </div>
-                </Grid.Column>
-                <Grid.Column width="4">
-                    <Sidebar selectedNodes={selectedNodes}/>
-                </Grid.Column>
-            </Grid>
-            {hoverDisplay}
-            {/* <button onClick={positionHelper(elements)}>GENERATE POSITION</button> */}
-            <div id="DegreePlanner">
-                <DegreePlanner />
+            <div style={layout}>
+                <Grid columns={2} divided>
+                    <Grid.Column width="12">
+                        <div onMouseEnter={disableBodyScroll} onMouseLeave={enableBodyScroll}>
+                            <ReactFlow
+                                elements={elements}
+                                style={{width: '100%', height: '100vh'}}
+                                onLoad={onLoad}
+                                nodeTypes={nodeTypes}
+                                nodesConnectable={false}
+                                onElementClick={onElementClick}
+                                minZoom={0.38}
+                                //setInitTransform={TransformUpdater({x: 100, y: 100, z: 1})}
+                                //nodesDraggable={false}
+                                onNodeMouseEnter={onNodeMouseEnter}
+                                onNodeMouseLeave={onNodeMouseLeave}
+                                selectNodesOnDrag={false}
+                                onNodeDragStop={onNodeDragStop}
+                                elementsSelectable={false}
+                            >
+                            </ReactFlow>
+                            <DropdownSearch/>
+                            <GetPan />
+                        </div>
+                    </Grid.Column>
+                    <Grid.Column width="4">
+                        <Sidebar selectedNodes={selectedNodes}/>
+                    </Grid.Column>
+                </Grid>
+                {hoverDisplay}
+                {/* <button onClick={positionHelper(elements)}>GENERATE POSITION</button> */}
+                <div id="DegreePlanner">
+                    <DegreePlanner selectedCourses={Object.keys(selectedNodes)}/>
+                </div>
             </div>
-        </div>
         </ReactFlowProvider>
     );
 };

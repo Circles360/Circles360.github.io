@@ -49,11 +49,10 @@ const getSelectedCourses = (specialisationCode, selectedNodes) => {
             )
         } else {
             // Not core course. Render segment with chosen electives only.
-            console.log("core", coreCourses);
             return (
                 <Segment>
                     <Header as="h5">{levelName}</Header>
-                    {courseList.filter(c => (c in selectedNodes && !(coreCourses.includes(c)))).map(c => <Label compact color="grey">{c}</Label>)}
+                    {courseList.filter(c => (c in selectedNodes && !coreCourses.includes(c))).map(c => <Label compact color="grey">{c}</Label>)}
                 </Segment>
             )
         }
@@ -62,12 +61,7 @@ const getSelectedCourses = (specialisationCode, selectedNodes) => {
     // return coursesInThisSpecialisation.map(c => (c in selectedNodes) ? (<Label color="teal" style={{margin: "2px"}}>{c}</Label>) : (<Label style={{margin: "2px"}}>{c}</Label>));
 }
 class Sidebar extends React.Component {
-    state = {
-
-    };
-
     render() {
-
         return (
             <Container style={{paddingLeft: "10px", paddingRight: "10px"}}>
                 <Header as="h1" textAlign="center" style={{marginTop: "10px"}}>Circles</Header>

@@ -10,23 +10,12 @@ import { DragDropContext } from "react-beautiful-dnd"
 import Term from "./degreeplanner-term"
 
 
-const getCoreCourses = (code) => {
-    const coreCourses = [];
-
-    for (const level in specialisationsJSON[code].structure) {
-        if (level.includes("Core") || level.includes("core")) {
-            coreCourses.push(...specialisationsJSON[code].structure[level].courses.flat())
-        }
-    }
-
-    return coreCourses
-}
-const selectedCourses = getCoreCourses("AEROAH").filter(c => c != "MATH1131" && c != "MATH1231");
-
 const getCourses = (selectedCourses) => {
+    console.log("selected courses are", selectedCourses)
     const courses = {}
 
     selectedCourses.forEach(c => {
+        if (!(c in coursesJSON)) return;
         if (!(coursesJSON[c].terms)) {
             console.log("no terms offered for", c);
             return;
@@ -88,7 +77,7 @@ const generateTerms = (yearId) => {
 }
 
 const addPriority = (priority, courseId, unlocksCourse) => {
-
+    if (!(courseId in coursesJSON)) return priority;
     if (!coursesJSON[courseId].conditions.prerequisites) return priority;
 
     for (const prereq of coursesJSON[courseId].conditions.prerequisites) {
@@ -106,6 +95,8 @@ const prioritiseCourses = (selectedCourses) => {
     // Initiate priorities
     var priority = {};
     for (const courseId of selectedCourses) {
+        if (!(courseId in coursesJSON)) continue
+
         priority[courseId] = {
             courseId: courseId,
             level: Number(courseId[4]),
@@ -216,7 +207,7 @@ const populateTerms = (maxYears, prioritisedCourses) => {
     return termPlan;
 }
 
-const makePlan = (plan, maxYears) => {
+const makePlan = (plan, maxYears, selectedCourses) => {
     const prioritisedCourses = prioritiseCourses(selectedCourses);
 
     const termPlan = populateTerms(maxYears, prioritisedCourses);
@@ -231,22 +222,22 @@ const makePlan = (plan, maxYears) => {
     return plan;
 }
 
-const generatePlanScaffold = (years) => {
+const generatePlanScaffold = (years, selectedCourses) => {
     let plan = {};
 
     for (let year = 1; year <= years; year++) {
         plan[year.toString()] = generateTerms(year)
     }
 
-    plan = makePlan(plan, years)
+    plan = makePlan(plan, years, selectedCourses)
 
     return plan;
 }
 
 class DegreePlanner extends React.Component {
     state = {
-        courses: getCourses(selectedCourses),
-        plan: generatePlanScaffold(4)
+        courses: getCourses(this.props.selectedCourses),
+        plan: generatePlanScaffold(4, this.props.selectedCourses)
     };
 
     onDragStart = result => {
