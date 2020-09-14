@@ -11,25 +11,14 @@ var courses_list = {}; // Keeps track of courses in this degree for easier check
 
 // Colours a node accordingly
 function colour_node(node) {
-    if (node.id.match(/^COMP/)) node.style = {...node.style, background: '#66ca86'};
-    else if (node.id.match(/^MATH/)) node.style = {...node.style, background: '#00a2e0'};
-    else if (node.id.match(/^ENGG/)) node.style = {...node.style, background: '#ca300a'};
-    else if (node.id.match(/^DESN/)) node.style = {...node.style, background: '#db8600'};
-    else if (node.id.match(/^SENG/)) node.style = {...node.style, background: '#dece3e'};
-    else if (node.id.match(/^ELEC/)) node.style = {...node.style, background: '#06493d'};
-    else if (node.id.match(/^INFS/)) node.style = {...node.style, background: '#30b5ba'};
-    else if (node.id.match(/^TELE/)) node.style = {...node.style, background: '#c79c46'};
-    else if (node.id.match(/^x/)) {
-        // Find the colour of one of its children
-        var colour;
-        for (var course of courses_output) {
-            if (course.id === node.data.children[0]) {
-                colour = course.style.background;
-                break;
-            }
-        }
-        node.style = {...node.style, borderColor: colour};
-    }
+    if (node.id.match(/^COMP/)) node.style = {...node.style, background: '#1EB13C', border: '2px dashed #1EB13C'};
+    else if (node.id.match(/^MATH/)) node.style = {...node.style, background: '#166DBA', border: '2px dashed #166DBA'};
+    else if (node.id.match(/^ENGG/)) node.style = {...node.style, background: '#CA1818', border: '2px dashed #CA1818'};
+    else if (node.id.match(/^DESN/)) node.style = {...node.style, background: '#D66328', border: '2px dashed #D66328'};
+    else if (node.id.match(/^SENG/)) node.style = {...node.style, background: '#8A36B4', border: '2px dashed #8A36B4'};
+    else if (node.id.match(/^ELEC/)) node.style = {...node.style, background: '#449A94', border: '2px dashed #449A94'};
+    else if (node.id.match(/^INFS/)) node.style = {...node.style, background: '#885533', border: '2px dashed #885533'};
+    else if (node.id.match(/^TELE/)) node.style = {...node.style, background: '#D3A437', border: '2px dashed #D3A437'};
 }
 
 // Returns list of node objects for courses fitting the "any" description
@@ -188,7 +177,7 @@ courses_output.unshift({
     style: node_header,
     position: {x: 0, y: 0}
 })
-courses_output[0].style.background = '#7766ca';
+courses_output[0].style.background = '#000';
 courses_list['SENGAH'] = 1;
 
 

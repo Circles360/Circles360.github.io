@@ -1,21 +1,21 @@
 export const node1 = {
     display: 'flex',
-    boxShadow: "0px 0px 3px grey",
+    //boxShadow: "0px 0px 1px grey",
     textAlign: 'center',
     alignItems: 'center',
     justifyContent: 'center',
-    fontSize: 12,
+    fontSize: 10,
     color: 'white',
     background: 'black',
     width: 64,
     height: 64,
     borderRadius: 32,
-    filter: 'brightness(1)'
+    filter: 'brightness(1.15)'
 }
 
 export const node2 = {
     display: 'flex',
-    boxShadow: "0px 0px 3px grey",
+    //boxShadow: "0px 0px 1px grey",
     textAlign: 'center',
     alignItems: 'center',
     justifyContent: 'center',
@@ -34,7 +34,7 @@ export const node2 = {
 
 export const node_header = {
     display: 'flex',
-    boxShadow: "0px 0px 3px grey",
+    //boxShadow: "0px 0px 1px grey",
     textAlign: 'center',
     alignItems: 'center',
     justifyContent: 'center',
@@ -44,5 +44,5 @@ export const node_header = {
     width: 256,
     height: 256,
     borderRadius: 128,
-    filter: 'brightness(1)'
+    filter: 'brightness(1.15)'
 }
