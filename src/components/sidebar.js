@@ -28,6 +28,7 @@ const getCoursesInLevel = (rawList) => {
 
 const getSelectedCourses = (specialisationCode, selectedNodes) => {
     const levels = Object.keys(specialisationsJSON[specialisationCode].structure);
+    const coreCourses = [];
 
     return levels.filter(levelName => {
         const courseList = specialisationsJSON[specialisationCode].structure[levelName].courses;
@@ -39,10 +40,11 @@ const getSelectedCourses = (specialisationCode, selectedNodes) => {
         const courseList = getCoursesInLevel(rawList);
         if (levelName.match(/[Cc]ore/g)) {
             // CORE COURSE
+            courseList.forEach(c => coreCourses.push(c));
             return (
                 <Segment color="red">
                     <Header as="h5">{levelName}</Header>
-                    {courseList.map(c => c in selectedNodes ? <Label color="red">{c}</Label> : <Label color="red" basic>{c}</Label>)}
+                    {courseList.map(c => c in selectedNodes ? <Label color="grey">{c}</Label> : <Label color="grey" basic>{c}</Label>)}
                 </Segment>
             )
         } else {
@@ -50,7 +52,7 @@ const getSelectedCourses = (specialisationCode, selectedNodes) => {
             return (
                 <Segment>
                     <Header as="h5">{levelName}</Header>
-                    {courseList.filter(c => c in selectedNodes).map(c => <Label>{c}</Label>)}
+                    {courseList.filter(c => (c in selectedNodes && !(c in coreCourses))).map(c => <Label color="grey">{c}</Label>)}
                 </Segment>
             )
         }
