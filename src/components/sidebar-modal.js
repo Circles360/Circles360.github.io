@@ -38,7 +38,7 @@ function SideBarModal() {
         <Modal.Header textAlign="center">Degree Planner</Modal.Header>
         <Container>
             <Header as="h3" textAlign="center" style={{marginTop: "5px"}}>Choose your degree</Header>
-            <DropdownSearch />
+            <DropdownDegrees />
         </Container>
       </Modal>
     </div>

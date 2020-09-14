@@ -10,6 +10,8 @@ const elementsList= [];
 for (const code in dataJSON) {
     const id = dataJSON[code].id;
     //console.log("Printing id", id);
+    if (id.includes('-')) continue;
+
     elementsList.push(
         dataJSON[code]
     )
