@@ -16,7 +16,6 @@ class App extends Component {
     return (
       <HashRouter basename='/'>
         <div>
-          <hr />
           <Route path="/" component={BESengah} />
           <Route path="/Teaching" component={Teaching}/>
         </div>
