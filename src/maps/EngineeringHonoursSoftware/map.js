@@ -245,6 +245,7 @@ const BESengah = () => {
                                 selectNodesOnDrag={false}
                                 onNodeContextMenu={onNodeContextMenu}
                                 onNodeDragStop={onNodeDragStop}
+                                elementsSelectable={false}
                             >
                             </ReactFlow>
                             {hoverDisplay}
