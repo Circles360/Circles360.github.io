@@ -16,6 +16,7 @@ import pkg from 'semantic-ui-react/package.json'
 
 import DegreePlanner from "../../components/degreeplanner.js"
 import DropdownDegrees from '../../components/dropdownDegrees';
+import DropdownSearch from "../../components/dropdownsearch.js"
 
 import positionHelper from '../../components/positionhelper.js';
 import selectNode from '../../components/selectnode.js';
@@ -95,7 +96,6 @@ const nodeTypes = {
 };
 
 const layoutStyle = {overflowX: "hidden", overflowY: "overlay", width: "100vw", height: "100vh"};
-
 
 const BESengah = () => {
     const [elements, setElements] = useState(elementsData);
@@ -182,6 +182,7 @@ const BESengah = () => {
 
     // ==========ONHOVER==========
     const onNodeMouseEnter = (event, node) => {
+        if (node.id === 'SENGAH') return;
         // Display node information in top left
         setHoverText(true);
         setHoverNode(node);
@@ -194,6 +195,7 @@ const BESengah = () => {
     }
 
     const onNodeMouseLeave = (event, node) => {
+        if (node.id === 'SENGAH') return;
         setHoverText(false);
         unhoverPrerequisites(hoverEdges);
         setElements(highlightElements(elements, selectedNodes, selectedEdges, selectableNodes, potentialEdges, hoverEdges));
@@ -204,11 +206,6 @@ const BESengah = () => {
         hoverDisplay = <HoverInfo node={hoverNode}/>
     }
     // ===========================
-
-    const onNodeContextMenu = (event, node) => {
-        // console.log("THE EVEENT");
-        // console.log(event);
-    }
 
     const onNodeDragStop = (event, node) => {
         for (var e of elements) {
@@ -247,13 +244,11 @@ const BESengah = () => {
                             onNodeMouseEnter={onNodeMouseEnter}
                             onNodeMouseLeave={onNodeMouseLeave}
                             selectNodesOnDrag={false}
-                            onNodeContextMenu={onNodeContextMenu}
                             onNodeDragStop={onNodeDragStop}
                             elementsSelectable={false}
                         >
                         </ReactFlow>
-                        {hoverDisplay}
-                        <SearchPan elements={nodesData}/>
+                        <DropdownSearch/>
                         <GetPan />
                     </div>
                 </Grid.Column>
@@ -261,6 +256,7 @@ const BESengah = () => {
                     <Sidebar selectedNodes={selectedNodes}/>
                 </Grid.Column>
             </Grid>
+            {hoverDisplay}
             {/* <button onClick={positionHelper(elements)}>GENERATE POSITION</button> */}
             <div id="DegreePlanner">
                 <DegreePlanner />
