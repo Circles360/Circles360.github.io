@@ -38,11 +38,10 @@ export default function checkPrerequisites(node, elements, selectedNodes) {
                 const selectedList = Object.keys(selectedNodes);
                 //console.log(selectedNodes);
                 for (const selected of selectedList) {
-                    //console.log(selected);
                     if (selected === node.id) continue; // The node can't include itself
-                    
-                    const node = getElement(selected, elements);
-                    total += node.data.units;
+
+                    const takenNode = getElement(selected, elements);
+                    total += takenNode.data.units;
                     //console.log(node.id + "=" + node.data.units);
                 }
 
