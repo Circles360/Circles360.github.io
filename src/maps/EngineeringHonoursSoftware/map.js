@@ -229,35 +229,32 @@ const BESengah = () => {
     }
 
     return (
-        <>
+        <ReactFlowProvider>
         <div style={layout}>
             <Grid columns={2} divided>
                 <Grid.Column width="12">
                     <div onMouseEnter={disableBodyScroll} onMouseLeave={enableBodyScroll}>
-                        <ReactFlowProvider>
-                            <ReactFlow
-                                elements={elements}
-                                style={{width: '100%', height: '100vh'}}
-                                onLoad={onLoad}
-                                nodeTypes={nodeTypes}
-                                nodesConnectable={false}
-                                onElementClick={onElementClick}
-                                minZoom={0.38}
-                                //setInitTransform={TransformUpdater({x: 100, y: 100, z: 1})}
-                                //nodesDraggable={false}
-                                onNodeMouseEnter={onNodeMouseEnter}
-                                onNodeMouseLeave={onNodeMouseLeave}
-                                selectNodesOnDrag={false}
-                                onNodeContextMenu={onNodeContextMenu}
-                                onNodeDragStop={onNodeDragStop}
-                                elementsSelectable={false}
-                            >
-                            </ReactFlow>
-                            {hoverDisplay}
-                            <SearchPan elements={nodesData}/>
-                            <GetPan />
-                        
-                        </ReactFlowProvider>
+                        <ReactFlow
+                            elements={elements}
+                            style={{width: '100%', height: '100vh'}}
+                            onLoad={onLoad}
+                            nodeTypes={nodeTypes}
+                            nodesConnectable={false}
+                            onElementClick={onElementClick}
+                            minZoom={0.38}
+                            //setInitTransform={TransformUpdater({x: 100, y: 100, z: 1})}
+                            //nodesDraggable={false}
+                            onNodeMouseEnter={onNodeMouseEnter}
+                            onNodeMouseLeave={onNodeMouseLeave}
+                            selectNodesOnDrag={false}
+                            onNodeContextMenu={onNodeContextMenu}
+                            onNodeDragStop={onNodeDragStop}
+                            elementsSelectable={false}
+                        >
+                        </ReactFlow>
+                        {hoverDisplay}
+                        <SearchPan elements={nodesData}/>
+                        <GetPan />
                     </div>                    
                 </Grid.Column>
                 <Grid.Column width="4">
@@ -270,7 +267,7 @@ const BESengah = () => {
                 <DegreePlanner />
             </div>
         </div>
-        </>
+        </ReactFlowProvider>
     );
 };
 BESengah.whyDidYouRender = true;
