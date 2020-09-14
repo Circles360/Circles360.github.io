@@ -1,5 +1,5 @@
 import React from 'react';
-import { Icon, Button, Container, Segment, Header, Dropdown, Grid } from 'semantic-ui-react'
+import { Icon, Button, Container, Segment, Header, Label, Grid } from 'semantic-ui-react'
 
 // import programsJSON from "../webscraper/programs.json"
 // import specialisationsJSON from "../webscraper/specialisations.json"
@@ -21,12 +21,16 @@ const getCoreCourses = (code) => {
 
     return coreCourses
 }
-const selectedCourses = getCoreCourses("SENGAH").filter(c => c != "MATH1131" && c != "MATH1231");
+const selectedCourses = getCoreCourses("AEROAH").filter(c => c != "MATH1131" && c != "MATH1231");
 
 const getCourses = (selectedCourses) => {
     const courses = {}
 
     selectedCourses.forEach(c => {
+        if (!(coursesJSON[c].terms)) {
+            console.log("no terms offered for", c);
+            return;
+        }
         const termsAvailable = coursesJSON[c].terms.map(term => {
             if (term === "Summer Term") return "TS"
             if (term === "Term 1") return "T1"
@@ -58,25 +62,25 @@ const generateTerms = (yearId) => {
 
     terms[TSKey] = {
         id: TSKey,
-        title: "Summer Term",
+        title: `Year ${yearId} - Summer Term`,
         courseIds: []
     }
 
     terms[T1Key] = {
         id: T1Key,
-        title: "Term 1",
+        title: `Year ${yearId} - Term One`,
         courseIds: []
     }
 
     terms[T2Key] = {
         id: T2Key,
-        title: "Term 2",
+        title: `Year ${yearId} - Term Two`,
         courseIds: []
     }
 
     terms[T3Key] = {
         id: T3Key,
-        title: "Term 3",
+        title: `Year ${yearId} - Term Three`,
         courseIds: []
     }
 
@@ -106,7 +110,7 @@ const prioritiseCourses = (selectedCourses) => {
             courseId: courseId,
             level: Number(courseId[4]),
             unlocks: [],
-            termsAvailable: coursesJSON[courseId].terms.filter(t => t != "Summer Term").length
+            termsAvailable: coursesJSON[courseId].terms ? coursesJSON[courseId].terms.filter(t => t != "Summer Term").length : 0
         }
     }
 
@@ -164,6 +168,11 @@ const addCourseToPlan = (termPlan, courseId) => {
 
         const courseUnits = coursesJSON[courseId].units;
         if (termPlan[termId].units + courseUnits > maxUOC) continue;
+
+        if (!(coursesJSON[courseId].terms)) {
+            console.log("cannotfindterms for ", courseId);
+            continue;
+        }
 
         const termsAvailable = coursesJSON[courseId].terms.map(term => {
             if (term === "Summer Term") return "TS"

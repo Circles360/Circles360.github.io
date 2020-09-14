@@ -26,8 +26,6 @@ const checkValidCourses = (props) => {
     return "white"
 }
 
-const getUnits = (props) => props.term.courseIds.reduce((total, courseId) => total + props.allCourses[courseId].units, 0);
-
 const showUnits = (props) => {
     const total = props.term.courseIds.reduce((total, courseId) => total + props.allCourses[courseId].units, 0);
     const partTime = 12;
@@ -46,7 +44,7 @@ const showUnits = (props) => {
         colour = "red";
     }
 
-    return <Label color={colour} floating>{total}</Label>;
+    return <Label color={colour} floating style={{transition: "0.2s ease"}}>{total}</Label>;
 }
 
 export default class Term extends React.Component {
@@ -56,7 +54,7 @@ export default class Term extends React.Component {
                 <Droppable droppableId={this.props.term.id}>
                     {(provided, snapshot) => (
                         <Segment style={{backgroundColor: snapshot.isDraggingOver ? checkTermAvailability(this.props, snapshot.draggingOverWith) : checkValidCourses(this.props), transition: "0.2s ease"}}>
-                            <Header as="h3">{this.props.term.title}</Header>
+                            <Header as="h4">{this.props.term.title}</Header>
                             {showUnits(this.props)}
                             {/* {getTermTitle(this.props)} */}
                             <div ref={provided.innerRef} {...provided.droppableProps} style={{minHeight: "150px"}}>
