@@ -248,7 +248,6 @@ const BESengah = () => {
                         >
                         </ReactFlow>
                         <DropdownSearch/>
-                        <GetPan />
                     </div>
                 </Grid.Column>
                 <Grid.Column width="4">
