@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { useState } from 'react'
 import { Button, Dropdown, Grid } from 'semantic-ui-react'
 import { useStoreActions } from 'react-flow-renderer';
 import dataJSON from '../maps/EngineeringHonoursSoftware/data.json'
@@ -23,30 +23,28 @@ for (const code in dataJSON) {
 console.log("Printing NodeOptions", nodeOptions);
 
 export default function DropdownSearch() { 
+    const [search, setSearch] = useState(null);
     
-    state = {
+    /*state = {
         search: null,
         getOptions: nodeOptions
+    }*/
+
+    const handleChange = (e, prop) => {
+        setSearch(prop.value);
     }
 
-    handleChange = (e, prop) => {
-        this.setState({
-            search: prop.value
-        })
-    }
+    const { updateTransform }  = useStoreActions((actions) => actions);
+    const transformUpdater = (x, y, zoom) => {
+        updateTransform({x, y, k: zoom});
+    };
 
-    updateTransform  = useStoreActions((actions) => actions);
-    
-    clickDone = () => {
-        console.log("Clicked done for dropdownsearch");
-        const element = getElement(this.state.search, elementsList)
-        this.transformUpdater(-element.position.x + 500, -element.position.y + 500, 1);
-    }
 
-    transformUpdater = (x, y, zoom) => {
-        updateTransform({x, y, k:zoom});
+    const clickDone = () => {
+        console.log("CLICKED DONE FOR DDS");
+        const element = getElement(search, elementsList);
+        transformUpdater(-element.position.x + 600, -element.position.y + 350, 1);
     }
-
 
         return <>
             <Grid centered style={{marginBottom: "20px"}}>
@@ -54,15 +52,15 @@ export default function DropdownSearch() {
                     <Dropdown
                         selection
                         search
-                        options= {this.state.getOptions}
-                        placeholder= 'Search Course Node'
-                        onChange={this.handleChange}
-                        value= {this.state.search}
+                        options={nodeOptions}
+                        placeholder='Search Course Node'
+                        onChange={handleChange}
+                        value={search}
                     />
                 </Grid.Row>
                 <Grid.Row>
                     <Button
-                    onClick={this.clickDone}
+                    onClick={clickDone}
                     color="red"
                     >Find!</Button>
                 </Grid.Row>
