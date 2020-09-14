@@ -55,9 +55,11 @@ export default function unselectNode(elements, node, selectedNodes, selectedEdge
                     else if (selectedEdges.hasOwnProperty('e' + current.id + '-' + unlockCourse)) delete selectedEdges['e' + current.id + '-' + unlockCourse];
                 }
 
-                if (selectedNodes.hasOwnProperty(unlockCourse) || selectableNodes.hasOwnProperty(unlockCourse)) {
+                // Lets push everything no matter what and try it out
+                unselectQueue.push(unlockCourse);
+                /*if (selectedNodes.hasOwnProperty(unlockCourse) || selectableNodes.hasOwnProperty(unlockCourse)) {
                     unselectQueue.push(unlockCourse);
-                }
+                }*/
             }
         }
     }

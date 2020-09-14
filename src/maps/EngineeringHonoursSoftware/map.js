@@ -25,6 +25,7 @@ import getSelectable from '../../components/getselectable.js';
 import checkPrerequisites from '../../components/checkprerequisites';
 import exclusionSwap from '../../components/exclusionswap.js';
 import getElement from '../../components/getelement.js';
+import unselectUnconnected from '../../components/unselectunconnected.js';
 
 import SearchPan from '../../components/searchpan.js';
 
@@ -120,6 +121,7 @@ const BESengah = () => {
         } else if (selectedNodes.hasOwnProperty(element.id)) {
             console.log("UNSELECTING");
             unselectNode(elements, element, selectedNodes, selectedEdges, selectableNodes, potentialEdges);
+            unselectUnconnected(elements, selectedNodes, selectedEdges, selectableNodes, potentialEdges);
         }
         
         console.log("==========SelectedNodes==========");
@@ -134,9 +136,6 @@ const BESengah = () => {
         // 2. Determine which nodes are now selectable
         // - Determine which previously selectable nodes are now unselectable
         getSelectable(elements, selectedNodes, selectedEdges, selectableNodes, potentialEdges);
-
-        // After selecting node:
-
 
         // Render graph accordingly
         setElements(highlightElements(elements, selectedNodes, selectedEdges, selectableNodes, potentialEdges, hoverEdges));
