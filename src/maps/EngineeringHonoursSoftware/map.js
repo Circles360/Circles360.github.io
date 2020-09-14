@@ -16,6 +16,7 @@ import pkg from 'semantic-ui-react/package.json'
 
 import DegreePlanner from "../../components/degreeplanner.js"
 import DropdownDegrees from '../../components/dropdownDegrees';
+import DropdownSearch from "../../components/dropdownsearch.js"
 
 import positionHelper from '../../components/positionhelper.js';
 import selectNode from '../../components/selectnode.js';
@@ -247,7 +248,7 @@ const BESengah = () => {
                             elementsSelectable={false}
                         >
                         </ReactFlow>
-                        <SearchPan elements={nodesData}/>
+                        <DropdownSearch/>
                         <GetPan />
                     </div>                    
                 </Grid.Column>
