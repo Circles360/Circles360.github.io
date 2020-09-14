@@ -248,7 +248,6 @@ const BESengah = () => {
                             >
                             </ReactFlow>
                             <DropdownSearch/>
-                            <GetPan />
                         </div>
                     </Grid.Column>
                     <Grid.Column width="4">
@@ -258,7 +257,7 @@ const BESengah = () => {
                 {hoverDisplay}
                 {/* <button onClick={positionHelper(elements)}>GENERATE POSITION</button> */}
                 <div id="DegreePlanner">
-                    <DegreePlanner selectedCourses={Object.keys(selectedNodes)}/>
+                    <DegreePlanner selectedCourses={Object.keys(selectedNodes)} />
                 </div>
             </div>
         </ReactFlowProvider>
