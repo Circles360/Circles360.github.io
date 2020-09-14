@@ -11,7 +11,6 @@ import Term from "./degreeplanner-term"
 
 
 const getCourses = (selectedCourses) => {
-    console.log("selected courses are", selectedCourses)
     const courses = {}
 
     selectedCourses.forEach(c => {
@@ -217,8 +216,6 @@ const makePlan = (plan, maxYears, selectedCourses) => {
         plan[year][termId].courseIds = termPlan[termId].courseIds
     }
 
-    console.table(termPlan);
-
     return plan;
 }
 
@@ -307,6 +304,8 @@ class DegreePlanner extends React.Component {
     }
 
     render() {
+        // this.state.courses = getCourses(this.props.selectedCourses);
+        // this.state.plan = generatePlanScaffold(4, this.props.selectedCourses);
         return (
             <Segment>
                 <Container>
