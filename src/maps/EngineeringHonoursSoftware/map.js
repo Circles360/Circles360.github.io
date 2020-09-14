@@ -96,7 +96,6 @@ const nodeTypes = {
 
 const layoutStyle = {overflowX: "hidden", overflowY: "overlay", width: "100vw", height: "100vh"};
 
-
 const BESengah = () => {
     const [elements, setElements] = useState(elementsData);
     const [hoverText, setHoverText] = useState(false);
@@ -182,6 +181,7 @@ const BESengah = () => {
 
     // ==========ONHOVER==========
     const onNodeMouseEnter = (event, node) => {
+        if (node.id === 'SENGAH') return;
         // Display node information in top left
         setHoverText(true);
         setHoverNode(node);
@@ -194,6 +194,7 @@ const BESengah = () => {
     }
 
     const onNodeMouseLeave = (event, node) => {
+        if (node.id === 'SENGAH') return;
         setHoverText(false);
         unhoverPrerequisites(hoverEdges);
         setElements(highlightElements(elements, selectedNodes, selectedEdges, selectableNodes, potentialEdges, hoverEdges));
@@ -204,11 +205,6 @@ const BESengah = () => {
         hoverDisplay = <HoverInfo node={hoverNode}/>
     }
     // ===========================
-
-    const onNodeContextMenu = (event, node) => {
-        // console.log("THE EVEENT");
-        // console.log(event);
-    }
 
     const onNodeDragStop = (event, node) => {
         for (var e of elements) {
@@ -247,12 +243,10 @@ const BESengah = () => {
                             onNodeMouseEnter={onNodeMouseEnter}
                             onNodeMouseLeave={onNodeMouseLeave}
                             selectNodesOnDrag={false}
-                            onNodeContextMenu={onNodeContextMenu}
                             onNodeDragStop={onNodeDragStop}
                             elementsSelectable={false}
                         >
                         </ReactFlow>
-                        {hoverDisplay}
                         <SearchPan elements={nodesData}/>
                         <GetPan />
                     </div>                    
@@ -262,6 +256,7 @@ const BESengah = () => {
                     {/* <DegreePlanner/> */}
                 </Grid.Column>
             </Grid>
+            {hoverDisplay}
             {/* <button onClick={positionHelper(elements)}>GENERATE POSITION</button> */}
             <div id="DegreePlanner">
                 <DegreePlanner />
