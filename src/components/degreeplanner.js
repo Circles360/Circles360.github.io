@@ -235,10 +235,10 @@ class DegreePlanner extends React.Component {
     state = {
         courses: getCourses(this.props.selectedCourses),
         selectedCourses: this.props.selectedCourses,
-        plan: generatePlanScaffold(4, this.props.selectedCourses)
+        plan: generatePlanScaffold(4, this.props.selectedCourses),
     };
 
-    shouldComponentUpdate(nextProps, nextState) {
+    /*shouldComponentUpdate(nextProps, nextState) {
         const { selectedCourses: nextPropsSelectedCourses } = nextProps;
         const { selectedCourses: propsSelectedCourses } = this.props;
         
@@ -256,7 +256,7 @@ class DegreePlanner extends React.Component {
         }
 
         return selectedCourses !== nextState.selectedCourses;
-    }
+    }*/
 
 
     onDragStart = result => {

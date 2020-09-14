@@ -36,7 +36,7 @@ var elementsData = require("./data.json");
 var nodesData = elementsData.filter(e => isNode(e));
 var edgesData = elementsData.filter(e => isEdge(e));
 var selectedNodes = {
-    'SENGAH': 1
+    'SENGAH': 1,
 }
 var selectedEdges = {};
 var selectableNodes = {};
@@ -257,7 +257,7 @@ const BESengah = () => {
                 {hoverDisplay}
                 {/* <button onClick={positionHelper(elements)}>GENERATE POSITION</button> */}
                 <div id="DegreePlanner">
-                    <DegreePlanner selectedCourses={Object.keys(selectedNodes)} />
+                    <DegreePlanner key={Object.keys(selectedNodes).join("")}selectedCourses={Object.keys(selectedNodes)} />
                 </div>
             </div>
         </ReactFlowProvider>

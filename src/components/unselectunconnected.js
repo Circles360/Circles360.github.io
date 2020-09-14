@@ -14,6 +14,9 @@ export default function unselectUnconnected(elements, selectedNodes, selectedEdg
             // Prerequisites are not met
             unselectNode(elements, selectedNode, selectedNodes, selectedEdges, selectableNodes, potentialEdges);
         }
+        // CASE if the node is selected and it has n_course prerequisite 
+        
+
     }
 
     const selectableNodesList = Object.keys(selectableNodes);
