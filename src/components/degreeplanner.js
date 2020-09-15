@@ -163,8 +163,10 @@ const checkPrereqsMet = (termPlan, termId, courseId) => {
     const coursesTaken = [];
     for (const t in termPlan) {
         if (t === termId) break;
+        console.log("....... ", termPlan, t);
         coursesTaken.push(...termPlan[t].courseIds);
     }
+    console.log(courseId, "courses taken:", coursesTaken);
 
     for (const course of coursesTaken) {
         prereqsExecutable = prereqsExecutable.replace(course, "1");
@@ -341,16 +343,22 @@ class DegreePlanner extends React.Component {
     getConsiderationMessages = (state) => {
         const plan = state.plan;
         const courses = state.courses;
-        const selectedCourses = state.selectedCourses;
-        const coursesAlreadyTaken = [];
         const considerationMessages = [];
 
         // Check prereqs
+        const termPlan = {}
+        for (const year in plan) {
+            for (const term in plan[year]) {
+                if (term === "termOrder") continue;
+                termPlan[term] = plan[year][term]
+            }
+        }
+
         for (const year in plan) {
             for (const term in plan[year]) {
                 if (term === "termOrder") continue;
                 for (const courseId of plan[year][term].courseIds) {
-                    coursesAlreadyTaken.push(courseId);
+                    if (checkPrereqsMet(termPlan, term, courseId)) considerationMessages.push()
                 }
             }
         }
