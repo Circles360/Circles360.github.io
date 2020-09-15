@@ -352,7 +352,8 @@ class DegreePlanner extends React.Component {
         }
 
         const getCourseLink = (courseId) => {
-            return <a target="_blank" href={`https://www.handbook.unsw.edu.au/undergraduate/courses/2021/${courseId}`}>{courseId}</a>
+            const handbookVersion = 2021;
+            return <a target="_blank" rel="noopener noreferrer" href={`https://www.handbook.unsw.edu.au/undergraduate/courses/${handbookVersion}/${courseId}`}>{courseId}</a>;
         }
 
         for (const year in plan) {
