@@ -40,7 +40,6 @@ export default function DropdownSearch() {
     };
 
     const clickDone = () => {
-        console.log("CLICKED DONE FOR DDS");
         if (search === null) return;
         const element = getElement(search, elementsList);
         transformUpdater(

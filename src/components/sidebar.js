@@ -50,8 +50,6 @@ const getSelectedCourses = (specialisationCode, selectedNodes) => {
             const showUnits = minUnits
                 ? <Label horizontal style={{transition: "0.3s ease", alignSelf: "flex-start"}} color={unitsTaken >= minUnits ? "green" : "red"}>{unitsTaken}/{minUnits}</Label>
                 : null;
-            // .reduce((total, courseId) => total + props.allCourses[courseId].units, 0);
-            console.log("units taken for ", levelName, unitsTaken);
             return (
                 <Segment color="red">
                     <div style={{display: "flex"}}>
