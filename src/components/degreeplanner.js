@@ -1,11 +1,8 @@
 import React from 'react';
 import { Container, Segment, Header, Message, Grid } from 'semantic-ui-react'
 
-// import programsJSON from "../webscraper/programs.json"
-// import specialisationsJSON from "../webscraper/specialisations.json"
 import dataJSON from "../maps/EngineeringHonoursSoftware/data.json"
 import rawCoursesJSON from "../webscraper/courses.json"
-import specialisationsJSON from "../webscraper/specialisations.json"
 
 import { DragDropContext } from "react-beautiful-dnd"
 import Term from "./degreeplanner-term"

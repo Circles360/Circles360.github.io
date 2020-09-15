@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button, Dropdown, Grid } from "semantic-ui-react";
+import { Button, Dropdown } from "semantic-ui-react";
 import { useStoreActions } from "react-flow-renderer";
 import dataJSON from "../maps/EngineeringHonoursSoftware/data.json";
 import getElement from "./getelement.js";
