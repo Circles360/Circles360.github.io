@@ -3,11 +3,11 @@ import { useStoreActions } from 'react-flow-renderer';
 import getElement from './getelement.js';
 
 export default function SearchPan(props) {
-    const { updateTransform } = useStoreActions((actions) => actions);
+    const { setInitTransform } = useStoreActions((actions) => actions);
     const [name, setName] = useState("");
     
     const TransformUpdater = (x, y, zoom) => {
-        updateTransform({x, y, k: zoom});
+        setInitTransform({x, y, k: zoom});
     };
 
     const handleKeyDown = (event) => {

@@ -1,9 +1,9 @@
 // For normal nodes
 import React, { memo } from 'react';
-
 import { Handle } from 'react-flow-renderer';
 
 const style = {zIndex: -9999, pointerEvents: 'none', opacity: 0, top: '50%'};
+
 export default memo(({ data }) => {
   return (
     <>

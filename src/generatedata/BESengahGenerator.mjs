@@ -290,6 +290,15 @@ for (var course of courses_output) {
 
 console.log(exclusion_groups);
 
+// For each course in exclusion groups, change their type to customnode2
+for (const exclusion of Object.keys(exclusion_list)) {
+    for (const course of courses_output) {
+        if (course.id === exclusion) {
+            course.type = "custom2";
+        }
+    }
+}
+
 // set isHidden to true for the last exclusion course in each group and their edges
 /*for (var group of exclusion_groups) {
     const last = group.pop();
