@@ -228,7 +228,7 @@ const BESengah = () => {
         <ReactFlowProvider>
             <div style={layout}>
                 <Grid columns={2} divided>
-                    <Grid.Column width="11">
+                    <Grid.Column width="12">
                         <div onMouseEnter={disableBodyScroll} onMouseLeave={enableBodyScroll}>
                             <ReactFlow
                                 elements={elements}
@@ -250,7 +250,7 @@ const BESengah = () => {
                             <DropdownSearch/>
                         </div>
                     </Grid.Column>
-                    <Grid.Column width="5">
+                    <Grid.Column width="4">
                         <Sidebar selectedNodes={selectedNodes}/>
                     </Grid.Column>
                 </Grid>
