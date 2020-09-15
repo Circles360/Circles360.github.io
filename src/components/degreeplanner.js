@@ -359,7 +359,15 @@ class DegreePlanner extends React.Component {
                 for (const courseId of plan[year][term].courseIds) {
                     if (!checkPrereqsMet(termPlan, term, courseId)) {
                         considerationMessages.push(
-                            <Message.Item>{courseId} prerequisites have not been met: {coursesJSON[courseId].conditions.prereqs_executable.replaceAll("&&", "AND").replaceAll("||", "OR")}</Message.Item>
+                            <Message.Item>{courseId} prerequisites have not been met: {coursesJSON[courseId].conditions.prereqs_executable
+                                .replaceAll("|| 0 ||", "||")
+                                .replaceAll("&& 0 &&", "&&")
+                                .replaceAll("&& 0 ||", "||")
+                                .replaceAll("|| 0 &&", "&&")
+                                .replaceAll("&&", "and")
+                                .replaceAll("||", "or")
+                                }
+                            </Message.Item>
                         )
                     }
                 }
