@@ -51,12 +51,12 @@ const getSelectedCourses = (specialisationCode, selectedNodes) => {
                 ? <Label horizontal style={{transition: "0.3s ease", alignSelf: "flex-start"}} color={unitsTaken >= minUnits ? "green" : "red"}>{unitsTaken}/{minUnits}</Label>
                 : null;
             return (
-                <Segment color="red">
+                <Segment key={levelName} color="red">
                     <div style={{display: "flex"}}>
                         <Header style={{flexGrow: "1"}} as="h5">{levelName}</Header>
                         {showUnits}
                     </div>
-                    {courseList.map(c => c in selectedNodes ? <Label size="small" color="grey" style={style}>{c}</Label> : <Label size="small" style={style}>{c}</Label>)}
+                    {courseList.map(c => c in selectedNodes ? <Label key={c} size="small" color="grey" style={style}>{c}</Label> : <Label key={c} size="small" style={style}>{c}</Label>)}
                 </Segment>
             )
         } else {
@@ -66,18 +66,16 @@ const getSelectedCourses = (specialisationCode, selectedNodes) => {
                 ? <Label horizontal style={{transition: "0.3s ease", alignSelf: "flex-start"}} color={unitsTaken >= minUnits ? "green" : "red"}>{unitsTaken}/{minUnits}</Label>
                 : null;
             return (
-                <Segment style={{minHeight: "70px"}}>
+                <Segment key={levelName} style={{minHeight: "70px"}}>
                     <div style={{display: "flex"}}>
                         <Header style={{flexGrow: "1"}} as="h5">{levelName}</Header>
                         {showUnits}
                     </div>
-                    {courseList.filter(c => (c in selectedNodes && !coreCourses.includes(c))).map(c => <Label size="small" color="grey" style={style}>{c}</Label>)}
+                    {courseList.filter(c => (c in selectedNodes && !coreCourses.includes(c))).map(c => <Label key={c} size="small" color="grey" style={style}>{c}</Label>)}
                 </Segment>
             )
         }
     })
-
-    // return coursesInThisSpecialisation.map(c => (c in selectedNodes) ? (<Label color="teal" style={{margin: "2px"}}>{c}</Label>) : (<Label style={{margin: "2px"}}>{c}</Label>));
 }
 class Sidebar extends React.Component {
     render() {

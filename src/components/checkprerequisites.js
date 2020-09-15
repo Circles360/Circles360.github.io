@@ -25,6 +25,7 @@ export default function checkPrerequisites(node, elements, selectedNodes) {
                 return 0;
             }
         });
+        // eslint-disable-next-line
         if (eval(condition)) {
             return true;
         } else {
@@ -50,7 +51,7 @@ export function checkPrerequisiteUnits(node, elements, selectedNodes) {
             // See if we meet the total for this course
             var total = 0;
             const target = node.data.conditions.units_required;
-            console.log(selectedNodes);
+            // console.log(selectedNodes);
             const selectedList = Object.keys(selectedNodes);
             for (const selected of selectedList) {
                 if (selected === node.id) continue; // The node can't include itself
@@ -79,14 +80,10 @@ export function checkPrerequisiteUnits(node, elements, selectedNodes) {
 
 // Perform prerequisite check for nodes which require X units of Y level courses
 function checkPrerequisiteUnitsLevel(node, elements, selectedNodes) {
-    if (node.id === 'MATH3560') {
-        console.log("MATH3560");
-        console.log(selectedNodes);
-    }
     // Determine the type of course
     var courseType = node.id.substr(0, 4);
     courseType = courseType.concat(node.data.conditions.level_for_units_required);
-    
+
     var total = 0;
     const target = node.data.conditions.units_required;
     const selectedList = Object.keys(selectedNodes);
@@ -110,7 +107,7 @@ function checkPrerequisiteUnitsLevel(node, elements, selectedNodes) {
                     return 0;
                 }
             });
-
+            // eslint-disable-next-line
             if (eval(condition)) {
                 return true;
             } else {

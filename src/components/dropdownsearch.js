@@ -20,7 +20,7 @@ for (const code in dataJSON) {
     });
 }
 
-console.log("Printing NodeOptions", nodeOptions);
+// console.log("Printing NodeOptions", nodeOptions);
 
 export default function DropdownSearch() {
     const [search, setSearch] = useState(null);

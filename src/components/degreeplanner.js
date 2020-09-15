@@ -36,7 +36,6 @@ const updateCourses = (coursesJSON, dataJSON) => {
 const coursesJSON = updateCourses(rawCoursesJSON, dataJSON);
 
 const getCourses = (selectedCourses) => {
-    console.log("selected courses are", selectedCourses)
     const courses = {}
 
     selectedCourses.forEach(c => {
@@ -163,12 +162,14 @@ const checkPrereqsMet = (termPlan, termId, courseId) => {
         console.log("....... ", termPlan, t);
         coursesTaken.push(...termPlan[t].courseIds);
     }
-    console.log(courseId, "courses taken:", coursesTaken);
+    // console.log(courseId, "courses taken:", coursesTaken);
 
     for (const course of coursesTaken) {
         prereqsExecutable = prereqsExecutable.replace(course, "1");
     }
     prereqsExecutable = prereqsExecutable.replace(REGEX_COURSE_CODE, "0");
+
+    // eslint-disable-next-line
     return eval(prereqsExecutable);
 }
 
@@ -431,12 +432,12 @@ class DegreePlanner extends React.Component {
 
                     <DragDropContext onDragEnd={this.onDragEnd} onDragStart={this.onDragStart}>
                         {Object.keys(this.state.plan).map(yearId => (
-                            <Grid columns={4}>
+                            <Grid key={yearId} columns={4}>
                                 {this.state.plan[yearId].termOrder.map(termId => {
                                     const term = this.state.plan[yearId][termId];
                                     const courses = term.courseIds.map(courseId => this.state.courses[courseId]);
                                     return (
-                                        <Grid.Column>
+                                        <Grid.Column key={termId}>
                                             <Term key={term.id} term={term} courses={courses} allCourses={this.state.courses}/>
                                         </Grid.Column>
                                     );
