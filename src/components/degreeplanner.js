@@ -257,7 +257,6 @@ class DegreePlanner extends React.Component {
         selectedCourses: this.props.selectedCourses,
         plan: generatePlanScaffold(4, this.props.selectedCourses),
     };
-
     /*shouldComponentUpdate(nextProps, nextState) {
         const { selectedCourses: nextPropsSelectedCourses } = nextProps;
         const { selectedCourses: propsSelectedCourses } = this.props;
@@ -358,9 +357,11 @@ class DegreePlanner extends React.Component {
             for (const term in plan[year]) {
                 if (term === "termOrder") continue;
                 for (const courseId of plan[year][term].courseIds) {
-                    if (!checkPrereqsMet(termPlan, term, courseId)) considerationMessages.push(
-                        <Message.Item>{courseId} prerequisites have not been met: {coursesJSON[courseId].conditions.prereqs_executable.replace("&&", "AND").replace("||", "OR")}</Message.Item>
-                    )
+                    if (!checkPrereqsMet(termPlan, term, courseId)) {
+                        considerationMessages.push(
+                            <Message.Item>{courseId} prerequisites have not been met: {coursesJSON[courseId].conditions.prereqs_executable.replaceAll("&&", "AND").replaceAll("||", "OR")}</Message.Item>
+                        )
+                    }
                 }
             }
         }
@@ -372,8 +373,6 @@ class DegreePlanner extends React.Component {
                 const term = termId.substring(1, 3)
                 for (const courseId of plan[yearId][termId].courseIds) {
                     if (!courses[courseId].termsAvailable.includes(term)) {
-                        console.log(`${courseId} is not available in ${term}`);
-                        console.log(courses[courseId].termsAvailable)
                         considerationMessages.push(
                             <Message.Item>{courseId} is only available in {courses[courseId].termsAvailable.map(term => mapTermFull(term)).join(", ")}</Message.Item>
                         )
@@ -382,8 +381,25 @@ class DegreePlanner extends React.Component {
             }
         }
 
+        if (considerationMessages.length === 0) {
+            return (
+                <Message positive>
+                    <Message.Header>Considerations</Message.Header>
+                    <Message.List>
+                        No considerations found
+                    </Message.List>
+                </Message>
+            )
+        }
 
-        return considerationMessages;
+        return (
+            <Message error>
+                <Message.Header>Considerations</Message.Header>
+                <Message.List>
+                    {considerationMessages}
+                </Message.List>
+            </Message>
+        );
     }
 
     render() {
@@ -404,13 +420,9 @@ class DegreePlanner extends React.Component {
                     <p><em>Please note that our data is scraped from the UNSW Handbook and may have some inconsistencies.</em></p>
                     <p><em>Also note, you can drag a course into a term even if it is not offered as our data may be out of date, please double check :) </em></p>
 
-                    <Message error>
-                        <Message.Header>Considerations</Message.Header>
-                        <Message.List>
-                            <Message.Item>None</Message.Item>
-                            {this.getConsiderationMessages(this.state)}
-                        </Message.List>
-                    </Message>
+                    {this.getConsiderationMessages(this.state)}
+
+                    <br/>
 
                     <DragDropContext onDragEnd={this.onDragEnd} onDragStart={this.onDragStart}>
                         {Object.keys(this.state.plan).map(yearId => (
