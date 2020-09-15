@@ -45510,8 +45510,11 @@
         "desc": "This is a Level 3 Information Systems (IS) course that continues students’ study in IS by further developing their knowledge and understanding in information technology infrastructure and security in a business environment. The course will provide students with a learning experience that encourages participation and building of ideas in regards to current issues in business data networks, telecommunications, and infrastructure along with class discussions on the topics. The course has a technical component in which students gain practical knowledge and experience in networking and IS security techniques.",
         "conditions": {
             "raw": "Prer-equisite: INFS1602 OR INFS2602",
-            "prereqs_executable": null,
-            "prerequisites": null,
+            "prereqs_executable": "(INFS1602 || INFS2602)",
+            "prerequisites": [
+                "INFS1602",
+                "INFS2602"
+            ],
             "corequisites": null,
             "units_required": null,
             "level_for_units_required": null,
@@ -45535,8 +45538,11 @@
         "desc": "This is a Level 3 Information Systems (IS) course that introduces students to the key concepts in managing service operations and quality management. This course emphasises the use of data analytics to study service quality management and will teach skills and tools such as Statistical Quality Control, Six-Sigma, and Lean Operations, which are valuable for service process quality control. In lectures, students will learn the \"state of the art\" of process management of service firms and the opportunities provided by information technology and data analytics in enhancing their competitiveness. Students will be engaged in simulations, where they can apply the concepts learnt in the class to real-world settings and learn how to manage process variabilities and quality control. In a project which involves conducting a walk-through-audit to a real company of the students’ choice, they will learn how to implement a service business to meet customer satisfaction.",
         "conditions": {
             "raw": "Prer-equisite: INFS1602 OR INFS2602",
-            "prereqs_executable": null,
-            "prerequisites": null,
+            "prereqs_executable": "(INFS1602 || INFS2602)",
+            "prerequisites": [
+                "INFS1601",
+                "INFS2602"
+            ],
             "corequisites": null,
             "units_required": null,
             "level_for_units_required": null,
@@ -45655,8 +45661,10 @@
         "desc": "Honours students complete a thesis under the direction of a supervisor. The thesis requires the reporting of research in an approved topic area in Information Systems and Technology Management including a literature review, analysis of a research problem along with presentation of research methods and data analysis.",
         "conditions": {
             "raw": null,
-            "prereqs_executable": null,
-            "prerequisites": null,
+            "prereqs_executable": "(INFSAH)",
+            "prerequisites": [
+                "INFSAH"
+            ],
             "corequisites": null,
             "units_required": null,
             "level_for_units_required": null,
@@ -45680,8 +45688,10 @@
         "desc": "Honours students complete a thesis under the direction of a supervisor. The thesis requires the reporting of research in an approved topic area in Information Systems and Technology Management including a literature review, analysis of a research problem along with presentation of research methods and data analysis.",
         "conditions": {
             "raw": null,
-            "prereqs_executable": null,
-            "prerequisites": null,
+            "prereqs_executable": "(INFSAH)",
+            "prerequisites": [
+                "INFSAH"
+            ],
             "corequisites": null,
             "units_required": null,
             "level_for_units_required": null,
@@ -45705,8 +45715,10 @@
         "desc": "Honours students complete a thesis under the direction of a supervisor. The thesis requires the reporting of research in an approved topic area in Information Systems and Technology Management including a literature review, analysis of a research problem along with presentation of research methods and data analysis.",
         "conditions": {
             "raw": null,
-            "prereqs_executable": null,
-            "prerequisites": null,
+            "prereqs_executable": "(INFSAH)",
+            "prerequisites": [
+                "INFSAH"
+            ],
             "corequisites": null,
             "units_required": null,
             "level_for_units_required": null,
@@ -45730,8 +45742,10 @@
         "desc": "?This course focuses on the key concepts, practices and issues in engaging and providing IT consulting services, from both the client and the consultant perspectives. The course examines the value propositions of IT consulting, how IT consultants engage with organisations and key stakeholders, and how they help analyse and solve business problems. The course seeks to familiarise you with the IT consulting process, common consulting frameworks and the benefits and limitations related to their use, key types of IT consulting engagements, and current trends in IT consulting related to the opportunities and challenges brought about by rapidly advancing technologies.",
         "conditions": {
             "raw": "Prerequisite: Enrolled in Honours majoring in Information Systems.",
-            "prereqs_executable": null,
-            "prerequisites": null,
+            "prereqs_executable": "(INFSAH)",
+            "prerequisites": [
+                "INFSAH"
+            ],
             "corequisites": null,
             "units_required": null,
             "level_for_units_required": null,
@@ -45757,8 +45771,10 @@
         "desc": "This is a Level 4 Information Systems (IS) course that familiarises students with the key concepts, practices and issues in the strategic management of IS. The lectures cover theoretical and practical considerations across a variety of strategic IS management issues, which are further examined and applied in the weekly seminars. The course aims to equip students with the foundational skills needed to meaningfully participate in, or interact with, this aspect of IT management.",
         "conditions": {
             "raw": "Prerequisite: Enrolled in Honours majoring in Information Systems.",
-            "prereqs_executable": null,
-            "prerequisites": null,
+            "prereqs_executable": "(INFSAH)",
+            "prerequisites": [
+                "INFSAH"
+            ],
             "corequisites": null,
             "units_required": null,
             "level_for_units_required": null,
@@ -45810,9 +45826,9 @@
         "desc": "This is a Level 4 Information Systems (IS) course that continues students’ study of IS by furthering their knowledge and skills in relation to research methods and analytical skills. This course focuses on the understanding of IS research methodologies.",
         "conditions": {
             "raw": "Prerequisite: Enrolled in Honours majoring in Information Systems.",
-            "prereqs_executable": "(INFSA1)",
+            "prereqs_executable": "(INFSAH)",
             "prerequisites": [
-                "INFSA1"
+                "INFSAH"
             ],
             "corequisites": null,
             "units_required": null,
@@ -45864,8 +45880,10 @@
         "desc": "A specially assigned project, program or set of readings relating to information systems research.",
         "conditions": {
             "raw": null,
-            "prereqs_executable": null,
-            "prerequisites": null,
+            "prereqs_executable": "(INFSAH)",
+            "prerequisites": [
+                "INFSAH"
+            ],
             "corequisites": null,
             "units_required": null,
             "level_for_units_required": null,
@@ -45891,8 +45909,10 @@
         "desc": "This is a Level 4 Information Systems (IS) course that builds students' awareness and knowledge of IS/IT security related issues occurring in cyberspace. It has a specific emphasis on the need for ethical viewpoints, approaches, and practices from a management perspective when addressing the multidimensional challenges and solutions posed by the IS/IT related security problems. The class will be conducted in a semi-formal workshop fashion. Using business cases and scenarios addressing various cyberspace issues, students will analyse the ethical and related implications these issues pose to stakeholders. They will learn to manage cyber-related security issues responsibly. In some situations, they may encounter dilemmas which require a careful balance in the way decisions are made.",
         "conditions": {
             "raw": "Enrolment in Streams: Enrolled in an Honours Program majoring in Information Systems (INFSAH OR INFSBH OR INFSCH)",
-            "prereqs_executable": null,
-            "prerequisites": null,
+            "prereqs_executable": "(INFSAH)",
+            "prerequisites": [
+                "INFSAH"
+            ],
             "corequisites": null,
             "units_required": null,
             "level_for_units_required": null,
@@ -54801,7 +54821,7 @@
         "desc": "Partial differential equations (PDEs) provide a natural mathematical description for many phenomena of interest in science and engineering. Such equations are often difficult or impossible to solve using purely analytical (pencil and paper) methods, especially for realistic industrial problems. This course introduces finite difference and finite element methods for elliptic and parabolic PDEs, and discusses key concepts such as stability, convergence and computational cost. Relevant techniques in numerical linear algebra are also discussed.",
         "conditions": {
             "raw": "Prerequisite: 12 units of credit in Level 2 Math courses including (MATH2011 or MATH2111 and MATH2120 or MATH2130 or MATH2121 or MATH2221), or (both MATH2019 (DN) and MATH2089), or (both MATH2069 (CR) and MATH2099)",
-            "prereqs_executable": "( MATH2011 || MATH2111 && 0 || 0 || MATH2121 || MATH2221 ) || ( MATH2019 && MATH2089 ) || ( MATH2069 && MATH2099 )",
+            "prereqs_executable": "(( MATH2011 || MATH2111) && (0 || 0 || MATH2121 || MATH2221 )) || ( MATH2019 && MATH2089 ) || ( MATH2069 && MATH2099 )",
             "prerequisites": [
                 "MATH2011",
                 "MATH2111",
@@ -54871,7 +54891,7 @@
         "desc": "Optimization problems, in which one wants to find the values of variables to maximize or minimize an objective function subject to constraints on which variables are allowed, are common throughout the physical and biological sciences, economics, finance and engineering. This course looks at the formulation of optimization problems as mathematical … For more content click the Read more button below.Optimization problems, in which one wants to find the values of variables to maximize or minimize an objective function subject to constraints on which variables are allowed, are common throughout the physical and biological sciences, economics, finance and engineering. This course looks at the formulation of optimization problems as mathematical problems, characterizing solutions using necessary and/or sufficient optimality conditions and modern numerical methods and software for solving the problems. Both finite dimensional problems which involve a vector of variables, including linear and nonlinear programming, and infinite dimensional problems where the variables are functions, including optimal control problems, are covered.Read more",
         "conditions": {
             "raw": "Prerequisite: 12 units of credit in Level 2 Mathematics courses including MATH2011 or MATH2111 or MATH2510, and MATH2501 or MATH2601, or both MATH2019(DN) and MATH2089, or both MATH2069(CR) and MATH2099.",
-            "prereqs_executable": "MATH2011 || MATH2111 || 0 && MATH2501 || MATH2601 || MATH2019 && MATH2089 || MATH2069 && MATH2099",
+            "prereqs_executable": "((MATH2011 || MATH2111 || 0) && (MATH2501 || MATH2601)) || MATH2019 && MATH2089 || MATH2069 && MATH2099",
             "prerequisites": [
                 "MATH2011",
                 "MATH2111",
@@ -54907,7 +54927,7 @@
         "desc": "Optimization is the mathematical problem of finding a decision to achieve the best possible outcome while satisfying certain restrictions. Linear programs, conic linear programs and discrete optimization problems arise in a myriad of applications: electricity markets, airlines, logistics, public transport, international shipping, mining, finance, engineering, and data science. This course will provide an introduction to the basic mathematical theory, modelling techniques, computational methods and selected applications of linear, conic and discrete optimization.",
         "conditions": {
             "raw": "(1) [MATH2011 or MATH2111] and [MATH2501 or MATH2601]; or (2) both MATH2069 (CR) and MATH2099 ; or (3) both [MATH2018 or MATH2019] (DN) and MATH2089 .",
-            "prereqs_executable": "( MATH2011 || MATH2111 ) && ( MATH2501 || MATH2601 ) || MATH2069 && MATH2099 || ( MATH2018 || MATH2019 ) && MATH2089",
+            "prereqs_executable": "(( MATH2011 || MATH2111 ) && ( MATH2501 || MATH2601 )) || ( MATH2069 && MATH2099 ) || (( MATH2018 || MATH2019 ) && MATH2089)",
             "prerequisites": [
                 "MATH2011",
                 "MATH2111",
@@ -54976,7 +54996,7 @@
         "desc": "The mathematical modelling and theory of problems arising in the flow of fluids, the oceans and the global climate; Cartesian tensors, kinematics, mass conservation, vorticity, Navier-Stokes equation; topics from inviscid and viscous fluid flow, gas dynamics, sound waves, water waves.The dynamics underlying the circulation of the atmosphere and oceans are … For more content click the Read more button below.The mathematical modelling and theory of problems arising in the flow of fluids, the oceans and the global climate; Cartesian tensors, kinematics, mass conservation, vorticity, Navier-Stokes equation; topics from inviscid and viscous fluid flow, gas dynamics, sound waves, water waves.The dynamics underlying the circulation of the atmosphere and oceans are detailed using key concepts such as geostrophy, the deformation radius and the conservation of potential vorticity. The role of Rossby waves, shelf waves, turbulent boundary layers and stratification is discussed. The atmosphere-ocean system as a global heat engine for climate variablity is examined using models for buoyant forcing, quasi-geostrophy and baroclinic instability.Read more",
         "conditions": {
             "raw": "Prerequisite: 12 units of credit in Level 2 Math courses including (MATH2011 or MATH2111) and (MATH2120 or MATH2130 or MATH2121 or MATH2221), or (both MATH2019 (DN) and MATH2089), or (both MATH2069 (DN) and MATH2099)",
-            "prereqs_executable": "( MATH2011 || MATH2111 ) && ( 0 || 0 || MATH2121 || MATH2221 ) || ( MATH2019 && MATH2089 ) || ( MATH2069 && MATH2099 )",
+            "prereqs_executable": "(( MATH2011 || MATH2111 ) && ( 0 || 0 || MATH2121 || MATH2221 )) || ( MATH2019 && MATH2089 ) || ( MATH2069 && MATH2099 )",
             "prerequisites": [
                 "MATH2011",
                 "MATH2111",
@@ -55048,7 +55068,7 @@
         "desc": "Stochastic differential equation models play a prominent role in a range of application areas, including biology, chemistry, epidemiology, mechanics, microelectronics, economics, and finance. This course studies the theory and applications of stochastic differential equations, the design and implementation on computers of numerical methods for solving these practical mathematical equations. The course will start with a background knowledge of random variables, Brownian motion, Ornstein-Uhlenbeck process. Other topics studied include: stochastic integrals, the Euler-Maruyama method, Milstein's higher order method, stability and convergence.",
         "conditions": {
             "raw": "Prerequisite: MATH2011 or MATH2111 or MATH2018 (DN) or MATH2019(DN) or MATH2069(DN) and MATH2801 or MATH2901 or MATH2089(DN) or MATH2099(DN)",
-            "prereqs_executable": "MATH2011 || MATH2111 || MATH2018 || MATH2019 || MATH2069 && MATH2801 || MATH2901 || MATH2089 || MATH2099",
+            "prereqs_executable": "(MATH2011 || MATH2111 || MATH2018 || MATH2019 || MATH2069 ) && ( MATH2801 || MATH2901 || MATH2089 || MATH2099 )",
             "prerequisites": [
                 "MATH2011",
                 "MATH2111",
@@ -55341,7 +55361,7 @@
         "desc": "Introduction to stochastic processes, that is, processes that evolve over time such as price fluctuations of a stock. The course emphasises theory and applications, and covers discrete- and continuous-time Markov chains, Poisson processes and Brownian motion.",
         "conditions": {
             "raw": "Prerequisite: MATH2501 or MATH2601 and MATH2011 or MATH2111 or MATH2510 or MATH2610 and MATH2801 or MATH2901.",
-            "prereqs_executable": "MATH2501 || MATH2601 && MATH2011 || MATH2111 || 0 || 0 && MATH2801 || MATH2901",
+            "prereqs_executable": "(MATH2501 || MATH2601) && (MATH2011 || MATH2111 || 0 || 0 ) && (MATH2801 || MATH2901)",
             "prerequisites": [
                 "MATH2501",
                 "MATH2601",
@@ -55620,8 +55640,10 @@
         "desc": "This course, taken three times over three consecutive terms, forms the thesis component of the honours streams for applied mathematics, pure mathematics, physical oceanography, quantitative risk or statistics. The three instances of the course form part of the one thesis/project.",
         "conditions": {
             "raw": "Prerequisite: Enrolled in MATH Honours stream",
-            "prereqs_executable": null,
-            "prerequisites": null,
+            "prereqs_executable": "(MATHH)",
+            "prerequisites": [
+                "MATHH"
+            ],
             "corequisites": null,
             "units_required": null,
             "level_for_units_required": null,
@@ -55645,7 +55667,7 @@
         "desc": "Introduction to mathematical modelling and data analysis for biological and biomedical systems. Examples include: the formation of animal coat patterns, the spread of diseases through the community, the interaction between pathogens and the immune system of the body, the growth of tumours, nerve cell signalling, population dynamics, pharmacokinetics and bacterial growth. The emphasis in this course is on the development of the governing model equations and on computer simulations of the model equations rather than on mathematical methods for solving the model equations.",
         "conditions": {
             "raw": "12 units of credit in Level 2 Mathematics courses including (MATH2120 or MATH2130 or MATH2121 or MATH2221), or both MATH2019 and MATH2089, or both MATH2069 and MATH2099",
-            "prereqs_executable": "( 0 || 0 || MATH2121 || MATH2221 ) || MATH2019 && MATH2089 || MATH2069 && MATH2099",
+            "prereqs_executable": "( 0 || 0 || MATH2121 || MATH2221 ) || ( MATH2019 && MATH2089 ) || ( MATH2069 && MATH2099 )",
             "prerequisites": [
                 "MATH2121",
                 "MATH2221",

@@ -15,10 +15,20 @@ COURSES.JSON:
     - COMP9301 prerequisites executable = (COMP6441 || COMP6841) && (COMP6443 || COMP6843 || COMP6445 || COMP6845 || COMP6447)
     - COMP9302 prerequisites executable = (COMP6441 || COMP6841) && ((COMP6443 && COMP6843) || (COMP6443 && COMP6445) || (COMP6443 && COMP6845) || (COMP6443 && COMP6447) || (COMP6843 && COMP6445) || (COMP6843 && COMP6845) || (COMP6843 && COMP6447) || (COMP6445 && COMP6845) || (COMP6445 && COMP6447) || (COMP6845 && COMP6447))
 
-- INFS4886: must be enrolled in information system major honours
+INFS3632, INFS3617, - spelling mistake,
+    - Change prerequisites and prereqs_executable to INFS1602 || INFS2602
+
+- INFS4886, INFS4831, INFS4800, INFS4907, INFS4854, INFS4801 must be enrolled in information system major honours
     - HAVEN'T DONE HONOURS PART
-    - prerequisites = 'INFSA1'
-        (Header node will be INFSA1 and it will be always selected by default)
+    - prerequisites = 'INFSAH'
+        (Header node will be INFSAH and it will be always selected by default)
+
+- INFS4802, INFS4893, 
+    - Requires approval from Head of School, school of INFSYS and Technology management
+    - !!! Going to just add INFSAH to prereqs for now
+
+-INFS4907, INFS4858 
+    - Enrolled in honours program majoring in infosys (INFSAH, INFSBH, INFSCH)
 
 - COMP4962 and COMP4963 have themselves as prerequisites
     - COMP4962 prerequisite = COMP4951, remove from prerequisites
@@ -27,6 +37,25 @@ COURSES.JSON:
         - It also unlocks itself
 - Add comp3821 and comp3121 as exclusion courses
 - Add COMP3891 and COMP3231 as exclusion courses
+
+/*** - MATH3000, MATH3001, MATH3002, MATH3041, MATH3570, MATH3521, MATH3511, MATH3531, MATH3201, MATH3121
+    - 12 units of level 2 math courses
+- MATH3560
+    - 6 UNITS OF LEVEL 2 MATHS COURSES 
+
+  Can probably figure out a way to deal with this in checkprerequisites so won't add to courses.json for now
+  For now, just add to prerequisites list all level 2 math courses, don't make the executable yet
+    ^ Actually don't even do that for now
+***/
+
+- MATH3101, MATH3361, MATH3261, MATH3161, MATH3801, MATH6781, 
+    - Group the first bracket more cleanly ((...) && (...))
+
+- MATH4001:
+    - Enrolled in Math Honours stream (MATHH FOR NOW LOL)
+
+- MATH3171:
+    - Prereqs are fucked lol
 
 
 BESENGAHGENERATOR.MJS:
@@ -45,5 +74,8 @@ BESENGAHGENERATOR.MJS:
 - COMP6721 cannot be taken in SENGAH LMFAOOOOO
     - MATH1081 and COMP2521 leads to it so remove unlocks from them
     - Then remove COMP6721
+
+- REMOVE ALL INFS FROM FLOWCHART
+- REMOVE ALL TELE FROM FLOWCHART
 
 TODO: Should I add unlocks? ^ Will make a shit ton of nodes link to these two.

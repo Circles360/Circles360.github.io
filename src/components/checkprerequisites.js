@@ -8,6 +8,11 @@ import getElement from './getelement.js';
 
 // NOTE: Assumes that source of potential edges are always selected
 export default function checkPrerequisites(node, elements, selectedNodes) {
+    if (node.data.conditions.units_required !== null && node.data.conditions.level_for_units_required !== null) {
+        // Get the type of course this is
+        return(checkPrerequisiteUnitsLevel(node, elements, selectedNodes));
+    }    
+   
     if (node.data.conditions.prerequisites !== null && node.data.conditions.prereqs_executable !== null) {
         // Evaluate the condition
         //console.log("HERE");
@@ -67,12 +72,63 @@ export function checkPrerequisiteUnits(node, elements, selectedNodes) {
                 return false;
             }
         } else {
-            return true;
+            // This should have been dealt with in the main function
             // Only check specific level courses
+            // We will put it here anyways because unselectconnected imports this function alone
+            return(checkPrerequisiteUnitsLevel(node, elements, selectedNodes));
         }
     } else if (node.data.conditions.core_year !== null) {
+        // NOTE: Hardcoded this for comp courses in sengah
         return true;
     }
 
     return true;
+}
+
+// Perform prerequisite check for nodes which require X units of Y level courses
+function checkPrerequisiteUnitsLevel(node, elements, selectedNodes) {
+    if (node.id === 'MATH3560') {
+        console.log("MATH3560");
+        console.log(selectedNodes);
+    }
+    // Determine the type of course
+    var courseType = node.id.substr(0, 4);
+    courseType = courseType.concat(node.data.conditions.level_for_units_required);
+    
+    var total = 0;
+    const target = node.data.conditions.units_required;
+    const selectedList = Object.keys(selectedNodes);
+    for (const selected of selectedList) {
+        if (selected.substr(0, 5) !== courseType) continue; // Not the right course type
+        if (selected === node.id) continue; // The node can't include itself
+        const takenNode = getElement(selected, elements);
+        total += takenNode.data.units;
+    }
+
+    if (total >= target) {
+        // If it has conditions, check the conditions
+        if (node.data.conditions.prerequisites !== null && node.data.conditions.prereqs_executable !== null) {
+            // Evaluate the condition
+
+            var condition = node.data.conditions.prereqs_executable;
+            condition = condition.replace(/[A-Z]{4}[A-Z0-9]+/gi, function(match) {
+                if (selectedNodes.hasOwnProperty(match)) {
+                    return 1;
+                } else {
+                    return 0;
+                }
+            });
+
+            if (eval(condition)) {
+                return true;
+            } else {
+                return false;
+            }
+        } else {
+            return true;
+        }
+    } else {
+        return false;
+    }
+    
 }
