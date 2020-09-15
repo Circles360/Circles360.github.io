@@ -351,19 +351,24 @@ class DegreePlanner extends React.Component {
             }
         }
 
+        const getCourseLink = (courseId) => {
+            return <a target="_blank" href={`https://www.handbook.unsw.edu.au/undergraduate/courses/2021/${courseId}`}>{courseId}</a>
+        }
+
         for (const year in plan) {
             for (const term in plan[year]) {
                 if (term === "termOrder") continue;
                 for (const courseId of plan[year][term].courseIds) {
                     if (!checkPrereqsMet(termPlan, term, courseId)) {
                         considerationMessages.push(
-                            <Message.Item>{courseId} prerequisites have not been met: {coursesJSON[courseId].conditions.prereqs_executable
-                                .replaceAll("|| 0 ||", "||")
-                                .replaceAll("&& 0 &&", "&&")
-                                .replaceAll("&& 0 ||", "||")
-                                .replaceAll("|| 0 &&", "&&")
-                                .replaceAll("&&", "and")
-                                .replaceAll("||", "or")
+                            <Message.Item>
+                                {getCourseLink(courseId)} prerequisites have not been met: {coursesJSON[courseId].conditions.prereqs_executable
+                                    .replaceAll("|| 0 ||", "||")
+                                    .replaceAll("&& 0 &&", "&&")
+                                    .replaceAll("&& 0 ||", "||")
+                                    .replaceAll("|| 0 &&", "&&")
+                                    .replaceAll("&&", "and")
+                                    .replaceAll("||", "or")
                                 }
                             </Message.Item>
                         )
@@ -380,16 +385,22 @@ class DegreePlanner extends React.Component {
                 for (const courseId of plan[yearId][termId].courseIds) {
                     if (!courses[courseId].termsAvailable.includes(term)) {
                         considerationMessages.push(
-                            <Message.Item>{courseId} is only available in {courses[courseId].termsAvailable.map(term => mapTermFull(term)).join(", ")}</Message.Item>
+                            <Message.Item>
+                                {getCourseLink(courseId)} is only available in {courses[courseId].termsAvailable.map(term => mapTermFull(term)).join(", ")}
+                            </Message.Item>
                         )
                     }
                 }
             }
         }
 
+        const style = {
+            marginBottom: "20px"
+        }
+
         if (considerationMessages.length === 0) {
             return (
-                <Message positive>
+                <Message style={style} positive>
                     <Message.Header>Considerations</Message.Header>
                     <Message.List>
                         No considerations found
@@ -399,7 +410,7 @@ class DegreePlanner extends React.Component {
         }
 
         return (
-            <Message error>
+            <Message style={style} error>
                 <Message.Header>Considerations</Message.Header>
                 <Message.List>
                     {considerationMessages}
@@ -423,14 +434,10 @@ class DegreePlanner extends React.Component {
 
                     <p>Drag and drop the courses below to further customise your degree plan!</p>
 
-                    <p><em>Please note that our data is scraped from the UNSW Handbook and may have some inconsistencies.</em></p>
-                    <p><em>Also note, you can drag a course into a term even if it is not offered as our data may be out of date, please double check :) </em></p>
-
-                    {this.getConsiderationMessages(this.state)}
-
-                    <br/>
+                    <p><em>Please note that our data is scraped from the UNSW Handbook and may have some inconsistencies, e.g. a course may not have its term availability published on the Handbook.</em></p>
 
                     <DragDropContext onDragEnd={this.onDragEnd} onDragStart={this.onDragStart}>
+                        {this.getConsiderationMessages(this.state)}
                         {Object.keys(this.state.plan).map(yearId => (
                             <Grid key={yearId} columns={4}>
                                 {this.state.plan[yearId].termOrder.map(termId => {
