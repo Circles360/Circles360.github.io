@@ -1,7 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import DropdownDegrees from "./dropdownDegrees.js"
-import DropdownSearch from "./dropdownsearch.js"
-import { Icon, Button, Container, Modal, Header, Dropdown, Grid, Message } from 'semantic-ui-react'
+import { Button, Container, Modal, Header } from 'semantic-ui-react'
 
 function exampleReducer(state, action) {
   switch (action.type) {

@@ -15,7 +15,7 @@ const onLoad = (reactFlowInstance) => {
 
 const Teaching = () => {
     const [elements, setElements] = useState(initialElements);
-    const [isDraggable, setIsDraggable] = useState(true);
+    // const [isDraggable, setIsDraggable] = useState(true);
 
     const addNode = () => {
         setElements(e => e.concat({

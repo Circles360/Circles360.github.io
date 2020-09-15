@@ -1,7 +1,7 @@
 // HELPER FUNCTION to determine which previously unselectable nodes
 // are now selectable
 import checkPrerequisites from './checkprerequisites.js';
-import getElement from './getelement.js';
+// import getElement from './getelement.js';
 import {isNode} from 'react-flow-renderer';
 
 export default function getSelectable(elements, selectedNodes, selectedEdges, selectableNodes, potentialEdges) {

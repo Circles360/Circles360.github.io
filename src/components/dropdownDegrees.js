@@ -182,13 +182,3 @@ class DropdownDegrees extends Component {
 }
 
 export default DropdownDegrees
-
-{/* <Button
-animated="vertical"
-color="red"
->
-<Button.Content visible>Generate degree planner</Button.Content>
-<Button.Content hidden>
-    <Icon name="arrow down" />
-</Button.Content>
-</Button> */}

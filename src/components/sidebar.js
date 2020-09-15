@@ -9,7 +9,7 @@ import coursesJSON from "../webscraper/courses.json";
 const REGEX_COURSE_CODE = /[A-Z]{4}\d{4}/g;
 
 const getCoursesInLevel = (rawList) => {
-    rawList = rawList.filter(c => c != "ANY COURSE");
+    rawList = rawList.filter(c => c !== "ANY COURSE");
     const allCourseIds = Object.keys(coursesJSON);
     const courseList = [];
     rawList.forEach(courseId => {

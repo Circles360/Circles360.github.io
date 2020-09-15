@@ -121,7 +121,7 @@ const prioritiseCourses = (selectedCourses) => {
             courseId: courseId,
             level: Number(courseId[4]),
             unlocks: [],
-            termsAvailable: coursesJSON[courseId].terms ? coursesJSON[courseId].terms.filter(t => t != "Summer Term").length : 0
+            termsAvailable: coursesJSON[courseId].terms ? coursesJSON[courseId].terms.filter(t => t !== "Summer Term").length : 0
         }
     }
 

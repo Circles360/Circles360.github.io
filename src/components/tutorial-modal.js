@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Icon, Button, Container, Modal, Header, Dropdown, Grid, Message } from 'semantic-ui-react'
+import React from "react";
+import { Button, Container, Modal } from 'semantic-ui-react'
 
 function exampleReducer(state, action) {
   switch (action.type) {

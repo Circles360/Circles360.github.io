@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
-import ReactFlow, {Background, Controls, getConnectedEdges, isNode, isEdge, useStoreState, useStoreActions, ReactFlowProvider, EdgeText} from 'react-flow-renderer';
+// import ReactFlow, {Background, Controls, getConnectedEdges, isNode, isEdge, useStoreState, useStoreActions, ReactFlowProvider, EdgeText} from 'react-flow-renderer';
+import ReactFlow, { isNode, isEdge, ReactFlowProvider } from 'react-flow-renderer';
 
 import CustomNode1 from '../../components/customnode1.js';
 import CustomNode2 from '../../components/customnode2.js';
@@ -9,28 +10,26 @@ import HoverInfo from '../../components/hoverinfo.js';
 import hoverPrerequisites from '../../components/hoverprerequisites.js';
 import unhoverPrerequisites from '../../components/unhoverprerequisites.js';
 
-import DropdownD from "../../components/dropdownDegrees.js"
-import { Grid, Header } from 'semantic-ui-react'
+import { Grid } from 'semantic-ui-react'
 import Sidebar from "../../components/sidebar.js"
-import pkg from 'semantic-ui-react/package.json'
+// import pkg from 'semantic-ui-react/package.json'
 
 import DegreePlanner from "../../components/degreeplanner.js"
-import DropdownDegrees from '../../components/dropdownDegrees';
 import DropdownSearch from "../../components/dropdownsearch.js"
 
-import positionHelper from '../../components/positionhelper.js';
+// import positionHelper from '../../components/positionhelper.js';
 import selectNode from '../../components/selectnode.js';
 import unselectNode from '../../components/unselectnode.js';
 import highlightElements from '../../components/highlightelements.js';
 import getSelectable from '../../components/getselectable.js';
 import checkPrerequisites from '../../components/checkprerequisites';
 import exclusionSwap from '../../components/exclusionswap.js';
-import getElement from '../../components/getelement.js';
+// import getElement from '../../components/getelement.js';
 import unselectUnconnected from '../../components/unselectunconnected.js';
 
-import SearchPan from '../../components/searchpan.js';
+// import SearchPan from '../../components/searchpan.js';
 
-import GetPan from '../../components/getpan.js';
+// import GetPan from '../../components/getpan.js';
 
 var elementsData = require("./data.json");
 var nodesData = elementsData.filter(e => isNode(e));
@@ -102,7 +101,7 @@ const BESengah = () => {
     const [elements, setElements] = useState(elementsData);
     const [hoverText, setHoverText] = useState(false);
     const [hoverNode, setHoverNode] = useState();
-    const [sidebarOpen, setSidebarOpen] = useState(false);
+    // const [sidebarOpen, setSidebarOpen] = useState(false);
     var clickCount = 0;
     var singleClickTimer = '';
     const [layout, setLayout] = useState(layoutStyle);

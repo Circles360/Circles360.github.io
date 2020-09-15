@@ -9,8 +9,8 @@ export default function checkPrerequisites(node, elements, selectedNodes) {
     if (node.data.conditions.units_required !== null && node.data.conditions.level_for_units_required !== null) {
         // Get the type of course this is
         return(checkPrerequisiteUnitsLevel(node, elements, selectedNodes));
-    }    
-   
+    }
+
     if (node.data.conditions.prerequisites !== null && node.data.conditions.prereqs_executable !== null) {
         // Evaluate the condition
         //console.log("HERE");
@@ -30,13 +30,8 @@ export default function checkPrerequisites(node, elements, selectedNodes) {
         } else {
             return false;
         }
-    } else {
-        return(checkPrerequisiteUnits(node, elements, selectedNodes));
     }
-
-
-
-    return true;
+    return(checkPrerequisiteUnits(node, elements, selectedNodes));
 
     // TODO: Check for corerequsiites and exclusion courses as well
     // TODO: Check for completion of units and core_year
@@ -44,7 +39,6 @@ export default function checkPrerequisites(node, elements, selectedNodes) {
     // Check if these nodes are enough to satisfy prerequisites
     // Get the prerequisite condition and replace courses by 1 if they have been
     // selected and 0 if they have not.
-    
 
 }
 

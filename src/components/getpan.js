@@ -1,5 +1,5 @@
 import React from 'react';
-import { useStoreState, useStoreActions } from 'react-flow-renderer';
+import { useStoreState } from 'react-flow-renderer';
 
 export default function GetPan() {
     const transform = useStoreState((store) => store.transform);
