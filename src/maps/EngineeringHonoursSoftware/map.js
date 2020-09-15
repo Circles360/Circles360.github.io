@@ -230,7 +230,7 @@ const BESengah = () => {
                 <Grid columns={2} divided>
                     <Grid.Column width="12">
                         <div onMouseEnter={disableBodyScroll} onMouseLeave={enableBodyScroll}>
-                            <div style={{position: "absolute", zIndex: "10"}}>
+                            <div style={{position: "absolute", zIndex: "10", top: "30px", right: "30px"}}>
                                 <DropdownSearch/>
                             </div>
                             <ReactFlow
