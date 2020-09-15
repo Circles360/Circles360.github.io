@@ -9,18 +9,22 @@ export default function HoverInfo(props) {
             <div id="header">
                 {props.node.data.course_name}
             </div>
+            <div id="terms">
+                <b>Terms: </b>{(props.node.data.terms !== null) ? props.node.data.terms.join(", ") : <text>Unavailable</text>}
+            </div>
             {props.node.data.conditions.raw !== null &&             
-            <div id="exclusion">
+            <div id="prereq">
                 <b>Prereqs: </b>{props.node.data.conditions.raw}
             </div>}
             {props.node.data.exclusions !== null &&             
             <div id="exclusion">
                 <b>Excl: </b>{props.node.data.exclusions.join(", ")}
             </div>}
-            {props.node.data.corequisites !== null &&             
+            {props.node.data.conditions.corequisites !== null &&             
             <div id="corequisites">
-                <b>Coreqs: </b>{props.node.data.corequisites}
+                <b>Coreqs: </b>{props.node.data.conditions.corequisites}
             </div>}
+
         </div>
     );
 }

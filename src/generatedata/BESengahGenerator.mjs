@@ -168,6 +168,9 @@ courses_output = courses_output.filter(function(course) {
 
 // Go through the unlocks for each course and if it is not a node in our graph,
 // delete it. If the array is empty, set it to null
+// NEW: SORT THE TERMS IN ORDER for nicer display when hovering
+// NEW: Cut off prerequisites at the front in "raw" so it looks nicer when displaying
+
 for (var course of courses_output) {
     if (course.data.unlocks === null) continue;
     course.data.unlocks = course.data.unlocks.filter((unlockCourse) => {
@@ -177,8 +180,12 @@ for (var course of courses_output) {
     if (course.data.unlocks.length === 0) {
         course.data.unlocks = null;
     }
+    
+    if (course.data.terms !== null) course.data.terms.sort();
+    if (course.data.conditions.raw !== null) {
+        course.data.conditions.raw = course.data.conditions.raw.replace(/Pre-?requisite: /, "");
+    }
 }
-
 
 
 // Add course header
