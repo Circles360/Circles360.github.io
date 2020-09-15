@@ -10,12 +10,10 @@ export default function unselectUnconnected(elements, selectedNodes, selectedEdg
     console.log("UNSELECTUNCONNECTED");
     const selectedNodesList = Object.keys(selectedNodes);
     for (const selected of selectedNodesList) {
+        if (selected === "SENGAH") continue;
         console.log("CHECKING " + selected);
+
         // Determine if prerequisites are met
-        if (selected === 'COMP6441') {
-            console.log("!!!!!!!!!!!!!!!!!!!!!");
-            console.log(selectedNodes);
-        }
         const selectedNode = getElement(selected, elements);
         if (! checkPrerequisites(selectedNode, elements, selectedNodes)) {
             // Prerequisites are not met

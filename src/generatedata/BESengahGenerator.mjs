@@ -157,6 +157,14 @@ courses_output = courses_output.filter(function(course) {
     return course.id !== 'COMP6721';
 });
 
+// Delete INFS and TELE and ELEC courses from our graph
+courses_output = courses_output.filter(function(course) {
+    if (course.id.substr(0,4) === 'INFS' || course.id.substr(0,4) === 'TELE' || course.id.substr(0,4) === 'ELEC') {
+        delete courses_list[course.id];
+        return false;
+    }
+    else return true;
+});
 
 // Go through the unlocks for each course and if it is not a node in our graph,
 // delete it. If the array is empty, set it to null
@@ -184,7 +192,9 @@ courses_output.unshift({
         unlocks: ['COMP1511', 'ENGG1000', 'MATH1131', 'MATH1141'],
         conditions: {
             prerequisites: null,
-            corequisites: null
+            corequisites: null,
+            units_required: null,
+            level_for_units_required: null
         },
         exclusions: null,
         equivalents: null,
