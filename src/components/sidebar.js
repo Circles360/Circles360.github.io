@@ -48,7 +48,7 @@ const getSelectedCourses = (specialisationCode, selectedNodes) => {
             const unitsTaken = courseList.reduce((total, c) => total + (c in selectedNodes ? coursesJSON[c].units : 0), 0);
             const showUnits = minUnits
                 ? <Label horizontal style={{transition: "0.3s ease", alignSelf: "flex-start"}} color={unitsTaken >= minUnits ? "green" : "red"}>{unitsTaken}/{minUnits}</Label>
-                : {};
+                : null;
             // .reduce((total, courseId) => total + props.allCourses[courseId].units, 0);
             console.log("units taken for ", levelName, unitsTaken);
             return (
@@ -65,7 +65,7 @@ const getSelectedCourses = (specialisationCode, selectedNodes) => {
             const unitsTaken = courseList.reduce((total, c) => total + (c in selectedNodes && !coreCourses.includes(c) ? coursesJSON[c].units : 0), 0);
             const showUnits = minUnits
                 ? <Label horizontal style={{transition: "0.3s ease", alignSelf: "flex-start"}} color={unitsTaken >= minUnits ? "green" : "red"}>{unitsTaken}/{minUnits}</Label>
-                : {};
+                : null;
             return (
                 <Segment style={{minHeight: "70px"}}>
                     <div style={{display: "flex"}}>
@@ -99,7 +99,7 @@ class Sidebar extends React.Component {
                         <Button
                             animated="vertical"
                             color="red"
-                            style={{marginTop: "10px"}}
+                            style={{marginTop: "10px", marginBottom: "10px"}}
                         >
                             <Button.Content visible>Generate degree planner</Button.Content>
                             <Button.Content hidden>
