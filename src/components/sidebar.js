@@ -99,6 +99,7 @@ class Sidebar extends React.Component {
                         <Button
                             animated="vertical"
                             color="red"
+                            style={{marginTop: "10px"}}
                         >
                             <Button.Content visible>Generate degree planner</Button.Content>
                             <Button.Content hidden>
