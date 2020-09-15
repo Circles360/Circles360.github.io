@@ -199,10 +199,12 @@ const BESengah = () => {
         setElements(highlightElements(elements, selectedNodes, selectedEdges, selectableNodes, potentialEdges, hoverEdges));
     }
 
+
     let hoverDisplay;
     if (hoverText) {
         hoverDisplay = <HoverInfo node={hoverNode}/>
     }
+
     // ===========================
 
     const onNodeDragStop = (event, node) => {
