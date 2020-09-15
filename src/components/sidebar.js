@@ -83,14 +83,14 @@ const getSelectedCourses = (specialisationCode, selectedNodes) => {
 class Sidebar extends React.Component {
     render() {
         return (
-            <Container style={{paddingLeft: "10px", paddingRight: "30px"}}>
+            <Container style={{paddingLeft: "10px", paddingRight: "20px"}}>
                 <Header as="h1" textAlign="center" style={{marginTop: "10px"}}>Circles</Header>
                 <Message info>
                     <p>Circles is a <b>visual degree planner</b> for UNSW undergraduate students. Choose your program and degree to begin!</p>
                     <SidebarModal />
                 </Message>
                 <Divider></Divider>
-                <Container style={{paddingRight: "10px"}}>
+                <Container>
                     <Header as="h3" textAlign="center">Your selected courses</Header>
                     {getSelectedCourses("SENGAH", this.props.selectedNodes)}
                 </Container>
