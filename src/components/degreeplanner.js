@@ -1,5 +1,5 @@
 import React from 'react';
-import { Icon, Button, Container, Segment, Header, Label, Grid } from 'semantic-ui-react'
+import { Container, Segment, Header, Message, Grid } from 'semantic-ui-react'
 
 // import programsJSON from "../webscraper/programs.json"
 // import specialisationsJSON from "../webscraper/specialisations.json"
@@ -11,6 +11,21 @@ import { DragDropContext } from "react-beautiful-dnd"
 import Term from "./degreeplanner-term"
 
 const REGEX_COURSE_CODE = /[A-Z]{4}\d{4}/g;
+
+const mapTermIds = (term) => {
+    if (term === "Summer Term") return "TS";
+    if (term === "Term 1") return "T1";
+    if (term === "Term 2") return "T2";
+    if (term === "Term 3") return "T3";
+    return;
+}
+
+const mapTermFull = (term) => {
+    if (term === "TS") return "Summer Term";
+    if (term === "T1") return "Term 1";
+    if (term === "T2") return "Term 2";
+    if (term === "T3") return "Term 3";
+}
 
 const updateCourses = (coursesJSON, dataJSON) => {
     dataJSON.forEach(course => {
@@ -33,12 +48,7 @@ const getCourses = (selectedCourses) => {
             console.log("no terms offered for", c);
             return;
         }
-        const termsAvailable = coursesJSON[c].terms.map(term => {
-            if (term === "Summer Term") return "TS"
-            if (term === "Term 1") return "T1"
-            if (term === "Term 2") return "T2"
-            if (term === "Term 3") return "T3"
-        })
+        const termsAvailable = coursesJSON[c].terms.map(term => mapTermIds(term));
 
         courses[c] = {
             id: c,
@@ -177,12 +187,7 @@ const addCourseToPlan = (termPlan, courseId) => {
             continue;
         }
 
-        const termsAvailable = coursesJSON[courseId].terms.map(term => {
-            if (term === "Summer Term") return "TS"
-            if (term === "Term 1") return "T1"
-            if (term === "Term 2") return "T2"
-            if (term === "Term 3") return "T3"
-        })
+        const termsAvailable = coursesJSON[courseId].terms.map(term => mapTermIds(term));
         if (!(termsAvailable.includes(termId.substring(1, 3)))) continue;
 
         // Need to check prerequisites have been met here
@@ -333,6 +338,44 @@ class DegreePlanner extends React.Component {
         this.setState(newState);
     }
 
+    getConsiderationMessages = (state) => {
+        const plan = state.plan;
+        const courses = state.courses;
+        const selectedCourses = state.selectedCourses;
+        const coursesAlreadyTaken = [];
+        const considerationMessages = [];
+
+        // Check prereqs
+        for (const year in plan) {
+            for (const term in plan[year]) {
+                if (term === "termOrder") continue;
+                for (const courseId of plan[year][term].courseIds) {
+                    coursesAlreadyTaken.push(courseId);
+                }
+            }
+        }
+
+        // Check terms
+        for (const yearId in plan) {
+            for (let termId in plan[yearId]) {
+                if (termId === "termOrder") continue;
+                const term = termId.substring(1, 3)
+                for (const courseId of plan[yearId][termId].courseIds) {
+                    if (!courses[courseId].termsAvailable.includes(term)) {
+                        console.log(`${courseId} is not available in ${term}`);
+                        console.log(courses[courseId].termsAvailable)
+                        considerationMessages.push(
+                            <Message.Item>{courseId} is only available in {courses[courseId].termsAvailable.map(term => mapTermFull(term)).join(", ")}</Message.Item>
+                        )
+                    }
+                }
+            }
+        }
+
+
+        return considerationMessages;
+    }
+
     render() {
         return (
             <Segment>
@@ -351,6 +394,14 @@ class DegreePlanner extends React.Component {
                     <p><em>Please note that our data is scraped from the UNSW Handbook and may have some inconsistencies.</em></p>
                     <p><em>Also note, you can drag a course into a term even if it is not offered as our data may be out of date, please double check :) </em></p>
 
+                    <Message error>
+                        <Message.Header>Considerations</Message.Header>
+                        <Message.List>
+                            <Message.Item>None</Message.Item>
+                            {this.getConsiderationMessages(this.state)}
+                        </Message.List>
+                    </Message>
+
                     <DragDropContext onDragEnd={this.onDragEnd} onDragStart={this.onDragStart}>
                         {Object.keys(this.state.plan).map(yearId => (
                             <Grid columns={4}>
@@ -366,10 +417,6 @@ class DegreePlanner extends React.Component {
                             </Grid>
                         ))}
                     </DragDropContext>
-                    <Segment style={{backgroundColor: "lightpink"}}>
-                        <Header as="h3">Error messages</Header>
-                        <p>None</p>
-                    </Segment>
                 </Container>
             </Segment>
         );
