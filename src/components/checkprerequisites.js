@@ -28,32 +28,7 @@ export default function checkPrerequisites(node, elements, selectedNodes) {
             return false;
         }
     } else {
-        // Check if units required exists
-        if (node.data.conditions.units_required !== null) {
-            if (node.data.conditions.level_for_units_required === null) {
-                //console.log("LEVEL FOR UNITS", node.id);
-                // See if we meet the total for this course
-                var total = 0;
-                const target = node.data.conditions.units_required;
-                const selectedList = Object.keys(selectedNodes);
-                //console.log(selectedNodes);
-                for (const selected of selectedList) {
-                    if (selected === node.id) continue; // The node can't include itself
-
-                    const takenNode = getElement(selected, elements);
-                    total += takenNode.data.units;
-                    //console.log(node.id + "=" + node.data.units);
-                }
-
-                if (total >= target) {
-                    return true;
-                } else {
-                    return false;
-                }
-            }
-        } else if (node.data.conditions.core_year !== null) {
-
-        }
+        return(checkPrerequisiteUnits(node, elements, selectedNodes));
     }
 
 
@@ -70,4 +45,34 @@ export default function checkPrerequisites(node, elements, selectedNodes) {
 
 }
 
+// Perform prerequisite check for units given the node to check, elements and all
+// the selected nodes. Returns true/false
+export function checkPrerequisiteUnits(node, elements, selectedNodes) {
+    if (node.data.conditions.units_required !== null) {
+        if (node.data.conditions.level_for_units_required === null) {
+            // See if we meet the total for this course
+            var total = 0;
+            const target = node.data.conditions.units_required;
+            console.log(selectedNodes);
+            const selectedList = Object.keys(selectedNodes);
+            for (const selected of selectedList) {
+                if (selected === node.id) continue; // The node can't include itself
+                const takenNode = getElement(selected, elements);
+                total += takenNode.data.units;
+            }
 
+            if (total >= target) {
+                return true;
+            } else {
+                return false;
+            }
+        } else {
+            return true;
+            // Only check specific level courses
+        }
+    } else if (node.data.conditions.core_year !== null) {
+        return true;
+    }
+
+    return true;
+}
