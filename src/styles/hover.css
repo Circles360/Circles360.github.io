@@ -17,8 +17,13 @@
     text-align: center;
 }
 
-#prereq {
+#terms {
     color: darkgreen;
+    font-size: 0.8vw;
+}
+
+#prereq {
+    color: darkblue;
     font-size: 0.8vw;
 }
 
@@ -28,7 +33,7 @@
 }
 
 #corequisites {
-    color: darkblue;
+    color: darkmagenta;
     font-size: 0.8vw;
 }
 

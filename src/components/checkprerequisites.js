@@ -2,8 +2,6 @@
 // Returns false if prerequisites are not met for a given node
 // Will only analyse targets of potential edges
 
-import Course from "./degreeplanner-course";
-
 import getElement from './getelement.js';
 
 // NOTE: Assumes that source of potential edges are always selected
