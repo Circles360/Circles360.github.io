@@ -10,7 +10,7 @@ import hoverPrerequisites from '../../components/hoverprerequisites.js';
 import unhoverPrerequisites from '../../components/unhoverprerequisites.js';
 
 import DropdownD from "../../components/dropdownDegrees.js"
-import { Grid, Segment } from 'semantic-ui-react'
+import { Grid, Header } from 'semantic-ui-react'
 import Sidebar from "../../components/sidebar.js"
 import pkg from 'semantic-ui-react/package.json'
 
@@ -225,7 +225,10 @@ const BESengah = () => {
     }
 
     return (
-        <ReactFlowProvider>
+        <ReactFlowProvider style={{positon: "absolute"}}>
+            <div style={{position: "absolute", zIndex: "10"}}>
+                <DropdownSearch/>
+            </div>
             <div style={layout}>
                 <Grid columns={2} divided>
                     <Grid.Column width="12">
@@ -247,7 +250,6 @@ const BESengah = () => {
                                 elementsSelectable={false}
                             >
                             </ReactFlow>
-                            <DropdownSearch/>
                         </div>
                     </Grid.Column>
                     <Grid.Column width="4">
