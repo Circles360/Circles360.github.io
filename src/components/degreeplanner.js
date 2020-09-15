@@ -40,16 +40,19 @@ const getCourses = (selectedCourses) => {
 
     selectedCourses.forEach(c => {
         if (!(c in coursesJSON)) return;
-        if (!(coursesJSON[c].terms)) {
-            console.log("no terms offered for", c);
-            return;
+
+        let termsAvailable;
+        if (!coursesJSON[c].terms) {
+            termsAvailable = ["TS", "T1", "T2", "T3"];
+        } else {
+            termsAvailable = coursesJSON[c].terms.map(term => mapTermIds(term));
         }
-        const termsAvailable = coursesJSON[c].terms.map(term => mapTermIds(term));
 
         courses[c] = {
             id: c,
             content: `${c} - ${coursesJSON[c].course_name}`,
             termsAvailable: termsAvailable,
+            placeholderTerms: !coursesJSON[c].terms,
             units: coursesJSON[c].units
         }
     })
@@ -159,7 +162,6 @@ const checkPrereqsMet = (termPlan, termId, courseId) => {
     const coursesTaken = [];
     for (const t in termPlan) {
         if (t === termId) break;
-        console.log("....... ", termPlan, t);
         coursesTaken.push(...termPlan[t].courseIds);
     }
     // console.log(courseId, "courses taken:", coursesTaken);
@@ -182,12 +184,14 @@ const addCourseToPlan = (termPlan, courseId) => {
         const courseUnits = coursesJSON[courseId].units;
         if (termPlan[termId].units + courseUnits > maxUOC) continue;
 
+        let termsAvailable;
         if (!(coursesJSON[courseId].terms)) {
-            console.log("cannotfindterms for ", courseId);
-            continue;
+            termsAvailable = ["TS", "T1", "T2", "T3"];
+            // continue;
+        } else {
+            termsAvailable = coursesJSON[courseId].terms.map(term => mapTermIds(term));
         }
 
-        const termsAvailable = coursesJSON[courseId].terms.map(term => mapTermIds(term));
         if (!(termsAvailable.includes(termId.substring(1, 3)))) continue;
 
         // Need to check prerequisites have been met here
@@ -384,7 +388,20 @@ class DegreePlanner extends React.Component {
                 if (termId === "termOrder") continue;
                 const term = termId.substring(1, 3)
                 for (const courseId of plan[yearId][termId].courseIds) {
-                    if (!courses[courseId].termsAvailable.includes(term)) {
+                    // if (!courses[courseId].termsAvailable) {
+                    if (!courses[courseId]) {
+                        considerationMessages.push(
+                            <Message.Item>
+                                {getCourseLink(courseId)}: could not retrieve course. Check handbook for more details.
+                            </Message.Item>
+                        )
+                    } else if (courses[courseId].placeholderTerms) {
+                        considerationMessages.push(
+                            <Message.Item>
+                                {getCourseLink(courseId)}: unknown term availability. Check handbook for more details.
+                            </Message.Item>
+                        )
+                    } else if (!courses[courseId].termsAvailable.includes(term)) {
                         considerationMessages.push(
                             <Message.Item>
                                 {getCourseLink(courseId)} is only available in {courses[courseId].termsAvailable.map(term => mapTermFull(term)).join(", ")}
@@ -439,6 +456,7 @@ class DegreePlanner extends React.Component {
 
                     <DragDropContext onDragEnd={this.onDragEnd} onDragStart={this.onDragStart}>
                         {this.getConsiderationMessages(this.state)}
+
                         {Object.keys(this.state.plan).map(yearId => (
                             <Grid key={yearId} columns={4}>
                                 {this.state.plan[yearId].termOrder.map(termId => {

@@ -5,29 +5,38 @@ import Course from "./degreeplanner-course"
 
 import { Droppable } from "react-beautiful-dnd"
 
-const SUCCESS = "#e5fbe5";
-const ERROR = "#ffebeb";
+const SUCCESS = "#FCFFF5";
+const ERROR = "#FFF6F6";
+const UNKNOWN = "#FFFAF3"
 
 const checkTermAvailability = (props, courseId) => {
     const termId = props.term.id.substring(1, 3);
     const termAvailability = props.allCourses[courseId].termsAvailable;
 
-    return termAvailability.includes(termId) ? SUCCESS : ERROR;
+    // return props.allCourses[courseId].placeholderTerms
+    //     ? UNKNOWN
+    //     : termAvailability.includes(termId)
+    //     ? SUCCESS
+    //     : ERROR;
+    return termAvailability.includes(termId)
+        ? props.allCourses[courseId].placeholderTerms
+            ? UNKNOWN
+            : SUCCESS
+        : ERROR
 }
 
 const checkValidCourses = (props) => {
     const termId = props.term.id.substring(1, 3);
 
     for (const courseId of props.term.courseIds) {
-        if (!props.allCourses[courseId].termsAvailable.includes(termId)) {
-            return ERROR
-        }
+        if (!props.allCourses[courseId].termsAvailable.includes(termId)) return ERROR;
+        if (props.allCourses[courseId].placeholderTerms) return UNKNOWN;
     }
     return "white"
 }
 
 const showUnits = (props) => {
-    const total = props.term.courseIds.reduce((total, courseId) => total + props.allCourses[courseId].units, 0);
+    const total = props.term.courseIds.filter(c => props.allCourses[c]).reduce((total, courseId) => total + props.allCourses[courseId].units, 0);
     const partTime = 12;
     const fullTime = 18;
 
