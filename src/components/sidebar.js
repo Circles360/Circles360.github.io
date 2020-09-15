@@ -1,5 +1,6 @@
 import React from 'react';
 import SidebarModal from "./sidebar-modal.js";
+import TutorialModal from "./tutorial-modal.js";
 import { Icon, Button, Container, Header, Divider, Grid, Segment, Message, Label } from 'semantic-ui-react';
 import ScrollTo from "react-scroll-into-view";
 import specialisationsJSON from "../webscraper/specialisations.json";
@@ -87,7 +88,16 @@ class Sidebar extends React.Component {
                 <Header as="h1" textAlign="center" style={{marginTop: "10px"}}>Circles</Header>
                 <Message info>
                     <p>Circles is a <b>visual degree planner</b> for UNSW undergraduate students. Choose your program and degree to begin!</p>
-                    <SidebarModal />
+                    <Grid divided='vertically'>
+                        <Grid.Row columns={2}>
+                            <Grid.Column>
+                                <SidebarModal/>
+                            </Grid.Column>
+                            <Grid.Column>
+                                <TutorialModal/>
+                            </Grid.Column>
+                        </Grid.Row>
+                    </Grid>
                 </Message>
                 <Divider></Divider>
                 <Container>
