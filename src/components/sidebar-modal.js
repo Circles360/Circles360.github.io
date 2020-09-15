@@ -24,6 +24,8 @@ function SideBarModal() {
   return (
     <div>
       <Button
+        size="mini"
+        color="blue"
         onClick={() => dispatch({ type: 'OPEN_MODAL', dimmer: 'blurring' })}
       >
         Click on Me :) 

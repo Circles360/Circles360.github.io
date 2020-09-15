@@ -38,21 +38,41 @@ const getSelectedCourses = (specialisationCode, selectedNodes) => {
     }).map(levelName => {
         const rawList = specialisationsJSON[specialisationCode].structure[levelName].courses.flat();
         const courseList = getCoursesInLevel(rawList);
+        const minUnits = specialisationsJSON[specialisationCode].structure[levelName].units_required;
+        const style = {
+            transition: "0.5s ease"
+        }
         if (levelName.match(/[Cc]ore/g)) {
             // CORE COURSE
             courseList.forEach(c => coreCourses.push(c));
+            const unitsTaken = courseList.reduce((total, c) => total + (c in selectedNodes ? coursesJSON[c].units : 0), 0);
+            const showUnits = minUnits
+                ? <Label horizontal style={{transition: "0.3s ease", alignSelf: "flex-start"}} color={unitsTaken >= minUnits ? "green" : "red"}>{unitsTaken}/{minUnits}</Label>
+                : {};
+            // .reduce((total, courseId) => total + props.allCourses[courseId].units, 0);
+            console.log("units taken for ", levelName, unitsTaken);
             return (
                 <Segment color="red">
-                    <Header as="h5">{levelName}</Header>
-                    {courseList.map(c => c in selectedNodes ? <Label compact color="grey">{c}</Label> : <Label compact color="grey" basic>{c}</Label>)}
+                    <div style={{display: "flex"}}>
+                        <Header style={{flexGrow: "1"}} as="h5">{levelName}</Header>
+                        {showUnits}
+                    </div>
+                    {courseList.map(c => c in selectedNodes ? <Label size="small" color="grey" style={style}>{c}</Label> : <Label size="small" style={style}>{c}</Label>)}
                 </Segment>
             )
         } else {
             // Not core course. Render segment with chosen electives only.
+            const unitsTaken = courseList.reduce((total, c) => total + (c in selectedNodes && !coreCourses.includes(c) ? coursesJSON[c].units : 0), 0);
+            const showUnits = minUnits
+                ? <Label horizontal style={{transition: "0.3s ease", alignSelf: "flex-start"}} color={unitsTaken >= minUnits ? "green" : "red"}>{unitsTaken}/{minUnits}</Label>
+                : {};
             return (
-                <Segment>
-                    <Header as="h5">{levelName}</Header>
-                    {courseList.filter(c => (c in selectedNodes && !coreCourses.includes(c))).map(c => <Label compact color="grey">{c}</Label>)}
+                <Segment style={{minHeight: "70px"}}>
+                    <div style={{display: "flex"}}>
+                        <Header style={{flexGrow: "1"}} as="h5">{levelName}</Header>
+                        {showUnits}
+                    </div>
+                    {courseList.filter(c => (c in selectedNodes && !coreCourses.includes(c))).map(c => <Label size="small" color="grey" style={style}>{c}</Label>)}
                 </Segment>
             )
         }
@@ -63,36 +83,31 @@ const getSelectedCourses = (specialisationCode, selectedNodes) => {
 class Sidebar extends React.Component {
     render() {
         return (
-            <Container style={{paddingLeft: "10px", paddingRight: "10px"}}>
+            <Container style={{paddingLeft: "10px", paddingRight: "30px"}}>
                 <Header as="h1" textAlign="center" style={{marginTop: "10px"}}>Circles</Header>
                 <Message info>
-                    <p>Circles is a visual degree planner for UNSW students. Choose your program and degree below to begin!</p>
+                    <p>Circles is a <b>visual degree planner</b> for UNSW undergraduate students. Choose your program and degree to begin!</p>
                     <SidebarModal />
                 </Message>
                 <Divider></Divider>
-                <Grid stretched>
-                    <Grid.Row>
-                        <Container>
-                            <Header as="h3" textAlign="center">Your selected courses</Header>
-                            {getSelectedCourses("SENGAH", this.props.selectedNodes)}
-                        </Container>
-                    </Grid.Row>
+                <Container style={{paddingRight: "10px"}}>
+                    <Header as="h3" textAlign="center">Your selected courses</Header>
+                    {getSelectedCourses("SENGAH", this.props.selectedNodes)}
+                </Container>
+                <Container textAlign="center">
+                    <ScrollTo selector="#DegreePlanner">
+                        <Button
+                            animated="vertical"
+                            color="red"
+                        >
+                            <Button.Content visible>Generate degree planner</Button.Content>
+                            <Button.Content hidden>
+                                <Icon name="arrow down" />
+                            </Button.Content>
+                        </Button>
+                    </ScrollTo>
 
-                    <Container textAlign="center">
-                        <ScrollTo selector="#DegreePlanner">
-                            <Button
-                                animated="vertical"
-                                color="red"
-                            >
-                                <Button.Content visible>Generate degree planner</Button.Content>
-                                <Button.Content hidden>
-                                    <Icon name="arrow down" />
-                                </Button.Content>
-                            </Button>
-                        </ScrollTo>
-
-                    </Container>
-                </Grid>
+                </Container>
             </Container>
 
         );
