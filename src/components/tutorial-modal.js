@@ -22,6 +22,8 @@ function TutorialModal() {
   return (
     <div>
       <Button
+        size="mini"
+        color="blue"
         onClick={() => dispatch({ type: 'OPEN_MODAL', dimmer: 'blurring' })}
       >
         Open Tutorial! 
