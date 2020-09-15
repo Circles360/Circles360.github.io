@@ -3,12 +3,25 @@ import { Icon, Button, Container, Segment, Header, Label, Grid } from 'semantic-
 
 // import programsJSON from "../webscraper/programs.json"
 // import specialisationsJSON from "../webscraper/specialisations.json"
-import coursesJSON from "../webscraper/courses.json"
+import dataJSON from "../maps/EngineeringHonoursSoftware/data.json"
+import rawCoursesJSON from "../webscraper/courses.json"
 import specialisationsJSON from "../webscraper/specialisations.json"
 
 import { DragDropContext } from "react-beautiful-dnd"
 import Term from "./degreeplanner-term"
 
+const REGEX_COURSE_CODE = /[A-Z]{4}\d{4}/g;
+
+const updateCourses = (coursesJSON, dataJSON) => {
+    dataJSON.forEach(course => {
+        if (!(course.id in coursesJSON)) return;
+        coursesJSON[course.id].conditions.prereqs_executable = course.data.conditions.prereqs_executable
+        coursesJSON[course.id].terms = course.data.terms;
+    });
+    return coursesJSON;
+}
+
+const coursesJSON = updateCourses(rawCoursesJSON, dataJSON);
 
 const getCourses = (selectedCourses) => {
     console.log("selected courses are", selectedCourses)
@@ -132,7 +145,6 @@ const prioritiseCourses = (selectedCourses) => {
 }
 
 const checkPrereqsMet = (termPlan, termId, courseId) => {
-    const REGEX_COURSE_CODE = /[A-Z]{4}\d{4}/g;
 
     let prereqsExecutable = coursesJSON[courseId].conditions.prereqs_executable;
     if (!prereqsExecutable) return true; // No executable
@@ -217,8 +229,6 @@ const makePlan = (plan, maxYears, selectedCourses) => {
         plan[year][termId].courseIds = termPlan[termId].courseIds
     }
 
-    console.table(termPlan);
-
     return plan;
 }
 
@@ -244,7 +254,7 @@ class DegreePlanner extends React.Component {
     /*shouldComponentUpdate(nextProps, nextState) {
         const { selectedCourses: nextPropsSelectedCourses } = nextProps;
         const { selectedCourses: propsSelectedCourses } = this.props;
-        
+
         const { selectedCourses } = this.state;
 
         if (nextPropsSelectedCourses !== propsSelectedCourses && nextPropsSelectedCourses !== selectedCourses) {
@@ -260,11 +270,6 @@ class DegreePlanner extends React.Component {
 
         return selectedCourses !== nextState.selectedCourses;
     }*/
-
-
-    onDragStart = result => {
-        const { draggableId } = result;
-    };
 
     onDragEnd = result => {
         const { destination, source, draggableId } = result;
