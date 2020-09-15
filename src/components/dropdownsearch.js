@@ -60,8 +60,12 @@ export default function DropdownSearch() {
                 onChange={handleChange}
                 value={search}
             />
-            <Button onClick={clickDone} color="red">
-                Find!
+            <Button
+                onClick={clickDone}
+                icon="search"
+                color="red"
+                style={{marginLeft: "5px"}}
+            >
             </Button>
         </>
     );
