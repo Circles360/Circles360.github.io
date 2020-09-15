@@ -225,14 +225,14 @@ const BESengah = () => {
     }
 
     return (
-        <ReactFlowProvider style={{positon: "absolute"}}>
-            <div style={{position: "absolute", zIndex: "10"}}>
-                <DropdownSearch/>
-            </div>
+        <ReactFlowProvider style={{positon: "relative"}}>
             <div style={layout}>
                 <Grid columns={2} divided>
                     <Grid.Column width="12">
                         <div onMouseEnter={disableBodyScroll} onMouseLeave={enableBodyScroll}>
+                            <div style={{position: "absolute", zIndex: "10"}}>
+                                <DropdownSearch/>
+                            </div>
                             <ReactFlow
                                 elements={elements}
                                 style={{width: '100%', height: '100vh'}}
