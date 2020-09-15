@@ -358,7 +358,9 @@ class DegreePlanner extends React.Component {
             for (const term in plan[year]) {
                 if (term === "termOrder") continue;
                 for (const courseId of plan[year][term].courseIds) {
-                    if (checkPrereqsMet(termPlan, term, courseId)) considerationMessages.push()
+                    if (!checkPrereqsMet(termPlan, term, courseId)) considerationMessages.push(
+                        <Message.Item>{courseId} prerequisites have not been met: {coursesJSON[courseId].conditions.prereqs_executable.replace("&&", "AND").replace("||", "OR")}</Message.Item>
+                    )
                 }
             }
         }
