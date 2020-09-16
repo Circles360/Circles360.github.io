@@ -23,10 +23,10 @@ function TutorialModal() {
     <div>
       <Button
         size="mini"
-        color="blue"
+        color="black"
         onClick={() => dispatch({ type: 'OPEN_MODAL', dimmer: 'blurring' })}
       >
-        Open Tutorial! 
+        <text>Need Help?</text>  
       </Button>
 
       <Modal
@@ -36,7 +36,7 @@ function TutorialModal() {
         onClose={() => dispatch({ type: 'CLOSE_MODAL' })}
       >
         <Container>
-            {/* Put in the Tutorial here! */}
+          
         </Container>
       </Modal>
     </div>

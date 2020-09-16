@@ -27,7 +27,7 @@ function SideBarModal() {
         color="blue"
         onClick={() => dispatch({ type: 'OPEN_MODAL', dimmer: 'blurring' })}
       >
-        Click on Me :) 
+        Choose Program
       </Button>
 
       <Modal
