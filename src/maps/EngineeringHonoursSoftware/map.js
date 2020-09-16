@@ -240,26 +240,6 @@ const BESengah = () => {
         setLayout({...layout, overflowY: 'overlay'});
     }
 
-    const getMoreCoursesForDropdown = () => {
-
-        const moreOptions = [];
-        const nodesOnFlowchart = dataJSON.map(node => node.id);
-        console.log("refresh", nodesOnFlowchart);
-
-        for (const code in coursesJSON) {
-            if (nodesOnFlowchart.includes(code)) continue;
-
-            const name = coursesJSON[code].course_name;
-            moreOptions.push({
-                key: code,
-                value: code,
-                text: code + " - " + name
-            });
-        }
-
-        return moreOptions;
-    }
-
     return (
         <div style={{positon: "relative"}}>
             <div style={layout}>
@@ -287,17 +267,6 @@ const BESengah = () => {
                                 </div>
                             </ReactFlow>
                         </ReactFlowProvider>
-                        <Container style={{padding: "20px"}}>
-                            <Header as="h3" textAlign="center">Add more courses:</Header>
-                            <Dropdown
-                                selection
-                                multiple
-                                search
-                                fluid
-                                options={getMoreCoursesForDropdown()}
-                                placeholder="Add more courses"
-                            />
-                        </Container>
                     </Grid.Column>
                     <Grid.Column width="4">
                         <Sidebar selectedNodes={selectedNodes}/>
