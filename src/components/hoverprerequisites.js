@@ -15,7 +15,9 @@ export default function hoverPrerequisites(node, elements, selectedNodes, select
     // hoverEdge all unselected (AND POTENTIAL???) edges until we hit selected node (NO LONGER STOPS AT SELECTABLE NODE)
     var prereqQueue = [node.id];
     while (prereqQueue.length !== 0) {
+        console.log("GET ELEMENT FROM QUEUE + ", prereqQueue[0]);
         const current = getElement(prereqQueue.shift(), elements);
+        
         // Make sure this course exists as a node in our map
         if (current === null) continue;
 

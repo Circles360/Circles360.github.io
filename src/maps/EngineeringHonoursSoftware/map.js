@@ -26,7 +26,7 @@ import checkPrerequisites from '../../components/checkprerequisites';
 import exclusionSwap from '../../components/exclusionswap.js';
 // import getElement from '../../components/getelement.js';
 import unselectUnconnected from '../../components/unselectunconnected.js';
-import coursesJSON from "../../webscraper/courses.json";
+import coursesJSON from "../../webscraper/courses_with_data.json";
 import dataJSON from "./data.json"
 
 // import SearchPan from '../../components/searchpan.js';
@@ -277,7 +277,7 @@ const BESengah = () => {
             //console.log("code", code)
             if (nodesOnFlowchart.includes(code)) continue;
 
-            const name = coursesJSON[code].course_name;
+            const name = coursesJSON[code].data.course_name;
             moreOptions.push({
                 key: code,
                 value: code,
