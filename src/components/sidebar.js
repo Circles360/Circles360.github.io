@@ -84,16 +84,10 @@ class Sidebar extends React.Component {
                 <Header as="h1" textAlign="center" style={{marginTop: "10px"}}>Circles</Header>
                 <Message info>
                     <p>Circles is a <b>visual degree planner</b> for UNSW undergraduate students. Choose your program and degree to begin!</p>
-                    <Grid divided='vertically'>
-                        <Grid.Row columns={2}>
-                            <Grid.Column>
-                                <SidebarModal/>
-                            </Grid.Column>
-                            <Grid.Column>
-                                <TutorialModal/>
-                            </Grid.Column>
-                        </Grid.Row>
-                    </Grid>
+                    <div style={{display: "flex", flexDirection: "row", justifyContent: "space-between"}}>
+                        <SidebarModal />
+                        <TutorialModal />
+                    </div>
                 </Message>
                 <Divider></Divider>
                 <Container>
