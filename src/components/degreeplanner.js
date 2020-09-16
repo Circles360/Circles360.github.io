@@ -158,16 +158,26 @@ const prioritiseCourses = (selectedCourses) => {
 
 const checkPrereqsMet = (termPlan, termId, courseId) => {
 
+    let runningTotalUnits = 0;
     let prereqsExecutable = coursesJSON[courseId].conditions.prereqs_executable;
-    if (!prereqsExecutable) return true; // No executable
 
     // Get courses taken up to termId
     const coursesTaken = [];
     for (const t in termPlan) {
         if (t === termId) break;
         coursesTaken.push(...termPlan[t].courseIds);
+        runningTotalUnits += 10;
     }
     // console.log(courseId, "courses taken:", coursesTaken);
+
+    if (courseId === "COMP3511") {
+        console.log("COMP35111", runningTotalUnits)
+    }
+    if (coursesJSON[courseId].conditions.units_required) {
+        if (runningTotalUnits < coursesJSON[courseId].conditions.units_required) return false;
+    }
+
+    if (!prereqsExecutable) return true; // No executable
 
     for (const course of coursesTaken) {
         prereqsExecutable = prereqsExecutable.replace(course, "1");
@@ -434,18 +444,20 @@ class DegreePlanner extends React.Component {
                 if (term === "termOrder") continue;
                 for (const courseId of plan[year][term].courseIds) {
                     if (!checkPrereqsMet(termPlan, term, courseId)) {
-                        considerationMessages.push(
-                            <Message.Item>
-                                {getCourseLink(courseId)} prerequisites have not been met: {coursesJSON[courseId].conditions.prereqs_executable
-                                    .replaceAll("|| 0 ||", "||")
-                                    .replaceAll("&& 0 &&", "&&")
-                                    .replaceAll("&& 0 ||", "||")
-                                    .replaceAll("|| 0 &&", "&&")
-                                    .replaceAll("&&", "and")
-                                    .replaceAll("||", "or")
-                                }
-                            </Message.Item>
-                        )
+                        if (coursesJSON[courseId].conditions.prereqsExecutable) {
+                            considerationMessages.push(
+                                <Message.Item>
+                                    {getCourseLink(courseId)} prerequisites have not been met: {coursesJSON[courseId].conditions.prereqs_executable
+                                        .replaceAll("|| 0 ||", "||")
+                                        .replaceAll("&& 0 &&", "&&")
+                                        .replaceAll("&& 0 ||", "||")
+                                        .replaceAll("|| 0 &&", "&&")
+                                        .replaceAll("&&", "and")
+                                        .replaceAll("||", "or")
+                                    }
+                                </Message.Item>
+                            )
+                        }
                     }
                 }
             }
