@@ -14966,6 +14966,19 @@
             }
         }
     },
+    "None": {
+        "name": "None",
+        "code": "None",
+        "units": "0 ",
+        "faculty": "None",
+        "structure": {
+            "Core Course": {
+                "name": "None",
+                "units_required": 0,
+                "courses": []
+            }
+        }
+    },
     "MATHNH": {
         "name": "Physical Oceanography",
         "code": "MATHNH",
