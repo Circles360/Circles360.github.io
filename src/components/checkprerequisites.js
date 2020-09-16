@@ -58,7 +58,7 @@ export function checkPrerequisiteUnits(node, elements, selectedNodes) {
                 const takenNode = getElement(selected, elements);
                 total += takenNode.data.units;
             }
-
+            
             if (total >= target) {
                 return true;
             } else {
