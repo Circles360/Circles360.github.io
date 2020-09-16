@@ -36,8 +36,8 @@ export default function getSelectable(elements, selectedNodes, selectedEdges, se
     for (const node of analyseNodesKeys) {
         // Determine if the prerequisite has been met
         //const node = getElement(nodeID, elements);
-        console.log(node);
-
+        //console.log(node);
+        
         // If the node is already selected, don't bother making it selectable
         if (selectedNodes.hasOwnProperty(node.id)) continue;
 

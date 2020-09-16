@@ -2,7 +2,7 @@ import React from 'react';
 import { Container, Segment, Header, Message, Grid } from 'semantic-ui-react'
 
 import dataJSON from "../maps/EngineeringHonoursSoftware/data.json"
-import rawCoursesJSON from "../webscraper/courses_with_data.json"
+import rawCoursesJSON from "../webscraper/courses.json"
 
 import { DragDropContext } from "react-beautiful-dnd"
 import Term from "./degreeplanner-term"
@@ -27,8 +27,8 @@ const mapTermFull = (term) => {
 const updateCourses = (coursesJSON, dataJSON) => {
     dataJSON.forEach(course => {
         if (!(course.id in coursesJSON)) return;
-        coursesJSON[course.id].data.conditions.prereqs_executable = course.data.conditions.prereqs_executable
-        coursesJSON[course.id].data.terms = course.data.terms;
+        coursesJSON[course.id].conditions.prereqs_executable = course.data.conditions.prereqs_executable
+        coursesJSON[course.id].terms = course.data.terms;
     });
     return coursesJSON;
 }
@@ -42,18 +42,18 @@ const getCourses = (selectedCourses) => {
         if (!(c in coursesJSON)) return;
 
         let termsAvailable;
-        if (!coursesJSON[c].data.terms) {
+        if (!coursesJSON[c].terms) {
             termsAvailable = ["TS", "T1", "T2", "T3"];
         } else {
-            termsAvailable = coursesJSON[c].data.terms.map(term => mapTermIds(term));
+            termsAvailable = coursesJSON[c].terms.map(term => mapTermIds(term));
         }
 
         courses[c] = {
             id: c,
-            content: `${c} - ${coursesJSON[c].data.course_name}`,
+            content: `${c} - ${coursesJSON[c].course_name}`,
             termsAvailable: termsAvailable,
-            placeholderTerms: !coursesJSON[c].data.terms,
-            units: coursesJSON[c].data.units
+            placeholderTerms: !coursesJSON[c].terms,
+            units: coursesJSON[c].units
         }
     })
 
@@ -100,9 +100,9 @@ const generateTerms = (yearId) => {
 
 const addPriority = (priority, courseId, unlocksCourse) => {
     if (!(courseId in coursesJSON)) return priority;
-    if (!coursesJSON[courseId].data.conditions.prerequisites) return priority;
+    if (!coursesJSON[courseId].conditions.prerequisites) return priority;
 
-    for (const prereq of coursesJSON[courseId].data.conditions.prerequisites) {
+    for (const prereq of coursesJSON[courseId].conditions.prerequisites) {
         if (!(prereq in priority)) continue;
         if (courseId === prereq) continue;
 
@@ -123,7 +123,7 @@ const prioritiseCourses = (selectedCourses) => {
             courseId: courseId,
             level: Number(courseId[4]),
             unlocks: [],
-            termsAvailable: coursesJSON[courseId].data.terms ? coursesJSON[courseId].data.terms.filter(t => t !== "Summer Term").length : 0
+            termsAvailable: coursesJSON[courseId].terms ? coursesJSON[courseId].terms.filter(t => t !== "Summer Term").length : 0
         }
     }
 
@@ -155,7 +155,7 @@ const prioritiseCourses = (selectedCourses) => {
 
 const checkPrereqsMet = (termPlan, termId, courseId) => {
 
-    let prereqsExecutable = coursesJSON[courseId].data.conditions.prereqs_executable;
+    let prereqsExecutable = coursesJSON[courseId].conditions.prereqs_executable;
     if (!prereqsExecutable) return true; // No executable
 
     // Get courses taken up to termId
@@ -181,15 +181,15 @@ const addCourseToPlan = (termPlan, courseId) => {
     for (const termId in termPlan) {
         if (termPlan[termId].units >= maxUOC) continue;
 
-        const courseUnits = coursesJSON[courseId].data.units;
+        const courseUnits = coursesJSON[courseId].units;
         if (termPlan[termId].units + courseUnits > maxUOC) continue;
 
         let termsAvailable;
-        if (!(coursesJSON[courseId].data.terms)) {
+        if (!(coursesJSON[courseId].terms)) {
             termsAvailable = ["TS", "T1", "T2", "T3"];
             // continue;
         } else {
-            termsAvailable = coursesJSON[courseId].data.terms.map(term => mapTermIds(term));
+            termsAvailable = coursesJSON[courseId].terms.map(term => mapTermIds(term));
         }
 
         if (!(termsAvailable.includes(termId.substring(1, 3)))) continue;
@@ -198,7 +198,7 @@ const addCourseToPlan = (termPlan, courseId) => {
         if (!checkPrereqsMet(termPlan, termId, courseId)) continue;
 
         // Add course to plan
-        termPlan[termId].units += coursesJSON[courseId].data.units;
+        termPlan[termId].units += coursesJSON[courseId].units;
         termPlan[termId].courseIds.push(courseId);
         return termPlan;
     }
@@ -367,7 +367,7 @@ class DegreePlanner extends React.Component {
                     if (!checkPrereqsMet(termPlan, term, courseId)) {
                         considerationMessages.push(
                             <Message.Item>
-                                {getCourseLink(courseId)} prerequisites have not been met: {coursesJSON[courseId].data.conditions.prereqs_executable
+                                {getCourseLink(courseId)} prerequisites have not been met: {coursesJSON[courseId].conditions.prereqs_executable
                                     .replaceAll("|| 0 ||", "||")
                                     .replaceAll("&& 0 &&", "&&")
                                     .replaceAll("&& 0 ||", "||")

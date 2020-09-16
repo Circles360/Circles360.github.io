@@ -3,7 +3,6 @@
 // Will only analyse targets of potential edges
 
 import getElement from './getelement.js';
-import getAllElement from './getAllElement.js';
 
 // NOTE: Assumes that source of potential edges are always selected
 export default function checkPrerequisites(node, elements, selectedNodes) {
@@ -56,8 +55,7 @@ export function checkPrerequisiteUnits(node, elements, selectedNodes) {
             const selectedList = Object.keys(selectedNodes);
             for (const selected of selectedList) {
                 if (selected === node.id) continue; // The node can't include itself
-                const takenNode = getAllElement(selected, elements);
-                console.log(selected + " === " + takenNode);
+                const takenNode = getElement(selected, elements);
                 total += takenNode.data.units;
             }
 
@@ -92,7 +90,7 @@ function checkPrerequisiteUnitsLevel(node, elements, selectedNodes) {
     for (const selected of selectedList) {
         if (selected.substr(0, 5) !== courseType) continue; // Not the right course type
         if (selected === node.id) continue; // The node can't include itself
-        const takenNode = getAllElement(selected, elements);
+        const takenNode = getElement(selected, elements);
         total += takenNode.data.units;
     }
 

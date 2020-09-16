@@ -26,7 +26,7 @@ import checkPrerequisites from '../../components/checkprerequisites';
 import exclusionSwap from '../../components/exclusionswap.js';
 // import getElement from '../../components/getelement.js';
 import unselectUnconnected from '../../components/unselectunconnected.js';
-import coursesJSON from "../../webscraper/courses_with_data.json";
+import coursesJSON from "../../webscraper/courses.json";
 import dataJSON from "./data.json"
 
 // import SearchPan from '../../components/searchpan.js';
@@ -240,44 +240,16 @@ const BESengah = () => {
         setLayout({...layout, overflowY: 'overlay'});
     }
 
-    const handleChange = (e, props) => {
-        // props.value includes all the selected from dropdown 
-        // If in options (not on flowchart) and not in selected from dropdown, remove from selected elements
-        // Else add into selected elements 
-
-        const nodesOnFlowchart = dataJSON.map(node => node.id);
-        
-        // console.log("nodes on flowchart", nodesOnFlowchart);
-        for (const id of props.value) {
-            if (selectedNodes.hasOwnProperty(id)) {
-                if(!nodesOnFlowchart.hasOwnProperty(id)) {
-                    // remove this 
-                    // TODO this part is not finished yet, cannot remove from the dropdown 
-                    delete selectedNodes[id];
-                }
-            } else {
-                // add this 
-                // console.log("adding node", id)
-                selectedNodes[id] = 1;
-                getSelectable(elements, selectedNodes, selectedEdges, selectableNodes, potentialEdges);
-                setElements(highlightElements(elements, selectedNodes, selectedEdges, selectableNodes, potentialEdges, hoverEdges));
-            }
-        }
-
-        console.log("selected nodes", selectedNodes);
-    }
-
     const getMoreCoursesForDropdown = () => {
 
         const moreOptions = [];
         const nodesOnFlowchart = dataJSON.map(node => node.id);
-        //console.log("refresh", nodesOnFlowchart);
+        console.log("refresh", nodesOnFlowchart);
 
         for (const code in coursesJSON) {
-            //console.log("code", code)
             if (nodesOnFlowchart.includes(code)) continue;
 
-            const name = coursesJSON[code].data.course_name;
+            const name = coursesJSON[code].course_name;
             moreOptions.push({
                 key: code,
                 value: code,
@@ -323,7 +295,6 @@ const BESengah = () => {
                                 search
                                 fluid
                                 options={getMoreCoursesForDropdown()}
-                                onChange={handleChange}
                                 placeholder="Add more courses"
                             />
                         </Container>
