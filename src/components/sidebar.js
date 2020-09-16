@@ -41,7 +41,7 @@ const getSelectedCourses = (specialisationCode, selectedNodes) => {
         const courseList = getCoursesInLevel(rawList);
         const minUnits = specialisationsJSON[specialisationCode].structure[levelName].units_required;
         const style = {
-            transition: "0.5s ease"
+            transition: "0.3s ease"
         }
         if (levelName.match(/[Cc]ore/g)) {
             // CORE COURSE

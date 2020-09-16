@@ -6,34 +6,40 @@ const selectedEdgeAnimated = {
     stroke: "#e94646",
     strokeWidth: 2,
     opacity: 1,
+    transition: "0.3s ease"
 }
 const selectedEdgeStatic = {
     stroke: "#454545",
     strokeWidth: 2,
     opacity: 1,
+    transition: "0.3s ease"
 }
 
 const hoverEdge = {
     stroke: "#454545",
     strokeWidth: 2,
     opacity: 1,
+    transition: "0.3s ease"
 }
 
 const potentialHoverEdge = {
     stroke: "#454545",
     strokeWidth: 2,
     opacity: 1,
+    transition: "0.3s ease"
 }
 const potentialEdge = {
     stroke: "#cecece",
     strokeWidth: 1,
     opacity: 1,
+    transition: "0.3s ease"
 }
 
 const unselectedEdge = {
     stroke: "#cecece",
     strokeWidth: 1,
-    opacity: 1
+    opacity: 1,
+    transition: "0.3s ease"
 }
 
 export default function highlightElements(elements, selectedNodes, selectedEdges, selectableNodes, potentialEdges, hoverEdges) {
