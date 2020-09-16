@@ -55,7 +55,7 @@ export default function DropdownSearch() {
                 selection
                 search
                 options={nodeOptions}
-                placeholder="Can't find a course?"
+                placeholder="Looking for a course?"
                 onChange={handleChange}
                 onKeyPress={event => {
                     if (event.key === 'Enter') {
