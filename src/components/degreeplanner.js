@@ -456,7 +456,6 @@ class DegreePlanner extends React.Component {
 
                     <DragDropContext onDragEnd={this.onDragEnd} onDragStart={this.onDragStart}>
                         {this.getConsiderationMessages(this.state)}
-
                         {Object.keys(this.state.plan).map(yearId => (
                             <Grid key={yearId} columns={4}>
                                 {this.state.plan[yearId].termOrder.map(termId => {

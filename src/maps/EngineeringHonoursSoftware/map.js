@@ -10,7 +10,7 @@ import HoverInfo from '../../components/hoverinfo.js';
 import hoverPrerequisites from '../../components/hoverprerequisites.js';
 import unhoverPrerequisites from '../../components/unhoverprerequisites.js';
 
-import { Grid } from 'semantic-ui-react'
+import { Grid, Container, Header, Divider, Dropdown } from 'semantic-ui-react'
 import Sidebar from "../../components/sidebar.js"
 // import pkg from 'semantic-ui-react/package.json'
 
@@ -26,12 +26,14 @@ import checkPrerequisites from '../../components/checkprerequisites';
 import exclusionSwap from '../../components/exclusionswap.js';
 // import getElement from '../../components/getelement.js';
 import unselectUnconnected from '../../components/unselectunconnected.js';
+import coursesJSON from "../../webscraper/courses.json";
+import dataJSON from "./data.json"
 
 // import SearchPan from '../../components/searchpan.js';
 
 // import GetPan from '../../components/getpan.js';
 
-var elementsData = require("./data.json");
+var elementsData = dataJSON.slice()
 var nodesData = elementsData.filter(e => isNode(e));
 var edgesData = elementsData.filter(e => isEdge(e));
 var selectedNodes = {
@@ -238,6 +240,26 @@ const BESengah = () => {
         setLayout({...layout, overflowY: 'overlay'});
     }
 
+    const getMoreCoursesForDropdown = () => {
+
+        const moreOptions = [];
+        const nodesOnFlowchart = dataJSON.map(node => node.id);
+        console.log("refresh", nodesOnFlowchart);
+
+        for (const code in coursesJSON) {
+            if (nodesOnFlowchart.includes(code)) continue;
+
+            const name = coursesJSON[code].course_name;
+            moreOptions.push({
+                key: code,
+                value: code,
+                text: code + " - " + name
+            });
+        }
+
+        return moreOptions;
+    }
+
     return (
         <div style={{positon: "relative"}}>
             <div style={layout}>
@@ -262,10 +284,20 @@ const BESengah = () => {
                             >
                                 <div style={{position: "absolute", zIndex: "10", top: "30px", right: "30px"}}>
                                     {dropSearch}
-                                    {/* <DropdownSearch canvasSize={getCanvasSize()}/> */}
                                 </div>
                             </ReactFlow>
                         </ReactFlowProvider>
+                        <Container style={{padding: "20px"}}>
+                            <Header as="h3" textAlign="center">Add more courses:</Header>
+                            <Dropdown
+                                selection
+                                multiple
+                                search
+                                fluid
+                                options={getMoreCoursesForDropdown()}
+                                placeholder="Add more courses"
+                            />
+                        </Container>
                     </Grid.Column>
                     <Grid.Column width="4">
                         <Sidebar selectedNodes={selectedNodes}/>
@@ -274,8 +306,13 @@ const BESengah = () => {
                 {hoverDisplay}
                 {/* <button onClick={positionHelper(elements)}>GENERATE POSITION</button> */}
                 <div id="DegreePlanner">
-                    <DegreePlanner key={Object.keys(selectedNodes).join("")}selectedCourses={Object.keys(selectedNodes)} />
+                    <DegreePlanner id="DegreePlanner" key={Object.keys(selectedNodes).join("")}selectedCourses={Object.keys(selectedNodes)} />
                 </div>
+                {/* <Divider/> */}
+                <Container style={{textAlign: "center", height: "auto", padding: "20px"}}>
+                    <p>Made by SRKO, 2020</p>
+                    <a href="https://github.com/Circles360/Circles360.github.io" target="_blank">GitHub</a>
+                </Container>
             </div>
         </div>
     );
