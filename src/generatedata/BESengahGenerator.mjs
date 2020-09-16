@@ -3,7 +3,7 @@ import { createRequire } from "module";
 
 
 const require = createRequire(import.meta.url);
-const {styleGenerator, hexToRgb, rgbToHex, lightenHex} = require('./styleGenerator.js');
+const styleGenerator = require('./styleGenerator.js');
 
 const data = require("../webscraper/specialisations.json");
 const courses = require("../webscraper/courses.json");
@@ -14,20 +14,14 @@ var courses_list = {}; // Keeps track of courses in this degree for easier check
 
 // Colours a node accordingly
 function colour_node(node) {
-    if (node.id.match(/^COMP/)) node.style = {...node.style, background: '#1EB13C', border: '2px solid #1EB13C'};
-    else if (node.id.match(/^MATH/)) node.style = {...node.style, background: '#166DBA', border: '2px solid #166DBA'};
-    else if (node.id.match(/^ENGG/)) node.style = {...node.style, background: '#CA1818', border: '2px solid #CA1818'};
-    else if (node.id.match(/^DESN/)) node.style = {...node.style, background: '#D66328', border: '2px solid #D66328'};
-    else if (node.id.match(/^SENG/)) node.style = {...node.style, background: '#8A36B4', border: '2px solid #8A36B4'};
-    else if (node.id.match(/^ELEC/)) node.style = {...node.style, background: '#449A94', border: '2px solid #449A94'};
-    else if (node.id.match(/^INFS/)) node.style = {...node.style, background: '#885533', border: '2px solid #885533'};
-    else if (node.id.match(/^TELE/)) node.style = {...node.style, background: '#D3A437', border: '2px solid #D3A437'};
-
-    node.textColour = node.style.background;
-    node.textSelectedColour = 'white';
-    node.selectableColour = lightenHex(node.style.background, 0.7);
-    node.selectedColour = node.style.background;
-    node.style.background = 'white';
+    if (node.id.match(/^COMP/)) node.style = {...node.style, background: '#1EB13C', border: '2px dashed #1EB13C'};
+    else if (node.id.match(/^MATH/)) node.style = {...node.style, background: '#166DBA', border: '2px dashed #166DBA'};
+    else if (node.id.match(/^ENGG/)) node.style = {...node.style, background: '#CA1818', border: '2px dashed #CA1818'};
+    else if (node.id.match(/^DESN/)) node.style = {...node.style, background: '#D66328', border: '2px dashed #D66328'};
+    else if (node.id.match(/^SENG/)) node.style = {...node.style, background: '#8A36B4', border: '2px dashed #8A36B4'};
+    else if (node.id.match(/^ELEC/)) node.style = {...node.style, background: '#449A94', border: '2px dashed #449A94'};
+    else if (node.id.match(/^INFS/)) node.style = {...node.style, background: '#885533', border: '2px dashed #885533'};
+    else if (node.id.match(/^TELE/)) node.style = {...node.style, background: '#D3A437', border: '2px dashed #D3A437'};
 }
 
 // Returns list of node objects for courses fitting the "any" description
@@ -192,9 +186,9 @@ for (var course of courses_output) {
 // NEW: Cut off prerequisites at the front in "raw" so it looks nicer when displaying
 for (var course of courses_output) {
     if (course.data.terms !== null) {
-        //console.log(course.id + " SORTING TERMS " + course.data.terms);
+        console.log(course.id + " SORTING TERMS " + course.data.terms);
         course.data.terms.sort();
-        //console.log(course.data.terms);
+        console.log(course.data.terms);
     }
     if (course.data.conditions.raw !== null) {
         course.data.conditions.raw = course.data.conditions.raw.replace(/Pre-?requisite: /, "");
@@ -222,14 +216,11 @@ courses_output.unshift({
     },
    // className: 'node_header',
     style: node_header,
-    textColour: 'black',
-    textSelectedColour: 'black',
-    selectedColour: 'lightgrey',
-    selectableColour: 'black', // THIS SHOULD NEVER GET CALLED
     position: {x: 0, y: 0}
 })
 courses_output[0].style.background = '#000';
 courses_list['SENGAH'] = 1;
+
 
 
 // Hard code in prerequisites for starting courses
@@ -275,7 +266,7 @@ for (const course of courses_output) {
     }
 }
 
-//console.log("====================");
+console.log("====================");
 // Generate exclusion course data
 var exclusion_groups = []; // Holds all exclusion groups
 var exclusion_list = {};  // Quick checking if we have already excluded this course
@@ -288,7 +279,7 @@ for (var course of courses_output) {
     for (const exclusion of course.data.exclusions) {
         if (courses_list.hasOwnProperty(exclusion)) {
             // Create an exclusion course with this node as it exists in our program
-            //console.log(exclusion);
+            console.log(exclusion);
             exclusion_list[exclusion] = 1;
             group.push(exclusion);
         }
@@ -298,13 +289,13 @@ for (var course of courses_output) {
         exclusion_list[course.id] = 1;
         group.unshift(course.id);
         exclusion_groups.push(group);
-        //console.log(course.id);
-        //console.log(course.data.exclusions);
-        //console.log("====================");
+        console.log(course.id);
+        console.log(course.data.exclusions);
+        console.log("====================");
     }
 }
 
-//console.log(exclusion_groups);
+console.log(exclusion_groups);
 
 // For each course in exclusion groups, change their type to customnode2
 for (const exclusion of Object.keys(exclusion_list)) {
@@ -341,11 +332,11 @@ for (const exclusion of Object.keys(exclusion_list)) {
 // Get all the corequisites
 for (const course of courses_output) {
     if (course.data.conditions.corequisites === null) continue;
-    //console.log(course.id);
+    console.log(course.id);
     for (const corerequisite of course.data.conditions.corequisites) {
         console.log(corerequisite);
     }
-    //console.log("=============");
+    console.log("=============");
 }
 
 
@@ -355,7 +346,7 @@ const output = courses_output.concat(edges_output);
 
 // Write to the file
 const fs = require('fs');
-fs.writeFile('../maps/EngineeringHonoursSoftware/data.json', JSON.stringify(output), (err) => {
+fs.writeFile('../maps/EngineeringHonoursSoftware/old_data.json', JSON.stringify(output), (err) => {
     // In case of error
     if (err) throw err;
 })
