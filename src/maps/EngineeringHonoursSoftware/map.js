@@ -308,7 +308,6 @@ const BESengah = () => {
                 <div id="DegreePlanner">
                     <DegreePlanner id="DegreePlanner" key={Object.keys(selectedNodes).join("")}selectedCourses={Object.keys(selectedNodes)} />
                 </div>
-                {/* <Divider/> */}
                 <Container style={{textAlign: "center", height: "auto", padding: "20px"}}>
                     <p>Made by SRKO, 2020</p>
                     <a href="https://github.com/Circles360/Circles360.github.io" target="_blank">GitHub</a>
