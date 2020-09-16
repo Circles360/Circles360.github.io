@@ -4,6 +4,9 @@ import { Container, Segment, Header, Message, Grid } from 'semantic-ui-react'
 import dataJSON from "../maps/EngineeringHonoursSoftware/data.json"
 import rawCoursesJSON from "../webscraper/courses.json"
 
+import programsJSON from "../webscraper/programs.json"
+import specialisationsJSON from "../webscraper/specialisations.json"
+
 import { DragDropContext } from "react-beautiful-dnd"
 import Term from "./degreeplanner-term"
 
@@ -259,25 +262,6 @@ class DegreePlanner extends React.Component {
         selectedCourses: this.props.selectedCourses,
         plan: generatePlanScaffold(4, this.props.selectedCourses),
     };
-    /*shouldComponentUpdate(nextProps, nextState) {
-        const { selectedCourses: nextPropsSelectedCourses } = nextProps;
-        const { selectedCourses: propsSelectedCourses } = this.props;
-
-        const { selectedCourses } = this.state;
-
-        if (nextPropsSelectedCourses !== propsSelectedCourses && nextPropsSelectedCourses !== selectedCourses) {
-            console.log("UPDATE!!!!");
-            console.log(nextProps);
-            console.log(nextState);
-            this.setState({
-                courses: getCourses(nextPropsSelectedCourses),
-                selectedCourses: nextPropsSelectedCourses,
-                plan: generatePlanScaffold(4, nextPropsSelectedCourses)
-            });
-        }
-
-        return selectedCourses !== nextState.selectedCourses;
-    }*/
 
     onDragEnd = result => {
         const { destination, source, draggableId } = result;
@@ -344,21 +328,106 @@ class DegreePlanner extends React.Component {
     getConsiderationMessages = (state) => {
         const plan = state.plan;
         const courses = state.courses;
+        const selectedCourses = state.selectedCourses;
+        const program = "3707"
+        const programUnits = programsJSON[program].units;
+        const degree = "SENGAH";
+        const degreeUnits = specialisationsJSON[degree].units
         const considerationMessages = [];
+        const handbookVersion = 2021;
+
+        const getCourseLink = (courseId) => {
+            return <a target="_blank" rel="noopener noreferrer" href={`https://www.handbook.unsw.edu.au/undergraduate/courses/${handbookVersion}/${courseId}`}>{courseId}</a>;
+        }
+
+        const getProgramLink = (programId) => {
+            return <a target="_blank" rel="noopener noreferrer" href={`https://www.handbook.unsw.edu.au/undergraduate/programs/${handbookVersion}/${programId}`}>{programId} - {programsJSON[programId].name}</a>;
+        }
+
+        const getSpecialisationsLink = (specialisationId) => {
+            return <a target="_blank" rel="noopener noreferrer" href={`https://www.handbook.unsw.edu.au/undergraduate/specialisations/${handbookVersion}/${specialisationId}`}>{specialisationId} - {specialisationsJSON[specialisationId].name}</a>;
+        }
+
+        const getCoursesInLevel = (rawList) => {
+            rawList = rawList.flat().filter(c => c !== "ANY COURSE");
+            const allCourseIds = Object.keys(coursesJSON);
+            const courseList = [];
+            rawList.forEach(courseId => {
+                if (courseId.match(REGEX_COURSE_CODE)) {
+                    courseList.push(courseId);
+                } else if (courseId.match(/^[A-Z]{4}\d$/)) {
+                    const relevantCourses = allCourseIds.filter(c => c.includes(courseId));
+                    relevantCourses.forEach(c => {
+                        if (courseList.includes(c)) return;
+                        courseList.push(c);
+                    });
+                }
+            });
+            return courseList;
+        }
 
         // Check prereqs
         const termPlan = {}
+        let totalUnits = 0;
         for (const year in plan) {
             for (const term in plan[year]) {
                 if (term === "termOrder") continue;
                 termPlan[term] = plan[year][term]
+
+                termPlan[term].courseIds.forEach(courseId => {
+                    const conditions = coursesJSON[courseId].conditions
+                    if (!conditions.units_required) return;
+                    if (totalUnits < conditions.units_required) {
+                        considerationMessages.push(
+                            <Message.Item>
+                                {getCourseLink(courseId)} prerequisites have not been met: {conditions.units_required} UOC required.
+                            </Message.Item>
+                        )
+                    }
+                })
+
+                totalUnits += termPlan[term].courseIds.reduce((total, c) => total + (c in coursesJSON ? coursesJSON[c].units : 0), 0);
             }
         }
 
-        const getCourseLink = (courseId) => {
-            const handbookVersion = 2021;
-            return <a target="_blank" rel="noopener noreferrer" href={`https://www.handbook.unsw.edu.au/undergraduate/courses/${handbookVersion}/${courseId}`}>{courseId}</a>;
+        if (totalUnits < programUnits) {
+            considerationMessages.push(
+                <Message.Item>
+                    {getProgramLink(program)} requires {programUnits} units. You have taken {totalUnits} units.
+                </Message.Item>
+            )
         }
+
+        if (totalUnits < degreeUnits) {
+            considerationMessages.push(
+                <Message.Item>
+                    {getSpecialisationsLink(degree)} requires {degreeUnits} units. You have taken {totalUnits} units.
+                </Message.Item>
+            )
+        }
+
+        // Check levels for each
+        const coreCourses = []
+        for (const levelName in specialisationsJSON[degree].structure) {
+            const level = specialisationsJSON[degree].structure[levelName];
+            if (!level.units_required) continue;
+            if (level.courses.filter(c => c !== "ANY COURSE").length === 0) continue;
+            if (level.name.match(/[Cc]ore/g)) level.courses.flat().forEach(c => coreCourses.push(c));
+
+            let levelCourses = getCoursesInLevel(level.courses);
+            if (!level.name.match(/[Cc]ore/g)) levelCourses = levelCourses.filter(c => !coreCourses.includes(c))
+            const selectedInLevel = levelCourses.filter(c => selectedCourses.includes(c));
+            const selectedUnits = selectedInLevel.reduce((total, c) => total + (c in coursesJSON ? coursesJSON[c].units : 0), 0);
+
+            if (selectedUnits < level.units_required) {
+                considerationMessages.push(
+                    <Message.Item>
+                        {level.name} requires {level.units_required} units. You have taken {selectedUnits} units.
+                    </Message.Item>
+                );
+            }
+        }
+
 
         for (const year in plan) {
             for (const term in plan[year]) {
@@ -412,8 +481,11 @@ class DegreePlanner extends React.Component {
             }
         }
 
+        
+
         const style = {
-            marginBottom: "20px"
+            marginBottom: "20px",
+            transition: "0.3s ease"
         }
 
         if (considerationMessages.length === 0) {

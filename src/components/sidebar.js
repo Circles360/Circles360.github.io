@@ -9,7 +9,7 @@ import coursesJSON from "../webscraper/courses.json";
 const REGEX_COURSE_CODE = /[A-Z]{4}\d{4}/g;
 
 const getCoursesInLevel = (rawList) => {
-    rawList = rawList.filter(c => c !== "ANY COURSE");
+    rawList = rawList.flat().filter(c => c !== "ANY COURSE");
     const allCourseIds = Object.keys(coursesJSON);
     const courseList = [];
     rawList.forEach(courseId => {
@@ -37,7 +37,7 @@ const getSelectedCourses = (specialisationCode, selectedNodes) => {
         if (courseList.length === 1 && courseList.includes("ANY COURSE")) return false;
         return true;
     }).map(levelName => {
-        const rawList = specialisationsJSON[specialisationCode].structure[levelName].courses.flat();
+        const rawList = specialisationsJSON[specialisationCode].structure[levelName].courses;
         const courseList = getCoursesInLevel(rawList);
         const minUnits = specialisationsJSON[specialisationCode].structure[levelName].units_required;
         const style = {
