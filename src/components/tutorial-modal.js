@@ -1,5 +1,6 @@
 import React from "react";
 import { Button, Container, Modal } from 'semantic-ui-react'
+import InteractiveTutorial from './interactivetutorial.js';
 
 function exampleReducer(state, action) {
   switch (action.type) {
@@ -36,7 +37,7 @@ function TutorialModal() {
         onClose={() => dispatch({ type: 'CLOSE_MODAL' })}
       >
         <Container>
-          
+          <InteractiveTutorial/>
         </Container>
       </Modal>
     </div>

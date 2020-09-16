@@ -12,7 +12,7 @@ export default function hoverPrerequisites(node, elements, selectedNodes, select
         }
     }
 
-    // hoverEdge all unselected (AND POTENTIAL???) edges until we hit selected/selectable node
+    // hoverEdge all unselected (AND POTENTIAL???) edges until we hit selected node (NO LONGER STOPS AT SELECTABLE NODE)
     var prereqQueue = [node.id];
     while (prereqQueue.length !== 0) {
         const current = getElement(prereqQueue.shift(), elements);
@@ -29,7 +29,7 @@ export default function hoverPrerequisites(node, elements, selectedNodes, select
                 hoverEdges['e' + prereq + '-' + current.id] = 1;
             }*/
 
-            if ((!selectedNodes.hasOwnProperty(prereq)) && (!selectableNodes.hasOwnProperty(prereq))) {
+            if ((!selectedNodes.hasOwnProperty(prereq))) {
                 prereqQueue.push(prereq);
             }
         }

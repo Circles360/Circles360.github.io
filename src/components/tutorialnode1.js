@@ -9,7 +9,7 @@ export default memo(({ data }) => {
     <>
       <Handle type="target" position="top" style={style} />
       <div>
-            <b>{data.course_code}</b>
+            <text>{data.instructions}</text>
       </div>
       <Handle type="source" position="top" style={style} />
     </>
