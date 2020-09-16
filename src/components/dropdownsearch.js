@@ -67,7 +67,7 @@ export default function DropdownSearch() {
             <Button
                 onClick={clickDone}
                 icon="search"
-                color="red"
+                color="blue"
                 style={{marginLeft: "5px"}}
             >
             </Button>
