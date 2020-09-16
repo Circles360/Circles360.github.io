@@ -43,34 +43,10 @@ const nodeTypes = {
     tutorial2: TutorialNode2,
 };
 
-var exclusionNodes = {};
-for (const group of exclusionGroups) {
-    for (const exclusion of group) {
-        exclusionNodes[exclusion] = 1;
-    }
-}
 
-elementsData = highlightElements(elementsData, selectedNodes, selectedEdges, selectableNodes, potentialEdges, hoverEdges);
+// elementsData = highlightElements(elementsData, selectedNodes, selectedEdges, selectableNodes, potentialEdges, hoverEdges);
 
-const onLoad = (reactFlowInstance) => {
-    for (var group of exclusionGroups) {
-        const last = group.pop();
-        for (var course of elementsData) {
-            if (last === course.id) {
-                course.isHidden = true;
-                for (var edge of elementsData) {
-                    if (isNode(edge)) continue;
-                    if (edge.source === last || edge.target === last) {
-                        edge.isHidden = true;
-                    }
-                }
-                break;
-            }
-        }
-        group.push(last);
-    }
-    reactFlowInstance.fitView();
-};
+
 
 
 const InteractiveTutorial = () => {
@@ -78,6 +54,46 @@ const InteractiveTutorial = () => {
     const [hoverNode, setHoverNode] = useState();
     var clickCount = 0;
     var singleClickTimer = '';
+
+    const onLoad = (reactFlowInstance) => {
+        // HARD RESET STATE ON LOAD
+        console.log("ONLOAD");
+        selectedNodes = {"CODE0000": 1};
+        selectedEdges = {};
+        selectableNodes = {"CODE1111": 1};
+        potentialEdges = {"CODE0000-CODE1111": 1};
+        hoverEdges = {};
+        exclusionGroups = [["CODE3333", "CODE4444"]];
+        exclusionNodes = {};        
+        
+        for (var e of elements) {
+            e.isHidden = false;
+        }
+        for (const group of exclusionGroups) {
+            for (const exclusion of group) {
+                exclusionNodes[exclusion] = 1;
+            }
+        }
+        for (var group of exclusionGroups) {
+            const last = group.pop();
+            for (var course of elements) {
+                if (last === course.id) {
+                    course.isHidden = true;
+                    for (var edge of elements) {
+                        if (isNode(edge)) continue;
+                        if (edge.source === last || edge.target === last) {
+                            edge.isHidden = true;
+                        }
+                    }
+                    break;
+                }
+            }
+            group.push(last);
+        }
+        setElements(highlightElements(elements, selectedNodes, selectedEdges, selectableNodes, potentialEdges, hoverEdges));
+        console.log(exclusionNodes);
+        reactFlowInstance.fitView();
+    };
 
     const selectUnselect = (element) => {
         unhoverPrerequisites(hoverEdges);

@@ -37,7 +37,7 @@ function TutorialModal() {
         onClose={() => dispatch({ type: 'CLOSE_MODAL' })}
       >
         <Container>
-          <InteractiveTutorial/>
+          <InteractiveTutorial />
         </Container>
       </Modal>
     </div>
