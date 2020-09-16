@@ -1,6 +1,9 @@
 import { node1, node2, node_header} from '../styles/nodes.mjs';
 import { createRequire } from "module";
+
+
 const require = createRequire(import.meta.url);
+const styleGenerator = require('./styleGenerator.js');
 
 const data = require("../webscraper/specialisations.json");
 const courses = require("../webscraper/courses.json");
@@ -343,7 +346,7 @@ const output = courses_output.concat(edges_output);
 
 // Write to the file
 const fs = require('fs');
-fs.writeFile('../maps/EngineeringHonoursSoftware/data.json', JSON.stringify(output), (err) => {
+fs.writeFile('../maps/EngineeringHonoursSoftware/old_data.json', JSON.stringify(output), (err) => {
     // In case of error
     if (err) throw err;
 })
