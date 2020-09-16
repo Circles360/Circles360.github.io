@@ -18,7 +18,7 @@ export default memo(({ data }) => {
               <img src={Refresh} alt={data.course_code} style={iconSize}/>
             </div>
       </div>
-      <Handle type="source" position="bottom" style={style} />
+      <Handle type="source" position="top" style={style} />
     </>
   );
 });

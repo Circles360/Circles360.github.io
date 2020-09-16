@@ -3,24 +3,24 @@
 import { isEdge } from "react-flow-renderer";
 
 const selectedEdgeAnimated = {
-    stroke: "#e94646",
+    stroke: "#d62424",
     strokeWidth: 2,
     opacity: 1,
 }
 const selectedEdgeStatic = {
-    stroke: "#454545",
+    stroke: "#d62424",
     strokeWidth: 2,
     opacity: 1,
 }
 
 const hoverEdge = {
-    stroke: "#454545",
+    stroke: "#166dba",
     strokeWidth: 2,
     opacity: 1,
 }
 
 const potentialHoverEdge = {
-    stroke: "#454545",
+    stroke: "#166dba",
     strokeWidth: 2,
     opacity: 1,
 }

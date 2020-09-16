@@ -226,11 +226,11 @@ const BESengah = () => {
     }
 
     return (
-        <ReactFlowProvider style={{positon: "relative"}}>
+        <div style={{positon: "relative"}}>
             <div style={layout}>
                 <Grid columns={2} divided>
                     <Grid.Column width="12">
-                        <div onMouseEnter={disableBodyScroll} onMouseLeave={enableBodyScroll}>
+                        <ReactFlowProvider onMouseEnter={disableBodyScroll} onMouseLeave={enableBodyScroll}>
                             <div style={{position: "absolute", zIndex: "10", top: "30px", right: "30px"}}>
                                 <DropdownSearch/>
                             </div>
@@ -251,7 +251,7 @@ const BESengah = () => {
                                 elementsSelectable={false}
                             >
                             </ReactFlow>
-                        </div>
+                        </ReactFlowProvider>
                     </Grid.Column>
                     <Grid.Column width="4">
                         <Sidebar selectedNodes={selectedNodes}/>
@@ -263,7 +263,7 @@ const BESengah = () => {
                     <DegreePlanner key={Object.keys(selectedNodes).join("")}selectedCourses={Object.keys(selectedNodes)} />
                 </div>
             </div>
-        </ReactFlowProvider>
+        </div>
     );
 };
 
