@@ -27,7 +27,7 @@ function SideBarModal() {
         color="blue"
         onClick={() => dispatch({ type: 'OPEN_MODAL', dimmer: 'blurring' })}
       >
-        Choose Program
+        Choose Degree
       </Button>
 
       <Modal
