@@ -16,14 +16,14 @@ const selectedEdgeStatic = {
 }
 
 const hoverEdge = {
-    stroke: "#454545",
+    stroke: "#e94646",
     strokeWidth: 2,
     opacity: 1,
     transition: "0.3s ease"
 }
 
 const potentialHoverEdge = {
-    stroke: "#454545",
+    stroke: "#e94646",
     strokeWidth: 2,
     opacity: 1,
     transition: "0.3s ease"
@@ -61,6 +61,19 @@ export default function highlightElements(elements, selectedNodes, selectedEdges
 
         // It is a node
         if (selectedNodes.hasOwnProperty(e.id)) {
+            // SELECTED NODE
+            return {...e, style: {...e.style, color: e.textSelectedColour, background: e.selectedColour}};
+        } else if (selectableNodes.hasOwnProperty(e.id)) {
+            // NOT SELECTED BUT CAN BE SELECTED
+            console.log(e.textColour);
+            return {...e, style: {...e.style, color: e.textColour, background: e.selectableColour}};
+        } else {
+            // UNSELECTED NODE
+            return {...e, style: {...e.style, color: e.textColour, background: 'white'}};
+        }
+
+        // It is a node
+        /*if (selectedNodes.hasOwnProperty(e.id)) {
             // SELECTED NODE
             const selected = e.selected;
             return {...e, style: selected};
@@ -104,7 +117,7 @@ export default function highlightElements(elements, selectedNodes, selectedEdges
             //     // return {...e, style: {...e.style, filter: 'brightness(0.65)'}};
             //     return {...e};
             // }
-        }
+        }*/
     })
 
     return newElements;
