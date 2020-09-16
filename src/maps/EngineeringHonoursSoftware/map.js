@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useRef} from 'react';
 // import ReactFlow, {Background, Controls, getConnectedEdges, isNode, isEdge, useStoreState, useStoreActions, ReactFlowProvider, EdgeText} from 'react-flow-renderer';
 import ReactFlow, { isNode, isEdge, ReactFlowProvider } from 'react-flow-renderer';
 
@@ -64,31 +64,6 @@ for (const group of exclusionGroups) {
 
 elementsData = highlightElements(elementsData, selectedNodes, selectedEdges, selectableNodes, potentialEdges, hoverEdges);
 
-
-const onLoad = (reactFlowInstance) => {
-    for (var group of exclusionGroups) {
-        const last = group.pop();
-
-        for (var course of elementsData) {
-            if (last === course.id) {
-                course.isHidden = true;
-                // console.log("Hiding " + course.id);
-                // Get all the edges and hide them too
-                for (var edge of elementsData) {
-                    if (isNode(edge)) continue;
-                    if (edge.source === last || edge.target === last) {
-                        // console.log("hiding " + edge.id);
-                        edge.isHidden = true;
-                    }
-                }
-                break;
-            }
-        }
-        group.push(last);
-    }
-    reactFlowInstance.setTransform({x: 470, y: 350, zoom: 0.38});
-};
-
 const nodeTypes = {
     custom1: CustomNode1,
     custom2: CustomNode2,
@@ -101,10 +76,48 @@ const BESengah = () => {
     const [elements, setElements] = useState(elementsData);
     const [hoverText, setHoverText] = useState(false);
     const [hoverNode, setHoverNode] = useState();
-    // const [sidebarOpen, setSidebarOpen] = useState(false);
+    const [layout, setLayout] = useState(layoutStyle);
+    //const reactFlowInstance = useRef(null);
+    const [reactFlowInstance, setReactFlowInstance] = useState(null);
     var clickCount = 0;
     var singleClickTimer = '';
-    const [layout, setLayout] = useState(layoutStyle);
+
+    const onInstanceLoad = (instance) => {
+        for (var group of exclusionGroups) {
+            const last = group.pop();
+    
+            for (var course of elementsData) {
+                if (last === course.id) {
+                    course.isHidden = true;
+                    // console.log("Hiding " + course.id);
+                    // Get all the edges and hide them too
+                    for (var edge of elementsData) {
+                        if (isNode(edge)) continue;
+                        if (edge.source === last || edge.target === last) {
+                            // console.log("hiding " + edge.id);
+                            edge.isHidden = true;
+                        }
+                    }
+                    break;
+                }
+            }
+            group.push(last);
+        }
+        setReactFlowInstance(instance);
+        instance.setTransform({x: 470, y: 350, zoom: 0.38});
+    };
+
+    const getCanvasSize = () => {
+        const size1 = reactFlowInstance.project({x: window.innerWidth * 0.75, y: window.innerHeight});
+        const size2 = reactFlowInstance.project({x: 0, y: 0});
+        return [(size1.x - size2.x) * 0.38, (size1.y - size2.y) * 0.38];
+    }
+
+
+    let dropSearch = null;
+    if (reactFlowInstance !== null) {
+        dropSearch = <DropdownSearch canvasSize={getCanvasSize()}/>
+    }
 
     const selectUnselect = (element) => {
         // NOTE: Might not need this?????
@@ -231,13 +244,10 @@ const BESengah = () => {
                 <Grid columns={2} divided>
                     <Grid.Column width="12">
                         <ReactFlowProvider onMouseEnter={disableBodyScroll} onMouseLeave={enableBodyScroll}>
-                            <div style={{position: "absolute", zIndex: "10", top: "30px", right: "30px"}}>
-                                <DropdownSearch/>
-                            </div>
                             <ReactFlow
                                 elements={elements}
                                 style={{width: '100%', height: '100vh'}}
-                                onLoad={onLoad}
+                                onLoad={onInstanceLoad}
                                 nodeTypes={nodeTypes}
                                 nodesConnectable={false}
                                 onElementClick={onElementClick}
@@ -250,6 +260,10 @@ const BESengah = () => {
                                 onNodeDragStop={onNodeDragStop}
                                 elementsSelectable={false}
                             >
+                                <div style={{position: "absolute", zIndex: "10", top: "30px", right: "30px"}}>
+                                    {dropSearch}
+                                    {/* <DropdownSearch canvasSize={getCanvasSize()}/> */}
+                                </div>
                             </ReactFlow>
                         </ReactFlowProvider>
                     </Grid.Column>

@@ -22,14 +22,18 @@ for (const code in dataJSON) {
 
 // console.log("Printing NodeOptions", nodeOptions);
 
-export default function DropdownSearch() {
+export default function DropdownSearch(props) {
     const [search, setSearch] = useState(null);
+    console.log(props.canvasSize);
 
     /*state = {
         search: null,
         getOptions: nodeOptions
     }*/
-
+   // const size1 = props.reactFlowInstance.current.project({x: window.innerWidth * 0.75, y: window.innerHeight});
+    //const size2 = props.reactFlowInstance.current.project({x: 0, y: 0});
+    //var canvasPixelWidth = (size1.x - size2.x) * 0.38;
+    //var canvasPixelHeight = (size1.y - size2.y) * 0.38;
     const handleChange = (e, prop) => {
         setSearch(prop.value);
     };
@@ -42,10 +46,13 @@ export default function DropdownSearch() {
     const clickDone = () => {
         if (search === null) return;
         const element = getElement(search, elementsList);
+        //const flowCentreWidth = window.getInnerWidth() * 0.75;
+        //const flowCentreHeight = window.getInnerHeight();
+
         transformUpdater(
-            -element.position.x + 600,
-            -element.position.y + 350,
-            1
+            -(element.position.x)*2 + props.canvasSize[0]/2 - 64,
+            -(element.position.y)*2 + props.canvasSize[1]/2 - 64,
+            2
         );
     };
 
@@ -67,7 +74,7 @@ export default function DropdownSearch() {
             <Button
                 onClick={clickDone}
                 icon="search"
-                color="blue"
+                color="red"
                 style={{marginLeft: "5px"}}
             >
             </Button>
