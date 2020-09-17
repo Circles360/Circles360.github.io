@@ -17,9 +17,9 @@ function colour_node(node) {
     if (node.id.match(/^COMP/)) node.style = {...node.style, background: '#1EB13C', border: '2px solid #1EB13C'};
     else if (node.id.match(/^MATH/)) node.style = {...node.style, background: '#166DBA', border: '2px solid #166DBA'};
     else if (node.id.match(/^ENGG/)) node.style = {...node.style, background: '#CA1818', border: '2px solid #CA1818'};
-    else if (node.id.match(/^ACCT/)) node.style = {...node.style, background: '#449A94', border: '2px solid #449A94'};
-    else if (node.id.match(/^COMM/)) node.style = {...node.style, background: '#D3A437', border: '2px solid #D3A437'};
-    else if (node.id.match(/^TABL/)) node.style = {...node.style, background: '#885533', border: '2px solid #885533'};
+    else if (node.id.match(/^PSYC/)) node.style = {...node.style, background: '#449A94', border: '2px solid #449A94'};
+    //else if (node.id.match(/^COMM/)) node.style = {...node.style, background: '#D3A437', border: '2px solid #D3A437'};
+    //else if (node.id.match(/^TABL/)) node.style = {...node.style, background: '#885533', border: '2px solid #885533'};
     
     node.textColour = node.style.background;
     node.textSelectedColour = 'white';
@@ -96,12 +96,12 @@ for (const course_group in data.COMPA1.structure) {
     }
 }
 
-// Get the courses for ACCTA2 Minor
-for (const course_group in data.ACCTA2.structure) {
+// Get the courses for PSYCM2 Minor
+for (const course_group in data.PSYCM2.structure) {
     // TEMPORARY FIX
-    if (data.ACCTA2.structure[course_group].courses === null) continue;
+    if (data.PSYCM2.structure[course_group].courses === null) continue;
 
-    for (const course of data.ACCTA2.structure[course_group].courses) {
+    for (const course of data.PSYCM2.structure[course_group].courses) {
         var node_list = [];
         if (Array.isArray(course)) {
             // Deal with choice courses (e.g. MATH1131/MATH1141)
@@ -164,13 +164,19 @@ for (const course of courses_output) {
         course.data.conditions.prerequisites = ['ENGG3600'];
         course.data.conditions.prereqs_executable = 'ENGG3600';
         course.data.conditions.units_required = 48;
-    } else if (course.id === 'COMM1140') {
-        course.data.terms = ['Term 1', 'Term 2'];
-    } else if (course.id === 'ACCT2511') {
-        course.data.unlocks = ['ACCT2542'];
-    } else if (course.id === 'ACCT2542') {
-        course.data.conditions.prerequisites = ['ACCT1511', 'ACCT2511'];
-        course.data.conditions.prereqs_executable = 'ACCT1511 || ACCT2511';
+    } else if (course.id === "PSYC2061") {
+        course.data.conditions.prerequisites = ['PSYC1011', 'PSYC1001'];
+        course.data.conditions.prereqs_executable = 'PSYC1011 && PSYC1001';
+    } else if (course.id === "PSYC2081") {
+        course.data.conditions.prerequisites = ['PSYC1011', 'PSYC1001'];
+        course.data.conditions.prereqs_executable = 'PSYC1011 && PSYC1001';
+    } else if (course.id === "PSYC2071") {
+        course.data.conditions.prerequisites = ['PSYC1011', 'PSYC1001'];
+        course.data.conditions.prereqs_executable = 'PSYC1011 && PSYC1001';
+    } else if (course.id === "PSYC1001") {
+        course.data.unlocks = ["PSYC2061", "PSYC2071", "PSYC2081", "PSYC2101"];
+    } else if (course.id === "PSYC1011") {
+        course.data.unlocks = ["PSYC2061", "PSYC2071", "PSYC2081"];
     }
 }
 
@@ -241,13 +247,13 @@ console.log(courses_output[0]);
 
 // Add ACCTA2 course header
 courses_output.unshift({
-    id: data.ACCTA2.code,
+    id: data.PSYCM2.code,
     type: 'header1',
     data: {
-        degree_name: data.ACCTA2.name,
-        degree_code: data.ACCTA2.code,
+        degree_name: data.PSYCM2.name,
+        degree_code: data.PSYCM2.code,
         units: 0,
-        unlocks: ['COMM1140'],
+        unlocks: ['PSYC1001', 'PSYC1011'],
         conditions: {
             prerequisites: null,
             corequisites: null,
@@ -256,7 +262,7 @@ courses_output.unshift({
         },
         exclusions: null,
         equivalents: null,
-        desc: "Accounting is concerned with the provision of information for the management of economic resources and activities by means of measurement, communication and interpretation of financial data; with the development of information systems; and with the financial accountability and management of business and public enterprises"
+        desc: "Psychology is the scientific study of behaviour and mental processes. It is a broad field that includes brain-behaviour relationships, the processes of perceiving, learning, memory and thinking, the assessment of abilities and attitudes, the origins of personality and emotional states, and the nature and effects of social interactions with other people."
     },
     style: minor_header,
     textColour: '#449A94',
@@ -266,12 +272,12 @@ courses_output.unshift({
     position: {x: 0, y: 0}
 })
 courses_output[0].style.border = '2px solid #449A94';
-courses_list['ACCTA2'] = 1;
+courses_list['PSYCM2'] = 1;
 // Hard code in prerequisites for starting courses
 for (var course of courses_output) {
     if (['COMM1140'].includes(course.id)) {
         console.log(course.id);
-        course.data.conditions.prerequisites = ['ACCTA2'];
+        course.data.conditions.prerequisites = ['PSYCM2'];
     }
 }
 console.log(courses_output[0]);
