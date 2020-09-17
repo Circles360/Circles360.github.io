@@ -23,14 +23,9 @@ import highlightElements from '../../components/highlightelements.js';
 import getSelectable from '../../components/getselectable.js';
 import checkPrerequisites from '../../components/checkprerequisites';
 import exclusionSwap from '../../components/exclusionswap.js';
-// import getElement from '../../components/getelement.js';
+
 import unselectUnconnected from '../../components/unselectunconnected.js';
-// import coursesJSON from "../../webscraper/courses.json";
 import dataJSON from "./data.json"
-
-// import SearchPan from '../../components/searchpan.js';
-
-// import GetPan from '../../components/getpan.js';
 
 var elementsData = dataJSON.slice()
 var nodesData = elementsData.filter(e => isNode(e));

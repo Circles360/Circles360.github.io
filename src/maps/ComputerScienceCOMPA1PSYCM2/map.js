@@ -34,7 +34,7 @@ var nodesData = elementsData.filter(e => isNode(e));
 var edgesData = elementsData.filter(e => isEdge(e));
 var selectedNodes = {
     'COMPA1': 1,
-    'ACCTA2': 1
+    'PSYCM2': 1
 }
 var selectedEdges = {};
 var selectableNodes = {};
@@ -71,7 +71,7 @@ const nodeTypes = {
 
 const layoutStyle = {overflowX: "hidden", overflowY: "overlay", width: "100vw", height: "100vh"};
 
-const ComputerScienceCOMPA1ACCTA2 = () => {
+const ComputerScienceCOMPA1PSYCM2 = () => {
     const [elements, setElements] = useState(elementsData);
     const [hoverText, setHoverText] = useState(false);
     const [hoverNode, setHoverNode] = useState();
@@ -166,7 +166,7 @@ const ComputerScienceCOMPA1ACCTA2 = () => {
     const onElementClick = (event, element) => {
         // console.log("ONELEMENTCLICK");
         if (isEdge(element)) return; // Don't care about edges
-        if (element.id === 'COMPA1' || element.id === 'ACCTA2') return; // Cannot click on main node
+        if (element.id === 'COMPA1' || element.id === 'PSYCM2') return; // Cannot click on main node
         if ((! selectableNodes.hasOwnProperty(element.id)) && (! selectedNodes.hasOwnProperty(element.id))) return; // Cannot select non selectable nodes
 
         // Determine double or single click for exclusion nodes
@@ -192,7 +192,7 @@ const ComputerScienceCOMPA1ACCTA2 = () => {
 
     // ==========ONHOVER==========
     const onNodeMouseEnter = (event, node) => {
-        if (node.id === 'COMPA1' || node.id === 'ACCTA2') return;
+        if (node.id === 'COMPA1' || node.id === 'PSYCM2') return;
         // Display node information in top left
         setHoverText(true);
         setHoverNode(node);
@@ -205,7 +205,7 @@ const ComputerScienceCOMPA1ACCTA2 = () => {
     }
 
     const onNodeMouseLeave = (event, node) => {
-        if (node.id === 'COMPA1' || node.id === 'ACCTA2') return;
+        if (node.id === 'COMPA1' || node.id === 'PSYCM2') return;
         setHoverText(false);
         unhoverPrerequisites(hoverEdges);
         setElements(highlightElements(elements, selectedNodes, selectedEdges, selectableNodes, potentialEdges, hoverEdges));
@@ -284,4 +284,4 @@ const ComputerScienceCOMPA1ACCTA2 = () => {
     );
 };
 
-export default ComputerScienceCOMPA1ACCTA2;
+export default ComputerScienceCOMPA1PSYCM2;
