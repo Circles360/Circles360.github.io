@@ -125,39 +125,16 @@ class DropdownDegrees extends Component {
         })
     }
 
-    getLink = () => {
-        if (this.state.valSecondary) return `#/${this.state.valProgram}/${this.state.valPrimary}/${this.state.valSecondary}`
-        return `#/${this.state.valProgram}/${this.state.valPrimary}`
-    }
-
-    isDisabled = () => {
-        const supported = {
-            "3707": ["SENGAH"],
-            "3778": ["COMPA1"]
-        };
-
-        if (!!this.state.valSecondary) {
-            console.log("Minors not supported");
-            return true;
-        }
-
-        if (!(this.state.valProgram in supported)) {
-            console.log(this.state.valProgram, `Only ${Object.keys(supported).join(", ")} is supported`);
-            return true;
-        }
-
-        if (!supported[this.state.valProgram].includes(this.state.valPrimary)) {
-            console.log(this.state.valProgram, `Only ${supported[this.state.valProgram].join(", ")} is supported`);
-            return true;
-        }
-
-        return this.state.valProgram === null || this.state.valPrimary === null;
+    clickDone = () => {
+        console.log('Running click')
+        // console.log(this.state)
+        console.log(this.state.valProgram, this.state.valPrimary, this.state.valSecondary)
     }
 
     render() {
         return <>
             <Grid centered style={{marginBottom: "20px"}}> 
-                <Grid.Row>
+                <Grid.Row>  
                     <Dropdown
                         selection
                         search
@@ -193,14 +170,13 @@ class DropdownDegrees extends Component {
                 </Grid.Row>
                 <Grid.Row>
                     <Button
-                        href={this.getLink()}
-                        color="red"
-                        disabled={this.isDisabled()}
-                    >
-                        Load flowchart
-                    </Button>
+                    onClick={this.clickDone}
+                    color="red"
+                    >Done! Print to console</Button>
                 </Grid.Row>
             </Grid>
+            
+
         </>;
     }
 }

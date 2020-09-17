@@ -47,3 +47,8 @@ function SideBarModal() {
 }
 
 export default SideBarModal
+
+//DropdownDegrees.clickDone() 
+
+//DropdownDegrees d = new DropdownDegrees(); 
+//d.clickDone()
