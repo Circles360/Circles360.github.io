@@ -282,6 +282,7 @@ class DegreePlanner extends React.Component {
         courses: getCourses(this.props.selectedCourses),
         selectedCourses: this.props.selectedCourses,
         plan: generatePlanScaffold(4, this.props.selectedCourses),
+        specialisations: this.props.specialisations
     };
 
     onDragEnd = result => {
@@ -541,7 +542,7 @@ class DegreePlanner extends React.Component {
                         <li>ensures courses are offered in allocated terms</li>
                         <li>does not allocate courses in Summer Term</li>
                     </ul>
-                    <p>If the algorithm cannot place the course in a valid term, then it will place it <u>Year 1 - Summer Term</u> for you.</p>
+                    <p>If the algorithm cannot place the course in a valid term, then it will place it <em>Year 1 - Semmmer Term</em> for you.</p>
 
                     <p><b>Drag and drop the courses below to customise your degree plan!</b></p>
 

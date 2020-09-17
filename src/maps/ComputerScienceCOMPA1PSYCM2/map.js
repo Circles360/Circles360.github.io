@@ -308,7 +308,7 @@ const ComputerScienceCOMPA1PSYCM2 = () => {
                 {hoverDisplay}
                 {/* <button onClick={positionHelper(elements)}>GENERATE POSITION</button> */}
                 <div id="DegreePlanner">
-                    <DegreePlanner key={Object.keys(selectedNodes).concat(additionalCourses).join("")} selectedCourses={Object.keys(selectedNodes).concat(additionalCourses)} />
+                    <DegreePlanner key={Object.keys(selectedNodes).concat(additionalCourses).join("")} specialisations={specialisations} selectedCourses={Object.keys(selectedNodes).concat(additionalCourses)} />
                 </div>
             </div>
         </div>
