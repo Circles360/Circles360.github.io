@@ -196,8 +196,6 @@ for (var course of courses_output) {
     }
 }
 
-
-
 // Add COMPA1 course header
 courses_output.unshift({
     id: data.COMPA1.code,
@@ -235,7 +233,6 @@ for (var course of courses_output) {
     }
 }
 
-
 // Add ACCTA2 course header
 courses_output.unshift({
     id: data.ACCTA2.code,
@@ -272,7 +269,7 @@ for (var course of courses_output) {
         course.data.conditions.prerequisites = ['ACCTA2'];
     }
 }
-
+console.log(data.ACCTA2.name);
 
 // Generate the position for each node
 for (const node of position_data) {
@@ -355,7 +352,8 @@ for (const course of courses_output) {
 }
 const output = courses_output.concat(edges_output);
 
-console.log(courses_output);
+//console.log(courses_output);
+
 // Write to the file
 const fs = require('fs');
 fs.writeFile('../maps/ComputerScienceCOMPA1/data.json', JSON.stringify(output), (err) => {
