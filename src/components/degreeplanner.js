@@ -200,7 +200,6 @@ const addCourseToPlan = (termPlan, courseId) => {
         let termsAvailable;
         if (!(coursesJSON[courseId].terms)) {
             termsAvailable = ["TS", "T1", "T2", "T3"];
-            // continue;
         } else {
             termsAvailable = coursesJSON[courseId].terms.map(term => mapTermIds(term));
         }
@@ -216,7 +215,17 @@ const addCourseToPlan = (termPlan, courseId) => {
         return termPlan;
     }
 
-    console.log("ERROR WITH ", courseId); // TODO: put in a "error" segment
+    // Default put in Year 1 Summer Term if cannot find a good position for it.
+    let termsAvailable;
+    if (!(coursesJSON[courseId].terms)) {
+        termsAvailable = ["TS", "T1", "T2", "T3"];
+    } else {
+        termsAvailable = coursesJSON[courseId].terms.map(term => mapTermIds(term));
+    }
+
+    termPlan["1TS"].units += coursesJSON[courseId].units;
+    termPlan["1TS"].courseIds.push(courseId);
+    return termPlan;
 }
 
 const populateTerms = (maxYears, prioritisedCourses) => {
@@ -224,6 +233,10 @@ const populateTerms = (maxYears, prioritisedCourses) => {
 
     const termPlan = {};
     for (let year = 1; year <= maxYears; year++) {
+        termPlan[`${year}TS`] = {
+            units: 0,
+            courseIds: []
+        };
         for (let term = 1; term <= maxTerms; term++) {
             const termId = `${year}T${term}`;
             termPlan[termId] = {
@@ -492,8 +505,6 @@ class DegreePlanner extends React.Component {
             }
         }
 
-        
-
         const style = {
             marginBottom: "20px",
             transition: "0.3s ease"
@@ -504,7 +515,7 @@ class DegreePlanner extends React.Component {
                 <Message style={style} positive>
                     <Message.Header>Considerations</Message.Header>
                     <Message.List>
-                        No considerations found
+                        Looks good to me!
                     </Message.List>
                 </Message>
             )
@@ -532,10 +543,9 @@ class DegreePlanner extends React.Component {
                         <li>ensures courses are offered in allocated terms</li>
                         <li>does not allocate courses in Summer Term</li>
                     </ul>
+                    <p>If the algorithm cannot place the course in a valid term, then it will place it <u>Year 1 - Summer Term</u> for you.</p>
 
-                    <p>Drag and drop the courses below to further customise your degree plan!</p>
-
-                    <p><em>Please note that our data is scraped from the UNSW Handbook and may have some inconsistencies, e.g. a course may not have its term availability published on the Handbook.</em></p>
+                    <p><b>Drag and drop the courses below to customise your degree plan!</b></p>
 
                     <DragDropContext onDragEnd={this.onDragEnd} onDragStart={this.onDragStart}>
                         {this.getConsiderationMessages(this.state)}
@@ -553,6 +563,11 @@ class DegreePlanner extends React.Component {
                             </Grid>
                         ))}
                     </DragDropContext>
+                </Container>
+                <Container fluid style={{textAlign: "center", marginTop: "50px", height: "auto", padding: "20px"}}>
+                    <p><b>Disclaimer:</b> While we try our best, Circles is not an official UNSW website and does not guarantee accuracy or reliability (e.g. a course may not have its term availability published on the Handbook)</p>
+                    <p>Made by SRKO, 2020</p>
+                    <a href="https://github.com/Circles360/Circles360.github.io" target="_blank" rel="noopener noreferrer">GitHub</a>
                 </Container>
             </Segment>
         );
