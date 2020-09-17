@@ -3,6 +3,8 @@ import { Route, HashRouter, Link } from 'react-router-dom';
 
 import BESengah from './maps/EngineeringHonoursSoftware/map.js';
 import ComputerScienceCOMPA1ACCTA2 from './maps/ComputerScienceCOMPA1ACCTA2/map.js';
+import ComputerScienceCOMPA1INFSA2 from './maps/ComputerScienceCOMPA1INFSA2/map.js';
+
 import Teaching from './maps/EngineeringHonoursSoftware/teaching.js';
 
 class App extends Component {
@@ -12,6 +14,7 @@ class App extends Component {
         <div>
           <Route path="/3707/SENGAH" component={BESengah} />
           <Route path="/3778/COMPA1" component={ComputerScienceCOMPA1ACCTA2} />
+          <Route path="/3778/COMPA1-INFSA2" component={ComputerScienceCOMPA1INFSA2} />
           <Route path="/James" component={Teaching}/>
         </div>
       </HashRouter>

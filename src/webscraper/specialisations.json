@@ -16764,6 +16764,7 @@
                 "name": "Core Courses",
                 "units_required": 30,
                 "courses": [
+                    "INFS1602",
                     "COMM1190",
                     "INFS1603",
                     "INFS2603",
