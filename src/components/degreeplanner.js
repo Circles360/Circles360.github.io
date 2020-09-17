@@ -166,13 +166,10 @@ const checkPrereqsMet = (termPlan, termId, courseId) => {
     for (const t in termPlan) {
         if (t === termId) break;
         coursesTaken.push(...termPlan[t].courseIds);
-        runningTotalUnits += 10;
+        runningTotalUnits += termPlan[t].courseIds.reduce((total, c) => total + (c in coursesJSON ? coursesJSON[c].units : 0), 0);
     }
     // console.log(courseId, "courses taken:", coursesTaken);
 
-    if (courseId === "COMP3511") {
-        console.log("COMP35111", runningTotalUnits)
-    }
     if (coursesJSON[courseId].conditions.units_required) {
         if (runningTotalUnits < coursesJSON[courseId].conditions.units_required) return false;
     }
@@ -192,6 +189,7 @@ const addCourseToPlan = (termPlan, courseId) => {
     const maxUOC = 18;
 
     for (const termId in termPlan) {
+        if (termId.includes("TS")) continue;
         if (termPlan[termId].units >= maxUOC) continue;
 
         const courseUnits = coursesJSON[courseId].units;
@@ -456,7 +454,7 @@ class DegreePlanner extends React.Component {
                 if (term === "termOrder") continue;
                 for (const courseId of plan[year][term].courseIds) {
                     if (!checkPrereqsMet(termPlan, term, courseId)) {
-                        if (coursesJSON[courseId].conditions.prereqsExecutable) {
+                        if (coursesJSON[courseId].conditions.prereqs_executable) {
                             considerationMessages.push(
                                 <Message.Item>
                                     {getCourseLink(courseId)} prerequisites have not been met: {coursesJSON[courseId].conditions.prereqs_executable

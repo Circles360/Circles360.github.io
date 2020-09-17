@@ -69,7 +69,7 @@ const nodeTypes = {
 
 const layoutStyle = {overflowX: "hidden", overflowY: "overlay", width: "100vw", height: "100vh"};
 
-const getMoreCoursesForDropdown = () => {
+const getMoreCoursesForDropdown = (dataJSON) => {
 
     const moreOptions = [];
     const nodesOnFlowchart = dataJSON.map(node => node.id);
@@ -291,7 +291,7 @@ const BESengah = () => {
                                         multiple
                                         search
                                         fluid
-                                        options={getMoreCoursesForDropdown()}
+                                        options={getMoreCoursesForDropdown(dataJSON)}
                                         onChange={(e, data) => setAdditionalCourses(data.value)}
                                         placeholder="Addditional courses"
                                     />
