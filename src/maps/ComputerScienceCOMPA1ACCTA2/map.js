@@ -16,7 +16,7 @@ import Sidebar from "../../components/sidebar.js"
 import DegreePlanner from "../../components/degreeplanner.js"
 import DropdownSearch from "../../components/dropdownsearch.js"
 
-// import positionHelper from '../../components/positionhelper.js';
+import positionHelper from '../../components/positionhelper.js';
 import selectNode from '../../components/selectnode.js';
 import unselectNode from '../../components/unselectnode.js';
 import highlightElements from '../../components/highlightelements.js';
@@ -271,6 +271,7 @@ const ComputerScienceCOMPA1 = () => {
                 </Grid>
                 {hoverDisplay}
                 {/* <button onClick={positionHelper(elements)}>GENERATE POSITION</button> */}
+                <button onClick={positionHelper(elements)}>GENERATE POSITION</button>
                 <div id="DegreePlanner">
                     <DegreePlanner id="DegreePlanner" key={Object.keys(selectedNodes).join("")}selectedCourses={Object.keys(selectedNodes)} />
                 </div>

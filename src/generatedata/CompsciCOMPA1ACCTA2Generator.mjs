@@ -7,7 +7,7 @@ const {lightenHex} = require('./styleGenerator.js');
 
 const data = require("../webscraper/specialisations.json");
 const courses = require("../webscraper/courses.json");
-const position_data = require("../maps/EngineeringHonoursSoftware/position.json");
+const position_data = require("../maps/ComputerScienceCOMPA1ACCTA2/position.json");
 
 
 var courses_output = [];
@@ -17,9 +17,9 @@ function colour_node(node) {
     if (node.id.match(/^COMP/)) node.style = {...node.style, background: '#1EB13C', border: '2px solid #1EB13C'};
     else if (node.id.match(/^MATH/)) node.style = {...node.style, background: '#166DBA', border: '2px solid #166DBA'};
     else if (node.id.match(/^ENGG/)) node.style = {...node.style, background: '#CA1818', border: '2px solid #CA1818'};
-    else if (node.id.match(/^ACCT/)) node.style = {...node.style, background: '#885533', border: '2px solid #885533'};
+    else if (node.id.match(/^ACCT/)) node.style = {...node.style, background: '#449A94', border: '2px solid #449A94'};
     else if (node.id.match(/^COMM/)) node.style = {...node.style, background: '#D3A437', border: '2px solid #D3A437'};
-    else if (node.id.match(/^TABL/)) node.style = {...node.style, background: '#449A94', border: '2px solid #449A94'};
+    else if (node.id.match(/^TABL/)) node.style = {...node.style, background: '#885533', border: '2px solid #885533'};
     
     node.textColour = node.style.background;
     node.textSelectedColour = 'white';
@@ -166,6 +166,11 @@ for (const course of courses_output) {
         course.data.conditions.units_required = 48;
     } else if (course.id === 'COMM1140') {
         course.data.terms = ['Term 1', 'Term 2'];
+    } else if (course.id === 'ACCT2511') {
+        course.data.unlocks = ['ACCT2542'];
+    } else if (course.id === 'ACCT2542') {
+        course.data.conditions.prerequisites = ['ACCT1511', 'ACCT2511'];
+        course.data.conditions.prereqs_executable = 'ACCT1511 || ACCT2511';
     }
 }
 
@@ -223,7 +228,7 @@ courses_output.unshift({
     selectableColour: 'black', // THIS SHOULD NEVER GET CALLED
     position: {x: 0, y: 0}
 })
-courses_output[0].style['border'] = '2px solid black';
+courses_output[0].style.border = '2px solid black';
 courses_list['COMPA1'] = 1;
 // Hard code in prerequisites for starting courses
 for (var course of courses_output) {
@@ -232,6 +237,7 @@ for (var course of courses_output) {
         course.data.conditions.prerequisites = ['COMPA1'];
     }
 }
+console.log(courses_output[0]);
 
 // Add ACCTA2 course header
 courses_output.unshift({
@@ -252,15 +258,14 @@ courses_output.unshift({
         equivalents: null,
         desc: "Accounting is concerned with the provision of information for the management of economic resources and activities by means of measurement, communication and interpretation of financial data; with the development of information systems; and with the financial accountability and management of business and public enterprises"
     },
-   // className: 'node_header',
-    style: node_header,
+    style: minor_header,
     textColour: '#885533',
     textSelectedColour: '#885533',
     selectedColour: 'lightgrey',
     selectableColour: 'black', // THIS SHOULD NEVER GET CALLED
     position: {x: 0, y: 0}
 })
-courses_output[0].style['border'] = '2px solid #885533';
+courses_output[0].style.border = '2px solid #885533';
 courses_list['ACCTA2'] = 1;
 // Hard code in prerequisites for starting courses
 for (var course of courses_output) {
@@ -269,7 +274,7 @@ for (var course of courses_output) {
         course.data.conditions.prerequisites = ['ACCTA2'];
     }
 }
-console.log(data.ACCTA2.name);
+console.log(courses_output[0]);
 
 // Generate the position for each node
 for (const node of position_data) {
@@ -356,13 +361,13 @@ const output = courses_output.concat(edges_output);
 
 // Write to the file
 const fs = require('fs');
-fs.writeFile('../maps/ComputerScienceCOMPA1/data.json', JSON.stringify(output), (err) => {
+fs.writeFile('../maps/ComputerScienceCOMPA1ACCTA2/data.json', JSON.stringify(output), (err) => {
     // In case of error
     if (err) throw err;
 })
 
 // Write exclusion data to another file
-fs.writeFile('../maps/ComputerScienceCOMPA1/data_exclusion.json', JSON.stringify(exclusion_groups), (err) => {
+fs.writeFile('../maps/ComputerScienceCOMPA1ACCTA2/data_exclusion.json', JSON.stringify(exclusion_groups), (err) => {
     // In case of error
     if (err) throw err;
 })

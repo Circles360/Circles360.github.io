@@ -85,3 +85,4 @@ COMPSCICOMPA1GENERATOR.MJS
 - NGG2600-ENG3600-ENGG4600 chain + 48 unit requirement
     ACCTA2
         - COMM1140 available in t2,3 for non-business school students
+        - ACCT2542 prerequisites = ACCT1511 OR ACCT2511 (Handbook was updated!!!)
