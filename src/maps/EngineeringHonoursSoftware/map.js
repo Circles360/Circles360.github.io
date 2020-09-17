@@ -16,7 +16,7 @@ import Sidebar from "../../components/sidebar.js"
 import DegreePlanner from "../../components/degreeplanner.js"
 import DropdownSearch from "../../components/dropdownsearch.js"
 
-// import positionHelper from '../../components/positionhelper.js';
+import positionHelper from '../../components/positionhelper.js';
 import selectNode from '../../components/selectnode.js';
 import unselectNode from '../../components/unselectnode.js';
 import highlightElements from '../../components/highlightelements.js';
