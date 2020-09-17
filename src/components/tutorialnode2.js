@@ -5,7 +5,7 @@ import { Handle } from 'react-flow-renderer';
 import Refresh from '../assets/refresh.svg';
 
 const style = {zIndex: -9999, pointerEvents: 'none', opacity: 0, top: '50%'};
-const iconSize = {width: 12, position: 'relative', bottom: 2};
+const iconSize = {width: 12, position: 'relative'};
 
 export default memo(({ data }) => {
   return (
@@ -14,6 +14,7 @@ export default memo(({ data }) => {
       <div>
             <br></br>
             <b>{data.instructions}</b>
+            <br></br>
             <div>
               <img src={Refresh} alt={data.course_code} style={iconSize}/>
             </div>

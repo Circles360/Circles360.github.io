@@ -43,6 +43,11 @@ const unselectedEdge = {
 }
 
 export default function highlightElements(elements, selectedNodes, selectedEdges, selectableNodes, potentialEdges, hoverEdges) {
+    console.log("=================");
+    console.log(selectedNodes);
+    console.log(selectedEdges);
+    console.log(selectableNodes);
+    console.log(potentialEdges);
     const newElements = elements.map((e) => {
         // It is an edge
         if (isEdge(e)) {

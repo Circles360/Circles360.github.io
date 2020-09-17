@@ -73,7 +73,7 @@ const nodeTypes = {
 
 const layoutStyle = {overflowX: "hidden", overflowY: "overlay", width: "100vw", height: "100vh"};
 
-const BESengah = () => {
+const ComputerScienceCOMPA1 = () => {
     const [elements, setElements] = useState(elementsData);
     const [hoverText, setHoverText] = useState(false);
     const [hoverNode, setHoverNode] = useState();
@@ -285,4 +285,4 @@ const BESengah = () => {
     );
 };
 
-export default BESengah;
+export default ComputerScienceCOMPA1;
