@@ -82,4 +82,6 @@ TODO: Should I add unlocks? ^ Will make a shit ton of nodes link to these two.
 
 
 COMPSCICOMPA1GENERATOR.MJS
-- ENGG1000-ENGG2600-ENG3600-ENGG4600 chain + 48 unit requirement
+- NGG2600-ENG3600-ENGG4600 chain + 48 unit requirement
+    ACCTA2
+        - COMM1140 available in t2,3 for non-business school students

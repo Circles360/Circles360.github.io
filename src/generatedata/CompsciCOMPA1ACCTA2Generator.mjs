@@ -19,7 +19,8 @@ function colour_node(node) {
     else if (node.id.match(/^ENGG/)) node.style = {...node.style, background: '#CA1818', border: '2px solid #CA1818'};
     else if (node.id.match(/^ACCT/)) node.style = {...node.style, background: '#885533', border: '2px solid #885533'};
     else if (node.id.match(/^COMM/)) node.style = {...node.style, background: '#D3A437', border: '2px solid #D3A437'};
-
+    else if (node.id.match(/^TABL/)) node.style = {...node.style, background: '#449A94', border: '2px solid #449A94'};
+    
     node.textColour = node.style.background;
     node.textSelectedColour = 'white';
     node.selectableColour = lightenHex(node.style.background, 0.7);
@@ -149,6 +150,7 @@ for (const course_group in data.ACCTA2.structure) {
 
 // ========== HARD CODE IN SPECIFIC REQUIREMENTS ==========
 // ENGG2600-ENGG3600-ENGG4600 + 48 units
+// COMM1140 available only in term 2 and 3
 for (const course of courses_output) {
     if (course.id === 'ENGG2600') {
         course.data.unlocks = ['ENGG3600']
@@ -162,8 +164,11 @@ for (const course of courses_output) {
         course.data.conditions.prerequisites = ['ENGG3600'];
         course.data.conditions.prereqs_executable = 'ENGG3600';
         course.data.conditions.units_required = 48;
+    } else if (course.id === 'COMM1140') {
+        course.data.terms = ['Term 1', 'Term 2'];
     }
 }
+
 
 // Go through the unlocks for each course and if it is not a node in our graph,
 // delete it. If the array is empty, set it to null
@@ -190,6 +195,8 @@ for (var course of courses_output) {
         course.data.conditions.raw = course.data.conditions.raw.replace(/Pre-?requisite: /, "");
     }
 }
+
+
 
 // Add COMPA1 course header
 courses_output.unshift({
@@ -234,10 +241,10 @@ courses_output.unshift({
     id: data.ACCTA2.code,
     type: 'header1',
     data: {
-        degree_name: data.COMPA1.name,
-        degree_code: data.COMPA1.code,
+        degree_name: data.ACCTA2.name,
+        degree_code: data.ACCTA2.code,
         units: 0,
-        unlocks: ['COMP1511', 'MATH1131', 'MATH1141'],
+        unlocks: ['COMM1140'],
         conditions: {
             prerequisites: null,
             corequisites: null,
@@ -246,20 +253,25 @@ courses_output.unshift({
         },
         exclusions: null,
         equivalents: null,
-        desc: "This is the default plan for students in the 3778 BSc in Computer Science Program or in dual degrees involving Computer Science"
+        desc: "Accounting is concerned with the provision of information for the management of economic resources and activities by means of measurement, communication and interpretation of financial data; with the development of information systems; and with the financial accountability and management of business and public enterprises"
     },
    // className: 'node_header',
     style: node_header,
-    textColour: 'black',
-    textSelectedColour: 'black',
+    textColour: '#885533',
+    textSelectedColour: '#885533',
     selectedColour: 'lightgrey',
     selectableColour: 'black', // THIS SHOULD NEVER GET CALLED
     position: {x: 0, y: 0}
 })
-
-
-
-
+courses_output[0].style['border'] = '2px solid #885533';
+courses_list['ACCTA2'] = 1;
+// Hard code in prerequisites for starting courses
+for (var course of courses_output) {
+    if (['COMM1140'].includes(course.id)) {
+        console.log(course.id);
+        course.data.conditions.prerequisites = ['ACCTA2'];
+    }
+}
 
 
 // Generate the position for each node

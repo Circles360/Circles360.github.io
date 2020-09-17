@@ -28,15 +28,13 @@ import unselectUnconnected from '../../components/unselectunconnected.js';
 import coursesJSON from "../../webscraper/courses.json";
 import dataJSON from "./data.json"
 
-// import SearchPan from '../../components/searchpan.js';
-
-// import GetPan from '../../components/getpan.js';
 
 var elementsData = dataJSON.slice()
 var nodesData = elementsData.filter(e => isNode(e));
 var edgesData = elementsData.filter(e => isEdge(e));
 var selectedNodes = {
     'COMPA1': 1,
+    'ACCTA2': 1
 }
 var selectedEdges = {};
 var selectableNodes = {};
@@ -168,7 +166,7 @@ const ComputerScienceCOMPA1 = () => {
     const onElementClick = (event, element) => {
         // console.log("ONELEMENTCLICK");
         if (isEdge(element)) return; // Don't care about edges
-        if (element.id === 'COMPA1') return; // Cannot click on main node
+        if (element.id === 'COMPA1' || element.id === 'ACCTA2') return; // Cannot click on main node
         if ((! selectableNodes.hasOwnProperty(element.id)) && (! selectedNodes.hasOwnProperty(element.id))) return; // Cannot select non selectable nodes
 
         // Determine double or single click for exclusion nodes
@@ -194,7 +192,7 @@ const ComputerScienceCOMPA1 = () => {
 
     // ==========ONHOVER==========
     const onNodeMouseEnter = (event, node) => {
-        if (node.id === 'COMPA1') return;
+        if (node.id === 'COMPA1' || node.id === 'ACCTA2') return;
         // Display node information in top left
         setHoverText(true);
         setHoverNode(node);
@@ -207,7 +205,7 @@ const ComputerScienceCOMPA1 = () => {
     }
 
     const onNodeMouseLeave = (event, node) => {
-        if (node.id === 'COMPA1') return;
+        if (node.id === 'COMPA1' || node.id === 'ACCTA2') return;
         setHoverText(false);
         unhoverPrerequisites(hoverEdges);
         setElements(highlightElements(elements, selectedNodes, selectedEdges, selectableNodes, potentialEdges, hoverEdges));
