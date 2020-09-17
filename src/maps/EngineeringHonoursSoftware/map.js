@@ -301,7 +301,7 @@ const BESengah = () => {
                         </ReactFlowProvider>
                     </Grid.Column>
                     <Grid.Column width="4">
-                        <Sidebar selectedNodes={selectedNodes}/>
+                        <Sidebar specialisations={specialisations} selectedNodes={selectedNodes}/>
                     </Grid.Column>
                 </Grid>
                 {hoverDisplay}

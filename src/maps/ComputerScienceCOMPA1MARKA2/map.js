@@ -9,7 +9,7 @@ import HoverInfo from '../../components/hoverinfo.js';
 import hoverPrerequisites from '../../components/hoverprerequisites.js';
 import unhoverPrerequisites from '../../components/unhoverprerequisites.js';
 
-import { Grid, Container } from 'semantic-ui-react'
+import { Grid, Segment, Container, Dropdown, Header } from 'semantic-ui-react'
 import Sidebar from "../../components/sidebar.js"
 // import pkg from 'semantic-ui-react/package.json'
 
@@ -23,12 +23,13 @@ import highlightElements from '../../components/highlightelements.js';
 import getSelectable from '../../components/getselectable.js';
 import checkPrerequisites from '../../components/checkprerequisites';
 import exclusionSwap from '../../components/exclusionswap.js';
-// import getElement from '../../components/getelement.js';
+
 import unselectUnconnected from '../../components/unselectunconnected.js';
-// import coursesJSON from "../../webscraper/courses.json";
+import coursesJSON from "../../webscraper/courses.json";
 import dataJSON from "./data.json"
 
 
+const specialisations = ['COMPA1', 'MARKA2'];
 var elementsData = dataJSON.slice()
 var nodesData = elementsData.filter(e => isNode(e));
 var edgesData = elementsData.filter(e => isEdge(e));
@@ -71,6 +72,26 @@ const nodeTypes = {
 
 const layoutStyle = {overflowX: "hidden", overflowY: "overlay", width: "100vw", height: "100vh"};
 
+const getMoreCoursesForDropdown = (dataJSON) => {
+
+    const moreOptions = [];
+    const nodesOnFlowchart = dataJSON.map(node => node.id);
+    // console.log("refresh", nodesOnFlowchart);
+
+    for (const code in coursesJSON) {
+        if (nodesOnFlowchart.includes(code)) continue;
+
+        const name = coursesJSON[code].course_name;
+        moreOptions.push({
+            key: code,
+            value: code,
+            text: code + " - " + name
+        });
+    }
+
+    return moreOptions;
+}
+
 const ComputerScienceCOMPA1MARKA2 = () => {
     const [elements, setElements] = useState(elementsData);
     const [hoverText, setHoverText] = useState(false);
@@ -78,6 +99,7 @@ const ComputerScienceCOMPA1MARKA2 = () => {
     const [layout, setLayout] = useState(layoutStyle);
     //const reactFlowInstance = useRef(null);
     const [reactFlowInstance, setReactFlowInstance] = useState(null);
+    const [additionalCourses, setAdditionalCourses] = useState([])
     var clickCount = 0;
     var singleClickTimer = '';
 
@@ -245,14 +267,14 @@ const ComputerScienceCOMPA1MARKA2 = () => {
                         <ReactFlowProvider onMouseEnter={disableBodyScroll} onMouseLeave={enableBodyScroll}>
                             <ReactFlow
                                 elements={elements}
-                                style={{width: '100%', height: '100vh'}}
+                                style={{width: '100%', height: '95vh'}}
                                 onLoad={onInstanceLoad}
                                 nodeTypes={nodeTypes}
                                 nodesConnectable={false}
                                 onElementClick={onElementClick}
                                 minZoom={0.38}
                                 //setInitTransform={TransformUpdater({x: 100, y: 100, z: 1})}
-                                //nodesDraggable={false}
+                                nodesDraggable={false}
                                 onNodeMouseEnter={onNodeMouseEnter}
                                 onNodeMouseLeave={onNodeMouseLeave}
                                 selectNodesOnDrag={false}
@@ -263,21 +285,32 @@ const ComputerScienceCOMPA1MARKA2 = () => {
                                     {dropSearch}
                                 </div>
                             </ReactFlow>
+                            <Container style={{marginBottom: "50px"}}>
+                                <Segment raised>
+                                    {/* <p>Couldn't find a course up there? Add it here:</p> */}
+                                    <Header as="h5">Couldn't find a course up there? Add it here:</Header>
+                                    <Dropdown
+                                        selection
+                                        multiple
+                                        search
+                                        fluid
+                                        options={getMoreCoursesForDropdown(dataJSON)}
+                                        onChange={(e, data) => setAdditionalCourses(data.value)}
+                                        placeholder="Addditional courses"
+                                    />
+                                </Segment>
+                            </Container>
                         </ReactFlowProvider>
                     </Grid.Column>
                     <Grid.Column width="4">
-                        <Sidebar selectedNodes={selectedNodes}/>
+                        <Sidebar specialisations={specialisations} selectedNodes={selectedNodes}/>
                     </Grid.Column>
                 </Grid>
                 {hoverDisplay}
                 {/* <button onClick={positionHelper(elements)}>GENERATE POSITION</button> */}
                 <div id="DegreePlanner">
-                    <DegreePlanner id="DegreePlanner" key={Object.keys(selectedNodes).join("")}selectedCourses={Object.keys(selectedNodes)} />
+                    <DegreePlanner key={Object.keys(selectedNodes).concat(additionalCourses).join("")} selectedCourses={Object.keys(selectedNodes).concat(additionalCourses)} />
                 </div>
-                <Container style={{textAlign: "center", height: "auto", padding: "20px"}}>
-                    <p>Made by SRKO, 2020</p>
-                    <a href="https://github.com/Circles360/Circles360.github.io" target="_blank" rel="noopener noreferrer">GitHub</a>
-                </Container>
             </div>
         </div>
     );
