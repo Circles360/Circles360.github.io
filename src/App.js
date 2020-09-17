@@ -15,10 +15,10 @@ class App extends Component {
       <HashRouter basename='/'>
         <div>
           <Route path="/3707/SENGAH" component={BESengah} />
-          <Route path="/3778/COMPA1-ACCTA2" component={ComputerScienceCOMPA1ACCTA2} />
-          <Route path="/3778/COMPA1-MARKA2" component={ComputerScienceCOMPA1MARKA2} />
-          <Route path="/3778/COMPA1-INFSA2" component={ComputerScienceCOMPA1INFSA2} />
-          <Route path="/3778/COMPA1-PSYCM2" component={ComputerScienceCOMPA1PSYCM2} />
+          <Route path="/3778/COMPA1/ACCTA2" component={ComputerScienceCOMPA1ACCTA2} />
+          <Route path="/3778/COMPA1/MARKA2" component={ComputerScienceCOMPA1MARKA2} />
+          <Route path="/3778/COMPA1/INFSA2" component={ComputerScienceCOMPA1INFSA2} />
+          <Route path="/3778/COMPA1/PSYCM2" component={ComputerScienceCOMPA1PSYCM2} />
           <Route path="/James" component={Teaching}/>
         </div>
       </HashRouter>
