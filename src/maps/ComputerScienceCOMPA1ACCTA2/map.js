@@ -214,15 +214,15 @@ const ComputerScienceCOMPA1ACCTA2 = () => {
     }
     // ===========================
 
-    const onNodeDragStop = (event, node) => {
-        for (var e of elements) {
-            if (e.id === node.id) {
-                e.position.x = node.position.x;
-                e.position.y = node.position.y;
-                break;
-            }
-        }
-    }
+    // const onNodeDragStop = (event, node) => {
+    //     for (var e of elements) {
+    //         if (e.id === node.id) {
+    //             e.position.x = node.position.x;
+    //             e.position.y = node.position.y;
+    //             break;
+    //         }
+    //     }
+    // }
 
     const disableBodyScroll = () => {
         setLayout({...layout, overflowY: 'hidden'});
@@ -251,7 +251,7 @@ const ComputerScienceCOMPA1ACCTA2 = () => {
                                 onNodeMouseEnter={onNodeMouseEnter}
                                 onNodeMouseLeave={onNodeMouseLeave}
                                 selectNodesOnDrag={false}
-                                onNodeDragStop={onNodeDragStop}
+                                // onNodeDragStop={onNodeDragStop}
                                 elementsSelectable={false}
                             >
                                 <div style={{position: "absolute", zIndex: "10", top: "30px", right: "30px"}}>
