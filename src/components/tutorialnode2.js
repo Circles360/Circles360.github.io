@@ -13,7 +13,7 @@ export default memo(({ data }) => {
       <Handle type="target" position="top" style={style} />
       <div>
             <br></br>
-            <b>{data.instructions}</b>
+            <text>{data.instructions}</text>
             <br></br>
             <div>
               <img src={Refresh} alt={data.course_code} style={iconSize}/>
