@@ -12,11 +12,11 @@ class App extends Component {
         <div>
           <ul>
             <li><Link to="/">Home</Link></li>
-            <li><Link to="/SoftwareEngineering">Software Engineering</Link></li>
-            <li><Link to="/ComputerScienceCOMPA1">Computer Science</Link></li>
+            <li><Link to="/3707/SENGAH">Software Engineering</Link></li>
+            <li><Link to="/3778/COMPA1">Computer Science</Link></li>
           </ul>
-          <Route path="/SoftwareEngineering" component={BESengah} />
-          <Route path="/ComputerScienceCOMPA1" component={ComputerScienceCOMPA1} />
+          <Route path="/3707/SENGAH" component={BESengah} />
+          <Route path="/3778/COMPA1" component={ComputerScienceCOMPA1} />
           <Route path="/James" component={Teaching}/>
         </div>
       </HashRouter>
