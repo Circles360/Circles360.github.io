@@ -197,7 +197,7 @@ for (var course of courses_output) {
         //console.log(course.data.terms);
     }
     if (course.data.conditions.raw !== null) {
-        course.data.conditions.raw = course.data.conditions.raw.replace(/Pre-?requisite: /, "");
+        course.data.conditions.raw = course.data.conditions.raw.replace(/Pre-?requisite:\s?/, "");
     }
 }
 
