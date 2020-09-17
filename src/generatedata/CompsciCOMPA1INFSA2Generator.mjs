@@ -7,7 +7,7 @@ const {lightenHex} = require('./styleGenerator.js');
 
 const data = require("../webscraper/specialisations.json");
 const courses = require("../webscraper/courses.json");
-const position_data = require("../maps/ComputerScienceCOMPA1PSYCM2/position.json");
+const position_data = require("../maps/ComputerScienceCOMPA1INFSA2/position.json");
 
 
 var courses_output = [];
@@ -17,9 +17,8 @@ function colour_node(node) {
     if (node.id.match(/^COMP/)) node.style = {...node.style, background: '#1EB13C', border: '2px solid #1EB13C'};
     else if (node.id.match(/^MATH/)) node.style = {...node.style, background: '#166DBA', border: '2px solid #166DBA'};
     else if (node.id.match(/^ENGG/)) node.style = {...node.style, background: '#CA1818', border: '2px solid #CA1818'};
-    else if (node.id.match(/^PSYC/)) node.style = {...node.style, background: '#449A94', border: '2px solid #449A94'};
-    //else if (node.id.match(/^COMM/)) node.style = {...node.style, background: '#D3A437', border: '2px solid #D3A437'};
-    //else if (node.id.match(/^TABL/)) node.style = {...node.style, background: '#885533', border: '2px solid #885533'};
+    else if (node.id.match(/^INFS/)) node.style = {...node.style, background: '#8A36B4', border: '2px solid #8A36B4'};
+    else if (node.id.match(/^COMM/)) node.style = {...node.style, background: '#D3A437', border: '2px solid #D3A437'};
     
     node.textColour = node.style.background;
     node.textSelectedColour = 'white';
@@ -96,12 +95,13 @@ for (const course_group in data.COMPA1.structure) {
     }
 }
 
-// Get the courses for PSYCM2 Minor
-for (const course_group in data.PSYCM2.structure) {
+// Get the courses for INFSA2 Minor
+for (const course_group in data.INFSA2.structure) {
     // TEMPORARY FIX
-    if (data.PSYCM2.structure[course_group].courses === null) continue;
+    if (data.INFSA2.structure[course_group].courses === null) continue;
 
-    for (const course of data.PSYCM2.structure[course_group].courses) {
+    for (const course of data.INFSA2.structure[course_group].courses) {
+        if (course.id === 'INFS1602') console.log(course);
         var node_list = [];
         if (Array.isArray(course)) {
             // Deal with choice courses (e.g. MATH1131/MATH1141)
@@ -145,12 +145,9 @@ for (const course_group in data.PSYCM2.structure) {
     }
 }
 
-
-
-
 // ========== HARD CODE IN SPECIFIC REQUIREMENTS ==========
 // ENGG2600-ENGG3600-ENGG4600 + 48 units
-// COMM1140 available only in term 2 and 3
+// COMM1110 and COMM1190 only available in term2 and term3
 for (const course of courses_output) {
     if (course.id === 'ENGG2600') {
         course.data.unlocks = ['ENGG3600']
@@ -164,22 +161,24 @@ for (const course of courses_output) {
         course.data.conditions.prerequisites = ['ENGG3600'];
         course.data.conditions.prereqs_executable = 'ENGG3600';
         course.data.conditions.units_required = 48;
-    } else if (course.id === "PSYC2061") {
-        course.data.conditions.prerequisites = ['PSYC1011', 'PSYC1001'];
-        course.data.conditions.prereqs_executable = 'PSYC1011 && PSYC1001';
-    } else if (course.id === "PSYC2081") {
-        course.data.conditions.prerequisites = ['PSYC1011', 'PSYC1001'];
-        course.data.conditions.prereqs_executable = 'PSYC1011 && PSYC1001';
-    } else if (course.id === "PSYC2071") {
-        course.data.conditions.prerequisites = ['PSYC1011', 'PSYC1001'];
-        course.data.conditions.prereqs_executable = 'PSYC1011 && PSYC1001';
-    } else if (course.id === "PSYC1001") {
-        course.data.unlocks = ["PSYC2061", "PSYC2071", "PSYC2081", "PSYC2101"];
-    } else if (course.id === "PSYC1011") {
-        course.data.unlocks = ["PSYC2061", "PSYC2071", "PSYC2081"];
+    } else if (course.id === 'COMM1190') {
+        course.data.terms = ['Term 2', 'Term 3'];
     }
 }
 
+// ADD IN COMM1110 (They must take this course in order to take INFSA2 minor)
+var comm1110Node = {
+    id: 'COMM1110',
+    type:'custom1',
+    data: courses['COMM1110'],
+    position: {x: 0, y: 0},
+    style: node1,
+    isHidden: false
+}
+comm1110Node.data.terms = ['Term 2', 'Term 3'];
+colour_node(comm1110Node);
+courses_output.push(comm1110Node);
+courses_list[comm1110Node.id] = 1;
 
 // Go through the unlocks for each course and if it is not a node in our graph,
 // delete it. If the array is empty, set it to null
@@ -243,17 +242,16 @@ for (var course of courses_output) {
         course.data.conditions.prerequisites = ['COMPA1'];
     }
 }
-console.log(courses_output[0]);
 
-// Add ACCTA2 course header
+// Add INFSA2 course header
 courses_output.unshift({
-    id: data.PSYCM2.code,
+    id: data.INFSA2.code,
     type: 'header1',
     data: {
-        degree_name: data.PSYCM2.name,
-        degree_code: data.PSYCM2.code,
+        degree_name: data.INFSA2.name,
+        degree_code: data.INFSA2.code,
         units: 0,
-        unlocks: ['PSYC1001', 'PSYC1011'],
+        unlocks: ['COMM1110', 'INFS1602', 'INFS1603'],
         conditions: {
             prerequisites: null,
             corequisites: null,
@@ -262,25 +260,26 @@ courses_output.unshift({
         },
         exclusions: null,
         equivalents: null,
-        desc: "Psychology is the scientific study of behaviour and mental processes. It is a broad field that includes brain-behaviour relationships, the processes of perceiving, learning, memory and thinking, the assessment of abilities and attitudes, the origins of personality and emotional states, and the nature and effects of social interactions with other people."
+        desc: "The Information Systems (IS) minor is tailored to students who are interested in business and management aspects of the discipline."
     },
     style: minor_header,
-    textColour: '#449A94',
-    textSelectedColour: '#449A94',
+    textColour: '#8A36B4',
+    textSelectedColour: '#8A36B4',
     selectedColour: 'lightgrey',
     selectableColour: 'black', // THIS SHOULD NEVER GET CALLED
     position: {x: 0, y: 0}
 })
-courses_output[0].style.border = '2px solid #449A94';
-courses_list['PSYCM2'] = 1;
+courses_output[0].style.border = '2px solid #8A36B4';
+courses_list['INFSA2'] = 1;
+
+
 // Hard code in prerequisites for starting courses
 for (var course of courses_output) {
-    if (['PSYC1001', 'PSYC1011'].includes(course.id)) {
+    if (['COMM1110', 'INFS1602', 'INFS1603'].includes(course.id)) {
         console.log(course.id);
-        course.data.conditions.prerequisites = ['PSYCM2'];
+        course.data.conditions.prerequisites = ['INFSA2'];
     }
 }
-console.log(courses_output[0]);
 
 // Generate the position for each node
 for (const node of position_data) {
@@ -367,13 +366,13 @@ const output = courses_output.concat(edges_output);
 
 // Write to the file
 const fs = require('fs');
-fs.writeFile('../maps/ComputerScienceCOMPA1PSYCM2/data.json', JSON.stringify(output), (err) => {
+fs.writeFile('../maps/ComputerScienceCOMPA1INFSA2/data.json', JSON.stringify(output), (err) => {
     // In case of error
     if (err) throw err;
 })
 
 // Write exclusion data to another file
-fs.writeFile('../maps/ComputerScienceCOMPA1PSYCM2/data_exclusion.json', JSON.stringify(exclusion_groups), (err) => {
+fs.writeFile('../maps/ComputerScienceCOMPA1INFSA2/data_exclusion.json', JSON.stringify(exclusion_groups), (err) => {
     // In case of error
     if (err) throw err;
 })
