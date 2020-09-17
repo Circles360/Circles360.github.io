@@ -1,4 +1,4 @@
-import React, {useState, useRef} from 'react';
+import React, {useState} from 'react';
 // import ReactFlow, {Background, Controls, getConnectedEdges, isNode, isEdge, useStoreState, useStoreActions, ReactFlowProvider, EdgeText} from 'react-flow-renderer';
 import ReactFlow, { isNode, isEdge, ReactFlowProvider } from 'react-flow-renderer';
 
@@ -10,7 +10,7 @@ import HoverInfo from '../../components/hoverinfo.js';
 import hoverPrerequisites from '../../components/hoverprerequisites.js';
 import unhoverPrerequisites from '../../components/unhoverprerequisites.js';
 
-import { Grid, Container, Header, Divider, Dropdown } from 'semantic-ui-react'
+import { Grid, Container } from 'semantic-ui-react'
 import Sidebar from "../../components/sidebar.js"
 // import pkg from 'semantic-ui-react/package.json'
 
@@ -26,7 +26,7 @@ import checkPrerequisites from '../../components/checkprerequisites';
 import exclusionSwap from '../../components/exclusionswap.js';
 // import getElement from '../../components/getelement.js';
 import unselectUnconnected from '../../components/unselectunconnected.js';
-import coursesJSON from "../../webscraper/courses.json";
+// import coursesJSON from "../../webscraper/courses.json";
 import dataJSON from "./data.json"
 
 // import SearchPan from '../../components/searchpan.js';
@@ -131,22 +131,22 @@ const Teaching = () => {
         // 1. Select the node and fill in edges.
         // - Deal with unselecting nodes
         if (selectableNodes.hasOwnProperty(element.id)) {
-            console.log("MAINSELECT");
+            // console.log("MAINSELECT");
             selectNode(elements, element, selectedNodes, selectedEdges, selectableNodes, potentialEdges);
         } else if (selectedNodes.hasOwnProperty(element.id)) {
-            console.log("UNSELECTING");
+            // console.log("UNSELECTING");
             unselectNode(elements, element, selectedNodes, selectedEdges, selectableNodes, potentialEdges);
             unselectUnconnected(elements, selectedNodes, selectedEdges, selectableNodes, potentialEdges);
         }
 
-        console.log("==========SelectedNodes==========");
-        console.log(selectedNodes);
-        console.log("==========SelectedEdges==========");
-        console.log(selectedEdges);
-        console.log("==========SelectableNodes==========");
-        console.log(selectableNodes);
-        console.log("==========PotentialEdges==========");
-        console.log(potentialEdges);
+        // console.log("==========SelectedNodes==========");
+        // console.log(selectedNodes);
+        // console.log("==========SelectedEdges==========");
+        // console.log(selectedEdges);
+        // console.log("==========SelectableNodes==========");
+        // console.log(selectableNodes);
+        // console.log("==========PotentialEdges==========");
+        // console.log(potentialEdges);
 
         // 2. Determine which nodes are now selectable
         // - Determine which previously selectable nodes are now unselectable
@@ -279,7 +279,7 @@ const Teaching = () => {
                 </div>
                 <Container style={{textAlign: "center", height: "auto", padding: "20px"}}>
                     <p>Made by SRKO, 2020</p>
-                    <a href="https://github.com/Circles360/Circles360.github.io" target="_blank">GitHub</a>
+                    <a href="https://github.com/Circles360/Circles360.github.io" target="_blank" rel="noopener noreferrer">GitHub</a>
                 </Container>
             </div>
         </div>

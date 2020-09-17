@@ -1,5 +1,6 @@
+import { findAllByDisplayValue } from '@testing-library/react';
 import React, { Component } from 'react'
-import { Button, Dropdown, Grid } from 'semantic-ui-react'
+import { Button, Dropdown, Grid, Message } from 'semantic-ui-react'
 
 import programsJSON from "../webscraper/programs.json"
 import specialisationsJSON from "../webscraper/specialisations.json"
@@ -78,7 +79,7 @@ class DropdownDegrees extends Component {
         valSecondary: null,
 
         phPrimary: "Select",
-        phSecondary: "N/A"
+        phSecondary: "N/A",
     }
 
     chooseProgram = (e, program) => {
@@ -125,16 +126,60 @@ class DropdownDegrees extends Component {
         })
     }
 
-    clickDone = () => {
-        console.log('Running click')
-        // console.log(this.state)
-        console.log(this.state.valProgram, this.state.valPrimary, this.state.valSecondary)
+    getLink = () => {
+        if (this.state.valSecondary) return `#/${this.state.valProgram}/${this.state.valPrimary}/${this.state.valSecondary}`
+        return `#/${this.state.valProgram}/${this.state.valPrimary}`
+    }
+
+    supported = {
+        "3707": ["SENGAH"],
+        "3778": ["COMPA1"]
+    };
+
+    isDisabled = () => {
+        this.state.messageVisible = "hidden"
+
+        if (!!this.state.valSecondary) return true;
+        if (!(this.state.valProgram in this.supported)) return true;
+        if (!this.supported[this.state.valProgram].includes(this.state.valPrimary)) return true;
+
+        const isSupported = this.state.valProgram === null || this.state.valPrimary === null;
+        return isSupported;
+    }
+
+    getMessage = () => {
+        if (!!this.state.valSecondary) {
+            return (
+                <Message warning>
+                    Minors not supported yet
+                </Message>
+            )
+        }
+
+        if (!(this.state.valProgram in this.supported)) {
+            return (
+                <Message warning>
+                    {`Only ${Object.keys(this.supported).join(", ")} is supported`}
+                </Message>
+            )
+        }
+
+
+        if (!this.supported[this.state.valProgram].includes(this.state.valPrimary)) {
+            return (
+                <Message warning>
+                    {`Only ${this.supported[this.state.valProgram].join(", ")} is supported`}
+                </Message>
+            )
+        }
+
+        return;
     }
 
     render() {
         return <>
-            <Grid centered style={{marginBottom: "20px"}}> 
-                <Grid.Row>  
+            <Grid centered style={{marginBottom: "20px"}}>
+                <Grid.Row>
                     <Dropdown
                         selection
                         search
@@ -160,6 +205,7 @@ class DropdownDegrees extends Component {
                     <Dropdown
                         selection
                         search
+                        clearable
                         onChange={this.chooseSecondary}
                         options= {this.state.minorOptions}
                         disabled= {this.state.disabledSecondary}
@@ -168,14 +214,18 @@ class DropdownDegrees extends Component {
                         style={{visibility: this.state.hiddenSecondary}}
                     />
                 </Grid.Row>
+                {this.getMessage()}
                 <Grid.Row>
-                    <Button
-                    onClick={this.clickDone}
-                    color="red"
-                    >Done! Print to console</Button>
+                    <a href={this.getLink()}>
+                        <Button
+                            disabled={this.isDisabled()}
+                            color="red"
+                        >
+                            Load flowchart
+                        </Button>
+                    </a>
                 </Grid.Row>
             </Grid>
-            
 
         </>;
     }

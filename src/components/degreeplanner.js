@@ -383,10 +383,9 @@ class DegreePlanner extends React.Component {
             for (const term in plan[year]) {
                 if (term === "termOrder") continue;
                 termPlan[term] = plan[year][term]
-
-                termPlan[term].courseIds.forEach(courseId => {
+                for (const courseId of termPlan[term].courseIds) {
                     const conditions = coursesJSON[courseId].conditions
-                    if (!conditions.units_required) return;
+                    if (!conditions.units_required) continue;
                     if (totalUnits < conditions.units_required) {
                         considerationMessages.push(
                             <Message.Item>
@@ -394,7 +393,7 @@ class DegreePlanner extends React.Component {
                             </Message.Item>
                         )
                     }
-                })
+                }
 
                 totalUnits += termPlan[term].courseIds.reduce((total, c) => total + (c in coursesJSON ? coursesJSON[c].units : 0), 0);
             }
