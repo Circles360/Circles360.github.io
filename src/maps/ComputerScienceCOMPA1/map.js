@@ -36,7 +36,7 @@ var elementsData = dataJSON.slice()
 var nodesData = elementsData.filter(e => isNode(e));
 var edgesData = elementsData.filter(e => isEdge(e));
 var selectedNodes = {
-    'SENGAH': 1,
+    'COMPA1': 1,
 }
 var selectedEdges = {};
 var selectableNodes = {};
@@ -168,7 +168,7 @@ const ComputerScienceCOMPA1 = () => {
     const onElementClick = (event, element) => {
         // console.log("ONELEMENTCLICK");
         if (isEdge(element)) return; // Don't care about edges
-        if (element.id === 'SENGAH') return; // Cannot click on main node
+        if (element.id === 'COMPA1') return; // Cannot click on main node
         if ((! selectableNodes.hasOwnProperty(element.id)) && (! selectedNodes.hasOwnProperty(element.id))) return; // Cannot select non selectable nodes
 
         // Determine double or single click for exclusion nodes
@@ -194,7 +194,7 @@ const ComputerScienceCOMPA1 = () => {
 
     // ==========ONHOVER==========
     const onNodeMouseEnter = (event, node) => {
-        if (node.id === 'SENGAH') return;
+        if (node.id === 'COMPA1') return;
         // Display node information in top left
         setHoverText(true);
         setHoverNode(node);
@@ -207,7 +207,7 @@ const ComputerScienceCOMPA1 = () => {
     }
 
     const onNodeMouseLeave = (event, node) => {
-        if (node.id === 'SENGAH') return;
+        if (node.id === 'COMPA1') return;
         setHoverText(false);
         unhoverPrerequisites(hoverEdges);
         setElements(highlightElements(elements, selectedNodes, selectedEdges, selectableNodes, potentialEdges, hoverEdges));

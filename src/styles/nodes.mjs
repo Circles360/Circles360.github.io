@@ -10,7 +10,7 @@ export const node1 = {
     width: 64,
     height: 64,
     borderRadius: 32,
-    filter: 'brightness(1.15)'
+    zIndex: -1000
 }
 
 export const node2 = {
@@ -28,8 +28,7 @@ export const node2 = {
     borderStyle: 'solid',
     borderSize: '1px',
     borderColor: 'black',
-    zIndex: -5000,
-    filter: 'brightness(1)'
+    zIndex: -1000,
 }
 
 export const node_header = {
@@ -44,5 +43,20 @@ export const node_header = {
     width: 256,
     height: 256,
     borderRadius: 128,
-    filter: 'brightness(1.15)'
+    zIndex: -1000
+}
+
+export const minor_header = {
+    display: 'flex',
+    //boxShadow: "0px 0px 1px grey",
+    textAlign: 'center',
+    alignItems: 'center',
+    justifyContent: 'center',
+    fontSize: 20,
+    color: 'white',
+    background: 'black',
+    width: 192,
+    height: 192,
+    borderRadius: 96,
+    zIndex: -1000
 }

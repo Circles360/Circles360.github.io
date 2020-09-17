@@ -1,7 +1,3 @@
-function styleGenerator() {
-    return "Hello";
-}
-
 function hexToRgb(hex) {
     hex = hex.substring(1);
 
@@ -44,7 +40,6 @@ function lightenHex(hex, factor) {
 }
 
 
-exports.styleGenerator = styleGenerator;
 exports.hexToRgb = hexToRgb;
 exports.rgbToHex = rgbToHex;
 exports.lightenHex = lightenHex;
