@@ -28,14 +28,12 @@ import unselectUnconnected from '../../components/unselectunconnected.js';
 // import coursesJSON from "../../webscraper/courses.json";
 import dataJSON from "./data.json"
 
-
+const specialisations = ['COMPA1', 'INFSA2'];
 var elementsData = dataJSON.slice()
 var nodesData = elementsData.filter(e => isNode(e));
 var edgesData = elementsData.filter(e => isEdge(e));
-var selectedNodes = {
-    'COMPA1': 1,
-    'INFSA2': 1
-}
+var selectedNodes = {};
+for (const specialisation of specialisations) selectedNodes[specialisation] = 1;
 var selectedEdges = {};
 var selectableNodes = {};
 var potentialEdges = {};
@@ -166,7 +164,7 @@ const ComputerScienceCOMPA1INFSA2 = () => {
     const onElementClick = (event, element) => {
         // console.log("ONELEMENTCLICK");
         if (isEdge(element)) return; // Don't care about edges
-        if (element.id === 'COMPA1' || element.id === 'INFSA2') return; // Cannot click on main node
+        if (specialisations.includes(element.id)) return; // Cannot click on main node
         if ((! selectableNodes.hasOwnProperty(element.id)) && (! selectedNodes.hasOwnProperty(element.id))) return; // Cannot select non selectable nodes
 
         // Determine double or single click for exclusion nodes
@@ -192,7 +190,7 @@ const ComputerScienceCOMPA1INFSA2 = () => {
 
     // ==========ONHOVER==========
     const onNodeMouseEnter = (event, node) => {
-        if (node.id === 'COMPA1' || node.id === 'INFSA2') return;
+        if (specialisations.includes(node.id)) return;
         // Display node information in top left
         setHoverText(true);
         setHoverNode(node);
@@ -205,7 +203,7 @@ const ComputerScienceCOMPA1INFSA2 = () => {
     }
 
     const onNodeMouseLeave = (event, node) => {
-        if (node.id === 'COMPA1' || node.id === 'INFSA2') return;
+        if (specialisations.includes(node.id)) return;
         setHoverText(false);
         unhoverPrerequisites(hoverEdges);
         setElements(highlightElements(elements, selectedNodes, selectedEdges, selectableNodes, potentialEdges, hoverEdges));

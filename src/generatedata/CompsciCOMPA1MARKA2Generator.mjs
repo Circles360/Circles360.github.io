@@ -7,7 +7,7 @@ const {lightenHex} = require('./styleGenerator.js');
 
 const data = require("../webscraper/specialisations.json");
 const courses = require("../webscraper/courses.json");
-const position_data = require("../maps/ComputerScienceCOMPA1PSYCM2/position.json");
+const position_data = require("../maps/ComputerScienceCOMPA1MARKA2/position.json");
 
 
 var courses_output = [];
@@ -17,8 +17,8 @@ function colour_node(node) {
     if (node.id.match(/^COMP/)) node.style = {...node.style, background: '#1EB13C', border: '2px solid #1EB13C'};
     else if (node.id.match(/^MATH/)) node.style = {...node.style, background: '#166DBA', border: '2px solid #166DBA'};
     else if (node.id.match(/^ENGG/)) node.style = {...node.style, background: '#CA1818', border: '2px solid #CA1818'};
-    else if (node.id.match(/^PSYC/)) node.style = {...node.style, background: '#449A94', border: '2px solid #449A94'};
-    //else if (node.id.match(/^COMM/)) node.style = {...node.style, background: '#D3A437', border: '2px solid #D3A437'};
+    else if (node.id.match(/^MARK/)) node.style = {...node.style, background: '#449A94', border: '2px solid #449A94'};
+    else if (node.id.match(/^COMM/)) node.style = {...node.style, background: '#D3A437', border: '2px solid #D3A437'};
     //else if (node.id.match(/^TABL/)) node.style = {...node.style, background: '#885533', border: '2px solid #885533'};
     
     node.textColour = node.style.background;
@@ -96,12 +96,12 @@ for (const course_group in data.COMPA1.structure) {
     }
 }
 
-// Get the courses for PSYCM2 Minor
-for (const course_group in data.PSYCM2.structure) {
+// Get the courses for MARKA2 Minor
+for (const course_group in data.MARKA2.structure) {
     // TEMPORARY FIX
-    if (data.PSYCM2.structure[course_group].courses === null) continue;
+    if (data.MARKA2.structure[course_group].courses === null) continue;
 
-    for (const course of data.PSYCM2.structure[course_group].courses) {
+    for (const course of data.MARKA2.structure[course_group].courses) {
         var node_list = [];
         if (Array.isArray(course)) {
             // Deal with choice courses (e.g. MATH1131/MATH1141)
@@ -164,19 +164,6 @@ for (const course of courses_output) {
         course.data.conditions.prerequisites = ['ENGG3600'];
         course.data.conditions.prereqs_executable = 'ENGG3600';
         course.data.conditions.units_required = 48;
-    } else if (course.id === "PSYC2061") {
-        course.data.conditions.prerequisites = ['PSYC1011', 'PSYC1001'];
-        course.data.conditions.prereqs_executable = 'PSYC1011 && PSYC1001';
-    } else if (course.id === "PSYC2081") {
-        course.data.conditions.prerequisites = ['PSYC1011', 'PSYC1001'];
-        course.data.conditions.prereqs_executable = 'PSYC1011 && PSYC1001';
-    } else if (course.id === "PSYC2071") {
-        course.data.conditions.prerequisites = ['PSYC1011', 'PSYC1001'];
-        course.data.conditions.prereqs_executable = 'PSYC1011 && PSYC1001';
-    } else if (course.id === "PSYC1001") {
-        course.data.unlocks = ["PSYC2061", "PSYC2071", "PSYC2081", "PSYC2101"];
-    } else if (course.id === "PSYC1011") {
-        course.data.unlocks = ["PSYC2061", "PSYC2071", "PSYC2081"];
     }
 }
 
@@ -245,15 +232,15 @@ for (var course of courses_output) {
 }
 console.log(courses_output[0]);
 
-// Add ACCTA2 course header
+// Add MARKA2 course header
 courses_output.unshift({
-    id: data.PSYCM2.code,
+    id: data.MARKA2.code,
     type: 'header1',
     data: {
-        degree_name: data.PSYCM2.name,
-        degree_code: data.PSYCM2.code,
+        degree_name: data.MARKA2.name,
+        degree_code: data.MARKA2.code,
         units: 0,
-        unlocks: ['PSYC1001', 'PSYC1011'],
+        unlocks: ['COMM1100', 'MARK1012'],
         conditions: {
             prerequisites: null,
             corequisites: null,
@@ -272,12 +259,12 @@ courses_output.unshift({
     position: {x: 0, y: 0}
 })
 courses_output[0].style.border = '2px solid #449A94';
-courses_list['PSYCM2'] = 1;
+courses_list['MARKA2'] = 1;
 // Hard code in prerequisites for starting courses
 for (var course of courses_output) {
-    if (['PSYC1001', 'PSYC1011'].includes(course.id)) {
+    if (['COMM1140'].includes(course.id)) {
         console.log(course.id);
-        course.data.conditions.prerequisites = ['PSYCM2'];
+        course.data.conditions.prerequisites = ['MARKA2'];
     }
 }
 console.log(courses_output[0]);
@@ -367,13 +354,13 @@ const output = courses_output.concat(edges_output);
 
 // Write to the file
 const fs = require('fs');
-fs.writeFile('../maps/ComputerScienceCOMPA1PSYCM2/data.json', JSON.stringify(output), (err) => {
+fs.writeFile('../maps/ComputerScienceCOMPA1MARKA2/data.json', JSON.stringify(output), (err) => {
     // In case of error
     if (err) throw err;
 })
 
 // Write exclusion data to another file
-fs.writeFile('../maps/ComputerScienceCOMPA1PSYCM2/data_exclusion.json', JSON.stringify(exclusion_groups), (err) => {
+fs.writeFile('../maps/ComputerScienceCOMPA1MARKA2/data_exclusion.json', JSON.stringify(exclusion_groups), (err) => {
     // In case of error
     if (err) throw err;
 })
