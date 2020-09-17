@@ -15,6 +15,12 @@ export default function checkPrerequisites(node, elements, selectedNodes) {
         // Evaluate the condition
         //console.log("HERE");
         //console.log(node.data.conditions.prereqs_executable);
+
+        // Check if units have been met if it has a unit requirement
+        if (node.data.conditions.units_required !== null) {
+            return(checkPrerequisiteUnits(node, elements, selectedNodes));
+        }
+
         var condition = node.data.conditions.prereqs_executable;
         //console.log(condition);
         condition = condition.replace(/[A-Z]{4}[A-Z0-9]+/gi, function(match) {

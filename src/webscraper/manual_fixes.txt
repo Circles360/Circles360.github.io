@@ -62,7 +62,7 @@ BESENGAHGENERATOR.MJS:
 - DESN2000 needs to have terms and prereqs and unlocks added (specifically for SENGAH)
 - SENGAH header node needs to have children added and children need to
     have SENGAH added as prerequisites
-- ENGG1000-ENGG2600-ENG3600-ENGG4600 chain
+- ENGG1000-ENGG2600-ENG3600-ENGG4600 chain + 48 unit requirement
 - INFS3830 has prerequisites hardcoded (INFS3603 ONLY)
 - INFS3873 has prerequisites hardcoded (INFS3603 ONLY)
 - COMP4961 cannot be taken unless enrolled in bachelor of computer science (HONOUR) or program 3648.
@@ -79,3 +79,7 @@ BESENGAHGENERATOR.MJS:
 - REMOVE ALL TELE FROM FLOWCHART
 
 TODO: Should I add unlocks? ^ Will make a shit ton of nodes link to these two.
+
+
+COMPSCICOMPA1GENERATOR.MJS
+- ENGG1000-ENGG2600-ENG3600-ENGG4600 chain + 48 unit requirement
