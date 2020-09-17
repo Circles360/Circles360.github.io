@@ -94,3 +94,6 @@ COMPSCICOMPA1GENERATOR.MJS
     INFSA2
         - Hard code in COMM1110 node (they must take this to take INFSA2 courses)
         - COMM1110 and COMM1190 available in t2,3 for non-business school students
+    PSYCM2
+        - PSYC2061, PSYC2081, PSYC2071, PSYC1001, PSYC1011 prerequisites aren't scrapped properly
+        

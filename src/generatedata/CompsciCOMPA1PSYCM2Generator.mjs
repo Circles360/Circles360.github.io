@@ -275,7 +275,7 @@ courses_output[0].style.border = '2px solid #449A94';
 courses_list['PSYCM2'] = 1;
 // Hard code in prerequisites for starting courses
 for (var course of courses_output) {
-    if (['COMM1140'].includes(course.id)) {
+    if (['PSYC1001', 'PSYC1011'].includes(course.id)) {
         console.log(course.id);
         course.data.conditions.prerequisites = ['PSYCM2'];
     }
