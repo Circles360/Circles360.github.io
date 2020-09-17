@@ -271,7 +271,6 @@ const ComputerScienceCOMPA1MARKA2 = () => {
                 </Grid>
                 {hoverDisplay}
                 {/* <button onClick={positionHelper(elements)}>GENERATE POSITION</button> */}
-                <button onClick={positionHelper(elements)}>GENERATE POSITION</button>
                 <div id="DegreePlanner">
                     <DegreePlanner id="DegreePlanner" key={Object.keys(selectedNodes).join("")}selectedCourses={Object.keys(selectedNodes)} />
                 </div>
