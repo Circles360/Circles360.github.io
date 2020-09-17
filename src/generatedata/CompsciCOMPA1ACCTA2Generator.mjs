@@ -259,13 +259,13 @@ courses_output.unshift({
         desc: "Accounting is concerned with the provision of information for the management of economic resources and activities by means of measurement, communication and interpretation of financial data; with the development of information systems; and with the financial accountability and management of business and public enterprises"
     },
     style: minor_header,
-    textColour: '#885533',
-    textSelectedColour: '#885533',
+    textColour: '#449A94',
+    textSelectedColour: '#449A94',
     selectedColour: 'lightgrey',
     selectableColour: 'black', // THIS SHOULD NEVER GET CALLED
     position: {x: 0, y: 0}
 })
-courses_output[0].style.border = '2px solid #885533';
+courses_output[0].style.border = '2px solid #449A94';
 courses_list['ACCTA2'] = 1;
 // Hard code in prerequisites for starting courses
 for (var course of courses_output) {
