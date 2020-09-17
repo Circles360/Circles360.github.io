@@ -55,7 +55,7 @@ const getSelectedCourses = (specialisationCodes, selectedNodes) => {
                 return (
                     <Segment key={levelName} color="red">
                         <div style={{display: "flex"}}>
-                            <Header style={{flexGrow: "1"}} as="h5">{levelName}</Header>
+                            <Header style={{flexGrow: "1"}} as="h5">{specId} - {levelName}</Header>
                             {showUnits}
                         </div>
                         {courseList.map(c => c in selectedNodes ? <Label key={c} size="small" color="grey" style={style}>{c}</Label> : <Label key={c} size="small" style={style}>{c}</Label>)}
@@ -70,7 +70,7 @@ const getSelectedCourses = (specialisationCodes, selectedNodes) => {
                 return (
                     <Segment key={levelName} style={{minHeight: "70px"}}>
                         <div style={{display: "flex"}}>
-                            <Header style={{flexGrow: "1"}} as="h5">{levelName}</Header>
+                            <Header style={{flexGrow: "1"}} as="h5">{specId} - {levelName}</Header>
                             {showUnits}
                         </div>
                         {courseList.filter(c => (c in selectedNodes && !coreCourses.includes(c))).map(c => <Label key={c} size="small" color="grey" style={style}>{c}</Label>)}

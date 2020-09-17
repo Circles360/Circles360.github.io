@@ -104,7 +104,7 @@ const BESengah = () => {
     const onInstanceLoad = (instance) => {
         for (var group of exclusionGroups) {
             const last = group.pop();
-    
+
             for (var course of elementsData) {
                 if (last === course.id) {
                     course.isHidden = true;
