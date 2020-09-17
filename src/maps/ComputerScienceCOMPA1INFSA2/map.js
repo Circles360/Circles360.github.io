@@ -203,7 +203,7 @@ const ComputerScienceCOMPA1INFSA2 = () => {
     }
 
     const onNodeMouseLeave = (event, node) => {
-        if (specialisations.includes(element.id)) return;
+        if (specialisations.includes(node.id)) return;
         setHoverText(false);
         unhoverPrerequisites(hoverEdges);
         setElements(highlightElements(elements, selectedNodes, selectedEdges, selectableNodes, potentialEdges, hoverEdges));
