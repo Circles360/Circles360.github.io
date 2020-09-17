@@ -30,6 +30,7 @@ import dataJSON from "./data.json"
 
 
 const specialisations = ['COMPA1', 'MARKA2'];
+var program = "3778";
 var elementsData = dataJSON.slice()
 var nodesData = elementsData.filter(e => isNode(e));
 var edgesData = elementsData.filter(e => isEdge(e));
@@ -309,7 +310,12 @@ const ComputerScienceCOMPA1MARKA2 = () => {
                 {hoverDisplay}
                 {/* <button onClick={positionHelper(elements)}>GENERATE POSITION</button> */}
                 <div id="DegreePlanner">
-                    <DegreePlanner key={Object.keys(selectedNodes).concat(additionalCourses).join("")} specialisations={specialisations} selectedCourses={Object.keys(selectedNodes).concat(additionalCourses)} />
+                    <DegreePlanner
+                        key={Object.keys(selectedNodes).concat(additionalCourses).join("")}
+                        program={program}
+                        specialisations={specialisations}
+                        selectedCourses={Object.keys(selectedNodes).concat(additionalCourses)}
+                    />
                 </div>
             </div>
         </div>

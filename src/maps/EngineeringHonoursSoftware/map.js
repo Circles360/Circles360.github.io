@@ -29,6 +29,7 @@ import coursesJSON from "../../webscraper/courses.json";
 import dataJSON from "./data.json"
 
 var specialisations = ['SENGAH'];
+var program = "3707";
 var elementsData = dataJSON.slice()
 var nodesData = elementsData.filter(e => isNode(e));
 var edgesData = elementsData.filter(e => isEdge(e));
@@ -307,7 +308,12 @@ const BESengah = () => {
                 {hoverDisplay}
                 {/* <button onClick={positionHelper(elements)}>GENERATE POSITION</button> */}
                 <div id="DegreePlanner">
-                    <DegreePlanner key={Object.keys(selectedNodes).concat(additionalCourses).join("")} specialisations={specialisations} selectedCourses={Object.keys(selectedNodes).concat(additionalCourses)} />
+                    <DegreePlanner
+                        key={Object.keys(selectedNodes).concat(additionalCourses).join("")}
+                        program={program}
+                        specialisations={specialisations}
+                        selectedCourses={Object.keys(selectedNodes).concat(additionalCourses)}
+                    />
                 </div>
             </div>
         </div>

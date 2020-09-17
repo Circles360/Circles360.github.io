@@ -282,6 +282,7 @@ class DegreePlanner extends React.Component {
         courses: getCourses(this.props.selectedCourses),
         selectedCourses: this.props.selectedCourses,
         plan: generatePlanScaffold(4, this.props.selectedCourses),
+        program: this.props.program,
         specialisations: this.props.specialisations
     };
 
@@ -351,10 +352,10 @@ class DegreePlanner extends React.Component {
         const plan = state.plan;
         const courses = state.courses;
         const selectedCourses = state.selectedCourses;
-        const program = "3707"
+        const program = state.program;
         const programUnits = programsJSON[program].units;
-        const degree = "SENGAH";
-        const degreeUnits = specialisationsJSON[degree].units
+        const specialisations = state.specialisations;
+
         const considerationMessages = [];
         const handbookVersion = 2021;
 
@@ -388,13 +389,50 @@ class DegreePlanner extends React.Component {
             return courseList;
         }
 
-        // Check prereqs
-        const termPlan = {}
         let totalUnits = 0;
+        const termPlan = {}
         for (const year in plan) {
             for (const term in plan[year]) {
                 if (term === "termOrder") continue;
                 termPlan[term] = plan[year][term]
+                totalUnits += termPlan[term].courseIds.reduce((total, c) => total + (c in coursesJSON ? coursesJSON[c].units : 0), 0);
+            }
+        }
+
+        if (totalUnits < programUnits) {
+            considerationMessages.push(
+                <Message.Item>
+                    {getProgramLink(program)} requires {programUnits} units. You have taken {totalUnits} units.
+                </Message.Item>
+            )
+        }
+        specialisations.forEach(degree => {
+            const coursesInDegree = [];
+            for (const levelName in specialisationsJSON[degree].structure) {
+                const level = specialisationsJSON[degree].structure[levelName];
+                if (!level.courses) continue;
+                coursesInDegree.push(...getCoursesInLevel(level.courses))
+            }
+            const degreeUnitsRequired = specialisationsJSON[degree].units
+            let degreeUnitsTaken = 0;
+            for (const term in termPlan) {
+                degreeUnitsTaken += termPlan[term].courseIds.reduce((total, c) => total + ((c in coursesJSON && coursesInDegree.includes(c)) ? coursesJSON[c].units : 0), 0);
+            }
+
+            if (degreeUnitsTaken < degreeUnitsRequired) {
+                considerationMessages.push(
+                    <Message.Item>
+                        {getSpecialisationsLink(degree)} requires {degreeUnitsRequired} units. You have taken {degreeUnitsTaken} units.
+                    </Message.Item>
+                )
+            }
+        })
+
+
+        totalUnits = 0;
+        for (const year in plan) {
+            for (const term in plan[year]) {
+                if (term === "termOrder") continue;
                 for (const courseId of termPlan[term].courseIds) {
                     const conditions = coursesJSON[courseId].conditions
                     if (!conditions.units_required) continue;
@@ -411,44 +449,29 @@ class DegreePlanner extends React.Component {
             }
         }
 
-        if (totalUnits < programUnits) {
-            considerationMessages.push(
-                <Message.Item>
-                    {getProgramLink(program)} requires {programUnits} units. You have taken {totalUnits} units.
-                </Message.Item>
-            )
-        }
-
-        if (totalUnits < degreeUnits) {
-            considerationMessages.push(
-                <Message.Item>
-                    {getSpecialisationsLink(degree)} requires {degreeUnits} units. You have taken {totalUnits} units.
-                </Message.Item>
-            )
-        }
-
         // Check levels for each
-        const coreCourses = []
-        for (const levelName in specialisationsJSON[degree].structure) {
-            const level = specialisationsJSON[degree].structure[levelName];
-            if (!level.units_required) continue;
-            if (level.courses.filter(c => c !== "ANY COURSE").length === 0) continue;
-            if (level.name.match(/[Cc]ore/g)) level.courses.flat().forEach(c => coreCourses.push(c));
+        specialisations.forEach(degree => {
+            const coreCourses = []
+            for (const levelName in specialisationsJSON[degree].structure) {
+                const level = specialisationsJSON[degree].structure[levelName];
+                if (!level.units_required) continue;
+                if (level.courses.filter(c => c !== "ANY COURSE").length === 0) continue;
+                if (level.name.match(/[Cc]ore/g)) level.courses.flat().forEach(c => coreCourses.push(c));
 
-            let levelCourses = getCoursesInLevel(level.courses);
-            if (!level.name.match(/[Cc]ore/g)) levelCourses = levelCourses.filter(c => !coreCourses.includes(c))
-            const selectedInLevel = levelCourses.filter(c => selectedCourses.includes(c));
-            const selectedUnits = selectedInLevel.reduce((total, c) => total + (c in coursesJSON ? coursesJSON[c].units : 0), 0);
+                let levelCourses = getCoursesInLevel(level.courses);
+                if (!level.name.match(/[Cc]ore/g)) levelCourses = levelCourses.filter(c => !coreCourses.includes(c))
+                const selectedInLevel = levelCourses.filter(c => selectedCourses.includes(c));
+                const selectedUnits = selectedInLevel.reduce((total, c) => total + (c in coursesJSON ? coursesJSON[c].units : 0), 0);
 
-            if (selectedUnits < level.units_required) {
-                considerationMessages.push(
-                    <Message.Item>
-                        {level.name} requires {level.units_required} units. You have taken {selectedUnits} units.
-                    </Message.Item>
-                );
+                if (selectedUnits < level.units_required) {
+                    considerationMessages.push(
+                        <Message.Item>
+                            {degree} - {level.name} requires {level.units_required} units. You have taken {selectedUnits} units.
+                        </Message.Item>
+                    );
+                }
             }
-        }
-
+        })
 
         for (const year in plan) {
             for (const term in plan[year]) {
