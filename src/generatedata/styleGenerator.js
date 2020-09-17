@@ -1,9 +1,4 @@
 function hexToRgb(hex) {
-    hex = hex.substring(1);
-
-}
-
-function hexToRgb(hex) {
     hex = hex.substr(1);
     var bigint = parseInt(hex, 16);
     var r = (bigint >> 16) & 255;
