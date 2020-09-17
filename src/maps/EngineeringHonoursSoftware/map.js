@@ -28,12 +28,13 @@ import unselectUnconnected from '../../components/unselectunconnected.js';
 import coursesJSON from "../../webscraper/courses.json";
 import dataJSON from "./data.json"
 
+var specialisations = ['SENGAH'];
 var elementsData = dataJSON.slice()
 var nodesData = elementsData.filter(e => isNode(e));
 var edgesData = elementsData.filter(e => isEdge(e));
-var selectedNodes = {
-    'SENGAH': 1,
-}
+var selectedNodes = {};
+for (const specialisation of specialisations) selectedNodes[specialisation] = 1;
+
 var selectedEdges = {};
 var selectableNodes = {};
 var potentialEdges = {};
@@ -185,7 +186,7 @@ const BESengah = () => {
     const onElementClick = (event, element) => {
         // console.log("ONELEMENTCLICK");
         if (isEdge(element)) return; // Don't care about edges
-        if (element.id === 'SENGAH') return; // Cannot click on main node
+        if (specialisations.includes(element.id)) return; // Cannot click on main node
         if ((! selectableNodes.hasOwnProperty(element.id)) && (! selectedNodes.hasOwnProperty(element.id))) return; // Cannot select non selectable nodes
 
         // Determine double or single click for exclusion nodes
@@ -211,7 +212,7 @@ const BESengah = () => {
 
     // ==========ONHOVER==========
     const onNodeMouseEnter = (event, node) => {
-        if (node.id === 'SENGAH') return;
+        if (specialisations.includes(node.id)) return;
         // Display node information in top left
         setHoverText(true);
         setHoverNode(node);
@@ -224,7 +225,7 @@ const BESengah = () => {
     }
 
     const onNodeMouseLeave = (event, node) => {
-        if (node.id === 'SENGAH') return;
+        if (specialisations.includes(node.id)) return;
         setHoverText(false);
         unhoverPrerequisites(hoverEdges);
         setElements(highlightElements(elements, selectedNodes, selectedEdges, selectableNodes, potentialEdges, hoverEdges));

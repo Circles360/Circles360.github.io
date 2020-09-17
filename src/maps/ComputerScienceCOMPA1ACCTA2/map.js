@@ -11,7 +11,6 @@ import unhoverPrerequisites from '../../components/unhoverprerequisites.js';
 
 import { Grid, Container } from 'semantic-ui-react'
 import Sidebar from "../../components/sidebar.js"
-// import pkg from 'semantic-ui-react/package.json'
 
 import DegreePlanner from "../../components/degreeplanner.js"
 import DropdownSearch from "../../components/dropdownsearch.js"
@@ -23,19 +22,16 @@ import highlightElements from '../../components/highlightelements.js';
 import getSelectable from '../../components/getselectable.js';
 import checkPrerequisites from '../../components/checkprerequisites';
 import exclusionSwap from '../../components/exclusionswap.js';
-// import getElement from '../../components/getelement.js';
 import unselectUnconnected from '../../components/unselectunconnected.js';
-// import coursesJSON from "../../webscraper/courses.json";
 import dataJSON from "./data.json"
 
-
+const specialisations = ['COMPA1', 'ACCTA2'];
 var elementsData = dataJSON.slice()
 var nodesData = elementsData.filter(e => isNode(e));
 var edgesData = elementsData.filter(e => isEdge(e));
-var selectedNodes = {
-    'COMPA1': 1,
-    'ACCTA2': 1
-}
+var selectedNodes = {};
+for (const specialisation of specialisations) selectedNodes[specialisation] = 1;
+
 var selectedEdges = {};
 var selectableNodes = {};
 var potentialEdges = {};
@@ -166,7 +162,7 @@ const ComputerScienceCOMPA1ACCTA2 = () => {
     const onElementClick = (event, element) => {
         // console.log("ONELEMENTCLICK");
         if (isEdge(element)) return; // Don't care about edges
-        if (element.id === 'COMPA1' || element.id === 'ACCTA2') return; // Cannot click on main node
+        if (specialisations.includes(element.id)) return; // Cannot click on main node
         if ((! selectableNodes.hasOwnProperty(element.id)) && (! selectedNodes.hasOwnProperty(element.id))) return; // Cannot select non selectable nodes
 
         // Determine double or single click for exclusion nodes
@@ -192,7 +188,7 @@ const ComputerScienceCOMPA1ACCTA2 = () => {
 
     // ==========ONHOVER==========
     const onNodeMouseEnter = (event, node) => {
-        if (node.id === 'COMPA1' || node.id === 'ACCTA2') return;
+        if (specialisations.includes(node.id)) return;
         // Display node information in top left
         setHoverText(true);
         setHoverNode(node);
@@ -205,7 +201,7 @@ const ComputerScienceCOMPA1ACCTA2 = () => {
     }
 
     const onNodeMouseLeave = (event, node) => {
-        if (node.id === 'COMPA1' || node.id === 'ACCTA2') return;
+        if (specialisations.includes(node.id)) return;
         setHoverText(false);
         unhoverPrerequisites(hoverEdges);
         setElements(highlightElements(elements, selectedNodes, selectedEdges, selectableNodes, potentialEdges, hoverEdges));
@@ -216,7 +212,6 @@ const ComputerScienceCOMPA1ACCTA2 = () => {
     if (hoverText) {
         hoverDisplay = <HoverInfo node={hoverNode}/>
     }
-
     // ===========================
 
     const onNodeDragStop = (event, node) => {
