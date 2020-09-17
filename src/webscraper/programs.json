@@ -449,7 +449,8 @@
                 "SOCAD2",
                 "SPANH2",
                 "THSTC2",
-                "WOMSB2"
+                "WOMSB2",
+                "None"
             ],
             "honours": []
         }
@@ -509,7 +510,8 @@
                 "SOCAD2",
                 "SPANH2",
                 "THSTC2",
-                "WOMSB2"
+                "WOMSB2",
+                "None"
             ],
             "honours": []
         }
@@ -627,7 +629,8 @@
                 "SOCAD2",
                 "SPANH2",
                 "THSTC2",
-                "WOMSC2"
+                "WOMSC2",
+                "None"
             ],
             "honours": []
         }
@@ -735,7 +738,8 @@
                 "SOCAD2",
                 "SPANH2",
                 "THSTC2",
-                "WOMSC2"
+                "WOMSC2",
+                "None"
             ],
             "honours": []
         }
@@ -817,7 +821,8 @@
                 "SOCAD2",
                 "SPANH2",
                 "THSTC2",
-                "WOMSC2"
+                "WOMSC2",
+                "None"
             ],
             "honours": []
         }
@@ -879,7 +884,8 @@
                 "SOCAD2",
                 "SPANH2",
                 "THSTC2",
-                "WOMSC2"
+                "WOMSC2",
+                "None"
             ],
             "honours": []
         }
@@ -955,7 +961,8 @@
                 "MGMTH2",
                 "SPANH2",
                 "TABLA2",
-                "TABLC2"
+                "TABLC2",
+                "None"
             ],
             "honours": []
         }
@@ -1263,7 +1270,8 @@
                 "INFSA2",
                 "MARKA2",
                 "MATHC2",
-                "PSYCM2"
+                "PSYCM2",
+                "None"
             ],
             "honours": []
         }
@@ -1493,7 +1501,8 @@
                 "PHSLB2",
                 "PHYSC2",
                 "PSYCM2",
-                "VISNB2"
+                "VISNB2",
+                "None"
             ],
             "honours": [
                 "ARCYBH",
@@ -1650,7 +1659,8 @@
                 "PHSLB2",
                 "PHYSC2",
                 "PSYCM2",
-                "VISNB2"
+                "VISNB2",
+                "None"
             ],
             "honours": []
         }
@@ -1766,7 +1776,8 @@
                 "JAPNE2",
                 "KOREC2",
                 "KORED2",
-                "SPANF2"
+                "SPANF2",
+                "None"
             ],
             "honours": []
         }

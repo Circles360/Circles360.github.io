@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useRef} from 'react';
 import ReactFlow, { isNode, isEdge, ReactFlowProvider } from 'react-flow-renderer';
 
 import CustomNode1 from '../../components/customnode1.js';
@@ -9,7 +9,7 @@ import HoverInfo from '../../components/hoverinfo.js';
 import hoverPrerequisites from '../../components/hoverprerequisites.js';
 import unhoverPrerequisites from '../../components/unhoverprerequisites.js';
 
-import { Grid, Container } from 'semantic-ui-react'
+import { Grid, Container, Header, Divider, Dropdown } from 'semantic-ui-react'
 import Sidebar from "../../components/sidebar.js"
 // import pkg from 'semantic-ui-react/package.json'
 
@@ -25,7 +25,7 @@ import checkPrerequisites from '../../components/checkprerequisites';
 import exclusionSwap from '../../components/exclusionswap.js';
 // import getElement from '../../components/getelement.js';
 import unselectUnconnected from '../../components/unselectunconnected.js';
-// import coursesJSON from "../../webscraper/courses.json";
+import coursesJSON from "../../webscraper/courses.json";
 import dataJSON from "./data.json"
 
 // import SearchPan from '../../components/searchpan.js';
@@ -278,7 +278,7 @@ const ComputerScienceCOMPA1 = () => {
                 </div>
                 <Container style={{textAlign: "center", height: "auto", padding: "20px"}}>
                     <p>Made by SRKO, 2020</p>
-                    <a href="https://github.com/Circles360/Circles360.github.io" target="_blank" rel="noopener noreferrer">GitHub</a>
+                    <a href="https://github.com/Circles360/Circles360.github.io" target="_blank">GitHub</a>
                 </Container>
             </div>
         </div>

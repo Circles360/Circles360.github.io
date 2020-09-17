@@ -43,11 +43,11 @@ const unselectedEdge = {
 }
 
 export default function highlightElements(elements, selectedNodes, selectedEdges, selectableNodes, potentialEdges, hoverEdges) {
-    // console.log("=================");
-    // console.log(selectedNodes);
-    // console.log(selectedEdges);
-    // console.log(selectableNodes);
-    // console.log(potentialEdges);
+    console.log("=================");
+    console.log(selectedNodes);
+    console.log(selectedEdges);
+    console.log(selectableNodes);
+    console.log(potentialEdges);
     const newElements = elements.map((e) => {
         // It is an edge
         if (isEdge(e)) {
@@ -70,7 +70,7 @@ export default function highlightElements(elements, selectedNodes, selectedEdges
             return {...e, style: {...e.style, color: e.textSelectedColour, background: e.selectedColour}};
         } else if (selectableNodes.hasOwnProperty(e.id)) {
             // NOT SELECTED BUT CAN BE SELECTED
-            // console.log(e.textColour);
+            console.log(e.textColour);
             return {...e, style: {...e.style, color: e.textColour, background: e.selectableColour}};
         } else {
             // UNSELECTED NODE

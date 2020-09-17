@@ -1,7 +1,7 @@
 import React from 'react';
 import SidebarModal from "./sidebar-modal.js";
 import TutorialModal from "./tutorial-modal.js";
-import { Icon, Button, Container, Header, Divider, Segment, Message, Label } from 'semantic-ui-react';
+import { Icon, Button, Container, Header, Divider, Grid, Segment, Message, Label } from 'semantic-ui-react';
 import ScrollTo from "react-scroll-into-view";
 import specialisationsJSON from "../webscraper/specialisations.json";
 import coursesJSON from "../webscraper/courses.json";
