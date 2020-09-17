@@ -1,5 +1,6 @@
+import { findAllByDisplayValue } from '@testing-library/react';
 import React, { Component } from 'react'
-import { Button, Dropdown, Grid } from 'semantic-ui-react'
+import { Button, Dropdown, Grid, Message } from 'semantic-ui-react'
 
 import programsJSON from "../webscraper/programs.json"
 import specialisationsJSON from "../webscraper/specialisations.json"
@@ -78,7 +79,10 @@ class DropdownDegrees extends Component {
         valSecondary: null,
 
         phPrimary: "Select",
-        phSecondary: "N/A"
+        phSecondary: "N/A",
+
+        messageText: "",
+        messageVisible: "hidden",
     }
 
     chooseProgram = (e, program) => {
@@ -130,28 +134,65 @@ class DropdownDegrees extends Component {
         return `#/${this.state.valProgram}/${this.state.valPrimary}`
     }
 
+    supported = {
+        "3707": ["SENGAH"],
+        "3778": ["COMPA1"]
+    };
+
     isDisabled = () => {
-        const supported = {
-            "3707": ["SENGAH"],
-            "3778": ["COMPA1"]
-        };
+        this.state.messageVisible = "hidden"
 
         if (!!this.state.valSecondary) {
-            console.log("Minors not supported");
+            this.state.messageText = "Minors not supported yet";
+            this.state.messageVisible = "visible";
             return true;
         }
 
-        if (!(this.state.valProgram in supported)) {
-            console.log(this.state.valProgram, `Only ${Object.keys(supported).join(", ")} is supported`);
+        if (!(this.state.valProgram in this.supported)) {
+            this.state.messageText = `Only ${Object.keys(this.supported).join(", ")} is supported`;
+            this.state.messageVisible = "visible";
             return true;
         }
 
-        if (!supported[this.state.valProgram].includes(this.state.valPrimary)) {
-            console.log(this.state.valProgram, `Only ${supported[this.state.valProgram].join(", ")} is supported`);
+
+        if (!this.supported[this.state.valProgram].includes(this.state.valPrimary)) {
+            this.state.messageText = `Only ${this.supported[this.state.valProgram].join(", ")} is supported`;
+            this.state.messageVisible = "visible";
             return true;
         }
 
-        return this.state.valProgram === null || this.state.valPrimary === null;
+        const isSupported = this.state.valProgram === null || this.state.valPrimary === null;
+
+        return isSupported;
+    }
+
+    getMessage = () => {
+        if (!!this.state.valSecondary) {
+            return (
+                <Message warning>
+                    Minors not supported yet
+                </Message>
+            )
+        }
+
+        if (!(this.state.valProgram in this.supported)) {
+            return (
+                <Message warning>
+                    {`Only ${Object.keys(this.supported).join(", ")} is supported`}
+                </Message>
+            )
+        }
+
+
+        if (!this.supported[this.state.valProgram].includes(this.state.valPrimary)) {
+            return (
+                <Message warning>
+                    {`Only ${this.supported[this.state.valProgram].join(", ")} is supported`}
+                </Message>
+            )
+        }
+
+        return;
     }
 
     render() {
@@ -183,6 +224,7 @@ class DropdownDegrees extends Component {
                     <Dropdown
                         selection
                         search
+                        clearable
                         onChange={this.chooseSecondary}
                         options= {this.state.minorOptions}
                         disabled= {this.state.disabledSecondary}
@@ -191,6 +233,7 @@ class DropdownDegrees extends Component {
                         style={{visibility: this.state.hiddenSecondary}}
                     />
                 </Grid.Row>
+                {this.getMessage()}
                 <Grid.Row>
                     <Button
                         href={this.getLink()}
