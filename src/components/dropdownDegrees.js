@@ -200,7 +200,7 @@ class DropdownDegrees extends Component {
                     The UNSW handbook is currently undergoing major updates for <b>2021</b>. As a result, some information might be <b>inaccurate</b>. Please refer to the <a href="https://www.handbook.unsw.edu.au" target="_blank">handbook</a> for the latest update.
                 </Message>
             </Container> */}
-            <Grid centered style={{marginBottom: "20px"}}>
+            <Grid centered style={{marginTop: "20px", marginBottom: "20px"}}>
                 <Grid.Row>
                     <Dropdown
                         selection
@@ -244,7 +244,6 @@ class DropdownDegrees extends Component {
                     >
                         Load flowchart
                     </Button>
-
                 </Grid.Row>
             </Grid>
         </>;

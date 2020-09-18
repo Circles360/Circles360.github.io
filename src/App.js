@@ -23,7 +23,7 @@ class App extends Component {
           <Route exact path="/3778/COMPA1/INFSA2" component={ComputerScienceCOMPA1INFSA2} />
           <Route exact path="/3778/COMPA1/PSYCM2" component={ComputerScienceCOMPA1PSYCM2} />
           <Route exact path="/James" component={Teaching}/>
-          <Route path="/" component={Homepage} />
+          <Route exact path="/" component={Homepage} />
         </div>
       </HashRouter>
     )
