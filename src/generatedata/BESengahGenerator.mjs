@@ -124,6 +124,7 @@ for (const course of courses_output) {
 // ENGG1000-ENGG2600-ENGG3600-ENGG4600 + 48 units
 // INFS3830 and INFS3873 prerequisites = 3603
 // COMP4961 cannot be taken (not doing the right program)
+// COMP3901 - COMP3902 all level 2 core courses
 for (const course of courses_output) {
     if (course.id === 'ENGG1000') {
         course.data.unlocks.push('ENGG2600');
@@ -158,6 +159,9 @@ for (const course of courses_output) {
         course.data.unlocks = course.data.unlocks.filter(function(course){
             return course !== 'COMP6721';
         });    
+    } else if (course.id === 'COMP3901' || course.id === 'COMP3902') {
+        course.data.conditions.prereqs_executable = "(COMP1511 && COMP1521 && COMP1531 && (MATH1131 || MATH1141) && ENGG1000 && (MATH1231 || MATH1241) && COMP2041 && COMP2511 && COMP2521 && DESN2000 && MATH2400 && MATH2859 && SENG2011 && SENG2021)";
+        course.data.conditions.prerequisites = ["COMP1511", "COMP1521", "COMP1531", "MATH1131", "MATH1141", "ENGG1000", "MATH1231", "MATH1241", "COMP2041", "COMP2511", "COMP2521", "DESN2000", "MATH2400", "MATH2859", "SENG2011", "SENG2021"];
     }
 }
 

@@ -151,6 +151,7 @@ for (const course_group in data.ACCTA2.structure) {
 // ========== HARD CODE IN SPECIFIC REQUIREMENTS ==========
 // ENGG2600-ENGG3600-ENGG4600 + 48 units
 // COMM1140 available only in term 2 and 3
+// COMP3901 and COMP3902 first and second year core
 for (const course of courses_output) {
     if (course.id === 'ENGG2600') {
         course.data.unlocks = ['ENGG3600']
@@ -171,6 +172,9 @@ for (const course of courses_output) {
     } else if (course.id === 'ACCT2542') {
         course.data.conditions.prerequisites = ['ACCT1511', 'ACCT2511'];
         course.data.conditions.prereqs_executable = 'ACCT1511 || ACCT2511';
+    } else if (course.id === 'COMP3901' || course.id === 'COMP3902') {
+        course.data.conditions.prerequisites = ["COMP1511", "COMP1521", "COMP1531",  "COMP2511", "COMP2521", "MATH1081", "MATH1131", "MATH1141", "MATH1231", "MATH1241"];
+        course.data.conditions.prereqs_executable = '(COMP1511 && COMP1521 && COMP1531 && COMP2511 && COMP2521 && MATH1081 && (MATH1131 || MATH1141) && (MATH1231 || MATH1241))';
     }
 }
 

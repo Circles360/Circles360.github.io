@@ -22571,8 +22571,10 @@
         "desc": "COMM1100 is the first course in the Bachelor of Commerce and provides students with a rigorous introduction to business decision-making. Taking the perspective of a manager, students learn about economic, corporate responsibility and legal principles to understand what organisational leaders need to consider and what actions they might take when making business decisions.  Fundamental economic principles inform managers to ask and answer questions about how the economy works, and how these principles influence the decisions that individuals and organisations make. Core legal principles guide managers to protect value for owners and other stakeholders, and to protect both managers and organisations from public and private legal actions arising from their decisions. Corporate sustainability principles direct managers to meet the organisation’s responsibilities to a range of stakeholders and help explain why organisations may not always make the best decisions.",
         "conditions": {
             "raw": "Students who have completed ECON1101 are not permitted to enrol. Only available to single and double degree Business School students in Term 1. It will be offered to non-Business School students in Terms 2 and 3.",
-            "prereqs_executable": null,
-            "prerequisites": null,
+            "prereqs_executable": "ECON1101",
+            "prerequisites": [
+                "ECON1101"
+            ],
             "corequisites": null,
             "units_required": null,
             "level_for_units_required": null,
@@ -24364,8 +24366,8 @@
         "desc": "The student will complete a small research project under the supervision of a member of the academic staff of the School. The project will be assessed on the basis of a report written by the student.",
         "conditions": {
             "raw": "Prerequisite: 80+ WAM in COMP, SENG or BINF courses, completion of all first and second year core requirements a CSE program, and agreement from a suitable CSE academic supervisor.",
-            "prereqs_executable": "(COMP1511 && COMP1521 && COMP1531 && (MATH1131 || MATH1141) && ENGG1000 && (MATH1231 || MATH1241) && COMP2041 && COMP2511 && COMP2521 && DESN2000 && MATH2400 && MATH2859 && SENG2011 && SENG2021)",
-            "prerequisites": ["COMP1511", "COMP1521", "COMP1531", "MATH1131", "MATH1141", "ENGG1000", "MATH1231", "MATH1241", "COMP2041", "COMP2511", "COMP2521", "DESN2000", "MATH2400", "MATH2859", "SENG2011", "SENG2021"],
+            "prereqs_executable": null,
+            "prerequisites": null,
             "corequisites": null,
             "units_required": null,
             "level_for_units_required": null,
@@ -24391,8 +24393,8 @@
         "desc": "The student will complete a medium-sized research project under the supervision of a member of the academic staff of the School. The project will be assessed on the basis of report written by the student.",
         "conditions": {
             "raw": "Prerequisite: 80+ WAM in COMP, SENG or BINF courses, completion of all first and second year core requirements a CSE program, and agreement from a suitable CSE academic supervisor.",
-            "prereqs_executable": "(COMP1511 && COMP1521 && COMP1531 && (MATH1131 || MATH1141) && ENGG1000 && (MATH1231 || MATH1241) && COMP2041 && COMP2511 && COMP2521 && DESN2000 && MATH2400 && MATH2859 && SENG2011 && SENG2021)",
-            "prerequisites": ["COMP1511", "COMP1521", "COMP1531", "MATH1131", "MATH1141", "ENGG1000", "MATH1231", "MATH1241", "COMP2041", "COMP2511", "COMP2521", "DESN2000", "MATH2400", "MATH2859", "SENG2011", "SENG2021"],
+            "prereqs_executable": null,
+            "prerequisites": null,
             "corequisites": null,
             "units_required": null,
             "level_for_units_required": null,

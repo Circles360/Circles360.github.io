@@ -148,6 +148,7 @@ for (const course_group in data.INFSA2.structure) {
 // ========== HARD CODE IN SPECIFIC REQUIREMENTS ==========
 // ENGG2600-ENGG3600-ENGG4600 + 48 units
 // COMM1110 and COMM1190 only available in term2 and term3
+// COMP3901 and COMP3902 requires core year 1 and 2 courses
 for (const course of courses_output) {
     if (course.id === 'ENGG2600') {
         course.data.unlocks = ['ENGG3600']
@@ -163,6 +164,9 @@ for (const course of courses_output) {
         course.data.conditions.units_required = 48;
     } else if (course.id === 'COMM1190') {
         course.data.terms = ['Term 2', 'Term 3'];
+    } else if (course.id === 'COMP3901' || course.id === 'COMP3902') {
+        course.data.conditions.prerequisites = ["COMP1511", "COMP1521", "COMP1531",  "COMP2511", "COMP2521", "MATH1081", "MATH1131", "MATH1141", "MATH1231", "MATH1241"];
+        course.data.conditions.prereqs_executable = '(COMP1511 && COMP1521 && COMP1531 && COMP2511 && COMP2521 && MATH1081 && (MATH1131 || MATH1141) && (MATH1231 || MATH1241))';
     }
 }
 

@@ -151,6 +151,7 @@ for (const course_group in data.PSYCM2.structure) {
 // ========== HARD CODE IN SPECIFIC REQUIREMENTS ==========
 // ENGG2600-ENGG3600-ENGG4600 + 48 units
 // COMM1140 available only in term 2 and 3
+// COMP3901 and COMP3902 core year 1 and 2 courses
 for (const course of courses_output) {
     if (course.id === 'ENGG2600') {
         course.data.unlocks = ['ENGG3600']
@@ -177,6 +178,9 @@ for (const course of courses_output) {
         course.data.unlocks = ["PSYC2061", "PSYC2071", "PSYC2081", "PSYC2101"];
     } else if (course.id === "PSYC1011") {
         course.data.unlocks = ["PSYC2061", "PSYC2071", "PSYC2081"];
+    } else if (course.id === 'COMP3901' || course.id === 'COMP3902') {
+        course.data.conditions.prerequisites = ["COMP1511", "COMP1521", "COMP1531",  "COMP2511", "COMP2521", "MATH1081", "MATH1131", "MATH1141", "MATH1231", "MATH1241"];
+        course.data.conditions.prereqs_executable = '(COMP1511 && COMP1521 && COMP1531 && COMP2511 && COMP2521 && MATH1081 && (MATH1131 || MATH1141) && (MATH1231 || MATH1241))';
     }
 }
 
