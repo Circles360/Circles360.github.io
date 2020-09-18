@@ -64,6 +64,13 @@ SPECIALISATIONS.JSON
         - INFS2602 doesn't fking exist LMFAOOO its INFS1602
     MARKA2
         - Mark2012 doesn't fking exist its Mark1012
+    FINSA2
+        - FINS2613 is exclusion course with fins1613 (but other courses in Handbook
+            have not fully finished updating)
+            - Therefore, we replace it with FINS1613 for now
+        - We also add COMM1170 + COMM1140 to prescribed Electives
+
+
 
 BESENGAHGENERATOR.MJS:
 - DESN2000 needs to have terms and prereqs and unlocks added (specifically for SENGAH)
