@@ -195,11 +195,11 @@ class DropdownDegrees extends Component {
 
     render() {
         return <>
-            <Container style={{padding: "30px"}}>
+            {/* <Container style={{padding: "30px"}}>
                 <Message info>
                     The UNSW handbook is currently undergoing major updates for <b>2021</b>. As a result, some information might be <b>inaccurate</b>. Please refer to the <a href="https://www.handbook.unsw.edu.au" target="_blank">handbook</a> for the latest update.
                 </Message>
-            </Container>
+            </Container> */}
             <Grid centered style={{marginBottom: "20px"}}>
                 <Grid.Row>
                     <Dropdown
