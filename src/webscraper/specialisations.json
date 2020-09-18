@@ -14966,6 +14966,19 @@
             }
         }
     },
+    "None": {
+        "name": "None",
+        "code": "None",
+        "units": "0 ",
+        "faculty": "None",
+        "structure": {
+            "Core Course": {
+                "name": "None",
+                "units_required": 0,
+                "courses": []
+            }
+        }
+    },
     "MATHNH": {
         "name": "Physical Oceanography",
         "code": "MATHNH",
@@ -16766,7 +16779,6 @@
                 "name": "Core Courses",
                 "units_required": 30,
                 "courses": [
-                    "INFS1602",
                     "COMM1190",
                     "INFS1603",
                     "INFS2603",
@@ -16823,8 +16835,7 @@
                 "name": "Core Course",
                 "units_required": 12,
                 "courses": [
-                    "COMM1100",
-                    "MARK1012"
+                    "COMM1100"
                 ]
             },
             "Prescribed Electives": {

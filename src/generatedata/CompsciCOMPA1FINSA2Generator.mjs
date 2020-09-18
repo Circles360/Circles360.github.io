@@ -150,7 +150,6 @@ for (const course_group in data.FINSA2.structure) {
 
 // ========== HARD CODE IN SPECIFIC REQUIREMENTS ==========
 // ENGG2600-ENGG3600-ENGG4600 + 48 units
-// COMM1140 available only in term 2 and 3
 for (const course of courses_output) {
     if (course.id === 'ENGG2600') {
         course.data.unlocks = ['ENGG3600']
