@@ -3,7 +3,7 @@ import React, {useState} from 'react';
 
 import DropdownDegrees from '../../components/dropdownDegrees.js'
 import InteractiveTutorialMain from '../../components/interactivetutorialmain.js';
-import { Icon, Button, Container, Header } from 'semantic-ui-react';
+import { Message, Button, Container, Header } from 'semantic-ui-react';
 import ScrollTo from "react-scroll-into-view";
 
 const containerStyle = {
@@ -48,9 +48,16 @@ const Homepage = () => {
                 </Container>
             </div>
             <div id="chooseDegree">
-                <Container style={containerStyle}>
+                <Container style={{...containerStyle, justifyContent: "center"}}>
                     <Header as="h2" textAlign="center" style={{fontSize: "36px", marginTop: "5vh"}}>Choose your program and degree to begin</Header>
-                    <DropdownDegrees />
+                    <div>
+                        <Container style={{padding: "10px"}}>
+                            <Message warning>
+                                The UNSW handbook is currently undergoing updates for 2021. Although we try our best, some data may be incorrect or outdated, so some nodes on our flowchart may not be selected. Please refer to the <a href="https://www.handbook.unsw.edu.au" target="_blank">handbook</a> for the latest update.
+                            </Message>
+                        </Container>
+                        <DropdownDegrees />
+                    </div>
                 </Container>
             </div>
         </div>

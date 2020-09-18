@@ -15,6 +15,9 @@ const programOptions = []
 for (const code in programsJSON) {
     if (programsJSON[code].degrees_involved.majors.length === 0 && programsJSON[code].degrees_involved.honours.length === 0) continue;
 
+    // Only these programs are supported
+    if (!["3707", "3778"].includes(code)) continue;
+
     programOptions.push({
         "key": code,
         "value": code,
@@ -26,10 +29,12 @@ for (const code in programsJSON) {
 
 for (const code in courseOptions) {
     for (const type in courseOptions[code]) {
-
         const replacement = [];
         for (const spec of courseOptions[code][type]) {
             if (!(spec in specialisationsJSON)) continue;
+
+            // Only these majors and minors are supported
+            if (!["SENGAH", "COMPA1", "ACCTA2", "FINSA2", "INFSA2", "MARKA2", "PSYCM2"].includes(spec)) continue;
             replacement.push({
                 "key": spec,
                 "value": spec,
@@ -154,14 +159,6 @@ class DropdownDegrees extends Component {
     }
 
     getMessage = () => {
-        if (!!this.state.valSecondary) {
-            return (
-                <Message warning>
-                    Minors not supported yet
-                </Message>
-            )
-        }
-
         if (!(this.state.valProgram in this.supported)) {
             return (
                 <Message warning>
@@ -195,11 +192,6 @@ class DropdownDegrees extends Component {
 
     render() {
         return <>
-            {/* <Container style={{padding: "30px"}}>
-                <Message info>
-                    The UNSW handbook is currently undergoing major updates for <b>2021</b>. As a result, some information might be <b>inaccurate</b>. Please refer to the <a href="https://www.handbook.unsw.edu.au" target="_blank">handbook</a> for the latest update.
-                </Message>
-            </Container> */}
             <Grid centered style={{marginTop: "20px", marginBottom: "20px"}}>
                 <Grid.Row>
                     <Dropdown
