@@ -1,6 +1,6 @@
 import { findAllByDisplayValue } from '@testing-library/react';
 import React, { Component } from 'react'
-import { Button, Dropdown, Grid, Message} from 'semantic-ui-react'
+import { Button, Dropdown, Container, Grid, Message} from 'semantic-ui-react'
 
 import programsJSON from "../webscraper/programs.json"
 import specialisationsJSON from "../webscraper/specialisations.json"
@@ -106,7 +106,7 @@ class DropdownDegrees extends Component {
         else {
             this.setState({
                 phPrimary: "Select Major",
-                phSecondary: "Select Minor",
+                phSecondary: "Select Minor (optional)",
                 minorOptions: getMinors(program.value),
                 disabledSecondary: false,
                 hiddenSecondary: 'visible',
@@ -178,64 +178,59 @@ class DropdownDegrees extends Component {
 
     render() {
         return <>
-            <div style={{display: 'flex', flexDirection: 'row'}}>
-                <div style={{flex: 1}}>
-                    <Message info style={{marginTop: "35px", marginLeft: "65px"}}>
-                        The UNSW handbook is currently undergoing major updates for <b>2021</b>. As a result, some information might be <b>inaccurate</b>. Please refer to the <a style={{textDecoration: "none"}} href="https://www.handbook.unsw.edu.au" target="_blank">handbook</a> for the latest update.
-                    </Message>
-                </div>
-                <div style={{flex: 1.25}}>
-                    <Grid centered style={{marginBottom: "20px"}}>
-                        <Grid.Row>
-                            <Dropdown
-                                selection
-                                search
-                                onChange={this.chooseProgram}
-                                options= {this.state.programOptions}
-                                enabled
-                                placeholder= 'Select Program'
-                            />
-                        </Grid.Row>
-                        <Grid.Row>
-                            <Dropdown
-                                selection
-                                search
-                                onChange={this.choosePrimary}
-                                options= {this.state.majorOptions}
-                                disabled= {this.state.disabledPrimary}
-                                value= {this.state.valPrimary}
-                                placeholder= {this.state.phPrimary}
-                                style={{visibility: this.state.hiddenPrimary}}
-                            />
-                        </Grid.Row>
-                        <Grid.Row>
-                            <Dropdown
-                                selection
-                                search
-                                clearable
-                                onChange={this.chooseSecondary}
-                                options= {this.state.minorOptions}
-                                disabled= {this.state.disabledSecondary}
-                                value= {this.state.valSecondary}
-                                placeholder= {this.state.phSecondary}
-                                style={{visibility: this.state.hiddenSecondary}}
-                            />
-                        </Grid.Row>
-                        {this.getMessage()}
-                        <Grid.Row>
-                            <a href={this.getLink()}>
-                                <Button
-                                    disabled={this.isDisabled()}
-                                    color="red"
-                                >
-                                    Load flowchart
-                                </Button>
-                            </a>
-                        </Grid.Row>
-                    </Grid>
-                </div>
-                <div style={{flex: 1}}/>
-            </div>
+            <Container style={{padding: "30px"}}>
+                <Message info>
+                    The UNSW handbook is currently undergoing major updates for <b>2021</b>. As a result, some information might be <b>inaccurate</b>. Please refer to the <a href="https://www.handbook.unsw.edu.au" target="_blank">handbook</a> for the latest update.
+                </Message>
+            </Container>
+            <Grid centered style={{marginBottom: "20px"}}>
+                <Grid.Row>
+                    <Dropdown
+                        selection
+                        search
+                        onChange={this.chooseProgram}
+                        options= {this.state.programOptions}
+                        enabled
+                        placeholder= 'Select Program'
+                    />
+                </Grid.Row>
+                <Grid.Row>
+                    <Dropdown
+                        selection
+                        search
+                        onChange={this.choosePrimary}
+                        options= {this.state.majorOptions}
+                        disabled= {this.state.disabledPrimary}
+                        value= {this.state.valPrimary}
+                        placeholder= {this.state.phPrimary}
+                        style={{visibility: this.state.hiddenPrimary}}
+                    />
+                </Grid.Row>
+                <Grid.Row>
+                    <Dropdown
+                        selection
+                        search
+                        clearable
+                        onChange={this.chooseSecondary}
+                        options= {this.state.minorOptions}
+                        disabled= {this.state.disabledSecondary}
+                        value= {this.state.valSecondary}
+                        placeholder= {this.state.phSecondary}
+                        style={{visibility: this.state.hiddenSecondary}}
+                    />
+                </Grid.Row>
+                {this.getMessage()}
+                <Grid.Row>
+                    <a href={this.getLink()}>
+                        <Button
+                            disabled={this.isDisabled()}
+                            color="red"
+                        >
+                            Load flowchart
+                        </Button>
+                    </a>
+                </Grid.Row>
+            </Grid>
         </>;
     }
 }
