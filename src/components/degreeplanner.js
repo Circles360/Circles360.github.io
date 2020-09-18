@@ -589,7 +589,10 @@ class DegreePlanner extends React.Component {
                 <Container fluid style={{textAlign: "center", marginTop: "50px", height: "auto", padding: "20px"}}>
                     <p><b>Disclaimer:</b> While we try our best, Circles is not an official UNSW website and does not guarantee accuracy or reliability (e.g. a course may not have its term availability published on the Handbook)</p>
                     <p>Made by SRKO, 2020</p>
-                    <a href="https://github.com/Circles360/Circles360.github.io" target="_blank" rel="noopener noreferrer">GitHub</a>
+                    <div>
+                        <a style={{margin: "5px"}} href="/">Home</a>
+                        <a style={{margin: "5px"}} href="https://github.com/Circles360/Circles360.github.io" target="_blank" rel="noopener noreferrer">GitHub</a>
+                    </div>
                 </Container>
             </Segment>
         );
