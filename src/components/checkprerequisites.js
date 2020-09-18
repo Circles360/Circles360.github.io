@@ -18,7 +18,8 @@ export default function checkPrerequisites(node, elements, selectedNodes) {
 
         // Check if units have been met if it has a unit requirement
         if (node.data.conditions.units_required !== null) {
-            return(checkPrerequisiteUnits(node, elements, selectedNodes));
+            if (! checkPrerequisiteUnits(node, elements, selectedNodes)) return false;
+            // Remember we also have to check its prerequisites!!!
         }
 
         var condition = node.data.conditions.prereqs_executable;
