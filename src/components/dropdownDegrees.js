@@ -144,16 +144,16 @@ class DropdownDegrees extends Component {
 
     isDisabled = () => {
         // this.state.messageVisible = "hidden"
-        this.setState({messageVisible: "hidden"})
+        // this.setState({messageVisible: "hidden"})
 
-        if (!!this.state.valSecondary) return true;
+        // if (!!this.state.valSecondary) return true;
         if (!(this.state.valProgram in this.supported)) return true;
         if (!this.supported[this.state.valProgram].includes(this.state.valPrimary)) return true;
 
-        const link = `/${this.state.valProgram}/${this.state.valPrimary}` + (this.state.valSecondary ? `/${this.state.valSecondary}` : "");
-        const currentURL = window.location.href;
-        // console.log(currentURL.slice(currentURL.indexOf("#") + 1))
-        if (currentURL.slice(currentURL.indexOf("#") + 1) === link) return true;
+        // const link = `/${this.state.valProgram}/${this.state.valPrimary}` + (this.state.valSecondary ? `/${this.state.valSecondary}` : "");
+        // const currentURL = window.location.href;
+        // // console.log(currentURL.slice(currentURL.indexOf("#") + 1))
+        // if (currentURL.slice(currentURL.indexOf("#") + 1) === link) return true;
 
         const isSupported = this.state.valProgram === null || this.state.valPrimary === null;
         return isSupported;
@@ -232,6 +232,7 @@ class DropdownDegrees extends Component {
                 {this.getMessage()}
                 <Grid.Row>
                     <Button
+                        disabled={this.isDisabled()}
                         onClick={() => {window.location.href=this.getLink()}}
                         color="red"
                     >
