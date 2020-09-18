@@ -176,6 +176,22 @@ courses_output = courses_output.filter(function(course) {
     else return true;
 });
 
+// Delete Non-connected Math courses from the graph:
+courses_output = courses_output.filter(function(course) {
+    if (course.id.substr(0,4) === 'MATH') {
+        if (['MATH1131', 'MATH1141', 'MATH1081', 'MATH2400', 'MATH2859', 'MATH1231', 'MATH1241', 'MATH3411'].includes(course.id)) {
+            return true;
+        } else {
+            delete courses_list[course.id];
+            //console.log("DELETING " + course.id);
+            return false;
+        }
+    } else {
+        return true;
+    }
+})
+
+
 // Go through the unlocks for each course and if it is not a node in our graph,
 // delete it. If the array is empty, set it to null
 for (var course of courses_output) {
@@ -236,7 +252,7 @@ courses_list['SENGAH'] = 1;
 // Hard code in prerequisites for starting courses
 for (var course of courses_output) {
     if (['COMP1511', 'ENGG1000', 'MATH1131', 'MATH1141'].includes(course.id)) {
-        console.log(course.id);
+        console.log("starting: " + course.id);
         course.data.conditions.prerequisites = ['SENGAH'];
     }
 }
