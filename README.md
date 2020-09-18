@@ -2,14 +2,16 @@
 
 ## Overview
 
-Circles is a **visual degree planner** for UNSW undergraduate students, available [here](circles360.github.io). By representing a degree as a flowchart, Circles makes it easy for anyone to choose explore which direction they would like to take their degree in. Once students have chosen the courses that they would like to take, a degree plan is automatically generated for them, which takes into account course prerequisites and term availability. Students can then drag and drop courses as needed to customise their degree plan.
+Circles is a **visual degree planner** for UNSW undergraduate students, available [here](circles360.github.io). By representing a degree as a flowchart, Circles makes it easy for anyone to choose and explore which direction they would like to take their degree in. Once students have chosen the courses that they would like to take, a degree plan is automatically generated for them, which takes into account course prerequisites and term availability. Students can then drag and drop courses as needed to customise their degree plan.
 
 Our project can be split into 3 subprojects:
 1. 2021 Handbook Scraper
 2. Flowchart
 3. Smart Degree Planner
 
-**NOTE:** Currently only SENGAH (Software Engineering) is supported. This is because each degree requires a manual check to ensure there were no errors (many times the Handbook is missing information 😢). Since we were all learning React for the first time, we just didn't have time for this task.
+**NOTE:** Currently only SENGAH (Software Engineering), and COMPA1 (Computer Science) with its optional minors are supported. This is because each degree requires a manual check to ensure there were no errors (many times the Handbook is missing information 😢). Since we were all learning React for the first time, we didn't have time for this task.
+
+**NOTE:** The UNSW handbook is currently undergoing updates for 2021. Although we try our best, some data may be incorrect or outdated, so some nodes on our flowchart may not be selectable. Please refer to the handbook for the latest update.
 
 ### 1. 2021 Handbook Scraper
 
