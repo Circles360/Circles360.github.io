@@ -11,7 +11,7 @@ const Homepage = () => {
             <modal> 
                 <Message info>
                     <p>Circles is a <b>visual degree planner</b> for UNSW undergraduate students. Choose your program and degree to begin!</p>
-                    <p>Please note that the UNSW 2021 handbook is still not yet complete, therefore there are some courses that you cannot select, please refer to the handbook for more information if needed.</p>
+                    <p>Please note that the UNSW 2021 handbook is still not yet complete, therefore there are some courses that you cannot select, please refer to the handbook for more information if needed.npm</p>
                     <div style={{display: "flex", flexDirection: "row", justifyContent: "space-between"}}>
                         <SidebarModal />
                         <TutorialModal />

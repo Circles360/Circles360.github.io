@@ -304,7 +304,7 @@ const ComputerScienceCOMPA1INFSA2 = () => {
                     </Grid.Column>
                 </Grid>
                 {hoverDisplay}
-                <button onClick={positionHelper(elements)}>GENERATE POSITION</button>
+                {/* <button onClick={positionHelper(elements)}>GENERATE POSITION</button> */}
                 <div id="DegreePlanner">
                     <DegreePlanner
                         key={Object.keys(selectedNodes).concat(additionalCourses).join("")}
