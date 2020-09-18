@@ -58,6 +58,7 @@ INFS3632, INFS3617, - spelling mistake,
     - Prereqs are fucked lol
 
 
+
 SPECIALISATIONS.JSON
     INFSA2
         - INFS2602 doesn't fking exist LMFAOOO its INFS1602
@@ -83,6 +84,8 @@ BESENGAHGENERATOR.MJS:
 
 - REMOVE ALL INFS FROM FLOWCHART
 - REMOVE ALL TELE FROM FLOWCHART
+- REMOVE NON-CONNECTED MATH COURSES FROM FLOWCHART
+
 
 TODO: Should I add unlocks? ^ Will make a shit ton of nodes link to these two.
 
@@ -94,6 +97,8 @@ COMPSCICOMPA1GENERATOR.MJS
         - ACCT2542 prerequisites = ACCT1511 OR ACCT2511 (Handbook was updated!!!)
     INFSA2
         - Hard code in COMM1110 node (they must take this to take INFSA2 courses)
+            - Not connected to INFSA2 header node (taken as free elective)
+        - COMM1190 prereqs = COMM1110
         - COMM1110 and COMM1190 available in t2,3 for non-business school students
     PSYCM2
         - PSYC2061, PSYC2081, PSYC2071, PSYC1001, PSYC1011 prerequisites aren't scrapped properly

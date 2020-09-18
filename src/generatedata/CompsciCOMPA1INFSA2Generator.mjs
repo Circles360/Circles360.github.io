@@ -251,7 +251,7 @@ courses_output.unshift({
         degree_name: data.INFSA2.name,
         degree_code: data.INFSA2.code,
         units: 0,
-        unlocks: ['COMM1110', 'INFS1602', 'INFS1603'],
+        unlocks: ['COMM1190', 'INFS1602', 'INFS1603'],
         conditions: {
             prerequisites: null,
             corequisites: null,
@@ -271,15 +271,19 @@ courses_output.unshift({
 })
 courses_output[0].style.border = '2px solid #8A36B4';
 courses_list['INFSA2'] = 1;
-
-
 // Hard code in prerequisites for starting courses
 for (var course of courses_output) {
-    if (['COMM1110', 'INFS1602', 'INFS1603'].includes(course.id)) {
+    if (['COMM1190', 'INFS1602', 'INFS1603'].includes(course.id)) {
         console.log(course.id);
         course.data.conditions.prerequisites = ['INFSA2'];
+        if (course.id === 'COMM1190') {
+            course.data.conditions.prereqs_executable = 'COMM1110';
+            course.data.conditions.prerequisites.push('COMM1110');            
+        }
     }
 }
+
+
 
 // Generate the position for each node
 for (const node of position_data) {
