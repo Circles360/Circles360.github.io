@@ -280,7 +280,6 @@ for (var course of courses_output) {
         course.data.conditions.prerequisites = ['PSYCM2'];
     }
 }
-console.log(courses_output[0]);
 
 // Generate the position for each node
 for (const node of position_data) {
@@ -292,6 +291,11 @@ for (const node of position_data) {
             break;
         }
     }
+}
+
+// NEW: Make courses have clickable pointer instead of draggable pointer
+for (var course of courses_output) {
+    course.style['cursor'] = 'pointer';
 }
 
 // Generate the edges

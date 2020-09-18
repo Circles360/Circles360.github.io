@@ -288,6 +288,11 @@ for (const node of position_data) {
     }
 }
 
+// NEW: Make courses have clickable pointer instead of draggable pointer
+for (var course of courses_output) {
+    course.style['cursor'] = 'pointer';
+}
+
 // Generate the edges
 var edges_output = [];
 var edges_list = {};
