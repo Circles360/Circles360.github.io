@@ -1,12 +1,12 @@
 import React, {useState} from 'react';
-import ReactFlow, {isNode, isEdge, ReactFlowProvider} from 'react-flow-renderer';
+import ReactFlow, {isNode, isEdge} from 'react-flow-renderer';
 import TutorialNode1 from './tutorialnode1.js';
 import TutorialNode2 from './tutorialnode2.js';
 
 import hoverPrerequisites from './hoverprerequisites.js';
 import unhoverPrerequisites from './unhoverprerequisites.js';
 import highlightElements from './highlightelements.js';
-import checkPrerequisites from './checkprerequisites.js';
+// import checkPrerequisites from './checkprerequisites.js';
 
 import selectNode from './selectnode.js';
 import unselectNode from './unselectnode.js';

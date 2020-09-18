@@ -214,12 +214,12 @@ const addCourseToPlan = (termPlan, courseId) => {
     }
 
     // Default put in Year 1 Summer Term if cannot find a good position for it.
-    let termsAvailable;
-    if (!(coursesJSON[courseId].terms)) {
-        termsAvailable = ["TS", "T1", "T2", "T3"];
-    } else {
-        termsAvailable = coursesJSON[courseId].terms.map(term => mapTermIds(term));
-    }
+    // let termsAvailable;
+    // if (!(coursesJSON[courseId].terms)) {
+    //     termsAvailable = ["TS", "T1", "T2", "T3"];
+    // } else {
+    //     termsAvailable = coursesJSON[courseId].terms.map(term => mapTermIds(term));
+    // }
 
     termPlan["1TS"].units += coursesJSON[courseId].units;
     termPlan["1TS"].courseIds.push(courseId);

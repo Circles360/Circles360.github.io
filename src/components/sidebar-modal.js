@@ -1,6 +1,6 @@
 import React from "react";
 import DropdownDegrees from "./dropdownDegrees.js"
-import { Button, Container, Modal, Header } from 'semantic-ui-react'
+import { Button, Container, Modal } from 'semantic-ui-react'
 
 function exampleReducer(state, action) {
   switch (action.type) {

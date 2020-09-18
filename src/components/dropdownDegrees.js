@@ -1,6 +1,6 @@
-import { findAllByDisplayValue } from '@testing-library/react';
+// import { findAllByDisplayValue } from '@testing-library/react';
 import React, { Component } from 'react'
-import { Button, Dropdown, Container, Grid, Message} from 'semantic-ui-react'
+import { Button, Dropdown, Grid, Message} from 'semantic-ui-react'
 
 import programsJSON from "../webscraper/programs.json"
 import specialisationsJSON from "../webscraper/specialisations.json"
@@ -143,7 +143,8 @@ class DropdownDegrees extends Component {
     };
 
     isDisabled = () => {
-        this.state.messageVisible = "hidden"
+        // this.state.messageVisible = "hidden"
+        this.setState({messageVisible: "hidden"})
 
         if (!!this.state.valSecondary) return true;
         if (!(this.state.valProgram in this.supported)) return true;

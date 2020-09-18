@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { Route, HashRouter, Link } from 'react-router-dom';
+import { Route, HashRouter } from 'react-router-dom';
 
 import BESengah from './maps/EngineeringHonoursSoftware/map.js';
 import Homepage from "./maps/Homepage/map.js";
