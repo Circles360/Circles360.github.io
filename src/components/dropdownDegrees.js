@@ -159,14 +159,6 @@ class DropdownDegrees extends Component {
     }
 
     getMessage = () => {
-        if (!!this.state.valSecondary) {
-            return (
-                <Message warning>
-                    Minors not supported yet
-                </Message>
-            )
-        }
-
         if (!(this.state.valProgram in this.supported)) {
             return (
                 <Message warning>
@@ -236,7 +228,7 @@ class DropdownDegrees extends Component {
                         style={{visibility: this.state.hiddenSecondary}}
                     />
                 </Grid.Row>
-                {/* {this.getMessage()} */}
+                {this.getMessage()}
                 <Grid.Row>
                     <Button
                         onClick={() => {window.location.href=this.getLink()}}
