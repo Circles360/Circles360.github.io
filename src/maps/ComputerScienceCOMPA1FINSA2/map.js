@@ -271,7 +271,7 @@ const ComputerScienceCOMPA1FINSA2 = () => {
                                     onElementClick={onElementClick}
                                     minZoom={0.38}
                                     //setInitTransform={TransformUpdater({x: 100, y: 100, z: 1})}
-                                    nodesDraggable={true}
+                                    nodesDraggable={false}
                                     onNodeMouseEnter={onNodeMouseEnter}
                                     onNodeMouseLeave={onNodeMouseLeave}
                                     selectNodesOnDrag={false}
