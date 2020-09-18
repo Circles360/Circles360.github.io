@@ -127,8 +127,9 @@ class DropdownDegrees extends Component {
     }
 
     getLink = () => {
-        if (this.state.valSecondary) return `#/${this.state.valProgram}/${this.state.valPrimary}/${this.state.valSecondary}`
-        return `#/${this.state.valProgram}/${this.state.valPrimary}`
+        console.log(window.location.href.split("/")[1]);
+        const link = `#/${this.state.valProgram}/${this.state.valPrimary}` + (this.state.valSecondary ? `/${this.state.valSecondary}` : "");
+        return link;
     }
 
     supported = {
@@ -142,6 +143,11 @@ class DropdownDegrees extends Component {
         if (!!this.state.valSecondary) return true;
         if (!(this.state.valProgram in this.supported)) return true;
         if (!this.supported[this.state.valProgram].includes(this.state.valPrimary)) return true;
+
+        const link = `/${this.state.valProgram}/${this.state.valPrimary}` + (this.state.valSecondary ? `/${this.state.valSecondary}` : "");
+        const currentURL = window.location.href;
+        // console.log(currentURL.slice(currentURL.indexOf("#") + 1))
+        if (currentURL.slice(currentURL.indexOf("#") + 1) === link) return true;
 
         const isSupported = this.state.valProgram === null || this.state.valPrimary === null;
         return isSupported;
@@ -169,6 +175,17 @@ class DropdownDegrees extends Component {
             return (
                 <Message warning>
                     {`Only ${this.supported[this.state.valProgram].join(", ")} is supported`}
+                </Message>
+            )
+        }
+
+        const link = `/${this.state.valProgram}/${this.state.valPrimary}` + (this.state.valSecondary ? `/${this.state.valSecondary}` : "");
+        const currentURL = window.location.href;
+        // console.log(currentURL.slice(currentURL.indexOf("#") + 1))
+        if (currentURL.slice(currentURL.indexOf("#") + 1) === link) {
+            return (
+                <Message warning>
+                    {`You're already looking at this degree`}
                 </Message>
             )
         }
@@ -221,14 +238,13 @@ class DropdownDegrees extends Component {
                 </Grid.Row>
                 {this.getMessage()}
                 <Grid.Row>
-                    <a href={this.getLink()}>
-                        <Button
-                            disabled={this.isDisabled()}
-                            color="red"
-                        >
-                            Load flowchart
-                        </Button>
-                    </a>
+                    <Button
+                        onClick={() => {window.location.href=this.getLink()}}
+                        color="red"
+                    >
+                        Load flowchart
+                    </Button>
+
                 </Grid.Row>
             </Grid>
         </>;
