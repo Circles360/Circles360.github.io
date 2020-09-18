@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 
 
 import DropdownDegrees from '../../components/dropdownDegrees.js'
-import InteractiveTutorial from '../../components/interactivetutorial.js';
+import InteractiveTutorialMain from '../../components/interactivetutorialmain.js';
 import { Message, Button, Container, Header } from 'semantic-ui-react';
 import ScrollTo from "react-scroll-into-view";
 
@@ -42,7 +42,7 @@ const Homepage = () => {
             <div id="tutorial">
                 <Container fluid style={containerStyle}>
                     <Header as="h2" textAlign="center" style={{paddingTop: "3%", fontSize: "36px"}}>Tutorial</Header>
-                    <InteractiveTutorial />
+                    <InteractiveTutorialMain />
                     <Header as="h4" textAlign="center">After choosing your courses, a degree plan will be automatically generated for you.</Header>
                     {getButton("#chooseDegree")}
                 </Container>
