@@ -30,7 +30,19 @@ import dataJSON from "./data.json"
 
 const specialisations = ['COMPA1', 'INFSA2'];
 var program = "3778";
-var elementsData = dataJSON.slice()
+var elementsData = dataJSON.slice();
+// This is for dropdown search
+var searchNodeOptions = [];
+for (const course of elementsData) {
+    if (isNode(course)) {
+        searchNodeOptions.push({
+            key: course.id,
+            value: course.id,
+            text: course.id
+        });
+    }
+}
+
 var nodesData = elementsData.filter(e => isNode(e));
 var edgesData = elementsData.filter(e => isEdge(e));
 var selectedNodes = {};
@@ -95,8 +107,6 @@ const ComputerScienceCOMPA1INFSA2 = () => {
     const [hoverText, setHoverText] = useState(false);
     const [hoverNode, setHoverNode] = useState();
     const [layout, setLayout] = useState(layoutStyle);
-    //const reactFlowInstance = useRef(null);
-    const [reactFlowInstance, setReactFlowInstance] = useState(null);
     const [additionalCourses, setAdditionalCourses] = useState([])
     var clickCount = 0;
     var singleClickTimer = '';
@@ -122,21 +132,8 @@ const ComputerScienceCOMPA1INFSA2 = () => {
             }
             group.push(last);
         }
-        setReactFlowInstance(instance);
         instance.setTransform({x: 470, y: 350, zoom: 0.38});
     };
-
-    const getCanvasSize = () => {
-        const size1 = reactFlowInstance.project({x: window.innerWidth * 0.75, y: window.innerHeight});
-        const size2 = reactFlowInstance.project({x: 0, y: 0});
-        return [(size1.x - size2.x) * 0.38, (size1.y - size2.y) * 0.38];
-    }
-
-
-    let dropSearch = null;
-    if (reactFlowInstance !== null) {
-        dropSearch = <DropdownSearch canvasSize={getCanvasSize()}/>
-    }
 
     const selectUnselect = (element) => {
         // NOTE: Might not need this?????
@@ -281,7 +278,7 @@ const ComputerScienceCOMPA1INFSA2 = () => {
                                     elementsSelectable={false}
                                 >
                                     <div style={{position: "absolute", zIndex: "10", top: "30px", right: "30px"}}>
-                                        {dropSearch}
+                                        <DropdownSearch searchNodeOptions={searchNodeOptions} searchElements={elements}/>
                                     </div>
                                 </ReactFlow>
                             </div>

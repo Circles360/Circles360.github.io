@@ -1,26 +1,7 @@
 import React, { useState } from "react";
 import { Button, Dropdown } from "semantic-ui-react";
 import { useStoreActions } from "react-flow-renderer";
-import dataJSON from "../maps/EngineeringHonoursSoftware/data.json";
 import getElement from "./getelement.js";
-
-const nodeOptions = [];
-const elementsList = [];
-
-for (const code in dataJSON) {
-    const id = dataJSON[code].id;
-    //console.log("Printing id", id);
-    if (id.includes("-")) continue;
-
-    elementsList.push(dataJSON[code]);
-    nodeOptions.push({
-        key: id,
-        value: id,
-        text: id,
-    });
-}
-
-// console.log("Printing NodeOptions", nodeOptions);
 
 export default function DropdownSearch(props) {
     const [search, setSearch] = useState(null);
@@ -36,13 +17,13 @@ export default function DropdownSearch(props) {
 
     const clickDone = () => {
         if (search === null) return;
-        const element = getElement(search, elementsList);
+        const element = getElement(search, props.searchElements);
 
         transformUpdater(
-            -(element.position.x)*2 + props.canvasSize[0]/2 - 64,
-            -(element.position.y)*2 + props.canvasSize[1]/2 - 64,
+            -(element.position.x) * 2 + (window.innerWidth * 0.75)/2 - 64,
+            -(element.position.y) * 2 + (window.innerHeight)/2 - 64,
             2
-        );
+        )
     };
 
     return (
@@ -50,7 +31,7 @@ export default function DropdownSearch(props) {
             <Dropdown
                 selection
                 search
-                options={nodeOptions}
+                options={props.searchNodeOptions}
                 placeholder="Looking for a course?"
                 onChange={handleChange}
                 onKeyPress={event => {
