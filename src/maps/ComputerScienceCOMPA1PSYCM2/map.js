@@ -264,27 +264,29 @@ const ComputerScienceCOMPA1PSYCM2 = () => {
             <div style={layout}>
                 <Grid columns={2} divided>
                     <Grid.Column width="12">
-                        <ReactFlowProvider onMouseEnter={disableBodyScroll} onMouseLeave={enableBodyScroll}>
-                            <ReactFlow
-                                elements={elements}
-                                style={{width: '100%', height: '95vh'}}
-                                onLoad={onInstanceLoad}
-                                nodeTypes={nodeTypes}
-                                nodesConnectable={false}
-                                onElementClick={onElementClick}
-                                minZoom={0.38}
-                                //setInitTransform={TransformUpdater({x: 100, y: 100, z: 1})}
-                                nodesDraggable={false}
-                                onNodeMouseEnter={onNodeMouseEnter}
-                                onNodeMouseLeave={onNodeMouseLeave}
-                                selectNodesOnDrag={false}
-                                // onNodeDragStop={onNodeDragStop}
-                                elementsSelectable={false}
-                            >
-                                <div style={{position: "absolute", zIndex: "10", top: "30px", right: "30px"}}>
-                                    {dropSearch}
-                                </div>
-                            </ReactFlow>
+                        <ReactFlowProvider>
+                            <div onMouseEnter={disableBodyScroll} onMouseLeave={enableBodyScroll}>
+                                <ReactFlow
+                                    elements={elements}
+                                    style={{width: '100%', height: '95vh'}}
+                                    onLoad={onInstanceLoad}
+                                    nodeTypes={nodeTypes}
+                                    nodesConnectable={false}
+                                    onElementClick={onElementClick}
+                                    minZoom={0.38}
+                                    //setInitTransform={TransformUpdater({x: 100, y: 100, z: 1})}
+                                    nodesDraggable={false}
+                                    onNodeMouseEnter={onNodeMouseEnter}
+                                    onNodeMouseLeave={onNodeMouseLeave}
+                                    selectNodesOnDrag={false}
+                                    // onNodeDragStop={onNodeDragStop}
+                                    elementsSelectable={false}
+                                >
+                                    <div style={{position: "absolute", zIndex: "10", top: "30px", right: "30px"}}>
+                                        {dropSearch}
+                                    </div>
+                                </ReactFlow>
+                            </div>
                             <Container style={{marginBottom: "50px"}}>
                                 <Segment raised>
                                     {/* <p>Couldn't find a course up there? Add it here:</p> */}

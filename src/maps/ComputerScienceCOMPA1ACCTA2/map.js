@@ -262,7 +262,8 @@ const ComputerScienceCOMPA1ACCTA2 = () => {
             <div style={layout}>
                 <Grid columns={2} divided>
                     <Grid.Column width="12">
-                        <ReactFlowProvider onMouseEnter={disableBodyScroll} onMouseLeave={enableBodyScroll}>
+                        <ReactFlowProvider>
+                            <div onMouseEnter={disableBodyScroll} onMouseLeave={enableBodyScroll}>
                             <ReactFlow
                                 elements={elements}
                                 style={{width: '100%', height: '95vh'}}
@@ -283,6 +284,7 @@ const ComputerScienceCOMPA1ACCTA2 = () => {
                                     {dropSearch}
                                 </div>
                             </ReactFlow>
+                            </div>
                             <Container style={{marginBottom: "50px"}}>
                                 <Segment raised>
                                     {/* <p>Couldn't find a course up there? Add it here:</p> */}
