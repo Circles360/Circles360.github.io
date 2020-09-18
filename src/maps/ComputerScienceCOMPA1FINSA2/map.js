@@ -279,7 +279,7 @@ const ComputerScienceCOMPA1FINSA2 = () => {
                                     elementsSelectable={false}
                                 >
                                     <div style={{position: "absolute", zIndex: "10", top: "30px", right: "30px"}}>
-                                        <DropdownSearch searchNodeOptions={searchNodeOptions} searchElements={elements}/>
+                                        <DropdownSearch toggleExclusion={toggleExclusion} searchNodeOptions={searchNodeOptions} searchElements={elements}/>
                                     </div>
                                 </ReactFlow>
                             </div>

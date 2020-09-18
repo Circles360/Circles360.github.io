@@ -120,12 +120,10 @@ const BESengah = () => {
             for (var course of elementsData) {
                 if (last === course.id) {
                     course.isHidden = true;
-                    // console.log("Hiding " + course.id);
                     // Get all the edges and hide them too
                     for (var edge of elementsData) {
                         if (isNode(edge)) continue;
                         if (edge.source === last || edge.target === last) {
-                            // console.log("hiding " + edge.id);
                             edge.isHidden = true;
                         }
                     }
@@ -280,7 +278,7 @@ const BESengah = () => {
                                     elementsSelectable={false}
                                 >
                                     <div style={{position: "absolute", zIndex: "10", top: "30px", right: "30px"}}>
-                                        <DropdownSearch searchNodeOptions={searchNodeOptions} searchElements={elements}/>
+                                        <DropdownSearch toggleExclusion={toggleExclusion} searchNodeOptions={searchNodeOptions} searchElements={elements}/>
                                     </div>
                                 </ReactFlow>
                             </div>

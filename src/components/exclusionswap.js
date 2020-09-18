@@ -218,39 +218,6 @@ export default function exclusionSwap(node, elements, edges, selectedNodes, sele
                 }
             }
 
-            /*for (const newEdge of newEdgesList) {
-                for (const edge of newElements) {
-                    if (newEdge.id === edge.id) {
-                        const sourceNode = getElement(edge.source, elements);
-                        const targetNode = getElement(edge.target, elements);
-                        if ((!sourceNode.isHidden) && (!targetNode.isHidden)) {
-                            edge.isHidden = false;
-                            
-                            
-                            // If the new node is selected, make this edge blue
-                            // Else, make this edge grey. Deals with differing edge
-                            // cases COMP6441 and COMP6841
-                            if (selectedNodes.hasOwnProperty(curCourse)) {
-                                potentialEdges[edge.id] = 1;
-                                // Make sure the target node is selectable
-                                if (! selectableNodes.hasOwnProperty(edge.target)) {
-                                    if (checkPrerequisites(targetNode, selectedNodes)) {
-                                        selectableNodes[targetNode.id] = 1;
-                                    }
-                                }
-                            } else {
-                                if (potentialEdges.hasOwnProperty(edge.id)) {
-                                   delete potentialEdges[edge.id];
-                                }
-                            }
-
-                        }
-                        break;
-                    }
-                }
-            }*/
-
-
             break;
         }
     }
