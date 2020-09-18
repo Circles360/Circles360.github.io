@@ -36,9 +36,8 @@ function SideBarModal() {
         open={open}
         onClose={() => dispatch({ type: 'CLOSE_MODAL' })}
       >
-        <Modal.Header textAlign="center">Degree Planner</Modal.Header>
+        <Modal.Header textAlign="center">Choose your degree</Modal.Header>
         <Container>
-            <Header as="h3" textAlign="center" style={{marginTop: "5px"}}>Choose your degree</Header>
             <DropdownDegrees />
         </Container>
       </Modal>

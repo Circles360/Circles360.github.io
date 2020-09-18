@@ -27,8 +27,13 @@ const getCoursesInLevel = (rawList) => {
     return courseList;
 }
 
+const getTotalUnitsTaken = (selectedNodes) => {
+    const selectedCourses = Object.keys(selectedNodes).filter(c => c.match(REGEX_COURSE_CODE));
+    return selectedCourses.reduce((total, c) => total + (c in coursesJSON ? coursesJSON[c].units : 0), 0);
+}
+
 const getSelectedCourses = (specialisationCodes, selectedNodes) => {
-    console.log(specialisationCodes);
+    // console.log(specialisationCodes);
     return specialisationCodes.map(specId => {
         const levels = Object.keys(specialisationsJSON[specId].structure);
         const coreCourses = [];
@@ -94,7 +99,12 @@ class Sidebar extends React.Component {
                 </Message>
                 <Divider></Divider>
                 <Container>
-                    <Header as="h3" textAlign="center">Your selected courses</Header>
+                    <div style={{display: "flex"}}>
+                        <Header style={{flexGrow: "1", marginTop: "5px"}} as="h3">
+                            Your selected courses
+                        </Header>
+                        <Label style={{alignSelf: "flex-start"}} color="black" basic>{getTotalUnitsTaken(this.props.selectedNodes)} UOC</Label>
+                    </div>
                     {getSelectedCourses(this.props.specialisations, this.props.selectedNodes)}
                 </Container>
                 <Container textAlign="center">

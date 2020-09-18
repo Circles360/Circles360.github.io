@@ -1,6 +1,6 @@
 import { findAllByDisplayValue } from '@testing-library/react';
 import React, { Component } from 'react'
-import { Button, Dropdown, Grid, Message} from 'semantic-ui-react'
+import { Button, Dropdown, Container, Grid, Message} from 'semantic-ui-react'
 
 import programsJSON from "../webscraper/programs.json"
 import specialisationsJSON from "../webscraper/specialisations.json"
@@ -106,7 +106,7 @@ class DropdownDegrees extends Component {
         else {
             this.setState({
                 phPrimary: "Select Major",
-                phSecondary: "Select Minor",
+                phSecondary: "Select Minor (optional)",
                 minorOptions: getMinors(program.value),
                 disabledSecondary: false,
                 hiddenSecondary: 'visible',
@@ -127,8 +127,9 @@ class DropdownDegrees extends Component {
     }
 
     getLink = () => {
-        if (this.state.valSecondary) return `#/${this.state.valProgram}/${this.state.valPrimary}/${this.state.valSecondary}`
-        return `#/${this.state.valProgram}/${this.state.valPrimary}`
+        console.log(window.location.href.split("/")[1]);
+        const link = `#/${this.state.valProgram}/${this.state.valPrimary}` + (this.state.valSecondary ? `/${this.state.valSecondary}` : "");
+        return link;
     }
 
     supported = {
@@ -142,6 +143,11 @@ class DropdownDegrees extends Component {
         if (!!this.state.valSecondary) return true;
         if (!(this.state.valProgram in this.supported)) return true;
         if (!this.supported[this.state.valProgram].includes(this.state.valPrimary)) return true;
+
+        const link = `/${this.state.valProgram}/${this.state.valPrimary}` + (this.state.valSecondary ? `/${this.state.valSecondary}` : "");
+        const currentURL = window.location.href;
+        // console.log(currentURL.slice(currentURL.indexOf("#") + 1))
+        if (currentURL.slice(currentURL.indexOf("#") + 1) === link) return true;
 
         const isSupported = this.state.valProgram === null || this.state.valPrimary === null;
         return isSupported;
@@ -173,69 +179,74 @@ class DropdownDegrees extends Component {
             )
         }
 
+        const link = `/${this.state.valProgram}/${this.state.valPrimary}` + (this.state.valSecondary ? `/${this.state.valSecondary}` : "");
+        const currentURL = window.location.href;
+        // console.log(currentURL.slice(currentURL.indexOf("#") + 1))
+        if (currentURL.slice(currentURL.indexOf("#") + 1) === link) {
+            return (
+                <Message warning>
+                    {`You're already looking at this degree`}
+                </Message>
+            )
+        }
+
         return;
     }
 
     render() {
         return <>
-            <div style={{display: 'flex', flexDirection: 'row'}}>
-                <div style={{flex: 1}}>
-                    <Message info style={{marginTop: "35px", marginLeft: "65px"}}>
-                        The UNSW handbook is currently undergoing major updates for <b>2021</b>. As a result, some information might be <b>inaccurate</b>. Please refer to the <a style={{textDecoration: "none"}} href="https://www.handbook.unsw.edu.au" target="_blank">handbook</a> for the latest update.
-                    </Message>
-                </div>
-                <div style={{flex: 1.25}}>
-                    <Grid centered style={{marginBottom: "20px"}}>
-                        <Grid.Row>
-                            <Dropdown
-                                selection
-                                search
-                                onChange={this.chooseProgram}
-                                options= {this.state.programOptions}
-                                enabled
-                                placeholder= 'Select Program'
-                            />
-                        </Grid.Row>
-                        <Grid.Row>
-                            <Dropdown
-                                selection
-                                search
-                                onChange={this.choosePrimary}
-                                options= {this.state.majorOptions}
-                                disabled= {this.state.disabledPrimary}
-                                value= {this.state.valPrimary}
-                                placeholder= {this.state.phPrimary}
-                                style={{visibility: this.state.hiddenPrimary}}
-                            />
-                        </Grid.Row>
-                        <Grid.Row>
-                            <Dropdown
-                                selection
-                                search
-                                clearable
-                                onChange={this.chooseSecondary}
-                                options= {this.state.minorOptions}
-                                disabled= {this.state.disabledSecondary}
-                                value= {this.state.valSecondary}
-                                placeholder= {this.state.phSecondary}
-                                style={{visibility: this.state.hiddenSecondary}}
-                            />
-                        </Grid.Row>
-                        {this.getMessage()}
-                        <Grid.Row>
-                            <a href={this.getLink()}>
-                                <Button
-                                    disabled={this.isDisabled()}
-                                    color="red"
-                                >
-                                    Load flowchart
-                                </Button>
-                            </a>
-                        </Grid.Row>
-                    </Grid>
-                </div>
-                <div style={{flex: 1}}/>
-            </div>
+            <Container style={{padding: "30px"}}>
+                <Message info>
+                    The UNSW handbook is currently undergoing major updates for <b>2021</b>. As a result, some information might be <b>inaccurate</b>. Please refer to the <a href="https://www.handbook.unsw.edu.au" target="_blank">handbook</a> for the latest update.
+                </Message>
+            </Container>
+            <Grid centered style={{marginBottom: "20px"}}>
+                <Grid.Row>
+                    <Dropdown
+                        selection
+                        search
+                        onChange={this.chooseProgram}
+                        options= {this.state.programOptions}
+                        enabled
+                        placeholder= 'Select Program'
+                    />
+                </Grid.Row>
+                <Grid.Row>
+                    <Dropdown
+                        selection
+                        search
+                        onChange={this.choosePrimary}
+                        options= {this.state.majorOptions}
+                        disabled= {this.state.disabledPrimary}
+                        value= {this.state.valPrimary}
+                        placeholder= {this.state.phPrimary}
+                        style={{visibility: this.state.hiddenPrimary}}
+                    />
+                </Grid.Row>
+                <Grid.Row>
+                    <Dropdown
+                        selection
+                        search
+                        clearable
+                        onChange={this.chooseSecondary}
+                        options= {this.state.minorOptions}
+                        disabled= {this.state.disabledSecondary}
+                        value= {this.state.valSecondary}
+                        placeholder= {this.state.phSecondary}
+                        style={{visibility: this.state.hiddenSecondary}}
+                    />
+                </Grid.Row>
+                {this.getMessage()}
+                <Grid.Row>
+                    <Button
+                        onClick={() => {window.location.href=this.getLink()}}
+                        color="red"
+                    >
+                        Load flowchart
+                    </Button>
+
+                </Grid.Row>
+            </Grid>
         </>;
     }
 }
