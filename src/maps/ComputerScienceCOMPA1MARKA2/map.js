@@ -16,7 +16,7 @@ import Sidebar from "../../components/sidebar.js"
 import DegreePlanner from "../../components/degreeplanner.js"
 import DropdownSearch from "../../components/dropdownsearch.js"
 
-// import positionHelper from '../../components/positionhelper.js';
+import positionHelper from '../../components/positionhelper.js';
 import selectNode from '../../components/selectnode.js';
 import unselectNode from '../../components/unselectnode.js';
 import highlightElements from '../../components/highlightelements.js';
@@ -240,15 +240,15 @@ const ComputerScienceCOMPA1MARKA2 = () => {
 
     // ===========================
 
-    // const onNodeDragStop = (event, node) => {
-    //     for (var e of elements) {
-    //         if (e.id === node.id) {
-    //             e.position.x = node.position.x;
-    //             e.position.y = node.position.y;
-    //             break;
-    //         }
-    //     }
-    // }
+    const onNodeDragStop = (event, node) => {
+        for (var e of elements) {
+            if (e.id === node.id) {
+                e.position.x = node.position.x;
+                e.position.y = node.position.y;
+                break;
+            }
+        }
+    }
 
     const disableBodyScroll = () => {
         setLayout({...layout, overflowY: 'hidden'});
@@ -278,7 +278,7 @@ const ComputerScienceCOMPA1MARKA2 = () => {
                                     onNodeMouseEnter={onNodeMouseEnter}
                                     onNodeMouseLeave={onNodeMouseLeave}
                                     selectNodesOnDrag={false}
-                                    // onNodeDragStop={onNodeDragStop}
+                                    onNodeDragStop={onNodeDragStop}
                                     elementsSelectable={false}
                                 >
                                     <div style={{position: "absolute", zIndex: "10", top: "30px", right: "30px"}}>
@@ -308,7 +308,7 @@ const ComputerScienceCOMPA1MARKA2 = () => {
                     </Grid.Column>
                 </Grid>
                 {hoverDisplay}
-                {/* <button onClick={positionHelper(elements)}>GENERATE POSITION</button> */}
+                <button onClick={positionHelper(elements)}>GENERATE POSITION</button>
                 <div id="DegreePlanner">
                     <DegreePlanner
                         key={Object.keys(selectedNodes).concat(additionalCourses).join("")}

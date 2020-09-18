@@ -16836,7 +16836,8 @@
                 "name": "Core Course",
                 "units_required": 12,
                 "courses": [
-                    "COMM1100"
+                    "COMM1100",
+                    "MARK1012"
                 ]
             },
             "Prescribed Electives": {
