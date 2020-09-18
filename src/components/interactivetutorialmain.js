@@ -53,7 +53,7 @@ const nodeTypes = {
 
 const InteractiveTutorialMain = () => {
     const [elements, setElements] = useState(elementsData);
-    const [hoverNode, setHoverNode] = useState();
+    // const [hoverNode, setHoverNode] = useState();
     var clickCount = 0;
     var singleClickTimer = '';
 
@@ -136,7 +136,7 @@ const InteractiveTutorialMain = () => {
     }
 
     const onNodeMouseEnter = (event, node) => {
-        setHoverNode(node);
+        // setHoverNode(node);
         hoverPrerequisites(node, elements, selectedNodes, selectedEdges, selectableNodes, potentialEdges, hoverEdges);
         setElements(highlightElements(elements, selectedNodes, selectedEdges, selectableNodes, potentialEdges, hoverEdges));
     }

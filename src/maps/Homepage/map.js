@@ -53,7 +53,7 @@ const Homepage = () => {
                     <div>
                         <Container style={{padding: "10px"}}>
                             <Message warning>
-                                The UNSW handbook is currently undergoing updates for 2021. Although we try our best, some data may be incorrect or outdated, so some nodes on our flowchart may not be selected. Please refer to the <a href="https://www.handbook.unsw.edu.au" target="_blank">handbook</a> for the latest update.
+                                The UNSW handbook is currently undergoing updates for 2021. Although we try our best, some data may be incorrect or outdated, so some nodes on our flowchart may not be selected. Please refer to the <a href="https://www.handbook.unsw.edu.au" target="_blank" rel="noopener noreferrer">handbook</a> for the latest update.
                             </Message>
                         </Container>
                         <DropdownDegrees />

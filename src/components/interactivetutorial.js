@@ -35,7 +35,7 @@ var elementsData = [
 
 ];
 
-var nodesData = elementsData.filter(e => isNode(e));
+// var nodesData = elementsData.filter(e => isNode(e));
 var edgesData = elementsData.filter(e => isEdge(e));
 var selectedNodes = {"CODE0000": 1};
 // var selectedNodes = {"CODE0000": 1};
@@ -59,7 +59,7 @@ const nodeTypes = {
 
 const InteractiveTutorial = () => {
     const [elements, setElements] = useState(elementsData);
-    const [hoverNode, setHoverNode] = useState();
+    // const [hoverNode, setHoverNode] = useState();
     var clickCount = 0;
     var singleClickTimer = '';
 
@@ -142,7 +142,7 @@ const InteractiveTutorial = () => {
     }
 
     const onNodeMouseEnter = (event, node) => {
-        setHoverNode(node);
+        // setHoverNode(node);
         hoverPrerequisites(node, elements, selectedNodes, selectedEdges, selectableNodes, potentialEdges, hoverEdges);
         setElements(highlightElements(elements, selectedNodes, selectedEdges, selectableNodes, potentialEdges, hoverEdges));
     }
