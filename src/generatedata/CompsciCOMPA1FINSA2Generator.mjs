@@ -240,7 +240,7 @@ courses_output.unshift({
         degree_name: data.FINSA2.name,
         degree_code: data.FINSA2.code,
         units: 0,
-        unlocks: ['COMM1180', 'FINS1612', "FINS2613"],
+        unlocks: ['COMM1140', 'FINS1612', "FINS1613"],
         conditions: {
             prerequisites: null,
             corequisites: null,

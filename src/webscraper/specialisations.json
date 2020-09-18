@@ -16636,7 +16636,7 @@
                 "courses": [
                     "COMM1180",
                     "FINS1612",
-                    "FINS2613"
+                    "FINS1613"
                 ]
             },
             "Prescribed Electives": {
@@ -16667,7 +16667,9 @@
                     "FINS3650",
                     "FINS3655",
                     "FINS3666",
-                    "FINS3775"
+                    "FINS3775",
+                    "COMM1170",
+                    "COMM1140"
                 ]
             }
         }

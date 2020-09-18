@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import { Route, HashRouter, Link } from 'react-router-dom';
 
 import BESengah from './maps/EngineeringHonoursSoftware/map.js';
+import Homepage from "./maps/Homepage/map.js";
 import ComputerScienceCOMPA1ACCTA2 from './maps/ComputerScienceCOMPA1ACCTA2/map.js';
 import ComputerScienceCOMPA1FINSA2 from './maps/ComputerScienceCOMPA1FINSA2/map.js';
 import ComputerScienceCOMPA1MARKA2 from './maps/ComputerScienceCOMPA1MARKA2/map.js';
@@ -15,6 +16,7 @@ class App extends Component {
     return (
       <HashRouter basename='/'>
         <div>
+          <Route path = "/" component={Homepage} />
           <Route path="/3707/SENGAH" component={BESengah} />
           <Route path="/3778/COMPA1/ACCTA2" component={ComputerScienceCOMPA1ACCTA2} />
           <Route path="/3778/COMPA1/FINSA2" component={ComputerScienceCOMPA1FINSA2} />
