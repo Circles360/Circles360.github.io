@@ -161,7 +161,7 @@ class DropdownDegrees extends Component {
     getMessage = () => {
         if (!(this.state.valProgram in this.supported)) {
             return (
-                <Message warning>
+                <Message info>
                     {`Only ${Object.keys(this.supported).join(", ")} is supported`}
                 </Message>
             )
@@ -170,7 +170,7 @@ class DropdownDegrees extends Component {
 
         if (!this.supported[this.state.valProgram].includes(this.state.valPrimary)) {
             return (
-                <Message warning>
+                <Message info>
                     {`Only ${this.supported[this.state.valProgram].join(", ")} is supported`}
                 </Message>
             )
@@ -181,7 +181,7 @@ class DropdownDegrees extends Component {
         // console.log(currentURL.slice(currentURL.indexOf("#") + 1))
         if (currentURL.slice(currentURL.indexOf("#") + 1) === link) {
             return (
-                <Message warning>
+                <Message info>
                     {`You're already looking at this degree`}
                 </Message>
             )
