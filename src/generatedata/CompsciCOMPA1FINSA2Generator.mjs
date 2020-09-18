@@ -151,6 +151,7 @@ for (const course_group in data.FINSA2.structure) {
 // ========== HARD CODE IN SPECIFIC REQUIREMENTS ==========
 // ENGG2600-ENGG3600-ENGG4600 + 48 units
 // COMP3901 and COMP3902 - all year 1 and 2 core
+// COMM1140 COMM1180 term 2-3
 for (const course of courses_output) {
     if (course.id === 'ENGG2600') {
         course.data.unlocks = ['ENGG3600']
@@ -170,6 +171,19 @@ for (const course of courses_output) {
     }
 }
 
+// ADD IN COMM1110 (They must take this course in order to take INFSA2 minor)
+var comm1140Node = {
+    id: 'COMM1140',
+    type:'custom1',
+    data: courses['COMM1140'],
+    position: {x: 0, y: 0},
+    style: node1,
+    isHidden: false
+}
+comm1140Node.data.terms = ['Term 2', 'Term 3'];
+colour_node(comm1140Node);
+courses_output.push(comm1140Node);
+courses_list[comm1140Node.id] = 1;
 
 // Go through the unlocks for each course and if it is not a node in our graph,
 // delete it. If the array is empty, set it to null
@@ -243,7 +257,7 @@ courses_output.unshift({
         degree_name: data.FINSA2.name,
         degree_code: data.FINSA2.code,
         units: 0,
-        unlocks: ['COMM1140', 'FINS1612', "FINS1613"],
+        unlocks: ['COMM1180', 'FINS1612', "FINS1613"],
         conditions: {
             prerequisites: null,
             corequisites: null,
@@ -264,13 +278,13 @@ courses_output.unshift({
 courses_output[0].style.border = '2px solid #449A94';
 courses_list['FINSA2'] = 1;
 // Hard code in prerequisites for starting courses
-// for (var course of courses_output) {
-//     if (['COMM1100'].includes(course.id)) {
-//         console.log(course.id);
-//         course.data.conditions.prerequisites = ['FINSA2'];
-//     }
-// }
-// console.log(courses_output[0]);
+for (var course of courses_output) {
+    if (['COMM1180'].includes(course.id)) {
+        course.data.conditions.prerequisites = ['FINSA2'];
+    }
+}
+
+console.log(courses_output[0]);
 
 // Generate the position for each node
 for (const node of position_data) {

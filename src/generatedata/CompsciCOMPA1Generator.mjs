@@ -94,10 +94,8 @@ for (const course_group in data.COMPA1.structure) {
 }
 
 
-
 // ========== HARD CODE IN SPECIFIC REQUIREMENTS ==========
 // ENGG2600-ENGG3600-ENGG4600 + 48 units
-// COMM1140 available only in term 2 and 3
 // COMP3901 and COMP3902 first and second year core
 for (const course of courses_output) {
     if (course.id === 'ENGG2600') {
@@ -115,6 +113,30 @@ for (const course of courses_output) {
     }
 }
 
+// ADD IN COMP2041 (Very important core course)
+var comp2041Node = {
+    id: 'COMP2041',
+    type:'custom1',
+    data: courses['COMP2041'],
+    position: {x: 0, y: 0},
+    style: node1,
+    isHidden: false
+}
+colour_node(comp2041Node);
+courses_output.push(comp2041Node);
+courses_list[comp2041Node.id] = 1;
+// ADD IN COMP2121 (need it to unlock comp2601)
+var comp2121Node = {
+    id: 'COMP2121',
+    type:'custom1',
+    data: courses['COMP2121'],
+    position: {x: 0, y: 0},
+    style: node1,
+    isHidden: false
+}
+colour_node(comp2121Node);
+courses_output.push(comp2121Node);
+courses_list[comp2121Node.id] = 1;
 
 // Go through the unlocks for each course and if it is not a node in our graph,
 // delete it. If the array is empty, set it to null

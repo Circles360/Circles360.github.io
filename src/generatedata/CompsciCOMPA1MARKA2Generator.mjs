@@ -150,7 +150,7 @@ for (const course_group in data.MARKA2.structure) {
 
 // ========== HARD CODE IN SPECIFIC REQUIREMENTS ==========
 // ENGG2600-ENGG3600-ENGG4600 + 48 units
-// COMM1140 available only in term 2 and 3
+// COMM1110 available only in term 2 and 3
 // COMP3901 and COMP3902 core year 1 and 2 courses
 for (const course of courses_output) {
     if (course.id === 'ENGG2600') {
@@ -170,7 +170,6 @@ for (const course of courses_output) {
         course.data.conditions.prereqs_executable = '(COMP1511 && COMP1521 && COMP1531 && COMP2511 && COMP2521 && MATH1081 && (MATH1131 || MATH1141) && (MATH1231 || MATH1241))';
     }
 }
-
 
 // Go through the unlocks for each course and if it is not a node in our graph,
 // delete it. If the array is empty, set it to null

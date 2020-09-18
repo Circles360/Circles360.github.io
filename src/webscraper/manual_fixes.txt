@@ -57,6 +57,7 @@ INFS3632, INFS3617, - spelling mistake,
 - MATH3171:
     - Prereqs are fucked lol
 
+- COMM1100: Remove econ1101 as prereq (exclusion course)
 
 
 SPECIALISATIONS.JSON
@@ -69,7 +70,6 @@ SPECIALISATIONS.JSON
             have not fully finished updating)
             - Therefore, we replace it with FINS1613 for now
         - We also add COMM1170 + COMM1140 to prescribed Electives
-
 
 
 BESENGAHGENERATOR.MJS:
@@ -110,3 +110,11 @@ COMPSCICOMPA1GENERATOR.MJS
         - COMM1110 and COMM1190 available in t2,3 for non-business school students
     PSYCM2
         - PSYC2061, PSYC2081, PSYC2071, PSYC1001, PSYC1011 prerequisites aren't scrapped properly
+    FINSA2
+        - COMM1140 needs to be an option to unlock comm1180
+        - COMM1140, COMM1180 t2,3 for non-business school students
+    - MARKA2
+        - COMM1100 only available in t2, 3 for non-business school students
+
+COMPA1 ONLY
+    - Add in comp2041 as it is a very important course they should take with free elective

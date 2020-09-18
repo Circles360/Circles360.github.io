@@ -16,7 +16,7 @@ import Sidebar from "../../components/sidebar.js"
 import DegreePlanner from "../../components/degreeplanner.js"
 import DropdownSearch from "../../components/dropdownsearch.js"
 
-import positionHelper from '../../components/positionhelper.js';
+// import positionHelper from '../../components/positionhelper.js';
 import selectNode from '../../components/selectnode.js';
 import unselectNode from '../../components/unselectnode.js';
 import highlightElements from '../../components/highlightelements.js';
@@ -149,22 +149,11 @@ const ComputerScienceCOMPA1MARKA2 = () => {
         // 1. Select the node and fill in edges.
         // - Deal with unselecting nodes
         if (selectableNodes.hasOwnProperty(element.id)) {
-            console.log("MAINSELECT");
             selectNode(elements, element, selectedNodes, selectedEdges, selectableNodes, potentialEdges);
         } else if (selectedNodes.hasOwnProperty(element.id)) {
-            console.log("UNSELECTING");
             unselectNode(elements, element, selectedNodes, selectedEdges, selectableNodes, potentialEdges);
             unselectUnconnected(elements, selectedNodes, selectedEdges, selectableNodes, potentialEdges);
         }
-
-        console.log("==========SelectedNodes==========");
-        console.log(selectedNodes);
-        console.log("==========SelectedEdges==========");
-        console.log(selectedEdges);
-        console.log("==========SelectableNodes==========");
-        console.log(selectableNodes);
-        console.log("==========PotentialEdges==========");
-        console.log(potentialEdges);
 
         // 2. Determine which nodes are now selectable
         // - Determine which previously selectable nodes are now unselectable
@@ -187,7 +176,7 @@ const ComputerScienceCOMPA1MARKA2 = () => {
     const onElementClick = (event, element) => {
         // console.log("ONELEMENTCLICK");
         if (isEdge(element)) return; // Don't care about edges
-        if (element.id === 'COMPA1' || element.id === 'MARKA2') return; // Cannot click on main node
+        if (specialisations.includes(element.id)) return; // Cannot click on main node
         if ((! selectableNodes.hasOwnProperty(element.id)) && (! selectedNodes.hasOwnProperty(element.id))) return; // Cannot select non selectable nodes
 
         // Determine double or single click for exclusion nodes
@@ -213,7 +202,7 @@ const ComputerScienceCOMPA1MARKA2 = () => {
 
     // ==========ONHOVER==========
     const onNodeMouseEnter = (event, node) => {
-        if (node.id === 'COMPA1' || node.id === 'MARKA2') return;
+        if (specialisations.includes(node.id)) return;
         // Display node information in top left
         setHoverText(true);
         setHoverNode(node);
@@ -226,7 +215,7 @@ const ComputerScienceCOMPA1MARKA2 = () => {
     }
 
     const onNodeMouseLeave = (event, node) => {
-        if (node.id === 'COMPA1' || node.id === 'MARKA2') return;
+        if (specialisations.includes(node.id)) return;
         setHoverText(false);
         unhoverPrerequisites(hoverEdges);
         setElements(highlightElements(elements, selectedNodes, selectedEdges, selectableNodes, potentialEdges, hoverEdges));
@@ -240,15 +229,15 @@ const ComputerScienceCOMPA1MARKA2 = () => {
 
     // ===========================
 
-    const onNodeDragStop = (event, node) => {
-        for (var e of elements) {
-            if (e.id === node.id) {
-                e.position.x = node.position.x;
-                e.position.y = node.position.y;
-                break;
-            }
-        }
-    }
+    // const onNodeDragStop = (event, node) => {
+    //     for (var e of elements) {
+    //         if (e.id === node.id) {
+    //             e.position.x = node.position.x;
+    //             e.position.y = node.position.y;
+    //             break;
+    //         }
+    //     }
+    // }
 
     const disableBodyScroll = () => {
         setLayout({...layout, overflowY: 'hidden'});
@@ -278,7 +267,7 @@ const ComputerScienceCOMPA1MARKA2 = () => {
                                     onNodeMouseEnter={onNodeMouseEnter}
                                     onNodeMouseLeave={onNodeMouseLeave}
                                     selectNodesOnDrag={false}
-                                    onNodeDragStop={onNodeDragStop}
+                                    // onNodeDragStop={onNodeDragStop}
                                     elementsSelectable={false}
                                 >
                                     <div style={{position: "absolute", zIndex: "10", top: "30px", right: "30px"}}>
@@ -308,7 +297,7 @@ const ComputerScienceCOMPA1MARKA2 = () => {
                     </Grid.Column>
                 </Grid>
                 {hoverDisplay}
-                <button onClick={positionHelper(elements)}>GENERATE POSITION</button>
+                {/* <button onClick={positionHelper(elements)}>GENERATE POSITION</button> */}
                 <div id="DegreePlanner">
                     <DegreePlanner
                         key={Object.keys(selectedNodes).concat(additionalCourses).join("")}

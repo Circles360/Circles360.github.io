@@ -148,22 +148,11 @@ const ComputerScienceCOMPA1PSYCM2 = () => {
         // 1. Select the node and fill in edges.
         // - Deal with unselecting nodes
         if (selectableNodes.hasOwnProperty(element.id)) {
-            console.log("MAINSELECT");
             selectNode(elements, element, selectedNodes, selectedEdges, selectableNodes, potentialEdges);
         } else if (selectedNodes.hasOwnProperty(element.id)) {
-            console.log("UNSELECTING");
             unselectNode(elements, element, selectedNodes, selectedEdges, selectableNodes, potentialEdges);
             unselectUnconnected(elements, selectedNodes, selectedEdges, selectableNodes, potentialEdges);
         }
-
-        console.log("==========SelectedNodes==========");
-        console.log(selectedNodes);
-        console.log("==========SelectedEdges==========");
-        console.log(selectedEdges);
-        console.log("==========SelectableNodes==========");
-        console.log(selectableNodes);
-        console.log("==========PotentialEdges==========");
-        console.log(potentialEdges);
 
         // 2. Determine which nodes are now selectable
         // - Determine which previously selectable nodes are now unselectable
