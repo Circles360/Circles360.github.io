@@ -100,8 +100,6 @@ TODO: Should I add unlocks? ^ Will make a shit ton of nodes link to these two.
 COMPSCICOMPA1GENERATOR.MJS
 - ENGG2600-ENG3600-ENGG4600 chain + 48 unit requirement
 - COMP3901 and COMP3902: completion of all first and second year core requirements of a cse program
-
-
     ACCTA2
         - COMM1140 available in t2,3 for non-business school students
         - ACCT2542 prerequisites = ACCT1511 OR ACCT2511 (Handbook was updated!!!)
