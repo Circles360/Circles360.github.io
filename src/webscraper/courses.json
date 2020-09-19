@@ -24329,11 +24329,12 @@
         "desc": "A capstone software project. Students work in teams to define, implement and evaluate a real-world software system. Most of the work in this course is team-based project work, although there are some introductory lectures on software project management and teamwork strategies. Project teams meet weekly with project mentors to report on the progress of the project. Assessment is based on a project proposal, progressive demonstrations and retrospectives, a final project demonstration and report, and on the quality of the software system itself. Students are also required to reflect on their work and to provide peer assessment of their team-mates' contributions to the project.",
         "conditions": {
             "raw": "Prerequisite: COMP1531, and COMP2521 or COMP1927, and enrolled in a BSc Computer Science major with completion of 102 uoc.",
-            "prereqs_executable": "COMP1531 && COMP2521 || COMP1927",
+            "prereqs_executable": "(COMP1531 && COMP2521 || COMP1927) && COMPA1",
             "prerequisites": [
                 "COMP1531",
                 "COMP2521",
-                "COMP1927"
+                "COMP1927",
+                "COMPA1"
             ],
             "corequisites": null,
             "units_required": 102,

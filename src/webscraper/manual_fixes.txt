@@ -59,6 +59,9 @@ INFS3632, INFS3617, - spelling mistake,
 
 - COMM1100: Remove econ1101 as prereq (exclusion course)
 
+- COMP3900
+    - Add COMPA1 to prerequisites
+    
 
 SPECIALISATIONS.JSON
     INFSA2
