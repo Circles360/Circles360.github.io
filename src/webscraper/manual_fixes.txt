@@ -61,7 +61,12 @@ INFS3632, INFS3617, - spelling mistake,
 
 - COMP3900
     - Add COMPA1 to prerequisites
-    
+
+- COMP4961
+    - Can only be taken by Honours compsci students (4515) or program (3648)
+    - Made prereqs and prereq_executable = COMPAH
+
+
 
 SPECIALISATIONS.JSON
     INFSA2
