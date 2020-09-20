@@ -293,7 +293,7 @@ const BESengah = () => {
                                         fluid
                                         options={getMoreCoursesForDropdown(dataJSON)}
                                         onChange={(e, data) => setAdditionalCourses(data.value)}
-                                        placeholder="Addditional courses"
+                                        placeholder=" courses"
                                     />
                                 </Segment>
                             </Container>
