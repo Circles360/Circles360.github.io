@@ -187,8 +187,6 @@ const prioritiseCourses = (selectedCourses) => {
         }
     }
 
-    console.log(newPrioritised);
-
     return newPrioritised;
 }
 
