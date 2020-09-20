@@ -95,21 +95,21 @@ for (const course_group in data.COMPA1.structure) {
 
 
 // ========== HARD CODE IN SPECIFIC REQUIREMENTS ==========
-// ENGG2600-ENGG3600-ENGG4600 + 48 units
+// ENGG2600-ENGG3600-ENGG4600 + 42 units
 // COMP3901 and COMP3902 first and second year core
 for (const course of courses_output) {
     if (course.id === 'ENGG2600') {
         course.data.unlocks = ['ENGG3600']
-        course.data.conditions.units_required = 48;
+        course.data.conditions.units_required = 42;
     } else if (course.id === 'ENGG3600') {
         course.data.conditions.prerequisites = ['ENGG2600'];
         course.data.conditions.prereqs_executable = 'ENGG2600';
         course.data.unlocks = ['ENGG4600'];
-        course.data.conditions.units_required = 48;
+        course.data.conditions.units_required = 42;
     } else if (course.id === 'ENGG4600') {
         course.data.conditions.prerequisites = ['ENGG3600'];
         course.data.conditions.prereqs_executable = 'ENGG3600';
-        course.data.conditions.units_required = 48;
+        course.data.conditions.units_required = 42;
     }
 }
 

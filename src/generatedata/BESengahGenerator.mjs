@@ -121,7 +121,7 @@ for (const course of courses_output) {
         break;
     }
 }
-// ENGG1000-ENGG2600-ENGG3600-ENGG4600 + 48 units
+// ENGG1000-ENGG2600-ENGG3600-ENGG4600 + 42 units
 // INFS3830 and INFS3873 prerequisites = 3603
 // COMP4961 cannot be taken (not doing the right program)
 // COMP3901 - COMP3902 all level 2 core courses
@@ -132,16 +132,16 @@ for (const course of courses_output) {
         course.data.conditions.prerequisites = ['ENGG1000'];
         course.data.conditions.prereqs_executable = 'ENGG1000';
         course.data.unlocks = ['ENGG3600']
-        course.data.conditions.units_required = 48;
+        course.data.conditions.units_required = 42;
     } else if (course.id === 'ENGG3600') {
         course.data.conditions.prerequisites = ['ENGG2600'];
         course.data.conditions.prereqs_executable = 'ENGG2600';
         course.data.unlocks = ['ENGG4600'];
-        course.data.conditions.units_required = 48;
+        course.data.conditions.units_required = 42;
     } else if (course.id === 'ENGG4600') {
         course.data.conditions.prerequisites = ['ENGG3600'];
         course.data.conditions.prereqs_executable = 'ENGG3600';
-        course.data.conditions.units_required = 48;
+        course.data.conditions.units_required = 42;
     } else if (course.id === 'INFS3830') {
         course.data.conditions.prerequisites = ['INFS3603'];
         course.data.conditions.prereqs_executable = "INFS3603";
