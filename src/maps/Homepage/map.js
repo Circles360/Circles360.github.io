@@ -32,7 +32,7 @@ const Homepage = () => {
         <div>
             <div id="landingPage">
                 <Container style={containerStyle}>
-                    <Header as="h1" style={{transition: "2s ease", paddingTop: "20%", fontSize: "96px"}} textAlign="center">
+                    <Header as="h1" style={{transition: "2s ease", position: "absolute", top: "50%", left: "50%", transform: "translate(-50%,-50%)", fontSize: "96px"}} textAlign="center">
                         Circles
                         <Header.Subheader style={{transition: "2s ease", fontSize: "18px"}}>The visual degree planner for UNSW undergraduate students</Header.Subheader>
                     </Header>
