@@ -294,7 +294,7 @@ const ComputerScienceCOMPA1ACCTA2 = () => {
                                         fluid
                                         options={getMoreCoursesForDropdown(dataJSON)}
                                         onChange={(e, data) => setAdditionalCourses(data.value)}
-                                        placeholder="Addditional courses"
+                                        placeholder="Additional courses"
                                     />
                                 </Segment>
                             </Container>

@@ -27,12 +27,14 @@ const mapTermFull = (term) => {
     if (term === "T3") return "Term 3";
 }
 
-const updateCourses = (coursesJSON, dataJSON) => {
+const updateCourses = (rawCoursesJSON, dataJSON) => {
+    let coursesJSON = {...rawCoursesJSON};
     dataJSON.forEach(course => {
         if (!(course.id in coursesJSON)) return;
-        coursesJSON[course.id].conditions.prereqs_executable = course.data.conditions.prereqs_executable
+        coursesJSON[course.id].conditions = {...course.data.conditions};
         coursesJSON[course.id].terms = course.data.terms;
     });
+
     return coursesJSON;
 }
 
@@ -126,6 +128,7 @@ const prioritiseCourses = (selectedCourses) => {
             courseId: courseId,
             level: Number(courseId[4]),
             unlocks: [],
+            unitsRequired: coursesJSON[courseId].conditions.units_required ? coursesJSON[courseId].conditions.units_required : 0,
             termsAvailable: coursesJSON[courseId].terms ? coursesJSON[courseId].terms.filter(t => t !== "Summer Term").length : 0
         }
     }
@@ -153,7 +156,38 @@ const prioritiseCourses = (selectedCourses) => {
         return a.level - b.level; // Ascending
     });
 
-    return prioritised;
+    // Then push all courses that have unit requirements back into the queue until they have enough courses in front of them.
+
+    const noUnitsRequirements = prioritised.filter(c => !c.unitsRequired);
+    const hasUnitsRequirements = prioritised.filter(c => c.unitsRequired).sort((a, b) => {
+        return a.unitsRequired - b.unitsRequired;
+    });
+
+    let runningTotalUnits = 0;
+    const newPrioritised = [];
+
+    while (noUnitsRequirements.length !== 0 || hasUnitsRequirements.length !== 0) {
+        if (noUnitsRequirements.length === 0) {
+            newPrioritised.push(...hasUnitsRequirements);
+            break;
+        }
+
+        if (hasUnitsRequirements.length === 0) {
+            newPrioritised.push(...noUnitsRequirements);
+            break;
+        }
+
+        if (hasUnitsRequirements[0].unitsRequired <= runningTotalUnits) {
+            // Can push this one on
+            runningTotalUnits += hasUnitsRequirements[0].unitsRequired;
+            newPrioritised.push(hasUnitsRequirements.shift());
+        } else {
+            runningTotalUnits += noUnitsRequirements[0].unitsRequired;
+            newPrioritised.push(noUnitsRequirements.shift());
+        }
+    }
+
+    return newPrioritised;
 }
 
 const checkPrereqsMet = (termPlan, termId, courseId) => {
@@ -203,10 +237,8 @@ const addCourseToPlan = (termPlan, courseId) => {
         }
 
         if (!(termsAvailable.includes(termId.substring(1, 3)))) continue;
-
         // Need to check prerequisites have been met here
         if (!checkPrereqsMet(termPlan, termId, courseId)) continue;
-
         // Add course to plan
         termPlan[termId].units += coursesJSON[courseId].units;
         termPlan[termId].courseIds.push(courseId);
@@ -429,26 +461,6 @@ class DegreePlanner extends React.Component {
         })
 
 
-        totalUnits = 0;
-        for (const year in plan) {
-            for (const term in plan[year]) {
-                if (term === "termOrder") continue;
-                for (const courseId of termPlan[term].courseIds) {
-                    const conditions = coursesJSON[courseId].conditions
-                    if (!conditions.units_required) continue;
-                    if (totalUnits < conditions.units_required) {
-                        considerationMessages.push(
-                            <Message.Item>
-                                {getCourseLink(courseId)} prerequisites have not been met: {conditions.units_required} UOC required.
-                            </Message.Item>
-                        )
-                    }
-                }
-
-                totalUnits += termPlan[term].courseIds.reduce((total, c) => total + (c in coursesJSON ? coursesJSON[c].units : 0), 0);
-            }
-        }
-
         // Check levels for each
         specialisations.forEach(degree => {
             const coreCourses = []
@@ -472,6 +484,26 @@ class DegreePlanner extends React.Component {
                 }
             }
         })
+
+        totalUnits = 0;
+        for (const year in plan) {
+            for (const term in plan[year]) {
+                if (term === "termOrder") continue;
+                for (const courseId of termPlan[term].courseIds) {
+                    const conditions = coursesJSON[courseId].conditions
+                    if (!conditions.units_required) continue;
+                    if (totalUnits < conditions.units_required) {
+                        considerationMessages.push(
+                            <Message.Item>
+                                {getCourseLink(courseId)} prerequisites have not been met: {conditions.units_required} UOC required.
+                            </Message.Item>
+                        )
+                    }
+                }
+
+                totalUnits += termPlan[term].courseIds.reduce((total, c) => total + (c in coursesJSON ? coursesJSON[c].units : 0), 0);
+            }
+        }
 
         for (const year in plan) {
             for (const term in plan[year]) {
