@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useRef} from 'react';
 import ReactFlow, { isNode, isEdge, ReactFlowProvider } from 'react-flow-renderer';
 
 import CustomNode1 from '../../components/customnode1.js';
@@ -9,43 +9,45 @@ import HoverInfo from '../../components/hoverinfo.js';
 import hoverPrerequisites from '../../components/hoverprerequisites.js';
 import unhoverPrerequisites from '../../components/unhoverprerequisites.js';
 
-import { Grid, Segment, Container, Dropdown, Header } from 'semantic-ui-react'
+import { Grid, Segment, Container, Dropdown, Header, Button } from 'semantic-ui-react'
 import Sidebar from "../../components/sidebar.js"
-// import pkg from 'semantic-ui-react/package.json'
 
 import DegreePlanner from "../../components/degreeplanner.js"
 import DropdownSearch from "../../components/dropdownsearch.js"
+
+// Initialisation helper functions
+import dropdownSearchInit from '../../components/initialisation/dropdownSearchInit';
+import selectableInit from '../../components/initialisation/selectableInit';
+import hiddenInit from '../../components/initialisation/hiddenInit';
+import additionalSearchInit from '../../components/initialisation/additionalSearchInit';
+import coursesInit from '../../components/initialisation/coursesInit';
 
 // import positionHelper from '../../components/positionhelper.js';
 import selectNode from '../../components/selectnode.js';
 import unselectNode from '../../components/unselectnode.js';
 import highlightElements from '../../components/highlightelements.js';
 import getSelectable from '../../components/getselectable.js';
-import checkPrerequisites from '../../components/checkprerequisites';
 import exclusionSwap from '../../components/exclusionswap.js';
 
 import unselectUnconnected from '../../components/unselectunconnected.js';
 import coursesJSON from "../../webscraper/courses.json";
 import dataJSON from "./data.json"
 
-var specialisations = ['SENGAH'];
-var program = "3707";
-var elementsData = dataJSON.slice();
+const specialisations = ['SENGAH'];
+const program = "3707";
+const elementsData = dataJSON.slice();
 
-// This is for dropdown search
+// Initialise dropdown search data
 var searchNodeOptions = [];
-for (const course of elementsData) {
-    if (isNode(course)) {
-        searchNodeOptions.push({
-            key: course.id,
-            value: course.id,
-            text: course.id
-        });
-    }
-}
+dropdownSearchInit(elementsData, specialisations, searchNodeOptions);
+
+// Initialise dropdown degree data
+var searchAdditionalOptions = [];
+additionalSearchInit(dataJSON, coursesJSON, searchAdditionalOptions);
 
 var nodesData = elementsData.filter(e => isNode(e));
 var edgesData = elementsData.filter(e => isEdge(e));
+
 var selectedNodes = {};
 for (const specialisation of specialisations) selectedNodes[specialisation] = 1;
 
@@ -53,28 +55,19 @@ var selectedEdges = {};
 var selectableNodes = {};
 var potentialEdges = {};
 var hoverEdges = {};
+var hiddenNodes = {};
+var hiddenEdges = {};
 
 // Load up the chart with initial selectable nodes and edges
-for (const node of nodesData) {
-    if (selectedNodes.hasOwnProperty(node.id)) {
-        if (node.data.unlocks === null) continue;
-        for (const unlockCourse of node.data.unlocks) {
-            potentialEdges['e' + node.id + '-' + unlockCourse] = 1;
-        }
-    } else if (checkPrerequisites(node, elementsData, selectedNodes)) {
-        selectableNodes[node.id] = 1;
-    }
-}
+selectableInit(elementsData, nodesData, selectedNodes, selectableNodes, potentialEdges);
 
+// Load up the chart with initial hidden nodes and edges
 var exclusionGroups = require("./data_exclusion.json");
-var exclusionNodes = {};
-for (const group of exclusionGroups) {
-    for (const exclusion of group) {
-        exclusionNodes[exclusion] = 1;
-    }
-}
+const exclusionNodes = {};
+hiddenInit(elementsData, exclusionGroups, exclusionNodes, hiddenNodes, hiddenEdges);
 
-elementsData = highlightElements(elementsData, selectedNodes, selectedEdges, selectableNodes, potentialEdges, hoverEdges);
+// Update coursesJSON with dataJSON data to be passed down to degree planner
+const updatedCoursesJSON = coursesInit(coursesJSON, dataJSON);
 
 const nodeTypes = {
     custom1: CustomNode1,
@@ -84,104 +77,54 @@ const nodeTypes = {
 
 const layoutStyle = {overflowX: "hidden", overflowY: "overlay", width: "100vw", height: "100vh"};
 
-const getMoreCoursesForDropdown = (dataJSON) => {
-
-    const moreOptions = [];
-    const nodesOnFlowchart = dataJSON.map(node => node.id);
-    // console.log("refresh", nodesOnFlowchart);
-
-    for (const code in coursesJSON) {
-        if (nodesOnFlowchart.includes(code)) continue;
-
-        const name = coursesJSON[code].course_name;
-        moreOptions.push({
-            key: code,
-            value: code,
-            text: code + " - " + name
-        });
-    }
-
-    return moreOptions;
-}
-
 const BESengah = () => {
     const [elements, setElements] = useState(elementsData);
     const [hoverText, setHoverText] = useState(false);
     const [hoverNode, setHoverNode] = useState();
     const [layout, setLayout] = useState(layoutStyle);
-    const [additionalCourses, setAdditionalCourses] = useState([])
+    const [additionalCourses, setAdditionalCourses] = useState([]);
+
+    var hideMap = useRef(false);
+
     var clickCount = 0;
     var singleClickTimer = '';
 
     const onInstanceLoad = (instance) => {
-        for (var group of exclusionGroups) {
-            const last = group.pop();
-
-            for (var course of elementsData) {
-                if (last === course.id) {
-                    course.isHidden = true;
-                    // Get all the edges and hide them too
-                    for (var edge of elementsData) {
-                        if (isNode(edge)) continue;
-                        if (edge.source === last || edge.target === last) {
-                            edge.isHidden = true;
-                        }
-                    }
-                    break;
-                }
-            }
-            group.push(last);
-        }
+        setElements(highlightElements(elements, selectedNodes, selectedEdges, selectableNodes, potentialEdges, hoverEdges, hiddenNodes, hiddenEdges, hideMap.current));
         instance.setTransform({x: 470, y: 350, zoom: 0.38});
     };
 
     const selectUnselect = (element) => {
-        // NOTE: Might not need this?????
-        // EXPLANATION: Reason we dont need it is because we have to leave node
-        // anyways to hover another node. But maybe good practise to have just in case
         // Unhover edges which lit up on nodeMouseEnter
         unhoverPrerequisites(hoverEdges);
 
         // 1. Select the node and fill in edges.
-        // - Deal with unselecting nodes
+        // OR Unselects the nodes and unselects all nodes which depended on that node
         if (selectableNodes.hasOwnProperty(element.id)) {
-            // console.log("MAINSELECT");
             selectNode(elements, element, selectedNodes, selectedEdges, selectableNodes, potentialEdges);
         } else if (selectedNodes.hasOwnProperty(element.id)) {
-            // console.log("UNSELECTING");
             unselectNode(elements, element, selectedNodes, selectedEdges, selectableNodes, potentialEdges);
             unselectUnconnected(elements, selectedNodes, selectedEdges, selectableNodes, potentialEdges);
         }
-
-        // console.log("==========SelectedNodes==========");
-        // console.log(selectedNodes);
-        // console.log("==========SelectedEdges==========");
-        // console.log(selectedEdges);
-        // console.log("==========SelectableNodes==========");
-        // console.log(selectableNodes);
-        // console.log("==========PotentialEdges==========");
-        // console.log(potentialEdges);
 
         // 2. Determine which nodes are now selectable
         // - Determine which previously selectable nodes are now unselectable
         getSelectable(elements, selectedNodes, selectedEdges, selectableNodes, potentialEdges);
 
         // Render graph accordingly
-        setElements(highlightElements(elements, selectedNodes, selectedEdges, selectableNodes, potentialEdges, hoverEdges));
+        setElements(highlightElements(elements, selectedNodes, selectedEdges, selectableNodes, potentialEdges, hoverEdges, hiddenNodes, hiddenEdges, hideMap.current));
     }
 
     const toggleExclusion = (element) => {
         // TODO: ARE there courses which do not 
         // For all immediate edges of the element, swap
         // with the exclusion course
-        setElements(exclusionSwap(element, elements, edgesData, selectedNodes, selectedEdges, selectableNodes, potentialEdges, hoverEdges, exclusionGroups));
-        setElements(highlightElements(elements, selectedNodes, selectedEdges, selectableNodes, potentialEdges, hoverEdges));
+        exclusionSwap(element, elements, edgesData, selectedNodes, selectedEdges, selectableNodes, potentialEdges, hoverEdges, hiddenNodes, hiddenEdges, exclusionGroups);
+        setElements(highlightElements(elements, selectedNodes, selectedEdges, selectableNodes, potentialEdges, hoverEdges, hiddenNodes, hiddenEdges, hideMap.current));
     }
 
 
-    // ==========ONCLICK==========
     const onElementClick = (event, element) => {
-        // console.log("ONELEMENTCLICK");
         if (isEdge(element)) return; // Don't care about edges
         if (specialisations.includes(element.id)) return; // Cannot click on main node
         if ((! selectableNodes.hasOwnProperty(element.id)) && (! selectedNodes.hasOwnProperty(element.id))) return; // Cannot select non selectable nodes
@@ -201,40 +144,37 @@ const BESengah = () => {
                 toggleExclusion(element);
             }
         } else {
-            // Not an exclusion node.
+            // Not an exclusion node. Cannot be doubleclicked
             selectUnselect(element);
         }
     };
-    // ===========================
 
-    // ==========ONHOVER==========
     const onNodeMouseEnter = (event, node) => {
         if (specialisations.includes(node.id)) return;
         // Display node information in top left
         setHoverText(true);
         setHoverNode(node);
-
-        // If the node is unselected, highlight prerequisite edges in purple
-        //if ((!selectedNodes.hasOwnProperty(node.id)) && (!selectableNodes.hasOwnProperty(node.id))) {
         hoverPrerequisites(node, elements, selectedNodes, selectedEdges, selectableNodes, potentialEdges, hoverEdges);
-        //}
-        setElements(highlightElements(elements, selectedNodes, selectedEdges, selectableNodes, potentialEdges, hoverEdges));
+        setElements(highlightElements(elements, selectedNodes, selectedEdges, selectableNodes, potentialEdges, hoverEdges, hiddenNodes, hiddenEdges, hideMap.current));
     }
 
     const onNodeMouseLeave = (event, node) => {
         if (specialisations.includes(node.id)) return;
         setHoverText(false);
         unhoverPrerequisites(hoverEdges);
-        setElements(highlightElements(elements, selectedNodes, selectedEdges, selectableNodes, potentialEdges, hoverEdges));
+        setElements(highlightElements(elements, selectedNodes, selectedEdges, selectableNodes, potentialEdges, hoverEdges, hiddenNodes, hiddenEdges, hideMap.current));
     }
-
 
     let hoverDisplay;
     if (hoverText) {
         hoverDisplay = <HoverInfo node={hoverNode}/>
     }
 
-    // ===========================
+    const toggleHidden = () => {
+        hideMap.current = !hideMap.current;
+
+        setElements(highlightElements(elements, selectedNodes, selectedEdges, selectableNodes, potentialEdges, hoverEdges, hiddenNodes, hiddenEdges, hideMap.current));
+    }
 
     // const onNodeDragStop = (event, node) => {
     //     for (var e of elements) {
@@ -269,7 +209,6 @@ const BESengah = () => {
                                     nodesConnectable={false}
                                     onElementClick={onElementClick}
                                     minZoom={0.38}
-                                    //setInitTransform={TransformUpdater({x: 100, y: 100, z: 1})}
                                     nodesDraggable={false}
                                     onNodeMouseEnter={onNodeMouseEnter}
                                     onNodeMouseLeave={onNodeMouseLeave}
@@ -278,20 +217,21 @@ const BESengah = () => {
                                     elementsSelectable={false}
                                 >
                                     <div style={{position: "absolute", zIndex: "10", top: "30px", right: "30px"}}>
+                                        {/* <button onClick={toggleHidden}>Hide Map</button> */}
+                                        <Button onClick={toggleHidden}>HIDE MAP</Button>
                                         <DropdownSearch toggleExclusion={toggleExclusion} searchNodeOptions={searchNodeOptions} searchElements={elements}/>
                                     </div>
                                 </ReactFlow>
                             </div>
                             <Container style={{marginBottom: "50px"}}>
                                 <Segment raised>
-                                    {/* <p>Couldn't find a course up there? Add it here:</p> */}
                                     <Header as="h5">Couldn't find a course up there? Add it here:</Header>
                                     <Dropdown
                                         selection
                                         multiple
                                         search
                                         fluid
-                                        options={getMoreCoursesForDropdown(dataJSON)}
+                                        options={searchAdditionalOptions}
                                         onChange={(e, data) => setAdditionalCourses(data.value)}
                                         placeholder=" courses"
                                     />
@@ -311,6 +251,7 @@ const BESengah = () => {
                         program={program}
                         specialisations={specialisations}
                         selectedCourses={Object.keys(selectedNodes).concat(additionalCourses)}
+                        coursesJSON={updatedCoursesJSON}
                     />
                 </div>
             </div>

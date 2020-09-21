@@ -24,7 +24,6 @@ class App extends Component {
           <Route exact path="/3778/COMPA1/MARKA2" component={ComputerScienceCOMPA1MARKA2} />
           <Route exact path="/3778/COMPA1/INFSA2" component={ComputerScienceCOMPA1INFSA2} />
           <Route exact path="/3778/COMPA1/PSYCM2" component={ComputerScienceCOMPA1PSYCM2} />
-          <Route exact path="/James" component={Teaching}/>
           <Route exact path="/" component={Homepage} />
         </div>
       </HashRouter>

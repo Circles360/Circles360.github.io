@@ -23819,7 +23819,7 @@
         "desc": "Concurrency = processes + communication. Communication via shared variables vs message passing. Models of concurrency: true concurrency vs interleaving. Abstractions: atomicity, locks and barriers, semaphores, monitors, threads, RPC, rendezvous. Classical problems: mutual exclusion, dining philosophers, sleeping barber, termination detection, gravitational N-body problem.Practical work: programming assignments and proving of program safety and liveness properties.",
         "conditions": {
             "raw": "Prerequisite: COMP1927 OR (COMP1521/DPST1092 AND COMP2521)",
-            "prereqs_executable": "COMP1927 || ( COMP1521 || 0 && COMP2521 )",
+            "prereqs_executable": "COMP1927 || ( ( COMP1521 || 0 ) && COMP2521 )",
             "prerequisites": [
                 "COMP1927",
                 "COMP1521",

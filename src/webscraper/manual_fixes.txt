@@ -66,6 +66,10 @@ INFS3632, INFS3617, - spelling mistake,
     - Can only be taken by Honours compsci students (4515) or program (3648)
     - Made prereqs and prereq_executable = COMPAH
 
+- COMP3151
+    - Fixed bracketing in prerequisites executable. Should require BOTH
+    - comp1521 AND comp2521
+
 
 
 SPECIALISATIONS.JSON
