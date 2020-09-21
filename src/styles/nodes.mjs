@@ -3,10 +3,10 @@ export const node1 = {
     textAlign: 'center',
     alignItems: 'center',
     justifyContent: 'center',
-    fontSize: 10,
     width: 64,
     height: 64,
     borderRadius: 32,
+    fontSize: 8,
 
     color: "white",
     background: "black",

@@ -301,7 +301,46 @@ for (const course of courses_output) {
     }
 }
 
-//console.log("====================");
+// Increase the size by for each edge which links to the node
+/*for (var course of courses_output) {
+    if (course.id === 'SENGAH') continue;
+    var increase = 0;
+    if (course.data.unlocks !== null) {
+        for (const unlockCourse of course.data.unlocks) {
+            if (edges_list.hasOwnProperty('e' + course.id + '-' + unlockCourse)) {
+                increase += 1;
+            }
+        }
+    }
+
+    if (course.data.conditions.prerequisites !== null) {
+        for (const prereq of course.data.conditions.prerequisites) {
+            if (edges_list.hasOwnProperty('e' + prereq + '-' + course.id)) {
+                increase += 1;
+            }
+        }
+    }
+
+    if (increase === 0) continue;
+
+    //increase = Math.sqrt(increase) * 64;
+    //increase = Math.log(increase*increase*increase) * 8;
+    //increase = Math.exp(Math.log(increase)) * 6;
+    //increase = Math.cbrt(increase) * 24;
+    //increase = Math.pow(Math.log(1+increase), 4);
+    //increase = Math.exp(1+Math.log(increase));
+    increase = 1/(1+Math.exp(-1*increase)) * 64;
+
+    course.style.width += increase;
+    course.style.height += increase;
+    course.style.borderRadius += increase/2;
+    console.log(course.id + " increase by " + increase);
+}*/
+
+
+
+
+
 // Generate exclusion course data
 var exclusion_groups = []; // Holds all exclusion groups
 var exclusion_list = {};  // Quick checking if we have already excluded this course
