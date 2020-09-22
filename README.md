@@ -37,12 +37,12 @@ Manual fixes are documented in `manual_fixes.txt` when we found an error (such a
 
 Our flowchart is rendered using the `react-flow-renderer` npm library. It reads all the data scraped by the web scraper and displays relevant courses and their prerequisites onto the screen. Coures are represented by circular nodes, and prerequisites are represented by edges. Clicking a course will add it to your plan and unlock future courses. We implement many advanced algorithms to accurately update the state of the flowchart and to improve the user experience, all of which will be explained below. All examples provided refer to the flowchart of Engineering (Honours) - Software Engineering.
 
-### Selecting Courses
+#### Selecting Courses
 Click on an unselected course to select it. This will add it to your plan and can potentially unlock other courses. 
 
 For example, selecting COMP1511 will unlock COMP2521.
 
-### Unselecting Courses
+#### Unselecting Courses
 Click on a selected course to unselect it. This will remove it from your plan. Furthermore, any courses which relied on that course as a prerequisite will be unselected. 
 
 For example, if both COMP1511 and COMP2521 are selected, unselecting COMP1511 will also unselect COMP2511. This is because COMP2511 requires you to have taken COMP1511.
