@@ -65,7 +65,7 @@ Our seach bar in the top right will take you directly to any course you are look
 #### Side Bar
 UNSW provides further requirements which need to be fulfilled when planning a degree. This usually involves some combination of **Core Courses** and **Electives**. You must take enough courses to satisfy the units required. Our side bar reflects this information and will be updated accordingly when you select/unselect courses.
 
-Currently, the side bar does not deal with free electives and general education units.
+Currently, the side bar does not deal with Free Electives and General Education units.
 
 ### 3. Smart Degree Planner
 
