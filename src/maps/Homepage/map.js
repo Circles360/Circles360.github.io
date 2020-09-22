@@ -11,7 +11,8 @@ const containerStyle = {
     display: "flex",
     justifyContent: "space-around",
     alignItems: "center",
-    flexDirection: "column"
+    flexDirection: "column",
+    lineHeight: "normal"
     // border: "1px solid black"
 }
 
@@ -40,12 +41,12 @@ const Homepage = () => {
                 </Container >
             </div>
             <div id="tutorial">
-                <Container fluid style={containerStyle}>
-                    <Header as="h2" textAlign="center" style={{paddingTop: "3%", fontSize: "36px"}}>Tutorial</Header>
-                    <InteractiveTutorialMain />
-                    <Header as="h4" textAlign="center">After choosing your courses, a degree plan will be automatically generated for you.</Header>
-                    {getButton("#chooseDegree")}
-                </Container>
+                    <Container fluid style={containerStyle}>
+                        <Header as="h2" textAlign="center" style={{paddingTop: "3%", fontSize: "36px"}}>Tutorial</Header>
+                        <InteractiveTutorialMain />
+                        <Header as="h4" textAlign="center">After choosing your courses, a degree plan will be automatically generated for you.</Header>
+                        {getButton("#chooseDegree")}
+                    </Container>
             </div>
             <div id="chooseDegree">
                 <Container style={{...containerStyle, justifyContent: "center"}}>
