@@ -35,7 +35,7 @@ Manual fixes are documented in `manual_fixes.txt` when we found an error (such a
 
 ### 2. Flowchart
 
-Our flowchart is rendered using the `react-flow-renderer` npm library. It reads all the data scraped by the web scraper and displays relevant courses and their prerequisites onto the screen. Coures are represented by circular nodes, and prerequisites are represented by edges. Clicking a course will add it to your plan and unlock future courses. We implement many advanced algorithms to accurately update the state of the flowchart and to improve the user experience, all of which will be explained below. All examples provided refer to the flowchart of Engineering (Honours) - Software Engineering.
+Our flowchart is rendered using the `react-flow-renderer` npm library. It reads all the data scraped by the web scraper and displays relevant courses and their prerequisites onto the screen. Coures are represented by circular nodes, and prerequisites are represented by edges. Clicking a course will add it to your plan and unlock future courses. We've implemented many advanced algorithms to accurately update the state of the flowchart and to improve the user experience, all of which will be explained below. All examples provided refer to the flowchart of Engineering (Honours) - Software Engineering.
 
 #### Selecting Courses
 Click on an unselected course to select it. This will add it to your plan and can potentially unlock other courses. 
@@ -43,7 +43,7 @@ Click on an unselected course to select it. This will add it to your plan and ca
 For example, selecting COMP1511 will unlock COMP2521.
 
 #### Unselecting Courses
-Click on a selected course to unselect it. This will remove it from your plan. Furthermore, any courses which relied on that course as a prerequisite will be unselected. 
+Click on a selected course to unselect it. This will remove it from your plan. Furthermore, any courses which relied on that course as a prerequisite will be unselected.
 
 For example, if both COMP1511 and COMP2521 are selected, unselecting COMP1511 will also unselect COMP2511. This is because COMP2511 requires you to have taken COMP1511.
 
@@ -51,26 +51,25 @@ For example, if both COMP1511 and COMP2521 are selected, unselecting COMP1511 wi
 Courses will partially light up if they can be selected. A course can be selected if you meet all its conditions, whether that be prerequisite courses, units taken, etc.
 
 #### Toggling Exclusion/Equivalent Courses
-UNSW provides more advanced options for some courses to cater to students who wish to challenge themselves. For example, Math1131/Math1141. Double clicking on these courses (marked by a black swap symbol) will toggle between them.
+UNSW provides more advanced options for some courses to cater to students who wish to challenge themselves, e.g. MATH1131/MATH1141.  Double clicking on these courses (marked by a black swap symbol) will toggle between them.
 
-Sometimes, toggling between courses is not as straight forward. For example, COMP6841/COMP6441. COMP6841 requires COMP2521 to unlock it whereas COMP6441 does not. COMP6841 can unlock COMP6448 whereas COMP6441 cannot. However you do not have to worry about that as our flowchart will dynamically update to intuitively and accurately reflect all changes. Try it yourself!
+Sometimes, toggling between courses is not so straight forward. Take COMP6441/COMP6841 as an example. COMP6841 requires COMP2521 to unlock it whereas COMP6441 does not. COMP6841 can unlock COMP6448 whereas COMP6441 cannot. However, you do not have to worry about this as our flowchart will dynamically update to intuitively and accurately reflect all changes. Try it yourself!
 
 #### Hovering Over Nodes
-Hovering over a node will light up paths you can take to unlock it. It will also display information about it in the top left corner such as name, term availability, prerequisites, units required, exclusion courses, etc.
+Hovering over a node will light up paths you can take to unlock it. It will also display additional information in the top left corner such as course name, term availability, conditions, etc.
 
 #### Search Bar
 Our seach bar in the top right will take you directly to any course you are looking for provided it exists on the flowchart. 
 
-
 #### Side Bar
-UNSW provides further requirements which need to be fulfilled when planning a degree. This usually involves some combination of **Core Courses** and **Electives**. You must take enough courses to satisfy the units required. Our side bar reflects this information and will be updated accordingly when you select/unselect courses.
+UNSW provides further requirements which need to be fulfilled when planning a degree. This usually involves some combination of **Core Courses** and **Electives**. You must take meet the unit rquirements for each of them. Our side bar reflects this information and will update accordingly when you select/unselect courses.
 
 Currently, the side bar does not deal with Free Electives and General Education units.
 
 #### Free Electives/General Education
-At the bottom of the flowchart, you can select from thousands of courses which do not exist on the flowchart (in other words, free electives and general education courses). Selecting these courses will add them to your Smart Degree Planner at the bottom of the page. 
+At the bottom of the flowchart, you can select from thousands of courses which do not exist on the flowchart (in other words, free electives and general education courses). Selecting these courses will add them to your Smart Degree Planner at the bottom of the page.
 
-This is because UNSW's handbook has many mistakes which need to be manually checked for or else they could potentially break the intricate logic of the flowchart. Due to the competition's deadline, we did not have the manpower/time to check all 2000+ courses for mistakes.
+These courses are not currently linked to the flowchart. This is because UNSW's handbook has many mistakes which need to be manually checked for or else they could potentially break the intricate logic of the flowchart. Due to the competition's deadline, we did not have the manpower/time to check all 2000+ courses for mistakes.
 
 ### 3. Smart Degree Planner
 
