@@ -10,8 +10,6 @@ import ComputerScienceCOMPA1MARKA2 from './maps/ComputerScienceCOMPA1MARKA2/map.
 import ComputerScienceCOMPA1INFSA2 from './maps/ComputerScienceCOMPA1INFSA2/map.js';
 import ComputerScienceCOMPA1PSYCM2 from './maps/ComputerScienceCOMPA1PSYCM2/map.js';
 
-import Teaching from './maps/EngineeringHonoursSoftware/teaching.js';
-
 class App extends Component {
   render() {
     return (

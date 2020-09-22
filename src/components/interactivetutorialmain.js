@@ -45,6 +45,8 @@ var potentialEdges = {"eCODE0000-CODE1111": 1};
 var hoverEdges = {};
 var exclusionGroups = [["CODE3333", "CODE4444"]];
 var exclusionNodes = {};
+var hiddenNodes = {"CODE4444": 1};
+var hiddenEdges = {"eCODE2222-CODE4444": 1};
 
 const nodeTypes = {
     tutorial1: TutorialNode1,
@@ -67,7 +69,9 @@ const InteractiveTutorialMain = () => {
         hoverEdges = {};
         exclusionGroups = [["CODE3333", "CODE4444"]];
         exclusionNodes = {};        
-        
+        hiddenNodes = {"CODE4444": 1};
+        hiddenEdges = {"eCODE2222-CODE4444": 1};
+
         for (var e of elements) {
             e.isHidden = false;
         }
@@ -92,7 +96,7 @@ const InteractiveTutorialMain = () => {
             }
             group.push(last);
         }
-        setElements(highlightElements(elements, selectedNodes, selectedEdges, selectableNodes, potentialEdges, hoverEdges));
+        setElements(highlightElements(elements, selectedNodes, selectedEdges, selectableNodes, potentialEdges, hoverEdges, hiddenNodes, hiddenEdges, false));
         reactFlowInstance.fitView();
     };
 
@@ -105,12 +109,12 @@ const InteractiveTutorialMain = () => {
             unselectUnconnected(elements, selectedNodes, selectedEdges, selectableNodes, potentialEdges);
         }
         getSelectable(elements, selectedNodes, selectedEdges, selectableNodes, potentialEdges);
-        setElements(highlightElements(elements, selectedNodes, selectedEdges, selectableNodes, potentialEdges, hoverEdges));
+        setElements(highlightElements(elements, selectedNodes, selectedEdges, selectableNodes, potentialEdges, hoverEdges, hiddenNodes, hiddenEdges, false));
     }
     
     const toggleExclusion = (element) => {
-        setElements(exclusionSwap(element, elements, edgesData, selectedNodes, selectedEdges, selectableNodes, potentialEdges, hoverEdges, exclusionGroups));
-        setElements(highlightElements(elements, selectedNodes, selectedEdges, selectableNodes, potentialEdges, hoverEdges));
+        setElements(exclusionSwap(element, elements, edgesData, selectedNodes, selectedEdges, selectableNodes, potentialEdges, hoverEdges, hiddenNodes, hiddenEdges, exclusionGroups));
+        setElements(highlightElements(elements, selectedNodes, selectedEdges, selectableNodes, potentialEdges, hoverEdges, hiddenNodes, hiddenEdges, false));
     }
 
     const onElementClick = (event, element) => {
@@ -138,12 +142,12 @@ const InteractiveTutorialMain = () => {
     const onNodeMouseEnter = (event, node) => {
         // setHoverNode(node);
         hoverPrerequisites(node, elements, selectedNodes, selectedEdges, selectableNodes, potentialEdges, hoverEdges);
-        setElements(highlightElements(elements, selectedNodes, selectedEdges, selectableNodes, potentialEdges, hoverEdges));
+        setElements(highlightElements(elements, selectedNodes, selectedEdges, selectableNodes, potentialEdges, hoverEdges, hiddenNodes, hiddenEdges, false));
     }
 
     const onNodeMouseLeave = (event, node) => {
         unhoverPrerequisites(hoverEdges);
-        setElements(highlightElements(elements, selectedNodes, selectedEdges, selectableNodes, potentialEdges, hoverEdges));
+        setElements(highlightElements(elements, selectedNodes, selectedEdges, selectableNodes, potentialEdges, hoverEdges, hiddenNodes, hiddenEdges, false));
     }
 
     return (
