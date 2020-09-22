@@ -67,6 +67,11 @@ UNSW provides further requirements which need to be fulfilled when planning a de
 
 Currently, the side bar does not deal with Free Electives and General Education units.
 
+#### Free Electives/General Education
+At the bottom of the flowchart, you can select from thousands of courses which do not exist on the flowchart (in other words, free electives and general education courses). Selecting these courses will add them to your Smart Degree Planner at the bottom of the page. 
+
+As of now, they are not currently linked to the flowchart in any way. This is because a single mistake in any course can potentially break the entire logic of the flowchart. Due to the competition's deadline, we do not have the manpower/time to manually check all 2000+ courses for mistakes.
+
 ### 3. Smart Degree Planner
 
 The smart degree planner was designed with the `react-beautiful-dnd` npm library and takes all the courses selected by the Flowchart and allocates them a term to be taken in during your degree. As explained on the page, our algorithm:
