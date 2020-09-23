@@ -1,5 +1,5 @@
 import React, {useState, useRef} from 'react';
-import ReactFlow, { isNode, isEdge, ReactFlowProvider } from 'react-flow-renderer';
+import ReactFlow, { isNode, isEdge, ReactFlowProvider, Controls } from 'react-flow-renderer';
 
 import CustomNode1 from '../../components/customnode1.js';
 import CustomNode2 from '../../components/customnode2.js';
@@ -216,6 +216,12 @@ const BESengah = () => {
                                     // onNodeDragStop={onNodeDragStop}
                                     elementsSelectable={false}
                                 >
+                                    <div style={{position: "absolute", zIndex: "10", bottom: "20px", right: "50px"}}>
+                                        <Controls
+                                            style={{width: "100px", height: "100px"}}
+                                        />
+
+                                    </div>
                                     <div style={{position: "absolute", zIndex: "10", bottom: "20px", left: "20px"}}>
                                         <Checkbox
                                             toggle
@@ -232,7 +238,12 @@ const BESengah = () => {
                             </div>
                             <Container style={{marginBottom: "50px"}}>
                                 <Segment raised>
-                                    <Header as="h5">Couldn't find a course up there? Add it here:</Header>
+                                    <Header as="h5">
+                                        Couldn't find a course up there? Add it here:
+                                        <Header.Subheader>
+                                            Courses shown on the flowchart cannot be selected here. Please use the flowchart instead.
+                                        </Header.Subheader>
+                                    </Header>
                                     <Dropdown
                                         selection
                                         multiple
@@ -240,7 +251,7 @@ const BESengah = () => {
                                         fluid
                                         options={searchAdditionalOptions}
                                         onChange={(e, data) => setAdditionalCourses(data.value)}
-                                        placeholder=" courses"
+                                        placeholder="Additional courses"
                                     />
                                 </Segment>
                             </Container>

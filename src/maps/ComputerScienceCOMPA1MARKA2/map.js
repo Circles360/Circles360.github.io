@@ -1,5 +1,5 @@
 import React, {useState, useRef} from 'react';
-import ReactFlow, { isNode, isEdge, ReactFlowProvider } from 'react-flow-renderer';
+import ReactFlow, { isNode, isEdge, ReactFlowProvider, Controls } from 'react-flow-renderer';
 
 import CustomNode1 from '../../components/customnode1.js';
 import CustomNode2 from '../../components/customnode2.js';
@@ -217,6 +217,7 @@ const ComputerScienceCOMPA1MARKA2 = () => {
                                     // onNodeDragStop={onNodeDragStop}
                                     elementsSelectable={false}
                                 >
+                                    <Controls />
                                     <div style={{position: "absolute", zIndex: "10", bottom: "20px", left: "20px"}}>
                                         <Checkbox
                                             toggle

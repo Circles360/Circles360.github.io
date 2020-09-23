@@ -54,6 +54,7 @@ export default function DropdownSearch(props) {
             <Dropdown
                 selection
                 search
+                clearable
                 options={props.searchNodeOptions}
                 placeholder="Looking for a course?"
                 onChange={handleChange}
