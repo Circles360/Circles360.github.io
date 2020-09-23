@@ -85,7 +85,7 @@ const ComputerScienceCOMPA1PSYCM2 = () => {
     const [layout, setLayout] = useState(layoutStyle);
     const [additionalCourses, setAdditionalCourses] = useState([]);
 
-    var hideMap = useRef(true);
+    var hideMap = useRef(false);
 
     var clickCount = 0;
     var singleClickTimer = '';
@@ -171,8 +171,8 @@ const ComputerScienceCOMPA1PSYCM2 = () => {
         hoverDisplay = <HoverInfo node={hoverNode}/>
     }
 
-    const toggleHidden = (e, {checked} ) => {
-        hideMap.current = checked;
+    const toggleHidden = () => {
+        hideMap.current = !hideMap.current;
 
         setElements(highlightElements(elements, selectedNodes, selectedEdges, selectableNodes, potentialEdges, hoverEdges, hiddenNodes, hiddenEdges, hideMap.current));
     }
@@ -220,7 +220,7 @@ const ComputerScienceCOMPA1PSYCM2 = () => {
                                     <div style={{position: "absolute", zIndex: "10", bottom: "20px", left: "20px"}}>
                                         <Checkbox
                                             toggle
-                                            defaultChecked
+                                            checked={hideMap.current}
                                             label="Only show selected courses"
                                             onChange={toggleHidden}
                                         />
