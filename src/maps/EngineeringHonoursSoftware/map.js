@@ -219,7 +219,7 @@ const BESengah = () => {
                                     <div style={{position: "absolute", zIndex: "10", top: "30px", right: "30px"}}>
                                         {/* <button onClick={toggleHidden}>Hide Map</button> */}
                                         <Button onClick={toggleHidden}>HIDE MAP</Button>
-                                        <DropdownSearch toggleExclusion={toggleExclusion} searchNodeOptions={searchNodeOptions} searchElements={elements}/>
+                                        <DropdownSearch toggleExclusion={toggleExclusion} hideMap={hideMap.current} toggleHidden={toggleHidden} searchNodeOptions={searchNodeOptions} searchElements={elements}/>
                                     </div>
                                 </ReactFlow>
                             </div>
