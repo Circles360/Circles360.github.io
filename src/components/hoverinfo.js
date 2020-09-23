@@ -15,7 +15,7 @@ const style = {
 export default function HoverInfo(props) {
     return (
         <Segment raised id="hoverbox" style={style}>
-            <Header as="h4" textAlign="center">{props.node.data.course_name}</Header>
+            <Header as="h4" textAlign="center">{props.node.data.course_code} - {props.node.data.course_name}</Header>
             <p><b>Terms: </b>{(props.node.data.terms !== null) ? props.node.data.terms.join(", ") : <text>Unknown</text>}</p>
 
             {props.node.data.conditions.raw !== null ? <p><b>Conditions: </b>{props.node.data.conditions.raw}</p> : <p><b>Conditions: </b> None</p>}

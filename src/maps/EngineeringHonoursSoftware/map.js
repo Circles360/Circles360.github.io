@@ -84,7 +84,7 @@ const BESengah = () => {
     const [layout, setLayout] = useState(layoutStyle);
     const [additionalCourses, setAdditionalCourses] = useState([]);
 
-    var hideMap = useRef(false);
+    var hideMap = useRef(true);
 
     var clickCount = 0;
     var singleClickTimer = '';
@@ -219,8 +219,8 @@ const BESengah = () => {
                                     <div style={{position: "absolute", zIndex: "10", bottom: "20px", left: "20px"}}>
                                         <Checkbox
                                             toggle
-                                            checked={hideMap.current}
-                                            label="Only show selected courses"
+                                            checked={!hideMap.current}
+                                            label="Show all courses"
                                             onChange={toggleHidden}
                                         />
                                     </div>
