@@ -9,7 +9,9 @@ Our project can be split into 3 subprojects:
 2. Flowchart
 3. Smart Degree Planner
 
-**NOTE:** Currently only SENGAH (Software Engineering), and COMPA1 (Computer Science) with its optional minors are supported. This is because each degree requires a manual check to ensure there were no errors (many times the Handbook is missing information 😢). Since we were all learning React for the first time, we didn't have time for this task.
+**NOTE:** Currently only SENGAH (Software Engineering), and COMPA1 (Computer Science) with its optional minors are supported in the Flowchart. This is because each degree requires a manual check to ensure there were no errors (many times the Handbook is missing information 😢). Since we were all learning React for the first time, we didn't have time for this task.
+
+**However, the functionality to plan out any course is still available through manually adding the course in the dropdown menu under *"Couldn't find a course up there? Add it here:"*. The courses will then appear in the Smart Degree Planner, where you can drag and drop them into the terms you want. Consideration messages will still appear to let you know a course's term availability and whether a course's prerequisites have been met.**
 
 **NOTE:** The UNSW handbook is currently undergoing major updates for 2021. Although we try our best, some data may be incorrect or outdated, so some nodes on our flowchart may not be selectable. Please refer to the handbook for the latest update.
 
