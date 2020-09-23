@@ -217,7 +217,6 @@ const ComputerScienceCOMPA1MARKA2 = () => {
                                     // onNodeDragStop={onNodeDragStop}
                                     elementsSelectable={false}
                                 >
-                                    <Controls />
                                     <div style={{position: "absolute", zIndex: "10", bottom: "20px", left: "20px"}}>
                                         <Checkbox
                                             toggle

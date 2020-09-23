@@ -216,12 +216,6 @@ const BESengah = () => {
                                     // onNodeDragStop={onNodeDragStop}
                                     elementsSelectable={false}
                                 >
-                                    <div style={{position: "absolute", zIndex: "10", bottom: "20px", right: "50px"}}>
-                                        <Controls
-                                            style={{width: "100px", height: "100px"}}
-                                        />
-
-                                    </div>
                                     <div style={{position: "absolute", zIndex: "10", bottom: "20px", left: "20px"}}>
                                         <Checkbox
                                             toggle
