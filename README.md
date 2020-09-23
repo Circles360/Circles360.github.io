@@ -62,7 +62,7 @@ Some courses come with an advanced alternative to cater to students who wish to 
 There are some cases where toggling between courses is not so straight forward. *For example, COMP6441/COMP6841. COMP6841 requires COMP2521 to unlock it whereas COMP6441 does not. COMP6841 can unlock COMP6448 whereas COMP6441 cannot*. However, you do not have to worry about this as our flowchart will update to intuitively and accurately reflect all changes. Try it yourself! 
 
 #### Hovering Over Nodes
-Hovering over a node will light up paths (edges) you can take to unlock it. It will also display additional informatino in the top left corner such as course name, term availability, conditions, etc.
+Hovering over a node will light up paths (edges) you can take to unlock it. It will also display additional information in the top left corner such as course name, term availability, conditions, etc.
 
 #### Search Bar
 If you can't find a course, our search bar in the top right will take you directly to any course you are looking for (if it exists on the flowchart).
@@ -73,7 +73,7 @@ UNSW provides further requirements which need to be fulfilled when planning a de
 #### Free Electives/General Education
 At the bottom of the flowchart, you can select from thousands of courses which do not exist on the flowchart (in other words, free electives and general education courses). Selecting these courses will add them to your Smart Degree Planner at the bottom of the page.
 
-**NOTE:** These courses are not currently linked to the flowchart or side bar. This is because UNSW's handbook has many inconsistencies and is also currently undergoing major updates for 2021. Whilst we can ensure that the data on the flowchart has been manually checked and are very reliable (especially Software Engineering), we cannot guarantee the same for free electives/general education units. Due to both the competition's deadline and UNSW's current handbook renovations, we did not have the manpower/time to manually check all of UNSW's thousands of courses.
+**NOTE:** These courses are not currently linked to the flowchart or side bar. This is because UNSW's handbook has many inconsistencies and is also currently undergoing major updates for 2021. Whilst we can ensure that the data on the flowchart has been manually checked and is very reliable (especially Software Engineering), we cannot guarantee the same for free electives/general education units. Due to both the competition's deadline and UNSW's current handbook renovations, we did not have the manpower/time to manually check all of UNSW's thousands of courses.
 
 #### Future Plans
 Once the 2021 updates are finalised, we plan on fully integrating free electives and general education units into the flowchart. This will mean that you can select from **any** one of UNSW's thousands of courses **and have their impact reflected on the flowchart**.
