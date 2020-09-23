@@ -1,9 +1,6 @@
 import React from 'react';
 import { Container, Segment, Header, Message, Grid } from 'semantic-ui-react'
 
-import dataJSON from "../maps/EngineeringHonoursSoftware/data.json"
-import rawCoursesJSON from "../webscraper/courses.json"
-
 import programsJSON from "../webscraper/programs.json"
 import specialisationsJSON from "../webscraper/specialisations.json"
 
@@ -27,22 +24,8 @@ const mapTermFull = (term) => {
     if (term === "T3") return "Term 3";
 }
 
-const updateCourses = (rawCoursesJSON, dataJSON) => {
-    let coursesJSON = {...rawCoursesJSON};
-    dataJSON.forEach(course => {
-        if (!(course.id in coursesJSON)) return;
-        coursesJSON[course.id].conditions = {...course.data.conditions};
-        coursesJSON[course.id].terms = course.data.terms;
-    });
-
-    return coursesJSON;
-}
-
-const coursesJSON = updateCourses(rawCoursesJSON, dataJSON);
-
-const getCourses = (selectedCourses) => {
+const getCourses = (selectedCourses, coursesJSON) => {
     const courses = {}
-
     selectedCourses.forEach(c => {
         if (!(c in coursesJSON)) return;
 
@@ -103,7 +86,7 @@ const generateTerms = (yearId) => {
     return terms;
 }
 
-const addPriority = (priority, courseId, unlocksCourse) => {
+const addPriority = (priority, courseId, unlocksCourse, coursesJSON) => {
     if (!(courseId in coursesJSON)) return priority;
     if (!coursesJSON[courseId].conditions.prerequisites) return priority;
 
@@ -112,13 +95,13 @@ const addPriority = (priority, courseId, unlocksCourse) => {
         if (courseId === prereq) continue;
 
         priority[prereq].unlocks.push(unlocksCourse);
-        priority = addPriority(priority, prereq, unlocksCourse);
+        priority = addPriority(priority, prereq, unlocksCourse, coursesJSON);
     }
 
     return priority;
 }
 
-const prioritiseCourses = (selectedCourses) => {
+const prioritiseCourses = (selectedCourses, coursesJSON) => {
     // Initiate priorities
     var priority = {};
     for (const courseId of selectedCourses) {
@@ -135,7 +118,7 @@ const prioritiseCourses = (selectedCourses) => {
 
     // Calculate priorities
     for (const courseId of selectedCourses) {
-        priority = addPriority(priority, courseId, courseId);
+        priority = addPriority(priority, courseId, courseId, coursesJSON);
     }
 
     // Sort keys of priority into array to give into prioritised
@@ -190,7 +173,7 @@ const prioritiseCourses = (selectedCourses) => {
     return newPrioritised;
 }
 
-const checkPrereqsMet = (termPlan, termId, courseId) => {
+const checkPrereqsMet = (termPlan, termId, courseId, coursesJSON) => {
 
     let runningTotalUnits = 0;
     let prereqsExecutable = coursesJSON[courseId].conditions.prereqs_executable;
@@ -219,7 +202,7 @@ const checkPrereqsMet = (termPlan, termId, courseId) => {
     return eval(prereqsExecutable);
 }
 
-const addCourseToPlan = (termPlan, courseId) => {
+const addCourseToPlan = (termPlan, courseId, coursesJSON) => {
     const maxUOC = 18;
 
     for (const termId in termPlan) {
@@ -238,7 +221,7 @@ const addCourseToPlan = (termPlan, courseId) => {
 
         if (!(termsAvailable.includes(termId.substring(1, 3)))) continue;
         // Need to check prerequisites have been met here
-        if (!checkPrereqsMet(termPlan, termId, courseId)) continue;
+        if (!checkPrereqsMet(termPlan, termId, courseId, coursesJSON)) continue;
         // Add course to plan
         termPlan[termId].units += coursesJSON[courseId].units;
         termPlan[termId].courseIds.push(courseId);
@@ -258,7 +241,7 @@ const addCourseToPlan = (termPlan, courseId) => {
     return termPlan;
 }
 
-const populateTerms = (maxYears, prioritisedCourses) => {
+const populateTerms = (maxYears, prioritisedCourses, coursesJSON) => {
     const maxTerms = 3;
 
     const termPlan = {};
@@ -278,16 +261,16 @@ const populateTerms = (maxYears, prioritisedCourses) => {
 
     // For each course in the prioritised, slot into earliest possible term
     for (const course of prioritisedCourses) {
-        addCourseToPlan(termPlan, course.courseId);
+        addCourseToPlan(termPlan, course.courseId, coursesJSON);
     }
 
     return termPlan;
 }
 
-const makePlan = (plan, maxYears, selectedCourses) => {
-    const prioritisedCourses = prioritiseCourses(selectedCourses);
+const makePlan = (plan, maxYears, selectedCourses, coursesJSON) => {
+    const prioritisedCourses = prioritiseCourses(selectedCourses, coursesJSON);
 
-    const termPlan = populateTerms(maxYears, prioritisedCourses);
+    const termPlan = populateTerms(maxYears, prioritisedCourses, coursesJSON);
 
     for (const termId in termPlan) {
         const year = termId[0];
@@ -297,23 +280,23 @@ const makePlan = (plan, maxYears, selectedCourses) => {
     return plan;
 }
 
-const generatePlanScaffold = (years, selectedCourses) => {
+const generatePlanScaffold = (years, selectedCourses, coursesJSON) => {
     let plan = {};
 
     for (let year = 1; year <= years; year++) {
         plan[year.toString()] = generateTerms(year)
     }
 
-    plan = makePlan(plan, years, selectedCourses)
+    plan = makePlan(plan, years, selectedCourses, coursesJSON)
 
     return plan;
 }
 
 class DegreePlanner extends React.Component {
     state = {
-        courses: getCourses(this.props.selectedCourses),
+        courses: getCourses(this.props.selectedCourses, this.props.coursesJSON),
         selectedCourses: this.props.selectedCourses,
-        plan: generatePlanScaffold(4, this.props.selectedCourses),
+        plan: generatePlanScaffold(4, this.props.selectedCourses, this.props.coursesJSON),
         program: this.props.program,
         specialisations: this.props.specialisations
     };
@@ -405,7 +388,7 @@ class DegreePlanner extends React.Component {
 
         const getCoursesInLevel = (rawList) => {
             rawList = rawList.flat().filter(c => c !== "ANY COURSE");
-            const allCourseIds = Object.keys(coursesJSON);
+            const allCourseIds = Object.keys(this.props.coursesJSON);
             const courseList = [];
             rawList.forEach(courseId => {
                 if (courseId.match(REGEX_COURSE_CODE)) {
@@ -427,7 +410,7 @@ class DegreePlanner extends React.Component {
             for (const term in plan[year]) {
                 if (term === "termOrder") continue;
                 termPlan[term] = plan[year][term]
-                totalUnits += termPlan[term].courseIds.reduce((total, c) => total + (c in coursesJSON ? coursesJSON[c].units : 0), 0);
+                totalUnits += termPlan[term].courseIds.reduce((total, c) => total + (c in this.props.coursesJSON ? this.props.coursesJSON[c].units : 0), 0);
             }
         }
 
@@ -448,7 +431,7 @@ class DegreePlanner extends React.Component {
             const degreeUnitsRequired = specialisationsJSON[degree].units
             let degreeUnitsTaken = 0;
             for (const term in termPlan) {
-                degreeUnitsTaken += termPlan[term].courseIds.reduce((total, c) => total + ((c in coursesJSON && coursesInDegree.includes(c)) ? coursesJSON[c].units : 0), 0);
+                degreeUnitsTaken += termPlan[term].courseIds.reduce((total, c) => total + ((c in this.props.coursesJSON && coursesInDegree.includes(c)) ? this.props.coursesJSON[c].units : 0), 0);
             }
 
             if (degreeUnitsTaken < degreeUnitsRequired) {
@@ -473,7 +456,7 @@ class DegreePlanner extends React.Component {
                 let levelCourses = getCoursesInLevel(level.courses);
                 if (!level.name.match(/[Cc]ore/g)) levelCourses = levelCourses.filter(c => !coreCourses.includes(c))
                 const selectedInLevel = levelCourses.filter(c => selectedCourses.includes(c));
-                const selectedUnits = selectedInLevel.reduce((total, c) => total + (c in coursesJSON ? coursesJSON[c].units : 0), 0);
+                const selectedUnits = selectedInLevel.reduce((total, c) => total + (c in this.props.coursesJSON ? this.props.coursesJSON[c].units : 0), 0);
 
                 if (selectedUnits < level.units_required) {
                     considerationMessages.push(
@@ -490,7 +473,7 @@ class DegreePlanner extends React.Component {
             for (const term in plan[year]) {
                 if (term === "termOrder") continue;
                 for (const courseId of termPlan[term].courseIds) {
-                    const conditions = coursesJSON[courseId].conditions
+                    const conditions = this.props.coursesJSON[courseId].conditions
                     if (!conditions.units_required) continue;
                     if (totalUnits < conditions.units_required) {
                         considerationMessages.push(
@@ -501,7 +484,7 @@ class DegreePlanner extends React.Component {
                     }
                 }
 
-                totalUnits += termPlan[term].courseIds.reduce((total, c) => total + (c in coursesJSON ? coursesJSON[c].units : 0), 0);
+                totalUnits += termPlan[term].courseIds.reduce((total, c) => total + (c in this.props.coursesJSON ? this.props.coursesJSON[c].units : 0), 0);
             }
         }
 
@@ -509,11 +492,11 @@ class DegreePlanner extends React.Component {
             for (const term in plan[year]) {
                 if (term === "termOrder") continue;
                 for (const courseId of plan[year][term].courseIds) {
-                    if (!checkPrereqsMet(termPlan, term, courseId)) {
-                        if (coursesJSON[courseId].conditions.prereqs_executable) {
+                    if (!checkPrereqsMet(termPlan, term, courseId, this.props.coursesJSON)) {
+                        if (this.props.coursesJSON[courseId].conditions.prereqs_executable) {
                             considerationMessages.push(
                                 <Message.Item>
-                                    {getCourseLink(courseId)} prerequisites have not been met: {coursesJSON[courseId].conditions.prereqs_executable
+                                    {getCourseLink(courseId)} prerequisites have not been met: {this.props.coursesJSON[courseId].conditions.prereqs_executable
                                         .replaceAll("|| 0 ||", "||")
                                         .replaceAll("&& 0 &&", "&&")
                                         .replaceAll("&& 0 ||", "||")
