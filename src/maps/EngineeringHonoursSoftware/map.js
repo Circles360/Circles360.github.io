@@ -9,7 +9,7 @@ import HoverInfo from '../../components/hoverinfo.js';
 import hoverPrerequisites from '../../components/hoverprerequisites.js';
 import unhoverPrerequisites from '../../components/unhoverprerequisites.js';
 
-import { Grid, Segment, Container, Dropdown, Header, Button } from 'semantic-ui-react'
+import { Grid, Segment, Container, Dropdown, Header, Checkbox } from 'semantic-ui-react'
 import Sidebar from "../../components/sidebar.js"
 
 import DegreePlanner from "../../components/degreeplanner.js"
@@ -84,7 +84,7 @@ const BESengah = () => {
     const [layout, setLayout] = useState(layoutStyle);
     const [additionalCourses, setAdditionalCourses] = useState([]);
 
-    var hideMap = useRef(false);
+    var hideMap = useRef(true);
 
     var clickCount = 0;
     var singleClickTimer = '';
@@ -170,8 +170,8 @@ const BESengah = () => {
         hoverDisplay = <HoverInfo node={hoverNode}/>
     }
 
-    const toggleHidden = () => {
-        hideMap.current = !hideMap.current;
+    const toggleHidden = (e, {checked} ) => {
+        hideMap.current = checked;
 
         setElements(highlightElements(elements, selectedNodes, selectedEdges, selectableNodes, potentialEdges, hoverEdges, hiddenNodes, hiddenEdges, hideMap.current));
     }
@@ -216,9 +216,16 @@ const BESengah = () => {
                                     // onNodeDragStop={onNodeDragStop}
                                     elementsSelectable={false}
                                 >
+                                    <div style={{position: "absolute", zIndex: "10", bottom: "20px", left: "20px"}}>
+                                        <Checkbox
+                                            toggle
+                                            defaultChecked
+                                            label="Only show selected courses"
+                                            onChange={toggleHidden}
+                                        />
+                                    </div>
+
                                     <div style={{position: "absolute", zIndex: "10", top: "30px", right: "30px"}}>
-                                        {/* <button onClick={toggleHidden}>Hide Map</button> */}
-                                        <Button onClick={toggleHidden}>HIDE MAP</Button>
                                         <DropdownSearch toggleExclusion={toggleExclusion} hideMap={hideMap.current} toggleHidden={toggleHidden} searchNodeOptions={searchNodeOptions} searchElements={elements}/>
                                     </div>
                                 </ReactFlow>
