@@ -37,7 +37,7 @@ Manual fixes are documented in `manual_fixes.txt` when we found an error (such a
 
 Our flowchart is rendered using the `react-flow-renderer` npm library. Data from our webscraper is put through the corresponding generator file in **src/generatedata** which formats node/edge data appropriately and adds any custom changes specific to that degree. This data is stored in **data.json** and then read by **map.js** to render the entire flowchart.
 
-Courses are represented by cicular nodes and connecting edges represent a prerequisite->unlock relationship. Courses are unlocked when you meet all its prerequisites. Clicking on a course will add it to your plan and potentially unlock future courses on the flowchart.
+Courses are represented by circular nodes and connecting edges represent a prerequisite->unlock relationship. Courses are unlocked when you meet all its prerequisites. Clicking on a course will add it to your plan and potentially unlock future courses on the flowchart.
 
 We have implemented many advanced algorithms to accurately update the state of the flowchart and to improve the user experience, all of which will be explained below. For further clarity, examples will be provided. These examples refer to the flowchart of **Engineering (Honours) - Software Engineering.**
 
