@@ -49,12 +49,12 @@ Clicking on an unselected course will select it. This adds it to your plan and c
 #### Unselecting Courses
 Clicking on a selected course will unselect it. This removes it from your plan. Furthermore, any courses whose prerequisites are no longer met will also be unselected.
 
-*For example, if both COMP1511 and COMP2521 are selected, unselecting COMP1511 will also unselect COMP2511. This is because COMP2511 requires COMP1511 as a prerequisite course.
+*For example, if both COMP1511 and COMP2521 are selected, unselecting COMP1511 will also unselect COMP2511. This is because COMP2511 requires COMP1511 as a prerequisite course.*
 
 #### Selectable Courses
 Courses will partially light up if they are selectable. A course becomes selectable if you clear all its conditions, whether that be prerequisite courses, units taken, etc.
 
-*For example, selecting COMP1511 will unlock COMP2521, making it selectable. This is because COMP2511 requires COMP1511 as a prerequisite course.
+*For example, selecting COMP1511 will unlock COMP2521, making it selectable. This is because COMP2511 requires COMP1511 as a prerequisite course.*
 
 #### Toggling Exclusion/Equivalent Courses
 Some courses come with an advanced alternative to cater to students who wish to challenge themselves (e.g. MATH1131/MATH1141). UNSW refers to these as *exclusion* or *equivalent* courses. Double clicking on these courses (marked by a black swap symbol) will toggle between them.
