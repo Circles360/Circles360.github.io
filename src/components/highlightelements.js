@@ -55,8 +55,12 @@ export default function highlightElements(elements, selectedNodes, selectedEdges
                 else return {...e, style: selectedEdgeStatic, animated: false};
             } else if (potentialEdges.hasOwnProperty(e.id)) {
                 // Do not show potential edges in hide map
-                if (hiddenEdges.hasOwnProperty(e.id) || hideMap === true) e.isHidden = true;
-                else e.isHidden = false;
+                // However, do show them if they lead to a node which is selectable
+                if (hiddenEdges.hasOwnProperty(e.id)) e.isHidden = true;
+                else if (hideMap === true) {
+                    if (selectableNodes.hasOwnProperty(e.target)) e.isHidden = false;
+                    else e.isHidden = true;
+                } else e.isHidden = false;
 
                 if (hoverEdges.hasOwnProperty(e.id)) return {...e, style: potentialHoverEdge, animated: true};
                 else return {...e, style: potentialEdge, animated: false};
