@@ -92,7 +92,7 @@ const ComputerScienceCOMPA1INFSA2 = () => {
 
     const onInstanceLoad = (instance) => {
         setElements(highlightElements(elements, selectedNodes, selectedEdges, selectableNodes, potentialEdges, hoverEdges, hiddenNodes, hiddenEdges, hideMap.current));
-        instance.setTransform({x: 470, y: 350, zoom: 0.38});
+        instance.setTransform({x: 500, y: 680, zoom: 1});
     };
 
     const selectUnselect = (element) => {
