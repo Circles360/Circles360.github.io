@@ -2,7 +2,7 @@
 
 ## Overview
 
-Circles is a **visual degree planner** for UNSW undergraduate students, available [here](circles360.github.io). By representing a degree as a flowchart, Circles makes it easy for anyone to choose and explore which direction they would like to take their degree in. Once students have chosen the courses that they would like to take, a degree plan is automatically generated for them, which takes into account course prerequisites and term availability. Students can then drag and drop courses as needed to customise their degree plan.
+Circles is a **visual degree planner** for UNSW undergraduate students, available at [https://circles360.github.io](https://circles360.github.io). By representing a degree as a flowchart, Circles makes it easy for anyone to choose and explore which direction they would like to take their degree in. Once students have chosen the courses that they would like to take, a degree plan is automatically generated for them, which takes into account course prerequisites and term availability. Students can then drag and drop courses as needed to customise their degree plan.
 
 Our project can be split into 3 subprojects:
 1. 2021 Handbook Scraper
