@@ -196,7 +196,11 @@ const checkPrereqsMet = (termPlan, termId, courseId, coursesJSON) => {
     for (const course of coursesTaken) {
         prereqsExecutable = prereqsExecutable.replace(course, "1");
     }
+
     prereqsExecutable = prereqsExecutable.replace(REGEX_COURSE_CODE, "0");
+
+    // Deal with Header nodes (e.g. COMPA1, SENGAH, etc)
+    prereqsExecutable = prereqsExecutable.replace(/[A-Z0-9]{6}/, "1");
 
     // eslint-disable-next-line
     return eval(prereqsExecutable);
