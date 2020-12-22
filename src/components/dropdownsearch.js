@@ -10,9 +10,9 @@ export default function DropdownSearch(props) {
         setSearch(prop.value);
     };
 
-    const { setInitTransform } = useStoreActions((actions) => actions);
+    const { updateTransform } = useStoreActions((actions) => actions);
     const transformUpdater = (x, y, zoom) => {
-        setInitTransform({ x, y, k: zoom });
+        updateTransform({ x, y, k: zoom });
     };
 
     const clickDone = () => {
