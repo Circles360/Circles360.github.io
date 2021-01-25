@@ -16,8 +16,8 @@ class App extends Component {
       <HashRouter basename='/'>
         <div>
           <Route exact path="/3707/SENGAH" component={BESengah} />
-          <Route exact path="/3778/COMPA1/" component={ComputerScienceCOMPA1} />
-          <Route exact path="/3778/COMPA1/ACCTA2" component={ComputerScienceCOMPA1ACCTA2} />
+          <Route exact path="/3778/COMPA1/" component={ComputerScienceCOMPA1}/>
+          <Route exact path="/3778/COMPA1/ACCTA2" component={ComputerScienceCOMPA1ACCTA2}/>
           <Route exact path="/3778/COMPA1/FINSA2" component={ComputerScienceCOMPA1FINSA2} />
           <Route exact path="/3778/COMPA1/MARKA2" component={ComputerScienceCOMPA1MARKA2} />
           <Route exact path="/3778/COMPA1/INFSA2" component={ComputerScienceCOMPA1INFSA2} />
