@@ -32,7 +32,7 @@ import coursesJSON from "../../webscraper/courses.json";
 import dataJSON from "./data.json"
 
 import initialiseMapData from "./initialiseMapData.js";
-import MapTemplate from './mapTemplate.js';
+import MapTemplate from '../mapTemplate.js';
 
 var mapData = initialiseMapData(['COMPA1'], '3778', dataJSON);
 
