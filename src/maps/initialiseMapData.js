@@ -1,16 +1,18 @@
 import {isNode, isEdge} from 'react-flow-renderer';
 
-import CustomNode1 from '../../components/customnode1.js';
-import CustomNode2 from '../../components/customnode2.js';
-import HeaderNode1 from '../../components/headernode1.js';
+import CustomNode1 from '../components/customnode1.js';
+import CustomNode2 from '../components/customnode2.js';
+import HeaderNode1 from '../components/headernode1.js';
 
-import dropdownSearchInit from '../../components/initialisation/dropdownSearchInit';
-import selectableInit from '../../components/initialisation/selectableInit';
-import hiddenInit from '../../components/initialisation/hiddenInit';
-import additionalSearchInit from '../../components/initialisation/additionalSearchInit';
-import coursesInit from '../../components/initialisation/coursesInit';
+import dropdownSearchInit from '../components/initialisation/dropdownSearchInit';
+import selectableInit from '../components/initialisation/selectableInit';
+import hiddenInit from '../components/initialisation/hiddenInit';
+import additionalSearchInit from '../components/initialisation/additionalSearchInit';
+import coursesInit from '../components/initialisation/coursesInit';
 
-import coursesJSON from "../../webscraper/courses.json";
+import coursesJSON from "../webscraper/courses.json";
+
+import dataExclusionJSON from "./ComputerScienceCOMPA1/data_exclusion.json";
 
 export default function initialiseMapData(specialisations, program, dataJSON) {
     var mapData = {};
@@ -42,7 +44,7 @@ export default function initialiseMapData(specialisations, program, dataJSON) {
     selectableInit(elementsData, nodesData, selectedNodes, selectableNodes, potentialEdges);
     
     // Load up the chart with initial hidden nodes and edges
-    var exclusionGroups = require("./data_exclusion.json");
+    var exclusionGroups = dataExclusionJSON.slice();
     const exclusionNodes = {};
     hiddenInit(elementsData, exclusionGroups, exclusionNodes, hiddenNodes, hiddenEdges);
     
@@ -77,7 +79,5 @@ export default function initialiseMapData(specialisations, program, dataJSON) {
     mapData.nodeTypes = nodeTypes;
     mapData.layoutStyle = layoutStyle;
 
-    console.log("======================SELECTED NODES");
-    console.log(selectedNodes);
     return mapData;
 }
