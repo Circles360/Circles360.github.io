@@ -1,7 +1,7 @@
 // HELPER FUNCTION for selecting nodes
 // Given a selectable node, highlights potential edges and fills in prereq edges
 // import checkPrerequisites from './checkprerequisites.js';
-// import getElement from './getelement.js';
+// import getElement from './getElement.js';
 
 export default function selectNode(elements, node, selectedNodes, selectedEdges, selectableNodes, potentialEdges) {
     selectedNodes[node.id] = 1;

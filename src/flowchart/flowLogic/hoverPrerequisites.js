@@ -1,7 +1,7 @@
 // HELPER FUNCTION to highlight prerequisites in purple on hover
 // When hovering over an unselected node, show a path of edges
 // which will stop at a selected/selectable node
-import getElement from './getelement.js';
+import getElement from '../flowHelper/getElement.js';
 
 export default function hoverPrerequisites(node, elements, selectedNodes, selectedEdges, selectableNodes, potentialEdges, hoverEdges) {
     if (node.data.conditions.prerequisites === null) return;

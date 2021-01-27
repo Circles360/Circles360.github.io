@@ -1,14 +1,14 @@
 import React, {Component} from 'react';
 import { Route, HashRouter } from 'react-router-dom';
 
-import Homepage from "./maps/Homepage/map.js";
-import ComputerScienceCOMPA1 from './maps/ComputerScienceCOMPA1/map.js';
-import ComputerScienceCOMPA1ACCTA2 from './maps/ComputerScienceCOMPA1ACCTA2/map.js';
-import ComputerScienceCOMPA1FINSA2 from './maps/ComputerScienceCOMPA1FINSA2/map.js';
-import ComputerScienceCOMPA1MARKA2 from './maps/ComputerScienceCOMPA1MARKA2/map.js';
-import ComputerScienceCOMPA1INFSA2 from './maps/ComputerScienceCOMPA1INFSA2/map.js';
-import ComputerScienceCOMPA1PSYCM2 from './maps/ComputerScienceCOMPA1PSYCM2/map.js';
-import EngineeringSENGAH from './maps/EngineeringHonoursSoftware/map.js';
+import Homepage from "./flowchart/maps/Homepage/map.js";
+import ComputerScienceCOMPA1 from './flowchart/maps/ComputerScienceCOMPA1/map.js';
+import ComputerScienceCOMPA1ACCTA2 from './flowchart/maps/ComputerScienceCOMPA1ACCTA2/map.js';
+import ComputerScienceCOMPA1FINSA2 from './flowchart/maps/ComputerScienceCOMPA1FINSA2/map.js';
+import ComputerScienceCOMPA1MARKA2 from './flowchart/maps/ComputerScienceCOMPA1MARKA2/map.js';
+import ComputerScienceCOMPA1INFSA2 from './flowchart/maps/ComputerScienceCOMPA1INFSA2/map.js';
+import ComputerScienceCOMPA1PSYCM2 from './flowchart/maps/ComputerScienceCOMPA1PSYCM2/map.js';
+import EngineeringSENGAH from './flowchart/maps/EngineeringHonoursSoftware/map.js';
 
 class App extends Component {
   render() {

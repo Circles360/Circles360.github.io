@@ -12,7 +12,7 @@ import coursesInit from './coursesInit';
 
 import coursesJSON from "../../webscraper/courses.json";
 
-import dataExclusionJSON from "../ComputerScienceCOMPA1/data_exclusion.json";
+import dataExclusionJSON from "../maps/ComputerScienceCOMPA1/data_exclusion.json";
 
 export default function mapDataInit(specialisations, program, dataJSON) {
     var mapData = {};

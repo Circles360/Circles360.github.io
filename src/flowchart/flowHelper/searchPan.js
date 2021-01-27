@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import { useStoreActions } from 'react-flow-renderer';
-import getElement from './getelement.js';
+import getElement from './getElement.js';
 
 export default function SearchPan(props) {
     const { setInitTransform } = useStoreActions((actions) => actions);

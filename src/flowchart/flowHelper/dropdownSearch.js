@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Button, Dropdown } from "semantic-ui-react";
 import { useStoreActions } from "react-flow-renderer";
-import getElement from "./getelement.js";
+import getElement from "./getElement.js";
 
 export default function DropdownSearch(props) {
     const [search, setSearch] = useState(null);

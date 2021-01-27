@@ -2,7 +2,7 @@
 // Returns false if prerequisites are not met for a given node
 // Will only analyse targets of potential edges
 
-import getElement from './getelement.js';
+import getElement from '../flowHelper/getElement';
 
 // NOTE: Assumes that source of potential edges are always selected
 export default function checkPrerequisites(node, elements, selectedNodes) {

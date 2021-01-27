@@ -11,8 +11,8 @@
 // - if the current node is not selected, turn edge grey no matter what
 // - if the current node is selected, keep edge as it is
 // - push the unlock onto queue if it was selectable/selected
-import getElement from './getelement.js';
-import checkPrerequisites from './checkprerequisites.js';
+import getElement from '../flowHelper/getElement';
+import checkPrerequisites from './checkPrerequisites.js';
 
 export default function unselectNode(elements, node, selectedNodes, selectedEdges, selectableNodes, potentialEdges) {
     // Unselect this node

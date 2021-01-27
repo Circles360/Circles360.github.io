@@ -2,32 +2,24 @@ import React, {useState, useRef} from 'react';
 import ReactFlow, { isNode, isEdge, ReactFlowProvider } from 'react-flow-renderer';
 
 
-import HoverInfo from '../components/hoverinfo.js';
-import hoverPrerequisites from '../components/hoverprerequisites.js';
-import unhoverPrerequisites from '../components/unhoverprerequisites.js';
+import HoverInfo from './flowHelper/hoverInfo.js';
+import hoverPrerequisites from './flowLogic/hoverPrerequisites.js';
+import unhoverPrerequisites from './flowLogic/unhoverPrerequisites.js';
 
 import { Grid, Segment, Container, Dropdown, Header, Checkbox } from 'semantic-ui-react'
 import Sidebar from "../components/sidebar.js"
 
 import DegreePlanner from "../components/degreeplanner.js"
-import DropdownSearch from "../components/dropdownsearch.js"
-
-// Initialisation helper functions
-import dropdownSearchInit from './initialisation/dropdownSearchInit';
-import selectableInit from './initialisation/selectableInit';
-import hiddenInit from './initialisation/hiddenInit';
-import additionalSearchInit from './initialisation/additionalSearchInit';
-import coursesInit from './initialisation/coursesInit';
+import DropdownSearch from "./flowHelper/dropdownSearch.js"
 
 // import positionHelper from '../../components/positionhelper.js';
-import selectNode from '../components/selectnode.js';
-import unselectNode from '../components/unselectnode.js';
-import highlightElements from '../components/highlightelements.js';
-import getSelectable from '../components/getselectable.js';
-import checkPrerequisites from '../components/checkprerequisites';
-import exclusionSwap from '../components/exclusionswap.js';
+import selectNode from './flowLogic/selectNode.js';
+import unselectNode from './flowLogic/unselectNode.js';
+import highlightElements from './flowLogic/highlightElements.js';
+import getSelectable from './flowLogic/getSelectable.js';
+import exclusionSwap from './flowLogic/exclusionSwap.js';
 
-import unselectUnconnected from '../components/unselectunconnected.js';
+import unselectUnconnected from './flowLogic/unselectUnconnected.js';
 
 const MapTemplate = ({mapData:{specialisations, program, elementsData, searchNodeOptions, searchAdditionalOptions, nodesData, edgesData, selectedNodes, selectedEdges, selectableNodes, potentialEdges, hoverEdges, hiddenNodes, hiddenEdges, exclusionGroups, exclusionNodes, updatedCoursesJSON, nodeTypes, layoutStyle}}) => {
     const [elements, setElements] = useState(elementsData);

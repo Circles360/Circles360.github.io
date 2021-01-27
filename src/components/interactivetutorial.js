@@ -3,16 +3,16 @@ import ReactFlow, {isNode, isEdge} from 'react-flow-renderer';
 import TutorialNode1 from './tutorialnode1.js';
 import TutorialNode2 from './tutorialnode2.js';
 
-import hoverPrerequisites from './hoverprerequisites.js';
-import unhoverPrerequisites from './unhoverprerequisites.js';
-import highlightElements from './highlightelements.js';
+import hoverPrerequisites from '../flowchart/flowLogic/hoverPrerequisites.js';
+import unhoverPrerequisites from '../flowchart/flowLogic/unhoverPrerequisites.js';
+import highlightElements from '../flowchart/flowLogic/highlightElements.js';
 // import checkPrerequisites from './checkprerequisites.js';
 
-import selectNode from './selectnode.js';
-import unselectNode from './unselectnode.js';
-import getSelectable from './getselectable.js';
-import exclusionSwap from './exclusionswap.js';
-import unselectUnconnected from './unselectunconnected.js';
+import selectNode from '../flowchart/flowLogic/selectNode.js';
+import unselectNode from '../flowchart/flowLogic/unselectNode.js';
+import getSelectable from '../flowchart/flowLogic/getSelectable.js';
+import exclusionSwap from '../flowchart/flowLogic/exclusionSwap.js';
+import unselectUnconnected from '../flowchart/flowLogic/unselectUnconnected.js';
 
 var elementsData = [
     {id: "CODE0000", type: "tutorial1", data: {instructions: "Circles is an interactive degree planner", course_level: null, units: 0, terms: ["Term1, Term2, Term3"], conditions: {raw: "RAW", prereqs_executable: null, prerequisites: null, corequisites: null, units_required: null, level_for_units_required: null, core_year: null, other: null}, equivalents: null, exclusions: null, unlocks: ["CODE1111"]}, position: {x: -150, y: -150}, style: {cursor: 'pointer', display: "flex", textAlign: "center", alignItems: "center", justifyContent: "center", fontSize: 8, fontWeight: "bold", color: "black", background: "lightgrey", width: 100, height: 100, borderRadius: 50, border: "2px solid black", boxShadow: "0px 0px 2px 0px grey"}, textColour: 'black', textSelectedColour: 'black', selectedColour: 'lightgrey', selectableColour: 'black', isHidden: false},

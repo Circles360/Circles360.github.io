@@ -1,10 +1,10 @@
 // HELPER FUNCTION FOR unselecting nodes
 // Determines if any nodes not connected to unselect node needs to be unselected.
 // For example, nodes which rely on N units completed
-import checkPrerequisites from './checkprerequisites.js';
-import checkPrequisiteUnits from './checkprerequisites.js';
-import unselectNode from './unselectnode.js';
-import getElement from './getelement.js';
+import checkPrerequisites from './checkPrerequisites.js';
+import checkPrequisiteUnits from './checkPrerequisites.js';
+import unselectNode from './unselectNode.js';
+import getElement from '../flowHelper/getElement';
 
 export default function unselectUnconnected(elements, selectedNodes, selectedEdges, selectableNodes, potentialEdges) {
     console.log("UNSELECTUNCONNECTED");

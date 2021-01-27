@@ -1,8 +1,8 @@
 import React from 'react';
 
 
-import DropdownDegrees from '../../components/dropdownDegrees.js'
-import InteractiveTutorialMain from '../../components/interactivetutorialmain.js';
+import DropdownDegrees from '../../../components/dropdownDegrees.js'
+import InteractiveTutorialMain from '../../../components/interactivetutorialmain.js';
 import { Message, Button, Container, Header } from 'semantic-ui-react';
 import ScrollTo from "react-scroll-into-view";
 
