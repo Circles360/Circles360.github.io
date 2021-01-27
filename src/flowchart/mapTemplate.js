@@ -1,5 +1,5 @@
 import React, {useState, useRef} from 'react';
-import ReactFlow, { isNode, isEdge, ReactFlowProvider } from 'react-flow-renderer';
+import ReactFlow, { isEdge, ReactFlowProvider } from 'react-flow-renderer';
 
 
 import HoverInfo from './flowHelper/hoverInfo.js';
@@ -12,7 +12,7 @@ import Sidebar from "../components/sidebar.js"
 import DegreePlanner from "../components/degreeplanner.js"
 import DropdownSearch from "./flowHelper/dropdownSearch.js"
 
-// import positionHelper from '../../components/positionhelper.js';
+import positionHelper from './flowHelper/positionHelper.js';
 import selectNode from './flowLogic/selectNode.js';
 import unselectNode from './flowLogic/unselectNode.js';
 import highlightElements from './flowLogic/highlightElements.js';
@@ -193,7 +193,7 @@ const MapTemplate = ({mapData:{specialisations, program, elementsData, searchNod
                     </Grid.Column>
                 </Grid>
                 {hoverDisplay}
-                {/* <button onClick={positionHelper(elements)}>GENERATE POSITION</button> */}
+                <button onClick={positionHelper(elements)}>GENERATE POSITION</button>
                 <div id="DegreePlanner">
                     <DegreePlanner
                         key={Object.keys(selectedNodes).concat(additionalCourses).join("")}

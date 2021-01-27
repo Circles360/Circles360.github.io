@@ -1,4 +1,4 @@
-import React, {useState, useRef} from 'react';
+import React from 'react';
 
 import dataJSON from "./data.json"
 import mapDataInit from "../../initialisation/mapDataInit.js";

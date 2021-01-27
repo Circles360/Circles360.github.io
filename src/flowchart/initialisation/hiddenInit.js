@@ -17,7 +17,7 @@ export default function hiddenInit(elements, exclusionGroups, exclusionNodes, hi
                 hiddenNodes[course.id] = 1;
                 for (const edge of elements) {
                     if (isNode(edge)) continue;
-                    if (edge.source === last || edge.target == last) {
+                    if (edge.source === last || edge.target === last) {
                         hiddenEdges[edge.id] = 1;
                     }
                 }

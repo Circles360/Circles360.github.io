@@ -8,14 +8,14 @@ import ComputerScienceCOMPA1FINSA2 from './flowchart/maps/ComputerScienceCOMPA1F
 import ComputerScienceCOMPA1MARKA2 from './flowchart/maps/ComputerScienceCOMPA1MARKA2/map.js';
 import ComputerScienceCOMPA1INFSA2 from './flowchart/maps/ComputerScienceCOMPA1INFSA2/map.js';
 import ComputerScienceCOMPA1PSYCM2 from './flowchart/maps/ComputerScienceCOMPA1PSYCM2/map.js';
-import EngineeringSENGAH from './flowchart/maps/EngineeringHonoursSoftware/map.js';
+import EngineeringHonoursSENGAH from './flowchart/maps/EngineeringHonoursSENGAH/map.js';
 
 class App extends Component {
   render() {
     return (
       <HashRouter basename='/'>
         <div>
-          <Route exact path="/3707/SENGAH" component={EngineeringSENGAH} />
+          <Route exact path="/3707/SENGAH" component={EngineeringHonoursSENGAH} />
           <Route exact path="/3778/COMPA1/" component={ComputerScienceCOMPA1}/>
           <Route exact path="/3778/COMPA1/ACCTA2" component={ComputerScienceCOMPA1ACCTA2}/>
           <Route exact path="/3778/COMPA1/FINSA2" component={ComputerScienceCOMPA1FINSA2} />
