@@ -1,3 +1,5 @@
+// The interactive tutorial for the homepage
+
 import React, {useState} from 'react';
 import ReactFlow, {isNode, isEdge} from 'react-flow-renderer';
 import TutorialNode1 from './tutorialnode1.js';

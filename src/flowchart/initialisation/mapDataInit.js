@@ -1,8 +1,8 @@
 import {isNode, isEdge} from 'react-flow-renderer';
 
-import CustomNode1 from '../../components/customnode1.js';
-import CustomNode2 from '../../components/customnode2.js';
-import HeaderNode1 from '../../components/headernode1.js';
+import CustomNode1 from '../nodeTypes/customNode1.js';
+import CustomNode2 from '../nodeTypes/customNode2.js';
+import HeaderNode1 from '../nodeTypes/headerNode1.js';
 
 import dropdownSearchInit from './dropdownSearchInit';
 import selectableInit from './selectableInit';
