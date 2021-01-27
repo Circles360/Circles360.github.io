@@ -1,20 +1,20 @@
 import {isNode, isEdge} from 'react-flow-renderer';
 
-import CustomNode1 from '../components/customnode1.js';
-import CustomNode2 from '../components/customnode2.js';
-import HeaderNode1 from '../components/headernode1.js';
+import CustomNode1 from '../../components/customnode1.js';
+import CustomNode2 from '../../components/customnode2.js';
+import HeaderNode1 from '../../components/headernode1.js';
 
-import dropdownSearchInit from '../components/initialisation/dropdownSearchInit';
-import selectableInit from '../components/initialisation/selectableInit';
-import hiddenInit from '../components/initialisation/hiddenInit';
-import additionalSearchInit from '../components/initialisation/additionalSearchInit';
-import coursesInit from '../components/initialisation/coursesInit';
+import dropdownSearchInit from './dropdownSearchInit';
+import selectableInit from './selectableInit';
+import hiddenInit from './hiddenInit';
+import additionalSearchInit from './additionalSearchInit';
+import coursesInit from './coursesInit';
 
-import coursesJSON from "../webscraper/courses.json";
+import coursesJSON from "../../webscraper/courses.json";
 
-import dataExclusionJSON from "./ComputerScienceCOMPA1/data_exclusion.json";
+import dataExclusionJSON from "../ComputerScienceCOMPA1/data_exclusion.json";
 
-export default function initialiseMapData(specialisations, program, dataJSON) {
+export default function mapDataInit(specialisations, program, dataJSON) {
     var mapData = {};
 
     const elementsData = dataJSON.slice(); // TODO: Do we need to shallow copy via slice???

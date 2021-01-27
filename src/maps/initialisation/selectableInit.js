@@ -1,5 +1,5 @@
 // HELPER FUNCTION to initialise selectable nodes and edges
-import checkPrerequisites from '../checkprerequisites';
+import checkPrerequisites from '../../components/checkprerequisites';
 
 export default function selectableInit(elements, nodesData, selectedNodes, selectableNodes, potentialEdges) {
     for (const node of nodesData) {

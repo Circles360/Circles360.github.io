@@ -13,11 +13,11 @@ import DegreePlanner from "../components/degreeplanner.js"
 import DropdownSearch from "../components/dropdownsearch.js"
 
 // Initialisation helper functions
-import dropdownSearchInit from '../components/initialisation/dropdownSearchInit';
-import selectableInit from '../components/initialisation/selectableInit';
-import hiddenInit from '../components/initialisation/hiddenInit';
-import additionalSearchInit from '../components/initialisation/additionalSearchInit';
-import coursesInit from '../components/initialisation/coursesInit';
+import dropdownSearchInit from './initialisation/dropdownSearchInit';
+import selectableInit from './initialisation/selectableInit';
+import hiddenInit from './initialisation/hiddenInit';
+import additionalSearchInit from './initialisation/additionalSearchInit';
+import coursesInit from './initialisation/coursesInit';
 
 // import positionHelper from '../../components/positionhelper.js';
 import selectNode from '../components/selectnode.js';
