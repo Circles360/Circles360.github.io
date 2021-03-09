@@ -1,20 +1,18 @@
 // Returns true if all prerequisites are met for a given node
 // Returns false if prerequisites are not met for a given node
 // Will only analyse targets of potential edges
-
 import getElement from '../flowHelper/getElement';
 
 // NOTE: Assumes that source of potential edges are always selected
 export default function checkPrerequisites(node, elements, selectedNodes) {
+    // Case if node requires units and a specific level of units required
     if (node.data.conditions.units_required !== null && node.data.conditions.level_for_units_required !== null) {
-        // Get the type of course this is
         return(checkPrerequisiteUnitsLevel(node, elements, selectedNodes));
     }
 
+    // Case if node has prerequisite courses (and safety checking for executable prerequisites)
     if (node.data.conditions.prerequisites !== null && node.data.conditions.prereqs_executable !== null) {
         // Evaluate the condition
-        //console.log("HERE");
-        //console.log(node.data.conditions.prereqs_executable);
 
         // Check if units have been met if it has a unit requirement
         if (node.data.conditions.units_required !== null) {
