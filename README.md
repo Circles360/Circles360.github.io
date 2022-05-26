@@ -1,5 +1,7 @@
 # Circles
 
+This is old code written mainly in a few weeks back in 2020 whilst learning React along the way. Since then, we've turned it into a proper project with a team of UNSW students working on it. Please check out https://circles.csesoc.app or the github https://github.com/csesoc/Circles
+
 ## Overview
 
 Circles is a **visual degree planner** for UNSW undergraduate students, available at [https://circles360.github.io](https://circles360.github.io). By representing a degree as a flowchart, Circles makes it easy for anyone to choose and explore which direction they would like to take their degree in. Once students have chosen the courses that they would like to take, a degree plan is automatically generated for them, which takes into account course prerequisites and term availability. Students can then drag and drop courses as needed to customise their degree plan.
