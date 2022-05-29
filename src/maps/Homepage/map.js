@@ -35,11 +35,15 @@ const Homepage = () => {
                 <Container style={containerStyle}>
                     <Header as="h1" style={{transition: "2s ease", position: "absolute", top: "50%", left: "50%", transform: "translate(-50%,-50%)", fontSize: "96px"}} textAlign="center">
                         Circles
-                        <Header.Subheader style={{transition: "2s ease", fontSize: "18px"}}>The visual degree planner for UNSW undergraduate students</Header.Subheader>
+                        <Header.Subheader style={{transition: "2s ease", fontSize: "18px"}}>
+                            The visual degree planner for UNSW undergraduate students
+                            <div>
+                                <Message warning>
+                                    Please visit the new Circles being worked on by the CSESoc Projects team at <a href="circles.csesoc.app" target="_blank" rel="noopener noreferrer">circles.csesoc.app</a>
+                                </Message>
+                            </div>
+                        </Header.Subheader>
                     </Header>
-                    <Message warning>
-                            Please visit the new Circles being worked on by the CSESoc Projects team at <a href="circles.csesoc.app" target="_blank" rel="noopener noreferrer">circles.csesoc.app</a>
-                    </Message>
                     {getButton("#tutorial")}
                 </Container >
             </div>
