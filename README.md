@@ -1,6 +1,6 @@
 # Circles
 
-This is old code written mainly in a few weeks back in 2020 whilst learning React along the way. Since then, we've turned it into a proper project with a team of UNSW students working on it. Please check out https://circles.csesoc.app or the github https://github.com/csesoc/Circles
+This is old code written mainly in a few weeks back in 2020 whilst learning React along the way. Since then, we've turned it into a proper project with a team of UNSW students working on it. Please check out https://circles.devsoc.app or the github https://github.com/devsoc-unsw/circles
 
 ## Overview
 

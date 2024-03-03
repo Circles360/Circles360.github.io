@@ -18,7 +18,7 @@ const containerStyle = {
 
 const getButton = (selector) => {
     return (
-        <ScrollTo selector={selector} style={{marginTop: "auto", marginBottom: "3%"}}>
+        <ScrollTo selector={selector} style={{ marginTop: "auto", marginBottom: "3%" }}>
             <Button
                 circular
                 color="blue"
@@ -33,13 +33,13 @@ const Homepage = () => {
         <div>
             <div id="landingPage">
                 <Container style={containerStyle}>
-                    <Header as="h1" style={{transition: "2s ease", position: "absolute", top: "50%", left: "50%", transform: "translate(-50%,-50%)", fontSize: "96px"}} textAlign="center">
+                    <Header as="h1" style={{ transition: "2s ease", position: "absolute", top: "50%", left: "50%", transform: "translate(-50%,-50%)", fontSize: "96px" }} textAlign="center">
                         Circles
-                        <Header.Subheader style={{transition: "2s ease", fontSize: "18px"}}>
+                        <Header.Subheader style={{ transition: "2s ease", fontSize: "18px" }}>
                             The visual degree planner for UNSW undergraduate students
                             <div>
                                 <Message warning>
-                                    Please visit the new Circles being worked on by the CSESoc Projects team at <a href="https://circles.csesoc.app" target="_blank" rel="noopener noreferrer">https://circles.csesoc.app</a>
+                                    Please visit the new Circles being worked on by the CSESoc Projects team at <a href="https://circles.devsoc.app" target="_blank" rel="noopener noreferrer">https://circles.devsoc.app</a>
                                 </Message>
                             </div>
                         </Header.Subheader>
@@ -48,18 +48,18 @@ const Homepage = () => {
                 </Container >
             </div>
             <div id="tutorial">
-                    <Container fluid style={containerStyle}>
-                        <Header as="h2" textAlign="center" style={{paddingTop: "3%", fontSize: "36px"}}>Tutorial</Header>
-                        <InteractiveTutorialMain />
-                        <Header as="h4" textAlign="center">After choosing your courses, a degree plan will be automatically generated for you.</Header>
-                        {getButton("#chooseDegree")}
-                    </Container>
+                <Container fluid style={containerStyle}>
+                    <Header as="h2" textAlign="center" style={{ paddingTop: "3%", fontSize: "36px" }}>Tutorial</Header>
+                    <InteractiveTutorialMain />
+                    <Header as="h4" textAlign="center">After choosing your courses, a degree plan will be automatically generated for you.</Header>
+                    {getButton("#chooseDegree")}
+                </Container>
             </div>
             <div id="chooseDegree">
-                <Container style={{...containerStyle, justifyContent: "center"}}>
-                    <Header as="h2" textAlign="center" style={{fontSize: "36px", marginTop: "5vh"}}>Choose your program and degree to begin</Header>
+                <Container style={{ ...containerStyle, justifyContent: "center" }}>
+                    <Header as="h2" textAlign="center" style={{ fontSize: "36px", marginTop: "5vh" }}>Choose your program and degree to begin</Header>
                     <div>
-                        <Container style={{padding: "10px"}}>
+                        <Container style={{ padding: "10px" }}>
                             <Message warning>
                                 The UNSW handbook is currently undergoing updates for 2021. Although we try our best, some data may be incorrect or outdated, so some nodes on our flowchart may not be selectable. Please refer to the <a href="https://www.handbook.unsw.edu.au" target="_blank" rel="noopener noreferrer">handbook</a> for the latest update.
                             </Message>
