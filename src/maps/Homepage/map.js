@@ -39,7 +39,7 @@ const Homepage = () => {
                             The visual degree planner for UNSW undergraduate students
                             <div>
                                 <Message warning>
-                                    Please visit the new Circles being worked on by the CSESoc Projects team at <a href="https://circles.devsoc.app" target="_blank" rel="noopener noreferrer">https://circles.devsoc.app</a>
+                                    Please visit the new Circles being worked on by the DevSoc team at <a href="https://circles.devsoc.app" target="_blank" rel="noopener noreferrer">https://circles.devsoc.app</a>
                                 </Message>
                             </div>
                         </Header.Subheader>
